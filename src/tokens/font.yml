@@ -1,0 +1,21 @@
+#
+# FONT TOKENS
+# Use these tokens to set font-weight and font-family.
+#
+
+props:
+  font_heading:
+    value: "'Fira Sans', Helvetica, Arial, sans-serif"
+  font_text:
+    value: "'Fira Sans', Helvetica, Arial, sans-serif"
+  weight_bold:
+    value: "700"
+  weight_semi_bold:
+    value: "600"
+  weight_normal:
+    value: "400"
+  weight_light:
+    value: "300"
+global:
+  type: ...
+  category: font
