@@ -8,7 +8,7 @@ module.exports = {
   /**
    * Name of your design system. Changes both page title and sidebar logo.
    */
-  title: "Vue Design System",
+  title: "ownCloud Design System",
   /**
    * Most of the styles are defined in /docs/docs.styles.scss
    */
@@ -112,13 +112,6 @@ module.exports = {
     {
       name: "Downloads",
       content: "../docs/downloads.md",
-      exampleMode: "hide",
-      usageMode: "hide",
-      sectionDepth: 1,
-    },
-    {
-      name: "FAQ",
-      content: "../docs/faq.md",
       exampleMode: "hide",
       usageMode: "hide",
       sectionDepth: 1,
