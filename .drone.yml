@@ -1,0 +1,16 @@
+branches:
+  - master
+
+pipeline:
+  build:
+    image: node
+    commands:
+      - yarn install
+      - yarn build:docs
+
+  publish:
+    image: plugins/gh-pages:1
+    secrets: [github_username, github_password]
+    pages_directory: dist/docs
+    when:
+      event: [push]
