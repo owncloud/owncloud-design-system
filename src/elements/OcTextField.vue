@@ -21,8 +21,8 @@
  * formats including numbers. For longer input, use the form `Textarea` element.
  */
 export default {
-  name: "Input",
-  status: "ready",
+  name: "oc-text-field",
+  status: "review",
   release: "1.0.0",
   props: {
     /**
@@ -173,7 +173,7 @@ $color-placeholder: tint($color-silver, 50%);
     &:focus,
     &.focus {
       transition: box-shadow 0.2s ease;
-      box-shadow: inset 0 0 0 1px $color-bleu-de-france, 0 0 0 1px $color-bleu-de-france;
+      box-shadow: inset 0 0 0 1px $color_oc_blue, 0 0 0 1px $color_oc_blue;
       outline: 0;
     }
     &[disabled] {

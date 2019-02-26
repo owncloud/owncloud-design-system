@@ -8,6 +8,8 @@
 #
 
 aliases:
+  oc_blue:
+    value: "215, 40%"
   vermilion:
     value: "7, 83%"
   ucla_gold:
@@ -21,21 +23,37 @@ aliases:
   white:
     value: "#fff"
 props:
+  color_oc_blue:
+    value: "hsla({!oc_blue}, 19%, 1)"
+    category: "color_group_1"
+  color_oc_blue_darker:
+    value: "hsla({!oc_blue}, 5%, 1)"
+    category: "color_group_1"
+  color_oc_blue_dark:
+    value: "hsla({!oc_blue}, 10%, 1)"
+    category: "color_group_1"
+  color_oc_blue_lighter:
+    value: "hsla({!oc_blue}, 29%, 1)"
+    category: "color_group_1"
+  color_oc_blue_light:
+    value: "hsla({!oc_blue}, 39%, 1)"
+    category: "color_group_1"
+
   color_vermilion_darker:
     value: "hsla({!vermilion}, 33%, 1)"
-    category: color_group_1
+    category: color_group_5
   color_vermilion_dark:
     value: "hsla({!vermilion}, 43%, 1)"
-    category: color_group_1
+    category: color_group_5
   color_vermilion:
     value: "hsla({!vermilion}, 53%, 1)"
-    category: color_group_1
+    category: color_group_5
   color_vermilion_light:
     value: "hsla({!vermilion}, 63%, 1)"
-    category: color_group_1
+    category: color_group_5
   color_vermilion_lighter:
     value: "hsla({!vermilion}, 75%, 1)"
-    category: color_group_1
+    category: color_group_5
 
   color_ucla_gold_darker:
     value: "hsla({!ucla_gold}, 35%, 1)"

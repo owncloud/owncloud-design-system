@@ -11,7 +11,7 @@ const req = require.context("@/assets/icons/", true, /^\.\/.*\.svg$/)
  * easily understand where they are in the product.
  */
 export default {
-  name: "Icon",
+  name: "oc-icon",
   status: "review",
   release: "1.0.0",
   props: {
@@ -90,10 +90,17 @@ export default {
 <docs>
   ```jsx
   <div>
-    <icon name="cloud_upload" aria-label="Component is ready" fill="#7cb518" />
-    <icon name="close" fill="rgb(255,186,10)" />
-    <icon name="delete" fill="rgb(235,59,36)" />
-    <icon name="info" fill="rgb(37,138,239)" />
+    <div>
+      <oc-icon name="cloud_upload" aria-label="Component is ready" fill="#7cb518" />
+      <oc-icon name="close" fill="rgb(255,186,10)" />
+      <oc-icon name="delete" fill="rgb(235,59,36)" />
+      <oc-icon name="info" fill="rgb(37,138,239)" />
+    </div>
+    <div>
+      <oc-icon name="account_circle" size="large" fill="#636363" />
+      <oc-icon name="cloud_download" size="medium" fill="#aec123" />
+      <oc-icon name="folder" size="small" fill="#123aec" />
+    </div>
   </div>
   ```
 </docs>
