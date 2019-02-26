@@ -1,0 +1,9 @@
+.autocomplete {
+  &-suggestions:extend(.uk-position-absolute, .uk-background-muted, .uk-box-shadow-medium) {
+  }
+  &-suggestion {
+    &.selected {
+      background-color: $global-primary-background;
+    }
+  }
+}
