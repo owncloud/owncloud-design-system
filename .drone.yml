@@ -1,13 +1,16 @@
-kind: pipeline
-name: default
+branches:
+  - master
 
-clone:
-  depth: 1
-
-steps:
-  - name: build
+pipeline:
+  build:
     image: node
     commands:
       - yarn install
       - yarn build:docs
-  # ToDo add deployment step 
+
+  publish:
+    image: plugins/gh-pages:1
+    secrets: [github_username, github_password]
+    pages_directory: dist/docs
+    when:
+      event: [push]
