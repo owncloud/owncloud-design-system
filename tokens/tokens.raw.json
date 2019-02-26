@@ -1,5 +1,8 @@
 {
   "aliases": {
+    "oc_blue": {
+      "value": "215, 40%"
+    },
     "vermilion": {
       "value": "7, 83%"
     },
@@ -20,6 +23,13 @@
     }
   },
   "props": {
+    "color_oc_blue_light": {
+      "type": "color",
+      "category": "color_group_1",
+      "value": "rgb(60, 93, 139)",
+      "originalValue": "hsla({!oc_blue}, 39%, 1)",
+      "name": "color_oc_blue_light"
+    },
     "color_ucla_gold": {
       "type": "color",
       "category": "color_group_2",
@@ -36,14 +46,14 @@
     },
     "color_vermilion_lighter": {
       "type": "color",
-      "category": "color_group_1",
+      "category": "color_group_5",
       "value": "rgb(244, 151, 138)",
       "originalValue": "hsla({!vermilion}, 75%, 1)",
       "name": "color_vermilion_lighter"
     },
     "color_vermilion_darker": {
       "type": "color",
-      "category": "color_group_1",
+      "category": "color_group_5",
       "value": "rgb(154, 31, 14)",
       "originalValue": "hsla({!vermilion}, 33%, 1)",
       "name": "color_vermilion_darker"
@@ -69,6 +79,13 @@
       "originalValue": "hsla({!bleu_de_france}, 64%, 1)",
       "name": "color_bleu_de_france_light"
     },
+    "color_oc_blue": {
+      "type": "color",
+      "category": "color_group_1",
+      "value": "rgb(29, 45, 68)",
+      "originalValue": "hsla({!oc_blue}, 19%, 1)",
+      "name": "color_oc_blue"
+    },
     "color_silver": {
       "type": "color",
       "category": "color_group_4",
@@ -76,12 +93,26 @@
       "originalValue": "#7F8891",
       "name": "color_silver"
     },
+    "color_oc_blue_dark": {
+      "type": "color",
+      "category": "color_group_1",
+      "value": "rgb(15, 24, 36)",
+      "originalValue": "hsla({!oc_blue}, 10%, 1)",
+      "name": "color_oc_blue_dark"
+    },
     "color_white": {
       "type": "color",
       "category": "color_group_4",
       "value": "rgb(255, 255, 255)",
       "originalValue": "{!white}",
       "name": "color_white"
+    },
+    "color_oc_blue_lighter": {
+      "type": "color",
+      "category": "color_group_1",
+      "value": "rgb(44, 69, 104)",
+      "originalValue": "hsla({!oc_blue}, 29%, 1)",
+      "name": "color_oc_blue_lighter"
     },
     "color_bleu_de_france": {
       "type": "color",
@@ -113,14 +144,14 @@
     },
     "color_vermilion_light": {
       "type": "color",
-      "category": "color_group_1",
+      "category": "color_group_5",
       "value": "rgb(239, 101, 82)",
       "originalValue": "hsla({!vermilion}, 63%, 1)",
       "name": "color_vermilion_light"
     },
     "color_vermilion_dark": {
       "type": "color",
-      "category": "color_group_1",
+      "category": "color_group_5",
       "value": "rgb(201, 40, 19)",
       "originalValue": "hsla({!vermilion}, 43%, 1)",
       "name": "color_vermilion_dark"
@@ -139,6 +170,13 @@
       "originalValue": "{!rich_black}",
       "name": "color_rich_black"
     },
+    "color_oc_blue_darker": {
+      "type": "color",
+      "category": "color_group_1",
+      "value": "rgb(8, 12, 18)",
+      "originalValue": "hsla({!oc_blue}, 5%, 1)",
+      "name": "color_oc_blue_darker"
+    },
     "color_cloud": {
       "type": "color",
       "category": "color_group_4",
@@ -155,7 +193,7 @@
     },
     "color_vermilion": {
       "type": "color",
-      "category": "color_group_1",
+      "category": "color_group_5",
       "value": "rgb(235, 59, 36)",
       "originalValue": "hsla({!vermilion}, 53%, 1)",
       "name": "color_vermilion"
