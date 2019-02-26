@@ -1,0 +1,13 @@
+kind: pipeline
+name: default
+
+clone:
+  depth: 1
+
+steps:
+  - name: build
+    image: node
+    commands:
+      - yarn install
+      - yarn build:docs
+  # ToDo add deployment step 
