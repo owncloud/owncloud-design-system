@@ -1,7 +1,7 @@
 {
-  "name": "vue-design-system",
-  "version": "3.5.7",
-  "description": "Vue Design System is an open-source tool for building Design Systems with Vue.js",
+  "name": "owncloud-design-system",
+  "version": "0.0.1",
+  "description": "ownCloud Design System is based on VueDesign Systems and is used to design ownCloud UI components",
   "author": "viljamis <me@viljamis.com>",
   "main": "dist/system/system.js",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "homepage": "https://vueds.com",
   "private": true,
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "scripts": {
     "dev": "webpack-dev-server --inline --config ./build/webpack.dev.conf.js",
     "start": "npm-run-all --parallel styleguide theo:onchange theo dev",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viljamis/vue-design-system.git"
+    "url": "git+https://github.com/owncloud/owncloud-design-system.git"
   },
   "keywords": [
     "vue design system",
