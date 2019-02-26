@@ -1,5 +1,11 @@
 <template>
-  <component :is="type" :href="href" :type="submit" :class="['button', size, state, variation]">
+  <component
+    :is="type"
+    :href="href"
+    :to="to"
+    :type="submit"
+    :class="['button', size, state, variation]"
+  >
     <slot />
   </component>
 </template>
@@ -11,19 +17,19 @@
  * Primary style should be used only once per view for main call-to-action.
  */
 export default {
-  name: "Button",
-  status: "prototype",
-  release: "3.5.0",
+  name: "oc-button",
+  status: "review",
+  release: "1.0.0",
   props: {
     /**
      * The html element used for the button.
-     * `button, a`
+     * `button, a, router`
      */
     type: {
       type: String,
       default: "button",
       validator: value => {
-        return value.match(/(button|a)/)
+        return value.match(/(button|a|router)/)
       },
     },
     /**
@@ -42,6 +48,13 @@ export default {
      */
     href: {
       type: String,
+      default: null,
+    },
+    /**
+     * When setting the button’s type to a router-link, use this option to give a to.
+     */
+    to: {
+      type: Object,
       default: null,
     },
     /**
@@ -101,18 +114,18 @@ export default {
   box-shadow: inset 0 0 0 2px $color-bleu-de-france;
   border-radius: $radius-default;
   background: transparent;
-  color: $color-bleu-de-france;
+  color: $color-oc-blue;
   cursor: pointer;
   &:hover,
   &.hover {
     color: $color-white;
-    background: $color-bleu-de-france;
+    background: $color-oc-blue;
     transform: translateZ(0) scale(1.03);
   }
   &:active,
   &.active {
     transition: none;
-    background: $color-bleu-de-france-dark;
+    background: $color-oc-blue-dark;
     box-shadow: none;
     color: $color-white;
     transform: translateZ(0) scale(1);
@@ -120,7 +133,7 @@ export default {
 
   &:focus,
   &.focus {
-    background: $color-bleu-de-france-darker;
+    background: $color-oc-blue-darker;
     box-shadow: none;
     color: $color-white;
     transform: translateZ(0) scale(1);
@@ -150,16 +163,16 @@ export default {
 
   // Primary button
   &.primary {
-    background: $color-bleu-de-france;
+    background: $color-oc-blue;
     color: $color-white;
     box-shadow: none;
     &:hover,
     &.hover {
-      background-color: shade($color-bleu-de-france, 12%);
+      background-color: shade($color-oc-blue, 12%);
     }
     &:active,
     &.active {
-      background-color: shade($color-bleu-de-france, 20%);
+      background-color: shade($color-oc-blue, 20%);
       transition: none;
     }
     &:focus {
@@ -175,14 +188,14 @@ export default {
 <docs>
   ```jsx
   <div>
-    <Button variation="primary" size="large">Primary Button</Button>
-    <Button variation="primary" size="medium">Medium</Button>
-    <Button variation="primary" size="small">Small</Button>
+    <oc-button variation="primary" size="large">Primary Button</oc-button>
+    <oc-button variation="primary" size="medium">Medium</oc-button>
+    <oc-button variation="primary" size="small">Small</oc-button>
     <br />
-    <Button>Default Button</Button>
-    <Button state="hover">:hover</Button>
-    <Button state="active">:active</Button>
-    <Button state="focus">:focus</Button>
+    <oc-button>Default Button</oc-button>
+    <oc-button state="hover">:hover</oc-button>
+    <oc-button state="active">:active</oc-button>
+    <oc-button state="focus">:focus</oc-button>
   </div>
   ```
 </docs>
