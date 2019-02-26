@@ -1,0 +1,23 @@
+#
+# FONT-SIZE TOKENS
+# Use these tokens to set a font-size.
+#
+
+props:
+  size_xxxl:
+    value: "64px"
+  size_xxl:
+    value: "48px"
+  size_xl:
+    value: "36px"
+  size_l:
+    value: "24px"
+  size_m:
+    value: "16px"
+  size_s:
+    value: "13px"
+  size_xs:
+    value: "11px"
+global:
+  type: number
+  category: font-size

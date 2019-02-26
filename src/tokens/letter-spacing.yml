@@ -1,0 +1,19 @@
+#
+# LETTER SPACING TOKENS
+# Use these tokens to adjust letter-spacing.
+#
+
+props:
+  spacing_xl:
+    value: "2px"
+  spacing_l:
+    value: "1px"
+  spacing_m:
+    value: "0"
+  spacing_s:
+    value: "-0.5px"
+  spacing_xs:
+    value: "-1px"
+global:
+  type: number
+  category: letter-spacing

@@ -1,0 +1,23 @@
+#
+# SPACING TOKENS
+# Use these tokens to set padding, margin and position coordinates.
+#
+
+props:
+  space_xxl:
+    value: "128px"
+  space_xl:
+    value: "64px"
+  space_l:
+    value: "48px"
+  space_m:
+    value: "24px"
+  space_s:
+    value: "16px"
+  space_xs:
+    value: "8px"
+  space_xxs:
+    value: "4px"
+global:
+  type: number
+  category: space
