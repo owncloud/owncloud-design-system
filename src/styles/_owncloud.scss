@@ -1,0 +1,24 @@
+// Import UIkit default theme (or uikit.scss with only core styles)
+
+@import "theme/variables";
+
+@import "theme/menu-secondary";
+@import "theme/base";
+@import "theme/buttons";
+@import "theme/text";
+@import "theme/label";
+@import "theme/offcanvas";
+@import "theme/logo";
+@import "theme/main";
+@import "theme/icon-input";
+@import "theme/loader-spinner";
+@import "theme/autocomplete";
+@import "theme/oc-head";
+@import "theme/oc-app-menu";
+@import "theme/oc-app-container";
+@import "theme/oc-user-menu";
+@import "theme/oc-public-share-icon";
+@import "theme/oc-shared-item-card";
+@import "theme/transitions";
+// Your custom code goes here, e.g. mixins, variables.
+// See "how to create a theme" below for more info.

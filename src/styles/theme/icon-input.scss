@@ -1,0 +1,15 @@
+.uk-inline {
+  > .material-icons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  > .uk-input {
+    padding-left: 40px;
+  }
+}
+
+@mixin hook-form() {
+  font-size: $form-small-font-size;
+}
