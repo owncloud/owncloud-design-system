@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="container">
-      <input type="checkbox" :checked="model" @change="onChange" />
+    <label class="container">
+      <input type="checkbox" v-model="model" @change="onChange" />
       <span class="checkmark"></span>
-    </div>
+    </label>
   </div>
 </template>
 <script>
 export default {
   name: "oc-checkbox",
-  status: "prototype",
+  status: "review",
   release: "1.0.0",
   props: {
     /**

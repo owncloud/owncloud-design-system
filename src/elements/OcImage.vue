@@ -4,7 +4,7 @@
 <script>
 export default {
   name: "oc-img",
-  status: "prototype",
+  status: "review",
   release: "1.0.0",
   props: {
     /**

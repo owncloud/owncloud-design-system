@@ -96,9 +96,17 @@ export default {
   },
   methods: {
     onInput(value) {
+      /**
+       * @event input
+       * @type {String}
+       **/
       this.$emit("change", value)
     },
     onFocus(value) {
+      /**
+       * @event focus
+       * @type {boolean}
+       **/
       this.$emit("focus", value)
     },
   },
@@ -146,10 +154,10 @@ $color-placeholder: tint($color-silver, 50%);
       0 0 0 1px tint($color-rich-black, 80%);
     &::-webkit-input-placeholder {
       -webkit-font-smoothing: antialiased;
-      color: $color-placeholder;
+      color: $color_oc_blue;
     }
     &:-ms-input-placeholder {
-      color: $color-placeholder;
+      color: $color_oc_blue;
     }
     &::-moz-placeholder {
       color: $color-placeholder;
@@ -163,7 +171,7 @@ $color-placeholder: tint($color-silver, 50%);
     &:focus,
     &.focus {
       transition: box-shadow 0.2s ease;
-      box-shadow: inset 0 0 0 1px $color_oc_blue, 0 0 0 1px $color_oc_blue;
+      border: solid 3px $color_oc_blue;
       outline: 0;
     }
     &[disabled] {
