@@ -12,7 +12,6 @@ import DesignSystem from "@/system"
 
 Vue.use(DesignSystem)
 Vue.use(Meta)
-//Vue.use(UiKit)
 
 Vue.config.productionTip = false
 
