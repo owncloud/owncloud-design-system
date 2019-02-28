@@ -89,6 +89,7 @@ export default {
 
 <style lang="scss" scoped>
 .uk-button {
+  text-transform: none;
   &.large {
     @include inset-squish-space($space-s);
     font-size: $size-l;
