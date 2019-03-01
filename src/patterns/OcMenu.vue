@@ -3,7 +3,7 @@
     <slot name="activator">
       <oc-button variation="primary" type="button">{{ buttonText }}</oc-button>
     </slot>
-    <div uk-dropdown="mode: click">
+    <div uk-dropdown="mode: click, offset: 0">
       <slot />
     </div>
   </div>
@@ -24,7 +24,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.uk-dropdown {
+  margin-top: 0px;
+}
+</style>
 
 <docs>
     ```jsx
