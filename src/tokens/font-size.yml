@@ -5,19 +5,19 @@
 
 props:
   size_xxxl:
-    value: "64px"
+    value: "3.0em"
   size_xxl:
-    value: "48px"
+    value: "2.0em"
   size_xl:
-    value: "36px"
+    value: "1.7em"
   size_l:
-    value: "24px"
+    value: "1.5em"
   size_m:
-    value: "16px"
+    value: "1.2em"
   size_s:
-    value: "13px"
+    value: "1.1em"
   size_xs:
-    value: "11px"
+    value: "1.0em"
 global:
   type: number
   category: font-size

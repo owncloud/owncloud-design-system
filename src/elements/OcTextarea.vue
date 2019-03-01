@@ -8,6 +8,7 @@
       :placeholder="placeholder"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
+      :aria-label="placeholder"
       v-model="value"
     />
   </component>
@@ -98,14 +99,14 @@ export default {
     onInput(value) {
       /**
        * @event input
-       * @type {String}
+       * @type {event}
        **/
       this.$emit("change", value)
     },
     onFocus(value) {
       /**
        * @event focus
-       * @type {boolean}
+       * @type {event}
        **/
       this.$emit("focus", value)
     },

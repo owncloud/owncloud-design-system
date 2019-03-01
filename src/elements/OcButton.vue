@@ -1,6 +1,13 @@
 <template>
-  <component :is="type" :href="href" :to="to" :type="submit" :class="classes">
+  <component
+    :is="type"
+    :href="href"
+    :to="to"
+    :type="submit"
+    :class="['button', size, state, variation]"
+  >
     <slot />
+    <oc-icon :name="icon"></oc-icon>
   </component>
 </template>
 
@@ -52,6 +59,13 @@ export default {
       default: null,
     },
     /**
+     * The aria-label of the button.
+     */
+    arialabel: {
+      type: String,
+      default: null,
+    },
+    /**
      * Set the button’s type to “submit”.
      */
     submit: {
@@ -60,6 +74,13 @@ export default {
       validator: value => {
         return value.match(/(null|submit)/)
       },
+    },
+    /**
+     * Set the button’s icon to display.
+     */
+    icon: {
+      type: String,
+      default: null,
     },
     /**
      * Style variation to give additional meaning.
@@ -73,23 +94,74 @@ export default {
       },
     },
   },
-  computed: {
-    classes() {
-      if (this.variation === "primary") {
-        return ["uk-button", "uk-button-primary", this.size]
-      }
-      if (this.variation === "secondary") {
-        return ["uk-button", "uk-button-secondary", this.size]
-      }
-      return ["uk-button", this.size]
+  methods: {
+    onClick(val) {
+      /**
+       * Click event
+       * @event click
+       * @type {event}
+       */
+      this.$emit("click", val)
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.uk-button {
-  text-transform: none;
+.button {
+  @include reset;
+  @include stack-space($space-m);
+  @include inline-space($space-xs);
+  will-change: transform;
+  transition: all 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $weight-semi-bold;
+  font-size: $size-m;
+  font-family: $font-text;
+  line-height: $line-height-m;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  box-shadow: inset 0 0 0 2px $color-oc-blue;
+  border-radius: $radius-default;
+  background: transparent;
+  color: $color-oc-blue;
+  cursor: pointer;
+  &:hover,
+  &.hover {
+    color: $color-white;
+    background: $color-oc-blue;
+    transform: translateZ(0) scale(1.03);
+  }
+  &:active,
+  &.active {
+    transition: none;
+    background: $color-oc-blue-dark;
+    box-shadow: none;
+    color: $color-white;
+    transform: translateZ(0) scale(1);
+  }
+
+  &:focus,
+  &.focus {
+    background: $color-oc-blue-darker;
+    box-shadow: none;
+    color: $color-white;
+    transform: translateZ(0) scale(1);
+    outline: 0;
+  }
+
+  // For icons inside buttons
+  .icon {
+    float: right;
+    margin-left: $size-xs / 4;
+    color: $color-bleu-de-france;
+  }
+
+  // Various button sizes
   &.large {
     @include inset-squish-space($space-s);
     font-size: $size-l;
@@ -101,6 +173,24 @@ export default {
   &.small {
     @include inset-squish-space($space-xs);
     font-size: $size-s;
+  }
+  // Primary button
+  &.primary {
+    background: $color-oc-blue;
+    color: $color-white;
+    box-shadow: none;
+    &:hover,
+    &.hover {
+      background-color: shade($color-oc-blue, 12%);
+    }
+    &:active,
+    &.active {
+      background-color: shade($color-oc-blue, 20%);
+      transition: none;
+    }
+    &:focus {
+      outline: 0;
+    }
   }
 }
 </style>
@@ -116,13 +206,9 @@ export default {
     <oc-button variation="primary" size="medium">Medium</oc-button>
     <oc-button variation="primary" size="small">Small</oc-button>
     <br />
-    <oc-button variation="secondary" size="large">Secondary Button</oc-button>
-    <oc-button variation="secondary" size="medium">Medium</oc-button>
-    <oc-button variation="secondary" size="small">Small</oc-button>
-    <br />
-    <oc-button size="large"><oc-icon name="home"></oc-icon></oc-button>
-    <oc-button size="medium"><oc-icon name="home"></oc-icon></oc-button>
-    <oc-button size="small"><oc-icon name="home"></oc-icon></oc-button>
+    <oc-button size="large" icon="home">Demo Button</oc-button>
+    <oc-button size="medium" icon="close">Demo Button</oc-button>
+    <oc-button size="small" icon="folder">Demo Button</oc-button>
   </div>
   ```
 </docs>
