@@ -201,50 +201,50 @@
     "size_xxxl": {
       "type": "number",
       "category": "font-size",
-      "value": "64px",
-      "originalValue": "64px",
+      "value": "3.0em",
+      "originalValue": "3.0em",
       "name": "size_xxxl"
     },
     "size_xxl": {
       "type": "number",
       "category": "font-size",
-      "value": "48px",
-      "originalValue": "48px",
+      "value": "2.0em",
+      "originalValue": "2.0em",
       "name": "size_xxl"
     },
     "size_xl": {
       "type": "number",
       "category": "font-size",
-      "value": "36px",
-      "originalValue": "36px",
+      "value": "1.7em",
+      "originalValue": "1.7em",
       "name": "size_xl"
     },
     "size_l": {
       "type": "number",
       "category": "font-size",
-      "value": "24px",
-      "originalValue": "24px",
+      "value": "1.5em",
+      "originalValue": "1.5em",
       "name": "size_l"
     },
     "size_m": {
       "type": "number",
       "category": "font-size",
-      "value": "16px",
-      "originalValue": "16px",
+      "value": "1.2em",
+      "originalValue": "1.2em",
       "name": "size_m"
     },
     "size_s": {
       "type": "number",
       "category": "font-size",
-      "value": "13px",
-      "originalValue": "13px",
+      "value": "1.1em",
+      "originalValue": "1.1em",
       "name": "size_s"
     },
     "size_xs": {
       "type": "number",
       "category": "font-size",
-      "value": "11px",
-      "originalValue": "11px",
+      "value": "1.0em",
+      "originalValue": "1.0em",
       "name": "size_xs"
     },
     "font_heading": {
@@ -397,9 +397,16 @@
     "radius_default": {
       "type": "number",
       "category": "border-radius",
-      "value": "3px",
-      "originalValue": "3px",
+      "value": "4px",
+      "originalValue": "4px",
       "name": "radius_default"
+    },
+    "radius_large": {
+      "type": "number",
+      "category": "border-radius",
+      "value": "24px",
+      "originalValue": "24px",
+      "name": "radius_large"
     },
     "radius_circle": {
       "type": "number",
