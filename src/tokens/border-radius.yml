@@ -6,6 +6,8 @@
 props:
   radius_default:
     value: "4px"
+  radius_large:
+    value: "24px"
   radius_circle:
     value: "50%"
 global:

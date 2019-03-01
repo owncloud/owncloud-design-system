@@ -1,5 +1,11 @@
 <template>
-  <input type="checkbox" v-model="model" @change="onChange" class="uk-checkbox" />
+  <div>
+    <label class="container">
+      <span>{{ label }}</span>
+      <input type="checkbox" v-model="model" @change="onChange" />
+      <span class="checkmark"></span>
+    </label>
+  </div>
 </template>
 <script>
 export default {
@@ -87,10 +93,10 @@ export default {
     content: "";
     display: none;
     position: absolute;
-    top: $size-xs/4;
-    left: $size-xs/1.5;
-    width: $size-xs/2;
-    height: $size-xs;
+    top: $size-xs / 5;
+    left: $size-xs / 2;
+    width: $size-xs / 4;
+    height: $size-xs / 1.5;
     border: solid $color-white;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);

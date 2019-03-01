@@ -1,6 +1,6 @@
 <template>
   <label class="radio-container">
-    {{ label }}
+    <span class="label">{{ label }}</span>
     <input type="radio" v-model="model" name="radio" :aria-label="label" @change="onChange" />
     <span class="checkmark"></span>
   </label>
@@ -53,6 +53,8 @@ export default {
   font-family: $font-text;
   line-height: $line-height-m;
   user-select: none;
+  &.label {
+  }
   & input {
     opacity: 0;
     cursor: pointer;

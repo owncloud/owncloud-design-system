@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="container">
-      {{ label }}
-      <label class="switch">
-        <input type="checkbox" @change="onChange" :aria-label="label" :checked="model" />
-        <span class="slider round"></span>
-      </label>
-    </div>
+  <div class="container">
+    <span class="label">{{ label }}</span>
+    <label class="switch">
+      <input type="checkbox" @change="onChange" :aria-label="label" :checked="model" />
+      <span class="slider round"></span>
+    </label>
   </div>
 </template>
 <script>
@@ -49,6 +47,7 @@ export default {
   @include reset;
   @include stack-space($space-m);
   @include inline-space($space-xs);
+  display: inline-flex;
   font-weight: $weight-semi-bold;
   font-size: $size-m;
   font-family: $font-text;
@@ -56,8 +55,8 @@ export default {
   .switch {
     position: relative;
     display: inline-block;
-    width: $size-xxl;
-    height: $size-xxl / 2;
+    width: $size-xxxl;
+    height: $size-xxxl / 2;
     & input {
       opacity: 0;
       width: 0;
@@ -73,6 +72,11 @@ export default {
       }
     }
   }
+
+  .label {
+    margin-right: $size-xs / 2;
+  }
+
   .slider {
     position: absolute;
     cursor: pointer;
@@ -87,13 +91,13 @@ export default {
       content: "";
       height: $size-m;
       width: $size-m;
-      left: $size-s / 3;
-      bottom: $size-s / 3;
+      left: $size-s / 6;
+      top: $size-s / 7;
       background-color: $color-white;
       transition: 0.4s;
     }
     &.round {
-      border-radius: 34px;
+      border-radius: $radius-large;
       &:before {
         border-radius: $radius-circle;
       }

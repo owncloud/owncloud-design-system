@@ -1,6 +1,13 @@
 <template>
-  <component :is="type" :href="href" :to="to" :type="submit" :class="classes">
+  <component
+    :is="type"
+    :href="href"
+    :to="to"
+    :type="submit"
+    :class="['button', size, state, variation]"
+  >
     <slot />
+    <oc-icon :name="icon"></oc-icon>
   </component>
 </template>
 
@@ -67,6 +74,13 @@ export default {
       validator: value => {
         return value.match(/(null|submit)/)
       },
+    },
+    /**
+     * Set the button’s icon to display.
+     */
+    icon: {
+      type: String,
+      default: null,
     },
     /**
      * Style variation to give additional meaning.
@@ -143,7 +157,7 @@ export default {
   // For icons inside buttons
   .icon {
     float: right;
-    margin: -#{$space-xs} -#{$space-xs} -#{$space-s} $space-xs/2;
+    margin-left: $size-xs / 4;
     color: $color-bleu-de-france;
   }
 
@@ -192,13 +206,9 @@ export default {
     <oc-button variation="primary" size="medium">Medium</oc-button>
     <oc-button variation="primary" size="small">Small</oc-button>
     <br />
-    <oc-button variation="secondary" size="large">Secondary Button</oc-button>
-    <oc-button variation="secondary" size="medium">Medium</oc-button>
-    <oc-button variation="secondary" size="small">Small</oc-button>
-    <br />
-    <oc-button size="large"><oc-icon name="home"></oc-icon></oc-button>
-    <oc-button size="medium"><oc-icon name="home"></oc-icon></oc-button>
-    <oc-button size="small"><oc-icon name="home"></oc-icon></oc-button>
+    <oc-button size="large" icon="home">Demo Button</oc-button>
+    <oc-button size="medium" icon="close">Demo Button</oc-button>
+    <oc-button size="small" icon="folder">Demo Button</oc-button>
   </div>
   ```
 </docs>
