@@ -2,6 +2,8 @@
   <component
     :is="type"
     :href="href"
+    :aria-label="ariaLabel"
+    @click=""
     :to="to"
     :type="submit"
     :class="['button', size, state, variation]"
@@ -58,6 +60,13 @@ export default {
       default: null,
     },
     /**
+     * The aria-label of the button.
+     */
+    arialabel: {
+      type: String,
+      default: null,
+    },
+    /**
      * Set the button’s type to “submit”.
      */
     submit: {
@@ -90,6 +99,16 @@ export default {
       },
     },
   },
+  methods: {
+    onClick(val) {
+      /**
+       * Click event
+       * @event click
+       * @type {event}
+       */
+      this.$emit("click", val)
+    },
+  },
 }
 </script>
 
@@ -111,7 +130,7 @@ export default {
   align-items: center;
   justify-content: center;
   border: 0;
-  box-shadow: inset 0 0 0 2px $color-bleu-de-france;
+  box-shadow: inset 0 0 0 2px $color-oc-blue;
   border-radius: $radius-default;
   background: transparent;
   color: $color-oc-blue;
@@ -177,9 +196,6 @@ export default {
     }
     &:focus {
       outline: 0;
-    }
-    .user-is-tabbing &:focus,
-    &.focus {
     }
   }
 }

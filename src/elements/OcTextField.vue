@@ -8,6 +8,7 @@
       :value="value"
       :class="state"
       :placeholder="placeholder"
+      :aria-label="placeholder"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
     />
@@ -108,9 +109,17 @@ export default {
   },
   methods: {
     onInput(value) {
+      /**
+       * @event input
+       * @type {event}
+       **/
       this.$emit("change", value)
     },
     onFocus(value) {
+      /**
+       * @event focus
+       * @type {event}
+       **/
       this.$emit("focus", value)
     },
   },

@@ -1,7 +1,8 @@
 <template>
   <div>
     <label class="container">
-      <input type="checkbox" v-model="model" @change="onChange" />
+      {{ label }}
+      <input type="checkbox" v-model="model" :aria-label="label" @change="onChange" />
       <span class="checkmark"></span>
     </label>
   </div>
@@ -21,13 +22,20 @@ export default {
       type: Object,
       required: false,
     },
+    /**
+     * Label of the Checkbox. Will set aria-label aswell
+     **/
+    label: {
+      type: String,
+      default: null,
+    },
   },
   methods: {
     onChange(val) {
       /**
-       * Change event
+       * The onChange event
        * @event change
-       * @type {boolean}
+       * @type {event}
        */
       this.$emit("change", val)
     },
@@ -36,16 +44,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 12px;
+  @include reset;
+  @include stack-space($space-m);
+  @include inline-space($space-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 22px;
+  font-weight: $weight-semi-bold;
+  font-size: $size-m;
+  font-family: $font-text;
+  line-height: $line-height-m;
   user-select: none;
   & input {
     position: relative;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
     &:checked ~ .checkmark {
@@ -56,35 +69,35 @@ export default {
     }
   }
   &:hover input ~ .checkmark {
-    background-color: $color_oc_blue;
+    background-color: $color_oc_blue_light;
     &:after {
-      position: absolute;
-      left: 9px;
-      top: 5px;
-      width: 5px;
-      height: 10px;
-      border: solid white;
+      position: relative;
+      border: solid $color-white;
       border-width: 0 3px 3px 0;
       transform: rotate(45deg);
     }
   }
 }
-
 .checkmark {
   position: relative;
+  border-radius: $radius-default;
   float: right;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+  height: $size-l;
+  width: $size-l;
+  background-color: tint($color-silver, 50%);
+  will-change: transform;
+  transition: all 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   &:after {
     content: "";
-    position: absolute;
     display: none;
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
+    position: absolute;
+    top: $size-xs/4;
+    left: $size-xs/1.5;
+    width: $size-xs/2;
+    height: $size-xs;
+    border: solid $color-white;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
   }
@@ -93,7 +106,7 @@ export default {
 <docs>
   ```jsx
   <div>
-    <oc-checkbox />
+    <oc-checkbox label="Test Label" />
   </div>
   ```
 </docs>
