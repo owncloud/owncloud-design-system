@@ -7,7 +7,7 @@
   "files": [
     "dist/system"
   ],
-  "homepage": "https://vueds.com",
+  "homepage": "https://owncloud.github.io/owncloud-design-system/",
   "private": true,
   "license": "AGPL-3.0",
   "scripts": {
