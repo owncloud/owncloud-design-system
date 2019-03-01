@@ -1,11 +1,5 @@
 <template>
-  <div>
-    <label class="container">
-      {{ label }}
-      <input type="checkbox" v-model="model" :aria-label="label" @change="onChange" />
-      <span class="checkmark"></span>
-    </label>
-  </div>
+  <input type="checkbox" v-model="model" @change="onChange" class="uk-checkbox" />
 </template>
 <script>
 export default {

@@ -1,13 +1,5 @@
 <template>
-  <component
-    :is="type"
-    :href="href"
-    :aria-label="ariaLabel"
-    @click=""
-    :to="to"
-    :type="submit"
-    :class="['button', size, state, variation]"
-  >
+  <component :is="type" :href="href" :to="to" :type="submit" :class="classes">
     <slot />
   </component>
 </template>
@@ -74,17 +66,6 @@ export default {
       default: null,
       validator: value => {
         return value.match(/(null|submit)/)
-      },
-    },
-    /**
-     * Manually trigger various states of the button.
-     * `hover, active, focus`
-     */
-    state: {
-      type: String,
-      default: null,
-      validator: value => {
-        return value.match(/(hover|active|focus)/)
       },
     },
     /**
@@ -179,7 +160,6 @@ export default {
     @include inset-squish-space($space-xs);
     font-size: $size-s;
   }
-
   // Primary button
   &.primary {
     background: $color-oc-blue;
@@ -204,14 +184,21 @@ export default {
 <docs>
   ```jsx
   <div>
+    <oc-button size="large">Default Button</oc-button>
+    <oc-button size="medium">Medium</oc-button>
+    <oc-button size="small">Small</oc-button>
+    <br />
     <oc-button variation="primary" size="large">Primary Button</oc-button>
     <oc-button variation="primary" size="medium">Medium</oc-button>
     <oc-button variation="primary" size="small">Small</oc-button>
     <br />
-    <oc-button>Default Button</oc-button>
-    <oc-button state="hover">:hover</oc-button>
-    <oc-button state="active">:active</oc-button>
-    <oc-button state="focus">:focus</oc-button>
+    <oc-button variation="secondary" size="large">Secondary Button</oc-button>
+    <oc-button variation="secondary" size="medium">Medium</oc-button>
+    <oc-button variation="secondary" size="small">Small</oc-button>
+    <br />
+    <oc-button size="large"><oc-icon name="home"></oc-icon></oc-button>
+    <oc-button size="medium"><oc-icon name="home"></oc-icon></oc-button>
+    <oc-button size="small"><oc-icon name="home"></oc-icon></oc-button>
   </div>
   ```
 </docs>
