@@ -24,7 +24,7 @@
 export default {
   name: "NotFound",
   metaInfo: {
-    title: "Page Not Found | Vue Design System",
+    title: "Page Not Found | ownCloud Design System",
     htmlAttrs: {
       lang: "en",
     },

@@ -33,7 +33,7 @@ module.exports = {
    */
   assetsDir: path.join(__dirname, "../src/assets"),
   /**
-   * Enabling the below option will break things in Vue Design System!
+   * Enabling the below option will break things in ownCloud Design System!
    */
   skipComponentsWithoutExample: false,
   /**
@@ -132,7 +132,7 @@ module.exports = {
    * Custom wrapper template for the documentation.
    */
   template: {
-    title: "Example — Vue Design System",
+    title: "Example — ownCloud Design System",
     lang: "en",
     trimWhitespace: true,
     head: {

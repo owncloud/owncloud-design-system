@@ -1,5 +1,5 @@
 /**
- * This is Vue Design System’s helper util for code tabs
+ * This is ownCloud Design System’s helper util for code tabs
  */
 
 export default {

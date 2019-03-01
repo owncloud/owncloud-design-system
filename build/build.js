@@ -11,7 +11,7 @@ const webpack = require("webpack")
 const config = require("../config")
 const webpackConfig = require("./webpack.prod.conf")
 
-const spinner = ora("Building Vue Design System for production...")
+const spinner = ora("Building ownCloud Design System for production...")
 spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
@@ -30,11 +30,11 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     )
 
     if (stats.hasErrors()) {
-      console.log(chalk.red("  Vue Design System build failed with errors.\n"))
+      console.log(chalk.red("  ownCloud Design System build failed with errors.\n"))
       process.exit(1)
     }
 
-    console.log(chalk.cyan("  Vue Design System build complete.\n"))
+    console.log(chalk.cyan("  ownCloud Design System build complete.\n"))
     console.log(
       chalk.yellow(
         "  Tip: built files are meant to be served over an HTTP server.\n" +
