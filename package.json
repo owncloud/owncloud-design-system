@@ -114,7 +114,7 @@
     "postcss-url": "^8.0.0",
     "tinycolor2": "^1.4.1",
     "vue": "^2.6.8",
-    "vue-lodash": "^2.0.0",
+    "vue-lodash": "^2.0.2",
     "vue-meta": "^1.5.8",
     "vue-router": "^3.0.2",
     "vuex": "^3.1.0",

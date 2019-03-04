@@ -12147,12 +12147,12 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-lodash@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-lodash/-/vue-lodash-2.0.0.tgz#07ea4897537a02fe03adefbca476c96e70e8515c"
-  integrity sha512-Y0VRg8DYjVukSBSJtgstuwTvdIoVIQxSyAHy8CH7lZs2njej2YIUx2gFhV/2IvNK933JQlj9vnBpIvxnUgjeMQ==
+vue-lodash@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vue-lodash/-/vue-lodash-2.0.2.tgz#08019cc1969ecdf3346017865f86cf4dade0618c"
+  integrity sha512-qC0A6mkF5yUt9Wy2zMa8qGpt+/JTjtlJ+ch1UKfr3eWscTrlK0FlD5GhfPaU/21ZOlZcRXsFriqf/ddchYA6CQ==
   dependencies:
-    lodash "^4.17.5"
+    lodash "^4.17.11"
 
 vue-meta@^1.5.8:
   version "1.5.8"
