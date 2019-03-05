@@ -140,7 +140,7 @@
     "compression-webpack-plugin": "^2.0.0",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^2.1.0",
-    "eslint": "^5.15.0",
+    "eslint": "^5.15.1",
     "eslint-plugin-compat": "^2.7.0",
     "eslint-plugin-es5": "^1.3.1",
     "eslint-plugin-import": "^2.16.0",
