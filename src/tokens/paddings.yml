@@ -1,0 +1,17 @@
+#
+# PADDING TOKENS
+# Use these tokens to set padding, margin and position coordinates.
+#
+
+props:
+  gutter:
+    value: "30px"
+  small-gutter:
+    value: "15px"
+  medium-gutter:
+    value: "40px"
+  large-gutter:
+    value: "70px"
+global:
+  type: number
+  category: space

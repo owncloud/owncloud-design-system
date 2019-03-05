@@ -4,10 +4,10 @@
     :href="href"
     :to="to"
     :type="submit"
-    :class="['button', size, state, variation]"
+    :class="['uk-button', 'uk-position-relative', `uk-button-${variation}`, `uk-button-${size}`]"
   >
-    <slot />
-    <oc-icon :name="icon"></oc-icon>
+    <oc-icon v-if="icon" class="uk-position-small uk-position-center-left" :name="icon"></oc-icon>
+    <span><slot /></span>
   </component>
 </template>
 
@@ -88,9 +88,9 @@ export default {
      */
     variation: {
       type: String,
-      default: null,
+      default: "default",
       validator: value => {
-        return value.match(/(primary|secondary)/)
+        return value.match(/(default|primary|secondary)/)
       },
     },
   },
@@ -107,108 +107,32 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.button {
-  @include reset;
-  @include stack-space($space-m);
-  @include inline-space($space-xs);
-  will-change: transform;
-  transition: all 0.2s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: $weight-semi-bold;
-  font-size: $size-m;
-  font-family: $font-text;
-  line-height: $line-height-m;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  box-shadow: inset 0 0 0 2px $color-oc-blue;
-  border-radius: $radius-default;
-  background: transparent;
-  color: $color-oc-blue;
-  cursor: pointer;
-  &:hover,
-  &.hover {
-    color: $color-white;
-    background: $color-oc-blue;
-    transform: translateZ(0) scale(1.03);
-  }
-  &:active,
-  &.active {
-    transition: none;
-    background: $color-oc-blue-dark;
-    box-shadow: none;
-    color: $color-white;
-    transform: translateZ(0) scale(1);
-  }
-
-  &:focus,
-  &.focus {
-    background: $color-oc-blue-darker;
-    box-shadow: none;
-    color: $color-white;
-    transform: translateZ(0) scale(1);
-    outline: 0;
-  }
-
-  // For icons inside buttons
-  .icon {
-    float: right;
-    margin-left: $size-xs / 4;
-    color: $color-bleu-de-france;
-  }
-
-  // Various button sizes
-  &.large {
-    @include inset-squish-space($space-s);
-    font-size: $size-l;
-  }
-  &.medium {
-    @include inset-squish-space($space-s);
-    font-size: $size-m;
-  }
-  &.small {
-    @include inset-squish-space($space-xs);
-    font-size: $size-s;
-  }
-  // Primary button
-  &.primary {
-    background: $color-oc-blue;
-    color: $color-white;
-    box-shadow: none;
-    &:hover,
-    &.hover {
-      background-color: shade($color-oc-blue, 12%);
-    }
-    &:active,
-    &.active {
-      background-color: shade($color-oc-blue, 20%);
-      transition: none;
-    }
-    &:focus {
-      outline: 0;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>
 
 <docs>
   ```jsx
-  <div>
-    <oc-button size="large">Default Button</oc-button>
-    <oc-button size="medium">Medium</oc-button>
-    <oc-button size="small">Small</oc-button>
-    <br />
-    <oc-button variation="primary" size="large">Primary Button</oc-button>
-    <oc-button variation="primary" size="medium">Medium</oc-button>
-    <oc-button variation="primary" size="small">Small</oc-button>
-    <br />
-    <oc-button size="large" icon="home">Demo Button</oc-button>
-    <oc-button size="medium" icon="close">Demo Button</oc-button>
-    <oc-button size="small" icon="folder">Demo Button</oc-button>
-  </div>
+<section>
+	<h3 class="uk-heading-divider">
+		Button Types
+	</h3>
+	<oc-button>Default Button</oc-button>
+	<oc-button variation="primary">Primary Button</oc-button>
+	<oc-button variation="secondary">Secondary Button</oc-button>
+	<oc-button disabled>Disabled Button</oc-button>
+
+	<h3 class="uk-heading-divider">
+		Button sizes
+	</h3>
+	<oc-button size="large">Large</oc-button>
+	<oc-button size="medium">Medium</oc-button>
+	<oc-button size="small">Small</oc-button>
+
+	<h3 class="uk-heading-divider">
+		Using Icons
+	</h3>
+	<oc-button icon="home">Demo Button</oc-button>
+	<oc-button icon="close">Demo Button</oc-button>
+	<oc-button icon="folder">Demo Button</oc-button>
+</section>
   ```
 </docs>

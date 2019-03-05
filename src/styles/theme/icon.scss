@@ -1,0 +1,51 @@
+$icon-size: 24px;
+
+.icon {
+  // SVG wrapper
+  display: inline-block;
+
+  svg {
+    display: block;
+    fill: $global-color;
+  }
+
+  &,
+  > svg {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &-medium {
+    &,
+    > svg {
+      width: $icon-size * 1.5;
+      height: $icon-size * 1.5;
+    }
+  }
+
+  &-large {
+    &,
+    > svg {
+      width: $icon-size * 2;
+      height: $icon-size * 2;
+    }
+  }
+
+  // Variations
+
+  &-primary > svg {
+    fill: $global-primary-background;
+  }
+
+  &-secondary > svg {
+    fill: $global-secondary-background;
+  }
+
+  &-muted > svg {
+    fill: $global-muted-background;
+  }
+
+  &-inverted > svg {
+    fill: $global-inverse-color;
+  }
+}

@@ -57,39 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-// Design Tokens with local scope
-$color-nav-link: $color-bleu-de-france;
-$color-nav-link-active: $color-bleu-de-france;
-
-.nav {
-  @include stack-space($space-m);
-  font-family: $font-text;
-  font-size: $size-s;
-  line-height: $line-height-m;
-  color: $color-white;
-  text-align: center;
-  width: 100%;
-  @media #{$media-query-l} {
-    // This is how you’d use design tokens with media queries
-  }
-  a {
-    color: $color-nav-link;
-    padding: $space-xs 0;
-    margin: 0 $space-xs;
-    text-decoration: none;
-    display: inline-block;
-    &:hover {
-      color: $color-nav-link-active;
-    }
-    &.active {
-      border-bottom: 2px solid $color-nav-link;
-      font-weight: $weight-bold;
-      color: $color-nav-link;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>
 
 <docs>
   ```jsx

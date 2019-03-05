@@ -1,0 +1,39 @@
+$switch-size: 20px;
+
+.switch {
+  position: relative;
+  display: block;
+  width: $switch-size * 1.75;
+  height: $switch-size;
+  transition: background-color 0.25s;
+
+  > input[type="checkbox"] {
+    display: none;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    transform: translate(2px, 2px);
+    width: $switch-size - 4;
+    height: $switch-size - 4;
+    background-color: $global-inverse-color;
+    transition: transform 0.25s;
+  }
+
+  &[data-state="off"] {
+    background-color: $global-color;
+
+    &:before {
+      transform: translate(2px, 2px);
+    }
+  }
+
+  &[data-state="on"] {
+    background-color: $global-primary-background;
+
+    &:before {
+      transform: translate(calc(100% + 1px), 2px);
+    }
+  }
+}
