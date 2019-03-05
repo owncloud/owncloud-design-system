@@ -182,7 +182,7 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1",
-    "webpack-merge-and-include-globally": "^2.1.14"
+    "webpack-merge-and-include-globally": "^2.1.16"
   },
   "engines": {
     "node": ">= 8.6.0",
