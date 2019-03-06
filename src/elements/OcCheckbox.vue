@@ -46,11 +46,10 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped></style>
 <docs>
   ```jsx
 <div>
-	<oc-checkbox/>
+	<oc-checkbox />
 	<oc-checkbox label="Test Label" />
 </div>
   ```

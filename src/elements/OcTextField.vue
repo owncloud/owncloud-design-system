@@ -69,8 +69,6 @@ export default {
 ```jsx
 <div>
 	<oc-input class="uk-margin-small-bottom" placeholder="Write your text"/>
-	<oc-input class="uk-margin-small-bottom" placeholder="Write your text"/>
-	<oc-input class="uk-margin-small-bottom" placeholder="Write your text"/>
 	<oc-input disabled value="I am disabled"/>
 </div>
 ```

@@ -60,7 +60,6 @@ export default {
 ```jsx
 <div>
 	<oc-textarea class="uk-margin-small-bottom" placeholder="Write your text" />
-	<oc-textarea class="uk-margin-small-bottom" placeholder="Write your text" />
 	<oc-textarea disabled value="I am disabled" />
 </div>
 ```

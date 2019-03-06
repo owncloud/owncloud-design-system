@@ -1,11 +1,14 @@
-$switch-size: 20px;
-
 .switch {
   position: relative;
   display: block;
-  width: $switch-size * 1.75;
-  height: $switch-size;
+  width: $form-radio-size * 1.75;
+  height: $form-radio-size;
   transition: background-color 0.25s;
+
+  &,
+  * {
+    cursor: pointer;
+  }
 
   > input[type="checkbox"] {
     display: none;
@@ -14,9 +17,9 @@ $switch-size: 20px;
   &:before {
     content: "";
     position: absolute;
-    transform: translate(2px, 2px);
-    width: $switch-size - 4;
-    height: $switch-size - 4;
+    transform: translate(1px, 1px);
+    width: $form-radio-size - 2;
+    height: $form-radio-size - 2;
     background-color: $global-inverse-color;
     transition: transform 0.25s;
   }
@@ -25,7 +28,7 @@ $switch-size: 20px;
     background-color: $global-color;
 
     &:before {
-      transform: translate(2px, 2px);
+      transform: translate(1px, 1px);
     }
   }
 
@@ -33,7 +36,7 @@ $switch-size: 20px;
     background-color: $global-primary-background;
 
     &:before {
-      transform: translate(calc(100% + 1px), 2px);
+      transform: translate(calc(100% - 1px), 1px);
     }
   }
 }

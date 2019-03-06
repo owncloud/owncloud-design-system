@@ -1,0 +1,22 @@
+@mixin hook-alert-primary() {
+  svg {
+    fill: $alert-primary-color;
+  }
+}
+
+@mixin hook-alert-success() {
+  svg {
+    fill: $alert-success-color;
+  }
+}
+
+@mixin hook-alert-warning() {
+  svg {
+    fill: $alert-warning-color;
+  }
+}
+@mixin hook-alert-danger() {
+  svg {
+    fill: $alert-danger-color;
+  }
+}

@@ -44,7 +44,6 @@ export default {
   methods: {
     toggle() {
       this.checked = !this.checked
-      console.log(this.checked)
     },
     onChange(val) {
       /**
