@@ -10,45 +10,45 @@
 props:
   color:
     value: "#666"
-    category: "Font colors"
+    category: "Font-colors"
   emphasis-color:
     value: "#333"
-    category: "Font colors"
+    category: "Font-colors"
   muted-color:
     value: "#999"
-    category: "Font colors"
+    category: "Font-colors"
   link-color:
     value: "#1e87f0"
-    category: "Font colors"
+    category: "Font-colors"
   link-hover-color:
     value: "#0f6ecd"
-    category: "Font colors"
+    category: "Font-colors"
   invers-color:
     value: "#fff"
-    category: "Font colors"
+    category: "Font-colors"
 
   background:
     value: "#fff"
-    category: "Background colors"
+    category: "Background-colors"
   muted-background:
     value: "#f8f8f8"
-    category: "Background colors"
+    category: "Background-colors"
   primary-background:
     value: "#1e87f0"
-    category: "Background colors"
+    category: "Background-colors"
   secondary-background:
     value: "#222"
-    category: "Background colors"
+    category: "Background-colors"
 
   success-background:
     value: "#32d296"
-    category: "Background colors"
+    category: "Background-colors"
   warning-background:
     value: "#faa05a"
-    category: "Background colors"
+    category: "Background-colors"
   danger-background:
     value: "#f0506e"
-    category: "Background colors"
+    category: "Background-colors"
 
 global:
   type: color
