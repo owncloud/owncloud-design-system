@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :width="size" :alt="alt" :title="title" />
+  <img :src="src" :alt="alt" :title="title" uk-image />
 </template>
 <script>
 export default {
@@ -14,14 +14,7 @@ export default {
     src: {
       required: true,
       type: String,
-    },
-    /**
-     * Size of the Image in px
-     *
-     **/
-    size: {
-      required: false,
-      type: Number,
+      default: null,
     },
     /**
      * The alt-attribute of the image.
@@ -44,10 +37,7 @@ export default {
 <docs>
   ```jsx
   <div>
-    <oc-img size="300" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
-    <oc-img size="250" src="icons/folder.svg" />
-    <oc-img size="200" src="icons/folder.svg" />
-    <oc-img size="150" src="icons/folder.svg" />
+    <oc-img width="100" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
   </div>
   ```
 </docs>
