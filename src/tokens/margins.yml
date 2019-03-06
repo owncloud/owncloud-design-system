@@ -4,10 +4,10 @@
 #
 
 props:
-  margin:
-    value: "20px"
   small-margin:
     value: "10px"
+  margin:
+    value: "20px"
   medium-margin:
     value: "40px"
   large-margin:
