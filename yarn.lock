@@ -1499,7 +1499,7 @@ ast-types@0.11.5:
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.5.tgz#9890825d660c03c28339f315e9fa0a360e31ec28"
   integrity sha512-oJjo+5e7/vEc2FBK8gUalV0pba4L3VdBIs2EKhOLHLcOd2FgQIVQN9xb0eZ9IjEWyAL7vq6fGJxOvVvdCHNyMw==
 
-ast-types@0.11.7, ast-types@^0.11.5, ast-types@^0.11.6:
+ast-types@0.11.7, ast-types@^0.11.6:
   version "0.11.7"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.7.tgz#f318bf44e339db6a320be0009ded64ec1471f46c"
   integrity sha512-2mP3TwtkY/aTv5X3ZsMpNAbOnyoC/aMJwJSoaELPkHId0nSQgFcnU4dRW3isxiz7+zBexk0ym3WNVjMiQBnJSw==
@@ -12091,10 +12091,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vue-docgen-api@^3.5.1:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.6.3.tgz#284986e66be82816c5dfd2db23eb11e90a26744c"
-  integrity sha512-aj1Rx8Px2f6CV20Sel1IprTsrAgju4yQ+uSoko3kD+x6fz884L+/G/HTH2+BTczsf1LjThF9zW9bT7MsG7B+Bg==
+vue-docgen-api@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.8.0.tgz#737ab92a3f80fbbc385631f07be6272261a2c155"
+  integrity sha512-LPbaKEF2UXPPtjXj0Vi7UmfrdOgkCzrLFnDR+EJopCkyVkIdpK46qtE9kzjjNN76WT/cU2r/BdKHf6EvF8Nm2w==
   dependencies:
     "@babel/parser" "^7.2.3"
     "@babel/types" "^7.0.0"
@@ -12182,14 +12182,14 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^3.0.16:
-  version "3.0.16"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.0.16.tgz#b8528b9d73cc61989ee8cb3eec282d60b8c8830c"
-  integrity sha512-sPFA9XNITlbX3CCMC+t7TBQ5YyRdFEZPONmT5zb/unrsnKdPR7gtl61HDN8EkpTqLvfS6lJOHZTg1Y4i2XvxrQ==
+vue-styleguidist@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.8.1.tgz#074ea4866fe7670f639bc528f7fe044084a5bd0a"
+  integrity sha512-3iNADD/N0ftAKAP/9s1GGLnxfIt17jW+flfsiL84SIO0sLa4m2lMJhC/qBAJGCnKz73UVGnNUbdsaUW+DRFurw==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.0.5"
-    ast-types "^0.11.5"
+    ast-types "^0.12.2"
     buble "^0.19.6"
     classnames "^2.2.6"
     clean-webpack-plugin "^0.1.19"
@@ -12208,6 +12208,7 @@ vue-styleguidist@^3.0.16:
     github-slugger "^1.2.0"
     glob "^7.1.2"
     glogg "^1.0.1"
+    hash-sum "^1.0.2"
     highlight.js "^9.12.0"
     is-directory "^0.3.1"
     javascript-stringify "^1.6.0"
@@ -12224,6 +12225,7 @@ vue-styleguidist@^3.0.16:
     loader-utils "^1.1.0"
     lodash "^4.17.10"
     lowercase-keys "^1.0.1"
+    lru-cache "^4.1.3"
     markdown-to-jsx "^6.6.8"
     mini-html-webpack-plugin "^0.2.3"
     minimist "^1.2.0"
@@ -12239,7 +12241,7 @@ vue-styleguidist@^3.0.16:
     style-loader "^0.21.0"
     to-ast "^1.0.0"
     uglifyjs-webpack-plugin "1.2.7"
-    vue-docgen-api "^3.5.1"
+    vue-docgen-api "^3.8.0"
     webpack "^4.28.4"
     webpack-dev-server "^3.1.14"
     webpack-merge "^4.0.0"
