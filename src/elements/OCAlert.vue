@@ -1,5 +1,5 @@
 <template>
-  <div :class="_variation" uk-alert>
+  <div class="oc-alert" :class="_class" uk-alert>
     <a v-if="!noClose" class="uk-alert-close" uk-close></a>
     <slot />
   </div>
@@ -35,8 +35,12 @@ export default {
     },
   },
   computed: {
-    _variation() {
-      return this.variation ? `uk-alert-${this.variation}` : null
+    _class() {
+      let classes = ["oc-alert"]
+
+      if (this.variation) classes.push(`uk-alert-${this.variation}`)
+
+      return classes
     },
   },
 }
@@ -44,32 +48,32 @@ export default {
 <docs>
 ```jsx
 <div>
-	<oc-alert>
-		<p>
-			This is an plain alert-box.
-		</p>
-	</oc-alert>
-	<oc-alert variation="primary">
-		<p>
-			<oc-icon name="info" class="uk-float-left uk-margin-small-right" />
-			I am nice and blue and have an icon
-		</p>
-	</oc-alert>
-	<oc-alert variation="success">
-		<p>
-			Yes! It worked
-		</p>
-	</oc-alert>
-	<oc-alert variation="warning">
-		<p>
-			Be carefull!
-		</p>
-	</oc-alert>
-	<oc-alert variation="danger">
-		<p>
-			I'm in danger!!
-		</p>
-	</oc-alert>
+  <oc-alert>
+    <p>
+      This is an plain alert-box.
+    </p>
+  </oc-alert>
+  <oc-alert variation="primary">
+    <p>
+      <oc-icon name="info" class="uk-float-left uk-margin-small-right" />
+      I am nice and blue and have an icon
+    </p>
+  </oc-alert>
+  <oc-alert variation="success">
+    <p>
+      Yes! It worked
+    </p>
+  </oc-alert>
+  <oc-alert variation="warning">
+    <p>
+      Be carefull!
+    </p>
+  </oc-alert>
+  <oc-alert variation="danger">
+    <p>
+      I'm in danger!!
+    </p>
+  </oc-alert>
 </div>
 ```
 </docs>

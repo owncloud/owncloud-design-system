@@ -5,6 +5,9 @@ $global-color: $color;
 $global-emphasis-color: $emphasis-color;
 $global-muted-color: $muted-color;
 
+$global-link-color: $link-color;
+$global-link-hover-color: $link-hover-color;
+
 $global-muted-background: $muted-background;
 $global-primary-background: $primary-background;
 
@@ -13,3 +16,5 @@ $global-warning-background: $warning-background;
 $global-danger-background: $danger-background;
 
 $navbar-nav-item-height: 60px;
+
+$prefix: "oc-";

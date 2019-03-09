@@ -1,9 +1,6 @@
 <template>
-  <div class="container">
-    <span class="label">{{ label }}</span>
-    <div class="switch" :data-state="state" @click="toggle">
-      <input type="checkbox" @change="onChange" :aria-label="label" :checked="checked" />
-    </div>
+  <div class="oc-switch" :data-state="state" @click="toggle">
+    <input type="checkbox" @change="onChange" :aria-label="label" :checked="checked" />
   </div>
 </template>
 <script>

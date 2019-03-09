@@ -18,10 +18,10 @@ props:
     value: "#999"
     category: "Font-colors"
   link-color:
-    value: "#1e87f0"
+    value: "#467391"
     category: "Font-colors"
   link-hover-color:
-    value: "#0f6ecd"
+    value: "#467391"
     category: "Font-colors"
   invers-color:
     value: "#fff"
@@ -34,7 +34,7 @@ props:
     value: "#f8f8f8"
     category: "Background-colors"
   primary-background:
-    value: "#1e87f0"
+    value: "#467391"
     category: "Background-colors"
   secondary-background:
     value: "#222"

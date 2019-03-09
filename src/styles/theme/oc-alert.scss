@@ -1,3 +1,8 @@
+//
+// Component: Alert
+//
+// ========================================================================
+
 @mixin hook-alert-primary() {
   svg {
     fill: $alert-primary-color;
@@ -20,3 +25,10 @@
     fill: $alert-danger-color;
   }
 }
+
+//
+// Component: OC-Alert
+//
+// ========================================================================
+
+// .oc-alert {}

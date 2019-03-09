@@ -1,12 +1,9 @@
 <template>
   <section>
-    <label v-if="label"
-      ><input
-        class="uk-checkbox uk-margin-small-right"
-        type="checkbox"
-        v-model="model"
-        @change="onChange"
-      />{{ label }}</label
+    <label v-if="label" class="oc-checkbox-label"
+      ><input class="oc-checkbox" type="checkbox" v-model="model" @change="onChange" />{{
+        label
+      }}</label
     >
     <input v-else class="uk-checkbox" type="checkbox" v-model="model" @change="onChange" />
   </section>
@@ -47,10 +44,10 @@ export default {
 }
 </script>
 <docs>
-  ```jsx
+```jsx
 <div>
-	<oc-checkbox />
-	<oc-checkbox label="Test Label" />
+  <oc-checkbox />
+  <oc-checkbox label="Test Label" />
 </div>
-  ```
+```
 </docs>

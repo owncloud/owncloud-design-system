@@ -1,35 +1,30 @@
 // Import UIkit default theme (or uikit.scss with only core styles)
 
 // 1. Your custom variables and variable overwrites.
-@import "theme/variables";
 
 // 2. Import default variables and available mixins.
 @import "../../node_modules/uikit/src/scss/variables-theme.scss";
 @import "../../node_modules/uikit/src/scss/mixins-theme.scss";
 
 // 3. Your custom mixin overwrites.
-@import "theme/menu-secondary";
-@import "theme/base";
-@import "theme/text";
-@import "theme/label";
-@import "theme/offcanvas";
-@import "theme/logo";
-@import "theme/alert";
-@import "theme/button";
+@import "theme/variables";
+
 @import "theme/main";
-@import "theme/switch";
-@import "theme/icon";
-@import "theme/loader-spinner";
-@import "theme/autocomplete";
-@import "theme/oc-head";
-@import "theme/oc-app-menu";
+@import "theme/menu-secondary";
+@import "theme/oc-alert";
 @import "theme/oc-app-container";
-@import "theme/oc-user-menu";
+@import "theme/oc-app-menu";
+@import "theme/oc-autocomplete";
+@import "theme/oc-avatar";
+@import "theme/oc-button";
+@import "theme/oc-checkbox";
+@import "theme/oc-file";
+@import "theme/oc-icon";
 @import "theme/oc-public-share-icon";
-@import "theme/oc-shared-item-card";
-@import "theme/transitions";
-// Your custom code goes here, e.g. mixins, variables.
-// See "how to create a theme" below for more info.
+@import "theme/oc-switch";
+@import "theme/oc-text-input";
+@import "theme/oc-transitions";
+@import "theme/oc-user-menu";
 
 // 4. Import UIkit.
 @import "../../node_modules/uikit/src/scss/uikit-theme.scss";

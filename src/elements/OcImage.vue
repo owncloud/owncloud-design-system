@@ -35,9 +35,17 @@ export default {
 </script>
 <style lang="scss"></style>
 <docs>
-  ```jsx
-  <div>
+```jsx
+<div>
+  <p class="uk-margin">
     <oc-img width="100" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
-  </div>
-  ```
+  </p>
+  <p class="uk-margin">
+    <oc-img width="300" height="200" src="https://picsum.photos/200/300/?random" title="I am random" />
+  </p>
+  <p class="uk-margin">
+    <oc-img src="https://picsum.photos/g/200/300" title="Grayscale" />
+  </p>
+</div>
+```
 </docs>

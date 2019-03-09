@@ -1,7 +1,0 @@
-@mixin hook-button() {
-  text-transform: uppercase;
-
-  .icon + span {
-    margin-left: $global-margin;
-  }
-}

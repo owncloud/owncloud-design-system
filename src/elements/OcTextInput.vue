@@ -1,6 +1,6 @@
 <template>
   <input
-    class="uk-input"
+    class="oc-text-input"
     :type="type"
     :value="value"
     :placeholder="placeholder"
@@ -17,7 +17,7 @@
  * formats including numbers. For longer input, use the form `Textarea` element.
  */
 export default {
-  name: "oc-input",
+  name: "oc-text-input",
   status: "review",
   release: "1.0.0",
   props: {
@@ -68,8 +68,8 @@ export default {
 <docs>
 ```jsx
 <div>
-	<oc-input class="uk-margin-small-bottom" placeholder="Write your text"/>
-	<oc-input disabled value="I am disabled"/>
+	<oc-text-input class="uk-margin-small-bottom" placeholder="Write your text"/>
+	<oc-text-input disabled value="I am disabled"/>
 </div>
 ```
 </docs>

@@ -1,13 +1,7 @@
 <template>
-  <component
-    :is="type"
-    :href="href"
-    :to="to"
-    :type="submit"
-    :class="['uk-button', 'uk-position-relative', `uk-button-${variation}`, `uk-button-${size}`]"
-  >
-    <oc-icon v-if="icon" class="uk-position-small uk-position-center-left" :name="icon"></oc-icon>
-    <span><slot /></span>
+  <component :is="type" :href="href" :to="to" :type="submit" :text="text" :class="_buttonClass">
+    <oc-icon v-if="icon" :class="_iconClass" :name="icon"></oc-icon>
+    <span v-if="text" v-text="text" />
   </component>
 </template>
 
@@ -39,9 +33,9 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
+      default: null,
       validator: value => {
-        return value.match(/(small|medium|large)/)
+        return value.match(/(small|large)/)
       },
     },
     /**
@@ -93,6 +87,27 @@ export default {
         return value.match(/(default|primary|secondary)/)
       },
     },
+    /**
+     * Text do be displayed in the button
+     */
+    text: {
+      type: String,
+      default: null,
+    },
+  },
+  computed: {
+    _iconClass() {
+      return this.text ? "uk-position-small uk-position-center-left" : "uk-position-center"
+    },
+    _buttonClass() {
+      let classes = ["oc-button"]
+
+      if (this.variation) classes.push(`uk-button-${this.variation}`)
+
+      if (this.size) classes.push(`uk-button-${this.size}`)
+
+      return classes
+    },
   },
   methods: {
     onClick(val) {
@@ -106,33 +121,31 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped></style>
-
 <docs>
-  ```jsx
+```jsx
 <section>
-	<h3 class="uk-heading-divider">
-		Button Types
-	</h3>
-	<oc-button>Default Button</oc-button>
-	<oc-button variation="primary">Primary Button</oc-button>
-	<oc-button variation="secondary">Secondary Button</oc-button>
-	<oc-button disabled>Disabled Button</oc-button>
+  <h3 class="uk-heading-divider">
+    Button Types
+  </h3>
+  <oc-button text="Default Button" />
+  <oc-button text="Primary Button" variation="primary" />
+  <oc-button text="Secondary Button" variation="secondary" />
+  <oc-button text="Disabled Button" disabled />
 
-	<h3 class="uk-heading-divider">
-		Button sizes
-	</h3>
-	<oc-button size="large">Large</oc-button>
-	<oc-button size="medium">Medium</oc-button>
-	<oc-button size="small">Small</oc-button>
+  <h3 class="uk-heading-divider">
+    Button sizes
+  </h3>
+  <oc-button text="Large" size="large" />
+  <oc-button text="Small" size="small" />
 
-	<h3 class="uk-heading-divider">
-		Using Icons
-	</h3>
-	<oc-button icon="home">Demo Button</oc-button>
-	<oc-button icon="close">Demo Button</oc-button>
-	<oc-button icon="folder">Demo Button</oc-button>
+  <h3 class="uk-heading-divider">
+    Using Icons in a group
+  </h3>
+  <div class="uk-button-group">
+    <oc-button variation="primary" icon="home" />
+    <oc-button variation="secondary" icon="close" />
+    <oc-button text="Demo Button" icon="folder" />
+  </div>
 </section>
-  ```
+```
 </docs>

@@ -2,7 +2,7 @@
   <component
     :is="type"
     :aria-label="ariaLabel"
-    :class="['icon', prefix(size), prefix(variation)]"
+    :class="['oc-icon', prefix(size), prefix(variation)]"
     v-html="svg"
   />
 </template>
@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     prefix(string) {
-      if (string !== null) return `icon-${string}`
+      if (string !== null) return `oc-icon-${string}`
     },
   },
   data() {
@@ -80,7 +80,7 @@ export default {
   ```jsx
 <section>
 	<h3 class="uk-heading-divider">
-		Default buttons
+		Default icons
 	</h3>
 	<oc-icon name="close" aria-label="Close"/>
 	<oc-icon name="delete" aria-label="Delete"/>
@@ -88,7 +88,7 @@ export default {
 	<oc-icon name="account_circle" aria-label="My Account"/>
 	
 	<h3 class="uk-heading-divider">
-		Button color Variations
+		Icon color Variations
 	</h3>
 	<section>
 		<div class="uk-grid-collapse uk-child-width-auto" uk-grid>
@@ -114,7 +114,7 @@ export default {
 	</section>
 
 	<h3 class="uk-heading-divider">
-		Medium and large buttons
+		Medium and large icons
 	</h3>
 	<div class="uk-margin">
 		<oc-icon size="medium" name="close"/>

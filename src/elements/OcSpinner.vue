@@ -1,5 +1,5 @@
 <template>
-  <component :uk-spinner="'ratio:' + ratio" :is="'div'" :aria-label="ariaLabel" />
+  <div :uk-spinner="'ratio:' + ratio" :aria-label="ariaLabel"></div>
 </template>
 
 <script>
@@ -21,19 +21,15 @@ export default {
       default: "Loading",
     },
     /**
-     * The html element name used for the icon.
-     */
-    type: {
-      type: String,
-      default: "span",
-    },
-    /**
      * The size of the icon. Defaults to medium.
      * `small, medium, large`
      */
     size: {
       type: String,
       default: null,
+      validator: value => {
+        return value.match(/(small|medium|large|xlarge)/)
+      },
     },
   },
   computed: {
@@ -51,13 +47,13 @@ export default {
 </script>
 <style lang="scss"></style>
 <docs>
-  ```jsx
+```jsx
 <div>
-	<oc-spinner size="small" />
-	<oc-spinner aria-label="Date is loading" /> <!-- Default with label -->
-	<oc-spinner size="medium" />
-	<oc-spinner size="large" />
-	<oc-spinner size="xlarge" />
+  <oc-spinner size="small" />
+  <oc-spinner aria-label="Date is loading" /> <!-- Default with label -->
+  <oc-spinner size="medium" />
+  <oc-spinner size="large" />
+  <oc-spinner size="xlarge" />
 </div>
-  ```
+```
 </docs>

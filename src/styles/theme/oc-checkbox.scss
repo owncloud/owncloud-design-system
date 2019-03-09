@@ -1,0 +1,14 @@
+//
+// Component: OC Checkbox
+//
+// ========================================================================
+
+$el: ".#{$prefix}checkbox";
+
+#{$el} {
+  @extend .uk-checkbox;
+
+  &-label > #{$el} {
+    @extend .uk-margin-small-right;
+  }
+}

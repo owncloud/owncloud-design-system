@@ -1,6 +1,11 @@
-$icon-size: 24px;
+//
+// Component: OC Icon
+//
+// ========================================================================
 
-.icon {
+$oc-icon-size: 24px;
+
+.oc-icon {
   // SVG wrapper
   display: inline-block;
 
@@ -11,23 +16,23 @@ $icon-size: 24px;
 
   &,
   > svg {
-    width: $icon-size;
-    height: $icon-size;
+    width: $oc-icon-size;
+    height: $oc-icon-size;
   }
 
   &-medium {
     &,
     > svg {
-      width: $icon-size * 1.5;
-      height: $icon-size * 1.5;
+      width: $oc-icon-size * 1.5;
+      height: $oc-icon-size * 1.5;
     }
   }
 
   &-large {
     &,
     > svg {
-      width: $icon-size * 2;
-      height: $icon-size * 2;
+      width: $oc-icon-size * 2;
+      height: $oc-icon-size * 2;
     }
   }
 
