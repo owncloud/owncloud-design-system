@@ -30,6 +30,8 @@ div.rsg--root-1 {
 main[class^="rsg--content"] {
   display: block; /* IE11 fix */
   padding: $space-s $space-xl;
+  background-color: tint($docs-grey, 90%);
+
   @media (max-width: #{$docs-breakpoint}) {
     padding: $space-s $space-m;
   }
@@ -350,7 +352,7 @@ div[class^="rsg--sidebar"] {
 // Previews of the components
 div[class^="rsg--preview"] {
   padding: $space-l / 1.2;
-  background-color: tint($docs-grey, 90%);
+  background-color: $color-white;
   border: 1px solid tint($docs-grey, 50%);
   box-shadow: inset 0 0 $space-xs rgba($color-rich-black, 0.05);
   margin: $space-s 0 0;
