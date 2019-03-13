@@ -1,0 +1,30 @@
+//
+// Component: Base Button
+//
+// ========================================================================
+
+@mixin hook-button() {
+  min-height: $global-control-height;
+  text-transform: uppercase;
+}
+
+//
+// Component: OC Button
+//
+// ========================================================================
+
+.oc-button {
+  @extend .uk-button;
+  @extend .uk-position-relative;
+
+  .oc-icon + span {
+    margin-left: $global-margin;
+  }
+
+  &.uk-button-primary,
+  &.uk-button-secondary {
+    .oc-icon > svg {
+      fill: $global-inverse-color;
+    }
+  }
+}

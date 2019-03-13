@@ -1,0 +1,56 @@
+//
+// Component: OC Icon
+//
+// ========================================================================
+
+$oc-icon-size: 24px;
+
+.oc-icon {
+  // SVG wrapper
+  display: inline-block;
+
+  svg {
+    display: block;
+    fill: $global-color;
+  }
+
+  &,
+  > svg {
+    width: $oc-icon-size;
+    height: $oc-icon-size;
+  }
+
+  &-medium {
+    &,
+    > svg {
+      width: $oc-icon-size * 1.5;
+      height: $oc-icon-size * 1.5;
+    }
+  }
+
+  &-large {
+    &,
+    > svg {
+      width: $oc-icon-size * 2;
+      height: $oc-icon-size * 2;
+    }
+  }
+
+  // Variations
+
+  &-primary > svg {
+    fill: $global-primary-background;
+  }
+
+  &-secondary > svg {
+    fill: $global-secondary-background;
+  }
+
+  &-muted > svg {
+    fill: $global-muted-background;
+  }
+
+  &-inverted > svg {
+    fill: $global-inverse-color;
+  }
+}

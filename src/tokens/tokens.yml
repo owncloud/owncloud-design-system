@@ -14,7 +14,8 @@ imports:
   - ./box-shadow.yml
   - ./letter-spacing.yml
   - ./border-radius.yml
-  - ./spacing.yml
+  - ./margins.yml
+  - ./paddings.yml
   - ./line-height.yml
 global:
   type: global

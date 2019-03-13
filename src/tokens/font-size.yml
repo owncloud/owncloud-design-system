@@ -4,20 +4,19 @@
 #
 
 props:
-  size_xxxl:
-    value: "3.0em"
-  size_xxl:
-    value: "2.0em"
-  size_xl:
-    value: "1.7em"
-  size_l:
-    value: "1.5em"
-  size_m:
-    value: "1.2em"
-  size_s:
-    value: "1.1em"
-  size_xs:
-    value: "1.0em"
+  small-font-size:
+    value: "0.875rem"
+  font-size:
+    value: "15px"
+  medium-font-size:
+    value: "1.25rem"
+  large-font-size:
+    value: "1.5rem"
+  xlarge-font-size:
+    value: "2rem"
+  xxlarge-font-size:
+    value: "2.625rem"
+
 global:
   type: number
   category: font-size

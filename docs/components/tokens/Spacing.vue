@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      tokens: this.orderData(designTokens.props),
+      tokens: designTokens.props,
     }
   },
 }

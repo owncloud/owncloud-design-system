@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :aria-label="ariaLabel" :class="['oc-loader-spinner', size]" />
+  <div :uk-spinner="'ratio:' + ratio" :aria-label="ariaLabel"></div>
 </template>
 
 <script>
@@ -18,14 +18,7 @@ export default {
      */
     ariaLabel: {
       type: String,
-      default: "spinner",
-    },
-    /**
-     * The html element name used for the icon.
-     */
-    type: {
-      type: String,
-      default: "span",
+      default: "Loading",
     },
     /**
      * The size of the icon. Defaults to medium.
@@ -33,51 +26,34 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
+      default: null,
       validator: value => {
-        return value.match(/(small|medium|large|x-large|xx-large)/)
+        return value.match(/(small|medium|large|xlarge)/)
       },
+    },
+  },
+  computed: {
+    ratio() {
+      let sizes = {
+        small: 0.5,
+        medium: 2,
+        large: 3,
+        xlarge: 4,
+      }
+      return sizes[this.size]
     },
   },
 }
 </script>
-
-<style lang="scss">
-.oc-loader-spinner {
-  display: inline-flex;
-
-  @include reset;
-  &.xx-large {
-    width: $space-xxl;
-    height: $space-xxl;
-  }
-  &.x-large {
-    width: $space-xl;
-    height: $space-xl;
-  }
-  &.large {
-    width: $space-l;
-    height: $space-l;
-  }
-  &.medium {
-    width: $space-m;
-    height: $space-m;
-  }
-  &.small {
-    width: $space-s;
-    height: $space-s;
-  }
-}
-</style>
-
+<style lang="scss"></style>
 <docs>
-  ```jsx
-  <div>
-    <oc-spinner size="small"/>
-    <oc-spinner size="medium"/>
-    <oc-spinner size="large"/>
-    <oc-spinner size="x-large"/>
-    <oc-spinner size="xx-large"/>
-  </div>
-  ```
+```jsx
+<div>
+  <oc-spinner size="small" />
+  <oc-spinner aria-label="Date is loading" /> <!-- Default with label -->
+  <oc-spinner size="medium" />
+  <oc-spinner size="large" />
+  <oc-spinner size="xlarge" />
+</div>
+```
 </docs>

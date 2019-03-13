@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <label class="container">
-      <span>{{ label }}</span>
-      <input type="checkbox" v-model="model" @change="onChange" />
-      <span class="checkmark"></span>
-    </label>
-  </div>
+  <section>
+    <label v-if="label" class="oc-checkbox-label"
+      ><input class="oc-checkbox" type="checkbox" v-model="model" @change="onChange" />{{
+        label
+      }}</label
+    >
+    <input v-else class="uk-checkbox" type="checkbox" v-model="model" @change="onChange" />
+  </section>
 </template>
 <script>
 export default {
@@ -42,71 +43,11 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.container {
-  @include reset;
-  @include stack-space($space-m);
-  @include inline-space($space-xs);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: $weight-semi-bold;
-  font-size: $size-m;
-  font-family: $font-text;
-  line-height: $line-height-m;
-  user-select: none;
-  & input {
-    position: relative;
-    opacity: 0;
-    height: 0;
-    width: 0;
-    &:checked ~ .checkmark {
-      background-color: $color_oc_blue;
-    }
-    &:checked ~ .checkmark:after {
-      display: block;
-    }
-  }
-  &:hover input ~ .checkmark {
-    background-color: $color_oc_blue_light;
-    &:after {
-      position: relative;
-      border: solid $color-white;
-      border-width: 0 3px 3px 0;
-      transform: rotate(45deg);
-    }
-  }
-}
-.checkmark {
-  position: relative;
-  border-radius: $radius-default;
-  float: right;
-  height: $size-l;
-  width: $size-l;
-  background-color: tint($color-silver, 50%);
-  will-change: transform;
-  transition: all 0.2s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  &:after {
-    content: "";
-    display: none;
-    position: absolute;
-    top: $size-xs / 5;
-    left: $size-xs / 2;
-    width: $size-xs / 4;
-    height: $size-xs / 1.5;
-    border: solid $color-white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-  }
-}
-</style>
 <docs>
-  ```jsx
-  <div>
-    <oc-checkbox label="Test Label" />
-  </div>
-  ```
+```jsx
+<div>
+  <oc-checkbox />
+  <oc-checkbox label="Test Label" />
+</div>
+```
 </docs>

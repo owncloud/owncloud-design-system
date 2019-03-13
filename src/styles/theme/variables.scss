@@ -1,14 +1,20 @@
-$global-font-size: 15px;
-$global-background: #fff;
+$global-font-size: $font-size;
+$global-background: $background;
 
-$global-muted-background: #f5f7f9;
-$global-primary-background: #467391;
+$global-color: $color;
+$global-emphasis-color: $emphasis-color;
+$global-muted-color: $muted-color;
 
-$global-success-background: #32d296;
-$global-warning-background: #faa05a;
-$global-danger-background: #f0506e;
+$global-link-color: $link-color;
+$global-link-hover-color: $link-hover-color;
+
+$global-muted-background: $muted-background;
+$global-primary-background: $primary-background;
+
+$global-success-background: $success-background;
+$global-warning-background: $warning-background;
+$global-danger-background: $danger-background;
 
 $navbar-nav-item-height: 60px;
 
-$global-emphasis-color: blue;
-$global-color: blue;
+$prefix: "oc-";

@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :width="size" :alt="alt" :title="title" />
+  <img :src="src" :alt="alt" :title="title" uk-image />
 </template>
 <script>
 export default {
@@ -14,14 +14,7 @@ export default {
     src: {
       required: true,
       type: String,
-    },
-    /**
-     * Size of the Image in px
-     *
-     **/
-    size: {
-      required: false,
-      type: Number,
+      default: null,
     },
     /**
      * The alt-attribute of the image.
@@ -42,12 +35,17 @@ export default {
 </script>
 <style lang="scss"></style>
 <docs>
-  ```jsx
-  <div>
-    <oc-img size="300" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
-    <oc-img size="250" src="icons/folder.svg" />
-    <oc-img size="200" src="icons/folder.svg" />
-    <oc-img size="150" src="icons/folder.svg" />
-  </div>
-  ```
+```jsx
+<div>
+  <p class="uk-margin">
+    <oc-img width="100" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
+  </p>
+  <p class="uk-margin">
+    <oc-img width="300" height="200" src="https://picsum.photos/200/300/?random" title="I am random" />
+  </p>
+  <p class="uk-margin">
+    <oc-img src="https://picsum.photos/g/200/300" title="Grayscale" />
+  </p>
+</div>
+```
 </docs>

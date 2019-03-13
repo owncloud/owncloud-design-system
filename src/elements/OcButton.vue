@@ -1,13 +1,7 @@
 <template>
-  <component
-    :is="type"
-    :href="href"
-    :to="to"
-    :type="submit"
-    :class="['button', size, state, variation]"
-  >
-    <slot />
-    <oc-icon :name="icon"></oc-icon>
+  <component :is="type" :href="href" :to="to" :type="submit" :text="text" :class="_buttonClass">
+    <oc-icon v-if="icon" :class="_iconClass" :name="icon"></oc-icon>
+    <span v-if="text" v-text="text" />
   </component>
 </template>
 
@@ -39,9 +33,9 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
+      default: null,
       validator: value => {
-        return value.match(/(small|medium|large)/)
+        return value.match(/(small|large)/)
       },
     },
     /**
@@ -88,10 +82,31 @@ export default {
      */
     variation: {
       type: String,
-      default: null,
+      default: "default",
       validator: value => {
-        return value.match(/(primary|secondary)/)
+        return value.match(/(default|primary|secondary)/)
       },
+    },
+    /**
+     * Text do be displayed in the button
+     */
+    text: {
+      type: String,
+      default: null,
+    },
+  },
+  computed: {
+    _iconClass() {
+      return this.text ? "uk-position-small uk-position-center-left" : "uk-position-center"
+    },
+    _buttonClass() {
+      let classes = ["oc-button"]
+
+      if (this.variation) classes.push(`uk-button-${this.variation}`)
+
+      if (this.size) classes.push(`uk-button-${this.size}`)
+
+      return classes
     },
   },
   methods: {
@@ -106,109 +121,31 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.button {
-  @include reset;
-  @include stack-space($space-m);
-  @include inline-space($space-xs);
-  will-change: transform;
-  transition: all 0.2s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: $weight-semi-bold;
-  font-size: $size-m;
-  font-family: $font-text;
-  line-height: $line-height-m;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  box-shadow: inset 0 0 0 2px $color-oc-blue;
-  border-radius: $radius-default;
-  background: transparent;
-  color: $color-oc-blue;
-  cursor: pointer;
-  &:hover,
-  &.hover {
-    color: $color-white;
-    background: $color-oc-blue;
-    transform: translateZ(0) scale(1.03);
-  }
-  &:active,
-  &.active {
-    transition: none;
-    background: $color-oc-blue-dark;
-    box-shadow: none;
-    color: $color-white;
-    transform: translateZ(0) scale(1);
-  }
-
-  &:focus,
-  &.focus {
-    background: $color-oc-blue-darker;
-    box-shadow: none;
-    color: $color-white;
-    transform: translateZ(0) scale(1);
-    outline: 0;
-  }
-
-  // For icons inside buttons
-  .icon {
-    float: right;
-    margin-left: $size-xs / 4;
-    color: $color-bleu-de-france;
-  }
-
-  // Various button sizes
-  &.large {
-    @include inset-squish-space($space-s);
-    font-size: $size-l;
-  }
-  &.medium {
-    @include inset-squish-space($space-s);
-    font-size: $size-m;
-  }
-  &.small {
-    @include inset-squish-space($space-xs);
-    font-size: $size-s;
-  }
-  // Primary button
-  &.primary {
-    background: $color-oc-blue;
-    color: $color-white;
-    box-shadow: none;
-    &:hover,
-    &.hover {
-      background-color: shade($color-oc-blue, 12%);
-    }
-    &:active,
-    &.active {
-      background-color: shade($color-oc-blue, 20%);
-      transition: none;
-    }
-    &:focus {
-      outline: 0;
-    }
-  }
-}
-</style>
-
 <docs>
-  ```jsx
-  <div>
-    <oc-button size="large">Default Button</oc-button>
-    <oc-button size="medium">Medium</oc-button>
-    <oc-button size="small">Small</oc-button>
-    <br />
-    <oc-button variation="primary" size="large">Primary Button</oc-button>
-    <oc-button variation="primary" size="medium">Medium</oc-button>
-    <oc-button variation="primary" size="small">Small</oc-button>
-    <br />
-    <oc-button size="large" icon="home">Demo Button</oc-button>
-    <oc-button size="medium" icon="close">Demo Button</oc-button>
-    <oc-button size="small" icon="folder">Demo Button</oc-button>
+```jsx
+<section>
+  <h3 class="uk-heading-divider">
+    Button Types
+  </h3>
+  <oc-button text="Default Button" />
+  <oc-button text="Primary Button" variation="primary" />
+  <oc-button text="Secondary Button" variation="secondary" />
+  <oc-button text="Disabled Button" disabled />
+
+  <h3 class="uk-heading-divider">
+    Button sizes
+  </h3>
+  <oc-button text="Large" size="large" />
+  <oc-button text="Small" size="small" />
+
+  <h3 class="uk-heading-divider">
+    Using Icons in a group
+  </h3>
+  <div class="uk-button-group">
+    <oc-button variation="primary" icon="home" />
+    <oc-button variation="secondary" icon="close" />
+    <oc-button text="Demo Button" icon="folder" />
   </div>
-  ```
+</section>
+```
 </docs>

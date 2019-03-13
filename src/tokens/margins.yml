@@ -1,0 +1,19 @@
+#
+# SPACING TOKENS
+# Use these tokens to set padding, margin and position coordinates.
+#
+
+props:
+  small-margin:
+    value: "10px"
+  margin:
+    value: "20px"
+  medium-margin:
+    value: "40px"
+  large-margin:
+    value: "70px"
+  xlarge-margin:
+    value: "140px"
+global:
+  type: number
+  category: space

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import UiKit from "uikit"
+// import UiKit from "uikit"
 export default {
   name: "oc-menu",
   status: "review",
@@ -53,7 +53,6 @@ export default {
             <oc-icon name="info"></oc-icon>
             <span>Some more information about ownCloud design system!</span>
         </oc-menu>
-
     </div>
     ```
 </docs>
