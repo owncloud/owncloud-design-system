@@ -59,7 +59,7 @@ export default {
       type: String,
       default: null,
       validator: value => {
-        return value.match(/(primary|secondary|inverted)/)
+        return value.match(/(primary|secondary|inverted|danger|success|warning)/)
       },
     },
   },
@@ -86,7 +86,7 @@ export default {
 	<oc-icon name="delete" aria-label="Delete"/>
 	<oc-icon name="info" aria-label="Information"/>
 	<oc-icon name="account_circle" aria-label="My Account"/>
-	
+
 	<h3 class="uk-heading-divider">
 		Icon color Variations
 	</h3>
