@@ -1,7 +1,7 @@
 <template>
   <div class="uk-inline">
     <slot name="activator">
-      <oc-button variation="primary" type="button">{{ buttonText }}</oc-button>
+      <oc-button variation="primary" type="button" :text="buttonText"></oc-button>
     </slot>
     <div uk-dropdown="mode: click, offset: 0">
       <slot />
