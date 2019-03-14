@@ -53,4 +53,16 @@ $oc-icon-size: 24px;
   &-inverted > svg {
     fill: $global-inverse-color;
   }
+
+  &-warning > svg {
+    fill: $global-warning-background;
+  }
+
+  &-success > svg {
+    fill: $global-success-background;
+  }
+
+  &-danger > svg {
+    fill: $global-danger-background;
+  }
 }

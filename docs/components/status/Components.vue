@@ -2,15 +2,15 @@
   <div class="component-status">
     <ul class="status-list">
       <li>
-        <oc-icon name="ready" />
+        <oc-icon name="ready" variation="success" />
         <p>Ready</p>
       </li>
       <li>
-        <oc-icon name="review" />
+        <oc-icon name="review" variation="warning" />
         <p>Under review</p>
       </li>
       <li>
-        <oc-icon name="deprecated" />
+        <oc-icon name="deprecated" variation="danger" />
         <p>Deprecated</p>
       </li>
       <li>
@@ -42,13 +42,14 @@
           <td v-if="component.release">{{ component.release }}</td>
           <td v-else>N/A</td>
           <td v-if="component.status">
-            <oc-icon v-if="component.status === 'ready'" name="ready" />
+            <oc-icon v-if="component.status === 'ready'" name="ready" variation="success" />
             <oc-icon
               v-if="component.status === 'under-review' || component.status === 'review'"
               name="review"
+              variation="warning"
             />
-            <oc-icon v-if="component.status === 'prototype'" name="prototype" />
-            <oc-icon v-if="component.status === 'deprecated'" name="deprecated" />
+            <oc-icon v-if="component.status === 'prototype'" name="prototype" variation="danger" />
+            <oc-icon v-if="component.status === 'deprecated'" name="deprecated" variation="muted" />
           </td>
           <td v-else>—</td>
         </tr>
