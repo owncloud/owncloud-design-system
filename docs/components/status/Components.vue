@@ -2,19 +2,19 @@
   <div class="component-status">
     <ul class="status-list">
       <li>
-        <oc-icon name="ready" fill="#7cb518" size="small" />
+        <oc-icon name="ready" />
         <p>Ready</p>
       </li>
       <li>
-        <oc-icon name="review" :fill="tokens.color_ucla_gold.value" size="small" />
+        <oc-icon name="review" />
         <p>Under review</p>
       </li>
       <li>
-        <oc-icon name="deprecated" :fill="tokens.color_vermilion.value" size="small" />
+        <oc-icon name="deprecated" />
         <p>Deprecated</p>
       </li>
       <li>
-        <oc-icon name="prototype" :fill="tokens.color_bleu_de_france.value" size="small" />
+        <oc-icon name="prototype" />
         <p>Prototype</p>
       </li>
       <li>
@@ -42,25 +42,13 @@
           <td v-if="component.release">{{ component.release }}</td>
           <td v-else>N/A</td>
           <td v-if="component.status">
-            <oc-icon v-if="component.status === 'ready'" name="ready" fill="#7cb518" size="small" />
+            <oc-icon v-if="component.status === 'ready'" name="ready" />
             <oc-icon
               v-if="component.status === 'under-review' || component.status === 'review'"
               name="review"
-              :fill="tokens.color_ucla_gold.value"
-              size="small"
             />
-            <oc-icon
-              v-if="component.status === 'prototype'"
-              name="prototype"
-              :fill="tokens.color_bleu_de_france.value"
-              size="small"
-            />
-            <oc-icon
-              v-if="component.status === 'deprecated'"
-              name="deprecated"
-              :fill="tokens.color_vermilion.value"
-              size="small"
-            />
+            <oc-icon v-if="component.status === 'prototype'" name="prototype" />
+            <oc-icon v-if="component.status === 'deprecated'" name="deprecated" />
           </td>
           <td v-else>—</td>
         </tr>
@@ -108,7 +96,9 @@ export default {
       contexts.forEach(context => {
         context.keys().forEach(key => components.push(context(key).default))
       })
-      return components
+      return components.map(c => {
+        return c
+      })
     },
     orderData: function(data) {
       return orderBy(data, "name", "asc")
@@ -128,7 +118,6 @@ export default {
 
 /* STYLES
 --------------------------------------------- */
-
 .component-status {
   @include reset;
   font-family: $font-heading;
