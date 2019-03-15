@@ -12337,10 +12337,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vue-docgen-api@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.8.2.tgz#419259f0bbe2d4681c3ccbae1d85d9588d06518a"
-  integrity sha512-jDho3qK4OTjYuBHUFjUS96/lgQ/cAf4lHrAIHPkS0AgaQnyUiUeMD8WsgzJQWKmeJSWLvmw1YscrITxRWpL6vA==
+vue-docgen-api@^3.9.3:
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.9.3.tgz#93504dfc823c43f9201395172cab4c03100004f7"
+  integrity sha512-0CN+dbHq21BFFZADGq5Dowtcq+MsOk49/QfLZxcZ0/YhHT8UxsVHrkrh8M9JBF/OFssIBwYAcYj3WJxipEDxgw==
   dependencies:
     "@babel/parser" "^7.2.3"
     "@babel/types" "^7.0.0"
@@ -12428,10 +12428,10 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^3.8.3:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.8.3.tgz#ab07f1148463de18b3204dfe4172adb5e220890b"
-  integrity sha512-Bgzm0+E8qYTpjr++uRa6YXbRLI7epuKAz2nM9L9lyDEhC7+1efgPkDV4LaY5buHVUGkFHhBk5ERkKObzfhitoA==
+vue-styleguidist@^3.9.3:
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.9.3.tgz#3061647a6759b1a284d6d19afb3a19e1c4dfb171"
+  integrity sha512-OnDJLlm7ZZ3ZV0kDHjJHVOurXFu/53nk0lF47le0TB5L5lpS8YDwTJVFrmAmkbspZcHxZ69REDTjuHxTlXXXNA==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.0.5"
@@ -12487,7 +12487,7 @@ vue-styleguidist@^3.8.3:
     style-loader "^0.21.0"
     to-ast "^1.0.0"
     uglifyjs-webpack-plugin "1.2.7"
-    vue-docgen-api "^3.8.2"
+    vue-docgen-api "^3.9.3"
     webpack "^4.28.4"
     webpack-dev-server "^3.1.14"
     webpack-merge "^4.0.0"
