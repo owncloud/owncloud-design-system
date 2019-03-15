@@ -3,12 +3,10 @@
 //
 // ========================================================================
 
-$el: ".#{$prefix}checkbox";
-
-#{$el} {
+.oc-checkbox {
   @extend .uk-checkbox;
 
-  &-label > #{$el} {
+  &-label > .oc-checkbox {
     @extend .uk-margin-small-right;
   }
 }
