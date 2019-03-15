@@ -1,8 +1,8 @@
 <template>
   <a class="oc-file">
-    <oc-icon :name="file[0]" variation="primary" class="uk-position-center-left" />
+    <oc-icon :name="icon" variation="primary" class="uk-position-center-left" />
     <span class="oc-file-name">{{ name }}</span
-    ><span v-if="file[1]" class="oc-file-extension">{{ file[1] }}</span>
+    ><span v-if="extension" class="oc-file-extension">{{ extension }}</span>
   </a>
 </template>
 <script>
@@ -15,11 +15,19 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * The mime type of the file. This defines the file type icon.
+     * The icon to be used.
      */
-    mimeType: {
+    icon: {
       type: String,
-      required: true,
+      required: false,
+      default: "folder",
+    },
+    /**
+     * The extension of the file/folder to be displayed.
+     */
+    extension: {
+      type: String,
+      required: false,
     },
     /**
      * The name of the file/folder to be displayed.
@@ -28,25 +36,14 @@ export default {
       type: String,
       required: true,
     },
-    /**
-     * If set to true the element is no clickable.
-     */
-    nolink: {
-      type: Boolean,
-      required: false,
-    },
-  },
-  computed: {
-    file() {
-      return this.mimeType.split("/")
-    },
   },
 }
 </script>
 <docs>
-  ```jsx
-<div>
-  <oc-file mimeType="image/png" name="This is a picture"/>
-</div>
-  ```
+    ```jsx
+    <div>
+        <oc-file name="This is a picture"/>
+        <oc-file icon="image" extension="png" name="picture"/>
+    </div>
+    ```
 </docs>
