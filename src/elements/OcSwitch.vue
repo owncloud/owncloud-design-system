@@ -4,6 +4,9 @@
   </div>
 </template>
 <script>
+/**
+ * The switch has two states between users can choose.
+ */
 export default {
   name: "oc-switch",
   status: "review",
@@ -18,10 +21,10 @@ export default {
     model: {
       required: false,
       default: false,
-      type: [Boolean],
+      type: [Boolean, String],
     },
     /**
-     * Label of the Switch. Will set aria-label aswell.
+     * Label of the switch. Will set aria-label as well.
      **/
     label: {
       type: String,

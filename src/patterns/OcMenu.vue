@@ -11,11 +11,17 @@
 
 <script>
 // import UiKit from "uikit"
+/**
+ * A menus comes by default with a button as activator. But the activator is customizable
+ */
 export default {
   name: "oc-menu",
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * Text on the button
+     */
     buttonText: {
       type: String,
       default: "Click",

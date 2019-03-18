@@ -4,9 +4,7 @@
 
 <script>
 /**
- * Icons are used to visually communicate core parts of the product and
- * available actions. They can act as wayfinding tools to help users more
- * easily understand where they are in the product.
+ * Remote actions can take an undefined portion of time. The spinner gives feedback to the users about an actions being processed.
  */
 export default {
   name: "oc-spinner",
@@ -14,15 +12,15 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Descriptive text to be read to screenreaders.
+     * Descriptive text to be read to screen-readers.
      */
     ariaLabel: {
       type: String,
       default: "Loading",
     },
     /**
-     * The size of the icon. Defaults to medium.
-     * `small, medium, large`
+     * The size of the spinner. Defaults to medium.
+     * `small, medium, large, xlarge`
      */
     size: {
       type: String,

@@ -4,15 +4,24 @@
   </table>
 </template>
 <script>
+/**
+ * The file list is main component of the ownCloud files app.
+ */
 export default {
   name: "oc-table",
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * Define if elements are vertically aligned in the middle of a line?
+     */
     middle: {
       type: Boolean,
       required: false,
     },
+    /**
+     * Define if the table has a divider
+     */
     divider: {
       type: Boolean,
       required: false,

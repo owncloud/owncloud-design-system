@@ -6,19 +6,31 @@
   </a>
 </template>
 <script>
+/**
+ * Displays a file/folder together with the file type icon and the file extension.
+ */
 export default {
   name: "oc-file",
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * The mime type of the file. This defines the file type icon.
+     */
     mimeType: {
       type: String,
       required: true,
     },
+    /**
+     * The name of the file/folder to be displayed.
+     */
     name: {
       type: String,
       required: true,
     },
+    /**
+     * If set to true the element is no clickable.
+     */
     nolink: {
       type: Boolean,
       required: false,
