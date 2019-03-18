@@ -16,7 +16,7 @@ export default {
     },
     shrink: {
       type: Boolean,
-      defalt: null,
+      default: null,
     },
   },
   computed: {

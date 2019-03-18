@@ -53,7 +53,7 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `primary, secondary, inverted`
+     * `primary, secondary, inverted, danger, success, warning`
      */
     variation: {
       type: String,
@@ -88,30 +88,46 @@ export default {
 	<oc-icon name="account_circle" aria-label="My Account"/>
 
 	<h3 class="uk-heading-divider">
-		Icon color Variations
+		Icon color variations
 	</h3>
-	<section>
-		<div class="uk-grid-collapse uk-child-width-auto" uk-grid>
-			<div class="uk-background-primary uk-padding-small">
-				<oc-icon variation="inverted" name="close"/>
-				<oc-icon variation="inverted" name="delete"/>
-				<oc-icon variation="inverted" name="info"/>
-				<oc-icon variation="inverted" name="account_circle"/>
-			</div>
-			<div class="uk-padding-small">
-				<oc-icon variation="primary" name="close"/>
-				<oc-icon variation="primary" name="delete"/>
-				<oc-icon variation="primary" name="info"/>
-				<oc-icon variation="primary" name="account_circle"/>
-			</div>
-			<div class="uk-padding-small">
-				<oc-icon variation="secondary" name="close"/>
-				<oc-icon variation="secondary" name="delete"/>
-				<oc-icon variation="secondary" name="info"/>
-				<oc-icon variation="secondary" name="account_circle"/>
-			</div>
+	<div class="uk-grid-collapse uk-child-width-auto" uk-grid>
+		<div class="uk-background-primary uk-padding-small">
+			<oc-icon variation="inverted" name="close"/>
+			<oc-icon variation="inverted" name="delete"/>
+			<oc-icon variation="inverted" name="info"/>
+			<oc-icon variation="inverted" name="account_circle"/>
 		</div>
-	</section>
+		<div class="uk-padding-small">
+			<oc-icon variation="primary" name="close"/>
+			<oc-icon variation="primary" name="delete"/>
+			<oc-icon variation="primary" name="info"/>
+			<oc-icon variation="primary" name="account_circle"/>
+		</div>
+		<div class="uk-padding-small">
+			<oc-icon variation="secondary" name="close"/>
+			<oc-icon variation="secondary" name="delete"/>
+			<oc-icon variation="secondary" name="info"/>
+			<oc-icon variation="secondary" name="account_circle"/>
+		</div>
+		<div class="uk-padding-small">
+			<oc-icon variation="danger" name="close"/>
+			<oc-icon variation="danger" name="delete"/>
+			<oc-icon variation="danger" name="info"/>
+			<oc-icon variation="danger" name="account_circle"/>
+		</div>
+		<div class="uk-padding-small">
+			<oc-icon variation="success" name="close"/>
+			<oc-icon variation="success" name="delete"/>
+			<oc-icon variation="success" name="info"/>
+			<oc-icon variation="success" name="account_circle"/>
+		</div>
+		<div class="uk-padding-small">
+			<oc-icon variation="warning" name="close"/>
+			<oc-icon variation="warning" name="delete"/>
+			<oc-icon variation="warning" name="info"/>
+			<oc-icon variation="warning" name="account_circle"/>
+		</div>
+	</div>
 
 	<h3 class="uk-heading-divider">
 		Medium and large icons

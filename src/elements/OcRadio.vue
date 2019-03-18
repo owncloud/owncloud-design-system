@@ -6,6 +6,9 @@
   </label>
 </template>
 <script>
+/**
+ * The radio element. Can be grouped to give the user to choose between different options.
+ */
 export default {
   name: "oc-radio",
   status: "review",
@@ -44,7 +47,9 @@ export default {
 <docs>
   ```jsx
   <div>
-    <oc-radio label="Demo Label" />
+    <oc-radio label="Water" />
+    <oc-radio label="Wine" />
+    <oc-radio label="Beer" />
   </div>
   ```
 </docs>

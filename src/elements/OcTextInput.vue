@@ -23,7 +23,7 @@ export default {
   props: {
     /**
      * The type of the form input field.
-     * `text, number, email`
+     * `text, number, email, password`
      */
     type: {
       type: String,
@@ -50,6 +50,7 @@ export default {
   methods: {
     onInput(value) {
       /**
+       * Change event
        * @event input
        * @type {event}
        **/
@@ -57,6 +58,7 @@ export default {
     },
     onFocus(value) {
       /**
+       * Focus event
        * @event focus
        * @type {event}
        **/

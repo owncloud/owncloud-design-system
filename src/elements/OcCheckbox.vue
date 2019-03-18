@@ -9,6 +9,9 @@
   </section>
 </template>
 <script>
+/**
+ * A checkbox input element. The checkbox is either checked or unchecked.
+ */
 export default {
   name: "oc-checkbox",
   status: "review",
@@ -24,7 +27,7 @@ export default {
       required: false,
     },
     /**
-     * Label of the Checkbox. Will set aria-label aswell
+     * Label of the Checkbox. Will set aria-label as well
      **/
     label: {
       type: String,

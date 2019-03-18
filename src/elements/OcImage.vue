@@ -2,6 +2,10 @@
   <img :src="src" :alt="alt" :title="title" uk-image />
 </template>
 <script>
+/**
+ * Images can be displayed using this component.
+ *
+ */
 export default {
   name: "oc-img",
   status: "review",

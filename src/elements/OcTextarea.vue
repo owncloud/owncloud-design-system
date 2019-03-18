@@ -38,6 +38,7 @@ export default {
   methods: {
     onInput(value) {
       /**
+       * Input event
        * @event input
        * @type {event}
        **/
@@ -45,6 +46,7 @@ export default {
     },
     onFocus(value) {
       /**
+       * Focus event
        * @event focus
        * @type {event}
        **/

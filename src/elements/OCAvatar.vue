@@ -2,6 +2,9 @@
   <oc-img :src="src" class="oc-avatar" width="64" :uk-tooltip="_tooltip" />
 </template>
 <script>
+/**
+ * A simple component to show an avatar image
+ */
 export default {
   name: "oc-avatar",
   status: "review",
