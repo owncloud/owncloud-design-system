@@ -12337,10 +12337,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vue-docgen-api@^3.9.3:
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.9.3.tgz#93504dfc823c43f9201395172cab4c03100004f7"
-  integrity sha512-0CN+dbHq21BFFZADGq5Dowtcq+MsOk49/QfLZxcZ0/YhHT8UxsVHrkrh8M9JBF/OFssIBwYAcYj3WJxipEDxgw==
+vue-docgen-api@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.10.0.tgz#57b0371ad569f395b5c75b9b1d0289f537408711"
+  integrity sha512-Zm5r4dUeDly5XSNGJ9k/nC6HXzfyVgmB5n+4LxL2IqWlaDGskTyCt4+SFOBlOErJbfivzgkXGr848nREGqoOZg==
   dependencies:
     "@babel/parser" "^7.2.3"
     "@babel/types" "^7.0.0"
@@ -12351,8 +12351,8 @@ vue-docgen-api@^3.9.3:
     recast "^0.17.3"
     ts-map "^1.0.3"
     typescript "^3.2.2"
-    vue "^2.6.3"
-    vue-template-compiler "^2.6.3"
+    vue "^2.6.9"
+    vue-template-compiler "^2.6.9"
 
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
@@ -12428,10 +12428,10 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^3.9.3:
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.9.3.tgz#3061647a6759b1a284d6d19afb3a19e1c4dfb171"
-  integrity sha512-OnDJLlm7ZZ3ZV0kDHjJHVOurXFu/53nk0lF47le0TB5L5lpS8YDwTJVFrmAmkbspZcHxZ69REDTjuHxTlXXXNA==
+vue-styleguidist@^3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.10.1.tgz#9b1e1b0c27dbe01c0cf7f66a2b86cd85e630cf1a"
+  integrity sha512-VXOr7wixbteTSH4w5vPefZvKB2789JLcMqIVAkA/w1zvqBmO4yrIaNSueOoD5zOxpU0p9HbutyOHJWiFRteSyQ==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.0.5"
@@ -12487,12 +12487,12 @@ vue-styleguidist@^3.9.3:
     style-loader "^0.21.0"
     to-ast "^1.0.0"
     uglifyjs-webpack-plugin "1.2.7"
-    vue-docgen-api "^3.9.3"
+    vue-docgen-api "^3.10.0"
     webpack "^4.28.4"
     webpack-dev-server "^3.1.14"
     webpack-merge "^4.0.0"
 
-vue-template-compiler@^2.6.3, vue-template-compiler@^2.6.9:
+vue-template-compiler@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.9.tgz#26600415ff81a7a241aebc2d4e0abaa0f1a07915"
   integrity sha512-QgO0LSCdeH6zUMSgtqel+yDWsZWQPXiWBdFg9qzOhWfQL8vZ+ywinAzE04rm1XrWc+3SU0YAdWISlEgs/i8WWA==
@@ -12505,7 +12505,7 @@ vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.3, vue@^2.6.9:
+vue@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.9.tgz#415c1cc1a5ed00c8f0acdd0a948139d12b7ea6b3"
   integrity sha512-t1+tvH8hybPM86oNne3ZozCD02zj/VoZIiojOBPJLjwBn7hxYU5e1gBObFpq8ts1NEn1VhPf/hVXBDAJ3X5ljg==
