@@ -39,8 +39,8 @@ rm(path.join(config.system.assetsRoot, config.system.assetsSubDirectory), err =>
       chalk.yellow(
         "  Tip: You can now publish the design system as a private NPM module.\n" +
           "  Users can import the provided UMD module using:\n\n" +
-          "  import DesignSystem from 'vue-design-system'\n" +
-          "  import 'vue-design-system/dist/system/system.css'\n\n" +
+          "  import DesignSystem from 'owncloud-design-system'\n" +
+          "  import 'owncloud-design-system/dist/system/system.css'\n\n" +
           "  Vue.use(DesignSystem)\n"
       )
     )
