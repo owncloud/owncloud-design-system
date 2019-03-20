@@ -24,6 +24,7 @@ const System = {
     components.forEach(component => Vue.component(component.name, component))
   },
 }
+import Styles from "./styles/styles.scss"
 
 // Automatic installation if Vue has been added to the global scope
 if (typeof window !== "undefined" && window.Vue) {
