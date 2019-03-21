@@ -1,7 +1,7 @@
 <template>
   <a class="oc-file">
     <oc-icon :name="icon" variation="primary" class="uk-position-center-left" />
-    <span class="oc-file-name" v-text="_name" /><span
+    <span class="oc-file-name" v-text="file.name" /><span
       v-if="file.extension"
       class="oc-file-extension"
       v-text="file.extension"
@@ -26,39 +26,39 @@ export default {
       default: "folder",
     },
     /**
-     * A file object with necessary property `name` and an optional property `extension`
+     * A file object with necessary property `name` and an optional property `extension`.
+     * Please note that the name shall not hold the extension
      */
     file: {
       type: Object,
       required: true,
     },
   },
-  computed: {
-    _name() {
-      let name = this.file.name,
-        extension = this.file.extension
-
-      if (!extension) {
-        return name
-      }
-
-      return name.substring(0, name.length - extension.length - 1)
-    },
-  },
 }
 </script>
 <docs>
-```jsx
-<ul class="uk-list">
-  <li>
-    <oc-file icon="image" :file="{ name : 'I love flowers.jpg', extension : 'jpg' }" />
-  </li>
-  <li>
-    <oc-file icon="folder" :file="{ name : 'Large folder' }" />
-  </li>
-  <li>
-    <oc-file icon="image" :file="{ name : 'Just kidding, I hate flowers.png', extension : 'png' }" />
-  </li>
-</ul>
-```
+  ```jsx
+  <section>
+    <h3 class="uk-heading-divider">
+      File examples
+    </h3>
+    <ul class="uk-list">
+      <li>
+        <oc-file icon="image" :file="{ name : 'I love flowers', extension : 'jpg' }" />
+      </li>
+      <li>
+        <oc-file icon="folder" :file="{ name : 'Large folder' }" />
+      </li>
+      <li>
+        <oc-file icon="image" :file="{ name : 'Just kidding, I hate flowers.png', extension : 'png' }" />
+      </li>
+      <li>
+        <oc-file icon="text" :file="{ name : 'README', extension : 'md' }" />
+      </li>
+      <li>
+        <oc-file icon="archive" :file="{ name : 'package', extension : 'tar.gz' }" />
+      </li>
+    </ul>
+  </section>
+  ```
 </docs>
