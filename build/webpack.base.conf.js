@@ -13,7 +13,7 @@ module.exports = {
   mode: process.env.NODE_ENV === "production" ? config.build.mode : config.dev.mode,
   context: path.resolve(__dirname, "../"),
   entry: {
-    app: ["./src/main.js"],
+    app: ["./src/system.js"],
   },
   output: {
     path: config.build.assetsRoot,
