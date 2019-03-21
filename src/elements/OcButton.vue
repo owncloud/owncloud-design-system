@@ -1,5 +1,13 @@
 <template>
-  <component :is="type" :href="href" :to="to" :type="submit" :text="text" :class="_buttonClass">
+  <component
+    :is="type"
+    :href="href"
+    :to="to"
+    :type="submit"
+    :text="text"
+    :class="_buttonClass"
+    @click="onClick"
+  >
     <oc-icon v-if="icon" :class="_iconClass" :name="icon"></oc-icon>
     <span v-if="text" v-text="text" />
   </component>
@@ -123,30 +131,41 @@ export default {
 }
 </script>
 <docs>
-```jsx
-<section>
-  <h3 class="uk-heading-divider">
-    Button Types
-  </h3>
-  <oc-button text="Default Button" />
-  <oc-button text="Primary Button" variation="primary" />
-  <oc-button text="Secondary Button" variation="secondary" />
-  <oc-button text="Disabled Button" disabled />
+```
+  <template>
+    <section>
+      <h3 class="uk-heading-divider">
+        Button Types
+      </h3>
+      <oc-button text="Default Button" @click="onClick"/>
+      <oc-button text="Primary Button" variation="primary" />
+      <oc-button text="Secondary Button" variation="secondary" />
+      <oc-button text="Disabled Button" disabled />
 
-  <h3 class="uk-heading-divider">
-    Button sizes
-  </h3>
-  <oc-button text="Large" size="large" />
-  <oc-button text="Small" size="small" />
+      <h3 class="uk-heading-divider">
+        Button sizes
+      </h3>
+      <oc-button text="Large" size="large" />
+      <oc-button text="Small" size="small" />
 
-  <h3 class="uk-heading-divider">
-    Using Icons in a group
-  </h3>
-  <div class="uk-button-group">
-    <oc-button variation="primary" icon="home" />
-    <oc-button variation="secondary" icon="close" />
-    <oc-button text="Demo Button" icon="folder" />
-  </div>
-</section>
+      <h3 class="uk-heading-divider">
+        Using buttons in a group
+      </h3>
+      <div class="uk-button-group">
+        <oc-button variation="primary" icon="home" />
+        <oc-button variation="secondary" icon="close" />
+        <oc-button text="Demo Button" icon="folder" />
+      </div>
+    </section>
+  </template>
+  <script>
+    export default {
+      methods: {
+        onClick(val) {
+          alert(val)
+        }
+      }
+    }
+  </script>
 ```
 </docs>
