@@ -1,12 +1,5 @@
 <template>
-  <section>
-    <label v-if="label" class="oc-checkbox-label"
-      ><input class="oc-checkbox" type="checkbox" v-model="model" @change="onChange" />{{
-        label
-      }}</label
-    >
-    <input v-else class="uk-checkbox" type="checkbox" v-model="model" @change="onChange" />
-  </section>
+  <input class="uk-checkbox" type="checkbox" v-model="checkboxState" />
 </template>
 <script>
 /**
@@ -19,38 +12,50 @@ export default {
   props: {
     /**
      * Data-model
-     *
-     * @model
      **/
-    model: {
-      type: Object,
+    value: {
+      type: Boolean,
       required: false,
-    },
-    /**
-     * Label of the Checkbox. Will set aria-label as well
-     **/
-    label: {
-      type: String,
-      default: null,
+      default: false,
     },
   },
-  methods: {
-    onChange(val) {
-      /**
-       * The onChange event
-       * @event change
-       * @type {event}
-       */
-      this.$emit("change", val)
+  computed: {
+    checkboxState: {
+      get: function() {
+        return this.value
+      },
+      set: function(value) {
+        /**
+         * State change event
+         * @event input
+         * @type {event}
+         */
+        this.$emit("input", value)
+      },
     },
   },
 }
 </script>
 <docs>
-```jsx
-<div>
-  <oc-checkbox />
-  <oc-checkbox label="Test Label" />
-</div>
-```
+  ```
+    <template>
+        <div>
+            <section>
+                <h3 class="uk-heading-divider">
+                    Checkboxes Types
+                </h3>
+                <oc-checkbox />
+                <oc-checkbox v-model="checkState1"/>
+            </section>
+
+        </div>
+    </template>
+    <script>
+        export default {
+            data: () => ({
+                checkState1: true
+            })
+        }
+    </script>
+  ```
 </docs>

@@ -5,8 +5,8 @@
 
 .oc-checkbox {
   @extend .uk-checkbox;
+}
 
-  &-label > .oc-checkbox {
-    @extend .uk-margin-small-right;
-  }
+label > .oc-checkbox {
+  @extend .uk-margin-small-right;
 }
