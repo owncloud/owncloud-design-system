@@ -1,5 +1,8 @@
 <template>
-  <oc-icon class="oc-star" :name="_name" />
+  <div class="oc-star">
+    <oc-icon v-show="shining" class="oc-star-shining" name="star" />
+    <oc-icon v-show="!shining" class="oc-star-dimm" name="star_border" />
+  </div>
 </template>
 <script>
 /**
@@ -19,11 +22,6 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    },
-  },
-  computed: {
-    _name() {
-      return this.shining ? "star" : "star_border"
     },
   },
 }
