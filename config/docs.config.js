@@ -154,9 +154,6 @@ module.exports = {
    */
   ignore: [
     "**/App.vue",
-    "**/elements/OcTableCell.vue",
-    "**/elements/OcTableGroup.vue",
-    "**/elements/OcTableRow.vue",
     "**/__tests__/**",
     "**/*.test.js",
     "**/*.test.jsx",
