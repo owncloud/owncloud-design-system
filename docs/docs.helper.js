@@ -21,3 +21,13 @@ window.addEventListener("hashchange", () => {
   filterSearch.methods.init()
   activeNav.methods.init()
 })
+
+// mock for the router-link
+Vue.component("RouterLink", {
+  props: {
+    tag: { type: String, default: "a" },
+  },
+  render(createElement) {
+    return createElement(this.tag, {}, this.$slots.default)
+  },
+})
