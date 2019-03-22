@@ -12,10 +12,8 @@ export default {
   props: {
     /**
      * Data-model
-     *
-     * @model
      **/
-    model: {
+    value: {
       type: Boolean,
       required: false,
       default: false,
@@ -24,31 +22,40 @@ export default {
   computed: {
     checkboxState: {
       get: function() {
-        return this.model
+        return this.value
       },
       set: function(value) {
         /**
          * State change event
-         * @event stateChanged
+         * @event input
          * @type {event}
          */
-        this.$emit("stateChanged", value)
+        this.$emit("input", value)
       },
     },
   },
 }
 </script>
 <docs>
-  ```jsx
-  <div>
-    <section>
-      <h3 class="uk-heading-divider">
-        Checkboxes Types
-      </h3>
-      <oc-checkbox />
-      <oc-checkbox :model="true"/>
-    </section>
+  ```
+    <template>
+        <div>
+            <section>
+                <h3 class="uk-heading-divider">
+                    Checkboxes Types
+                </h3>
+                <oc-checkbox />
+                <oc-checkbox v-model="checkState1"/>
+            </section>
 
-  </div>
+        </div>
+    </template>
+    <script>
+        export default {
+            data: () => ({
+                checkState1: true
+            })
+        }
+    </script>
   ```
 </docs>
