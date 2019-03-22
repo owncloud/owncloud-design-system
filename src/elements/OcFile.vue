@@ -1,8 +1,11 @@
 <template>
   <a class="oc-file">
     <oc-icon :name="icon" variation="primary" class="uk-position-center-left" />
-    <span class="oc-file-name">{{ name }}</span
-    ><span v-if="extension" class="oc-file-extension">{{ extension }}</span>
+    <span class="oc-file-name" v-text="file.name" /><span
+      v-if="file.extension"
+      class="oc-file-extension"
+      v-text="file.extension"
+    />
   </a>
 </template>
 <script>
@@ -23,27 +26,39 @@ export default {
       default: "folder",
     },
     /**
-     * The extension of the file/folder to be displayed.
+     * A file object with necessary property `name` and an optional property `extension`.
+     * Please note that the name shall not hold the extension
      */
-    extension: {
-      type: String,
-      required: false,
-    },
-    /**
-     * The name of the file/folder to be displayed.
-     */
-    name: {
-      type: String,
+    file: {
+      type: Object,
       required: true,
     },
   },
 }
 </script>
 <docs>
-    ```jsx
-    <div>
-        <oc-file name="This is a picture"/>
-        <oc-file icon="image" extension="png" name="picture"/>
-    </div>
-    ```
+  ```jsx
+  <section>
+    <h3 class="uk-heading-divider">
+      File examples
+    </h3>
+    <ul class="uk-list">
+      <li>
+        <oc-file icon="image" :file="{ name : 'I love flowers', extension : 'jpg' }" />
+      </li>
+      <li>
+        <oc-file icon="folder" :file="{ name : 'Large folder' }" />
+      </li>
+      <li>
+        <oc-file icon="image" :file="{ name : 'Just kidding, I hate flowers.png', extension : 'png' }" />
+      </li>
+      <li>
+        <oc-file icon="text" :file="{ name : 'README', extension : 'md' }" />
+      </li>
+      <li>
+        <oc-file icon="archive" :file="{ name : 'package', extension : 'tar.gz' }" />
+      </li>
+    </ul>
+  </section>
+  ```
 </docs>
