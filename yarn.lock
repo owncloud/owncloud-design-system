@@ -4331,14 +4331,7 @@ espree@^5.0.1:
     acorn-jsx "^5.0.0"
     eslint-visitor-keys "^1.0.0"
 
-esprima-extract-comments@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/esprima-extract-comments/-/esprima-extract-comments-0.2.1.tgz#9018d8df37ffd95dd615015a8c5f0475ed743423"
-  integrity sha1-kBjY3zf/2V3WFQFajF8Ede10NCM=
-  dependencies:
-    esprima "^2.7.1"
-
-esprima@^2.1.0, esprima@^2.6.0, esprima@^2.7.1:
+esprima@^2.1.0, esprima@^2.6.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
   integrity sha1-luO3DVd59q1JzQMmc9HDEnZ7pYE=
@@ -4565,16 +4558,6 @@ extglob@^2.0.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
-
-extract-comments@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/extract-comments/-/extract-comments-0.10.1.tgz#8b6031808a2f5fde1cd67bf8317b918204304408"
-  integrity sha1-i2AxgIovX94c1nv4MXuRggQwRAg=
-  dependencies:
-    define-property "^0.2.5"
-    esprima-extract-comments "^0.2.1"
-    extend-shallow "^2.0.1"
-    parse-code-context "^0.2.1"
 
 extract-from-css@^0.4.4:
   version "0.4.4"
@@ -8640,11 +8623,6 @@ parse-asn1@^5.0.0:
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
 
-parse-code-context@^0.2.1:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/parse-code-context/-/parse-code-context-0.2.2.tgz#144b8afb7219482d7e88c1eb6a765596f3a6ac0d"
-  integrity sha1-FEuK+3IZSC1+iMHranZVlvOmrA0=
-
 parse-entities@^1.0.2, parse-entities@^1.1.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/parse-entities/-/parse-entities-1.2.1.tgz#2c761ced065ba7dc68148580b5a225e4918cdd69"
@@ -11508,14 +11486,6 @@ strip-bom@^3.0.0:
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
   integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
 
-strip-comments@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/strip-comments/-/strip-comments-0.4.4.tgz#b9caafc4fe905f96c091df89f9a7215f2aa629c6"
-  integrity sha1-ucqvxP6QX5bAkd+J+achXyqmKcY=
-  dependencies:
-    extend-shallow "^2.0.1"
-    extract-comments "^0.10.1"
-
 strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
@@ -12502,10 +12472,10 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.10.1.tgz#9b1e1b0c27dbe01c0cf7f66a2b86cd85e630cf1a"
-  integrity sha512-VXOr7wixbteTSH4w5vPefZvKB2789JLcMqIVAkA/w1zvqBmO4yrIaNSueOoD5zOxpU0p9HbutyOHJWiFRteSyQ==
+vue-styleguidist@^3.10.2:
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.10.2.tgz#05d67d098c04fd58b6ea23d0d4bc284f10e35f99"
+  integrity sha512-NqZ1JEgvCCdQ7TOkSN/KFUgqI20h1cRMaQ39F59oklDVaFV/YKeejTiJNIhFfuL1njxN67SrivzonO0Qhjnizw==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.0.5"
@@ -12522,7 +12492,6 @@ vue-styleguidist@^3.10.1:
     es6-object-assign "~1.1.0"
     es6-promise "^4.2.4"
     escodegen "^1.10.0"
-    esprima "^4.0.0"
     findup "^0.1.5"
     function.name-polyfill "^1.0.6"
     github-slugger "^1.2.0"
@@ -12557,7 +12526,6 @@ vue-styleguidist@^3.10.1:
     react-dom "^16.4.1"
     react-group "^1.0.6"
     react-styleguidist "^8.0.4"
-    strip-comments "^0.4.4"
     style-loader "^0.21.0"
     to-ast "^1.0.0"
     uglifyjs-webpack-plugin "1.2.7"
