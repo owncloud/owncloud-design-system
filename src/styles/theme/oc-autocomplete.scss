@@ -1,8 +1,12 @@
-.autocomplete {
-  &-suggestions:extend(.uk-position-absolute, .uk-background-muted, .uk-box-shadow-medium) {
-  }
+.oc-autocomplete {
   &-suggestion {
-    &.selected {
+    @extend .uk-margin-remove;
+
+    color: $global-muted-color;
+    padding: $global-small-gutter;
+
+    &-selected {
+      color: $global-inverse-color;
       background-color: $global-primary-background;
     }
   }
