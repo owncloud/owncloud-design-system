@@ -1,22 +1,5 @@
 <template>
-  <component :is="type" class="index">
-    <NavBar
-      active="Index"
-      :navItems="[
-        { name: 'Template', component: 'Index', href: '/#/' },
-        { name: 'Documentation', href: 'http://localhost:6060/' },
-      ]"
-    />
-    <Wrapper>
-      <Heading>ownCloud Design System</Heading>
-      <Paragraph>
-        <a href="https://owncloud.github.io/owncloud-design-system/">ownCloud Design System</a>is an
-        open-source tool for building design systems with Vue.js. It provides you and your team a
-        set of organized tools, patterns &amp; practices. It works as the foundation for your
-        application development.
-      </Paragraph>
-    </Wrapper>
-  </component>
+  <component :is="type" class="index"> </component>
 </template>
 
 <script>
@@ -44,8 +27,6 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped></style>
 
 <docs>
   ```jsx
