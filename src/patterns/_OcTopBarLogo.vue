@@ -1,6 +1,6 @@
 <template>
   <div class="uk-navbar-item uk-logo">
-    <oc-icon :name="icon"></oc-icon>
+    <oc-button :icon="icon" @click="_click"></oc-button>
     <span v-if="title" class="uk-navbar-item">{{ title }}</span>
   </div>
 </template>
@@ -18,6 +18,16 @@ export default {
     title: {
       type: String,
       default: "",
+    },
+  },
+  methods: {
+    _click() {
+      /**
+       * The onChange event
+       * @event click
+       * @type {event}
+       */
+      this.$emit("click")
     },
   },
 }
