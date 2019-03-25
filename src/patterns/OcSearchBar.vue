@@ -1,20 +1,29 @@
 <template>
-  <oc-text-field
-    :label="label"
-    :loading="loading"
-    @input="onType"
-    :value="searchQuery"
-    @keydown.enter="onSearch"
-    @click:append="onSearch"
-    append-icon="search"
-    autofocus="autofocus"
-  >
-  </oc-text-field>
+  <div class="uk-inline">
+    <oc-text-input
+      :placeholder="label"
+      @input="onType"
+      :value="searchQuery"
+      @keydown.enter="onSearch"
+      @click:append="onSearch"
+      autofocus="autofocus"
+      :disabled="loading"
+    />
+    <span class="uk-form-icon uk-form-icon-flip">
+      <oc-icon name="search" />
+    </span>
+  </div>
 </template>
 
 <script>
+import OcTextInput from "../elements/OcTextInput"
+
+/**
+ * The search bar is an input element used for searching server side resources.
+ */
 export default {
   name: "oc-search-bar",
+  components: { OcTextInput },
   status: "prototype",
   release: "0.0.1",
   props: {
@@ -77,6 +86,9 @@ export default {
 
 <docs>
 ```jsx
-  <oc-search-bar label="Demo Search"></oc-search-bar>
+  <oc-search-bar label="Search Files"></oc-search-bar>
+  <br>
+  <br>
+  <oc-search-bar label="Searching ...." :loading="true"></oc-search-bar>
 ```
 </docs>
