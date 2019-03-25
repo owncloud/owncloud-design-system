@@ -62,7 +62,7 @@ export default {
       </template>
         <template slot="title">
             <div class="uk-navbar-item">
-                <oc-search></oc-search>
+                <oc-search-bar label="Search"></oc-search-bar>
             </div>
         </template>
         <template slot="right">
