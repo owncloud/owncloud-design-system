@@ -6,6 +6,11 @@
 <script>
 /**
  * The file list is main component of the ownCloud files app.
+ *
+ * ## TODO
+ *
+ * - [ ] handle large lists with https://github.com/Akryum/vue-virtual-scroller
+ *
  */
 export default {
   name: "oc-table",
