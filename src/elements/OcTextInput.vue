@@ -7,6 +7,7 @@
     :aria-label="placeholder"
     @input="onInput($event.target.value)"
     @focus="onFocus($event.target.value)"
+    @keydown="onKeyDown($event)"
   />
 </template>
 
@@ -50,11 +51,11 @@ export default {
   methods: {
     onInput(value) {
       /**
-       * Change event
+       * Input event
        * @event input
        * @type {event}
        **/
-      this.$emit("change", value)
+      this.$emit("input", value)
     },
     onFocus(value) {
       /**
@@ -63,6 +64,13 @@ export default {
        * @type {event}
        **/
       this.$emit("focus", value)
+    },
+    onKeyDown(e) {
+      if (e.keyCode === 13) {
+        this.$emit("change", e.target.value)
+      }
+
+      this.$emit("keydown", e)
     },
   },
 }
