@@ -57,7 +57,7 @@ export default {
         <oc-checkbox />
       </oc-table-cell>
       <oc-table-cell>
-        <oc-file mimeType="image/png" :name="'Picture ' + ++o"/>
+        <oc-file icon="image" :file="{ name : 'I love flowers', extension : 'jpg' }" :name="'Picture ' + ++o"/>
       </oc-table-cell>
       <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
       <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
