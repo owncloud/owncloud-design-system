@@ -9,11 +9,11 @@
       :disabled="loading"
       :placeholder="_placeholder"
     />
-    <div hidden :id="_boundry" />
+    <div hidden :id="_boundryId" />
     <div
       class="oc-autocomplete-dropdown"
-      :uk-drop="'mode:click;delay-hide:0;toggle:#' + _boundry"
-      :id="_dropDown"
+      :uk-drop="'mode:click;delay-hide:0;toggle:#' + _boundryId"
+      :id="_dropdownId"
     >
       <ul class="oc-autocomplete-suggestion-list">
         <template v-for="(item, i) in matchesShown">
@@ -105,7 +105,13 @@ export default {
     }
   },
   computed: {
-    matches() {
+    matchesShown() {
+      return this._matches.slice(0, this.maxListLength)
+    },
+    matchesOverflowing() {
+      return this._matches.length - this.matchesShown.length
+    },
+    _matches() {
       if (this.input.length === 0) {
         return []
       }
@@ -113,27 +119,21 @@ export default {
         return item.toLowerCase().indexOf(this.input.toLowerCase()) >= 0
       })
     },
-    matchesShown() {
-      return this.matches.slice(0, this.maxListLength)
-    },
-    matchesOverflowing() {
-      return this.matches.length - this.matchesShown.length
-    },
-    _dropDown() {
+    _dropdownId() {
       return _uniqueId("oc-autocomplete-dropdown-")
     },
-    _boundry() {
+    _boundryId() {
       return _uniqueId("oc-autocomplete-boundry-")
     },
     _dropdown() {
-      return UiKit.drop(`#${this._dropDown}`)
+      return UiKit.drop(`#${this._dropdownId}`)
     },
     _placeholder() {
       return this.loading ? "Loading ..." : this.placeholder
     },
   },
   watch: {
-    matches(items, last) {
+    _matches(items, last) {
       if (items === last) return
 
       // Hide if the list only contains the current full match
