@@ -1,5 +1,6 @@
 <template>
   <ul uk-tab>
+    <!-- @slot oc-tab-items are rendered into this slot -->
     <slot />
   </ul>
 </template>
