@@ -69,7 +69,7 @@ export default {
       required: false,
     },
     /**
-     * Is set to true data is loaded and the user cannot enter further data
+     * If set to true data is loaded and the user cannot enter further data
      */
     loading: {
       type: Boolean,
@@ -162,6 +162,7 @@ export default {
     userInput(value) {
       /**
        * This event is emitted as soon as the user changes the search term
+       * @type {string}
        */
       this.$emit("update:search-input", value)
     },
@@ -186,14 +187,23 @@ export default {
 <docs>
 ```jsx
 <template>
-  <div>
+  <section>
+    <h3 class="uk-heading-divider">
+      Autocomplete
+    </h3>
     <div class="uk-margin">
       <oc-autocomplete :items="[]" loading placeholder="I'm just loading around" />
     </div>
     <div class="uk-margin">
       <oc-autocomplete :items="items" placeholder="Add user" />
     </div>
-  </div>
+    <h3 class="uk-heading-divider">
+      Autocomplete in action
+    </h3>
+    <div class="uk-margin">
+      <oc-autocomplete :items="searchResult" :loading="searchInProgress" placeholder="Add user" @update:search-input="onInput"/>
+    </div>
+  </section>
 </template>
 <script>
 export default {
@@ -210,7 +220,20 @@ export default {
         'Charmain Earls',
         'Verona Mounts',
         'Arlena Bolster'
-      ]
+      ],
+      searchResult: [],
+      searchInProgress: false
+    }
+  },
+  methods: {
+    onInput() {
+      this.searchResult = []
+      this.searchInProgress = true
+      setTimeout(function () {
+        alert('time is up')
+        this.searchInProgress = false
+        this.searchResult = this.items
+      }, 2000)
     }
   }
 }
