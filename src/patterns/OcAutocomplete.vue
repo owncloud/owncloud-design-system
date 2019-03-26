@@ -1,19 +1,26 @@
 <template>
   <div class="oc-autocomplete">
-    <!-- <oc-text-input :disabled="loading" :placeholder="label" @change="userInput"></oc-text-input> -->
-    <input class="uk-input" v-model="input" @keydown="key($event)" :placeholder="label" />
-    <div hidden :id="_boundry" />
+    <input
+      class="oc-autocomplete-input"
+      v-model="input"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      @keydown.up.prevent="highlighted--"
+      @keydown.down.prevent="highlighted++"
+      @keydown.enter="selectSuggestion"
+    />
+    <div hidden :id="_boundryId" />
     <div
-      class="uk-card uk-card-default uk-card-body uk-padding-remove"
-      :uk-drop="'delay-hide:0;toggle:#' + _boundry"
-      :id="_dropDown"
+      class="oc-autocomplete-dropdown"
+      :uk-drop="'mode:click;delay-hide:0;toggle:#' + _boundryId"
+      :id="_dropdownId"
     >
-      <ul class="uk-list">
-        <template v-for="(item, i) in matches">
+      <ul class="oc-autocomplete-suggestion-list">
+        <template v-for="(item, i) in matchesShown">
           <li
             :class="[
-              { 'oc-autocomplete-suggestion-selected': i === highlighted },
               'oc-autocomplete-suggestion',
+              { 'oc-autocomplete-suggestion-selected': i === highlighted },
             ]"
             :key="i"
             v-text="item"
@@ -21,6 +28,18 @@
             @click="selectSuggestion"
           ></li>
         </template>
+        <li
+          v-if="matchesOverflowing > 0 && !itemsLoading"
+          class="oc-autocomplete-suggestion-overflow"
+        >
+          {{ matchesOverflowing }}
+          <span v-if="matchesOverflowing === 1">more result</span>
+          <span v-else>more results</span>
+        </li>
+        <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
+          <oc-spinner class="oc-autocomplete-spinner" />
+          <span>Loading results</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -40,7 +59,7 @@ import { uniqueId as _uniqueId } from "lodash"
  *
  * ##TODO:
  *
- * - [ ] Implement loading indicator
+ * - [x] Implement loading indicator
  * - [ ] Allow complex content (HTML)
  */
 export default {
@@ -50,17 +69,23 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Informative label about the data to be entered
+     * Informative placeholder about the data to be entered
      */
-    label: {
+    placeholder: {
       type: String,
-      required: true,
-      default: null,
+      required: false,
     },
     /**
-     * Is set to true data is loaded and the user cannot enter further data
+     * Input can be entered or not
      */
-    loading: {
+    disabled: {
+      type: Boolean,
+      required: false,
+    },
+    /**
+     * If set to true data is loaded and the user cannot enter further data
+     */
+    itemsLoading: {
       type: Boolean,
       default: false,
     },
@@ -72,6 +97,13 @@ export default {
       default: function() {
         return []
       },
+    },
+    /**
+     * Maxlength of the dropdown
+     */
+    maxListLength: {
+      type: Number,
+      default: 5,
     },
     /**
      * The selected element
@@ -87,47 +119,53 @@ export default {
     }
   },
   computed: {
-    matches() {
+    matchesShown() {
+      return this._matches.slice(0, this.maxListLength)
+    },
+    matchesOverflowing() {
+      return this._matches.length - this.matchesShown.length
+    },
+    _matches() {
       if (this.input.length === 0) {
         return []
       }
-
       return this.items.filter(item => {
         return item.toLowerCase().indexOf(this.input.toLowerCase()) >= 0
       })
     },
-    _dropDown() {
+    _dropdownId() {
       return _uniqueId("oc-autocomplete-dropdown-")
     },
-    _boundry() {
+    _boundryId() {
       return _uniqueId("oc-autocomplete-boundry-")
     },
     _dropdown() {
-      return UiKit.drop(`#${this._dropDown}`)
+      return UiKit.drop(`#${this._dropdownId}`)
     },
   },
   watch: {
-    matches(items, last) {
-      if (items === last) return
+    input(input, before) {
+      if (input === before) return
 
-      // Hide if the list only contains the current full match
-      if (items.length === 1 && items[0].toLowerCase() === this.input.toLowerCase()) {
-        this._dropdown.hide()
-      }
-      // Hide, if there are no matches
-      else if (items.length === 0) {
+      if (
+        input.length === 0 ||
+        (input === this.matchesShown[0] && this.matchesShown.length === 1)
+      ) {
         this._dropdown.hide()
       } else {
         this._dropdown.show()
       }
+
+      // The real update not depending on onblur
+      this.userInput(input)
     },
     highlighted(next, current) {
       if (next === current) return
 
       // come around
       if (next < 0) {
-        this.highlighted = this.matches.length - 1
-      } else if (next > this.matches.length - 1) {
+        this.highlighted = this.matchesShown.length - 1
+      } else if (next > this.matchesShown.length - 1) {
         this.highlighted = 0
       }
     },
@@ -136,31 +174,67 @@ export default {
     userInput(value) {
       /**
        * This event is emitted as soon as the user changes the search term
+       * @type {string}
        */
-      this.$emit("update:search-input", value)
-    },
-    key(event) {
-      switch (event.key) {
-        case "ArrowUp":
-          this.highlighted--
-          break
-        case "ArrowDown":
-          this.highlighted++
-          break
-        case "Enter":
-          this.selectSuggestion()
-      }
+      this.$emit("update:input", value)
     },
     selectSuggestion() {
-      if (this.matches[this.highlighted]) this.input = this.matches[this.highlighted]
+      if (this.matchesShown[this.highlighted]) this.input = this.matchesShown[this.highlighted]
     },
   },
 }
 </script>
 <docs>
 ```jsx
-<div>
-  <oc-autocomplete :items="['Alice', 'Bob', 'Chuck', 'Doris', 'Emil', 'Felix']" label="Add user or group ..." />
-</div>
+<template>
+  <section>
+    <h3 class="uk-heading-divider">
+      Autocomplete
+    </h3>
+    <div class="uk-margin">
+      <oc-autocomplete :items="[]" disabled placeholder="I am disabled" />
+    </div>
+    <div class="uk-margin">
+      <oc-autocomplete :items="items" placeholder="Add user" />
+    </div>
+    <h3 class="uk-heading-divider">
+      Autocomplete in action
+    </h3>
+    <div class="uk-margin">
+      <oc-autocomplete :items="searchResult" :itemsLoading="searchInProgress" placeholder="Add user" @update:input="onInput"/>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+  data () {
+    return {
+      items : [
+        'Scott Mortensen',
+        'Lecia Scheerer',
+        'Merrie Rubin',
+        'Kenton Eich',
+        'Telma Bonavita',
+        'Annis Newberry',
+        'Tama Lindamood',
+        'Charmain Earls',
+        'Verona Mounts',
+        'Arlena Bolster'
+      ],
+      searchResult: [],
+      searchInProgress: false
+    }
+  },
+  methods: {
+    onInput() {
+      this.searchInProgress = true
+      setTimeout(() => {
+        this.searchInProgress = false
+        this.searchResult = this.items
+      }, 2000)
+    }
+  }
+}
+</script>
 ```
 </docs>
