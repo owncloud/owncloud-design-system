@@ -1,13 +1,13 @@
 <template>
-  <div :class="['oc-autocomplete', { 'oc-autocomplete-loading': loading }]">
-    <oc-spinner v-if="loading" size="small" class="oc-autocomplete-spinner" />
+  <div class="oc-autocomplete">
     <input
       class="oc-autocomplete-input"
       v-model="input"
-      @keydown="key($event)"
-      @change="userInput"
-      :disabled="loading"
-      :placeholder="_placeholder"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      @keydown.up.prevent="highlighted--"
+      @keydown.down.prevent="highlighted++"
+      @keydown.enter="selectSuggestion"
     />
     <div hidden :id="_boundryId" />
     <div
@@ -28,10 +28,17 @@
             @click="selectSuggestion"
           ></li>
         </template>
-        <li v-if="matchesOverflowing > 0" class="oc-autocomplete-suggestion-overflow">
+        <li
+          v-if="matchesOverflowing > 0 && !itemsLoading"
+          class="oc-autocomplete-suggestion-overflow"
+        >
           {{ matchesOverflowing }}
           <span v-if="matchesOverflowing === 1">more result</span>
           <span v-else>more results</span>
+        </li>
+        <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
+          <oc-spinner class="oc-autocomplete-spinner" />
+          <span>Loading results</span>
         </li>
       </ul>
     </div>
@@ -69,9 +76,16 @@ export default {
       required: false,
     },
     /**
+     * Input can be entered or not
+     */
+    disabled: {
+      type: Boolean,
+      required: false,
+    },
+    /**
      * If set to true data is loaded and the user cannot enter further data
      */
-    loading: {
+    itemsLoading: {
       type: Boolean,
       default: false,
     },
@@ -128,24 +142,22 @@ export default {
     _dropdown() {
       return UiKit.drop(`#${this._dropdownId}`)
     },
-    _placeholder() {
-      return this.loading ? "Loading ..." : this.placeholder
-    },
   },
   watch: {
-    _matches(items, last) {
-      if (items === last) return
+    input(input, before) {
+      if (input === before) return
 
-      // Hide if the list only contains the current full match
-      if (items.length === 1 && items[0].toLowerCase() === this.input.toLowerCase()) {
-        this._dropdown.hide()
-      }
-      // Hide, if there are no matches
-      else if (items.length === 0) {
+      if (
+        input.length === 0 ||
+        (input === this.matchesShown[0] && this.matchesShown.length === 1)
+      ) {
         this._dropdown.hide()
       } else {
         this._dropdown.show()
       }
+
+      // The real update not depending on onblur
+      this.userInput(input)
     },
     highlighted(next, current) {
       if (next === current) return
@@ -164,19 +176,7 @@ export default {
        * This event is emitted as soon as the user changes the search term
        * @type {string}
        */
-      this.$emit("update:search-input", value)
-    },
-    key(event) {
-      switch (event.key) {
-        case "ArrowUp":
-          this.highlighted--
-          break
-        case "ArrowDown":
-          this.highlighted++
-          break
-        case "Enter":
-          this.selectSuggestion()
-      }
+      this.$emit("update:input", value)
     },
     selectSuggestion() {
       if (this.matchesShown[this.highlighted]) this.input = this.matchesShown[this.highlighted]
@@ -192,7 +192,7 @@ export default {
       Autocomplete
     </h3>
     <div class="uk-margin">
-      <oc-autocomplete :items="[]" loading placeholder="I'm just loading around" />
+      <oc-autocomplete :items="[]" disabled placeholder="I am disabled" />
     </div>
     <div class="uk-margin">
       <oc-autocomplete :items="items" placeholder="Add user" />
@@ -201,7 +201,7 @@ export default {
       Autocomplete in action
     </h3>
     <div class="uk-margin">
-      <oc-autocomplete :items="searchResult" :loading="searchInProgress" placeholder="Add user" @update:search-input="onInput"/>
+      <oc-autocomplete :items="searchResult" :itemsLoading="searchInProgress" placeholder="Add user" @update:input="onInput"/>
     </div>
   </section>
 </template>
@@ -227,10 +227,8 @@ export default {
   },
   methods: {
     onInput() {
-      this.searchResult = []
       this.searchInProgress = true
-      setTimeout(function () {
-        alert('time is up')
+      setTimeout(() => {
         this.searchInProgress = false
         this.searchResult = this.items
       }, 2000)

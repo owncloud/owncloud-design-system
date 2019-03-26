@@ -13,7 +13,7 @@
   &-spinner {
     @extend .uk-position-absolute;
     top: 50%;
-    left: $global-gutter / 1.5;
+    left: $global-gutter;
     transform: translate(-50%, -50%);
   }
 
@@ -25,6 +25,15 @@
     &-list {
       @extend .uk-list;
       @extend .uk-margin-remove;
+
+      &-loader {
+        @extend .uk-position-relative;
+        @extend .uk-text-meta;
+        @extend .uk-margin-remove;
+        padding: $global-small-gutter;
+        padding-left: $spinner-size + $global-small-gutter * 2;
+        background-color: $global-muted-background;
+      }
     }
 
     &-selected {
@@ -37,14 +46,6 @@
       @extend .uk-margin-remove;
       padding: $global-small-gutter;
       background-color: $global-muted-background;
-    }
-  }
-
-  // States
-
-  &-loading {
-    .oc-autocomplete-input {
-      padding-left: $global-gutter * 1.25;
     }
   }
 }
