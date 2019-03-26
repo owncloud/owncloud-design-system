@@ -1,13 +1,50 @@
 .oc-autocomplete {
+  @extend .uk-position-relative;
+
+  &-dropdown {
+    @extend .uk-box-shadow-medium;
+    background: $global-background;
+  }
+
+  &-input {
+    @extend .uk-input;
+  }
+
+  &-spinner {
+    @extend .uk-position-absolute;
+    top: 50%;
+    left: $global-gutter / 1.5;
+    transform: translate(-50%, -50%);
+  }
+
   &-suggestion {
     @extend .uk-margin-remove;
-
     color: $global-muted-color;
     padding: $global-small-gutter;
+
+    &-list {
+      @extend .uk-list;
+      @extend .uk-margin-remove;
+    }
 
     &-selected {
       color: $global-inverse-color;
       background-color: $global-primary-background;
+    }
+
+    &-overflow {
+      @extend .uk-text-meta;
+      @extend .uk-margin-remove;
+      padding: $global-small-gutter;
+      background-color: $global-muted-background;
+    }
+  }
+
+  // States
+
+  &-loading {
+    .oc-autocomplete-input {
+      padding-left: $global-gutter * 1.25;
     }
   }
 }
