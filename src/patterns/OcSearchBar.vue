@@ -1,16 +1,14 @@
 <template>
   <div class="uk-inline">
     <oc-text-input
-      :placeholder="label"
+      :placeholder="placeholder"
       @input="onType"
       :value="searchQuery"
       @keydown.enter="onSearch"
-      @click:append="onSearch"
-      autofocus="autofocus"
       :disabled="loading"
     />
-    <span class="uk-form-icon uk-form-icon-flip">
-      <oc-icon name="search" />
+    <span v-if="icon" class="uk-form-icon uk-form-icon-flip">
+      <oc-icon :name="icon" />
     </span>
   </div>
 </template>
@@ -19,42 +17,57 @@
 import OcTextInput from "../elements/OcTextInput"
 
 /**
- * The search bar is an input element used for searching server side resources.
+ * The search bar is an input element used for searching server side resources or to filter local results.
  */
 export default {
   name: "oc-search-bar",
   components: { OcTextInput },
   status: "prototype",
-  release: "0.0.1",
+  release: "1.0.0",
   props: {
+    /**
+     * Set the search query
+     */
     value: {
       type: String,
       required: false,
       default: null,
     },
-    label: {
+    /**
+     * Informative placeholder about the data to be entered
+     */
+    icon: {
+      type: String,
+      required: false,
+      default: "search",
+    },
+    /**
+     * Informative placeholder about the data to be entered
+     */
+    placeholder: {
       type: String,
       required: false,
       default: "",
     },
-    // native autofocus
-    autofocus: {
+    /**
+     * If set to true the search event is triggered on each entered character
+     */
+    typeAhead: {
       type: Boolean,
       required: false,
       default: false,
     },
-    // search while typing
-    autosearch: {
+    /**
+     * automatically trim whitespaces around search term
+     */
+    trimQuery: {
       type: Boolean,
       required: false,
-      default: false,
+      default: true,
     },
-    // do not automatically trim whitespaces around search term
-    noTrim: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
+    /**
+     * If set to true data is loaded and the user cannot enter further data
+     */
     loading: {
       type: Boolean,
       required: false,
@@ -65,14 +78,23 @@ export default {
     query: "",
   }),
   methods: {
-    onSearch(query) {
+    onSearch() {
+      /**
+       * Search event on filter or search user input
+       * @event search
+       * @type {event}
+       */
       this.$emit("search", this.query)
     },
     onType(query) {
       this.query = !this.noTrim ? query.trim() : query
-      // use input event to support model directive
+      /**
+       * Input event to support model directive
+       * @event Input
+       * @type {event}
+       */
       this.$emit("input", query)
-      if (this.autosearch) this.onSearch(query)
+      if (this.typeAhead) this.onSearch(query)
     },
   },
   computed: {
@@ -85,10 +107,46 @@ export default {
 </script>
 
 <docs>
-```jsx
-  <oc-search-bar label="Search Files"></oc-search-bar>
-  <br>
-  <br>
-  <oc-search-bar label="Searching ...." :loading="true"></oc-search-bar>
-```
+    ```
+    <template>
+        <section>
+            <section>
+                <h3 class="uk-heading-divider">
+                    Search examples
+                </h3>
+                <oc-search-bar placeholder="Search Files" @search="onSearch"></oc-search-bar>
+                <span>Search query: {{ searchQuery }}</span>
+                <br>
+                <br>
+                <oc-search-bar placeholder="Loading ...." :loading="true"></oc-search-bar>
+            </section>
+            <section>
+                <h3 class="uk-heading-divider">
+                    Filter examples
+                </h3>
+                <oc-search-bar placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" icon=""></oc-search-bar>
+                <span>Filter query: {{ filterQuery }}</span>
+            </section>
+        </section>
+    </template>
+    <script>
+        export default {
+            data: () => {
+                return {
+                    filterQuery: '',
+                    searchQuery: ''
+                }
+            },
+            methods: {
+                onFilter(val) {
+                    this.filterQuery = val
+                },
+                onSearch(val) {
+                    this.searchQuery = val
+                }
+            }
+        }
+    </script>
+
+    ```
 </docs>
