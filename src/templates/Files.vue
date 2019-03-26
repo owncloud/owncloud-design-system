@@ -33,11 +33,17 @@ export default {
 
 <docs>
   ```jsx
+<template>
   <div><!-- top container to fill the whole screen/area -->
+    <oc-dialog name="OcDialog" title="Not implemented">
+      <template slot="content">
+        This feature is not implemented yet.
+      </template>
+    </oc-dialog>
     <oc-topbar variation="primary">
       <template slot="left">
         <div class="uk-navbar-item uk-logo">
-          <oc-icon name="menu"></oc-icon>
+          <oc-icon name="menu" uk-toggle="target: #OcDialog"></oc-icon>
         </div>
         <span class="uk-navbar-item">Files</span>
       </template>
@@ -70,8 +76,8 @@ export default {
                 <oc-menu buttonText="+ New">
                     <!-- TODO: replace with oc-list elements-->
                     <ul class="uk-nav uk-dropdown-nav uk-nav-default">
-                        <li><a href="#"><oc-icon name="create_new_folder"/>New folder ...</a> </li>
-                        <li><a href="#"><oc-icon name="save"/>New file ...</a> </li>
+                        <li @click="createFolder = true"><a href="#"><oc-icon name="create_new_folder"/>New folder ...</a> </li>
+                        <li @click="createFile = true"><a href="#"><oc-icon name="save"/>New file ...</a> </li>
                     </ul>
                 </oc-menu>
             </div>
@@ -90,7 +96,7 @@ export default {
                         <li>Files<oc-checkbox></oc-checkbox></li>
                         <li>Folders<oc-checkbox></oc-checkbox></li>
                         <li>Hidden files<oc-checkbox></oc-checkbox></li>
-                        <li>Files by name<oc-input></oc-input></li>
+                        <li>Files by name<oc-text-input></oc-text-input></li>
                     </ul>
                 </oc-menu>
             </div>
@@ -129,6 +135,33 @@ export default {
         </oc-table-row>
       </oc-table-group>
     </oc-table>
+    <oc-dialog name="createFolder" title="Create Folder" v-model="createFolder">
+      <template slot="content">
+        <oc-text-input placeholder="New Folder Name"/>
+      </template>
+      <template slot="footer">
+        <oc-button @click="createFolder = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
+        <oc-button @click="createFolder = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+      </template>
+    </oc-dialog>
+    <oc-dialog name="createFile" title="Create File" v-model="createFile">
+      <template slot="content">
+        <oc-text-input placeholder="New File Name"/>
+      </template>
+      <template slot="footer">
+        <oc-button @click="createFile = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
+        <oc-button @click="createFile = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+      </template>
+    </oc-dialog>
   </div>
+</template>
+<script>
+export default {
+  data: () => ({
+    createFile: false,
+    createFolder: false
+  })
+}
+</script>
   ```
 </docs>
