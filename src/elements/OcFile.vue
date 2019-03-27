@@ -1,7 +1,7 @@
 <template>
   <a class="oc-file">
     <oc-icon :name="icon" variation="primary" class="uk-position-center-left" />
-    <span class="oc-file-name" v-text="file.name" /><span
+    <span class="oc-file-name" v-text="file.name" @click="onClick" /><span
       v-if="file.extension"
       class="oc-file-extension"
       v-text="file.extension"
@@ -32,6 +32,16 @@ export default {
     file: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    onClick() {
+      /**
+       * This event is emitted when the user clicks a file
+       * TODO https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
+       * @type {string}
+       */
+      this.$emit("oc-file:click", this.file)
     },
   },
 }

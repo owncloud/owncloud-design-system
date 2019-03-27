@@ -25,14 +25,19 @@ export default {
       type: String,
       default: "div",
     },
+    /**
+     * The selected file, Has a `name` and `extension` property.
+     */
+    selectedFile: {
+      type: Object,
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped></style>
 
-<docs>
-  ```jsx
+<docs>```jsx
 <template>
   <div><!-- top container to fill the whole screen/area -->
     <oc-dialog name="OcDialog" title="Not implemented">
@@ -122,12 +127,13 @@ export default {
         </oc-table-row>
       </oc-table-group>
       <oc-table-group>
-        <oc-table-row v-for="(i,o) in new Array(3)" :key="o">
+        <oc-table-row v-for="(file,o) in files" :key="o">
           <oc-table-cell>
             <oc-checkbox />
           </oc-table-cell>
           <oc-table-cell>
-            <oc-file :file="{ name : 'Picture ' + ++o, extension : 'png' }"/>
+            <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event --> 
+            <oc-file @oc-file:click="selectFile(file)" :file="file" :icon="file.icon"/>
           </oc-table-cell>
           <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
           <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
@@ -141,6 +147,7 @@ export default {
         </oc-table-row>
       </oc-table-group>
     </oc-table>
+    
     <oc-dialog name="createFolder" title="Create Folder" v-model="createFolder">
       <template slot="content">
         <oc-text-input placeholder="New Folder Name"/>
@@ -159,15 +166,102 @@ export default {
         <oc-button @click="createFile = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
       </template>
     </oc-dialog>
+
+    <oc-file-actions />
   </div>
 </template>
 <script>
-export default {
-  data: () => ({
-    createFile: false,
-    createFolder: false
-  })
-}
+  export default {
+    data () {
+      return {
+        createFile: false,
+        createFolder: false,
+        files: [
+          {name: "Private", extension: "", icon:'folder'},
+          {name: "Project", extension: "", icon:'folder-shared'},
+          {name: "Document", extension: "pdf", icon:'application-pdf'},
+          {name: "Picture", extension: "png", icon:'image'},
+          {name: "Presentation", extension: "odp", icon:'x-office-presentation'},
+          {name: "README", extension: "md", icon:'text'},
+          {name: "Spreadsheet", extension: "ods", icon:'x-office-spreadsheet'},
+          {name: "Textdocument", extension: "odt", icon:'x-office-document'},
+          {name: "Video", extension: "mp4", icon:'video'},
+          {name: "Welcome", extension: "txt", icon:'text'},
+        ],
+        actions: {
+          "pdf": [{
+            label:'PDF Viewer',
+            icon:'application-pdf',
+            onClick: function(){
+              alert("PDF")
+            }
+          }],
+          "txt": [{
+            label:'Text editor',
+            icon:'text',
+            onClick: function(){
+              alert("TXT")
+            }
+          },{
+            label:'Markdown editor',
+            icon:'text',
+            onClick: function(){
+              alert("MD")
+            }
+          }],
+          "md": [{
+            label:'Markdown editor',
+            icon:'text',
+            onClick: function(){
+              alert("MD")
+            }
+          },{
+            label:'Text editor',
+            icon:'text',
+            onClick: function(){
+              alert("TXT")
+            }
+          }],
+          "odt": [{
+            label:'Office documents',
+            icon:'x-office-document',
+            onClick: function(){
+              alert("ODT")
+            }
+          }],
+          "odp": [{
+            label:'Office presentation',
+            icon:'x-office-presentation',
+            onClick: function(){
+              alert("ODP")
+            }
+          }],
+          "ods": [{
+            label:'Office spreadsheet',
+            icon:'x-office-spreadsheet',
+            onClick: function(){
+              alert("ODS")
+            }
+          }],
+          "mp4": [{
+            label:'Media player',
+            icon:'video',
+            onClick: function(){
+              alert("MP4")
+            }
+          }]
+        }
+      }
+    },
+    methods: {
+      selectFile(file) {
+        this.$root.$emit('oc-file-actions:open', {
+          filename: file.name + "." + file.extension,
+          actions: this.actions[file.extension]
+        })
+      },
+    },
+  }
 </script>
-  ```
+```
 </docs>
