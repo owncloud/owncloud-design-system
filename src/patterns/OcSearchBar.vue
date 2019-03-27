@@ -1,18 +1,38 @@
 <template>
-  <div class="uk-inline">
-    <oc-text-input
-      :placeholder="placeholder"
-      @input="onType"
-      :value="searchQuery"
-      @keydown.enter="onSearch"
-      :disabled="loading"
-    />
-    <span v-if="icon" class="uk-form-icon uk-form-icon-flip">
-      <oc-icon :name="icon" />
-    </span>
+  <div uk-grid class="oc-search">
+    <div>
+      <div class="uk-inline">
+        <span v-if="icon" class="uk-form-icon">
+          <oc-icon v-show="!loading" :name="icon" />
+          <div v-show="loading" uk-spinner="ratio:0.75" aria-hidden></div>
+        </span>
+        <oc-text-input
+          class="oc-search-input"
+          @input="onType"
+          @keydown.enter="onSearch"
+          :placeholder="placeholder"
+          :value="searchQuery"
+          :disabled="loading"
+        />
+        <div
+          uk-close
+          v-if="query.length > 0"
+          @click="query = ''"
+          class="oc-search-clear uk-position-small uk-position-center-right"
+        />
+      </div>
+    </div>
+    <div v-if="button">
+      <oc-button
+        class="oc-search-button"
+        variation="primary"
+        :disabled="loading || searchQuery.length < 1"
+        :text="button"
+        @click="onSearch"
+      />
+    </div>
   </div>
 </template>
-
 <script>
 import OcTextInput from "../elements/OcTextInput"
 
@@ -48,6 +68,14 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    /**
+     * Determine the button text
+     */
+    button: {
+      type: [String, Boolean],
+      required: false,
+      default: "Search",
     },
     /**
      * If set to true the search event is triggered on each entered character
@@ -107,46 +135,46 @@ export default {
 </script>
 
 <docs>
-    ```
-    <template>
-        <section>
-            <section>
-                <h3 class="uk-heading-divider">
-                    Search examples
-                </h3>
-                <oc-search-bar placeholder="Search Files" @search="onSearch"></oc-search-bar>
-                <span>Search query: {{ searchQuery }}</span>
-                <br>
-                <br>
-                <oc-search-bar placeholder="Loading ...." :loading="true"></oc-search-bar>
-            </section>
-            <section>
-                <h3 class="uk-heading-divider">
-                    Filter examples
-                </h3>
-                <oc-search-bar placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" icon=""></oc-search-bar>
-                <span>Filter query: {{ filterQuery }}</span>
-            </section>
-        </section>
-    </template>
-    <script>
-        export default {
-            data: () => {
-                return {
-                    filterQuery: '',
-                    searchQuery: ''
-                }
+```
+<template>
+  <div>
+    <section>
+      <h3 class="uk-heading-divider">
+          Search examples
+      </h3>
+      <oc-search-bar placeholder="Search files" @search="onSearch"></oc-search-bar>
+      <div v-if="searchQuery" class="uk-margin">Search query: {{ searchQuery }}</div>
+      <hr>
+      <div class="uk-margin">
+        <oc-search-bar placeholder="Loading ..." :loading="true"></oc-search-bar>
+      </div>
+    </section>
+    <section>
+      <h3 class="uk-heading-divider">
+          Filter examples
+      </h3>
+      <oc-search-bar placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
+    </section>
+  </div>
+</template>
+<script>
+    export default {
+        data: () => {
+            return {
+                filterQuery: '',
+                searchQuery: ''
+            }
+        },
+        methods: {
+            onFilter(val) {
+                this.filterQuery = val
             },
-            methods: {
-                onFilter(val) {
-                    this.filterQuery = val
-                },
-                onSearch(val) {
-                    this.searchQuery = val
-                }
+            onSearch(val) {
+                this.searchQuery = val
             }
         }
-    </script>
-
-    ```
+    }
+</script>
+```
 </docs>

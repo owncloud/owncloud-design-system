@@ -1,0 +1,19 @@
+.oc-search {
+  @extend .uk-grid-collapse;
+  @extend .uk-flex-middle;
+
+  &-input {
+    @extend .uk-width-medium;
+  }
+
+  &-button {
+    // Prevend double borders
+    // from input and button
+    transform: translateX(-1px);
+    z-index: 0;
+  }
+
+  &-clear {
+    cursor: pointer;
+  }
+}
