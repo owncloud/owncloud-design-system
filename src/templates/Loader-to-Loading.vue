@@ -1,3 +1,8 @@
+<script>
+export default {
+  name: "loader-to-loading",
+}
+</script>
 <docs>
 ```jsx
     <template>
@@ -11,7 +16,6 @@
     </template>
     <script>
     export default {
-        name:'loader-to-loading',
         data () {
             return {
                 state : -1,
