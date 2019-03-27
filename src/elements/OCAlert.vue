@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-alert" :class="_class" uk-alert>
+  <div v-on:hide="onClose" class="oc-alert" :class="_class" uk-alert>
     <a v-if="!noClose" class="uk-alert-close" uk-close></a>
     <slot />
   </div>
@@ -41,6 +41,16 @@ export default {
       if (this.variation) classes.push(`uk-alert-${this.variation}`)
 
       return classes
+    },
+  },
+  methods: {
+    onClose(val) {
+      /**
+       * The user closed / hid the alert
+       * @event close
+       * @type {boolean}
+       */
+      this.$emit("close", val)
     },
   },
 }
