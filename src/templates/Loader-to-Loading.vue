@@ -11,6 +11,7 @@
     </template>
     <script>
     export default {
+        name:'loader-to-loading',
         data () {
             return {
                 state : -1,
