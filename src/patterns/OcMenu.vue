@@ -4,7 +4,12 @@
       <oc-button variation="primary" type="button" :text="buttonText"></oc-button>
     </slot>
     <div uk-dropdown="mode: click, offset: 0">
-      <slot />
+      <!-- @slot The default slot for inner content  -->
+      <slot name="default"> </slot>
+      <ul class="uk-nav uk-dropdown-nav uk-nav-default">
+        <!-- @slot This slot receives oc-menu-items as content -->
+        <slot name="subnav" />
+      </ul>
     </div>
   </div>
 </template>
@@ -42,12 +47,13 @@ export default {
         <oc-menu buttonText="Click Me!">
             Welcome to ownCloud Design System!
         </oc-menu>
-        <oc-menu buttonText="Click to open ...">
-            <!-- TODO: replace with oc-list elements-->
-            <ul class="uk-nav uk-dropdown-nav uk-nav-default">
-                <li><a href="#"><oc-icon name="create_new_folder"/>New folder ...</a> </li>
-                <li><a href="#"><oc-icon name="save"/>New file ...</a> </li>
-            </ul>
+        <oc-menu buttonText="Put &lt;oc-menu-item&gt; into the 'subnav' slot ...">
+          <template slot="subnav">
+                <oc-menu-item icon="create_new_folder" content="New folder …" />
+                <oc-menu-item icon="save" content="New file …" />
+                <oc-menu-item content="iconless action" />
+                <oc-menu-item>Another action</oc-menu-item>
+          </template>
         </oc-menu>
         <br />
         <oc-menu buttonText="Click Me!">

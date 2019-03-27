@@ -74,11 +74,10 @@ export default {
         <template slot="right">
             <div class="uk-navbar-item">
                 <oc-menu buttonText="+ New">
-                    <!-- TODO: replace with oc-list elements-->
-                    <ul class="uk-nav uk-dropdown-nav uk-nav-default">
-                        <li @click="createFolder = true"><a href="#"><oc-icon name="create_new_folder"/>New folder ...</a> </li>
-                        <li @click="createFile = true"><a href="#"><oc-icon name="save"/>New file ...</a> </li>
-                    </ul>
+                  <template slot="subnav">
+                    <oc-menu-item icon="create_new_folder" content="New folder …" />
+                    <oc-menu-item icon="save" content="New file …" />
+                  </template>
                 </oc-menu>
             </div>
             <div class="uk-navbar-item">
@@ -91,13 +90,20 @@ export default {
                             <oc-icon name="filter_list"></oc-icon>
                         </div>
                     </template>
-                    <!-- TODO: replace with oc-list elements-->
-                    <ul class="uk-nav uk-dropdown-nav uk-nav-default">
-                        <li>Files<oc-checkbox></oc-checkbox></li>
-                        <li>Folders<oc-checkbox></oc-checkbox></li>
-                        <li>Hidden files<oc-checkbox></oc-checkbox></li>
-                        <li>Files by name<oc-text-input></oc-text-input></li>
-                    </ul>
+                    <template slot="subnav">
+                      <oc-menu-item>
+                        Files<oc-checkbox></oc-checkbox>
+                      </oc-menu-item>
+                      <oc-menu-item>
+                        Folders<oc-checkbox></oc-checkbox>
+                      </oc-menu-item>
+                      <oc-menu-item>
+                        Hidden files<oc-checkbox></oc-checkbox>
+                      </oc-menu-item>
+                      <oc-menu-item>
+                        Files by name<oc-input></oc-input>
+                      </oc-menu-item>
+                    </template>
                 </oc-menu>
             </div>
         </template>
