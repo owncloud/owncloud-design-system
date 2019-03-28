@@ -5,9 +5,10 @@
     :value="value"
     :placeholder="placeholder"
     :aria-label="placeholder"
-    @input="onInput($event.target.value)"
-    @focus="onFocus($event.target.value)"
-    @keydown="onKeyDown($event)"
+    ref="input"
+    @input="$_ocTextInput_onInput($event.target.value)"
+    @focus="$_ocTextInput_onFocus($event.target.value)"
+    @keydown="$_ocTextInput_onKeyDown($event)"
   />
 </template>
 
@@ -35,6 +36,7 @@ export default {
     },
     /**
      * Text value of the form input field.
+     * @model
      */
     value: {
       type: String,
@@ -49,37 +51,82 @@ export default {
     },
   },
   methods: {
-    onInput(value) {
+    /**
+     * Puts focus on this input element
+     * @public
+     */
+    focus() {
+      this.$refs.input.focus()
+    },
+    $_ocTextInput_onInput(value) {
       /**
        * Input event
-       * @event input
        * @type {event}
        **/
       this.$emit("input", value)
     },
-    onFocus(value) {
+    $_ocTextInput_onFocus(value) {
       /**
-       * Focus event
-       * @event focus
+       * Focus event - emitted as soon as the input field is focused
        * @type {event}
        **/
       this.$emit("focus", value)
     },
-    onKeyDown(e) {
+    $_ocTextInput_onKeyDown(e) {
       if (e.keyCode === 13) {
+        /**
+         * Change event - emitted as soon as the user hits enter
+         * @type {string}
+         */
         this.$emit("change", e.target.value)
       }
 
+      /**
+       * KeyDown event - emitted as soon as the user hits a key
+       * @type {event}
+       */
       this.$emit("keydown", e)
     },
   },
 }
 </script>
 <docs>
-```jsx
-<div>
-	<oc-text-input class="uk-margin-small-bottom" placeholder="Write your text"/>
-	<oc-text-input disabled value="I am disabled"/>
-</div>
-```
+    ```jsx
+    <template>
+        <section>
+            <h3 class="uk-heading-divider">
+                Input Types
+            </h3>
+            <oc-text-input class="uk-margin-small-bottom" placeholder="Write your text"/>
+            <oc-text-input class="uk-margin-small-bottom" disabled value="I am disabled"/>
+            <oc-text-input class="uk-margin-small-bottom" type="number" placeholder="Enter a number"/>
+            <oc-text-input class="uk-margin-small-bottom" type="email" placeholder="Enter an email"/>
+            <oc-text-input class="uk-margin-small-bottom" type="password" placeholder="Enter your password ;-)"/>
+            <h3 class="uk-heading-divider">
+                Binding
+            </h3>
+            <oc-text-input placeholder="Write your text" v-model="inputValue"/>
+            <oc-text-input disabled placeholder="Write your text" v-model="inputValue"/>
+            <h3 class="uk-heading-divider">
+                Interactions
+            </h3>
+            <oc-button text="Focus input below" @click="_focus" />
+            <oc-text-input placeholder="Will you focus on me?" ref="inputForFocus"/>
+        </section>
+    </template>
+    <script>
+        export default {
+            data: () => {
+                return {
+                    inputValue: 'initial'
+                }
+            },
+            methods: {
+                _focus() {
+                    this.$refs.inputForFocus.focus()
+                }
+            }
+        }
+    </script>
+    ```
 </docs>
