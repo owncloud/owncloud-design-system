@@ -3,12 +3,13 @@
 <script>
 import OcTopbar from "../patterns/OcTopBar"
 import OcCheckbox from "../elements/OcCheckbox"
+import OcApplicationMenu from "../patterns/OcApplicationMenu"
 /**
  * Shows how to layout and structure the files app.
  */
 export default {
   name: "Files",
-  components: { OcCheckbox, OcTopbar },
+  components: { OcApplicationMenu, OcCheckbox, OcTopbar },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -66,8 +67,8 @@ export default {
       </template>
     </oc-topbar>
 
-    <oc-left-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
-    </oc-left-menu>
+    <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
+    </oc-application-menu>
 
     <oc-topbar variation="secondary">
       <template slot="left">

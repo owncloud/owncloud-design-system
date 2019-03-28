@@ -25,7 +25,7 @@
 import UiKit from "uikit"
 
 export default {
-  name: "oc-left-menu",
+  name: "oc-application-menu",
   status: "prototype",
   release: "1.0.0",
   props: {
@@ -91,7 +91,7 @@ export default {
   <template>
     <div>
       <oc-button variation="primary" text="Open" @click="isOpen = true"></oc-button>
-      <oc-left-menu name="demoMenu" v-model="isOpen" @close="isOpen = false"/>
+      <oc-application-menu name="demoMenu" v-model="isOpen" @close="isOpen = false"/>
     </div>
   </template>
   ```
