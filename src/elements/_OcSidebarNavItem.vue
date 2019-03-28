@@ -1,11 +1,14 @@
 <template>
-  <li :class="active">
-    <router-link :to="target">
+  <li :class="_class">
+    <component :is="_componentType" :to="target" v-on="!target ? { click: onClick } : {}">
       <span class="uk-margin-small-right">
         <oc-icon variation="inverted" :name="icon" />
         {{ text }}
       </span>
-    </router-link>
+    </component>
+    <ul class="uk-nav-sub" v-if="hasDefaultSlot">
+      <slot name="default" />
+    </ul>
   </li>
 </template>
 <script>
@@ -33,6 +36,29 @@ export default {
       type: String,
       required: false,
       default: "NavItem",
+    },
+  },
+  computed: {
+    _componentType() {
+      return this.target ? "router-link" : "a"
+    },
+    hasDefaultSlot() {
+      return !!this.$slots.default
+    },
+    _class() {
+      let classes = []
+      if (this.hasDefaultSlot) {
+        classes.push("uk-parent")
+      }
+      if (this.active) {
+        classes.push("uk-active")
+      }
+      return classes
+    },
+  },
+  methods: {
+    onClick() {
+      this.$emit("click")
     },
   },
 }

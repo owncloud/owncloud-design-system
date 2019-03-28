@@ -76,31 +76,39 @@ export default {
 </script>
 <docs>
   ```jsx
-  <script>
-  export default {
-    data: () => ({
-      isOpen: false
-    })
-  }
-  </script>
   <template>
-    <div>
+    <section>
+      <h3 class="uk-heading-divider">
+        Application Menu
+      </h3>
       <oc-button variation="primary" text="Open" @click="isOpen = true"></oc-button>
       <oc-application-menu name="demoMenu" v-model="isOpen" @close="isOpen = false">
-        <oc-sidebar-nav-header text="ocNav Header" />
+        <oc-sidebar-nav-header text="Menu Header" />
 
-        <oc-sidebar-nav-item text="ocNavItem" active icon="folder" target="home" />
+        <oc-sidebar-nav-item text="Active Item" active icon="folder" target="home" />
 
-        <oc-sidebar-nav-sub-item text="ocNavSubItem" active icon="folder" target="home">
-          <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="search"/>
-          <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="edit" />
-        </oc-sidebar-nav-sub-item>
+        <oc-sidebar-nav-item text="Item with children" icon="folder" target="home">
+          <oc-sidebar-nav-item text="Child Item with click handler" icon="search" @click="onClick"/>
+          <oc-sidebar-nav-item text="Child Item " target="home" icon="edit" />
+        </oc-sidebar-nav-item>
 
         <oc-sidebar-nav-divider />
 
-        <oc-sidebar-nav-item text="Exit Owncloud" active icon="exit_to_app" target="login" />
+        <oc-sidebar-nav-item text="Exit ownCloud" active icon="exit_to_app" target="login" />
       </oc-application-menu>
-    </div>
+    </section>
   </template>
+  <script>
+    export default {
+      data: () => ({
+        isOpen: false
+      }),
+      methods: {
+        onClick() {
+          alert('Click!')
+        }
+      }
+    }
+  </script>
   ```
 </docs>
