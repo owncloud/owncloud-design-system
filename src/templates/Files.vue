@@ -68,6 +68,18 @@ export default {
     </oc-topbar>
 
     <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
+        <oc-sidebar-nav-header text="ocNav Header" />
+
+        <oc-sidebar-nav-item text="ocNavItem" active icon="folder" target="home" />
+
+        <oc-sidebar-nav-sub-item text="ocNavSubItem" active icon="folder" target="home">
+            <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="search"/>
+            <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="edit" />
+        </oc-sidebar-nav-sub-item>
+
+        <oc-sidebar-nav-divider />
+
+        <oc-sidebar-nav-item text="Exit Owncloud" active icon="exit_to_app" target="login" />
     </oc-application-menu>
 
     <oc-topbar variation="secondary">

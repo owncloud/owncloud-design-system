@@ -40,7 +40,9 @@ export default {
     slots: {
       type: Array,
       required: false,
-      default: [],
+      default: function() {
+        return []
+      },
     },
   },
 }
