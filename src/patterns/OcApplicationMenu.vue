@@ -11,6 +11,14 @@
 <script>
 import UiKit from "uikit"
 
+/**
+ * ## ToDo:
+ *
+ * - [ ] Fix documentation of this component
+ * - [ ] Fix item text alignment
+ * - [ ] Fix router handling - see https://github.com/owncloud/owncloud-design-system/pull/121/files#r269616912
+ *
+ */
 export default {
   name: "oc-application-menu",
   status: "prototype",
