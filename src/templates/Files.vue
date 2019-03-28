@@ -3,12 +3,13 @@
 <script>
 import OcTopbar from "../patterns/OcTopBar"
 import OcCheckbox from "../elements/OcCheckbox"
+import OcApplicationMenu from "../patterns/OcApplicationMenu"
 /**
  * Shows how to layout and structure the files app.
  */
 export default {
   name: "Files",
-  components: { OcCheckbox, OcTopbar },
+  components: { OcApplicationMenu, OcCheckbox, OcTopbar },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -37,7 +38,8 @@ export default {
 
 <style lang="scss" scoped></style>
 
-<docs>```jsx
+<docs>
+  ```jsx
 <template>
   <div><!-- top container to fill the whole screen/area -->
     <oc-dialog name="OcDialog" title="Not implemented">
@@ -47,8 +49,8 @@ export default {
     </oc-dialog>
     <oc-topbar variation="primary">
       <template slot="left">
-        <div class="uk-navbar-item uk-logo">
-          <oc-icon name="menu" uk-toggle="target: #OcDialog"></oc-icon>
+        <div @click="leftMenuOpen = true" class="uk-navbar-item uk-logo">
+          <oc-icon name="menu"></oc-icon>
         </div>
         <span class="uk-navbar-item">Files</span>
       </template>
@@ -64,6 +66,22 @@ export default {
         </div>
       </template>
     </oc-topbar>
+
+    <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
+        <oc-sidebar-nav-header text="ocNav Header" />
+
+        <oc-sidebar-nav-item text="ocNavItem" active icon="folder" target="home" />
+
+        <oc-sidebar-nav-sub-item text="ocNavSubItem" active icon="folder" target="home">
+            <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="search"/>
+            <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="edit" />
+        </oc-sidebar-nav-sub-item>
+
+        <oc-sidebar-nav-divider />
+
+        <oc-sidebar-nav-item text="Exit Owncloud" active icon="exit_to_app" target="login" />
+    </oc-application-menu>
+
     <oc-topbar variation="secondary">
       <template slot="left">
         <div class="uk-navbar-item uk-logo">
@@ -132,7 +150,7 @@ export default {
             <oc-checkbox />
           </oc-table-cell>
           <oc-table-cell>
-            <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event --> 
+            <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event -->
             <oc-file @oc-file:click="selectFile(file)" :file="file" :icon="file.icon"/>
           </oc-table-cell>
           <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
@@ -147,7 +165,7 @@ export default {
         </oc-table-row>
       </oc-table-group>
     </oc-table>
-    
+
     <oc-dialog name="createFolder" title="Create Folder" v-model="createFolder">
       <template slot="content">
         <oc-text-input placeholder="New Folder Name"/>
@@ -176,6 +194,7 @@ export default {
       return {
         createFile: false,
         createFolder: false,
+        leftMenuOpen: false,
         files: [
           {name: "Private", extension: "", icon:'folder'},
           {name: "Project", extension: "", icon:'folder-shared'},
