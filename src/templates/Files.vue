@@ -4,12 +4,13 @@
 import OcTopbar from "../patterns/OcTopBar"
 import OcCheckbox from "../elements/OcCheckbox"
 import OcApplicationMenu from "../patterns/OcApplicationMenu"
+import OcSidebarNavDivider from "../elements/_OcSidebarNavDivider"
 /**
  * Shows how to layout and structure the files app.
  */
 export default {
   name: "Files",
-  components: { OcApplicationMenu, OcCheckbox, OcTopbar },
+  components: { OcSidebarNavDivider, OcApplicationMenu, OcCheckbox, OcTopbar },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -68,18 +69,23 @@ export default {
     </oc-topbar>
 
     <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
-        <oc-sidebar-nav-header text="ocNav Header" />
+        <oc-sidebar-nav-item text="Files" active icon="folder" target="home">
+            <oc-sidebar-nav-item text="All files" icon="folder"/>
+            <oc-sidebar-nav-item text="Favorites" icon="folder-starred" />
+            <oc-sidebar-nav-item text="Shared with me" icon="folder-shared" />
+            <oc-sidebar-nav-item text="Shared public" icon="folder-public" />
+            <oc-sidebar-nav-item text="External files" icon="folder-external" />
+            <oc-sidebar-nav-item text="Tags" icon="search" />
+            <oc-sidebar-nav-divider></oc-sidebar-nav-divider>
+            <oc-sidebar-nav-item text="Deleted files" icon="delete" />
+        </oc-sidebar-nav-item>
 
-        <oc-sidebar-nav-item text="ocNavItem" active icon="folder" target="home" />
-
-        <oc-sidebar-nav-sub-item text="ocNavSubItem" active icon="folder" target="home">
-            <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="search"/>
-            <oc-sidebar-nav-item text="Demo Sub Item" target="home" icon="edit" />
-        </oc-sidebar-nav-sub-item>
+        <oc-sidebar-nav-item text="Personal settings" icon="account_circle" />
+        <oc-sidebar-nav-item text="Administration" icon="application" />
 
         <oc-sidebar-nav-divider />
 
-        <oc-sidebar-nav-item text="Exit Owncloud" active icon="exit_to_app" target="login" />
+        <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" />
     </oc-application-menu>
 
     <oc-topbar variation="secondary">
