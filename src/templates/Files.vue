@@ -157,7 +157,7 @@ export default {
           </oc-table-cell>
           <oc-table-cell>
             <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event -->
-            <oc-file @oc-file:click="selectFile(file)" :file="file" :icon="file.icon"/>
+            <oc-file @click="selectFile(file)" :name="file.name" :extension="file.extension" :icon="file.icon"/>
           </oc-table-cell>
           <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
           <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
