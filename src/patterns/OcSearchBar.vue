@@ -1,60 +1,101 @@
 <template>
-  <div class="uk-inline">
-    <oc-text-input
-      :placeholder="label"
-      @input="onType"
-      :value="searchQuery"
-      @keydown.enter="onSearch"
-      @click:append="onSearch"
-      autofocus="autofocus"
-      :disabled="loading"
-    />
-    <span class="uk-form-icon uk-form-icon-flip">
-      <oc-icon name="search" />
-    </span>
+  <div uk-grid class="oc-search">
+    <div>
+      <div class="uk-inline">
+        <span v-if="icon" class="uk-form-icon">
+          <oc-icon v-show="!loading" :name="icon" />
+          <div v-show="loading" uk-spinner="ratio:0.75" aria-hidden></div>
+        </span>
+        <oc-text-input
+          class="oc-search-input"
+          @input="onType"
+          @keydown.enter="onSearch"
+          :placeholder="placeholder"
+          :value="searchQuery"
+          :disabled="loading"
+        />
+        <div
+          uk-close
+          v-if="query.length > 0"
+          @click="clearInput"
+          class="oc-search-clear uk-position-small uk-position-center-right"
+        />
+      </div>
+    </div>
+    <div v-if="button">
+      <oc-button
+        class="oc-search-button"
+        variation="primary"
+        :disabled="loading || searchQuery.length < 1"
+        :text="button"
+        @click="onSearch"
+      />
+    </div>
   </div>
 </template>
-
 <script>
 import OcTextInput from "../elements/OcTextInput"
 
 /**
- * The search bar is an input element used for searching server side resources.
+ * The search bar is an input element used for searching server side resources or to filter local results.
  */
 export default {
   name: "oc-search-bar",
   components: { OcTextInput },
   status: "prototype",
-  release: "0.0.1",
+  release: "1.0.0",
   props: {
+    /**
+     * Set the search query
+     */
     value: {
       type: String,
       required: false,
       default: null,
     },
-    label: {
+    /**
+     * Informative placeholder about the data to be entered
+     */
+    icon: {
+      type: String,
+      required: false,
+      default: "search",
+    },
+    /**
+     * Informative placeholder about the data to be entered
+     */
+    placeholder: {
       type: String,
       required: false,
       default: "",
     },
-    // native autofocus
-    autofocus: {
+    /**
+     * Determine the button text
+     */
+    button: {
+      type: [String, Boolean],
+      required: false,
+      default: "Search",
+    },
+    /**
+     * If set to true the search event is triggered on each entered character
+     */
+    typeAhead: {
       type: Boolean,
       required: false,
       default: false,
     },
-    // search while typing
-    autosearch: {
+    /**
+     * automatically trim whitespaces around search term
+     */
+    trimQuery: {
       type: Boolean,
       required: false,
-      default: false,
+      default: true,
     },
-    // do not automatically trim whitespaces around search term
-    noTrim: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
+    /**
+     * If set to true data is loaded and the user cannot enter further data
+     */
     loading: {
       type: Boolean,
       required: false,
@@ -65,14 +106,27 @@ export default {
     query: "",
   }),
   methods: {
-    onSearch(query) {
+    clearInput() {
+      this.query = ""
+      this.onType("")
+    },
+    onSearch() {
+      /**
+       * Search event on filter or search user input
+       * @event search
+       * @type {event}
+       */
       this.$emit("search", this.query)
     },
     onType(query) {
       this.query = !this.noTrim ? query.trim() : query
-      // use input event to support model directive
+      /**
+       * Input event to support model directive
+       * @event Input
+       * @type {event}
+       */
       this.$emit("input", query)
-      if (this.autosearch) this.onSearch(query)
+      if (this.typeAhead) this.onSearch(query)
     },
   },
   computed: {
@@ -85,10 +139,46 @@ export default {
 </script>
 
 <docs>
-```jsx
-  <oc-search-bar label="Search Files"></oc-search-bar>
-  <br>
-  <br>
-  <oc-search-bar label="Searching ...." :loading="true"></oc-search-bar>
+```
+<template>
+  <div>
+    <section>
+      <h3 class="uk-heading-divider">
+          Search examples
+      </h3>
+      <oc-search-bar placeholder="Search files" @search="onSearch"></oc-search-bar>
+      <div v-if="searchQuery" class="uk-margin">Search query: {{ searchQuery }}</div>
+      <hr>
+      <div class="uk-margin">
+        <oc-search-bar placeholder="Loading ..." :loading="true"></oc-search-bar>
+      </div>
+    </section>
+    <section>
+      <h3 class="uk-heading-divider">
+          Filter examples
+      </h3>
+      <oc-search-bar placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
+    </section>
+  </div>
+</template>
+<script>
+    export default {
+        data: () => {
+            return {
+                filterQuery: '',
+                searchQuery: ''
+            }
+        },
+        methods: {
+            onFilter(val) {
+                this.filterQuery = val
+            },
+            onSearch(val) {
+                this.searchQuery = val
+            }
+        }
+    }
+</script>
 ```
 </docs>
