@@ -4,6 +4,7 @@
     :aria-label="ariaLabel"
     :class="['oc-icon', prefix(size), prefix(variation)]"
     v-html="svg"
+    @click="$_ocIcon_click"
   />
 </template>
 
@@ -66,6 +67,9 @@ export default {
   methods: {
     prefix(string) {
       if (string !== null) return `oc-icon-${string}`
+    },
+    $_ocIcon_click() {
+      this.$emit("click")
     },
   },
   data() {
