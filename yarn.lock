@@ -12426,10 +12426,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vue-docgen-api@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.11.0.tgz#c6e6c8bad34478ae93cdea64a00ac438e5df026b"
-  integrity sha512-wdeeeRuCxD2IB6lMIFAeEAsMEgEtnwHnH/wYrBInrF1vYL5PBd/Vmt8aUs4cjHjV75UFC6SVyrW/3HIMEIfGhQ==
+vue-docgen-api@^3.11.2:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.11.2.tgz#00a82d0ee9c422bd1277b64c88278645ae72bb94"
+  integrity sha512-/i9XSUlWqLnU7oHBCRkHzY8gOren3uUGHUiWMDqficBVqsK01+c6DVJzy/AFZ7RRYo15VznSd7M3hnT84PiPlA==
   dependencies:
     "@babel/parser" "^7.2.3"
     "@babel/types" "^7.0.0"
@@ -12441,7 +12441,7 @@ vue-docgen-api@^3.11.0:
     ts-map "^1.0.3"
     typescript "^3.2.2"
     vue "^2.6.9"
-    vue-template-compiler "^2.6.9"
+    vue-template-compiler "^2.6.10"
 
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
@@ -12517,10 +12517,10 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.11.0.tgz#a14f4630225ea914065a5b9d9670c6faf424c890"
-  integrity sha512-KtCV3gxj039nBZ7eN9KnP8CDPflNHmoJPXDAqBj9FKwf+guJ+wDrGSdFSZVh4UbfJxiy0FjGiZY16YJ3Tt8uEg==
+vue-styleguidist@^3.11.2:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.11.2.tgz#6e734b5808d6d6bc519de1833f6a3f2ebfb3f5b4"
+  integrity sha512-70P+ewNpvKQUS/sUcr5n0/wdfu3E/bw+XG1+VE0XrWhCdelxsbZDHHhw9pmRptuKoommKWx+17t+/B2V3+RfSQ==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.0.5"
@@ -12579,12 +12579,12 @@ vue-styleguidist@^3.11.0:
     style-loader "^0.21.0"
     to-ast "^1.0.0"
     uglifyjs-webpack-plugin "1.2.7"
-    vue-docgen-api "^3.11.0"
+    vue-docgen-api "^3.11.2"
     webpack "^4.28.4"
     webpack-dev-server "^3.1.14"
     webpack-merge "^4.0.0"
 
-vue-template-compiler@^2.6.10, vue-template-compiler@^2.6.9:
+vue-template-compiler@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz#323b4f3495f04faa3503337a82f5d6507799c9cc"
   integrity sha512-jVZkw4/I/HT5ZMvRnhv78okGusqe0+qH2A0Em0Cp8aq78+NK9TII263CDVz2QXZsIT+yyV/gZc/j/vlwa+Epyg==
