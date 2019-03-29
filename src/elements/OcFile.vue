@@ -1,10 +1,10 @@
 <template>
-  <a class="oc-file">
+  <a class="oc-file" @click="onClick">
     <oc-icon :name="icon" variation="primary" class="uk-position-center-left" />
-    <span class="oc-file-name" v-text="file.name" @click="onClick" /><span
-      v-if="file.extension"
+    <span class="oc-file-name" v-text="name" /><span
+      v-if="extension"
       class="oc-file-extension"
-      v-text="file.extension"
+      v-text="extension"
     />
   </a>
 </template>
@@ -26,49 +26,88 @@ export default {
       default: "folder",
     },
     /**
-     * A file object with necessary property `name` and an optional property `extension`.
+     * The name of a file.
      * Please note that the name shall not hold the extension
      */
-    file: {
-      type: Object,
+    name: {
+      type: String,
       required: true,
+      default: "",
+    },
+    /**
+     * The extension of a file`.
+     */
+    extension: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
   methods: {
     onClick() {
       /**
        * This event is emitted when the user clicks a file
-       * TODO https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
        * @type {string}
        */
-      this.$emit("oc-file:click", this.file)
+      this.$emit("click", this.file)
     },
   },
 }
 </script>
 <docs>
-  ```jsx
-  <section>
-    <h3 class="uk-heading-divider">
-      File examples
-    </h3>
-    <ul class="uk-list">
-      <li>
-        <oc-file icon="image" :file="{ name : 'I love flowers', extension : 'jpg' }" />
-      </li>
-      <li>
-        <oc-file icon="folder" :file="{ name : 'Large folder' }" />
-      </li>
-      <li>
-        <oc-file icon="image" :file="{ name : 'Just kidding, I hate flowers.png', extension : 'png' }" />
-      </li>
-      <li>
-        <oc-file icon="text" :file="{ name : 'README', extension : 'md' }" />
-      </li>
-      <li>
-        <oc-file icon="archive" :file="{ name : 'package', extension : 'tar.gz' }" />
-      </li>
-    </ul>
-  </section>
+  ```vue
+  <template>
+    <section>
+      <h3 class="uk-heading-divider">
+        File examples
+      </h3>
+      <ul class="uk-list">
+        <li>
+          <oc-file icon="image" name="I love flowers" extension="jpg" />
+        </li>
+        <li>
+          <oc-file icon="folder" name='Large folder' />
+        </li>
+        <li>
+          <oc-file icon="image" name='Just kidding, I hate flowers.png' extension="png" />
+        </li>
+        <li>
+          <oc-file icon="text" name='README' extension="md" />
+        </li>
+        <li>
+          <oc-file icon="archive" name='package' extension="tar.gz" />
+        </li>
+        <li>
+        </li>
+      </ul>
+      <h3 class="uk-heading-divider">
+        Interactions
+      </h3>
+      <oc-file type="div" icon="text" :name="name" :extension="extension" @click="onChange"/>
+    </section>
+  </template>
+  <script>
+    export default {
+      data: () => {
+        return {
+          name: 'Click me to change me',
+          extension: '!!!',
+          toggle: true
+        }
+      },
+      methods: {
+        onChange(val) {
+          this.toggle = !this.toggle
+          if (this.toggle) {
+            this.name = 'New Image'
+            this.extension = 'png'
+          } else {
+            this.name = 'New Textfile'
+            this.extension = 'txt'
+          }
+        }
+      }
+    }
+  </script>
   ```
 </docs>
