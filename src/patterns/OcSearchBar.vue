@@ -17,7 +17,7 @@
         <div
           uk-close
           v-if="query.length > 0"
-          @click="query = ''"
+          @click="clearInput"
           class="oc-search-clear uk-position-small uk-position-center-right"
         />
       </div>
@@ -106,6 +106,10 @@ export default {
     query: "",
   }),
   methods: {
+    clearInput() {
+      this.query = ""
+      this.onType("")
+    },
     onSearch() {
       /**
        * Search event on filter or search user input
