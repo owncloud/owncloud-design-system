@@ -5,11 +5,13 @@
     :to="to"
     :type="submit"
     :text="text"
-    :class="_buttonClass"
+    :class="$_ocButton_buttonClass"
     @click="onClick"
   >
-    <oc-icon v-if="icon" :class="_iconClass" :name="icon"></oc-icon>
-    <span v-if="text" v-text="text" />
+    <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon"></oc-icon>
+    <slot>
+      <span v-if="text" v-text="text" />
+    </slot>
   </component>
 </template>
 
@@ -105,10 +107,10 @@ export default {
     },
   },
   computed: {
-    _iconClass() {
+    $_ocButton_iconClass() {
       return this.text ? "uk-position-small uk-position-center-left" : "uk-position-center"
     },
-    _buttonClass() {
+    $_ocButton_buttonClass() {
       let classes = ["oc-button"]
 
       if (this.variation) classes.push(`uk-button-${this.variation}`)
@@ -141,6 +143,7 @@ export default {
       <oc-button text="Primary Button" variation="primary" />
       <oc-button text="Secondary Button" variation="secondary" />
       <oc-button text="Disabled Button" disabled />
+      <oc-button>Button with text in slot</oc-button>
 
       <h3 class="uk-heading-divider">
         Button sizes
