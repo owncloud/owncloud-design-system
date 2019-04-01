@@ -1,0 +1,67 @@
+<template>
+  <div class="uk-grid-collapse" uk-grid>
+    <div class="uk-width-1-5" :hidden="leftHidden">
+      <slot name="left"></slot>
+    </div>
+    <div class="uk-width-expand">
+      <slot name="center"></slot>
+    </div>
+    <div class="uk-width-1-5" :hidden="rightHidden">
+      <slot name="right"></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "oc-app-layout",
+  components: {},
+  status: "review",
+  release: "1.0.0",
+  props: {
+    leftHidden: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    rightHidden: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+  },
+}
+</script>
+
+<docs>
+  ```jsx
+  <template>
+    <div>
+      <oc-app-layout :leftHidden="leftHidden" :rightHidden="rightHidden">
+        <template slot="left">
+          <oc-button @click="leftHidden=true" text="close" />
+        </template>
+        <template slot="center">
+        Center
+          <oc-button @click="leftHidden=false" text="show left" />
+          <oc-button @click="rightHidden=false" text="show right" />
+        </template>
+        <template slot="right">
+          <oc-button @click="rightHidden=true" text="close" />
+        </template>
+      </oc-app-layout>
+    </div>
+  </template>
+  <script>
+    export default {
+      data () {
+        return {
+          leftHidden:  true,
+          rightHidden: true,
+        }
+      }
+    }
+  </script>
+
+  ```
+</docs>
