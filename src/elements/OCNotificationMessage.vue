@@ -1,11 +1,11 @@
 <template>
   <div :class="$_ocNotificationMessage_classes">
-    <oc-icon :variation="status" name="info"></oc-icon>
+    <oc-icon :variation="status" name="info" class="uk-margin-small-right"></oc-icon>
     <div>{{ message }}</div>
     <oc-icon
       :variation="status"
       name="close"
-      class="uk-position-center-right"
+      class="uk-position-center-right uk-margin-small-right"
       @click="$_ocNotificationMessage_close"
     ></oc-icon>
   </div>
