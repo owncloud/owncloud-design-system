@@ -13,9 +13,5 @@
 
   &-extension {
     @extend .uk-text-meta;
-
-    &:before {
-      content: ".";
-    }
   }
 }
