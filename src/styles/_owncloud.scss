@@ -9,7 +9,9 @@
 
 // 3. Your custom mixin overwrites.
 @import "theme/main";
+@import "theme/login";
 @import "theme/menu-secondary";
+
 @import "theme/oc-alert";
 @import "theme/oc-app-container";
 @import "theme/oc-app-menu";
