@@ -826,12 +826,12 @@
     source-map "^0.6.1"
     write-file-atomic "2.4.1"
 
-"@jest/types@^24.5.0":
-  version "24.5.0"
-  resolved "https://registry.yarnpkg.com/@jest/types/-/types-24.5.0.tgz#feee214a4d0167b0ca447284e95a57aa10b3ee95"
-  integrity sha512-kN7RFzNMf2R8UDadPOl6ReyI+MT8xfqRuAnuVL+i4gwjv/zubdDK+EDeLHYwq1j0CSSR2W/MmgaRlMZJzXdmVA==
+"@jest/types@^24.5.0", "@jest/types@^24.6.0":
+  version "24.6.0"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-24.6.0.tgz#cf018e56f3ef45e81119fd613fc20a9819f4eddd"
+  integrity sha512-hnCMhUokUm6A4HPE9j3pNG9N+bSFfhqje3EbIrW6YjUW2SXuyZxy1QsJdaICo1oN1o2vVSx6qlVqQYkmWVsjiA==
   dependencies:
-    "@types/istanbul-lib-coverage" "^1.1.0"
+    "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/yargs" "^12.0.9"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
@@ -896,6 +896,11 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz#2cc2ca41051498382b43157c8227fea60363f94a"
   integrity sha512-ohkhb9LehJy+PA40rDtGAji61NCgdtKLAlFoYp4cnuuQEswwdK3vz9SOIkkyc3wrk8dzjphQApNs56yyXLStaQ==
+
+"@types/istanbul-lib-coverage@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.0.tgz#1eb8c033e98cf4e1a4cedcaf8bcafe8cb7591e85"
+  integrity sha512-eAtOAFZefEnfJiRFQBGw1eYqa5GTLCZ1y86N0XSI/D6EB+E8z6VPV/UL7Gi5UEclFqoQk+6NRqEDsfmDLXn8sg==
 
 "@types/node@*":
   version "11.10.5"
@@ -6506,12 +6511,12 @@ jest-resolve-dependencies@^24.5.0:
     jest-regex-util "^24.3.0"
     jest-snapshot "^24.5.0"
 
-jest-resolve@^24.5.0:
-  version "24.5.0"
-  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-24.5.0.tgz#8c16ba08f60a1616c3b1cd7afb24574f50a24d04"
-  integrity sha512-ZIfGqLX1Rg8xJpQqNjdoO8MuxHV1q/i2OO1hLXjgCWFWs5bsedS8UrOdgjUqqNae6DXA+pCyRmdcB7lQEEbXew==
+jest-resolve@^24.5.0, jest-resolve@^24.6.0:
+  version "24.6.0"
+  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-24.6.0.tgz#7ab8e6b274d5dac6df5c4911f0cd0af0124b44f7"
+  integrity sha512-d72QLxKtVb4M+3GRyxSWMQ2umgTktleqrgarSwpRkRECYE7xg55655cgPEj2cfhBjFkj6Pq4mAU2P3GRploMmQ==
   dependencies:
-    "@jest/types" "^24.5.0"
+    "@jest/types" "^24.6.0"
     browser-resolve "^1.11.3"
     chalk "^2.0.1"
     jest-pnp-resolver "^1.2.1"
