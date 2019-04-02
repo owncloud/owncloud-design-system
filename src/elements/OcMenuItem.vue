@@ -3,8 +3,13 @@
     <a href="#">
       <!-- @slot This default slot is set as content & will override icon -->
       <slot name="default">
-        <oc-icon v-if="icon" :name="icon" />
-        {{ content }}
+        <div v-if="icon" class="uk-flex uk-flex-middle">
+          <oc-icon :name="icon" class="uk-margin-small-right" />
+          {{ content }}
+        </div>
+        <template v-else>
+          {{ content }}
+        </template>
       </slot>
     </a>
   </li>

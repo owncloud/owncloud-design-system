@@ -1,8 +1,8 @@
 <template>
-  <li :class="_class">
+  <li :class="_class" class="oc-sidebar-nav-item">
     <component :is="_componentType" :to="target" v-on="!target ? { click: onClick } : {}">
-      <span class="uk-margin-small-right">
-        <oc-icon variation="inverted" :name="icon" />
+      <span class="oc-sidebar-nav-item-wrapper">
+        <oc-icon variation="inverted" :name="icon" class="oc-sidebar-nav-item-icon" />
         {{ text }}
       </span>
     </component>

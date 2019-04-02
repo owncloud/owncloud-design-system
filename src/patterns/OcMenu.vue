@@ -13,7 +13,6 @@
     </div>
   </div>
 </template>
-
 <script>
 // import UiKit from "uikit"
 /**
@@ -34,37 +33,35 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.uk-dropdown {
-  margin-top: 0px;
-}
-</style>
-
 <docs>
-    ```jsx
-    <div>
-        <oc-menu buttonText="Click Me!">
-            Welcome to ownCloud Design System!
-        </oc-menu>
-        <oc-menu buttonText="Put &lt;oc-menu-item&gt; into the 'subnav' slot ...">
-          <template slot="subnav">
-                <oc-menu-item icon="create_new_folder" content="New folder …" />
-                <oc-menu-item icon="save" content="New file …" />
-                <oc-menu-item content="iconless action" />
-                <oc-menu-item>Another action</oc-menu-item>
-          </template>
-        </oc-menu>
-        <br />
-        <oc-menu buttonText="Click Me!">
-            <template slot="activator">
-                <div>
-                    <oc-icon name="info"></oc-icon>Anything can be used as activator
-                </div>
-            </template>
-            <oc-icon name="info"></oc-icon>
-            <span>Some more information about ownCloud design system!</span>
-        </oc-menu>
-    </div>
-    ```
+```jsx
+<div>
+  <div class="uk-margin">
+    <oc-menu buttonText="Click Me!">
+      Welcome to ownCloud Design System!
+    </oc-menu>
+  </div>
+  <div class="uk-margin">
+    <oc-menu buttonText="Put &lt;oc-menu-item&gt; into the 'subnav' slot ...">
+      <template slot="subnav">
+        <oc-menu-item icon="create_new_folder" content="New folder …" />
+        <oc-menu-item icon="save" content="New file …" />
+        <oc-menu-item content="iconless action" />
+        <oc-menu-item>Another action</oc-menu-item>
+      </template>
+    </oc-menu>
+  </div>
+  <div class="uk-margin">
+    <oc-menu buttonText="Click Me!">
+      <template slot="activator">
+        <div>
+          <oc-icon name="info"></oc-icon>Anything can be used as activator
+        </div>
+      </template>
+      <oc-icon name="info"></oc-icon>
+      <span>Some more information about ownCloud design system!</span>
+    </oc-menu>
+  </div>
+</div>
+```
 </docs>
