@@ -130,7 +130,7 @@ export default {
                         Hidden files<oc-checkbox></oc-checkbox>
                       </oc-menu-item>
                       <oc-menu-item>
-                        Files by name<oc-input></oc-input>
+                        Files by name<oc-text-input></oc-text-input>
                       </oc-menu-item>
                     </template>
                 </oc-menu>
@@ -138,69 +138,81 @@ export default {
         </template>
     </oc-topbar>
 
-    <oc-table middle divider>
-      <oc-table-group>
-        <oc-table-row>
-          <oc-table-cell shrink type="head">
-            <oc-checkbox />
-          </oc-table-cell>
-          <oc-table-cell type="head" class="uk-text-truncate" v-text="'Name'"/>
-          <oc-table-cell shrink type="head" v-text="'Size'"/>
-          <oc-table-cell shrink type="head" class="uk-text-nowrap uk-visible@s" v-text="'Modification Time'"/>
-          <oc-table-cell shrink type="head" v-text="'Actions'"/>
-        </oc-table-row>
-      </oc-table-group>
-      <oc-table-group>
-        <oc-table-row v-for="(file,o) in files" :key="o">
-          <oc-table-cell>
-            <oc-checkbox />
-          </oc-table-cell>
-          <oc-table-cell>
-            <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event -->
-            <oc-file @click="selectFile(file)" :name="file.name" :extension="file.extension" :icon="file.icon"/>
-          </oc-table-cell>
-          <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
-          <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
-          <oc-table-cell>
-            <div class="uk-button-group">
-              <oc-button icon="edit" aria-label="Edit Picture" />
-              <oc-button icon="file_download" aria-label="Download Picture" />
-              <oc-button icon="delete" aria-label="Delete Picture" />
-            </div>
-          </oc-table-cell>
-        </oc-table-row>
-      </oc-table-group>
-    </oc-table>
+    <oc-app-layout :rightHidden="rightHidden">
 
-    <oc-dialog name="createFolder" title="Create Folder" v-model="createFolder">
-      <template slot="content">
-        <oc-text-input placeholder="New Folder Name"/>
-      </template>
-      <template slot="footer">
-        <oc-button @click="createFolder = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
-        <oc-button @click="createFolder = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
-      </template>
-    </oc-dialog>
-    <oc-dialog name="createFile" title="Create File" v-model="createFile">
-      <template slot="content">
-        <oc-text-input placeholder="New File Name"/>
-      </template>
-      <template slot="footer">
-        <oc-button @click="createFile = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
-        <oc-button @click="createFile = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
-      </template>
-    </oc-dialog>
+      <template slot="center">
+        <oc-table middle divider>
+          <oc-table-group>
+            <oc-table-row>
+              <oc-table-cell shrink type="head">
+                <oc-checkbox />
+              </oc-table-cell>
+              <oc-table-cell type="head" class="uk-text-truncate" v-text="'Name'"/>
+              <oc-table-cell shrink type="head" v-text="'Size'"/>
+              <oc-table-cell shrink type="head" class="uk-text-nowrap uk-visible@s" v-text="'Modification Time'"/>
+              <oc-table-cell shrink type="head" v-text="'Actions'"/>
+            </oc-table-row>
+          </oc-table-group>
+          <oc-table-group>
+            <oc-table-row @click="selectRow(file)"  v-for="(file,o) in files" :key="o">
+              <oc-table-cell>
+                <oc-checkbox />
+              </oc-table-cell>
+              <oc-table-cell>
+                <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event -->
+                <oc-file @click="selectFile(file)" :name="file.name" :extension="file.extension" :icon="file.icon"/>
+              </oc-table-cell>
+              <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
+              <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
+              <oc-table-cell>
+                <div class="uk-button-group">
+                  <oc-button icon="edit" aria-label="Edit Picture" />
+                  <oc-button icon="file_download" aria-label="Download Picture" />
+                  <oc-button icon="delete" aria-label="Delete Picture" />
+                </div>
+              </oc-table-cell>
+            </oc-table-row>
+          </oc-table-group>
+        </oc-table>
 
-    <oc-file-actions />
+        <oc-dialog name="createFolder" title="Create Folder" v-model="createFolder">
+          <template slot="content">
+            <oc-text-input placeholder="New Folder Name"/>
+          </template>
+          <template slot="footer">
+            <oc-button @click="createFolder = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
+            <oc-button @click="createFolder = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+          </template>
+        </oc-dialog>
+        <oc-dialog name="createFile" title="Create File" v-model="createFile">
+          <template slot="content">
+            <oc-text-input placeholder="New File Name"/>
+          </template>
+          <template slot="footer">
+            <oc-button @click="createFile = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
+            <oc-button @click="createFile = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+          </template>
+        </oc-dialog>
+
+        <oc-file-actions />
+
+      </template>
+      <template slot="right">
+        Selected: <span v-text="selectedFile"/>
+        <oc-button @click="rightHidden=true" text="close" />
+      </template>
+    </oc-app-layout>
   </div>
 </template>
 <script>
   export default {
     data () {
       return {
+        selectedFile: "",
         createFile: false,
         createFolder: false,
         leftMenuOpen: false,
+        rightHidden: true,
         files: [
           {name: "Private", extension: "", icon:'folder'},
           {name: "Project", extension: "", icon:'folder-shared'},
@@ -284,6 +296,11 @@ export default {
           filename: file.name + "." + file.extension,
           actions: this.actions[file.extension]
         })
+      },
+      selectRow(file) {
+        console.log(file)
+        this.selectedFile = file.name + "." + file.extension
+        this.rightHidden = false
       },
     },
   }
