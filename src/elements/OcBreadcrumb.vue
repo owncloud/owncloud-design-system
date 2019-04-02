@@ -2,6 +2,7 @@
   <ul class="uk-breadcrumb">
     <li v-for="(item, index) in items" :key="index">
       <router-link v-if="item.to" :to="item.to">{{ item.text }}</router-link>
+      <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
       <span v-else v-text="item.text" />
     </li>
   </ul>
@@ -13,6 +14,7 @@
  *
  *  - text: mandatory element, holds the text which is to be displayed in the breadcrumb
  *  - to: optional element, the vue router link
+ *  -
  */
 export default {
   name: "oc-breadcrumb",
@@ -29,7 +31,27 @@ export default {
 </script>
 
 <docs>
-```jsx
-<oc-breadcrumb :items="[{text:'Home',to:'/'},{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+```vue
+  <template>
+    <oc-breadcrumb :items="items"></oc-breadcrumb>
+  </template>
+  <script>
+    export default {
+      data: () => {
+        return {
+          items: [
+                  {text:'Home',to:'/'},
+            {text:'Folder',to:{path:'folder'}},
+            {text:'Subfolder', onClick:() => alert('Breadcrumb clicked!')}]
+        }
+      },
+      methods: {
+        _click() {
+          alert('Breadcrumb clicked!')
+        }
+      }
+
+    }
+  </script>
 ```
 </docs>
