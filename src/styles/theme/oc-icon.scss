@@ -66,3 +66,9 @@ $oc-icon-size: 24px;
     fill: $global-danger-background;
   }
 }
+
+@mixin hook-inverse() {
+  .oc-icon > svg {
+    fill: $global-inverse-color;
+  }
+}

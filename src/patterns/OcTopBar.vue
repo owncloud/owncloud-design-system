@@ -46,10 +46,10 @@ export default {
   },
   computed: {
     _topBarClass() {
-      let classes = ["uk-navbar-container", "uk-navbar-transparent"]
+      let classes = ["oc-topbar", "uk-navbar-container", "uk-navbar-transparent"]
 
       if (this.variation === "primary") {
-        classes.push(`uk-background-primary`)
+        classes.push(`uk-background-primary uk-light`)
       } else {
         classes.push(`uk-background`)
       }
@@ -61,9 +61,9 @@ export default {
 </script>
 
 <docs>
-  ```
-  <template>
-    <div>
+```
+<template>
+  <div>
     <oc-topbar variation="primary">
       <oc-topbar-logo icon="menu" title="Files" slot="left" @click="onClick"></oc-topbar-logo>
 
@@ -82,17 +82,16 @@ export default {
         <oc-breadcrumb :items="[{text:'Home',to:'/'},{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
       </template>
     </oc-topbar>
-      <div>
-  </template>
-  <script>
-    export default {
-      methods: {
-        onClick() {
-          alert('Menu was clicked')
-        }
+  </div>
+</template>
+<script>
+  export default {
+    methods: {
+      onClick() {
+        alert('Menu was clicked')
       }
     }
-  </script>
-
-  ```
+  }
+</script>
+```
 </docs>
