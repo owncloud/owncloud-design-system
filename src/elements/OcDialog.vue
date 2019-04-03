@@ -2,7 +2,10 @@
   <div :id="name" ref="dialog" uk-modal>
     <div uk-dialog="{bgclose: false, escclose: false}" class="uk-modal-dialog uk-modal-body">
       <div class="uk-modal-header">
-        <h2 class="uk-modal-title">{{ title }}</h2>
+        <!-- @slot Use this slot for the header -->
+        <slot name="header">
+          <h2 class="uk-modal-title">{{ title }}</h2>
+        </slot>
       </div>
       <div class="uk-modal-body">
         <!-- @slot Use this slot for the content -->
