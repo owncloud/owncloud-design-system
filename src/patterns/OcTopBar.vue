@@ -1,5 +1,5 @@
 <template>
-  <nav :class="_topBarClass" uk-navbar>
+  <nav :class="$_ocTopBar_topBarClass" uk-navbar>
     <div class="uk-navbar-left">
       <slot name="left"></slot>
     </div>
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import OcBreadcrumb from "../elements/OcBreadcrumb"
 /**
  * The top bar is a basic navigation bar element.
  * It has 3 slots: `left, title, right` which can be filled with elements.
@@ -23,12 +22,10 @@ import OcBreadcrumb from "../elements/OcBreadcrumb"
  *
  * ##TODO:
  *
- * - [ ] fix text color
  * - [ ] add capability to have the topbar stick to the browser window - remaining content is scrollable
  */
 export default {
   name: "oc-topbar",
-  components: { OcBreadcrumb },
   status: "review",
   release: "1.0.0",
   props: {
@@ -45,7 +42,7 @@ export default {
     },
   },
   computed: {
-    _topBarClass() {
+    $_ocTopBar_topBarClass() {
       let classes = ["oc-topbar", "uk-navbar-container", "uk-navbar-transparent"]
 
       if (this.variation === "primary") {
