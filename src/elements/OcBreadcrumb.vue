@@ -44,13 +44,7 @@ export default {
             {text:'Folder',to:{path:'folder'}},
             {text:'Subfolder', onClick:() => alert('Breadcrumb clicked!')}]
         }
-      },
-      methods: {
-        _click() {
-          alert('Breadcrumb clicked!')
-        }
       }
-
     }
   </script>
 ```

@@ -3,7 +3,11 @@
     <component :is="_componentType" :to="target" v-on="!target ? { click: onClick } : {}">
       <span class="oc-sidebar-nav-item-wrapper">
         <oc-icon variation="inverted" :name="icon" class="oc-sidebar-nav-item-icon" />
-        {{ text }}
+        <slot name="text">
+          <span>
+            {{ text }}
+          </span>
+        </slot>
       </span>
     </component>
     <ul class="uk-nav-sub" v-if="hasDefaultSlot">
