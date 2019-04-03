@@ -38,12 +38,12 @@ $oc-icon-size: 24px;
 
   // Variations
 
-  &-primary > svg {
-    fill: $global-primary-background;
+  &-file-type > svg {
+    fill: $filetype-icon-color;
   }
 
-  &-secondary > svg {
-    fill: $global-secondary-background;
+  &-system > svg {
+    fill: $system-icon-color;
   }
 
   &-muted > svg {

@@ -9,23 +9,31 @@
 
 props:
   color:
-    value: "#666"
+    value: "#002966"
     category: "Font-colors"
   emphasis-color:
-    value: "#333"
+    value: "#002966"
     category: "Font-colors"
   muted-color:
-    value: "#999"
+    value: "#667fa3"
     category: "Font-colors"
   link-color:
-    value: "#467391"
+    value: "#0066ff"
     category: "Font-colors"
   link-hover-color:
-    value: "#467391"
+    value: "#0066ff"
     category: "Font-colors"
   invers-color:
     value: "#fff"
     category: "Font-colors"
+
+  filetype-icon-color:
+    value: "#667fa3"
+    category: "icon-colors"
+
+  system-icon-color:
+    value: "#667fa3"
+    category: "icon-colors"
 
   background:
     value: "#fff"
@@ -34,20 +42,20 @@ props:
     value: "#f8f8f8"
     category: "Background-colors"
   primary-background:
-    value: "#467391"
+    value: "#002966"
     category: "Background-colors"
   secondary-background:
-    value: "#222"
+    value: "#6780a2"
     category: "Background-colors"
 
   success-background:
-    value: "#32d296"
+    value: "#68d60e"
     category: "Background-colors"
   warning-background:
-    value: "#faa05a"
+    value: "#ff8800"
     category: "Background-colors"
   danger-background:
-    value: "#f0506e"
+    value: "#e00000"
     category: "Background-colors"
 
 global:

@@ -58,9 +58,9 @@ export default {
      */
     variation: {
       type: String,
-      default: null,
+      default: "system",
       validator: value => {
-        return value.match(/(primary|secondary|inverted|danger|success|warning)/)
+        return value.match(/(file-type|system|inverted|danger|success|warning)/)
       },
     },
   },
@@ -102,16 +102,16 @@ export default {
 			<oc-icon variation="inverted" name="account_circle"/>
 		</div>
 		<div class="uk-padding-small">
-			<oc-icon variation="primary" name="close"/>
-			<oc-icon variation="primary" name="delete"/>
-			<oc-icon variation="primary" name="info"/>
-			<oc-icon variation="primary" name="account_circle"/>
+			<oc-icon variation="file-type" name="close"/>
+			<oc-icon variation="file-type" name="delete"/>
+			<oc-icon variation="file-type" name="info"/>
+			<oc-icon variation="file-type" name="account_circle"/>
 		</div>
 		<div class="uk-padding-small">
-			<oc-icon variation="secondary" name="close"/>
-			<oc-icon variation="secondary" name="delete"/>
-			<oc-icon variation="secondary" name="info"/>
-			<oc-icon variation="secondary" name="account_circle"/>
+			<oc-icon variation="system" name="close"/>
+			<oc-icon variation="system" name="delete"/>
+			<oc-icon variation="system" name="info"/>
+			<oc-icon variation="system" name="account_circle"/>
 		</div>
 		<div class="uk-padding-small">
 			<oc-icon variation="danger" name="close"/>
