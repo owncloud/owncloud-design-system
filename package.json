@@ -8,7 +8,6 @@
     "dist/system"
   ],
   "homepage": "https://owncloud.github.io/owncloud-design-system/",
-  "private": true,
   "license": "AGPL-3.0",
   "scripts": {
     "dev": "webpack-dev-server --inline --config ./build/webpack.dev.conf.js",
