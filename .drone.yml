@@ -2,6 +2,13 @@ branches:
   - master
 
 pipeline:
+  increment-version:
+    image: node
+    commands:
+      - yarn version --no-git-tag-version --new-version 1.0.0-${DRONE_BUILD_NUMBER}
+    when:
+      event: [push]
+
   build-docs:
     image: node
     commands:
@@ -14,9 +21,15 @@ pipeline:
       - yarn install
       - yarn build:system
 
-  publish:
+  publish-docs:
     image: plugins/gh-pages:1
     secrets: [github_username, github_password]
     pages_directory: dist/docs
+    when:
+      event: [push]
+
+  publish-system:
+    image: plugins/npm:1
+    secrets: [npm_username, npm_email, npm_token]
     when:
       event: [push]
