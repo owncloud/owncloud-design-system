@@ -111,6 +111,14 @@ module.exports = {
       sectionDepth: 2,
     },
     {
+      name: "Pages",
+      content: "../docs/pages.md",
+      components: "../src/pages/**/[A-Z]*.vue",
+      exampleMode: "expand",
+      usageMode: "expand",
+      sectionDepth: 2,
+    },
+    {
       name: "Downloads",
       content: "../docs/downloads.md",
       exampleMode: "hide",
