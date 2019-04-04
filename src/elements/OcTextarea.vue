@@ -1,11 +1,12 @@
 <template>
   <textarea
     class="uk-textarea"
+    :value="value"
     :placeholder="placeholder"
-    @input="onInput($event.target.value)"
-    @focus="onFocus($event.target.value)"
+    @input="$_ocTextArea_onInput($event.target.value)"
+    @focus="$_ocTextArea_onFocus($event.target.value)"
+    @keydown="$_ocTextArea_onKeyDown($event)"
     :aria-label="placeholder"
-    v-model="value"
   />
 </template>
 
@@ -36,21 +37,41 @@ export default {
     },
   },
   methods: {
-    onInput(value) {
+    /**
+     * Puts focus on this input element
+     * @public
+     */
+    focus() {
+      this.$refs.input.focus()
+    },
+    $_ocTextArea_onInput(value) {
       /**
        * Input event
-       * @event input
        * @type {event}
        **/
-      this.$emit("change", value)
+      this.$emit("input", value)
     },
-    onFocus(value) {
+    $_ocTextArea_onFocus(value) {
       /**
-       * Focus event
-       * @event focus
+       * Focus event - emitted as soon as the input field is focused
        * @type {event}
        **/
       this.$emit("focus", value)
+    },
+    $_ocTextArea_onKeyDown(e) {
+      if (e.keyCode === 13) {
+        /**
+         * Change event - emitted as soon as the user hits enter
+         * @type {string}
+         */
+        this.$emit("change", e.target.value)
+      }
+
+      /**
+       * KeyDown event - emitted as soon as the user hits a key
+       * @type {event}
+       */
+      this.$emit("keydown", e)
     },
   },
 }
