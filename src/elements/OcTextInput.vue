@@ -39,7 +39,6 @@ export default {
      * @model
      */
     value: {
-      type: String,
       default: null,
     },
     /**
