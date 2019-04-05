@@ -109,6 +109,7 @@ export default {
     clearInput() {
       this.query = ""
       this.onType("")
+      this.onSearch()
     },
     onSearch() {
       /**
