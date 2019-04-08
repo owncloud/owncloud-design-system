@@ -5,10 +5,10 @@
       <slot name="default">
         <div v-if="icon" class="uk-flex uk-flex-middle">
           <oc-icon :name="icon" class="uk-margin-small-right" />
-          {{ content }}
+          <template>{{ content }}</template>
         </div>
         <template v-else>
-          {{ content }}
+          <template v-translate>{{ content }}</template>
         </template>
       </slot>
     </a>
