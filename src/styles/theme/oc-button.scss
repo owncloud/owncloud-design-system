@@ -8,6 +8,12 @@
   text-transform: uppercase;
 }
 
+@mixin hook-button-disabled() {
+  .oc-icon > svg {
+    fill: lighten($global-muted-color, 25%);
+  }
+}
+
 //
 // Component: OC Button
 //
