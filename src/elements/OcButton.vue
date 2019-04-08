@@ -152,11 +152,18 @@ export default {
       <oc-button text="Small" size="small" />
 
       <h3 class="uk-heading-divider">
+        Button with icons
+      </h3>
+      <oc-button icon="home" text="Home"/>
+      <oc-button variation="primary" icon="save" text="Save" />
+      <oc-button icon="save" text="Save disabled" disabled />
+
+      <h3 class="uk-heading-divider">
         Using buttons in a group
       </h3>
       <div class="uk-button-group">
-        <oc-button variation="primary" icon="home" />
-        <oc-button variation="secondary" icon="close" />
+        <oc-button variation="primary">Hello</oc-button>
+        <oc-button variation="secondary">What's up?</oc-button>
         <oc-button text="Demo Button" icon="folder" />
       </div>
     </section>
