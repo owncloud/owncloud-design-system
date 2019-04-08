@@ -44,10 +44,9 @@ export default {
   <div class="uk-margin">
     <oc-menu buttonText="Put &lt;oc-menu-item&gt; into the 'subnav' slot ...">
       <template slot="subnav">
-        <oc-menu-item icon="create_new_folder" content="New folder …" />
-        <oc-menu-item icon="save" content="New file …" />
-        <oc-menu-item content="iconless action" />
-        <oc-menu-item>Another action</oc-menu-item>
+        <oc-menu-item icon="create_new_folder">New folder …</oc-menu-item>
+        <oc-menu-item icon="save">New file …</oc-menu-item>
+        <oc-menu-item>iconless action</oc-menu-item>
       </template>
     </oc-menu>
   </div>
