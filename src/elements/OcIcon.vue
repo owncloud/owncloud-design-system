@@ -54,7 +54,7 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `primary, secondary, inverted, danger, success, warning`
+     * `inverted, danger, success, warning`
      */
     variation: {
       type: String,
@@ -100,18 +100,6 @@ export default {
 			<oc-icon variation="inverted" name="delete"/>
 			<oc-icon variation="inverted" name="info"/>
 			<oc-icon variation="inverted" name="account_circle"/>
-		</div>
-		<div class="uk-padding-small">
-			<oc-icon variation="file-type" name="close"/>
-			<oc-icon variation="file-type" name="delete"/>
-			<oc-icon variation="file-type" name="info"/>
-			<oc-icon variation="file-type" name="account_circle"/>
-		</div>
-		<div class="uk-padding-small">
-			<oc-icon variation="system" name="close"/>
-			<oc-icon variation="system" name="delete"/>
-			<oc-icon variation="system" name="info"/>
-			<oc-icon variation="system" name="account_circle"/>
 		</div>
 		<div class="uk-padding-small">
 			<oc-icon variation="danger" name="close"/>
