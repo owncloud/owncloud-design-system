@@ -1,16 +1,13 @@
 <template>
   <li @click="onClick">
     <a href="#">
-      <!-- @slot This default slot is set as content & will override icon -->
-      <slot name="default">
-        <div v-if="icon" class="uk-flex uk-flex-middle">
-          <oc-icon :name="icon" class="uk-margin-small-right" />
-          {{ content }}
-        </div>
-        <template v-else>
-          {{ content }}
-        </template>
-      </slot>
+      <div v-if="icon" class="uk-flex uk-flex-middle">
+        <oc-icon :name="icon" class="uk-margin-small-right" />
+        <slot name="default" />
+      </div>
+      <template v-else>
+        <slot name="default" />
+      </template>
     </a>
   </li>
 </template>
@@ -23,14 +20,6 @@ export default {
   status: "prototype",
   release: "0.0.1",
   props: {
-    /**
-     * The content to display.
-     */
-    content: {
-      type: String,
-      required: false,
-      default: "",
-    },
     /**
      * The icon to display.
      */
@@ -58,8 +47,8 @@ export default {
 <template>
     <oc-menu buttonText="open oc-menu">
       <template slot="subnav">
-        <oc-menu-item icon="create_new_folder" content="New folder …" />
-        <oc-menu-item>Another action</oc-menu-item>
+        <oc-menu-item icon="create_new_folder">Item with icon</oc-menu-item>
+        <oc-menu-item>Item without icon</oc-menu-item>
       </template>
     </oc-menu>
   </template>
