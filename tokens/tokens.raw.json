@@ -4,22 +4,29 @@
     "muted-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(153, 153, 153)",
-      "originalValue": "#999",
+      "value": "rgb(102, 127, 163)",
+      "originalValue": "#667fa3",
       "name": "muted-color"
     },
     "color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(102, 102, 102)",
-      "originalValue": "#666",
+      "value": "rgb(0, 41, 102)",
+      "originalValue": "#002966",
       "name": "color"
+    },
+    "filetype-icon-color": {
+      "type": "color",
+      "category": "icon-colors",
+      "value": "rgb(102, 127, 163)",
+      "originalValue": "#667fa3",
+      "name": "filetype-icon-color"
     },
     "secondary-background": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(34, 34, 34)",
-      "originalValue": "#222",
+      "value": "rgb(103, 128, 162)",
+      "originalValue": "#6780a2",
       "name": "secondary-background"
     },
     "invers-color": {
@@ -28,6 +35,13 @@
       "value": "rgb(255, 255, 255)",
       "originalValue": "#fff",
       "name": "invers-color"
+    },
+    "system-icon-color": {
+      "type": "color",
+      "category": "icon-colors",
+      "value": "rgb(102, 127, 163)",
+      "originalValue": "#667fa3",
+      "name": "system-icon-color"
     },
     "background": {
       "type": "color",
@@ -46,50 +60,50 @@
     "link-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(70, 115, 145)",
-      "originalValue": "#467391",
+      "value": "rgb(0, 102, 255)",
+      "originalValue": "#0066ff",
       "name": "link-color"
     },
     "emphasis-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(51, 51, 51)",
-      "originalValue": "#333",
+      "value": "rgb(0, 41, 102)",
+      "originalValue": "#002966",
       "name": "emphasis-color"
     },
     "success-background": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(50, 210, 150)",
-      "originalValue": "#32d296",
+      "value": "rgb(104, 214, 14)",
+      "originalValue": "#68d60e",
       "name": "success-background"
     },
     "danger-background": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(240, 80, 110)",
-      "originalValue": "#f0506e",
+      "value": "rgb(224, 0, 0)",
+      "originalValue": "#e00000",
       "name": "danger-background"
     },
     "primary-background": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(70, 115, 145)",
-      "originalValue": "#467391",
+      "value": "rgb(0, 41, 102)",
+      "originalValue": "#002966",
       "name": "primary-background"
     },
     "link-hover-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(70, 115, 145)",
-      "originalValue": "#467391",
+      "value": "rgb(0, 102, 255)",
+      "originalValue": "#0066ff",
       "name": "link-hover-color"
     },
     "warning-background": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(250, 160, 90)",
-      "originalValue": "#faa05a",
+      "value": "rgb(255, 136, 0)",
+      "originalValue": "#ff8800",
       "name": "warning-background"
     },
     "small-font-size": {
