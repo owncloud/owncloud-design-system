@@ -47,9 +47,19 @@ export default previewComponent => {
       button.innerHTML = "Display component in fullscreen"
       button.onclick = function() {
         button.parentNode.requestFullscreen()
-        button.remove()
         return false
       }
+      document.addEventListener(
+        "fullscreenchange",
+        () => {
+          if (document.fullscreenElement) {
+            button.style.display = "none"
+          } else {
+            button.style.display = "block"
+          }
+        },
+        false
+      )
       this.$el.prepend(button)
 
       const elemText = format(div, 0).innerHTML.replace(/ class=""/g, "")
