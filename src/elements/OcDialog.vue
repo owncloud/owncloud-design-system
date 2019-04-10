@@ -9,18 +9,11 @@
       </div>
       <div class="uk-modal-body">
         <!-- @slot Use this slot for the content -->
-        <slot name="content"> </slot>
+        <slot name="content"></slot>
       </div>
       <div class="uk-modal-footer">
         <!-- @slot Use this slot for footer buttons like cancel -->
-        <slot name="footer">
-          <oc-button
-            variation="secondary"
-            class="uk-modal-close"
-            text="Close"
-            type="button"
-          ></oc-button>
-        </slot>
+        <slot name="footer"></slot>
       </div>
     </div>
   </div>
@@ -74,14 +67,27 @@ export default {
       <h3 class="uk-heading-divider">
         Prompt Dialog
       </h3>
-      <oc-button @click="showDialog" text="Open"></oc-button>
-      <oc-dialog name="demoModal" title="Create Folder" v-model="isOpen">
+      <oc-button @click="dialogModel = true" text="Open"></oc-button>
+      <oc-dialog name="demoModal" v-model="dialogModel">
+        <h2 slot="header">Create folder</h2>
         <template slot="content">
           <oc-text-input placeholder="New Folder Name"/>
         </template>
         <template slot="footer">
-          <oc-button @click="closeDialog" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
-          <oc-button @click="closeDialog" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+          <oc-button @click="dialogModel = false" text="Create" variation="primary"></oc-button>
+          <oc-button @click="dialogModel = false" text="Cancel" variation="secondary"></oc-button>
+        </template>
+      </oc-dialog>
+      <h3 class="uk-heading-divider">
+        Info dialog
+      </h3>
+      <oc-button @click="infoDialogModel = true" text="Open"></oc-button>
+      <oc-dialog name="demoInfoModal" title="What is Lorem Ipsum?" v-model="infoDialogModel">
+        <template slot="content">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </template>
+        <template slot="footer">
+          <oc-button @click="infoDialogModel = false" variation="primary">Okay</oc-button>
         </template>
       </oc-dialog>
     </section>
@@ -90,25 +96,8 @@ export default {
     export default {
       data: () => {
         return {
-          dialogModel: false
-        }
-      },
-      methods: {
-        showDialog() {
-          this.dialogModel = true
-        },
-        closeDialog () {
-          this.dialogModel = false
-        }
-      },
-      computed: {
-        isOpen: {
-          get () {
-            return this.dialogModel
-          },
-          set (val) {
-            this.dialogModel = val
-          }
+          dialogModel: false,
+          infoDialogModel: false
         }
       }
     }
