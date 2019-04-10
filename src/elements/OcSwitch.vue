@@ -58,11 +58,30 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped></style>
 <docs>
-  ```jsx
-  <div>
-    <oc-switch label="Demo Label" />
-  </div>
+  ```vue
+  <template>
+    <section>
+      <h3>Switcher behavior</h3>
+      <oc-switch label="Demo Label" @change="onChange" v-model="state"/>
+      <br>
+      <oc-star :shining="state"></oc-star>
+    </section>
+  </template>
+  <script>
+    export default {
+      data: () => {
+        return {
+          state: true
+        }
+      },
+      methods: {
+        onChange(val) {
+          alert('Switcher changed the state')
+        }
+      }
+    }
+
+  </script>
   ```
 </docs>
