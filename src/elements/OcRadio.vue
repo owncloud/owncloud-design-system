@@ -1,7 +1,14 @@
 <template>
   <label class="radio-container">
     <span class="label">{{ label }}</span>
-    <input type="radio" v-model="model" name="radio" :aria-label="label" @change="onChange" />
+    <input
+      type="radio"
+      v-model="model"
+      :value="value"
+      name="radio"
+      :aria-label="label"
+      @change="$_ocRadio_change"
+    />
     <span class="checkmark"></span>
   </label>
 </template>
@@ -17,10 +24,19 @@ export default {
     /**
      * Data-model
      *
+     * No type: can be an object, a number or a string but must be same as value
+     *
      * @model
      **/
     model: {
-      type: Object,
+      required: false,
+    },
+    /**
+     * Value
+     *
+     * No type: can be an object, a number or a string but must be same as model
+     **/
+    value: {
       required: false,
     },
     /**
@@ -32,7 +48,7 @@ export default {
     },
   },
   methods: {
-    onChange(val) {
+    $_ocRadio_change(val) {
       /**
        * The onChange event
        * @event change
