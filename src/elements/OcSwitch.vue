@@ -1,6 +1,6 @@
 <template>
   <div class="oc-switch" :data-state="state" @click="toggle">
-    <input type="checkbox" @change="onChange" :aria-label="label" :checked="checked" />
+    <input type="checkbox" :aria-label="label" :checked="checked" />
   </div>
 </template>
 <script>
@@ -41,26 +41,47 @@ export default {
       return this.checked ? "on" : "off"
     },
   },
-  methods: {
-    toggle() {
-      this.checked = !this.checked
-    },
-    onChange(val) {
+  watch: {
+    checked: function(val) {
       /**
        * Change event
        * @event change
        * @type {boolean}
        */
-      this.$emit("change", this.val)
+      this.$emit("change", val)
+    },
+  },
+  methods: {
+    toggle() {
+      this.checked = !this.checked
     },
   },
 }
 </script>
-<style lang="scss" scoped></style>
 <docs>
-  ```jsx
-  <div>
-    <oc-switch label="Demo Label" />
-  </div>
+  ```vue
+  <template>
+    <section>
+      <h3>Switcher behavior</h3>
+      <oc-switch label="Demo Label" @change="onChange" v-model="state"/>
+      <br>
+      <oc-star :shining="state"></oc-star>
+    </section>
+  </template>
+  <script>
+    export default {
+      data: () => {
+        return {
+          state: true
+        }
+      },
+      methods: {
+        onChange(val) {
+          alert('Switcher changed the state')
+        }
+      }
+    }
+
+  </script>
   ```
 </docs>
