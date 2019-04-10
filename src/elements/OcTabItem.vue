@@ -1,6 +1,10 @@
 <template>
-  <li :class="_itemClass" @click="onClick">
-    <a href="" v-text="title"></a>
+  <li :class="$_ocTabItem_itemClass" @click="$_ocTabItem_onClick">
+    <a href="">
+      <slot>
+        {{ title }}
+      </slot>
+    </a>
   </li>
 </template>
 <script>
@@ -17,7 +21,7 @@ export default {
      */
     title: {
       type: String,
-      required: true,
+      required: false,
     },
     /**
      * Display as active.
@@ -35,12 +39,12 @@ export default {
     },
   },
   computed: {
-    _itemClass() {
+    $_ocTabItem_itemClass() {
       return this.disabled ? "uk-disabled" : this.active ? "uk-active" : ""
     },
   },
   methods: {
-    onClick(val) {
+    $_ocTabItem_onClick(val) {
       /**
        * Click event
        * @event click
@@ -58,7 +62,7 @@ export default {
     <oc-tabs>
       <oc-tab-item active title="Left" @click="onClick" />
       <oc-tab-item title="Item 1"/>
-      <oc-tab-item title="Item 2"/>
+      <oc-tab-item>Item with text in slot</oc-tab-item>
       <oc-tab-item disabled title="Disabled"/>
     </oc-tabs>
   </template>

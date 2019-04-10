@@ -15,7 +15,6 @@ import UiKit from "uikit"
  * ## ToDo:
  *
  * - [ ] Fix documentation of this component
- * - [ ] Fix router handling - see https://github.com/owncloud/owncloud-design-system/pull/121/files#r269616912
  *
  */
 export default {
@@ -85,15 +84,27 @@ export default {
         <oc-sidebar-nav-header text="Menu Header" />
 
         <oc-sidebar-nav-item text="Active Item" active icon="folder" target="home" />
+        <oc-sidebar-nav-item icon="folder" target="home">
+          <template v-slot:text>
+            Item with text in slot
+          </template>
+        </oc-sidebar-nav-item>
+        <oc-sidebar-nav-item icon="folder" target="home">
+          <template v-slot:text>
+            Item with text in slot and with children
+          </template>
+          <oc-sidebar-nav-item text="Child Item" target="home" icon="edit" />
+        </oc-sidebar-nav-item>
 
         <oc-sidebar-nav-item text="Item with children" icon="folder" target="home">
           <oc-sidebar-nav-item text="Child Item with click handler" icon="search" @click="onClick"/>
-          <oc-sidebar-nav-item text="Child Item " target="home" icon="edit" />
+          <oc-sidebar-nav-item text="Child Item" target="home" icon="edit" />
         </oc-sidebar-nav-item>
 
         <oc-sidebar-nav-divider />
 
-        <oc-sidebar-nav-item text="Exit ownCloud" active icon="exit_to_app" target="login" />
+        <oc-sidebar-nav-item active icon="exit_to_app" target="login">
+          <template slot="text">Exit ownCloud</template></oc-sidebar-nav-item>
       </oc-application-menu>
     </section>
   </template>

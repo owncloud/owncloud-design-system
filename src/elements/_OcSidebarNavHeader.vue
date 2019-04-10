@@ -1,5 +1,11 @@
 <template>
-  <li class="uk-nav-header">{{ text }}</li>
+  <li class="uk-nav-header">
+    <slot>
+      <span>
+        {{ text }}
+      </span>
+    </slot>
+  </li>
 </template>
 <script>
 export default {
@@ -17,6 +23,9 @@ export default {
 </script>
 <docs>
   ```jsx
-  <oc-sidebar-nav-header text="Demo Item" />
+  <div>
+    <oc-sidebar-nav-header text="Demo Item" />
+    <oc-sidebar-nav-header>Just another header</oc-sidebar-nav-header>
+  </div>
   ```
 </docs>
