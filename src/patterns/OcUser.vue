@@ -3,13 +3,13 @@
     <div class="uk-inline">
       <oc-avatar :src="avatar" :title="userName" />
     </div>
+    <div class="uk-inline uk-align-right">
+      <slot name="actions"></slot>
+    </div>
     <div class="uk-inline">
       <div class="uk-text-lead" v-text="displayName"></div>
       <div class="uk-text-meta" v-text="email"></div>
       <slot name="properties"></slot>
-    </div>
-    <div class="uk-inline uk-align-right">
-      <slot name="actions"></slot>
     </div>
   </div>
 </template>
