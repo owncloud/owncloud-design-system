@@ -42,7 +42,7 @@ export default {
 <docs>
   ```jsx
 <template>
-  <div style="background-color: white"><!-- top container to fill the whole screen/area -->
+  <div style="background-color: white; overflow: auto;"><!-- top container to fill the whole screen/area -->
     <oc-dialog name="OcDialog" title="Not implemented">
       <template slot="content">
         This feature is not implemented yet.
