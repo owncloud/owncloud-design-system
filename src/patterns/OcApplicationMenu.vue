@@ -1,8 +1,8 @@
 <template>
   <div :id="name">
-    <div class="uk-offcanvas-bar">
+    <div class="uk-offcanvas-bar uk-background-muted">
       <button class="uk-offcanvas-close" type="button" @click="onClose" uk-close></button>
-      <ul class="uk-nav uk-nav-default">
+      <ul class="oc-main-menu uk-nav" uk-nav="multiple: true">
         <slot name="default"></slot>
       </ul>
     </div>

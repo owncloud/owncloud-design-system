@@ -50,7 +50,7 @@ export default {
 
     <oc-navbar tag="header" class="oc-topbar">
       <oc-navbar-item position="left">
-        <button class="oc-topbar-menu-burger" aria-label="Files">
+        <button class="oc-topbar-menu-burger" aria-label="Files" @click="leftMenuOpen = true">
           <oc-icon name="menu" class="oc-topbar-menu-burger-icon" /><span
             class="oc-topbar-menu-burger-label"
             >Files</span
@@ -76,23 +76,22 @@ export default {
     </oc-navbar>
 
     <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
-        <oc-sidebar-nav-item text="Files" active icon="folder" target="home">
-            <oc-sidebar-nav-item text="All files" icon="folder"/>
-            <oc-sidebar-nav-item text="Favorites" icon="folder-starred" />
-            <oc-sidebar-nav-item text="Shared with me" icon="folder-shared" />
-            <oc-sidebar-nav-item text="Shared public" icon="folder-public" />
-            <oc-sidebar-nav-item text="External files" icon="folder-external" />
-            <oc-sidebar-nav-item text="Tags" icon="search" />
-            <oc-sidebar-nav-divider></oc-sidebar-nav-divider>
-            <oc-sidebar-nav-item text="Deleted files" icon="delete" />
-        </oc-sidebar-nav-item>
+      <oc-sidebar-nav-item text="Files" active icon="folder" target="home">
+        <oc-sidebar-nav-item text="All files"/>
+        <oc-sidebar-nav-item text="Favorites"/>
+        <oc-sidebar-nav-item text="Shared with me"/>
+        <oc-sidebar-nav-item text="Shared public"/>
+        <oc-sidebar-nav-item text="External files"/>
+        <oc-sidebar-nav-item text="Tags" />
+        <oc-sidebar-nav-divider></oc-sidebar-nav-divider>
+        <oc-sidebar-nav-item text="Deleted files" icon="delete" />
+      </oc-sidebar-nav-item>
 
-        <oc-sidebar-nav-item text="Personal settings" icon="account_circle" />
-        <oc-sidebar-nav-item text="Administration" icon="application" />
+      <oc-sidebar-nav-item text="Personal settings" icon="account_circle" :isolate="true"/>
+      <oc-sidebar-nav-divider></oc-sidebar-nav-divider>
+      <oc-sidebar-nav-item text="Administration" icon="application" />
 
-        <oc-sidebar-nav-divider />
-
-        <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" />
+      <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" :isolate="true"/>
     </oc-application-menu>
 
     <oc-app-layout :rightHidden="rightHidden">
