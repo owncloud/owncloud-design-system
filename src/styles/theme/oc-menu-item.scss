@@ -1,0 +1,13 @@
+//
+// Component: OC MenuItem
+//
+// ========================================================================
+.oc-menu-item {
+  color: $global-link-color;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $global-link-hover-color;
+  }
+}

@@ -1,14 +1,12 @@
 <template>
-  <li @click="onClick">
-    <a href="#">
-      <div v-if="icon" class="uk-flex uk-flex-middle">
-        <oc-icon :name="icon" class="uk-margin-small-right" />
-        <slot name="default" />
-      </div>
-      <template v-else>
-        <slot name="default" />
-      </template>
-    </a>
+  <li class="oc-menu-item" @click="$_ocMenuItem_onClick">
+    <div v-if="icon" class="uk-flex uk-flex-middle">
+      <oc-icon :name="icon" class="uk-margin-small-right" />
+      <slot name="default" />
+    </div>
+    <template v-else>
+      <slot name="default" />
+    </template>
   </li>
 </template>
 <script>
@@ -30,7 +28,7 @@ export default {
     },
   },
   methods: {
-    onClick(val) {
+    $_ocMenuItem_onClick(val) {
       /**
        * Click event
        * @event click
@@ -47,7 +45,7 @@ export default {
 <template>
     <oc-menu buttonText="open oc-menu">
       <template slot="subnav">
-        <oc-menu-item icon="create_new_folder">Item with icon</oc-menu-item>
+        <oc-menu-item icon="create_new_folder" @click="onClick">Item with icon</oc-menu-item>
         <oc-menu-item>Item without icon</oc-menu-item>
       </template>
     </oc-menu>
@@ -55,8 +53,8 @@ export default {
   <script>
     export default {
       methods: {
-        onClick(val) {
-          alert(val)
+        onClick() {
+          alert("Hello world!")
         }
       }
     }

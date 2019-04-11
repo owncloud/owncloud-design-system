@@ -6,7 +6,7 @@
     <div uk-dropdown="mode: click, offset: 0">
       <!-- @slot The default slot for inner content  -->
       <slot name="default"> </slot>
-      <ul class="uk-nav uk-dropdown-nav uk-nav-default">
+      <ul class="uk-list uk-margin-remove-bottom">
         <!-- @slot This slot receives oc-menu-items as content -->
         <slot name="subnav" />
       </ul>
