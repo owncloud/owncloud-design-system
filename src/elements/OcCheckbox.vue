@@ -1,5 +1,10 @@
 <template>
-  <input class="uk-checkbox" type="checkbox" v-model="checkboxState" />
+  <input
+    class="uk-checkbox"
+    type="checkbox"
+    v-model="checkboxState"
+    @change="$_ocCheckbox_change($event)"
+  />
 </template>
 <script>
 /**
@@ -17,6 +22,16 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+  },
+  methods: {
+    $_ocCheckbox_change(event) {
+      /**
+       * State change event
+       * @event change
+       * @type {event}
+       */
+      this.$emit("change", event)
     },
   },
   computed: {
