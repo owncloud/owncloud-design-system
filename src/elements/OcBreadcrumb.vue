@@ -1,5 +1,8 @@
 <template>
   <ul class="uk-breadcrumb">
+    <li v-if="firstIsHome">
+      <oc-icon name="home" @click="$_ocBreadcrumb_goHome" />
+    </li>
     <li v-for="(item, index) in items" :key="index">
       <router-link v-if="item.to" :to="item.to">{{ item.text }}</router-link>
       <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
@@ -25,6 +28,15 @@ export default {
       type: Array,
       default: [],
       required: true,
+    },
+    firstIsHome: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    $_ocBreadcrumb_goHome() {
+      // Route to home
     },
   },
 }
