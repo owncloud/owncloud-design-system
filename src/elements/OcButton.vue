@@ -5,6 +5,7 @@
     :to="to"
     :type="submit"
     :text="text"
+    :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
     @click="onClick"
   >
@@ -66,7 +67,7 @@ export default {
     /**
      * The aria-label of the button.
      */
-    arialabel: {
+    ariaLabel: {
       type: String,
       default: null,
     },
