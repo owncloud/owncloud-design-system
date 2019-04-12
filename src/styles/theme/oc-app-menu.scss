@@ -1,27 +1,26 @@
-#oc-app-menu:extend(.uk-background-secondary) {
-  &:before {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
+.oc-main-menu {
+  @extend .uk-nav;
+  @extend .uk-nav-default;
+  @extend .uk-nav-parent-icon;
+  @extend .uk-margin-medium-top;
+
+  // Immediate anchor
+  & > li > a {
+    text-transform: uppercase;
   }
 
-  ul li:extend(.uk-flex, .uk-flex-column, .uk-flex-middle) {
-    transition: opacity 0.5s;
-    cursor: pointer;
-    opacity: 0.5;
+  .oc-icon {
+    // 3px offset to align with line-height
+    transform: translate(-50%, 3px);
 
-    &._is_active,
-    &:hover {
-      opacity: 1;
+    &,
+    & > svg {
+      width: $global-font-size + 1 !important;
+      height: $global-font-size + 1 !important;
     }
 
-    span:extend(.uk-text-inverse) {
-    }
-
-    img {
-      max-width: 36px;
-      max-height: 36px;
+    & > svg {
+      fill: $global-color !important;
     }
   }
 }

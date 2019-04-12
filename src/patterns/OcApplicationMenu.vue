@@ -1,8 +1,8 @@
 <template>
   <div :id="name">
-    <div class="uk-offcanvas-bar">
+    <div class="uk-offcanvas-bar uk-background-muted">
       <button class="uk-offcanvas-close" type="button" @click="onClose" uk-close></button>
-      <ul class="uk-nav uk-nav-default">
+      <ul class="oc-main-menu" uk-nav="multiple: true">
         <slot name="default"></slot>
       </ul>
     </div>
@@ -75,38 +75,26 @@ export default {
 <docs>
   ```jsx
   <template>
-    <section>
-      <h3 class="uk-heading-divider">
-        Application Menu
-      </h3>
+    <div>
       <oc-button variation="primary" text="Open" @click="isOpen = true"></oc-button>
-      <oc-application-menu name="demoMenu" v-model="isOpen" @close="isOpen = false">
-        <oc-sidebar-nav-header text="Menu Header" />
-
-        <oc-sidebar-nav-item text="Active Item" active icon="folder" target="home" />
-        <oc-sidebar-nav-item icon="folder" target="home">
-          <template v-slot:text>
-            Item with text in slot
-          </template>
-        </oc-sidebar-nav-item>
-        <oc-sidebar-nav-item icon="folder" target="home">
-          <template v-slot:text>
-            Item with text in slot and with children
-          </template>
-          <oc-sidebar-nav-item text="Child Item" target="home" icon="edit" />
+      <oc-application-menu v-model="isOpen" name="leftMenu" @close="isOpen = false">
+        <oc-sidebar-nav-item text="Files" active icon="folder" target="home">
+          <oc-sidebar-nav-item text="All files"/>
+          <oc-sidebar-nav-item text="Favorites"/>
+          <oc-sidebar-nav-item text="Shared with me"/>
+          <oc-sidebar-nav-item text="Shared public"/>
+          <oc-sidebar-nav-item text="External files"/>
+          <oc-sidebar-nav-item text="Tags" />
+          <oc-sidebar-nav-item text="Deleted files" />
         </oc-sidebar-nav-item>
 
-        <oc-sidebar-nav-item text="Item with children" icon="folder" target="home">
-          <oc-sidebar-nav-item text="Child Item with click handler" icon="search" @click="onClick"/>
-          <oc-sidebar-nav-item text="Child Item" target="home" icon="edit" />
-        </oc-sidebar-nav-item>
-
+        <oc-sidebar-nav-item text="Personal settings" icon="account_circle" :isolate="true"/>
         <oc-sidebar-nav-divider />
+        <oc-sidebar-nav-item text="Administration" icon="application" />
 
-        <oc-sidebar-nav-item active icon="exit_to_app" target="login">
-          <template slot="text">Exit ownCloud</template></oc-sidebar-nav-item>
+        <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" :isolate="true"/>
       </oc-application-menu>
-    </section>
+    </div>
   </template>
   <script>
     export default {
