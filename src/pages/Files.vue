@@ -83,12 +83,11 @@ export default {
         <oc-sidebar-nav-item text="Shared public"/>
         <oc-sidebar-nav-item text="External files"/>
         <oc-sidebar-nav-item text="Tags" />
-        <oc-sidebar-nav-divider></oc-sidebar-nav-divider>
-        <oc-sidebar-nav-item text="Deleted files" icon="delete" />
+        <oc-sidebar-nav-item text="Deleted files" />
       </oc-sidebar-nav-item>
 
       <oc-sidebar-nav-item text="Personal settings" icon="account_circle" :isolate="true"/>
-      <oc-sidebar-nav-divider></oc-sidebar-nav-divider>
+      <oc-sidebar-nav-divider />
       <oc-sidebar-nav-item text="Administration" icon="application" />
 
       <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" :isolate="true"/>

@@ -5,7 +5,7 @@
       :to="target"
       v-on="!target ? { click: $_ocSidebarNavItem_onClick } : {}"
     >
-      <oc-icon :name="icon" class="oc-sidebar-nav-item-icon" v-if="icon" />
+      <oc-icon :name="icon" v-if="icon" />
       <slot name="text">
         <span>
           {{ text }}
@@ -57,7 +57,7 @@ export default {
       return !!this.$slots.default
     },
     $_ocSidebarNavItem_class() {
-      let classes = ["oc-sidebar-nav-item"]
+      let classes = []
       if (this.$_ocSidebarNavItem_hasDefaultSlot) {
         classes.push("uk-parent")
       }
