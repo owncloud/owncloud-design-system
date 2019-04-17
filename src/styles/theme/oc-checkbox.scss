@@ -7,6 +7,6 @@
   @extend .uk-checkbox;
 }
 
-label > .oc-checkbox {
-  @extend .uk-margin-small-right;
+label > .oc-checkbox + span {
+  margin-left: $global-small-margin / 2;
 }
