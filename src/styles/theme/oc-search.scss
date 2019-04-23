@@ -2,10 +2,6 @@
   @extend .uk-grid-collapse;
   @extend .uk-flex-middle;
 
-  &-input {
-    @extend .uk-width-medium;
-  }
-
   &-button {
     // Prevend double borders
     // from input and button
@@ -15,5 +11,19 @@
 
   &-clear {
     cursor: pointer;
+  }
+
+  &-small {
+    .oc-search-input {
+      @extend .uk-form-small;
+    }
+
+    .oc-icon {
+      &,
+      & svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 }

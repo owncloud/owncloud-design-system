@@ -1,6 +1,6 @@
 <template>
   <input
-    class="uk-checkbox"
+    class="oc-checkbox"
     type="checkbox"
     v-model="checkboxState"
     @change="$_ocCheckbox_change($event)"

@@ -4,12 +4,14 @@
 import OcCheckbox from "../elements/OcCheckbox"
 import OcApplicationMenu from "../patterns/OcApplicationMenu"
 import OcSidebarNavDivider from "../elements/_OcSidebarNavDivider"
+import OcButton from "../elements/OcButton"
+import OcNav from "../elements/OcNav"
 /**
  * Shows how to layout and structure the files app.
  */
 export default {
   name: "Files",
-  components: { OcSidebarNavDivider, OcApplicationMenu, OcCheckbox },
+  components: { OcNav, OcButton, OcSidebarNavDivider, OcApplicationMenu, OcCheckbox },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -109,14 +111,13 @@ export default {
                 </div>
             </template>
             <template slot="right">
-                <div class="uk-navbar-item">
-                    <oc-menu buttonText="+ New">
-                      <template slot="subnav">
-                        <oc-menu-item icon="create_new_folder" content="New folder …" />
-                        <oc-menu-item icon="save" content="New file …" />
-                      </template>
-                    </oc-menu>
-                </div>
+                <oc-button>+ New</oc-button>
+                <oc-drop>
+                    <oc-nav>
+                        <oc-nav-item icon="create_new_folder">New folder …</oc-nav-item>
+                        <oc-nav-item icon="save">New file …</oc-nav-item>
+                    </oc-nav>
+                </oc-drop>
                 <div class="uk-navbar-item">
                     <span>3 results</span>
                 </div>

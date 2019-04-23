@@ -1,6 +1,6 @@
 <template>
-  <li @click="onClick">
-    <a href="#">
+  <li :class="{ 'uk-active': active }">
+    <a href="#" @click.prevent="$_ocCheckbox_click">
       <div v-if="icon" class="uk-flex uk-flex-middle">
         <oc-icon :name="icon" class="uk-margin-small-right" />
         <slot name="default" />
@@ -13,10 +13,13 @@
 </template>
 <script>
 /**
- * Create a menu item.
+ * Create a list menu item.
+ *
+ * TODO:
+ * - [ ] Add router-link capabilities
  */
 export default {
-  name: "oc-menu-item",
+  name: "oc-nav-item",
   status: "prototype",
   release: "0.0.1",
   props: {
@@ -28,9 +31,16 @@ export default {
       required: false,
       default: "",
     },
+    /**
+     * Mark as active item
+     */
+    active: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
-    onClick(val) {
+    $_ocCheckbox_click(val) {
       /**
        * Click event
        * @event click
@@ -45,21 +55,20 @@ export default {
 <docs>
 ```jsx
 <template>
-    <oc-menu buttonText="open oc-menu">
-      <template slot="subnav">
-        <oc-menu-item icon="create_new_folder">Item with icon</oc-menu-item>
-        <oc-menu-item>Item without icon</oc-menu-item>
-      </template>
-    </oc-menu>
-  </template>
-  <script>
-    export default {
-      methods: {
-        onClick(val) {
-          alert(val)
-        }
+  <oc-nav>
+    <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>
+    <oc-nav-item @click="onClick('Hi there')">Item without icon</oc-nav-item>
+    <oc-nav-item active>An active item</oc-nav-item>
+  </oc-nav>
+</template>
+<script>
+  export default {
+    methods: {
+      onClick(val) {
+        alert(val)
       }
     }
-  </script>
+  }
+</script>
 ```
 </docs>

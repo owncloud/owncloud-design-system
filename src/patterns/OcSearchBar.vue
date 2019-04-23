@@ -1,10 +1,10 @@
 <template>
-  <div uk-grid class="oc-search">
-    <div>
-      <div class="uk-inline">
+  <div uk-grid class="oc-search" :class="{ 'oc-search-small': small }">
+    <div class="uk-width-expand">
+      <div class="uk-inline uk-width-1-1">
         <span v-if="icon" class="uk-form-icon">
           <oc-icon v-show="!loading" :name="icon" />
-          <div v-show="loading" uk-spinner="ratio:0.75" aria-hidden></div>
+          <div v-show="loading" :uk-spinner="spinnerRatio" aria-hidden></div>
         </span>
         <oc-text-input
           class="oc-search-input"
@@ -22,7 +22,7 @@
         />
       </div>
     </div>
-    <div v-if="button">
+    <div v-if="button" class="uk-width-auto">
       <oc-button
         class="oc-search-button"
         variation="primary"
@@ -54,7 +54,7 @@ export default {
       default: null,
     },
     /**
-     * Informative placeholder about the data to be entered
+     * The icon to be displayed
      */
     icon: {
       type: String,
@@ -68,6 +68,13 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    /**
+     * Indicator if the search bar should be of smaller size
+     */
+    small: {
+      type: Boolean,
+      default: false,
     },
     /**
      * Determine the button text
@@ -135,6 +142,10 @@ export default {
       // please don't treat empty string the same as null...
       return this.value === null ? this.query : this.value
     },
+    spinnerRatio() {
+      let ratio = this.small ? 0.5 : 0.75
+      return "ratio:" + ratio
+    },
   },
 }
 </script>
@@ -152,6 +163,9 @@ export default {
       <hr>
       <div class="uk-margin">
         <oc-search-bar placeholder="Loading ..." :loading="true"></oc-search-bar>
+      </div>
+      <div class="uk-margin">
+        <oc-search-bar small placeholder="Small searchbar" :loading="true"></oc-search-bar>
       </div>
     </section>
     <section>
