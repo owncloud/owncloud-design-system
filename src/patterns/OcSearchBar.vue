@@ -25,6 +25,7 @@
     <div v-if="button" class="uk-width-auto">
       <oc-button
         class="oc-search-button"
+        :class="{ 'uk-button-small': small }"
         variation="primary"
         :disabled="loading || searchQuery.length < 1"
         :text="button"
@@ -57,7 +58,7 @@ export default {
      * The icon to be displayed
      */
     icon: {
-      type: String,
+      type: [String, Boolean],
       required: false,
       default: "search",
     },
