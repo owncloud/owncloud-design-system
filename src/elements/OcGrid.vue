@@ -31,6 +31,13 @@ export default {
       default: false,
     },
     /**
+     * Center elements along the cross axis.
+     */
+    flex: {
+      type: [Boolean],
+      default: false,
+    },
+    /**
      * If the grid columns are evenly split, you can add the values here instead of adding it to each of the items.
      * Works with all available sizes described in https://getuikit.com/docs/width but **drop the "uk-width-" prefix!**
      */
@@ -45,12 +52,20 @@ export default {
 
       c.push("uk-grid-" + this.gutter)
 
-      if (this.match) c.push("uk-grid-match")
+      if (this.match) {
+        c.push("uk-grid-match")
+      }
 
-      if (this.childWidth && typeof this.childWidth === "object")
+      if (this.flex) {
+        c.push("uk-flex")
+        c.push("uk-flex-middle")
+      }
+
+      if (this.childWidth && typeof this.childWidth === "object") {
         c = c.concat(this.childWidth.map(e => "uk-child-width-" + e))
-      else if (this.childWidth && typeof this.childWidth === "string")
+      } else if (this.childWidth && typeof this.childWidth === "string") {
         c.push("uk-child-width-" + this.childWidth)
+      }
 
       return c
     },
@@ -89,5 +104,41 @@ export default {
       </div>
     </div>
   </oc-grid>
+
+  <h3 class="uk-heading-divider">
+    An application bar
+  </h3>
+
+<div class="uk-background-muted uk-padding-small">
+  <oc-grid flex gutter="small">
+    <div class="uk-width-expand">
+      <oc-breadcrumb :items="[{text:'First',to:{path:'first'}},{text:'Second'},{text:'Third'}]"></oc-breadcrumb>
+    </div>
+    <div class="uk-width-auto uk-visible@m">
+      <oc-search-bar />
+    </div>
+    <div class="uk-width-auto">
+      <div class="uk-button-group">
+        <oc-button text="Nothing" />
+        <oc-button id="my_drop_1" icon="filter_list" />
+      </div>
+    </div>
+  </oc-grid>
+  <oc-drop toggle="#my_drop_1" mode="hover">
+    <div slot="special" class="uk-card uk-card-default">
+      <div class="uk-card-header">
+        <h3 class="uk-card-title">
+          Advanced
+        </h3>
+      </div>
+      <div class="uk-card-body">
+        <p>
+          I'm a slightly more advanced drop down
+        </p>
+        <oc-search-bar small class="uk-hidden@m" />
+      </div>
+    </div>
+  </oc-drop>
+</div>
 ```
 </docs>
