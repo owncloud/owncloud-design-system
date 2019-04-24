@@ -26,6 +26,18 @@
     margin-left: $global-margin;
   }
 
+  &:not(.uk-button-small):not(.uk-button-large) {
+    min-height: $global-control-height;
+  }
+
+  &.uk-button-small {
+    min-height: $global-control-small-height;
+  }
+
+  &.uk-button-large {
+    min-height: $global-control-large-height;
+  }
+
   &.uk-button-primary,
   &.uk-button-secondary {
     .oc-icon > svg {
