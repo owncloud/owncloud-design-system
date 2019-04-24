@@ -18,6 +18,10 @@
       @extend .uk-form-small;
     }
 
+    .oc-button {
+      @extend .uk-button-small;
+    }
+
     .oc-icon {
       &,
       & svg {
