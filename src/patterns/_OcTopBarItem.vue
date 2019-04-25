@@ -1,6 +1,6 @@
 <template>
   <div class="uk-navbar-item">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 <script>

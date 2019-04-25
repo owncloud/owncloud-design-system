@@ -110,7 +110,7 @@ export default {
 ```jsx
   <template>
     <div>
-      <oc-button @click="fileOpen(file)" text="click to open actions"/>
+      <oc-button @click="fileOpen(file)">click to open actions</oc-button>
       <oc-file-actions />
     </div>
   </template>

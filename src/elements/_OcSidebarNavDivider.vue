@@ -1,5 +1,5 @@
 <template>
-  <li class="uk-nav-divider"></li>
+  <li class="uk-nav-divider" />
 </template>
 <script>
 export default {

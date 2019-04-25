@@ -76,23 +76,26 @@ export default {
   ```jsx
   <template>
     <div>
-      <oc-button variation="primary" text="Open" @click="isOpen = true"></oc-button>
+      <oc-button variation="primary" @click="isOpen = true">Open</oc-button>
       <oc-application-menu v-model="isOpen" name="leftMenu" @close="isOpen = false">
-        <oc-sidebar-nav-item text="Files" active icon="folder" target="home">
-          <oc-sidebar-nav-item text="All files"/>
-          <oc-sidebar-nav-item text="Favorites"/>
-          <oc-sidebar-nav-item text="Shared with me"/>
-          <oc-sidebar-nav-item text="Shared public"/>
-          <oc-sidebar-nav-item text="External files"/>
-          <oc-sidebar-nav-item text="Tags" />
-          <oc-sidebar-nav-item text="Deleted files" />
+        <oc-sidebar-nav-item active icon="folder" target="home">
+          Files
+          <template slot="subnav">
+            <oc-sidebar-nav-item>All files</oc-sidebar-nav-item>
+            <oc-sidebar-nav-item>Favorites</oc-sidebar-nav-item>
+            <oc-sidebar-nav-item>Shared with me</oc-sidebar-nav-item>
+            <oc-sidebar-nav-item>Shared public</oc-sidebar-nav-item>
+            <oc-sidebar-nav-item>External files</oc-sidebar-nav-item>
+            <oc-sidebar-nav-item>Tags</oc-sidebar-nav-item>
+            <oc-sidebar-nav-item>Deleted files</oc-sidebar-nav-item>
+          </template>
         </oc-sidebar-nav-item>
 
-        <oc-sidebar-nav-item text="Personal settings" icon="account_circle" :isolate="true"/>
+        <oc-sidebar-nav-item icon="account_circle" :isolate="true">Personal settings</oc-sidebar-nav-item>
         <oc-sidebar-nav-divider />
-        <oc-sidebar-nav-item text="Administration" icon="application" />
+        <oc-sidebar-nav-item icon="application">Administration</oc-sidebar-nav-item>
 
-        <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" :isolate="true"/>
+        <oc-sidebar-nav-item icon="exit_to_app" target="login" :isolate="true">Exit ownCloud</oc-sidebar-nav-item>
       </oc-application-menu>
     </div>
   </template>

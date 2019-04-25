@@ -4,15 +4,14 @@
     :href="href"
     :to="to"
     :type="submit"
-    :text="text"
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
     @click="onClick"
   >
-    <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon"></oc-icon>
-    <slot>
-      <span v-if="text" v-text="text" />
-    </slot>
+    <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon" />
+    <span v-if="$slots.default">
+      <slot name="default" />
+    </span>
   </component>
 </template>
 
@@ -99,17 +98,12 @@ export default {
         return value.match(/(default|primary|secondary)/)
       },
     },
-    /**
-     * Text do be displayed in the button
-     */
-    text: {
-      type: String,
-      default: null,
-    },
   },
   computed: {
     $_ocButton_iconClass() {
-      return this.text ? "uk-position-small uk-position-center-left" : "uk-position-center"
+      return this.$slots.default
+        ? "uk-position-small uk-position-center-left"
+        : "uk-position-center"
     },
     $_ocButton_buttonClass() {
       let classes = ["oc-button"]
@@ -140,24 +134,24 @@ export default {
       <h3 class="uk-heading-divider">
         Button Types
       </h3>
-      <oc-button text="Default Button" @click="onClick"/>
-      <oc-button text="Primary Button" variation="primary" />
-      <oc-button text="Secondary Button" variation="secondary" />
-      <oc-button text="Disabled Button" disabled />
-      <oc-button>Button with text in slot</oc-button>
+      <oc-button @click="onClick">Default Button</oc-button>
+      <oc-button variation="primary">Primary Button</oc-button>
+      <oc-button variation="secondary">Secondary Button</oc-button>
+      <oc-button disabled>Disabled Button</oc-button>
 
       <h3 class="uk-heading-divider">
         Button sizes
       </h3>
-      <oc-button text="Large" size="large" />
-      <oc-button text="Small" size="small" />
+      <oc-button size="large">Large</oc-button>
+      <oc-button size="small">Small</oc-button>
 
       <h3 class="uk-heading-divider">
         Button with icons
       </h3>
-      <oc-button icon="home" text="Home"/>
-      <oc-button variation="primary" icon="save" text="Save" />
-      <oc-button icon="save" text="Save disabled" disabled />
+      <oc-button icon="home">Home</oc-button>
+      <oc-button variation="primary" icon="save">Save</oc-button>
+      <oc-button icon="save" disabled>Save disabled</oc-button>
+      <oc-button variation="primary" icon="cloud_upload" />
 
       <h3 class="uk-heading-divider">
         Using buttons in a group
@@ -165,7 +159,7 @@ export default {
       <div class="uk-button-group">
         <oc-button variation="primary">Hello</oc-button>
         <oc-button variation="secondary">What's up?</oc-button>
-        <oc-button text="Demo Button" icon="folder" />
+        <oc-button icon="folder">Demo Button</oc-button>
       </div>
     </section>
   </template>

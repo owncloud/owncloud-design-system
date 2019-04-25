@@ -32,8 +32,21 @@ export default {
 <docs>
 ```jsx
 <oc-accordion :multiple=false>
-  <oc-accordion-item title="My accordion item"></oc-accordion-item>
-  <oc-accordion-item title="Something else with content" subtitle="And a subtitle">
+  <oc-accordion-item>
+    <template slot="title">
+      My accordion item
+    </template>
+    <p slot="content">
+      I am the content of this accordion
+    </p>
+  </oc-accordion-item>
+  <oc-accordion-item>
+    <template slot="title">
+      Something else with content
+    </template>
+    <template slot="subtitle">
+      And a subtitle
+    </template>
     <template slot="content">
       <p>Enter some text!</p>
       <oc-text-input></oc-text-input>

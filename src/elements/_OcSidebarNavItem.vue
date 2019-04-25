@@ -6,14 +6,10 @@
       v-on="!target ? { click: $_ocSidebarNavItem_onClick } : {}"
     >
       <oc-icon :name="icon" v-if="icon" />
-      <slot name="text">
-        <span>
-          {{ text }}
-        </span>
-      </slot>
-    </component>
-    <ul class="uk-nav-sub" v-if="$_ocSidebarNavItem_hasDefaultSlot">
       <slot name="default" />
+    </component>
+    <ul class="uk-nav-sub" v-if="$slots.subnav">
+      <slot name="subnav" />
     </ul>
   </li>
 </template>
@@ -38,11 +34,6 @@ export default {
       required: false,
       default: "",
     },
-    text: {
-      type: String,
-      required: false,
-      default: "NavItem",
-    },
     isolate: {
       type: Boolean,
       required: false,
@@ -53,12 +44,9 @@ export default {
     $_ocSidebarNavItem_componentType() {
       return this.target ? "router-link" : "a"
     },
-    $_ocSidebarNavItem_hasDefaultSlot() {
-      return !!this.$slots.default
-    },
     $_ocSidebarNavItem_class() {
       let classes = []
-      if (this.$_ocSidebarNavItem_hasDefaultSlot) {
+      if (this.$slots.subnav) {
         classes.push("uk-parent")
       }
       if (this.active) {
@@ -79,7 +67,7 @@ export default {
 </script>
 <docs>
   ```jsx
-  <oc-sidebar-nav-item text="Demo Item" target="home" icon="close" active />
-  <oc-sidebar-nav-item text="Demo Item" target="home" icon="edit" />
+  <oc-sidebar-nav-item target="home" icon="close" active>Demo Item</oc-sidebar-nav-item>
+  <oc-sidebar-nav-item target="home" icon="edit">Demo Item</oc-sidebar-nav-item>
   ```
 </docs>
