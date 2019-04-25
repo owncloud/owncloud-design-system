@@ -9,6 +9,7 @@
         <slot name="default" />
       </template>
     </a>
+    <slot name="outer-content" />
   </li>
 </template>
 <script>
@@ -59,6 +60,14 @@ export default {
     <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>
     <oc-nav-item @click="onClick('Hi there')">Item without icon</oc-nav-item>
     <oc-nav-item active>An active item</oc-nav-item>
+    <oc-nav-item>
+      Item with content outside of link tag
+      <template slot="outer-content">
+        <span>
+          I'm outside of link tag
+        </span>
+      </template>
+    </oc-nav-item>
   </oc-nav>
 </template>
 <script>
