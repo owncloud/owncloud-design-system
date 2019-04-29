@@ -38,7 +38,7 @@
         </li>
         <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
           <oc-spinner class="oc-autocomplete-spinner" />
-          <span>Loading results</span>
+          <span>{{ spinnerText }}</span>
         </li>
       </ul>
     </div>
@@ -59,8 +59,8 @@ import { uniqueId as _uniqueId } from "lodash"
  *
  * ##TODO:
  *
- * - [x] Implement loading indicator
  * - [ ] Allow complex content (HTML)
+ * - [ ] Selecting model is not yet clean - will need to be changed together with ^
  */
 export default {
   name: "oc-autocomplete",
@@ -74,6 +74,14 @@ export default {
     placeholder: {
       type: String,
       required: false,
+    },
+    /**
+     * Informative text displayed right next to the spinner while loading data
+     */
+    spinnerText: {
+      type: String,
+      required: false,
+      default: "Loading…",
     },
     /**
      * Input can be entered or not
@@ -179,7 +187,10 @@ export default {
       this.$emit("update:input", value)
     },
     selectSuggestion() {
-      if (this.matchesShown[this.highlighted]) this.input = this.matchesShown[this.highlighted]
+      if (this.matchesShown[this.highlighted]) {
+        this.input = this.matchesShown[this.highlighted]
+        this.$emit("input", this.input)
+      }
     },
   },
 }
@@ -201,7 +212,8 @@ export default {
       Autocomplete in action
     </h3>
     <div class="uk-margin">
-      <oc-autocomplete :items="searchResult" :itemsLoading="searchInProgress" placeholder="Add user" @update:input="onInput"/>
+      <oc-autocomplete v-model="selectedItem" :items="searchResult" :itemsLoading="searchInProgress" placeholder="Add user" @update:input="onInput"/>
+      <span>Selected item: {{ selectedItem }}</span>
     </div>
   </section>
 </template>
@@ -222,7 +234,8 @@ export default {
         'Arlena Bolster'
       ],
       searchResult: [],
-      searchInProgress: false
+      searchInProgress: false,
+      selectedItem: null
     }
   },
   methods: {
