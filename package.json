@@ -173,7 +173,7 @@
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",
-    "vue-styleguidist": "=3.11.2",
+    "vue-styleguidist": "=3.13.0",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.29.6",
     "webpack-bundle-analyzer": "^3.2.0",
