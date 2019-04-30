@@ -72,6 +72,7 @@ export default {
           <oc-avatar
             class="oc-topbar-personal-avatar"
             src="https://picsum.photos/64/64?image=1027"
+            :loading="loading"
           /><span class="oc-topbar-personal-label">Alice Habanero</span>
         </router-link>
       </oc-navbar-item>
@@ -196,6 +197,7 @@ export default {
         createFolder: false,
         leftMenuOpen: false,
         rightHidden: true,
+        loading: true,
         files: [
           {name: "Private", extension: "", icon:'folder'},
           {name: "Project", extension: "", icon:'folder-shared'},
@@ -285,7 +287,15 @@ export default {
         this.selectedFile = file.name + "." + file.extension
         this.rightHidden = false
       },
+      endLoading () {
+      this.loading = false
+      }
     },
+    mounted: function () {
+    setTimeout(() => {
+      this.endLoading()
+    }, 1000)
+  },
   }
 </script>
 ```
