@@ -3,7 +3,7 @@
     <div class="uk-width-1-5" :hidden="leftHidden">
       <slot name="left"></slot>
     </div>
-    <div class="uk-width-expand">
+    <div class="uk-width-expand uk-overflow-hidden">
       <slot name="center"></slot>
     </div>
     <div class="uk-width-1-5" :hidden="rightHidden">
