@@ -23,10 +23,14 @@
               { 'oc-autocomplete-suggestion-selected': i === highlighted },
             ]"
             :key="i"
-            v-text="item"
             @mouseenter="highlighted = i"
             @click="selectSuggestion"
-          ></li>
+          >
+            <slot name="item" v-bind:item="item">
+              <!-- Fallback content -->
+              {{ item }}
+            </slot>
+          </li>
         </template>
         <li
           v-if="matchesOverflowing > 0 && !itemsLoading"
@@ -114,10 +118,10 @@ export default {
       default: 5,
     },
     /**
-     * The selected element
+     * Select what values an object is to be found by
      */
-    value: {
-      type: String,
+    findBy: {
+      type: Array,
     },
   },
   data() {
@@ -137,8 +141,19 @@ export default {
       if (this.input.length === 0) {
         return []
       }
+
       return this.items.filter(item => {
-        return item.toLowerCase().indexOf(this.input.toLowerCase()) >= 0
+        let searchString = this.input // What's to be found
+        let findString = item // Where to find it
+
+        if (typeof item === "object") {
+          // Implode selected values
+          let findObject = _.pick(item, this.findBy)
+          let findArray = _.values(findObject)
+          findString = _.join(findArray, " ")
+        }
+
+        return findString.toLowerCase().indexOf(searchString.toLowerCase()) >= 0
       })
     },
     _dropdownId() {
@@ -188,8 +203,9 @@ export default {
     },
     selectSuggestion() {
       if (this.matchesShown[this.highlighted]) {
-        this.input = this.matchesShown[this.highlighted]
-        this.$emit("input", this.input)
+        this.$emit("select", this.matchesShown[this.highlighted])
+        this.input = ""
+        this._dropdown.hide()
       }
     },
   },
@@ -202,11 +218,23 @@ export default {
     <h3 class="uk-heading-divider">
       Autocomplete
     </h3>
-    <div class="uk-margin">
-      <oc-autocomplete :items="[]" disabled placeholder="I am disabled" />
+    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+      <oc-autocomplete :items="simpleItems" placeholder="Simple selection"  @select="showSimpleSelected" />
+      <div class="uk-background-muted uk-padding-small uk-margin-small-top">
+        <p class="uk-text-meta">Selected simple item:</p>
+        <code>{{ simpleSelection }}</code>
+      </div>
     </div>
-    <div class="uk-margin">
-      <oc-autocomplete :items="items" placeholder="Add user" />
+    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+      <oc-autocomplete :items="complexItems" :findBy="['id', 'forename', 'surname']" placeholder="Complex selection" @select="showComplexSelected">
+        <template v-slot:item="{item}">
+          <span>{{ item.forename }} {{ item.surname }} <em>(Age: {{ item.age }})</em></span>
+        </template>
+      </oc-autocomplete>
+      <div class="uk-background-muted uk-padding-small uk-margin-small-top">
+        <p class="uk-text-meta">Selected complex item:</p>
+        <code>{{ complexSelection }}</code>
+      </div>
     </div>
     <h3 class="uk-heading-divider">
       Autocomplete in action
@@ -221,7 +249,7 @@ export default {
 export default {
   data () {
     return {
-      items : [
+      simpleItems : [
         'Scott Mortensen',
         'Lecia Scheerer',
         'Merrie Rubin',
@@ -233,6 +261,29 @@ export default {
         'Verona Mounts',
         'Arlena Bolster'
       ],
+      simpleSelection : null,
+      complexSelection : {},
+      complexItems : [{
+        id : 8312,
+        forename : 'Scott',
+        surname : 'Mortensen',
+        age : 31,
+      }, {
+        id : 7388,
+        forename : 'Lecia',
+        surname : 'Scheerer',
+        age : 21,
+      }, {
+        id : 992,
+        forename : 'Verona',
+        surname : 'Mounts',
+        age : 33,
+      }, {
+        id : 1211,
+        forename : 'Arlena',
+        surname : 'Bolster',
+        age : 66,
+      }],
       searchResult: [],
       searchInProgress: false,
       selectedItem: null
@@ -243,8 +294,14 @@ export default {
       this.searchInProgress = true
       setTimeout(() => {
         this.searchInProgress = false
-        this.searchResult = this.items
+        this.searchResult = this.simpleItems
       }, 2000)
+    },
+    showComplexSelected(item) {
+      this.complexSelection = item;
+    },
+    showSimpleSelected(item) {
+      this.simpleSelection = item;
     }
   }
 }
