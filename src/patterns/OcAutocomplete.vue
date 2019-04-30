@@ -7,16 +7,16 @@
       :disabled="disabled"
       @keydown.up.prevent="highlighted--"
       @keydown.down.prevent="highlighted++"
-      @keydown.enter="selectSuggestion"
+      @keydown.enter="$_ocAutocomplete_selectSuggestion"
     />
-    <div hidden :id="_boundryId" />
+    <div hidden :id="$_ocAutocomplete_boundryId" />
     <div
       class="oc-autocomplete-dropdown"
-      :uk-drop="'mode:click;delay-hide:0;toggle:#' + _boundryId"
-      :id="_dropdownId"
+      :uk-drop="'mode:click;delay-hide:0;toggle:#' + $_ocAutocomplete_boundryId"
+      :id="$_ocAutocomplete_dropdownId"
     >
       <ul class="oc-autocomplete-suggestion-list">
-        <template v-for="(item, i) in matchesShown">
+        <template v-for="(item, i) in $_ocAutocomplete_matchesShown">
           <li
             :class="[
               'oc-autocomplete-suggestion',
@@ -24,7 +24,7 @@
             ]"
             :key="i"
             @mouseenter="highlighted = i"
-            @click="selectSuggestion"
+            @click="$_ocAutocomplete_selectSuggestion"
           >
             <slot name="item" v-bind:item="item">
               <!-- Fallback content -->
@@ -33,11 +33,11 @@
           </li>
         </template>
         <li
-          v-if="matchesOverflowing > 0 && !itemsLoading"
+          v-if="$_ocAutocomplete_matchesOverflowing > 0 && !itemsLoading"
           class="oc-autocomplete-suggestion-overflow"
         >
-          {{ matchesOverflowing }}
-          <span v-if="matchesOverflowing === 1">more result</span>
+          {{ $_ocAutocomplete_matchesOverflowing }}
+          <span v-if="$_ocAutocomplete_matchesOverflowing === 1">more result</span>
           <span v-else>more results</span>
         </li>
         <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
@@ -131,13 +131,13 @@ export default {
     }
   },
   computed: {
-    matchesShown() {
-      return this._matches.slice(0, this.maxListLength)
+    $_ocAutocomplete_matchesShown() {
+      return this.$_ocAutocomplete_matches.slice(0, this.maxListLength)
     },
-    matchesOverflowing() {
-      return this._matches.length - this.matchesShown.length
+    $_ocAutocomplete_matchesOverflowing() {
+      return this.$_ocAutocomplete_matches.length - this.$_ocAutocomplete_matchesShown.length
     },
-    _matches() {
+    $_ocAutocomplete_matches() {
       if (this.input.length === 0) {
         return []
       }
@@ -156,14 +156,14 @@ export default {
         return findString.toLowerCase().indexOf(searchString.toLowerCase()) >= 0
       })
     },
-    _dropdownId() {
+    $_ocAutocomplete_dropdownId() {
       return _uniqueId("oc-autocomplete-dropdown-")
     },
-    _boundryId() {
+    $_ocAutocomplete_boundryId() {
       return _uniqueId("oc-autocomplete-boundry-")
     },
-    _dropdown() {
-      return UiKit.drop(`#${this._dropdownId}`)
+    $_ocAutocomplete_dropdown() {
+      return UiKit.drop(`#${this.$_ocAutocomplete_dropdownId}`)
     },
   },
   watch: {
@@ -172,38 +172,39 @@ export default {
 
       if (
         input.length === 0 ||
-        (input === this.matchesShown[0] && this.matchesShown.length === 1)
+        (input === this.$_ocAutocomplete_matchesShown[0] &&
+          this.$_ocAutocomplete_matchesShown.length === 1)
       ) {
-        this._dropdown.hide()
+        this.$_ocAutocomplete_dropdown.hide()
       } else {
-        this._dropdown.show()
+        this.$_ocAutocomplete_dropdown.show()
       }
 
       // The real update not depending on onblur
-      this.userInput(input)
+      this.$_ocAutocomplete_userInput(input)
     },
     highlighted(next, current) {
       if (next === current) return
 
       // come around
       if (next < 0) {
-        this.highlighted = this.matchesShown.length - 1
-      } else if (next > this.matchesShown.length - 1) {
+        this.highlighted = this.$_ocAutocomplete_matchesShown.length - 1
+      } else if (next > this.$_ocAutocomplete_matchesShown.length - 1) {
         this.highlighted = 0
       }
     },
   },
   methods: {
-    userInput(value) {
+    $_ocAutocomplete_userInput(value) {
       /**
        * This event is emitted as soon as the user changes the search term
        * @type {string}
        */
       this.$emit("update:input", value)
     },
-    selectSuggestion() {
-      if (this.matchesShown[this.highlighted]) {
-        this.$emit("select", this.matchesShown[this.highlighted])
+    $_ocAutocomplete_selectSuggestion() {
+      if (this.$_ocAutocomplete_matchesShown[this.highlighted]) {
+        this.$emit("select", this.$_ocAutocomplete_matchesShown[this.highlighted])
         this.input = ""
         this._dropdown.hide()
       }
