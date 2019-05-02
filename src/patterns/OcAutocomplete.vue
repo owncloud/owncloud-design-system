@@ -120,8 +120,11 @@ export default {
     /**
      * Select what values an object is to be found by
      */
-    findBy: {
-      type: Array,
+    filter: {
+      type: Function,
+      default: (item, queryText) => {
+        return item.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+      },
     },
   },
   data() {
@@ -144,16 +147,7 @@ export default {
 
       return this.items.filter(item => {
         let searchString = this.input // What's to be found
-        let findString = item // Where to find it
-
-        if (typeof item === "object") {
-          // Implode selected values
-          let findObject = _.pick(item, this.findBy)
-          let findArray = _.values(findObject)
-          findString = _.join(findArray, " ")
-        }
-
-        return findString.toLowerCase().indexOf(searchString.toLowerCase()) >= 0
+        return this.filter(item, searchString)
       })
     },
     $_ocAutocomplete_dropdownId() {
@@ -227,7 +221,7 @@ export default {
       </div>
     </div>
     <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
-      <oc-autocomplete :items="complexItems" :findBy="['id', 'forename', 'surname']" placeholder="Complex selection" @select="showComplexSelected">
+      <oc-autocomplete :items="complexItems" :filter="filterComplexItems" placeholder="Complex selection" @select="showComplexSelected">
         <template v-slot:item="{item}">
           <span>{{ item.forename }} {{ item.surname }} <em>(Age: {{ item.age }})</em></span>
         </template>
@@ -297,6 +291,10 @@ export default {
         this.searchInProgress = false
         this.searchResult = this.simpleItems
       }, 2000)
+    },
+    filterComplexItems(item, queryText) {
+      return item.forename.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1 ||
+              item.surname.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1;
     },
     showComplexSelected(item) {
       this.complexSelection = item;
