@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" uk-offcanvas="mode: slide" class="uk-offcanvas uk-offcanvas-bottom">
+  <div :id="id" uk-offcanvas="mode: slide" class="oc-file-actions uk-offcanvas-bottom">
     <div class="uk-offcanvas-bar">
       <span v-text="_label"></span>
       <ul class="uk-nav">
@@ -15,23 +15,6 @@
     </div>
   </div>
 </template>
-
-<style>
-.uk-offcanvas.uk-offcanvas-bottom {
-  left: auto;
-  height: 100vh;
-}
-
-.uk-offcanvas.uk-offcanvas-bottom > .uk-offcanvas-bar {
-  width: 100vw;
-  transform: translateX(0) translateY(100%);
-  top: auto;
-}
-
-.uk-offcanvas.uk-offcanvas-bottom.uk-open > .uk-offcanvas-bar {
-  transform: translateX(0) translateY(0);
-}
-</style>
 
 <script>
 import UIkit from "uikit"
