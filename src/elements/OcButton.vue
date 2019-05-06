@@ -7,6 +7,7 @@
     :text="text"
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
+    :disabled="disabled"
     @click="onClick"
   >
     <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon"></oc-icon>
@@ -38,6 +39,13 @@ export default {
       validator: value => {
         return value.match(/(button|a|router)/)
       },
+    },
+    /**
+     * Disable the button
+     */
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     /**
      * The size of the button. Defaults to medium.
@@ -114,7 +122,9 @@ export default {
     $_ocButton_buttonClass() {
       let classes = ["oc-button"]
 
-      if (this.variation) classes.push(`uk-button-${this.variation}`)
+      if (this.variation && !this.disabled) classes.push(`uk-button-${this.variation}`)
+
+      if (this.disabled) classes.push(`uk-button-default`)
 
       if (this.size) classes.push(`uk-button-${this.size}`)
 
