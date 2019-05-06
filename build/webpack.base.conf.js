@@ -56,6 +56,25 @@ module.exports = {
         ],
       },
       {
+        test: /\.jsx?$/,
+        include: /node_modules\/(?=(acorn-jsx|regexpu-core|unicode-match-property-ecmascript|unicode-match-property-value-ecmascript|react-dev-utils|ansi-styles|ansi-regex|chalk|strip-ansi)\/).*/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  targets: {
+                    ie: "11",
+                  },
+                },
+              ],
+            ],
+          },
+        },
+      },
+      {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: "url-loader",
         options: {
