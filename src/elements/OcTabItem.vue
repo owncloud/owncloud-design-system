@@ -1,9 +1,7 @@
 <template>
   <li :class="$_ocTabItem_itemClass" @click="$_ocTabItem_onClick">
     <a href="">
-      <slot>
-        {{ title }}
-      </slot>
+      <slot />
     </a>
   </li>
 </template>
@@ -16,13 +14,6 @@ export default {
   status: "prototype",
   release: "1.0.0",
   props: {
-    /**
-     * The title to display.
-     */
-    title: {
-      type: String,
-      required: false,
-    },
     /**
      * Display as active.
      */
@@ -60,10 +51,10 @@ export default {
 ```jsx
   <template>
     <oc-tabs>
-      <oc-tab-item active title="Left" @click="onClick" />
-      <oc-tab-item title="Item 1"/>
-      <oc-tab-item>Item with text in slot</oc-tab-item>
-      <oc-tab-item disabled title="Disabled"/>
+      <oc-tab-item active @click="onClick">Left</oc-tab-item>
+      <oc-tab-item>Item 1</oc-tab-item>
+      <oc-tab-item>Item 2</oc-tab-item>
+      <oc-tab-item disabled>Disabled</oc-tab-item>
     </oc-tabs>
   </template>
   <script>

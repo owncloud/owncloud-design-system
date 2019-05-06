@@ -81,21 +81,24 @@ export default {
 
 
     <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
-      <oc-sidebar-nav-item text="Files" active icon="folder" target="home">
-        <oc-sidebar-nav-item text="All files"/>
-        <oc-sidebar-nav-item text="Favorites"/>
-        <oc-sidebar-nav-item text="Shared with me"/>
-        <oc-sidebar-nav-item text="Shared public"/>
-        <oc-sidebar-nav-item text="External files"/>
-        <oc-sidebar-nav-item text="Tags" />
-        <oc-sidebar-nav-item text="Deleted files" />
+      <oc-sidebar-nav-item active icon="folder" target="home">
+        Files
+        <template slot="subnav">
+          <oc-sidebar-nav-item>All files</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item>Favorites</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item>Shared with me</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item>Shared public</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item>External files</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item>Tags</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item>Deleted files</oc-sidebar-nav-item>
+        </template>
       </oc-sidebar-nav-item>
 
-      <oc-sidebar-nav-item text="Personal settings" icon="account_circle" :isolate="true"/>
+      <oc-sidebar-nav-item icon="account_circle" :isolate="true">Personal settings</oc-sidebar-nav-item>
       <oc-sidebar-nav-divider />
-      <oc-sidebar-nav-item text="Administration" icon="application" />
+      <oc-sidebar-nav-item icon="application">Administration</oc-sidebar-nav-item>
 
-      <oc-sidebar-nav-item text="Exit ownCloud" icon="exit_to_app" target="login" :isolate="true"/>
+      <oc-sidebar-nav-item icon="exit_to_app" target="login" :isolate="true">Exit ownCloud</oc-sidebar-nav-item>
     </oc-application-menu>
 
     <oc-app-layout :rightHidden="rightHidden">
@@ -176,8 +179,8 @@ export default {
             <oc-text-input placeholder="New Folder Name"/>
           </template>
           <template slot="footer">
-            <oc-button @click="createFolder = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
-            <oc-button @click="createFolder = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+            <oc-button @click="createFolder = false" class="uk-modal-close" variation="primary" type="button">Create</oc-button>
+            <oc-button @click="createFolder = false" class="uk-modal-close" variation="secondary" type="button">Cancel</oc-button>
           </template>
         </oc-dialog>
         <oc-dialog name="createFile" title="Create File" v-model="createFile">
@@ -185,8 +188,8 @@ export default {
             <oc-text-input placeholder="New File Name"/>
           </template>
           <template slot="footer">
-            <oc-button @click="createFile = false" class="uk-modal-close" text="Create" variation="primary" type="button"></oc-button>
-            <oc-button @click="createFile = false" class="uk-modal-close" text="Cancel" variation="secondary" type="button"></oc-button>
+            <oc-button @click="createFile = false" class="uk-modal-close" variation="primary" type="button">Create</oc-button>
+            <oc-button @click="createFile = false" class="uk-modal-close" variation="secondary" type="button">Cancel</oc-button>
           </template>
         </oc-dialog>
 
@@ -195,7 +198,7 @@ export default {
       </template>
       <template slot="right">
         Selected: <span v-text="selectedFile"/>
-        <oc-button @click="rightHidden=true" text="close" />
+        <oc-button @click="rightHidden=true">close</oc-button>
       </template>
     </oc-app-layout>
   </div>

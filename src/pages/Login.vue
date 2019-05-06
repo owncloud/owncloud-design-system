@@ -28,7 +28,9 @@ export default {
         <p>
             Please click the button below to authenticate and get access to your data.
         </p>
-        <oc-button text="Authorize" size="large" variation="primary" class="oc-login-authorize-button"/>
+        <oc-button size="large" variation="primary" class="oc-login-authorize-button">
+          Authorize
+        </oc-button>
       </div>
       <div class="oc-login-card-footer">
         <p>

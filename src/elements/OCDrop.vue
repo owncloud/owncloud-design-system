@@ -68,9 +68,9 @@ export default {
 ```jsx
 <div>
   <div class="uk-button-group">
-    <oc-button id="my_menu" text="Menu" />
-    <oc-button id="my_filter" text="Filter" />
-    <oc-button id="my_advanced" text="Advanced" />
+    <oc-button id="my_menu">Menu</oc-button>
+    <oc-button id="my_filter">Filter</oc-button>
+    <oc-button id="my_advanced">Advanced</oc-button>
   </div>
 
   <oc-drop toggle="#my_menu" mode="click">
