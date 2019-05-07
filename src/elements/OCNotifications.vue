@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-import OcButton from "./OcButton"
 /**
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
  *
@@ -12,7 +11,6 @@ import OcButton from "./OcButton"
  */
 export default {
   name: "oc-notifications",
-  components: { OcButton },
   status: "review",
   release: "1.0.0",
   props: {
@@ -44,23 +42,25 @@ export default {
         Notifications examples
       </h3>
 
-      <oc-button text="Show center notifications" @click="show('center')"></oc-button>
+      <oc-button @click="show('center')">Show center notifications</oc-button>
       <oc-notifications position="top-center">
         <oc-notification-message
                 v-for="(item, index) in messages.center"
                 :key="index"
-                :message="item.message"
                 :status="item.status"
+                :title="item.title"
+                :message="item.message"
                 @close="removeNotification('center', item)"
         />
       </oc-notifications>
-      <oc-button text="Show right notifications" @click="show('right')"></oc-button>
+      <oc-button @click="show('right')">Show right notifications</oc-button>
       <oc-notifications position="top-right">
         <oc-notification-message
                 v-for="(item, index) in messages.right"
                 :key="index"
-                :message="item.message"
                 :status="item.status"
+                :title="item.title"
+                :message="item.message"
                 @close="removeNotification('right', item)"
         />
       </oc-notifications>
@@ -84,18 +84,21 @@ export default {
         show(position) {
           this.messages[position] = [
             {
-              message: 'How are you today?',
+              title: 'I do not have any message',
               status: 'primary'
             },
             {
+              title: 'This is a very long title that spans more than just one line',
               message: 'Are you sure?',
               status: 'warning'
             },
             {
+              title: 'Folder created',
               message: 'Just another day in paradise',
               status: 'success'
             },
             {
+              title: 'Upload failed',
               message: 'Holy Shoot. Something broke',
               status: 'danger'
             },
