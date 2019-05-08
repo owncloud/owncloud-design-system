@@ -109,7 +109,7 @@ export default {
             <h3 class="uk-heading-divider">
                 Interactions
             </h3>
-            <oc-button text="Focus input below" @click="_focus" />
+            <oc-button @click="_focus">Focus input below</oc-button>
             <oc-text-input placeholder="Will you focus on me?" ref="inputForFocus"/>
         </section>
     </template>

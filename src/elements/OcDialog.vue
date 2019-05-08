@@ -67,21 +67,21 @@ export default {
       <h3 class="uk-heading-divider">
         Prompt Dialog
       </h3>
-      <oc-button @click="dialogModel = true" text="Open"></oc-button>
+      <oc-button @click="dialogModel = true">Open</oc-button>
       <oc-dialog name="demoModal" v-model="dialogModel">
         <h2 slot="header">Create folder</h2>
         <template slot="content">
           <oc-text-input placeholder="New Folder Name"/>
         </template>
         <template slot="footer">
-          <oc-button @click="dialogModel = false" text="Create" variation="primary"></oc-button>
-          <oc-button @click="dialogModel = false" text="Cancel" variation="secondary"></oc-button>
+          <oc-button @click="dialogModel = false" variation="primary">Create</oc-button>
+          <oc-button @click="dialogModel = false" ariation="secondary">Cancel</oc-button>
         </template>
       </oc-dialog>
       <h3 class="uk-heading-divider">
         Info dialog
       </h3>
-      <oc-button @click="infoDialogModel = true" text="Open"></oc-button>
+      <oc-button @click="infoDialogModel = true">Open</oc-button>
       <oc-dialog name="demoInfoModal" title="What is Lorem Ipsum?" v-model="infoDialogModel">
         <template slot="content">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

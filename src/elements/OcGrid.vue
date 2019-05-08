@@ -119,7 +119,7 @@ export default {
     </div>
     <div class="uk-width-auto">
       <div class="uk-button-group">
-        <oc-button text="Nothing" />
+      <oc-button text="Nothing">Nothing</oc-button>
         <oc-button id="my_drop_1" icon="filter_list" />
       </div>
     </div>
