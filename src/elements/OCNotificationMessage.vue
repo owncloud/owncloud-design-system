@@ -1,11 +1,18 @@
 <template>
   <div :class="$_ocNotificationMessage_classes">
-    <oc-icon :variation="status" name="info" class="uk-margin-small-right"></oc-icon>
-    <div>{{ message }}</div>
+    <oc-icon :variation="status" size="large" name="info" class="uk-margin-small-right"></oc-icon>
+    <div class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 uk-margin-right">
+      <div>
+        {{ title }}
+      </div>
+      <div v-if="message" class="uk-text-meta uk-width-1-1">
+        {{ message }}
+      </div>
+    </div>
     <oc-icon
       :variation="status"
       name="close"
-      class="uk-position-center-right uk-margin-small-right"
+      class="uk-position-top-right uk-margin-small-top uk-margin-small-right"
       @click="$_ocNotificationMessage_close"
     ></oc-icon>
   </div>
@@ -34,11 +41,18 @@ export default {
       },
     },
     /**
-     * The message which is given to the user in the notification.
+     * The title that will be displayed in notification
+     */
+    title: {
+      type: String,
+      required: true,
+    },
+    /**
+     * The message that will be displayed in notification
      */
     message: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   methods: {
@@ -52,7 +66,7 @@ export default {
   },
   computed: {
     $_ocNotificationMessage_classes() {
-      return `uk-flex uk-notification-message uk-notification-message-${this.status}`
+      return `uk-flex uk-flex-wrap uk-notification-message uk-notification-message-${this.status}`
     },
   },
 }
