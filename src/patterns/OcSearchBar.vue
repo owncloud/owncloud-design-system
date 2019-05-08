@@ -28,21 +28,18 @@
         :class="{ 'uk-button-small': small }"
         variation="primary"
         :disabled="loading || searchQuery.length < 1"
-        :text="button"
         @click="onSearch"
-      />
+        >{{ button }}</oc-button
+      >
     </div>
   </div>
 </template>
 <script>
-import OcTextInput from "../elements/OcTextInput"
-
 /**
  * The search bar is an input element used for searching server side resources or to filter local results.
  */
 export default {
   name: "oc-search-bar",
-  components: { OcTextInput },
   status: "prototype",
   release: "1.0.0",
   props: {

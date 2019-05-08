@@ -44,7 +44,7 @@ export default {
         Notifications examples
       </h3>
 
-      <oc-button text="Show center notifications" @click="show('center')"></oc-button>
+      <oc-button @click="show('center')">Show center notifications</oc-button>
       <oc-notifications position="top-center">
         <oc-notification-message
                 v-for="(item, index) in messages.center"
@@ -54,7 +54,7 @@ export default {
                 @close="removeNotification('center', item)"
         />
       </oc-notifications>
-      <oc-button text="Show right notifications" @click="show('right')"></oc-button>
+      <oc-button @click="show('right')">Show right notifications</oc-button>
       <oc-notifications position="top-right">
         <oc-notification-message
                 v-for="(item, index) in messages.right"
