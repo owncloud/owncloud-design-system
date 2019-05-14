@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-app-side-bar">
+  <div class="uk-padding-small">
     <div class="sidebar-container">
       <div class="header primary">
         <div v-if="!disableAction" class="action">
@@ -49,23 +49,19 @@ export default {
 ```jsx
   <template>
     <oc-app-side-bar>
-        <template slot="action">
-          <oc-button icon="close" class="uk-float-right uk-margin-small-right"/>
-        </template>
-        <template slot="title">
-          <span class="uk-text-lead">Title</span>
-        </template>
-        <template slot="content">
-          Content
-        </template>
-        <template slot="footer">
-          Footer
-        </template>
+      <template slot="action">
+        <oc-button icon="close" class="uk-float-right uk-margin-small-right"/>
+      </template>
+      <template slot="title">
+        <span class="uk-text-lead">Title</span>
+      </template>
+      <template slot="content">
+        Content
+      </template>
+      <template slot="footer">
+        Footer
+      </template>
     </oc-app-side-bar>
   </template>
-  <script>
-    export default {
-    }
-  </script>
 ```
 </docs>
