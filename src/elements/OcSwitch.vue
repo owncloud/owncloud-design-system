@@ -1,6 +1,6 @@
 <template>
   <div class="oc-switch" :data-state="state" @click="toggle">
-    <input type="checkbox" :aria-label="label" :checked="checked" />
+    <input type="checkbox" ref="input" :aria-label="label" v-model="model" />
   </div>
 </template>
 <script>
@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      checked: false,
+      checked: this.model,
     }
   },
   computed: {
@@ -63,7 +63,7 @@ export default {
   <template>
     <section>
       <h3>Switcher behavior</h3>
-      <oc-switch label="Demo Label" @change="onChange" v-model="state"/>
+      <oc-switch label="Demo Label" @change="onChange" :model="state" />
       <br>
       <oc-star :shining="state"></oc-star>
     </section>
@@ -77,7 +77,7 @@ export default {
       },
       methods: {
         onChange(val) {
-          alert('Switcher changed the state')
+          this.state = !this.state
         }
       }
     }
