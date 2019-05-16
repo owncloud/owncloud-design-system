@@ -13,7 +13,7 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Default value can be `Boolean` or `String`
+     * Default value can be `Boolean` or `Number`
      *
      * @model
      **/
@@ -21,7 +21,7 @@ export default {
     model: {
       required: false,
       default: false,
-      type: [Boolean, String],
+      type: [Boolean, Number],
     },
     /**
      * Label of the switch. Will set aria-label as well.
