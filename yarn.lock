@@ -11544,9 +11544,9 @@ uglifyjs-webpack-plugin@1.2.7:
     worker-farm "^1.5.2"
 
 uikit@^3.0.3:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.1.4.tgz#bb0939555c5038bd056ce3c2169715fb1103ce10"
-  integrity sha512-XGtlKlQXeNoQJi9wyff6DCkeX0P5/wdZw7LOenH7a5AOTRfUZDhTGX9uSCvRBroYBIKj6Eq2fe2efw2d1/rdHg==
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.1.5.tgz#79c68bd1f7be779c1748734bbc281ac531a53129"
+  integrity sha512-6kN9GewAeFXeOVRbtLL1PIhIXixIDbRMJGHnIiMXJT5Bp3n6HYfVdaBIjJLEh9Ffuv3JdGnwZdKuGpp7oNcRhw==
 
 underscore.string@~2.4.0:
   version "2.4.0"
