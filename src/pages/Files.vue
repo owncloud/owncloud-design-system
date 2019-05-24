@@ -1,5 +1,3 @@
-<template> </template>
-
 <script>
 import OcCheckbox from "../elements/OcCheckbox"
 import OcApplicationMenu from "../patterns/OcApplicationMenu"
@@ -37,11 +35,8 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped></style>
-
 <docs>
-  ```jsx
+```jsx
 <template>
   <div style="background-color: white; overflow: auto;"><!-- top container to fill the whole screen/area -->
     <oc-dialog name="OcDialog" title="Not implemented">
@@ -107,7 +102,7 @@ export default {
         <div class="uk-background-muted uk-padding-small">
           <oc-grid flex gutter="small">
             <div class="uk-width-expand">
-               <oc-breadcrumb :items="[{text:'Home',to:'/'},{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+               <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
             </div>
             <div class="uk-width-auto uk-visible@m">
               <oc-search-bar label="Search"></oc-search-bar>
@@ -291,6 +286,9 @@ export default {
       }
     },
     methods: {
+      goHome () {
+        alert('Going home')
+      },
       selectFile(file) {
         this.$root.$emit('oc-file-actions:open', {
           filename: file.name + "." + file.extension,
