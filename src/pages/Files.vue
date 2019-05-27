@@ -3,13 +3,14 @@ import OcCheckbox from "../elements/OcCheckbox"
 import OcApplicationMenu from "../patterns/OcApplicationMenu"
 import OcSidebarNavDivider from "../elements/_OcSidebarNavDivider"
 import OcButton from "../elements/OcButton"
+import OcAppBar from "../patterns/OcAppBar"
 import OcNav from "../elements/OcNav"
 /**
  * Shows how to layout and structure the files app.
  */
 export default {
   name: "Files",
-  components: { OcNav, OcButton, OcSidebarNavDivider, OcApplicationMenu, OcCheckbox },
+  components: { OcNav, OcButton, OcAppBar, OcSidebarNavDivider, OcApplicationMenu, OcCheckbox },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -99,41 +100,39 @@ export default {
     <oc-app-layout :rightHidden="rightHidden">
 
       <template slot="center">
-        <div class="uk-background-muted uk-padding-small">
-          <oc-grid flex gutter="small">
-            <div class="uk-width-expand">
-               <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+        <oc-app-bar id="files-app-bar">
+          <div class="uk-width-expand">
+              <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+          </div>
+          <div class="uk-width-auto uk-visible@m">
+            <oc-search-bar label="Search"></oc-search-bar>
+          </div>
+          <div class="uk-width-auto">
+            <div class="uk-button-group">
+              <oc-button variation="primary" id="_new">+ New</oc-button>
+              <oc-button id="_filter" icon="filter_list" />
             </div>
-            <div class="uk-width-auto uk-visible@m">
-              <oc-search-bar label="Search"></oc-search-bar>
-            </div>
-            <div class="uk-width-auto">
-              <div class="uk-button-group">
-                <oc-button id="_new">+ New</oc-button>
-                <oc-button id="_filter" icon="filter_list" />
-              </div>
-            </div>
-          </oc-grid>
-          <oc-drop toggle="#_new" mode="hover" :options="{pos:'bottom-right'}">
-            <oc-nav>
-                <oc-nav-item icon="create_new_folder">New folder …</oc-nav-item>
-                <oc-nav-item icon="save">New file …</oc-nav-item>
-            </oc-nav>
-          </oc-drop>
-          <oc-drop toggle="#_filter" mode="hover" :options="{pos:'bottom-right'}">
-            <ul class="uk-list">
-              <li>
-                <label><oc-checkbox /> <span class="uk-text-meta">Show Files</span></label>
-              </li>
-              <li>
-                <label><oc-checkbox /> <span class="uk-text-meta">Show Folders</span></label>
-              </li>
-              <li>
-                <oc-search-bar small placeholder="Filter by name" :icon="false" :button="false" />
-              </li>
-            </ul>
-          </oc-drop>
-        </div>
+            <oc-drop toggle="#_new" mode="hover" :options="{pos:'bottom-right'}">
+              <oc-nav>
+                  <oc-nav-item icon="create_new_folder">New folder …</oc-nav-item>
+                  <oc-nav-item icon="save">New file …</oc-nav-item>
+              </oc-nav>
+            </oc-drop>
+            <oc-drop toggle="#_filter" mode="hover" :options="{pos:'bottom-right'}">
+              <ul class="uk-list">
+                <li>
+                  <label><oc-checkbox /> <span class="uk-text-meta">Show Files</span></label>
+                </li>
+                <li>
+                  <label><oc-checkbox /> <span class="uk-text-meta">Show Folders</span></label>
+                </li>
+                <li>
+                  <oc-search-bar small placeholder="Filter by name" :icon="false" :button="false" />
+                </li>
+              </ul>
+            </oc-drop>
+          </div>
+        </oc-app-bar>
 
         <oc-table middle divider>
           <oc-table-group>

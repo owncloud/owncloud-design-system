@@ -1,0 +1,45 @@
+<template>
+  <div class="oc-app-bar">
+    <oc-grid flex gutter="small">
+      <slot />
+    </oc-grid>
+  </div>
+</template>
+
+<script>
+/**
+ * The top bar is a basic navigation bar element.
+ * It has 3 slots: `left, title, right` which can be filled with elements.
+ *
+ * Elements within the top bar are: `oc-topbar-logo` and `oc-topbar-item`
+ *
+ *
+ * ##TODO:
+ *
+ * - [ ] add capability to have the topbar stick to the browser window - remaining content is scrollable
+ */
+export default {
+  name: "oc-app-bar",
+  status: "review",
+  release: "1.0.0",
+}
+</script>
+
+<docs>
+```
+<oc-app-bar>
+  <div class="uk-width-expand">
+      <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+  </div>
+  <div class="uk-width-auto uk-visible@m">
+    <oc-search-bar label="Search"></oc-search-bar>
+  </div>
+  <div class="uk-width-auto">
+    <div class="uk-button-group">
+      <oc-button id="_new">+ New</oc-button>
+      <oc-button id="_filter" icon="filter_list" />
+    </div>
+  </div>
+</oc-app-bar>
+```
+</docs>
