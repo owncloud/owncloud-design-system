@@ -13,7 +13,7 @@
     height: 80px;
     width: 200px;
     left: 50%;
-    transform: translate(-50%, calc(-100% - #{$global-margin}));
+    transform: translate(-50%, -150%);
 
     text-indent: -9999px;
     background-image: $owncloudx-logo-white;
