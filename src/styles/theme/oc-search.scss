@@ -1,6 +1,7 @@
 .oc-search {
   @extend .uk-grid-collapse;
   @extend .uk-flex-middle;
+  min-width: $form-width-medium;
 
   &-button {
     // Prevend double borders
