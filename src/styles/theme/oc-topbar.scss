@@ -46,7 +46,6 @@
     @extend .uk-navbar-item;
     // IE11 center fix
     min-height: 100% !important;
-    cursor: pointer;
 
     &-avatar {
       width: $navbar-nav-item-height - $global-gutter;
