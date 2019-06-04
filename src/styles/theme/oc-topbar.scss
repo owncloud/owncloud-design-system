@@ -4,6 +4,7 @@
   @extend .uk-navbar-container;
   @extend .uk-navbar-transparent;
   @extend .uk-background-primary;
+  min-height: $navbar-nav-item-height;
 
   // Force inverse color,
   // without forcing it too hard
