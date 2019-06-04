@@ -44,7 +44,8 @@
 
   &-personal {
     @extend .uk-navbar-item;
-    min-height: 100%;
+    // IE11 center fix
+    min-height: 100% !important;
     cursor: pointer;
 
     &-avatar {
