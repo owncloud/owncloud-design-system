@@ -11558,9 +11558,9 @@ vue-lodash@^2.0.2:
     lodash "^4.17.11"
 
 vue-meta@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-2.0.2.tgz#da876a2af20a8e2e59fa8b159069a22bf371ec14"
-  integrity sha512-i6Pu4f5dFXhnVALIyyK7OnEuqLAm2SUjepkD+FM8tTiK/vVxC6hqErvV0FvAg6jDxlGF62zzqyU5qhFXhdjQ8g==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-2.0.3.tgz#7de9f29400f06fb20ee659338b57a5f5ceff4341"
+  integrity sha512-oV5tK6tw4ispmACHudjXx8icdpioqHkqamA2ktAM72eHkrJQXmIuCOxF2DaT/NS4SBueeWhzqil/y8ChGqe+og==
   dependencies:
     deepmerge "^3.2.0"
 
