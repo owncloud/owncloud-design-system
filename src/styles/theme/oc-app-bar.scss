@@ -1,0 +1,6 @@
+.oc-app-bar {
+  @extend .uk-padding-small;
+  @extend .uk-background-muted;
+
+  height: $global-control-height;
+}
