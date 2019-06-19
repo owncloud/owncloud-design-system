@@ -30,6 +30,18 @@ export default {
       default: "- *",
     },
     /**
+     * The position of the drop.
+     **/
+    position: {
+      type: String,
+      default: "bottom-left",
+      validator: value => {
+        return value.match(
+          /((top|bottom)-(left|center|right|justify)|(left|right)-(top|center|bottom))/
+        )
+      },
+    },
+    /**
      * Comma separated list of drop trigger behaviour modes: `click or hover`
      **/
     mode: {
@@ -45,7 +57,9 @@ export default {
     options: {
       type: Object,
       default() {
-        return {}
+        return {
+          "boundary-align": true,
+        }
       },
     },
   },
@@ -55,9 +69,10 @@ export default {
       let boundary = this.boundary || this.toggle
       let toggle = this.toggle
       let mode = this.mode
+      let pos = this.position
 
       // Collected properties
-      let props = Object.assign({ boundary, toggle, mode }, this.options)
+      let props = Object.assign({ boundary, toggle, mode, pos }, this.options)
 
       return JSON.stringify(props)
     },
