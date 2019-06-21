@@ -171,11 +171,7 @@ export default {
     input(input, before) {
       if (input === before) return
 
-      if (
-        input.length === 0 ||
-        (input === this.$_ocAutocomplete_matchesShown[0] &&
-          this.$_ocAutocomplete_matchesShown.length === 1)
-      ) {
+      if (input.length === 0) {
         this.$_ocAutocomplete_dropdown.hide()
       } else {
         this.$_ocAutocomplete_dropdown.show()
