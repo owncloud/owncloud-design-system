@@ -106,6 +106,13 @@ export default {
         return value.match(/(default|primary|secondary)/)
       },
     },
+    /**
+     * Don't add the element class to this element.
+     */
+    stopClassPropagation: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     $_ocButton_iconClass() {
@@ -114,6 +121,8 @@ export default {
         : "uk-position-center"
     },
     $_ocButton_buttonClass() {
+      if (this.stopClassPropagation) return ""
+
       let classes = ["oc-button"]
 
       if (this.variation && !this.disabled) classes.push(`uk-button-${this.variation}`)
