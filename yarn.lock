@@ -11264,9 +11264,9 @@ uglify-to-browserify@~1.0.0:
   integrity sha1-bgkk1r2mta/jSeOabWMoUKD4grc=
 
 uikit@^3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.1.5.tgz#79c68bd1f7be779c1748734bbc281ac531a53129"
-  integrity sha512-6kN9GewAeFXeOVRbtLL1PIhIXixIDbRMJGHnIiMXJT5Bp3n6HYfVdaBIjJLEh9Ffuv3JdGnwZdKuGpp7oNcRhw==
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.1.6.tgz#6e4126e8f30fbba424d4b6788e49dda9ff9be088"
+  integrity sha512-S4+1kPUbBXcAc8kO8OhZRgawcp6gmMK9BSx865vsun4ul/rXwgQ95i/3hF2axchQ5Gb6ncH1VfUpfKiOfFecsA==
 
 underscore.string@~2.4.0:
   version "2.4.0"
