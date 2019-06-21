@@ -6,7 +6,7 @@
           <slot name="action">
             <oc-button
               icon="close"
-              class="uk-float-right uk-margin-small-right"
+              class="uk-float-right"
               @click="$emit('close', $event)"
             ></oc-button>
           </slot>
