@@ -1,6 +1,6 @@
 <template>
   <input
-    class="oc-text-input"
+    :class="{ 'oc-text-input': !stopClassPropagation }"
     :type="type"
     :value="value"
     :placeholder="placeholder"
@@ -47,6 +47,13 @@ export default {
     placeholder: {
       type: String,
       default: null,
+    },
+    /**
+     * Don't add the element class to this element.
+     */
+    stopClassPropagation: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
