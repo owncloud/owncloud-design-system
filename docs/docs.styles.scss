@@ -21,6 +21,11 @@ $docs-color-text: shade($color-silver, 70%);
 /* BASE
 --------------------------------------------- */
 
+body {
+  overflow: inherit !important;
+  height: inherit !important;
+}
+
 // Background of page
 div.rsg--root-1 {
   background: $color-white;
