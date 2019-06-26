@@ -109,7 +109,7 @@ export default {
           </div>
           <div class="uk-width-auto">
             <div class="uk-button-group">
-              <oc-button variation="primary" id="_new">+ New</oc-button>
+              <oc-button variation="primary" id="_new" icon="add" />
               <oc-button id="_filter" icon="filter_list" />
             </div>
             <oc-drop toggle="#_new" mode="hover" :options="{pos:'bottom-right'}">
