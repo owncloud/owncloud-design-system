@@ -12,6 +12,7 @@
     <div hidden :id="$_ocAutocomplete_boundryId" />
     <div
       class="oc-autocomplete-dropdown"
+      :class="dropdownClass"
       :uk-drop="'mode:click;delay-hide:0;toggle:#' + $_ocAutocomplete_boundryId"
       :id="$_ocAutocomplete_dropdownId"
     >
@@ -124,6 +125,13 @@ export default {
         return item.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
       },
     },
+    /**
+     * Assigns class to the dropdown
+     */
+    dropdownClass: {
+      type: String,
+      required: false,
+    },
   },
   data() {
     return {
@@ -216,7 +224,7 @@ export default {
       Autocomplete
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
-      <oc-autocomplete v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" />
+      <oc-autocomplete v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
       <div class="uk-background-muted uk-padding-small uk-margin-small-top">
         <p class="uk-text-meta">Selected simple item:</p>
         <code>{{ simpleSelection }}</code>
