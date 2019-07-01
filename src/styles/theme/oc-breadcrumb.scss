@@ -1,0 +1,36 @@
+//
+// Component: OC Breadcrumb
+//
+// ========================================================================
+
+.oc-breadcrumb {
+  &-list {
+    @extend .uk-visible\@s;
+    @extend .uk-breadcrumb;
+    @extend .uk-margin-remove;
+  }
+
+  &-drop {
+    @extend .uk-hidden\@s;
+
+    &-label {
+      @extend .uk-flex;
+      @extend .uk-flex-middle;
+      @extend .uk-flex-between;
+      @extend .uk-background-default;
+
+      cursor: pointer;
+      border: $global-border-width solid $global-border;
+      height: $global-control-height;
+      padding: {
+        left: $global-small-gutter;
+        right: $global-small-gutter / 3 * 2; // Consider icon padding
+      }
+
+      &-text {
+        @extend .uk-text-muted;
+        @extend .uk-text-truncate;
+      }
+    }
+  }
+}
