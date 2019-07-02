@@ -11,7 +11,8 @@
     />
     <div hidden :id="$_ocAutocomplete_boundryId" />
     <div
-      class="oc-autocomplete-dropdown"
+      :ref="$_ocAutocomplete_dropdownId"
+      class="oc-autocomplete-dropdown uk-overflow-auto"
       :class="dropdownClass"
       :uk-drop="'mode:click;delay-hide:0;toggle:#' + $_ocAutocomplete_boundryId"
       :id="$_ocAutocomplete_dropdownId"
@@ -34,8 +35,9 @@
           </li>
         </template>
         <li
-          v-if="$_ocAutocomplete_matchesOverflowing > 0 && !itemsLoading"
+          v-if="$_ocAutocomplete_matchesOverflowing > 0 && !itemsLoading && !expanded"
           class="oc-autocomplete-suggestion-overflow"
+          @click="expanded = true"
         >
           {{ $_ocAutocomplete_matchesOverflowing }}
           <span v-if="$_ocAutocomplete_matchesOverflowing === 1">{{
@@ -137,10 +139,22 @@ export default {
     return {
       input: "",
       highlighted: 0,
+      expanded: false,
     }
+  },
+  mounted() {
+    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "show", () => {
+      let dd = this.$refs[this.$_ocAutocomplete_dropdownId],
+        ddOffsetTop = Math.floor(dd.getBoundingClientRect().top) - 20,
+        maxHeight = `calc(100vh - ${ddOffsetTop}px )`
+
+      dd.style.maxHeight = maxHeight
+    })
   },
   computed: {
     $_ocAutocomplete_matchesShown() {
+      if (this.expanded) return this.$_ocAutocomplete_matches
+
       return this.$_ocAutocomplete_matches.slice(0, this.maxListLength)
     },
     $_ocAutocomplete_matchesOverflowing() {
@@ -187,6 +201,7 @@ export default {
 
       // The real update not depending on onblur
       this.$_ocAutocomplete_userInput(input)
+      this.expanded = false
     },
     highlighted(next, current) {
       if (next === current) return
@@ -211,6 +226,7 @@ export default {
       if (this.$_ocAutocomplete_matchesShown[this.highlighted]) {
         this.$emit("input", this.$_ocAutocomplete_matchesShown[this.highlighted])
         this.input = ""
+        this.expanded = false
       }
     },
   },
@@ -269,7 +285,39 @@ export default {
         'Tama Lindamood',
         'Charmain Earls',
         'Verona Mounts',
-        'Arlena Bolster'
+        'Arlena Bolster',
+        'Dalia',
+        'Dalila',
+        'Dallas',
+        'Daloris',
+        'Damara',
+        'Damaris',
+        'Damita',
+        'Dana',
+        'Danell',
+        'Danella',
+        'Danette',
+        'Dani',
+        'Dania',
+        'Danica',
+        'Danice',
+        'Daniela',
+        'Daniele',
+        'Daniella',
+        'Danielle',
+        'Danika',
+        'Danila',
+        'Danit',
+        'Danita',
+        'Danna',
+        'Danni',
+        'Dannie',
+        'Danny',
+        'Dannye',
+        'Danya',
+        'Danyelle',
+        'Danyette',
+        'Daphene'
       ],
       simpleSelection : null,
 
