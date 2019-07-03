@@ -97,13 +97,13 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `primary, secondary`
+     * `primary, secondary, danger`
      */
     variation: {
       type: String,
       default: "default",
       validator: value => {
-        return value.match(/(default|primary|secondary)/)
+        return value.match(/(default|primary|secondary|danger)/)
       },
     },
     /**
@@ -156,6 +156,7 @@ export default {
       <oc-button @click="onClick">Default Button</oc-button>
       <oc-button variation="primary">Primary Button</oc-button>
       <oc-button variation="secondary">Secondary Button</oc-button>
+      <oc-button variation="danger" icon="delete">Danger Button</oc-button>
       <oc-button disabled>Disabled Button</oc-button>
 
       <h3 class="uk-heading-divider">

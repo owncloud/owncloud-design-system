@@ -39,7 +39,8 @@
   }
 
   &.uk-button-primary,
-  &.uk-button-secondary {
+  &.uk-button-secondary,
+  &.uk-button-danger {
     .oc-icon > svg {
       fill: $global-inverse-color;
     }
