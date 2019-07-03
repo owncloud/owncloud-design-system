@@ -44,6 +44,7 @@
     &-overflow {
       @extend .uk-text-meta;
       @extend .uk-margin-remove;
+      cursor: pointer;
       padding: $global-small-gutter;
       background-color: $global-muted-background;
     }
