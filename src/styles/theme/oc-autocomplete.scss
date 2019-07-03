@@ -48,5 +48,11 @@
       padding: $global-small-gutter;
       background-color: $global-muted-background;
     }
+
+    &:hover .uk-text-meta,
+    &:focus .uk-text-meta,
+    &-selected .uk-text-meta {
+      color: $global-inverse-color;
+    }
   }
 }
