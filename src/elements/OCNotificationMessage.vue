@@ -12,7 +12,8 @@
     <oc-icon
       :variation="status"
       name="close"
-      class="uk-position-top-right uk-margin-small-top uk-margin-small-right"
+      class="uk-position-top-right uk-margin-small-top uk-margin-small-right oc-alert-close-icon"
+      type="a"
       @click="$_ocNotificationMessage_close"
     ></oc-icon>
   </div>
