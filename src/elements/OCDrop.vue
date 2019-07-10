@@ -1,5 +1,5 @@
 <template>
-  <div :uk-drop="$_ocDrop_props">
+  <div :id="dropId" :uk-drop="$_ocDrop_props" @click="$_ocDrop_close">
     <div v-if="$slots.default" class="uk-card uk-card-default uk-card-small uk-card-body">
       <slot />
     </div>
@@ -7,6 +7,8 @@
   </div>
 </template>
 <script>
+import UiKit from "uikit"
+
 /**
  * Position any element in relation to another element.
  */
@@ -15,6 +17,13 @@ export default {
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * Id of the drop.
+     */
+    dropId: {
+      type: String,
+      required: false,
+    },
     /**
      * CSS selector of the element to maintain the drop's visibility. see https://getuikit.com/docs/drop#boundary
      **/
@@ -52,6 +61,13 @@ export default {
       },
     },
     /**
+     * Defines if the drop should be closed after clicking on it. Needs to have defined dropId to work.
+     */
+    closeOnClick: {
+      type: Boolean,
+      required: false,
+    },
+    /**
      * More options are available - see https://getuikit.com/docs/drop
      **/
     options: {
@@ -75,6 +91,13 @@ export default {
       let props = Object.assign({ boundary, toggle, mode, pos }, this.options)
 
       return JSON.stringify(props)
+    },
+  },
+  methods: {
+    $_ocDrop_close() {
+      if (this.closeOnClick) {
+        UiKit.drop(`#${this.dropId}`).hide()
+      }
     },
   },
 }
@@ -113,7 +136,7 @@ export default {
     </ul>
   </oc-drop>
 
-  <oc-drop toggle="#my_advanced" mode="hover">
+  <oc-drop dropId="oc-drop" toggle="#my_advanced" mode="click" closeOnClick :options="{ 'delay-hide': '0' }">
     <div slot="special" class="uk-card uk-card-default">
       <div class="uk-card-header">
         <h3 class="uk-card-title">
@@ -122,7 +145,7 @@ export default {
       </div>
       <div class="uk-card-body">
         <p>
-          I'm a slightly more advanced drop down
+          I'm a slightly more advanced drop down and I'll be closed as soon as you click on me.
         </p>
       </div>
     </div>

@@ -36,7 +36,9 @@
       }
     }
 
-    &-selected {
+    &-selected,
+    &:hover,
+    &:focus {
       color: $global-inverse-color;
       background-color: $global-primary-background;
     }
