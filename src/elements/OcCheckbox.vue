@@ -4,6 +4,7 @@
     type="checkbox"
     v-model="checkboxState"
     @change="$_ocCheckbox_change($event)"
+    @click.stop
   />
 </template>
 <script>
@@ -61,6 +62,9 @@ export default {
                 </h3>
                 <oc-checkbox />
                 <oc-checkbox v-model="checkState1"/>
+                <div @click="parentClick">
+                    <oc-checkbox />
+                </div>
             </section>
 
         </div>
@@ -69,7 +73,13 @@ export default {
         export default {
             data: () => ({
                 checkState1: true
-            })
+            }),
+            methods: {
+                parentClick: function () {
+                    // we should never see this ;-)
+                    alert('Click on parent received')
+                }
+            }
         }
     </script>
   ```
