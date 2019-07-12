@@ -68,6 +68,9 @@ props:
   danger-background:
     value: "#e00000"
     category: "Background-colors"
+  danger-background-hover:
+    value: "#b50000"
+    category: "Background-colors"
 
   brand-primary:
     value: "#1b223d"

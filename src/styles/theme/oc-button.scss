@@ -1,80 +1,46 @@
-//
-// Component: Base Button
-//
-// ========================================================================
-
-@mixin hook-button() {
+.oc-button {
   align-items: center;
+  border-color: transparent;
   border-radius: 3px;
-  display: inline-flex;
-  flex-flow: row wrap;
+  column-gap: 10px;
+  display: grid;
   font-size: 1.125rem;
   font-weight: 600;
-  justify-content: center;
+  grid-auto-flow: column;
   line-height: 1.4;
+  min-height: $global-control-height;
   padding: 0.5rem 0.75rem;
   transition:
     background-color $transition-duration-short ease-in-out,
     color $transition-duration-short ease-in-out,
     border-color $transition-duration-short ease-in-out;
-}
 
-@mixin hook-button-disabled() {
-  border-color: lighten($global-muted-color, 25%);
-  color: lighten($global-muted-color, 25%);
-
-  .oc-icon > svg {
-    fill: lighten($global-muted-color, 25%);
-  }
-
-  // Workaround for preventing hover effects on disabled buttons
-  &:hover,
-  &:focus {
-    border-color: lighten($global-muted-color, 25%);
-    color: lighten($global-muted-color, 25%);
-
-    .oc-icon > svg {
-      fill: lighten($global-muted-color, 25%);
-    }
-  }
-}
-
-//
-// Component: OC Button
-//
-// ========================================================================
-
-.oc-button {
-  @extend .uk-button;
-
-  position: relative;
-
-  .oc-icon + span {
-    margin-left: $small-margin;
+  &:hover {
+    cursor: pointer;
   }
 
   .oc-icon > svg {
     transition: fill $transition-duration-short ease-in-out;
   }
 
-  &.uk-button-small {
+  &-small {
+    font-size: 0.9rem;
     min-height: $global-control-small-height;
   }
 
-  &.uk-button-large {
+  &-large {
     font-size: 1.5rem;
     min-height: $global-control-large-height;
   }
 
-  &.uk-button-primary,
-  &.uk-button-secondary,
-  &.uk-button-danger {
+  &-primary,
+  &-danger {
     .oc-icon > svg {
       fill: $global-inverse-color;
     }
   }
 
-  &.uk-button-default {
+  &-default {
     background-color: transparent;
     border: 1px solid $action-primary;
     color: $action-primary;
@@ -94,7 +60,7 @@
     }
   }
 
-  &.uk-button-primary {
+  &-primary {
     background-color: $action-primary;
     box-shadow: 0 4px 6px rgba($shadow-action-primary, 0.11), 0 1px 3px rgba($shadow-global, 0.08);
     color: $global-inverse-color;
@@ -105,42 +71,68 @@
     }
   }
 
-  .uk-button-group & {
-    border-radius: 0;
-    // Prevent negative margin which is coming from UIkit
-    margin-left: 0 !important;
+  &-danger {
+    background-color: $danger-background;
+    color: $global-inverse-color;
 
-    &:first-of-type {
-      border-radius: 3px 0 0 3px;
+    &:hover,
+    &:focus {
+      background-color: $danger-background-hover;
     }
+  }
 
-    &:last-of-type {
-      border-radius: 0 3px 3px 0;
+  &:disabled {
+    border-color: lighten($global-muted-color, 25%);
+    color: lighten($global-muted-color, 25%);
+    cursor: default;
+
+    .oc-icon > svg {
+      fill: lighten($global-muted-color, 25%);
     }
+  }
 
-    &.uk-button-default {
-      border-left: 0;
-      border-right: 0;
+  &-group {
+    display: flex;
+    flex-flow: row wrap;
+
+    .oc-button {
+      border-radius: 0;
 
       &:first-of-type {
-        border-left: 1px solid $action-primary;
+        border-radius: 3px 0 0 3px;
       }
 
       &:last-of-type {
-        border-right: 1px solid $action-primary;
+        border-radius: 0 3px 3px 0;
+      }
+
+      &-default {
+        border-left: 0;
+        border-right: 0;
+
+        &:first-of-type {
+          border-left: 1px solid $action-primary;
+        }
+
+        &:last-of-type {
+          border-right: 1px solid $action-primary;
+        }
+      }
+
+      &-primary {
+        box-shadow: none;
       }
     }
+  }
 
-    &.uk-button-primary {
-      box-shadow: none;
+  &.oc-button-raw {
+    @extend .oc-button-reset;
+
+    color: $action-primary;
+
+    &:hover,
+    &:focus {
+      color: $action-primary-hover;
     }
   }
-
-  &:not(.uk-button-small):not(.uk-button-large):not(.uk-button-raw) {
-    min-height: $global-control-height;
-  }
-}
-
-.oc-button.uk-button-raw {
-  @extend .oc-button-reset;
 }
