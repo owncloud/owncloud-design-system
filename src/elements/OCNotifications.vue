@@ -1,5 +1,5 @@
 <template>
-  <div :class="$_ocNotifications_classes">
+  <div class="oc-alerts" :class="$_ocNotifications_classes">
     <slot></slot>
   </div>
 </template>
@@ -44,14 +44,16 @@ export default {
 
       <oc-button @click="show('center')">Show center notifications</oc-button>
       <oc-notifications position="top-center">
-        <oc-notification-message
-                v-for="(item, index) in messages.center"
-                :key="index"
-                :status="item.status"
-                :title="item.title"
-                :message="item.message"
-                @close="removeNotification('center', item)"
-        />
+        <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
+          <oc-notification-message
+            v-for="item in messages.center"
+            :key="item.title"
+            :status="item.status"
+            :title="item.title"
+            :message="item.message"
+            @close="removeNotification('center', item)"
+          />
+        </transition-group>
       </oc-notifications>
       <oc-button @click="show('right')">Show right notifications</oc-button>
       <oc-notifications position="top-right">

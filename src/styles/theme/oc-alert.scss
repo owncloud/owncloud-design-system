@@ -31,4 +31,28 @@
 //
 // ========================================================================
 
-// .oc-alert {}
+.oc-alert {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out, margin-top 0.5s ease-out;
+}
+
+//
+// Transition: OC-Alerts-Transition
+//
+
+.oc-alerts-transition-enter,
+.oc-alerts-transition-leave-to {
+  opacity: 0;
+}
+
+.oc-alerts-transition-leave-to {
+  transform: translateY(-$gutter);
+}
+
+.oc-alert.oc-alerts-transition-leave-active {
+  position: absolute;
+}
+
+// Fixes transition of margin for the second alert in case the first one gets closed
+.oc-alerts-transition:first-child.oc-alerts-transition-leave-active + .oc-alert {
+  margin-top: 0;
+}

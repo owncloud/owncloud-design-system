@@ -1,5 +1,5 @@
 <template>
-  <div :class="$_ocNotificationMessage_classes">
+  <div class="oc-alert" :class="$_ocNotificationMessage_classes">
     <oc-icon :variation="status" size="large" name="info" class="uk-margin-small-right"></oc-icon>
     <div class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 uk-margin-right">
       <div class="oc-notification-message-title">
