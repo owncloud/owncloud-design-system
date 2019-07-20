@@ -2684,11 +2684,6 @@ cli-width@^2.0.0:
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
-clipboard-copy@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/clipboard-copy/-/clipboard-copy-2.0.1.tgz#25214db3aabc282109cfa3429ffd885b014fc8b3"
-  integrity sha512-/JBr7ryeWwl2w33SRMYGfOZU5SWPVNtpB9oTxUzFp7olKKd2HM+cnhSMeETblJMnjgqtL581ncI/pcZX7o7Big==
-
 clipboard-copy@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/clipboard-copy/-/clipboard-copy-3.0.0.tgz#01ab812f4b5828b763e029172fd23ff92641eefb"
@@ -11555,10 +11550,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vue-docgen-api@^3.15.2:
-  version "3.15.2"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.15.2.tgz#a0cf897af6d50fd35fe7d66f90d8df0ca1320443"
-  integrity sha512-xvpoheNNul3x4ESXwpeqje2934/6ICWTrfQ/6C/SS+9pzR1TCFFMlFm1dCrdtPQkcPm/IFtZzAU5O5W76nCEMA==
+vue-docgen-api@^3.16.3:
+  version "3.16.3"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.16.3.tgz#4e525dee4ab0e70acf251334304426aeab900e3c"
+  integrity sha512-086u1AXJYVj1OwVWF5ZsV5wINxpDdY1g+mRpLjxYhBxO+THqHoGxM94RjoNie5ciLExv0cwDSy4+EDVmNP4tVQ==
   dependencies:
     "@babel/parser" "^7.2.3"
     "@babel/types" "^7.0.0"
@@ -11588,14 +11583,15 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
   integrity sha512-KmvZVtmM26BQOMK1rwUZsrqxEGeKiYSZGA7SNWE6uExx8UX/cj9hq2MRV/wWC3Cq6AoeDGk57rL9YMFRel/q+g==
 
-vue-inbrowser-compiler@^3.15.1:
-  version "3.15.1"
-  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler/-/vue-inbrowser-compiler-3.15.1.tgz#eab24ea1dffaa427af0c1e3678ced89f6195bd1a"
-  integrity sha512-zkt/a9Vp+iGxx7/e1EX3QAlWfvtXBSfOco8kjVNbKSrhTg+Rg18KzAligqkpn/8+1QRmUucxWwUZqlGGwVonKQ==
+vue-inbrowser-compiler@^3.16.3:
+  version "3.16.3"
+  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler/-/vue-inbrowser-compiler-3.16.3.tgz#7b4ae7a32d1229e1c56e82d61e12a8765a66ae80"
+  integrity sha512-lKedFovWPnyP0tVNhV+4Yt0UNEW4VPHaHVEN37vG9sfL+eCGQxWMSFuqQOpMHL1PNxMHxnDet3GEKWOU2QVWyQ==
   dependencies:
     acorn "^6.1.1"
+    acorn-jsx "^5.0.1"
     buble "^0.19.7"
-    vue-template-compiler "^2.6.10"
+    camelcase "^5.3.1"
     walkes "^0.2.1"
 
 vue-jest@^3.0.4:
@@ -11653,16 +11649,16 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     loader-utils "^1.0.2"
 
 vue-styleguidist@^3.15.2:
-  version "3.15.2"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.15.2.tgz#88fd0b551d4245c03c08e47eb372ec1bb8a8b094"
-  integrity sha512-ug9Y8fHjBtBkMSbS/vsVBrpkvhc6xIcdhMDGq3xLPnFHSTfsktrAufxBm+g3WAKUeFrHqIPb5u3sJMfhBZogUA==
+  version "3.16.3"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-3.16.3.tgz#65bc7046388a9443c52f1b261b167eff5479b5ab"
+  integrity sha512-6d4vasz8GxJ8pSF4Q43teNc1kDeOVuxnaQNcqp5D4hHceKkkRAsMeP7x6aALLBzIk7SNIzaDIJ3yMIQpVvu7Og==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.0.5"
     ast-types "^0.12.2"
     classnames "^2.2.6"
     clean-webpack-plugin "^0.1.19"
-    clipboard-copy "^2.0.0"
+    clipboard-copy "^3.0.0"
     codemirror "^5.39.0"
     common-dir "^2.0.2"
     copy-webpack-plugin "^4.5.2"
@@ -11714,8 +11710,8 @@ vue-styleguidist@^3.15.2:
     style-loader "^0.21.0"
     terser-webpack-plugin "^1.3.0"
     to-ast "^1.0.0"
-    vue-docgen-api "^3.15.2"
-    vue-inbrowser-compiler "^3.15.1"
+    vue-docgen-api "^3.16.3"
+    vue-inbrowser-compiler "^3.16.3"
     webpack "^4.28.4"
     webpack-dev-server "^3.7.1"
     webpack-merge "^4.0.0"
@@ -11922,37 +11918,7 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.28.4:
-  version "4.35.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.35.0.tgz#ad3f0f8190876328806ccb7a36f3ce6e764b8378"
-  integrity sha512-M5hL3qpVvtr8d4YaJANbAQBc4uT01G33eDpl/psRTBCfjxFTihdhin1NtAKB1ruDwzeVdcsHHV3NX+QsAgOosw==
-  dependencies:
-    "@webassemblyjs/ast" "1.8.5"
-    "@webassemblyjs/helper-module-context" "1.8.5"
-    "@webassemblyjs/wasm-edit" "1.8.5"
-    "@webassemblyjs/wasm-parser" "1.8.5"
-    acorn "^6.0.5"
-    acorn-dynamic-import "^4.0.0"
-    ajv "^6.1.0"
-    ajv-keywords "^3.1.0"
-    chrome-trace-event "^1.0.0"
-    enhanced-resolve "^4.1.0"
-    eslint-scope "^4.0.0"
-    json-parse-better-errors "^1.0.2"
-    loader-runner "^2.3.0"
-    loader-utils "^1.1.0"
-    memory-fs "~0.4.1"
-    micromatch "^3.1.8"
-    mkdirp "~0.5.0"
-    neo-async "^2.5.0"
-    node-libs-browser "^2.0.0"
-    schema-utils "^1.0.0"
-    tapable "^1.1.0"
-    terser-webpack-plugin "^1.1.0"
-    watchpack "^1.5.0"
-    webpack-sources "^1.3.0"
-
-webpack@^4.35.2:
+webpack@^4.28.4, webpack@^4.35.2:
   version "4.35.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.35.2.tgz#5c8b8a66602cbbd6ec65c6e6747914a61c1449b1"
   integrity sha512-TZAmorNymV4q66gAM/h90cEjG+N3627Q2MnkSgKlX/z3DlNVKUtqy57lz1WmZU2+FUZwzM+qm7cGaO95PyrX5A==
