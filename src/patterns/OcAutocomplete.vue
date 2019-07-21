@@ -39,11 +39,7 @@
           class="oc-autocomplete-suggestion-overflow"
           @click="expanded = true"
         >
-          {{ $_ocAutocomplete_matchesOverflowing }}
-          <span v-if="$_ocAutocomplete_matchesOverflowing === 1">{{
-            $_ocAutocomplete_text.oneMoreResult
-          }}</span>
-          <span v-else>{{ $_ocAutocomplete_text.moreResults }}</span>
+          {{ $_ocAutocomplete_matchesOverflowing }} {{ $_ocAutocomplete_text.moreResults }}
         </li>
         <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
           <oc-spinner class="oc-autocomplete-spinner" />
@@ -140,6 +136,7 @@ export default {
       input: "",
       highlighted: 0,
       expanded: false,
+      overflowingMatches: this.$_ocAutocomplete_matchesOverflowing,
     }
   },
   mounted() {
@@ -183,7 +180,6 @@ export default {
       let text = {
         spinner: "Loading…",
         moreResults: "more results",
-        oneMoreResult: "1 more result",
       }
 
       return Object.assign(text, this.text)
