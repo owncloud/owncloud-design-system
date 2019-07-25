@@ -30,7 +30,7 @@
   }
 
   &[data-state="off"] {
-    background-color: $global-color;
+    background-color: lighten($global-muted-color, 10%);
 
     &:before {
       transform: translate(1px, 1px);
