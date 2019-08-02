@@ -4,6 +4,8 @@
 #
 
 props:
+  xsmall-margin:
+    value: "5px"
   small-margin:
     value: "10px"
   margin:
