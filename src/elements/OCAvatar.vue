@@ -2,6 +2,7 @@
   <oc-img
     class="oc-avatar"
     width="50"
+    :src="src"
     :alt="accessibilityLabel"
     :aria-hidden="accessibilityLabel === ''"
   />
@@ -15,6 +16,14 @@ export default {
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * Source of the avatar
+     */
+    src: {
+      type: String,
+      required: true,
+      default: "",
+    },
     /**
      * Accessibility label used as alt. Use only in case the avatar is used alone.
      * In case the avatar is used next to username or display name leave empty.
