@@ -56,5 +56,11 @@
     &-selected .uk-text-meta {
       color: $global-inverse-color;
     }
+
+    &:hover .oc-icon > svg,
+    &:focus .oc-icon > svg,
+    &-selected .oc-icon > svg {
+      fill: $global-inverse-color;
+    }
   }
 }
