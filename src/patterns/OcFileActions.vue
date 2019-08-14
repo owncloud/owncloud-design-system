@@ -3,14 +3,12 @@
     <div class="uk-offcanvas-bar">
       <span v-text="_label"></span>
       <ul class="uk-nav">
-        <template v-for="(action, i) in actions">
-          <li :key="i">
-            <a class="uk-inline" @click="selectAction(action)">
-              <oc-icon v-if="action.icon" :name="action.icon" />
-              <span class="uk-text-top" v-text="action.label" />
-            </a>
-          </li>
-        </template>
+        <li v-for="(action, i) in actions" :key="i">
+          <a class="uk-inline" @click="selectAction(action)">
+            <oc-icon v-if="action.icon" :name="action.icon" />
+            <span class="uk-text-top" v-text="action.label" />
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -18,7 +16,6 @@
 
 <script>
 import UIkit from "uikit"
-import { uniqueId as _uniqueId } from "lodash"
 
 /**
  * Create file actions. will be populated by the event payload `filename` and `actions`
@@ -36,6 +33,11 @@ export default {
       type: String,
       required: false,
       default: "Open %s in",
+    },
+    id: {
+      type: String,
+      required: false,
+      default: "oc-file-actions",
     },
   },
   data() {
@@ -65,16 +67,13 @@ export default {
       this.filename = ""
     },
     selectAction(action) {
-      action.onClick()
       this.closeActions()
+      action.onClick()
     },
   },
   computed: {
     _label() {
       return this.label.replace(/\%s/, this.filename)
-    },
-    id() {
-      return _uniqueId("oc-fileaction-")
     },
   },
   watch: {
@@ -94,7 +93,7 @@ export default {
   <template>
     <div>
       <oc-button @click="fileOpen(file)">click to open actions</oc-button>
-      <oc-file-actions />
+      <oc-file-actions/>
     </div>
   </template>
   <script>
@@ -154,7 +153,7 @@ export default {
       methods: {
         fileOpen(file) {
           this.$root.$emit('oc-file-actions:open', file)
-        },
+        }
       },
     }
   </script>
