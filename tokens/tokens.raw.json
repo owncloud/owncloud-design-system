@@ -316,6 +316,13 @@
       "originalValue": "50%",
       "name": "radius_circle"
     },
+    "xsmall-margin": {
+      "type": "number",
+      "category": "space",
+      "value": "5px",
+      "originalValue": "5px",
+      "name": "xsmall-margin"
+    },
     "small-margin": {
       "type": "number",
       "category": "space",
