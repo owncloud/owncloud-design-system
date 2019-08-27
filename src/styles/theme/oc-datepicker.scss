@@ -1,0 +1,248 @@
+.vdatetime {
+  &-input {
+    @extend .uk-input;
+  }
+
+  &-overlay {
+    @extend .uk-position-cover;
+    background-color: $modal-background;
+  }
+
+  &-time-picker {
+    &,
+    & * {
+      box-sizing: border-box;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    &__list {
+      float: left;
+      width: 50%;
+      @extend .uk-height-medium;
+      overflow-y: scroll;
+    }
+
+    &__with-suffix .vdatetime-time-picker__list {
+      width: 33.3%;
+    }
+
+    &__item {
+      @extend .uk-padding-small;
+      @extend .uk-text-center;
+      @extend .uk-text-large;
+      cursor: pointer;
+
+      &:not(.vdatetime-time-picker__item--selected):hover {
+        @extend .uk-background-muted;
+      }
+
+      &--selected {
+        @extend .uk-background-primary;
+        color: $global-inverse-color;
+      }
+    }
+  }
+
+  &-year-picker,
+  &-month-picker {
+    &,
+    & * {
+      box-sizing: border-box;
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    &__list {
+      @extend .uk-height-medium;
+
+      // @TODO: Class missing from ODS
+      // @extend .uk-width-1-1;
+      width: 100%;
+      overflow-y: scroll;
+    }
+
+    &__item {
+      @extend .uk-padding-small;
+      @extend .uk-text-center;
+      @extend .uk-text-large;
+      cursor: pointer;
+
+      &:not(.vdatetime-year-picker__item--selected):not(.vdatetime-month-picker__item--selected):hover {
+        @extend .uk-background-muted;
+      }
+
+      &--selected {
+        @extend .uk-background-primary;
+        color: $global-inverse-color;
+      }
+    }
+  }
+
+  &-popup {
+    @extend .uk-position-fixed;
+    @extend .uk-position-center;
+    @extend .uk-position-z-index;
+
+    @extend .uk-box-shadow-large;
+    @extend .uk-background-default;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    &__header {
+      @extend .uk-modal-header;
+      @extend .uk-background-primary;
+
+      // @TODO: uk-light not working
+      // @extend .uk-light;
+      width: $width-large-width / 1.125;
+    }
+
+    &__year {
+      @extend .uk-text-small;
+      color: rgba($global-inverse-color, 0.75);
+      transition: color $animation-duration;
+      cursor: pointer;
+
+      &:hover {
+        color: $global-inverse-color !important; // L109
+        opacity: 1;
+      }
+    }
+
+    &__title {
+      @extend .uk-text-center;
+      @extend .uk-heading-divider;
+      @extend .uk-margin-small-bottom;
+      color: $global-inverse-color !important; // L109
+    }
+
+    &__date {
+      @extend .uk-text-lead;
+      color: $global-inverse-color !important; // L109
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    &__actions {
+      @extend .uk-modal-footer;
+      @extend .uk-text-right;
+
+      &__button {
+        @extend .uk-button;
+
+        &--confirm {
+          @extend .uk-button-primary;
+        }
+
+        &--cancel {
+          @extend .uk-button-default;
+        }
+      }
+    }
+  }
+
+  &-calendar {
+    &__navigation {
+      @extend .uk-flex, .uk-flex-middle, .uk-flex-around;
+
+      &--previous,
+      &--next {
+        @extend .uk-width-auto;
+        @extend .uk-padding-small;
+        cursor: pointer;
+
+        svg {
+          width: 8px;
+        }
+      }
+
+      &--next {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__current--month {
+      @extend .uk-width-expand;
+      @extend .uk-text-center;
+      @extend .uk-text-uppercase;
+    }
+
+    &__month {
+      @extend .uk-modal-body;
+      transition: height $animation-duration;
+
+      &__weekday,
+      &__day {
+        @extend .uk-display-inline-block;
+        @extend .uk-text-center;
+
+        width: 14.28571%;
+        cursor: pointer;
+
+        & > span {
+          @extend .uk-display-block;
+          @extend .uk-position-relative;
+          width: 100%;
+          height: 0;
+          padding: 0 0 100%;
+          overflow: hidden;
+
+          & > span {
+            @extend .uk-position-cover;
+            @extend .uk-border-circle;
+            @extend .uk-flex, .uk-flex-center, .uk-flex-middle;
+            transition: background-color ($animation-duration / 2), color ($animation-duration / 2);
+          }
+        }
+      }
+
+      &__day {
+        &:hover > span > span {
+          @extend .uk-background-muted;
+        }
+
+        &--selected > span > span,
+        &--selected:hover > span > span {
+          @extend .uk-background-primary;
+          color: $global-inverse-color;
+        }
+      }
+
+      &__weekday {
+        @extend .uk-text-bold;
+      }
+    }
+  }
+
+  [class$="--disabled"] {
+    cursor: not-allowed;
+
+    &,
+    & * {
+      background-color: $global-background !important;
+      color: rgba($global-muted-color, 0.5) !important;
+    }
+  }
+}
+
+// Animation
+.vdatetime-fade-enter-active,
+.vdatetime-fade-leave-active {
+  transition: opacity $animation-duration;
+}
+
+.vdatetime-fade-enter,
+.vdatetime-fade-leave-to {
+  opacity: 0;
+}
