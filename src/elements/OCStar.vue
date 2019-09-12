@@ -1,7 +1,7 @@
 <template>
   <div class="oc-star">
-    <oc-icon v-show="shining" class="oc-star-shining" name="star" />
-    <oc-icon v-show="!shining" class="oc-star-dimm" name="star_border" />
+    <oc-icon v-if="shining" class="oc-star-shining" name="star" />
+    <oc-icon v-if="!shining" class="oc-star-dimm" name="star_border" />
   </div>
 </template>
 <script>
@@ -38,6 +38,18 @@ export default {
       A shining star
     </h3>
     <oc-star shining/>
+    <h3 class="uk-heading-divider">
+      Clickable star inside a borderless button
+    </h3>
+    <oc-button variation="link">
+      <oc-star />
+    </oc-button>
+    <h3 class="uk-heading-divider">
+      Clickable shining star inside a borderless button
+    </h3>
+    <oc-button variation="link">
+      <oc-star shining/>
+    </oc-button>
   </section>
 </div>
 ```

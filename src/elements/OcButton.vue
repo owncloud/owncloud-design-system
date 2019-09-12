@@ -103,7 +103,7 @@ export default {
       type: String,
       default: "default",
       validator: value => {
-        return value.match(/(default|primary|secondary|danger)/)
+        return value.match(/(default|primary|secondary|danger|link)/)
       },
     },
     /**
@@ -157,6 +157,7 @@ export default {
       <oc-button variation="primary">Primary Button</oc-button>
       <oc-button variation="secondary">Secondary Button</oc-button>
       <oc-button variation="danger" icon="delete">Danger Button</oc-button>
+      <oc-button variation="link" icon="delete">Borderless Button</oc-button>
       <oc-button disabled>Disabled Button</oc-button>
 
       <h3 class="uk-heading-divider">

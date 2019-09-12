@@ -46,3 +46,10 @@
     }
   }
 }
+
+.oc-button.uk-button-link {
+  // compensate the absence of border and padding
+  .oc-icon + span {
+    margin-left: $global-margin + 31px; // FIXME: what token to use for that missing padding + border ?
+  }
+}
