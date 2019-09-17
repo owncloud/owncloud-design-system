@@ -7,7 +7,10 @@
     :aria-label="placeholder"
     ref="input"
     @input="$_ocTextInput_onInput($event.target.value)"
-    @focus="$_ocTextInput_onFocus($event.target.value)"
+    @focus="
+      $event.target.select()
+      $_ocTextInput_onFocus($event.target.value)
+    "
     @keydown="$_ocTextInput_onKeyDown($event)"
   />
 </template>
@@ -118,6 +121,8 @@ export default {
             </h3>
             <oc-button @click="_focus">Focus input below</oc-button>
             <oc-text-input placeholder="Will you focus on me?" ref="inputForFocus"/>
+            <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
+            <oc-text-input value="Will you select this existing text?" ref="inputForFocusSelect"/>
         </section>
     </template>
     <script>
@@ -130,6 +135,9 @@ export default {
             methods: {
                 _focus() {
                     this.$refs.inputForFocus.focus()
+                },
+                _focusAndSelect() {
+                    this.$refs.inputForFocusSelect.focus()
                 }
             }
         }
