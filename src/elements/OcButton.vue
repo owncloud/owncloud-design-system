@@ -9,7 +9,7 @@
     :disabled="disabled"
     @click="onClick"
   >
-    <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon" />
+    <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon" :aria-hidden="ariaHiddenIcon" />
     <span v-if="$slots.default">
       <slot name="default" />
     </span>
@@ -63,6 +63,13 @@ export default {
     href: {
       type: String,
       default: null,
+    },
+    /**
+     * If button is already labelled for screen readers, no need for a labelled icon
+     */
+    ariaHiddenIcon: {
+      type: Boolean,
+      default: false,
     },
     /**
      * When setting the button’s type to a router-link, use this option to give a to.
@@ -168,9 +175,9 @@ export default {
       <h3 class="uk-heading-divider">
         Button with icons
       </h3>
-      <oc-button icon="home">Home</oc-button>
-      <oc-button variation="primary" icon="save">Save</oc-button>
-      <oc-button icon="save" disabled>Save disabled</oc-button>
+      <oc-button icon="home" aria-hidden-icon="true">Home</oc-button>
+      <oc-button variation="primary" icon="save" aria-hidden-icon="true">Save</oc-button>
+      <oc-button icon="save" disabled aria-hidden-icon="true">Save disabled</oc-button>
       <oc-button variation="primary" icon="cloud_upload" />
 
       <h3 class="uk-heading-divider">

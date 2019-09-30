@@ -43,8 +43,8 @@ export default {
 ```jsx
   <oc-navbar tag="header" class="oc-topbar">
     <oc-navbar-item position="left">
-      <button class="oc-topbar-menu-burger" aria-label="Files">
-        <oc-icon name="menu" class="oc-topbar-menu-burger-icon" /><span
+      <button class="oc-topbar-menu-burger">
+        <oc-icon name="menu" class="oc-topbar-menu-burger-icon" aria-hidden="true" /><span
           class="oc-topbar-menu-burger-label"
           >Files</span
         >
