@@ -7,6 +7,7 @@
             <oc-button
               icon="close"
               class="uk-float-right"
+              :aria-label="closeButtonLabel"
               @click="$emit('close', $event)"
             ></oc-button>
           </slot>
@@ -40,6 +41,10 @@ export default {
     disableAction: {
       default: false,
       type: Boolean,
+    },
+    closeButtonLabel: {
+      default: "Close",
+      type: String,
     },
   },
 }
