@@ -42,6 +42,11 @@ export default {
       default: false,
       type: Boolean,
     },
+    /**
+     * Provide the accessible name for the close button, since it has no visible label
+     * but a svg, to which to provide an accessible name would be more complicated.
+     * Value of closeButtonLabel will eventually be the value of the button's aria-label
+     **/
     closeButtonLabel: {
       default: "Close",
       type: String,
