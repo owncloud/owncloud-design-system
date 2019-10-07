@@ -119,6 +119,13 @@ module.exports = {
       sectionDepth: 2,
     },
     {
+      name: "Utilities",
+      content: "../docs/utilities.md",
+      exampleMode: "hide",
+      usageMode: "hide",
+      sectionDepth: 1,
+    },
+    {
       name: "Downloads",
       content: "../docs/downloads.md",
       exampleMode: "hide",
