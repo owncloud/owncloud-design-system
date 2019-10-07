@@ -22,6 +22,26 @@
  *
  * Defaults to appearance that has white background with grey border.
  * Primary style should be used only once per view for main call-to-action.
+ *
+ * ## Accessibility
+ * ### Distinction when to use a `<button>`, when to use an `<a>`
+ *
+ * Regardless of the visual representation the following differentiation should be made if in doubt what to choose.
+ *
+ * - an anchor/link changes the location, be it internally on the website, or to another resource/document/route.
+ * - a button does change the state of the website, e.g.: adds, deletes, opens, ... something.
+ *
+ * ### Accessible name
+ * The accessible name ([explainer for the term](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)) of a button is derived from several sources. Right now, only two of them are relevant:
+ *
+ * 1. The value of the `aria-label` attribute
+ * 2. The text between the opening and closing tag, `<button>This text here</button>`
+ *
+ * When an aria-label attribute exists, its value will override the button text. So in this case, the accessible name would be "foo": `<button aria-label="foo">Bar</button>`, although visual users will see "Bar". This difference between accessible name and visual name is a problem for a certain type of assistive technology ([explainer for the term](https://en.wikipedia.org/wiki/Assistive_technology)), this is why the [WCAG success criterion 2.5.3, "Label in name"](https://www.w3.org/TR/WCAG21/#label-in-name) exists. This difference should be avoided, if it can't, W3C recommends that the accessible name should start with visible label.
+ *
+ * ### Icon-only button
+ *
+ * Every button has to have an accessible name. Can it not be provided by a text between the button tags (for example, because it is an icon button; see "Upload" example below), the accessible name has to be provided by `aria-label`.
  */
 export default {
   name: "oc-button",
