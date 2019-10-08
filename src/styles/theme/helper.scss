@@ -5,3 +5,7 @@
 .oc-align-self-center {
   align-self: center;
 }
+
+.oc-visually-hidden {
+  @include visually-hidden;
+}
