@@ -17,7 +17,7 @@
         <div
           uk-close
           v-if="query.length > 0"
-          @click="clearInput"
+          @click="onClear"
           class="oc-search-clear uk-position-small uk-position-center-right"
         />
       </div>
@@ -111,11 +111,6 @@ export default {
     query: "",
   }),
   methods: {
-    clearInput() {
-      this.query = ""
-      this.onType("")
-      this.onSearch()
-    },
     onSearch() {
       /**
        * Search event on filter or search user input
@@ -133,6 +128,18 @@ export default {
        */
       this.$emit("input", query)
       if (this.typeAhead) this.onSearch(query)
+    },
+    onClear() {
+      this.query = ""
+      this.onType("")
+      this.onSearch()
+
+      /**
+       * Clear event triggered after the clear of the search query
+       * @event clear
+       * @type {event}
+       */
+      this.$emit("clear")
     },
   },
   computed: {
@@ -156,7 +163,7 @@ export default {
       <h3 class="uk-heading-divider">
           Search examples
       </h3>
-      <oc-search-bar placeholder="Search files" @search="onSearch"></oc-search-bar>
+      <oc-search-bar placeholder="Search files" @search="onSearch" @clear="onClear" />
       <div v-if="searchQuery" class="uk-margin">Search query: {{ searchQuery }}</div>
       <hr>
       <div class="uk-margin">
@@ -189,6 +196,9 @@ export default {
             },
             onSearch(val) {
                 this.searchQuery = val
+            },
+            onClear () {
+              alert('Query has been cleared')
             }
         }
     }
