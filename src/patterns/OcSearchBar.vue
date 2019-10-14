@@ -1,5 +1,10 @@
 <template>
-  <div uk-grid class="oc-search" :class="{ 'oc-search-small': small }">
+  <div
+    :role="isFilter ? undefined : 'search'"
+    uk-grid
+    class="oc-search"
+    :class="{ 'oc-search-small': small }"
+  >
     <div class="uk-width-expand">
       <div class="uk-inline uk-width-1-1">
         <span v-if="icon" class="uk-form-icon">
@@ -22,14 +27,14 @@
         />
       </div>
     </div>
-    <div v-if="button" class="uk-width-auto">
+    <div :class="[{ 'oc-visually-hidden': buttonHidden }, 'uk-width-auto']">
       <oc-button
         class="oc-search-button"
         :class="{ 'uk-button-small': small }"
         variation="primary"
         :disabled="loading || searchQuery.length < 1"
         @click="onSearch"
-        >{{ button }}</oc-button
+        >{{ buttonLabel }}</oc-button
       >
     </div>
   </div>
@@ -37,6 +42,15 @@
 <script>
 /**
  * The search bar is an input element used for searching server side resources or to filter local results.
+ *
+ * ## Accessibility
+ *
+ * ### Landmark role=search
+ * Given there is only one instance of `<oc-search-bar>` per page/route, this component should communicate its purpose, being the main site search, to screen readers ([explainer of landmark roles](https://www.washington.edu/accessibility/web/landmarks/)). If the component serves as a filter form, it is advised to disable the landmark role via `isFilter="true"`.
+ *
+ * ### Making sure a submit button exits
+ *
+ * Both a search and filter form does need a submit button, regardless if the button is visually perceivable or not. If a "buttonless" look is desired, use `button-hidden="true"`, which renders the button visually hidden.
  */
 export default {
   name: "oc-search-bar",
@@ -77,10 +91,18 @@ export default {
     /**
      * Determine the button text
      */
-    button: {
-      type: [String, Boolean],
+    buttonLabel: {
+      type: [String],
       required: false,
       default: "Search",
+    },
+    /**
+     * Determine the button visibility
+     */
+    buttonHidden: {
+      type: [Boolean],
+      required: false,
+      default: false,
     },
     /**
      * If set to true the search event is triggered on each entered character
@@ -102,6 +124,14 @@ export default {
      * If set to true data is loaded and the user cannot enter further data
      */
     loading: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * If set to true the search landmark role is removed since it's not the page's main search function anymore
+     */
+    isFilter: {
       type: Boolean,
       required: false,
       default: false,
@@ -175,9 +205,17 @@ export default {
     </section>
     <section>
       <h3 class="uk-heading-divider">
+        Search example with visually hidden button
+      </h3>
+      <div class="uk-margin">
+        <oc-search-bar placeholder="Search files" @search="onSearch" @clear="onClear" button-hidden="true" />
+      </div>
+    </section>
+    <section>
+      <h3 class="uk-heading-divider">
           Filter examples
       </h3>
-      <oc-search-bar placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar isFilter="true" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
     </section>
   </div>
