@@ -9,3 +9,11 @@
 .oc-visually-hidden {
   @include visually-hidden;
 }
+
+.oc-button-reset {
+  @extend .uk-padding-remove;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+}
