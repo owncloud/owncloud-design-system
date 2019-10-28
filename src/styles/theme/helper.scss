@@ -2,6 +2,14 @@
   cursor: pointer;
 }
 
+.oc-button-reset {
+  @extend .uk-padding-remove;
+  -webkit-appearance: none;
+  background: transparent;
+  font: inherit;
+  border: none;
+}
+
 .oc-align-self-center {
   align-self: center;
 }

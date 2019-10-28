@@ -46,3 +46,7 @@
     }
   }
 }
+
+.oc-button.uk-button-raw {
+  @extend .oc-button-reset;
+}
