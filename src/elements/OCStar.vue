@@ -1,8 +1,5 @@
 <template>
-  <div class="oc-star">
-    <oc-icon v-show="shining" class="oc-star-shining" name="star" />
-    <oc-icon v-show="!shining" class="oc-star-dimm" name="star_border" />
-  </div>
+  <oc-icon :class="shining ? 'oc-star-shining' : 'oc-star-dimm'" name="star" />
 </template>
 <script>
 /**
