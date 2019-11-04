@@ -126,6 +126,13 @@ module.exports = {
       sectionDepth: 1,
     },
     {
+      name: "Internationalization",
+      content: "../docs/i18n.md",
+      exampleMode: "hide",
+      usageMode: "hide",
+      sectionDepth: 1,
+    },
+    {
       name: "Downloads",
       content: "../docs/downloads.md",
       exampleMode: "hide",
