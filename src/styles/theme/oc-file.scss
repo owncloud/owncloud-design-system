@@ -9,11 +9,21 @@
 
   &-name {
     color: $global-color;
-    padding-left: $global-gutter;
   }
 
   &-extension {
     @extend .uk-text-meta;
+  }
+
+  // TODO: how to define this value? a design token?
+  &-first-row {
+    padding-left: 50px;
+  }
+  &-second-row {
+    padding-left: 50px;
+  }
+  &-single-row {
+    padding-left: 50px;
   }
 
   &:hover {

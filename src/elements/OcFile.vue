@@ -1,10 +1,19 @@
 <template>
-  <span class="oc-file" @click="onClick" role="button">
-    <oc-icon :name="icon" variation="file-type" class="uk-position-center-left" />
-    <span class="oc-file-name" v-text="name" /><span v-if="extension" class="oc-file-extension"
-      >.{{ extension }}</span
-    >
-  </span>
+  <div class="oc-file" @click="onClick" role="button">
+    <oc-icon
+      :size="hasSecondLine ? 'large' : 'medium'"
+      :name="icon"
+      variation="file-type"
+      :class="hasSecondLine ? 'uk-position-top-left' : 'uk-position-center-left'"
+    />
+    <div :class="hasSecondLine ? 'oc-file-first-row' : 'oc-file-single-row'">
+      <span class="oc-file-name" v-text="name" />
+      <span v-if="extension" class="oc-file-extension">.{{ extension }}</span>
+    </div>
+    <div class="oc-file-second-row" v-if="hasSecondLine">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 <script>
 /**
@@ -39,6 +48,11 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+  },
+  computed: {
+    hasSecondLine() {
+      return !!this.$slots.default
     },
   },
   methods: {
@@ -76,6 +90,12 @@ export default {
           <oc-file icon="archive" name='package' extension="tar.gz" />
         </li>
         <li>
+          <oc-file icon="archive" name='package' extension="tar.gz">
+          <div>
+            <oc-star style="width:16px; height:16px;"/>
+            <span>123 kB, modified 5 days ago</span>
+          </div>
+          </oc-file>
         </li>
       </ul>
       <h3 class="uk-heading-divider">
