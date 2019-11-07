@@ -53,6 +53,7 @@ export default {
         <div
           class="oc-topbar-personal"
         >
+          <oc-icon name="menu" variation="inverted" id="_apps"/>
           <oc-avatar
             class="oc-topbar-personal-avatar"
             src="https://picsum.photos/64/64?image=1027"
@@ -62,6 +63,37 @@ export default {
           </div>
       </oc-navbar-item>
     </oc-navbar>
+
+    <oc-drop toggle="#_apps" mode="click" :options="{pos:'bottom-right'}" class="uk-width-large">
+      <div class="uk-grid-small uk-text-center" uk-grid>
+        <div class="uk-width-1-3">
+          <oc-icon name="folder" size="large"/>
+          <div>Files</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="movie_filter" size="large"/>
+          <div>Video</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="group" size="large"/>
+          <div>Contacts</div>
+        </div>
+      </div>
+      <div class="uk-grid-small uk-text-center" uk-grid>
+        <div class="uk-width-1-3">
+          <oc-icon name="linked_camera" size="large"/>
+          <div>Album</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="lock" size="large"/>
+          <div>Passwords</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="timer" size="large"/>
+          <div>Run Tracker</div>
+        </div>
+      </div>
+    </oc-drop>
 
     <oc-drop toggle="#_account" mode="click" :options="{pos:'bottom-right'}" class="uk-width-large">
       <div class="uk-card-body uk-flex uk-flex-middle uk-flex-column">
