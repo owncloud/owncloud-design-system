@@ -1,6 +1,5 @@
 <script>
 import OcCheckbox from "../elements/OcCheckbox"
-import OcApplicationMenu from "../patterns/OcApplicationMenu"
 import OcSidebarNavDivider from "../elements/_OcSidebarNavDivider"
 import OcButton from "../elements/OcButton"
 import OcAppBar from "../patterns/OcAppBar"
@@ -10,7 +9,7 @@ import OcNav from "../elements/OcNav"
  */
 export default {
   name: "Files V2",
-  components: { OcNav, OcButton, OcAppBar, OcSidebarNavDivider, OcApplicationMenu, OcCheckbox },
+  components: { OcNav, OcButton, OcAppBar, OcSidebarNavDivider, OcCheckbox },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -48,56 +47,52 @@ export default {
 
     <oc-navbar tag="header" class="oc-topbar">
       <oc-navbar-item position="left">
-        <button class="oc-topbar-menu-burger" aria-label="Files" @click="leftMenuOpen = true">
-          <oc-icon name="menu" class="oc-topbar-menu-burger-icon" /><span
-            class="oc-topbar-menu-burger-label"
-            >Files</span
-          >
-        </button>
-      </oc-navbar-item>
-      <oc-navbar-item position="center">
         <router-link to="/" class="oc-topbar-icon">ownCloud X</router-link>
       </oc-navbar-item>
       <oc-navbar-item position="right">
-        <router-link
-          tag="div"
-          to="/personal"
+        <div
           class="oc-topbar-personal"
-          uk-tooltip="title: Personal setting; pos: bottom-right;"
         >
           <oc-avatar
             class="oc-topbar-personal-avatar"
             src="https://picsum.photos/64/64?image=1027"
             :loading="loading"
-          /><span class="oc-topbar-personal-label">Alice Habanero</span>
-        </router-link>
+            id="_account"
+          />
+          </div>
       </oc-navbar-item>
     </oc-navbar>
 
+    <oc-drop toggle="#_account" mode="click" :options="{pos:'bottom-right'}" class="uk-width-large">
+      <div class="uk-card-body uk-flex uk-flex-middle uk-flex-column">
+        <oc-avatar
+          src="https://picsum.photos/128/128?image=1027"
+          width="128"
+        />
+        <h3 class="uk-card-title">Alice Wonderland</h3>
+        <span>alice@wonder.land</span>
+        <oc-button>Manage your account</oc-button>
+        <br/>
+        <oc-button>Sign out</oc-button>
+      </div>
+      <div class="uk-card-footer uk-flex uk-flex-middle uk-flex-column">
+        <span>version: 0.2.6</span>
+      </div>
+    </oc-drop>
 
+    <oc-app-layout :rightHidden="rightHidden" :leftHidden="false">
 
-    <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
-      <oc-sidebar-nav-item active icon="folder" target="home">
-        Files
-        <template slot="subnav">
-          <oc-sidebar-nav-item>All files</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Favorites</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Shared with me</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Shared public</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>External files</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Tags</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Deleted files</oc-sidebar-nav-item>
-        </template>
-      </oc-sidebar-nav-item>
-
-      <oc-sidebar-nav-item icon="account_circle" :isolate="true">Personal settings</oc-sidebar-nav-item>
-      <oc-sidebar-nav-divider />
-      <oc-sidebar-nav-item icon="application">Administration</oc-sidebar-nav-item>
-
-      <oc-sidebar-nav-item icon="exit_to_app" target="login" :isolate="true">Exit ownCloud</oc-sidebar-nav-item>
-    </oc-application-menu>
-
-    <oc-app-layout :rightHidden="rightHidden">
+      <template slot="left">
+        <ul class="oc-main-menu" uk-nav="multiple: true">
+          <oc-sidebar-nav-item icon="folder">All files</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item icon="star">Favorites</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item icon="share">Shared with me</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item icon="link">Shared public</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item icon="folder-external">External files</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item icon="style">Tags</oc-sidebar-nav-item>
+          <oc-sidebar-nav-item icon="delete">Deleted files</oc-sidebar-nav-item>
+        </ul>
+      </template>
 
       <template slot="center">
         <oc-app-bar id="files-app-bar">
@@ -189,7 +184,7 @@ export default {
       </template>
       <template slot="right">
         Selected: <span v-text="selectedFile"/>
-        <oc-button @click="rightHidden=true">close</oc-button>
+        <oc-button @click="rightHidden=true" >close</oc-button>
       </template>
     </oc-app-layout>
   </div>

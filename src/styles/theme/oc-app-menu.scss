@@ -3,6 +3,7 @@
   @extend .uk-nav-default;
   @extend .uk-nav-parent-icon;
   @extend .uk-margin-medium-top;
+  @extend .uk-margin-small-left;
 
   // Immediate anchor
   & > li > a {
