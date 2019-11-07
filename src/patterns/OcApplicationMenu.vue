@@ -60,7 +60,7 @@ export default {
     value: function(valNew) {
       if (valNew) {
         UiKit.offcanvas(`#${this.name}`, {
-          mode: "push",
+          mode: "slide",
           bgClose: false,
           keyboard: false,
           escClose: false,
