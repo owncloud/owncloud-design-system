@@ -47,6 +47,9 @@ props:
   secondary-background:
     value: "#6780a2"
     category: "Background-colors"
+  selected-background:
+    value: "#e5efff"
+    category: "Background-colors"
 
   success-background:
     value: "#68d60e"
