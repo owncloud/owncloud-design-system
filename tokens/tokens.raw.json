@@ -1,6 +1,13 @@
 {
   "aliases": {},
   "props": {
+    "selected-background": {
+      "type": "color",
+      "category": "Background-colors",
+      "value": "rgb(229, 239, 255)",
+      "originalValue": "#e5efff",
+      "name": "selected-background"
+    },
     "muted-color": {
       "type": "color",
       "category": "Font-colors",
