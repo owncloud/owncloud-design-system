@@ -5,6 +5,7 @@
       v-model="input"
       :placeholder="placeholder"
       :disabled="disabled"
+      ref="$_ocAutocompleteInput"
       @keydown.up.prevent="highlighted--"
       @keydown.down.prevent="highlighted++"
       @keydown.enter="$_ocAutocomplete_selectSuggestion"
@@ -225,6 +226,9 @@ export default {
         this.expanded = false
       }
     },
+    focus() {
+      this.$refs.$_ocAutocompleteInput.focus()
+    },
   },
 }
 </script>
@@ -236,10 +240,13 @@ export default {
       Autocomplete
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
-      <oc-autocomplete v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
+      <oc-autocomplete ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
       <div class="uk-background-muted uk-padding-small uk-margin-small-top">
         <p class="uk-text-meta">Selected simple item:</p>
         <code>{{ simpleSelection }}</code>
+      </div>
+      <div class="uk-margin-top">
+        <button @click="focusTest1()">Focus the field by calling .focus()</button>
       </div>
     </div>
     <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
@@ -361,6 +368,9 @@ export default {
     filterComplexItems(item, queryText) {
       return item.forename.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1 ||
               item.surname.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1;
+    },
+    focusTest1() {
+      this.$refs.autocomplete1.focus()
     }
   }
 }
