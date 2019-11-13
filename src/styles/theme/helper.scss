@@ -1,3 +1,6 @@
+// Directions
+$directions: "top", "right", "bottom", "left";
+
 .oc-cursor-pointer {
   cursor: pointer;
 }
@@ -16,4 +19,14 @@
 
 .oc-visually-hidden {
   @include visually-hidden;
+}
+
+.oc-border {
+  border: $global-border-width solid $global-border !important;
+
+  @each $direction in $directions {
+    &-#{$direction} {
+      border-#{$direction}: $global-border-width solid $global-border !important;
+    }
+  }
 }
