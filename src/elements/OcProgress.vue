@@ -1,5 +1,15 @@
 <template>
-  <progress class="uk-progress" :value="value" :max="max"></progress>
+  <progress
+    :value="value"
+    :max="max"
+    :aria-valuemax="max"
+    :aria-valuenow="value"
+    aria-busy="true"
+    aria-valuemin="0"
+    class="uk-progress oc-progress"
+    tabindex="-1"
+    role="progressbar"
+  ></progress>
 </template>
 <script>
 /**
