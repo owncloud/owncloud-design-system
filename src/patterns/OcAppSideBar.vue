@@ -14,7 +14,7 @@
         </div>
         <div class="sidebar-title">
           <slot name="title">
-            <span class="uk-text-lead">Heading</span>
+            <span class="uk-text-lead">{{ headingText }}</span>
           </slot>
         </div>
       </div>
@@ -49,6 +49,10 @@ export default {
      **/
     closeButtonLabel: {
       default: "Close",
+      type: String,
+    },
+    headingText: {
+      default: "Heading",
       type: String,
     },
   },

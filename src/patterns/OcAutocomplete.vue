@@ -85,6 +85,14 @@ export default {
         return {}
       },
     },
+    loadingText: {
+      type: String,
+      default: "Loading...",
+    },
+    moreResultsText: {
+      type: String,
+      default: "more results",
+    },
     /**
      * Input can be entered or not
      */
@@ -179,8 +187,8 @@ export default {
     },
     $_ocAutocomplete_text() {
       let text = {
-        spinner: "Loading…",
-        moreResults: "more results",
+        spinner: this.loadingText,
+        moreResults: this.moreResultsText,
       }
 
       return Object.assign(text, this.text)
