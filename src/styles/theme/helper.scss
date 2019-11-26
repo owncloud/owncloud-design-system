@@ -6,11 +6,15 @@ $directions: "top", "right", "bottom", "left";
 }
 
 .oc-button-reset {
-  @extend .uk-padding-remove;
+  padding: 0;
   -webkit-appearance: none;
   background: transparent;
   font: inherit;
   border: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }
 
 .oc-align-self-center {
