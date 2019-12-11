@@ -66,6 +66,13 @@ module.exports = {
       usageMode: "hide",
     },
     {
+      name: "Interface Guidelines",
+      content: "../docs/guidelines.md",
+      sectionDepth: 1,
+      exampleMode: "hide",
+      usageMode: "hide",
+    },
+    {
       name: "Voice & Tone",
       content: "../docs/voice-and-tone.md",
       sectionDepth: 1,
@@ -121,6 +128,13 @@ module.exports = {
     {
       name: "Utilities",
       content: "../docs/utilities.md",
+      exampleMode: "hide",
+      usageMode: "hide",
+      sectionDepth: 1,
+    },
+    {
+      name: "Use of ARIA",
+      content: "../docs/use-of-aria.md",
       exampleMode: "hide",
       usageMode: "hide",
       sectionDepth: 1,
