@@ -4,7 +4,7 @@
     :type="type"
     :value="value"
     :placeholder="placeholder"
-    :aria-label="placeholder"
+    :aria-label="label"
     ref="input"
     @input="$_ocTextInput_onInput($event.target.value)"
     @focus="
@@ -19,7 +19,10 @@
 /**
  * Form Inputs are used to allow users to provide text input when the expected
  * input is short. Form Input has a range of options and supports several text
- * formats including numbers. For longer input, use the form `Textarea` element.
+ * formats including numbers. For longer input, use the form `Textarea` element.*
+ *
+ * ## Accessibility
+ * The attributes `placeholder` and `aria-label` have different functions. The first specifies a short hint describing the expected value of an input field/text area, or gives an example (e.g. email@example.com). `aria-label` provides the accessible name of the text input (e.g. "Your address", "Comment",...).
  */
 export default {
   name: "oc-text-input",
@@ -42,6 +45,14 @@ export default {
      * @model
      */
     value: {
+      default: null,
+    },
+    /**
+     * Accessible of the form input field, via aria-label.
+     **/
+    label: {
+      type: String,
+      required: true,
       default: null,
     },
     /**

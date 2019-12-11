@@ -6,7 +6,7 @@
     @input="$_ocTextArea_onInput($event.target.value)"
     @focus="$_ocTextArea_onFocus($event.target.value)"
     @keydown="$_ocTextArea_onKeyDown($event)"
-    :aria-label="placeholder"
+    :aria-label="label"
   />
 </template>
 
@@ -15,6 +15,9 @@
  * Textareas are used to allow users to provide text input when the expected
  * input is long. Textarea has a range of options. For shorter input,
  * use the `Input` element.
+ *
+ * ## Accessibility
+ * The attributes `placeholder` and `aria-label` have different functions. The first specifies a short hint describing the expected value of an input field/text area, or gives an example (e.g. email@example.com). `aria-label` provides the accessible name of the textarea (e.g. "Your address", "Comment",...).
  */
 export default {
   name: "oc-textarea",
@@ -33,6 +36,14 @@ export default {
      */
     placeholder: {
       type: String,
+      default: null,
+    },
+    /**
+     * Accessible of the Textarea, via aria-label.
+     **/
+    label: {
+      type: String,
+      required: true,
       default: null,
     },
   },
@@ -82,8 +93,8 @@ export default {
 <docs>
 ```jsx
 <div>
-	<oc-textarea class="uk-margin-small-bottom" placeholder="Write your text" />
-	<oc-textarea disabled value="I am disabled" />
+	<oc-textarea class="uk-margin-small-bottom" placeholder="Write your text" label="Comment" />
+	<oc-textarea disabled value="I am disabled" label="Example" />
 </div>
 ```
 </docs>
