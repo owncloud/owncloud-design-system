@@ -1,0 +1,21 @@
+.oc-dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.oc-dropdown-menu {
+  position: absolute;
+  margin-top: 20px;
+  padding: 20px 20px;
+  z-index: 10;
+  animation: oc-dropdown-open 0.2s ease;
+}
+
+@keyframes oc-dropdown-open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
