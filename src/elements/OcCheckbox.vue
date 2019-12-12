@@ -3,11 +3,11 @@
     <input
       class="oc-checkbox"
       type="checkbox"
-      v-model="checkboxState"
+      v-model="$_ocCheckbox_checkboxState"
       @change="$_ocCheckbox_change($event)"
       @click.stop
     />
-    <span v-text="label" :class="{ 'oc-visually-hidden': labelVisuallyHidden }" />
+    <span v-text="label" :class="{ 'oc-visually-hidden': hideLabel }" />
   </label>
 </template>
 <script>
@@ -38,7 +38,7 @@ export default {
     /**
      * Is the label of the Checkbox visually hidden?
      **/
-    labelVisuallyHidden: {
+    hideLabel: {
       type: Boolean,
       required: false,
       default: false,
@@ -55,7 +55,7 @@ export default {
     },
   },
   computed: {
-    checkboxState: {
+    $_ocCheckbox_checkboxState: {
       get: function() {
         return this.value
       },
