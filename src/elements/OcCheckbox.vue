@@ -1,11 +1,14 @@
 <template>
-  <input
-    class="oc-checkbox"
-    type="checkbox"
-    v-model="checkboxState"
-    @change="$_ocCheckbox_change($event)"
-    @click.stop
-  />
+  <label>
+    <input
+      class="oc-checkbox"
+      type="checkbox"
+      v-model="$_ocCheckbox_checkboxState"
+      @change="$_ocCheckbox_change($event)"
+      @click.stop
+    />
+    <span v-text="label" :class="{ 'oc-visually-hidden': hideLabel }" />
+  </label>
 </template>
 <script>
 /**
@@ -24,6 +27,22 @@ export default {
       required: false,
       default: false,
     },
+    /**
+     * Label of the Checkbox
+     **/
+    label: {
+      type: String,
+      required: true,
+      default: null,
+    },
+    /**
+     * Is the label of the Checkbox visually hidden?
+     **/
+    hideLabel: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   methods: {
     $_ocCheckbox_change(event) {
@@ -36,7 +55,7 @@ export default {
     },
   },
   computed: {
-    checkboxState: {
+    $_ocCheckbox_checkboxState: {
       get: function() {
         return this.value
       },
@@ -60,10 +79,10 @@ export default {
                 <h3 class="uk-heading-divider">
                     Checkboxes Types
                 </h3>
-                <oc-checkbox />
-                <oc-checkbox v-model="checkState1"/>
+                <oc-checkbox label="Label" />
+                <oc-checkbox v-model="checkState1" label="Label"/>
                 <div @click="parentClick">
-                    <oc-checkbox />
+                    <oc-checkbox label="Label" />
                 </div>
             </section>
 

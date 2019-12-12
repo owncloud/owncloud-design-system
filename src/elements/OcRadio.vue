@@ -1,14 +1,7 @@
 <template>
   <label class="radio-container">
-    <span class="label">{{ label }}</span>
-    <input
-      type="radio"
-      v-model="model"
-      :value="value"
-      name="radio"
-      :aria-label="label"
-      @change="$_ocRadio_change"
-    />
+    <span class="label" v-text="label" />
+    <input type="radio" v-model="model" :value="value" name="radio" @change="$_ocRadio_change" />
     <span class="checkmark"></span>
   </label>
 </template>
@@ -40,10 +33,11 @@ export default {
       required: false,
     },
     /**
-     * Label of the Radio. Will set aria-label aswell.
+     * Label of the Radio.
      **/
     label: {
       type: String,
+      required: true,
       default: null,
     },
   },

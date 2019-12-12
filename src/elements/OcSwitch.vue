@@ -24,10 +24,11 @@ export default {
       type: [Boolean, Number],
     },
     /**
-     * Label of the switch. Will set aria-label as well.
+     * Accessible name of the switch via aria-label.
      **/
     label: {
       type: String,
+      required: true,
       default: null,
     },
   },

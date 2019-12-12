@@ -1,9 +1,10 @@
 <template>
   <component
-    :is="type"
+    :is="$_ocIcon_type"
     :aria-label="ariaLabel"
     :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', prefix(size), prefix(variation)]"
-    v-html="svg"
+    v-html="$_ocIcon_svg"
+    :src="url"
     @click="$_ocIcon_click"
   />
 </template>
@@ -24,8 +25,13 @@ export default {
      * The name of the icon to display.
      */
     name: {
-      required: true,
-      default: "settings",
+      type: String,
+    },
+    /**
+     * Alternative way to specify the svg icon via an url
+     */
+    url: {
+      type: String,
     },
     /**
      * Descriptive text to be read to screenreaders.
@@ -72,10 +78,19 @@ export default {
       this.$emit("click")
     },
   },
-  data() {
-    return {
-      svg: req("./" + this.name + ".svg"),
-    }
+  computed: {
+    $_ocIcon_type() {
+      if (this.url !== undefined) {
+        return "img"
+      }
+      return this.type
+    },
+    $_ocIcon_svg() {
+      if (this.url !== undefined) {
+        return ""
+      }
+      return req("./" + this.name + ".svg")
+    },
   },
 }
 </script>
@@ -136,6 +151,13 @@ export default {
 		<oc-icon size="large" name="info"/>
 		<oc-icon size="large" name="account_circle"/>
 	</div>
+	<h3 class="uk-heading-divider">
+		Icons loaded via URL
+	</h3>
+  <div class="uk-margin">
+    <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
+    <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
+  </div>
 </section>
   ```
 </docs>

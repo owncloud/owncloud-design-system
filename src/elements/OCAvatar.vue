@@ -1,7 +1,7 @@
 <template>
   <oc-img
     class="oc-avatar"
-    width="50"
+    :width="width"
     :src="src"
     :alt="accessibilityLabel"
     :aria-hidden="accessibilityLabel === ''"
@@ -33,6 +33,12 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+
+    width: {
+      type: Number,
+      required: false,
+      default: 50,
     },
   },
 }

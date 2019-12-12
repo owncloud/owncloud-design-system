@@ -1,5 +1,24 @@
+[hidden] {
+  display: none;
+}
+
+// Directions
+$directions: "top", "right", "bottom", "left";
+
 .oc-cursor-pointer {
   cursor: pointer;
+}
+
+.oc-button-reset {
+  padding: 0;
+  -webkit-appearance: none;
+  background: transparent;
+  font: inherit;
+  border: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }
 
 .oc-align-self-center {
@@ -10,6 +29,16 @@
   @include visually-hidden;
 }
 
+.oc-border {
+  border: $global-border-width solid $global-border !important;
+
+  @each $direction in $directions {
+    &-#{$direction} {
+      border-#{$direction}: $global-border-width solid $global-border !important;
+    }
+  }
+}
+  
 .oc-button-reset {
   @extend .uk-padding-remove;
   -webkit-appearance: none;

@@ -59,22 +59,119 @@ export default {
         <router-link to="/" class="oc-topbar-icon">ownCloud X</router-link>
       </oc-navbar-item>
       <oc-navbar-item position="right">
-        <router-link
-          tag="div"
-          to="/personal"
+        <oc-grid
+          gutter="small"
           class="oc-topbar-personal"
-          uk-tooltip="title: Personal setting; pos: bottom-right;"
         >
-          <oc-avatar
-            class="oc-topbar-personal-avatar"
-            src="https://picsum.photos/64/64?image=1027"
-            :loading="loading"
-          /><span class="oc-topbar-personal-label">Alice Habanero</span>
-        </router-link>
+          <oc-icon
+            id="oc-notification-bell"
+            class="oc-cursor-pointer uk-padding-small"
+            name="bell"
+            variation="inverted"
+            aria-label="Notifications"
+          />
+          <oc-button
+            id="_apps"
+            icon="apps"
+            variation="primary"
+            class="oc-cursor-pointer uk-padding-small uk-height-1-1"
+            aria-label="Application Switcher"
+           />
+          <div class="padding-small uk-height-1-1">
+            <oc-avatar
+              class="oc-topbar-personal-avatar oc-cursor-pointer"
+              src="https://picsum.photos/64/64?image=1027"
+              :loading="loading"
+              id="_account"
+            />
+          </div>
+        </oc-grid>
       </oc-navbar-item>
     </oc-navbar>
 
+    <oc-drop
+      id="oc-notification-drop"
+      toggle="#oc-notification-bell"
+      position="bottom-right"
+      class="uk-height-large uk-width-3-4 uk-width-large@s"
+    >
+      <div class="uk-overflow-auto">
+        <div class="uk-width-1-1">
+          <h5 class="uk-h4">Hello World !</h5>
+          <p class="uk-text-small">Welcome to The System</p>
+          <div class="uk-button-group uk-width-1-1 uk-flex-right">
+            <oc-button
+              id="resolve-notification-button"
+              size="small"
+            >Mark as read</oc-button>
+          </div>
+          <hr/>
+        </div>
+        <div class="uk-width-1-1">
+          <h5 class="uk-h4">Hello Again !</h5>
 
+          <p class="uk-text-small">Welcome back to The System</p>
+          <p>
+            <a href="#" class="uk-link" target="_blank">Link</a>
+          </p>
+          <div class="uk-button-group uk-width-1-1 uk-flex-right">
+            <oc-button
+              id="resolve-notification-button"
+              size="small"
+            >Mark as read</oc-button>
+          </div>
+        </div>
+      </div>
+    </oc-drop>
+
+    <oc-drop toggle="#_apps" mode="click" :options="{pos:'bottom-right'}" class="uk-width-large">
+      <div class="uk-grid-small uk-text-center" uk-grid>
+        <div class="uk-width-1-3">
+          <oc-icon name="folder" size="large"/>
+          <div>Files</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="movie_filter" size="large"/>
+          <div>Video</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="group" size="large"/>
+          <div>Contacts</div>
+        </div>
+      </div>
+      <div class="uk-grid-small uk-text-center" uk-grid>
+        <div class="uk-width-1-3">
+          <oc-icon name="linked_camera" size="large"/>
+          <div>Album</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="lock" size="large"/>
+          <div>Passwords</div>
+        </div>
+        <div class="uk-width-1-3">
+          <oc-icon name="timer" size="large"/>
+          <div>Run Tracker</div>
+        </div>
+      </div>
+    </oc-drop>
+
+    <oc-drop toggle="#_account" mode="click" :options="{pos:'bottom-right'}" class="uk-width-large">
+      <div class="uk-card-body uk-flex uk-flex-middle uk-flex-column">
+        <oc-avatar
+          src="https://picsum.photos/128/128?image=1027"
+          :width="128"
+        />
+        <h3 class="uk-card-title">Alice Wonderland</h3>
+        <span>alice@wonder.land</span>
+        <br />
+        <oc-button>Manage your account</oc-button>
+        <br/>
+        <oc-button>Sign out</oc-button>
+      </div>
+      <div class="uk-card-footer uk-flex uk-flex-middle uk-flex-column">
+        <span>version: 0.2.6</span>
+      </div>
+    </oc-drop>
 
     <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
       <oc-sidebar-nav-item active icon="folder" target="home">
@@ -89,20 +186,15 @@ export default {
           <oc-sidebar-nav-item>Deleted files</oc-sidebar-nav-item>
         </template>
       </oc-sidebar-nav-item>
-
-      <oc-sidebar-nav-item icon="account_circle" :isolate="true">Personal settings</oc-sidebar-nav-item>
-      <oc-sidebar-nav-divider />
-      <oc-sidebar-nav-item icon="application">Administration</oc-sidebar-nav-item>
-
-      <oc-sidebar-nav-item icon="exit_to_app" target="login" :isolate="true">Exit ownCloud</oc-sidebar-nav-item>
     </oc-application-menu>
 
-    <oc-app-layout :rightHidden="rightHidden">
+    <oc-app-layout :rightHidden="rightHidden" :leftHidden="true">
+
 
       <template slot="center">
         <oc-app-bar id="files-app-bar">
           <div class="uk-width-expand">
-              <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+              <oc-breadcrumb :home="true" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
           </div>
           <div class="uk-width-auto uk-visible@m">
             <oc-search-bar label="Search"></oc-search-bar>
@@ -187,7 +279,7 @@ export default {
           </template>
         </oc-dialog>
 
-        <oc-file-actions />
+        <!-- <oc-file-actions /> -->
 
       </template>
       <template slot="right">
@@ -285,9 +377,6 @@ export default {
       }
     },
     methods: {
-      goHome () {
-        alert('Going home')
-      },
       selectFile(file) {
         this.$root.$emit('oc-file-actions:open', {
           filename: file.name + "." + file.extension,

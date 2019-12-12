@@ -2,5 +2,5 @@
   @extend .uk-padding-small;
   @extend .uk-background-muted;
 
-  height: $global-control-height;
+  min-height: $global-control-height;
 }
