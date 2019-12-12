@@ -2,7 +2,7 @@
   <component
     :is="$_ocIcon_type"
     :aria-label="ariaLabel"
-    :class="['oc-icon', prefix(size), prefix(variation)]"
+    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', prefix(size), prefix(variation)]"
     v-html="$_ocIcon_svg"
     :src="url"
     @click="$_ocIcon_click"

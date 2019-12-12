@@ -38,3 +38,11 @@ $directions: "top", "right", "bottom", "left";
     }
   }
 }
+  
+.oc-button-reset {
+  @extend .uk-padding-remove;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+}
