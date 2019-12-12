@@ -123,7 +123,7 @@ export default {
       type: String,
       default: "default",
       validator: value => {
-        return value.match(/(default|primary|secondary|danger)/)
+        return value.match(/(default|primary|secondary|danger|raw)/)
       },
     },
     /**

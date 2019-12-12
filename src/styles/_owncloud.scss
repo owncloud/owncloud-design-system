@@ -10,6 +10,7 @@
 // 3. Your custom mixin overwrites.
 @import "theme/helper";
 @import "theme/margin";
+@import "theme/background";
 @import "theme/main";
 @import "theme/login";
 @import "theme/menu-secondary";
@@ -21,6 +22,7 @@
 @import "theme/oc-avatar";
 @import "theme/oc-loader";
 @import "theme/oc-button";
+@import "theme/oc-progress";
 @import "theme/oc-progress-pie";
 @import "theme/oc-checkbox";
 @import "theme/oc-sidebar-nav-item";
@@ -42,6 +44,7 @@
 @import "theme/oc-scroll";
 @import "theme/oc-page-title";
 @import "theme/oc-dropdown";
+@import "theme/oc-tabbed";
 
 // 4. Import UIkit.
 @import "../../node_modules/uikit/src/scss/uikit-theme.scss";
