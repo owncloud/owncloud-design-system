@@ -11582,10 +11582,10 @@ uglify-to-browserify@~1.0.0:
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
   integrity sha1-bgkk1r2mta/jSeOabWMoUKD4grc=
 
-uikit@^3.1.6:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.2.4.tgz#d2f92eb75606486e562a0a125633ce0e0575e63f"
-  integrity sha512-vEQZHQ6+Z6MDFKWQqaybREnkm99ULZZONOTazbmzY7CkdSmuK6a7mtipa84/IbCfiJJ4o/pIL2tj/YY6cdNj4Q==
+uikit@3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.2.3.tgz#1ee5a9d19706769b32e5f171ccd3feec3aed4f1d"
+  integrity sha512-XDkFIlJQNA2sovxnMJAMyryqXwBFbOjL2VT7uDUDbxyl39hiKG0U60z6T+v8zBfI5AmANjDBoCSsK8CDkZJgAQ==
 
 unherit@^1.0.4:
   version "1.1.2"
