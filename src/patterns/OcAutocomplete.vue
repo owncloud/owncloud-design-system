@@ -38,9 +38,11 @@
         <li
           v-if="$_ocAutocomplete_matchesOverflowing > 0 && !itemsLoading && !expanded"
           class="oc-autocomplete-suggestion-overflow"
-          @click="expanded = true"
+          @click.stop="expanded = true"
         >
-          {{ $_ocAutocomplete_matchesOverflowing }} {{ $_ocAutocomplete_text.moreResults }}
+          <span
+            >{{ $_ocAutocomplete_matchesOverflowing }} {{ $_ocAutocomplete_text.moreResults }}</span
+          >
         </li>
         <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
           <oc-spinner class="oc-autocomplete-spinner" />
@@ -52,7 +54,6 @@
 </template>
 <script>
 import OcSpinner from "../elements/OcSpinner"
-import OcTextInput from "../elements/OcTextInput"
 
 import UiKit from "uikit"
 import { uniqueId as _uniqueId } from "lodash"
@@ -65,7 +66,7 @@ import { uniqueId as _uniqueId } from "lodash"
  */
 export default {
   name: "oc-autocomplete",
-  components: { OcTextInput, OcSpinner },
+  components: { OcSpinner },
   status: "review",
   release: "1.0.0",
   props: {
@@ -270,7 +271,7 @@ export default {
       </div>
     </div>
     <h3 class="uk-heading-divider">
-      Autocomplete (delayed fetch)
+      Autocomplete with delayed fetch
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
       <oc-autocomplete v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" placeholder="type 'le' and wait a little" @update:input="onInput"/>
@@ -278,6 +279,12 @@ export default {
         <p class="uk-text-meta">Selected complex item:</p>
         <code>{{ delayedItem }}</code>
       </div>
+    </div>
+    <h3 class="uk-heading-divider">
+      Autocomplete overflow with "more results" button
+    </h3>
+    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+      <oc-autocomplete v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
     </div>
   </section>
 </template>
