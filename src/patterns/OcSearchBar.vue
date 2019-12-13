@@ -16,6 +16,7 @@
           @input="onType"
           @keydown.enter="onSearch"
           :placeholder="placeholder"
+          :label="label"
           :value="searchQuery"
           :disabled="loading"
         />
@@ -79,6 +80,14 @@ export default {
     placeholder: {
       type: String,
       required: false,
+      default: "",
+    },
+    /**
+     * Informative label about the data to be entered
+     */
+    label: {
+      type: String,
+      required: true,
       default: "",
     },
     /**
@@ -193,14 +202,14 @@ export default {
       <h3 class="uk-heading-divider">
           Search examples
       </h3>
-      <oc-search-bar placeholder="Search files" @search="onSearch" @clear="onClear" />
+      <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" />
       <div v-if="searchQuery" class="uk-margin">Search query: {{ searchQuery }}</div>
       <hr>
       <div class="uk-margin">
-        <oc-search-bar placeholder="Loading ..." :loading="true"></oc-search-bar>
+        <oc-search-bar label="Loading..." placeholder="Loading ..." :loading="true"></oc-search-bar>
       </div>
       <div class="uk-margin">
-        <oc-search-bar small placeholder="Small searchbar" :loading="true"></oc-search-bar>
+        <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" :loading="true"></oc-search-bar>
       </div>
     </section>
     <section>
@@ -208,14 +217,14 @@ export default {
         Search example with visually hidden button
       </h3>
       <div class="uk-margin">
-        <oc-search-bar placeholder="Search files" @search="onSearch" @clear="onClear" button-hidden="true" />
+        <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" button-hidden="true" />
       </div>
     </section>
     <section>
       <h3 class="uk-heading-divider">
           Filter examples
       </h3>
-      <oc-search-bar isFilter="true" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
     </section>
   </div>

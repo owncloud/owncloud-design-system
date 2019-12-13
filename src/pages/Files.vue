@@ -262,7 +262,7 @@ export default {
 
         <oc-dialog name="createFolder" title="Create Folder" v-model="createFolder">
           <template slot="content">
-            <oc-text-input placeholder="New Folder Name"/>
+            <oc-text-input label="New Folder Name" placeholder="New Folder Name"/>
           </template>
           <template slot="footer">
             <oc-button @click="createFolder = false" class="uk-modal-close" variation="primary" type="button">Create</oc-button>
@@ -271,7 +271,7 @@ export default {
         </oc-dialog>
         <oc-dialog name="createFile" title="Create File" v-model="createFile">
           <template slot="content">
-            <oc-text-input placeholder="New File Name"/>
+            <oc-text-input label="New File Name" placeholder="New File Name"/>
           </template>
           <template slot="footer">
             <oc-button @click="createFile = false" class="uk-modal-close" variation="primary" type="button">Create</oc-button>

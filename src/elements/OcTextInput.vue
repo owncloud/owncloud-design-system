@@ -117,23 +117,23 @@ export default {
             <h3 class="uk-heading-divider">
                 Input Types
             </h3>
-            <oc-text-input class="uk-margin-small-bottom" placeholder="Write your text"/>
-            <oc-text-input class="uk-margin-small-bottom" disabled value="I am disabled"/>
-            <oc-text-input class="uk-margin-small-bottom" type="number" placeholder="Enter a number"/>
-            <oc-text-input class="uk-margin-small-bottom" type="email" placeholder="Enter an email"/>
-            <oc-text-input class="uk-margin-small-bottom" type="password" placeholder="Enter your password ;-)"/>
+            <oc-text-input class="uk-margin-small-bottom" label="Text" placeholder="Write your text"/>
+            <oc-text-input class="uk-margin-small-bottom" disabled label="Disabled" value="I am disabled"/>
+            <oc-text-input class="uk-margin-small-bottom" type="number" label="Number" placeholder="Enter a number"/>
+            <oc-text-input class="uk-margin-small-bottom" type="email" label="Email" placeholder="Enter an email"/>
+            <oc-text-input class="uk-margin-small-bottom" type="password" label="Password" placeholder="Enter your password ;-)"/>
             <h3 class="uk-heading-divider">
                 Binding
             </h3>
-            <oc-text-input placeholder="Write your text" v-model="inputValue"/>
-            <oc-text-input disabled placeholder="Write your text" v-model="inputValue"/>
+            <oc-text-input label="Text" placeholder="Write your text" v-model="inputValue"/>
+            <oc-text-input disabled label="Text" placeholder="Write your text" v-model="inputValue"/>
             <h3 class="uk-heading-divider">
                 Interactions
             </h3>
             <oc-button @click="_focus">Focus input below</oc-button>
-            <oc-text-input placeholder="Will you focus on me?" ref="inputForFocus"/>
+            <oc-text-input label="Focus field" placeholder="Will you focus on me?" ref="inputForFocus"/>
             <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
-            <oc-text-input value="Will you select this existing text?" ref="inputForFocusSelect"/>
+            <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
         </section>
     </template>
     <script>

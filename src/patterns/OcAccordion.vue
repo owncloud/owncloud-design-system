@@ -49,7 +49,7 @@ export default {
     </template>
     <template slot="content">
       <p>Enter some text!</p>
-      <oc-text-input></oc-text-input>
+      <oc-text-input label="Text"></oc-text-input>
     </template>
   </oc-accordion-item>
 </oc-accordion>
