@@ -202,7 +202,7 @@ export default {
       <h3 class="uk-heading-divider">
           Search examples
       </h3>
-      <oc-search-bar placeholder="Search files" @search="onSearch" @clear="onClear" />
+      <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" />
       <div v-if="searchQuery" class="uk-margin">Search query: {{ searchQuery }}</div>
       <hr>
       <div class="uk-margin">
@@ -224,7 +224,7 @@ export default {
       <h3 class="uk-heading-divider">
           Filter examples
       </h3>
-      <oc-search-bar isFilter="true" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
     </section>
   </div>

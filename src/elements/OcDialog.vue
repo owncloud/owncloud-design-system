@@ -71,7 +71,7 @@ export default {
       <oc-dialog name="demoModal" v-model="dialogModel">
         <h2 slot="header">Create folder</h2>
         <template slot="content">
-          <oc-text-input placeholder="New Folder Name"/>
+          <oc-text-input label="Name" placeholder="New Folder Name"/>
         </template>
         <template slot="footer">
           <oc-button @click="dialogModel = false" variation="primary">Create</oc-button>
