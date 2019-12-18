@@ -8,6 +8,7 @@ $oc-icon-size: 24px;
 .oc-icon {
   // SVG wrapper
   display: inline-block;
+  vertical-align: baseline;
 
   svg {
     display: block;

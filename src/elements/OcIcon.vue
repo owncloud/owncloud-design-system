@@ -1,10 +1,17 @@
 <template>
   <component
+    v-if="iconNotLoaded"
     :is="$_ocIcon_type"
     :aria-label="ariaLabel"
     :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', prefix(size), prefix(variation)]"
     v-html="$_ocIcon_svg"
-    :src="url"
+    @click="$_ocIcon_click"
+  />
+  <img
+    v-else
+    :src="iconUrl"
+    :aria-label="ariaLabel"
+    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', prefix(size), prefix(variation)]"
     @click="$_ocIcon_click"
   />
 </template>
@@ -26,9 +33,12 @@ export default {
      */
     name: {
       type: String,
+      default: "info",
     },
     /**
-     * Alternative way to specify the svg icon via an url
+     * Alternative way to specify the svg icon via an url.
+     * In case no image can be loaded from ths give url the icon
+     * as defined by the name property will be displayed.
      */
     url: {
       type: String,
@@ -70,6 +80,26 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      iconUrl: undefined,
+      iconNotLoaded: true,
+    }
+  },
+  mounted() {
+    if (this.url !== undefined) {
+      this.iconUrl = this.url
+      const img = new Image()
+      img.addEventListener("load", event => {
+        this.iconNotLoaded = false
+      })
+      img.addEventListener("error", event => {
+        this.$emit("error")
+        this.iconUrl = ""
+      })
+      img.src = this.iconUrl
+    }
+  },
   methods: {
     prefix(string) {
       if (string !== null) return `oc-icon-${string}`
@@ -80,15 +110,9 @@ export default {
   },
   computed: {
     $_ocIcon_type() {
-      if (this.url !== undefined) {
-        return "img"
-      }
       return this.type
     },
     $_ocIcon_svg() {
-      if (this.url !== undefined) {
-        return ""
-      }
       return req("./" + this.name + ".svg")
     },
   },
@@ -157,6 +181,8 @@ export default {
   <div class="uk-margin">
     <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
     <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
+    <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv"/>
+    <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
   </div>
 </section>
   ```
