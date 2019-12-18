@@ -11906,6 +11906,11 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
+vue-avatar@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/vue-avatar/-/vue-avatar-2.1.8.tgz#3a8069aa70ecbf89eea2440a7b54f716a46f9935"
+  integrity sha512-IrtZV4D90yfvnSz/04cYUnc//Lu83xGwREoxLJ5B6YFB4fj1BgqKZSZolO/yg48J/HhEhHLMnjGNg5sqj5cZKA==
+
 vue-datetime@^1.0.0-beta.10:
   version "1.0.0-beta.11"
   resolved "https://registry.yarnpkg.com/vue-datetime/-/vue-datetime-1.0.0-beta.11.tgz#283b5182dabe0ab372e375e9c47acb3b41524ffa"

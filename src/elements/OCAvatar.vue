@@ -1,6 +1,7 @@
 <template>
-  <oc-img
+  <avatar
     class="oc-avatar"
+    :username="userName"
     :width="width"
     :src="src"
     :alt="accessibilityLabel"
@@ -8,6 +9,8 @@
   />
 </template>
 <script>
+import Avatar from "vue-avatar"
+
 /**
  * Avatar is a thumbnail representing user or group
  */
@@ -15,13 +18,22 @@ export default {
   name: "oc-avatar",
   status: "review",
   release: "1.0.0",
+  components: {
+    Avatar,
+  },
   props: {
     /**
      * Source of the avatar
      */
     src: {
       type: String,
-      required: true,
+      default: "",
+    },
+    /**
+     * User name to display initials if src is not set
+     */
+    userName: {
+      type: String,
       default: "",
     },
     /**
@@ -46,5 +58,6 @@ export default {
 <docs>
 ```
   <oc-avatar src="https://picsum.photos/50/50?image=1074" accessibilityLabel="Lion" />
+  <oc-avatar userName="Bruce Lee" accessibilityLabel="Lion" />
 ```
 </docs>
