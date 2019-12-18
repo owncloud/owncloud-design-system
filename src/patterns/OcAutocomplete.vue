@@ -116,7 +116,7 @@ export default {
       type: String,
       required: false,
       default:
-        "When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.",
+        "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
     },
     /**
      * Informative text displayed right next to the spinner while loading data
@@ -298,6 +298,8 @@ export default {
 
         if (this.fillOnSelection) {
           this.input = this.$_ocAutocomplete_getSelectionText(this.highlighted)
+        } else {
+          this.$_ocAutocomplete_dropdown.hide()
         }
       }
     },
@@ -362,7 +364,13 @@ export default {
       Autocomplete overflow with "more results" button
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
-      <oc-autocomplete v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
+      <oc-autocomplete ariaLabel="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
+    </div>
+    <h3 class="uk-heading-divider">
+      Autocomplete with :fillOnSelection=false
+    </h3>
+    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+      <oc-autocomplete ariaLabel="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
     </div>
   </section>
 </template>
