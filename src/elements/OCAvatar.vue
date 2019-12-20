@@ -2,7 +2,7 @@
   <avatar
     class="oc-avatar"
     :username="userName"
-    :width="width"
+    :size="width"
     :src="src"
     :alt="accessibilityLabel"
     :aria-hidden="accessibilityLabel === ''"
