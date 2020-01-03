@@ -1,5 +1,5 @@
 <template>
-  <div :uk-spinner="'ratio:' + ratio" :aria-label="ariaLabel" tabindex="-1" role="img"></div>
+  <div :class="$_ocSpinner_class" :aria-label="ariaLabel" tabindex="-1" role="img" />
 </template>
 
 <script>
@@ -42,14 +42,10 @@ export default {
     },
   },
   computed: {
-    ratio() {
-      let sizes = {
-        small: 0.5,
-        medium: 2,
-        large: 3,
-        xlarge: 4,
-      }
-      return sizes[this.size]
+    $_ocSpinner_class() {
+      if (!this.size) return "oc-spinner"
+
+      return `oc-spinner oc-spinner-${this.size}`
     },
   },
 }
@@ -57,11 +53,11 @@ export default {
 <style lang="scss"></style>
 <docs>
 ```jsx
-<div>
-  <oc-spinner size="small" />
-  <oc-spinner aria-label="Date is loading" /> <!-- Default with label -->
-  <oc-spinner size="medium" />
-  <oc-spinner size="large" />
+<div class="uk-flex uk-flex-middle">
+  <oc-spinner size="small" class="uk-margin-small-right" />
+  <oc-spinner aria-label="Date is loading" class="uk-margin-small-right" /> <!-- Default with label -->
+  <oc-spinner size="medium" class="uk-margin-small-right" />
+  <oc-spinner size="large" class="uk-margin-small-right" />
   <oc-spinner size="xlarge" />
 </div>
 ```
