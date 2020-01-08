@@ -27,7 +27,6 @@ export default {
     ariaLabel: {
       type: String,
       required: true,
-      default: "Loading",
     },
     /**
      * The size of the spinner. Defaults to medium.
@@ -54,11 +53,11 @@ export default {
 <docs>
 ```jsx
 <div class="uk-flex uk-flex-middle">
-  <oc-spinner size="small" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Date is loading" class="uk-margin-small-right" /> <!-- Default with label -->
-  <oc-spinner size="medium" class="uk-margin-small-right" />
-  <oc-spinner size="large" class="uk-margin-small-right" />
-  <oc-spinner size="xlarge" />
+  <oc-spinner aria-label="Loading with small spinner" size="small" class="uk-margin-small-right" />
+  <oc-spinner aria-label="Loading with default sized spinner" class="uk-margin-small-right" />
+  <oc-spinner aria-label="Loading with medium spinner" size="medium" class="uk-margin-small-right" />
+  <oc-spinner aria-label="Loading with large spinner" size="large" class="uk-margin-small-right" />
+  <oc-spinner aria-label="Loading with extra large spinner" size="xlarge" />
 </div>
 ```
 </docs>
