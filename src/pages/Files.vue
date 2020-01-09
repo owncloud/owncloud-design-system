@@ -233,6 +233,7 @@ export default {
                 <oc-checkbox />
               </oc-table-cell>
               <oc-table-cell type="head" class="uk-text-truncate" v-text="'Name'"/>
+              <oc-table-cell shrink type="head" />
               <oc-table-cell shrink type="head" v-text="'Size'"/>
               <oc-table-cell shrink type="head" class="uk-text-nowrap uk-visible@s" v-text="'Modification Time'"/>
               <oc-table-cell shrink type="head" v-text="'Actions'"/>
@@ -243,9 +244,14 @@ export default {
               <oc-table-cell>
                 <oc-checkbox />
               </oc-table-cell>
-              <oc-table-cell>
+              <oc-table-cell class="uk-text-truncate uk-text-meta uk-width-expand">
                 <!-- FIXME dont register a click handler for every file. register it on the table and get the filename from the event -->
                 <oc-file @click="selectFile(file)" :name="file.name" :extension="file.extension" :icon="file.icon"/>
+              </oc-table-cell>
+              <oc-table-cell class="uk-text-muted uk-text-nowrap">
+                <template v-for="icon in file.indicators">
+                  <oc-icon :name="icon.name" size="small" :variation="icon.active ? 'active' : 'passive' " />
+                </template>
               </oc-table-cell>
               <oc-table-cell class="uk-text-muted uk-text-nowrap" v-text=" (++o * 128) + ' Kb'" />
               <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
@@ -300,10 +306,15 @@ export default {
         rightHidden: true,
         loading: true,
         files: [
-          {name: "Private", extension: "", icon:'folder'},
-          {name: "Project", extension: "", icon:'folder-shared'},
           {name: "Document", extension: "pdf", icon:'application-pdf'},
           {name: "Picture", extension: "png", icon:'image'},
+          {name: "Private", extension: "", icon:'folder'},
+          {name: "Project shared both directly", extension: "", icon:'folder', indicators: [{name:'group', active:true}, {name:'link', active:true}]},
+          {name: "Project shared both from parent", extension: "", icon:'folder', indicators: [{name:'group'}, {name:'link'}]},
+          {name: "Project shared by link directly", extension: "", icon:'folder', indicators: [{name:'link', active:true}]},
+          {name: "Project shared by link through parent", extension: "", icon:'folder', indicators: [{name:'link'}]},
+          {name: "Project received directly", extension: "", icon:'folder', indicators: [{name:'group'}]},
+          {name: "Project received through parent", extension: "", icon:'folder', indicators: [{name:'group'}]},
           {name: "Presentation", extension: "odp", icon:'x-office-presentation'},
           {name: "README", extension: "md", icon:'text'},
           {name: "Spreadsheet", extension: "ods", icon:'x-office-spreadsheet'},
