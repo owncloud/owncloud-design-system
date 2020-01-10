@@ -63,9 +63,9 @@ export default {
      */
     size: {
       type: String,
-      default: null,
+      default: "medium",
       validator: value => {
-        return value.match(/(medium|large)/)
+        return value.match(/(small|medium|large)/)
       },
     },
     /**
@@ -161,8 +161,14 @@ export default {
 	</div>
 
 	<h3 class="uk-heading-divider">
-		Medium and large icons
+		Small, medium and large icons
 	</h3>
+	<div class="uk-margin">
+		<oc-icon size="small" name="close"/>
+		<oc-icon size="small" name="delete"/>
+		<oc-icon size="small" name="info"/>
+		<oc-icon size="small" name="account_circle"/>
+	</div>
 	<div class="uk-margin">
 		<oc-icon size="medium" name="close"/>
 		<oc-icon size="medium" name="delete"/>
