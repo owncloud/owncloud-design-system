@@ -90,10 +90,10 @@ export default {
     if (this.url !== undefined) {
       this.iconUrl = this.url
       const img = new Image()
-      img.addEventListener("load", event => {
+      img.addEventListener("load", () => {
         this.iconNotLoaded = false
       })
-      img.addEventListener("error", event => {
+      img.addEventListener("error", () => {
         this.$emit("error")
         this.iconUrl = ""
       })
