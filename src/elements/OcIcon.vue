@@ -133,31 +133,31 @@ export default {
 	<h3 class="uk-heading-divider">
 		Icon color variations
 	</h3>
-	<div class="uk-grid-collapse uk-child-width-auto" uk-grid>
-		<div class="uk-background-primary uk-padding-small">
-			<oc-icon variation="inverted" name="close"/>
-			<oc-icon variation="inverted" name="delete"/>
-			<oc-icon variation="inverted" name="info"/>
-			<oc-icon variation="inverted" name="account_circle"/>
-		</div>
-		<div class="uk-padding-small">
-			<oc-icon variation="danger" name="close"/>
-			<oc-icon variation="danger" name="delete"/>
-			<oc-icon variation="danger" name="info"/>
-			<oc-icon variation="danger" name="account_circle"/>
-		</div>
-		<div class="uk-padding-small">
-			<oc-icon variation="success" name="close"/>
-			<oc-icon variation="success" name="delete"/>
-			<oc-icon variation="success" name="info"/>
-			<oc-icon variation="success" name="account_circle"/>
-		</div>
-		<div class="uk-padding-small">
-			<oc-icon variation="warning" name="close"/>
-			<oc-icon variation="warning" name="delete"/>
-			<oc-icon variation="warning" name="info"/>
-			<oc-icon variation="warning" name="account_circle"/>
-		</div>
+	<div class="uk-grid-collapse uk-child-width-auto">
+		<oc-table middle divider>
+			<oc-table-row>
+				<oc-table-cell shrink type="head">Variation</oc-table-cell>
+				<oc-table-cell expand type="head" class="">Icons</oc-table-cell>
+			</oc-table-row>
+			<oc-table-row>
+				<oc-table-cell shrink>inverted</oc-table-cell>
+				<oc-table-cell expand class="uk-background-primary">
+					<oc-icon variation="inverted" name="close"/>
+					<oc-icon variation="inverted" name="delete"/>
+					<oc-icon variation="inverted" name="info"/>
+					<oc-icon variation="inverted" name="account_circle"/>
+				</oc-table-cell>
+			</oc-table-row>
+			<oc-table-row v-for="variation in ['danger', 'success', 'warning', 'file-type', 'system']">
+				<oc-table-cell shrink>{{variation}}</oc-table-cell>
+				<oc-table-cell expand>
+					<oc-icon :variation="variation" name="close"/>
+					<oc-icon :variation="variation" name="delete"/>
+					<oc-icon :variation="variation" name="info"/>
+					<oc-icon :variation="variation" name="account_circle"/>
+				</oc-table-cell>
+			</oc-table-row>
+		</oc-table>
 	</div>
 
 	<h3 class="uk-heading-divider">
