@@ -7,6 +7,7 @@
     :phrases="phrases"
     :min-datetime="minDatetime"
     :max-datetime="maxDatetime"
+    :placeholder="placeholder"
     @cancel="$_cancel()"
     @input="$_input()"
   ></datetime>
@@ -53,6 +54,13 @@ export default {
     date: {
       type: String,
       default: moment().format(),
+    },
+    /**
+     * The placeholder value for the form input field.
+     */
+    placeholder: {
+      type: String,
+      default: null,
     },
     /**
      * Popup title.
