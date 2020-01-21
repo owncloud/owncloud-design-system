@@ -76,7 +76,7 @@ export default {
       type: String,
       default: "system",
       validator: value => {
-        return value.match(/(file-type|system|inverted|danger|success|warning)/)
+        return value.match(/(file-type|system|active|passive|inverted|danger|success|warning)/)
       },
     },
   },
@@ -148,7 +148,7 @@ export default {
 					<oc-icon variation="inverted" name="account_circle"/>
 				</oc-table-cell>
 			</oc-table-row>
-			<oc-table-row v-for="variation in ['danger', 'success', 'warning', 'file-type', 'system']">
+			<oc-table-row v-for="variation in ['danger', 'success', 'warning', 'file-type', 'system', 'active', 'passive']">
 				<oc-table-cell shrink>{{variation}}</oc-table-cell>
 				<oc-table-cell expand>
 					<oc-icon :variation="variation" name="close"/>

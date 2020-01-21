@@ -31,6 +31,14 @@ props:
     value: "#667fa3"
     category: "icon-colors"
 
+  active-icon-color:
+    value: "#002966"
+    category: "icon-colors"
+
+  passive-icon-color:
+    value: "#cccccc"
+    category: "icon-colors"
+
   system-icon-color:
     value: "#667fa3"
     category: "icon-colors"
