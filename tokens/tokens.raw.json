@@ -78,6 +78,20 @@
       "originalValue": "#002966",
       "name": "emphasis-color"
     },
+    "passive-icon-color": {
+      "type": "color",
+      "category": "icon-colors",
+      "value": "rgb(204, 204, 204)",
+      "originalValue": "#cccccc",
+      "name": "passive-icon-color"
+    },
+    "active-icon-color": {
+      "type": "color",
+      "category": "icon-colors",
+      "value": "rgb(0, 41, 102)",
+      "originalValue": "#002966",
+      "name": "active-icon-color"
+    },
     "success-background": {
       "type": "color",
       "category": "Background-colors",
