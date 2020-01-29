@@ -171,7 +171,7 @@
     "portfinder": "^1.0.20",
     "prettier": "^1.18.2",
     "rimraf": "^3.0.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^8.0.2",
     "sass-resources-loader": "^2.0.1",
     "semver": "^6.2.0",
     "shelljs": "^0.8.3",
