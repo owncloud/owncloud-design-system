@@ -15,11 +15,6 @@ export default {
       default: "tbody",
     },
   },
-  computed: {
-    groupType() {
-      return type === "tbody" ? "oc-table-header-group" : "oc-table-row-group"
-    },
-  },
 }
 </script>
 <style scoped>

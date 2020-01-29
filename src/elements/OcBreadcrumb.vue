@@ -50,7 +50,7 @@ export default {
      */
     items: {
       type: Array,
-      default: [],
+      default: () => [],
       required: true,
     },
     /**

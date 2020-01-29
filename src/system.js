@@ -23,6 +23,8 @@ const System = {
     components.forEach(component => Vue.component(component.name, component))
   },
 }
+
+// eslint-disable-next-line no-unused-vars
 import Styles from "./styles/styles.scss"
 
 // Automatic installation if Vue has been added to the global scope

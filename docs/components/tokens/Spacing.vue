@@ -4,7 +4,6 @@
       v-for="(prop, index) in tokens"
       :key="index"
       class="space"
-      v-if="prop.category === 'space'"
       :style="{ lineHeight: prop.value, height: prop.value }"
     >
       ${{ prop.name.replace(/_/g, "-") }}
@@ -32,11 +31,11 @@ export default {
       return order
     },
   },
-  data() {
-    return {
-      tokens: designTokens.props,
+  computed: {
+    tokens () {
+      return this.orderData(designTokens.props).filter(token => token.category === "space")
     }
-  },
+  }
 }
 </script>
 

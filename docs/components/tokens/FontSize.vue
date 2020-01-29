@@ -4,7 +4,6 @@
       v-for="(prop, index) in tokens"
       :key="index"
       class="font"
-      v-if="prop.category === 'font-size'"
       :style="{ fontSize: prop.value }"
     >
       ${{ prop.name.replace(/_/g, "-") }}
@@ -31,11 +30,12 @@ export default {
       return order
     },
   },
-  data() {
-    return {
-      tokens: designTokens.props,
+
+  computed: {
+    tokens () {
+      return this.orderData(designTokens.props).filter(token => token.category === "font-size")
     }
-  },
+  }
 }
 </script>
 

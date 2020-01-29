@@ -225,7 +225,7 @@ export default {
     },
     $_ocAutocomplete_matches() {
       if (this.input.length === 0 || this.selectionText !== "") {
-        this.selectionText = ""
+        this.$_ocAutocomplete_resetSelectionText()
         return []
       }
 
@@ -305,8 +305,7 @@ export default {
     },
     $_ocAutocomplete_getSelectionText(index) {
       const selectionText = this.$refs.listbox
-        .querySelectorAll("[role='option']")
-        [index].textContent.trim()
+        .querySelectorAll("[role='option']")[index].textContent.trim()
       this.selectionText = selectionText
       return selectionText
     },
@@ -317,6 +316,9 @@ export default {
     },
     focus() {
       this.$refs.$_ocAutocompleteInput.focus()
+    },
+    $_ocAutocomplete_resetSelectionText() {
+      this.selectionText = ""
     },
   },
 }
