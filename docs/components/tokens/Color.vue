@@ -1,12 +1,6 @@
 <template>
   <div class="colors">
-    <div
-      v-for="(prop, index) in tokens"
-      :key="index"
-      class="color"
-      :class="prop.category"
-      v-if="prop.type === 'color'"
-    >
+    <div v-for="(prop, index) in tokens" :key="index" class="color" :class="prop.category">
       <div class="swatch" :style="{ backgroundColor: prop.value }" />
       <h3>{{ prop.name.replace(/_/g, " ") }}</h3>
       <span>
@@ -42,11 +36,12 @@ export default {
       return byCategoryAndName
     },
   },
-  data() {
-    return {
-      tokens: this.orderData(designTokens.props),
+
+  computed: {
+    tokens () {
+      return this.orderData(designTokens.props).filter(token => token.type === "color")
     }
-  },
+  }
 }
 </script>
 

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import OcTabItem from "../elements/OcTabItem"
 /**
  * Create a tabbed navigation.
  *
@@ -20,7 +19,6 @@ import OcTabItem from "../elements/OcTabItem"
  */
 export default {
   name: "oc-tabs",
-  components: { OcTabItem },
   status: "prototype",
   release: "1.0.0",
 }

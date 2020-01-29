@@ -93,24 +93,24 @@ export default {
       let targetTab
 
       switch (e.keyCode) {
-        case 37:
-          if (activeIndex - 1 < 0) {
-            targetTab = this.tabs[this.tabs.length - 1]
-          } else {
-            targetTab = this.tabs[activeIndex - 1]
-          }
-          this.changeTab(targetTab.id)
-          break
-        case 39:
-          if (activeIndex + 1 > this.tabs.length - 1) {
-            targetTab = this.tabs[0]
-          } else {
-            targetTab = this.tabs[activeIndex + 1]
-          }
-          this.changeTab(targetTab.id)
-          break
-        default:
-          return
+      case 37:
+        if (activeIndex - 1 < 0) {
+          targetTab = this.tabs[this.tabs.length - 1]
+        } else {
+          targetTab = this.tabs[activeIndex - 1]
+        }
+        this.changeTab(targetTab.id)
+        break
+      case 39:
+        if (activeIndex + 1 > this.tabs.length - 1) {
+          targetTab = this.tabs[0]
+        } else {
+          targetTab = this.tabs[activeIndex + 1]
+        }
+        this.changeTab(targetTab.id)
+        break
+      default:
+        return
       }
     },
   },
