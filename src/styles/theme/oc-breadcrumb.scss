@@ -4,6 +4,8 @@
 // ========================================================================
 
 .oc-breadcrumb {
+  @extend .uk-overflow-hidden;
+
   &-list {
     @extend .uk-visible\@s;
     @extend .uk-breadcrumb;

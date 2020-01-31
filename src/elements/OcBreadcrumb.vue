@@ -38,7 +38,7 @@
  *
  *  - text: mandatory element, holds the text which is to be displayed in the breadcrumb
  *  - to: optional element, the vue router link
- *  -
+ *
  */
 export default {
   name: "oc-breadcrumb",
@@ -80,7 +80,9 @@ export default {
 <docs>
 ```vue
 <template>
-  <oc-breadcrumb :items="items" home></oc-breadcrumb>
+  <section>
+    <oc-breadcrumb :items="items" home></oc-breadcrumb>
+  </section>
 </template>
 <script>
   export default {
@@ -90,7 +92,7 @@ export default {
           {text:'First folder',to:{path:'folder'}},
           {text:'Subfolder', onClick:() => alert('Breadcrumb clicked!')},
           {text:'Deep',to:{path:'folder'}},
-          {text:'Deeper'},
+          {text:'Deeper ellipsize in responsive mode'},
         ]
       }
     }
