@@ -65,7 +65,7 @@ export default {
       type: String,
       default: "small",
       validator: value => {
-        return value.match(/(small|medium|large)/)
+        return value.match(/(small|medium|large|xlarge|xxlarge)/)
       },
     },
     /**
@@ -122,68 +122,67 @@ export default {
 <docs>
   ```jsx
 <section>
-	<h3 class="uk-heading-divider">
-		Default icons
-	</h3>
-	<oc-icon name="close" aria-label="Close"/>
-	<oc-icon name="delete" aria-label="Delete"/>
-	<oc-icon name="info" aria-label="Information"/>
-	<oc-icon name="account_circle" aria-label="My Account"/>
+  <h3 class="uk-heading-divider">
+    Default icons
+  </h3>
+  <oc-icon name="close" aria-label="Close"/>
+  <oc-icon name="delete" aria-label="Delete"/>
+  <oc-icon name="info" aria-label="Information"/>
+  <oc-icon name="account_circle" aria-label="My Account"/>
 
-	<h3 class="uk-heading-divider">
-		Icon color variations
-	</h3>
-	<div class="uk-grid-collapse uk-child-width-auto">
-		<oc-table middle divider>
-			<oc-table-row>
-				<oc-table-cell shrink type="head">Variation</oc-table-cell>
-				<oc-table-cell expand type="head" class="">Icons</oc-table-cell>
-			</oc-table-row>
-			<oc-table-row>
-				<oc-table-cell shrink>inverted</oc-table-cell>
-				<oc-table-cell expand class="uk-background-primary">
-					<oc-icon variation="inverted" name="close"/>
-					<oc-icon variation="inverted" name="delete"/>
-					<oc-icon variation="inverted" name="info"/>
-					<oc-icon variation="inverted" name="account_circle"/>
-				</oc-table-cell>
-			</oc-table-row>
-			<oc-table-row v-for="variation in ['danger', 'success', 'warning', 'file-type', 'system', 'active', 'passive']">
-				<oc-table-cell shrink>{{variation}}</oc-table-cell>
-				<oc-table-cell expand>
-					<oc-icon :variation="variation" name="close"/>
-					<oc-icon :variation="variation" name="delete"/>
-					<oc-icon :variation="variation" name="info"/>
-					<oc-icon :variation="variation" name="account_circle"/>
-				</oc-table-cell>
-			</oc-table-row>
-		</oc-table>
-	</div>
+  <h3 class="uk-heading-divider">
+    Icon color variations
+  </h3>
+  <div class="uk-grid-collapse uk-child-width-auto">
+    <oc-table middle divider>
+      <oc-table-row>
+        <oc-table-cell shrink type="head">Variation</oc-table-cell>
+        <oc-table-cell expand type="head" class="">Icons</oc-table-cell>
+      </oc-table-row>
+      <oc-table-row>
+        <oc-table-cell shrink>inverted</oc-table-cell>
+        <oc-table-cell expand class="uk-background-primary">
+          <oc-icon variation="inverted" name="close"/>
+          <oc-icon variation="inverted" name="delete"/>
+          <oc-icon variation="inverted" name="info"/>
+          <oc-icon variation="inverted" name="account_circle"/>
+        </oc-table-cell>
+      </oc-table-row>
+      <oc-table-row v-for="variation in ['danger', 'success', 'warning', 'file-type', 'system', 'active', 'passive']" :key="variation">
+        <oc-table-cell shrink>{{variation}}</oc-table-cell>
+        <oc-table-cell expand>
+          <oc-icon :variation="variation" name="close"/>
+          <oc-icon :variation="variation" name="delete"/>
+          <oc-icon :variation="variation" name="info"/>
+          <oc-icon :variation="variation" name="account_circle"/>
+        </oc-table-cell>
+      </oc-table-row>
+    </oc-table>
+  </div>
 
-	<h3 class="uk-heading-divider">
-		Small, medium and large icons
-	</h3>
-	<div class="uk-margin">
-		<oc-icon size="small" name="close"/>
-		<oc-icon size="small" name="delete"/>
-		<oc-icon size="small" name="info"/>
-		<oc-icon size="small" name="account_circle"/>
-	</div>
-	<div class="uk-margin">
-		<oc-icon size="medium" name="close"/>
-		<oc-icon size="medium" name="delete"/>
-		<oc-icon size="medium" name="info"/>
-		<oc-icon size="medium" name="account_circle"/>
-	</div>
-	<div class="uk-margin">
-		<oc-icon size="large" name="close"/>
-		<oc-icon size="large" name="delete"/>
-		<oc-icon size="large" name="info"/>
-		<oc-icon size="large" name="account_circle"/>
-	</div>
-	<h3 class="uk-heading-divider">
-		Icons loaded via URL
-	</h3>
+  <h3 class="uk-heading-divider">
+    Icon sizes
+  </h3>
+  <div class="uk-grid-collapse uk-child-width-auto uk-overflow-hidden">
+    <oc-table middle divider>
+      <oc-table-row>
+        <oc-table-cell shrink type="head">Size</oc-table-cell>
+        <oc-table-cell expand type="head" class="">Icons</oc-table-cell>
+      </oc-table-row>
+      <oc-table-row v-for="size in ['small', 'medium', 'large', 'xlarge', 'xxlarge']" :key="size">
+        <oc-table-cell shrink>{{size}}</oc-table-cell>
+        <oc-table-cell expand class="uk-text-nowrap">
+          <oc-icon :size="size" name="close"/>
+          <oc-icon :size="size" name="delete"/>
+          <oc-icon :size="size" name="info"/>
+          <oc-icon :size="size" name="account_circle"/>
+        </oc-table-cell>
+      </oc-table-row>
+    </oc-table>
+  </div>
+  <h3 class="uk-heading-divider">
+    Icons loaded via URL
+  </h3>
   <div class="uk-margin">
     <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
     <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>

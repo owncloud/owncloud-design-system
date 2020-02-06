@@ -37,6 +37,23 @@ $oc-icon-size: 24px;
     }
   }
 
+  &-xlarge {
+    &,
+    > svg {
+      width: $oc-icon-size * 4;
+      height: $oc-icon-size * 4;
+    }
+  }
+
+  &-xxlarge {
+    &,
+    > svg {
+      width: $oc-icon-size * 8;
+      height: $oc-icon-size * 8;
+    }
+  }
+
+
   // Variations
 
   &-active > svg {
