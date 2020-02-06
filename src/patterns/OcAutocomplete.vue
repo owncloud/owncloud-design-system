@@ -64,8 +64,8 @@
           >
         </li>
         <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
-          <oc-spinner class="oc-autocomplete-spinner" />
-          <span>{{ $_ocAutocomplete_text.spinner }}</span>
+          <oc-spinner :aria-label="$_ocAutocomplete_text.spinner" class="oc-autocomplete-spinner" />
+          <span :aria-hidden="true">{{ $_ocAutocomplete_text.spinner }}</span>
         </li>
       </ul>
     </div>
