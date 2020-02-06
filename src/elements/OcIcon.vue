@@ -59,13 +59,13 @@ export default {
     },
     /**
      * The size of the icon. Defaults to small.
-     * `small, medium, large`
+     * `xsmall, small, medium, large, xlarge, xxlarge`
      */
     size: {
       type: String,
       default: "small",
       validator: value => {
-        return value.match(/(small|medium|large|xlarge|xxlarge)/)
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge)/)
       },
     },
     /**
@@ -169,7 +169,7 @@ export default {
         <oc-table-cell shrink type="head">Size</oc-table-cell>
         <oc-table-cell expand type="head" class="">Icons</oc-table-cell>
       </oc-table-row>
-      <oc-table-row v-for="size in ['small', 'medium', 'large', 'xlarge', 'xxlarge']" :key="size">
+      <oc-table-row v-for="size in ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']" :key="size">
         <oc-table-cell shrink>{{size}}</oc-table-cell>
         <oc-table-cell expand class="uk-text-nowrap">
           <oc-icon :size="size" name="close"/>
