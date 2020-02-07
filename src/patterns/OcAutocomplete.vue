@@ -300,6 +300,7 @@ export default {
           this.input = this.$_ocAutocomplete_getSelectionText(this.highlighted)
         } else {
           this.$_ocAutocomplete_dropdown.hide()
+          this.input = ""
         }
       }
     },
