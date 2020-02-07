@@ -1,9 +1,13 @@
 //
-// Component: OC Icon
+// Component: OcIcon
 //
 // ========================================================================
 
 $oc-icon-size: 24px;
+@mixin oc-icon-size($factor) {
+  width: $oc-icon-size * $factor;
+  height: $oc-icon-size * $factor;
+}
 
 .oc-icon {
   // SVG wrapper
@@ -17,39 +21,41 @@ $oc-icon-size: 24px;
 
   &,
   > svg {
-    width: $oc-icon-size;
-    height: $oc-icon-size;
+    @include oc-icon-size(1);
+  }
+
+  &-xsmall {
+    &,
+    > svg {
+      @include oc-icon-size(0.7);
+    }
   }
 
   &-medium {
     &,
     > svg {
-      width: $oc-icon-size * 1.5;
-      height: $oc-icon-size * 1.5;
+      @include oc-icon-size(1.5);
     }
   }
 
   &-large {
     &,
     > svg {
-      width: $oc-icon-size * 2;
-      height: $oc-icon-size * 2;
+      @include oc-icon-size(2);
     }
   }
 
   &-xlarge {
     &,
     > svg {
-      width: $oc-icon-size * 4;
-      height: $oc-icon-size * 4;
+      @include oc-icon-size(4);
     }
   }
 
   &-xxlarge {
     &,
     > svg {
-      width: $oc-icon-size * 8;
-      height: $oc-icon-size * 8;
+      @include oc-icon-size(8);
     }
   }
 

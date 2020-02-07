@@ -1,5 +1,5 @@
 <template>
-  <div :class="$_ocSpinner_class" :aria-label="ariaLabel" tabindex="-1" role="img" />
+  <span :class="$_ocSpinner_class" :aria-label="ariaLabel" tabindex="-1" role="img" />
 </template>
 
 <script>
@@ -30,13 +30,13 @@ export default {
     },
     /**
      * The size of the spinner. Defaults to medium.
-     * `small, medium, large, xlarge`
+     * `xsmall, small, medium, large, xlarge, xxlarge`
      */
     size: {
       type: String,
-      default: null,
+      default: "medium",
       validator: value => {
-        return value.match(/(small|medium|large|xlarge)/)
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge)/)
       },
     },
   },
@@ -53,11 +53,13 @@ export default {
 <docs>
 ```jsx
 <div class="uk-flex uk-flex-middle">
+  <oc-spinner aria-label="Loading with extra small spinner" size="xsmall" class="uk-margin-small-right" />
   <oc-spinner aria-label="Loading with small spinner" size="small" class="uk-margin-small-right" />
   <oc-spinner aria-label="Loading with default sized spinner" class="uk-margin-small-right" />
   <oc-spinner aria-label="Loading with medium spinner" size="medium" class="uk-margin-small-right" />
   <oc-spinner aria-label="Loading with large spinner" size="large" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with extra large spinner" size="xlarge" />
+  <oc-spinner aria-label="Loading with extra large spinner" size="xlarge" class="uk-margin-small-right" />
+  <oc-spinner aria-label="Loading with extra extra large spinner" size="xxlarge" />
 </div>
 ```
 </docs>

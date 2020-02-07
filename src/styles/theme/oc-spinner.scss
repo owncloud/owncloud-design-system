@@ -1,14 +1,23 @@
+//
+// Component: OcSpinner
+//
+// ========================================================================
+
+$oc-spinner-size: 24px;
+@mixin oc-spinner-size($factor) {
+  width: $oc-spinner-size * $factor;
+  height: $oc-spinner-size * $factor;
+}
+
 .oc-spinner {
-  width: 30px;
-  height: 30px;
-  display: block;
+  display: inline-block;
   color: $global-color;
 
   &:after {
     content: "";
     width: 100%;
     height: 100%;
-    display: inline-block;
+    display: block;
     border: 1px solid currentColor;
     border-bottom-color: transparent;
     border-radius: 100%;
@@ -22,24 +31,29 @@
     box-sizing: border-box;
   }
 
+  &,
   &-small {
-    width: 15px;
-    height: 15px;
+    @include oc-spinner-size(1);
+  }
+
+  &-xsmall {
+    @include oc-spinner-size(0.7);
   }
 
   &-medium {
-    width: 60px;
-    height: 60px;
+    @include oc-spinner-size(1.5);
   }
 
   &-large {
-    width: 90px;
-    height: 90px;
+    @include oc-spinner-size(2);
   }
 
   &-xlarge {
-    width: 120px;
-    height: 120px;
+    @include oc-spinner-size(4);
+  }
+
+  &-xxlarge {
+    @include oc-spinner-size(8);
   }
 }
 
