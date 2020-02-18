@@ -78,8 +78,8 @@ def build(ctx):
                     'password': {
                         'from_secret': 'github_token',
                     },
+                    'pages_directory': 'dist/docs',
                 },
-                'pages_directory': 'dist/docs',
                 'when': {
                   'ref': [
                       'refs/tags/**',
