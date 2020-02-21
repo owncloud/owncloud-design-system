@@ -1,4 +1,28 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.1...master
+
+## Summary
+
+* Change - Small sidebar navigation design improvements: [#583](https://github.com/owncloud/owncloud-design-system/issues/583)
+
+## Details
+
+* Change - Small sidebar navigation design improvements: [#583](https://github.com/owncloud/owncloud-design-system/issues/583)
+
+   We've changed the padding of sidebar nav to small and removed text transformation to
+   uppercase.
+
+   https://github.com/owncloud/owncloud-design-system/issues/583
+   https://github.com/owncloud/owncloud-design-system/pull/648
+
 # Changelog for [1.0.1] (2020-01-30)
+
+The following sections list the changes in ownCloud Design System 1.0.1.
+
+[1.0.1]: https://github.com/owncloud/owncloud-design-system/compare/9c9d14acc7df90254e857e9c2de7bad8f77a238c...v1.0.1
 
 ## Summary
 
