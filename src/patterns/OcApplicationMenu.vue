@@ -1,11 +1,11 @@
 <template>
-  <div :id="name">
-    <div class="uk-offcanvas-bar uk-background-muted">
-      <button class="uk-offcanvas-close" type="button" @click="onClose" uk-close></button>
+  <div :id="name" class="uk-width-medium">
+    <nav class="uk-offcanvas-bar uk-background-muted uk-width-medium uk-padding-small">
+      <button class="uk-offcanvas-close" type="button" @click="onClose" uk-close />
       <ul class="oc-main-menu" uk-nav="multiple: true">
-        <slot name="default"></slot>
+        <slot name="default" />
       </ul>
-    </div>
+    </nav>
   </div>
 </template>
 <script>
@@ -62,8 +62,7 @@ export default {
         UiKit.offcanvas(`#${this.name}`, {
           mode: "slide",
           bgClose: false,
-          keyboard: false,
-          escClose: false,
+          escClose: false
         }).show()
       } else {
         UiKit.offcanvas(`#${this.name}`).hide()
