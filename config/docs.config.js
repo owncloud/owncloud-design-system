@@ -28,6 +28,7 @@ module.exports = {
   editorConfig: {
     theme: "night",
   },
+  simpleEditor: false,
   /**
    * Path to static assets directory
    */
