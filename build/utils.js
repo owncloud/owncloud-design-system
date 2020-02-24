@@ -74,18 +74,14 @@ exports.cssLoaders = function(options) {
     },
   }
 
-  const sassOptions = {
-    outputStyle: "compressed",
-  }
-
   // https://vue-loader.vuejs.org/guide/extract-css.html
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
-    sass: generateLoaders("sass", Object.assign({ indentedSyntax: true }, sassOptions)).concat(
+    sass: generateLoaders("sass", Object.assign({ indentedSyntax: true })).concat(
       sassResourcesConfig
     ),
-    scss: generateLoaders("sass", sassOptions).concat(sassResourcesConfig),
+    scss: generateLoaders("sass").concat(sassResourcesConfig),
   }
 }
 
