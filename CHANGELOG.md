@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.0.2] (UNRELEASED)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.0.2.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.1...master
+[1.0.2]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.1...v1.0.2
 
 ## Summary
 
