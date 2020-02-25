@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.2...master
+
+## Summary
+
+* Bugfix - Removed uppercase on buttons: [#442](https://github.com/owncloud/owncloud-design-system/issues/442)
+
+## Details
+
+* Bugfix - Removed uppercase on buttons: [#442](https://github.com/owncloud/owncloud-design-system/issues/442)
+
+   Buttons look nicer without the uppercase which was brought in by default by UIKit.
+
+   https://github.com/owncloud/owncloud-design-system/issues/442
+   https://github.com/owncloud/owncloud-design-system/pull/652
+
 # Changelog for [1.0.2] (2020-02-24)
 
 The following sections list the changes in ownCloud Design System 1.0.2.
