@@ -149,7 +149,7 @@ export default {
 
       if (this.disabled) classes.push("uk-button-default")
 
-      if (this.size) classes.push(`uk-button-${this.size}`)
+      if (this.size && this.variation !== "raw") classes.push(`uk-button-${this.size}`)
 
       return classes
     },
