@@ -1,4 +1,4 @@
-# Changelog for [1.0.2] (UNRELEASED)
+# Changelog for [1.0.2] (2020-02-24)
 
 The following sections list the changes in ownCloud Design System 1.0.2.
 
