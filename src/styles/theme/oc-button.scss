@@ -26,6 +26,8 @@
     margin-left: $global-margin;
   }
 
+  text-transform: none !important;
+
   &:not(.uk-button-small):not(.uk-button-large) {
     min-height: $global-control-height;
   }

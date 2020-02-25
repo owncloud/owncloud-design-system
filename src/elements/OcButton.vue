@@ -178,6 +178,7 @@ export default {
       <oc-button variation="secondary">Secondary Button</oc-button>
       <oc-button variation="danger" icon="delete">Danger Button</oc-button>
       <oc-button disabled>Disabled Button</oc-button>
+      <oc-button variation="raw">Raw Button</oc-button>
 
       <h3 class="uk-heading-divider">
         Button sizes
