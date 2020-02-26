@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.3...master
+
+## Summary
+
+* Bugfix - Removed size for oc-button with raw variation: [#654](https://github.com/owncloud/owncloud-design-system/issues/654)
+
+## Details
+
+* Bugfix - Removed size for oc-button with raw variation: [#654](https://github.com/owncloud/owncloud-design-system/issues/654)
+
+   Raw variation of buttons have no border, so they now also don't have a size enforced to avoid
+   needless white space.
+
+   https://github.com/owncloud/owncloud-design-system/issues/654
+
 # Changelog for [1.0.3] (2020-02-25)
 
 The following sections list the changes in ownCloud Design System 1.0.3.
