@@ -28,7 +28,7 @@
 
   text-transform: none !important;
 
-  &:not(.uk-button-small):not(.uk-button-large) {
+  &:not(.uk-button-small):not(.uk-button-large):not(.uk-button-raw) {
     min-height: $global-control-height;
   }
 
