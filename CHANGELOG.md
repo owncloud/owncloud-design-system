@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.4...master
+
+## Summary
+
+* Bugfix - Made scrollbar styles consistent: [#660](https://github.com/owncloud/owncloud-design-system/pull/660)
+
+## Details
+
+* Bugfix - Made scrollbar styles consistent: [#660](https://github.com/owncloud/owncloud-design-system/pull/660)
+
+   Scrollbar styles are now more consistent between Chrome and Firefox.
+
+   https://github.com/owncloud/owncloud-design-system/pull/660
+
 # Changelog for [1.0.4] (2020-02-26)
 
 The following sections list the changes in ownCloud Design System 1.0.4.
