@@ -9,8 +9,14 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 
+  scrollbar-width: thin;
+
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent;
   }
 
   &::-webkit-scrollbar-track {

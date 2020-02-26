@@ -39,7 +39,8 @@ export default {
 <docs>
 ```jsx
 <template>
-  <div style="background-color: white; overflow: auto;"><!-- top container to fill the whole screen/area -->
+  <!-- top container to fill the whole screen/area, but with scrollbars  -->
+  <div id="oc-content" style="background-color: white; overflow: auto; height: 70vh; ">
     <oc-dialog name="OcDialog" title="Not implemented">
       <template slot="content">
         This feature is not implemented yet.
@@ -202,7 +203,6 @@ export default {
           <div class="uk-width-auto">
             <div class="uk-button-group">
               <oc-button variation="primary" id="_new" icon="add" />
-              <oc-button id="_filter" icon="filter_list" />
             </div>
             <oc-drop toggle="#_new" mode="hover" :options="{pos:'bottom-right'}">
               <oc-nav>
