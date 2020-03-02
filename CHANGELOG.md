@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Made scrollbar styles consistent: [#660](https://github.com/owncloud/owncloud-design-system/pull/660)
+* Bugfix - Removed width class from sidebar menu: [#668](https://github.com/owncloud/owncloud-design-system/issues/668)
 
 ## Details
 
@@ -15,6 +16,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    Scrollbar styles are now more consistent between Chrome and Firefox.
 
    https://github.com/owncloud/owncloud-design-system/pull/660
+
+
+* Bugfix - Removed width class from sidebar menu: [#668](https://github.com/owncloud/owncloud-design-system/issues/668)
+
+   There were different values for width of the sidebar menu and it's left position when hidden.
+   We've removed the width class so that the width and left position are the same and the sidebar
+   menu is no more overlapping when it's state is hidden.
+
+   https://github.com/owncloud/owncloud-design-system/issues/668
+   https://github.com/owncloud/owncloud-design-system/pull/669
 
 # Changelog for [1.0.4] (2020-02-26)
 
