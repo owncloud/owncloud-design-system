@@ -1,6 +1,6 @@
 <template>
-  <div :id="name" class="uk-width-medium">
-    <nav class="uk-offcanvas-bar uk-background-muted uk-width-medium uk-padding-small">
+  <div :id="name">
+    <nav class="uk-offcanvas-bar uk-background-muted uk-padding-small">
       <button class="uk-offcanvas-close" type="button" @click="onClose" uk-close />
       <ul class="oc-main-menu" uk-nav="multiple: true">
         <slot name="default" />
