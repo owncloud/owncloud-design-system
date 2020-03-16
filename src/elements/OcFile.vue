@@ -1,6 +1,6 @@
 <template>
   <span class="oc-file" @click="onClick" role="button">
-    <oc-icon :name="icon" variation="file-type" class="uk-position-center-left" />
+    <oc-icon :name="icon" :url="iconUrl" variation="file-type" class="uk-position-center-left" />
     <span class="oc-file-name" v-text="name" /><span v-if="extension" class="oc-file-extension"
       >.{{ extension }}</span
     >
@@ -16,13 +16,24 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * The icon to be used.
+     * The icon name to be used.
      */
     icon: {
       type: String,
       required: false,
       default: "folder",
     },
+    /**
+     * Icon URL.
+     *
+     * Has higher priority than icon name.
+     * In case of failure it will fall back to the icon name if set.
+     */
+    iconUrl: {
+      type: String,
+      required: false
+    },
+
     /**
      * The name of a file.
      * Please note that the name shall not hold the extension
@@ -76,6 +87,17 @@ export default {
           <oc-file icon="archive" name='package' extension="tar.gz" />
         </li>
         <li>
+        </li>
+      </ul>
+      <h3 class="uk-heading-divider">
+        Icon URL examples
+      </h3>
+      <ul class="uk-list">
+        <li>
+          <oc-file icon="image" iconUrl="examples/lorem.png" name="file with preview" extension="jpg" />
+        </li>
+        <li>
+          <oc-file icon="image" iconUrl="examples/notfound.png" name="file with preview that failed to load" extension="jpg" />
         </li>
       </ul>
       <h3 class="uk-heading-divider">
