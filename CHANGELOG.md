@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Made scrollbar styles consistent: [#660](https://github.com/owncloud/owncloud-design-system/pull/660)
 * Bugfix - Removed width class from sidebar menu: [#668](https://github.com/owncloud/owncloud-design-system/issues/668)
+* Enhancement - Added iconUrl to oc-file element: [#678](https://github.com/owncloud/owncloud-design-system/pull/678)
 
 ## Details
 
@@ -26,6 +27,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/668
    https://github.com/owncloud/owncloud-design-system/pull/669
+
+
+* Enhancement - Added iconUrl to oc-file element: [#678](https://github.com/owncloud/owncloud-design-system/pull/678)
+
+   The oc-file element now supports passing an arbitrary URL to be displayed as a file thumbnail.
+   It will fall back to the icon name in case the thumbnail could not be loaded.
+
+   https://github.com/owncloud/owncloud-design-system/pull/678
 
 # Changelog for [1.0.4] (2020-02-26)
 
