@@ -87,18 +87,7 @@ export default {
     }
   },
   mounted() {
-    if (this.url !== undefined) {
-      this.iconUrl = this.url
-      const img = new Image()
-      img.addEventListener("load", () => {
-        this.iconNotLoaded = false
-      })
-      img.addEventListener("error", () => {
-        this.$emit("error")
-        this.iconUrl = ""
-      })
-      img.src = this.iconUrl
-    }
+    this.loadImage()
   },
   methods: {
     prefix(string) {
@@ -107,6 +96,20 @@ export default {
     $_ocIcon_click() {
       this.$emit("click")
     },
+    loadImage () {
+      this.iconUrl = this.url
+      if (this.url !== undefined) {
+        const img = new Image()
+        img.addEventListener("load", () => {
+          this.iconNotLoaded = false
+        })
+        img.addEventListener("error", () => {
+          this.$emit("error")
+          this.iconUrl = ""
+        })
+        img.src = this.iconUrl
+      }
+    }
   },
   computed: {
     $_ocIcon_type() {
@@ -116,6 +119,11 @@ export default {
       return req("./" + this.name + ".svg")
     },
   },
+  watch: {
+    url () {
+      this.loadImage()
+    }
+  }
 }
 </script>
 <style lang="scss"></style>
