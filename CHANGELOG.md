@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.1.0...master
+
+## Summary
+
+* Bugfix - Fixed oc-icon to reload image when url changes: [#681](https://github.com/owncloud/owncloud-design-system/pull/681)
+
+## Details
+
+* Bugfix - Fixed oc-icon to reload image when url changes: [#681](https://github.com/owncloud/owncloud-design-system/pull/681)
+
+   The oc-icon component will now reload its image whenever the url property has been modified
+
+   https://github.com/owncloud/owncloud-design-system/pull/681
+
 # Changelog for [1.1.0] (2020-03-17)
 
 The following sections list the changes in ownCloud Design System 1.1.0.
