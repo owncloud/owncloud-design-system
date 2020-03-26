@@ -1,18 +1,25 @@
 <template>
-  <input
-    :class="{ 'oc-text-input': !stopClassPropagation }"
-    :type="type"
-    :value="value"
-    :placeholder="placeholder"
-    :aria-label="label"
-    ref="input"
-    @input="$_ocTextInput_onInput($event.target.value)"
-    @focus="
-      $event.target.select()
-      $_ocTextInput_onFocus($event.target.value)
-    "
-    @keydown="$_ocTextInput_onKeyDown($event)"
-  />
+  <div>
+    <input
+      :aria-label="label"
+      :class="{
+        'oc-text-input': !stopClassPropagation,
+        'oc-text-input-warning': !!warningMessage,
+        'oc-text-input-danger': !!errorMessage,
+      }"
+      :placeholder="placeholder"
+      :type="type"
+      :value="value"
+      @input="$_ocTextInput_onInput($event.target.value)"
+      @focus="$_ocTextInput_onFocus($event.target)"
+      @keydown="$_ocTextInput_onKeyDown($event)"
+      ref="input"
+    />
+    <div class="oc-text-input-message" v-if="$_ocTextInput_showMessageLine">
+      <span v-if="!!warningMessage" class="oc-text-input-warning">{{ warningMessage }}</span>
+      <span v-if="!!errorMessage" class="oc-text-input-danger">{{ errorMessage }}</span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -69,6 +76,33 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * A warning message which is shown below the input.
+     */
+    warningMessage: {
+      type: String,
+      default: null,
+    },
+    /**
+     * An error message which is shown below the input.
+     */
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    /**
+     * Whether or not vertical space below the input should be reserved for a one line message,
+     * so that content actually appearing there doesn't shift the layout.
+     */
+    fixMessageLine: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    $_ocTextInput_showMessageLine() {
+      return this.fixMessageLine || !!this.warningMessage || !!this.errorMessage
+    },
   },
   methods: {
     /**
@@ -85,12 +119,13 @@ export default {
        **/
       this.$emit("input", value)
     },
-    $_ocTextInput_onFocus(value) {
+    $_ocTextInput_onFocus(target) {
+      target.select()
       /**
        * Focus event - emitted as soon as the input field is focused
        * @type {event}
        **/
-      this.$emit("focus", value)
+      this.$emit("focus", target.value)
     },
     $_ocTextInput_onKeyDown(e) {
       if (e.keyCode === 13) {
@@ -110,6 +145,7 @@ export default {
   },
 }
 </script>
+
 <docs>
     ```jsx
     <template>
@@ -134,14 +170,43 @@ export default {
             <oc-text-input label="Focus field" placeholder="Will you focus on me?" ref="inputForFocus"/>
             <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
             <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
+            <h3 class="uk-heading-divider">
+                Messages
+            </h3>
+            <oc-text-input
+                    label="Input with error and warning messages with reserved space below"
+                    class="uk-margin-small-bottom"
+                    placeholder="Text produces error on empty value and warning on trailing whitespace"
+                    v-model="valueForMessages"
+                    :error-message="errorMessage"
+                    :warning-message="warningMessage"
+                    :fix-message-line="true"
+            />
+            <oc-text-input
+                    label="Input with error and warning messages without reserved space below"
+                    class="uk-margin-small-bottom"
+                    placeholder="Text produces error on empty value and warning on trailing whitespace"
+                    v-model="valueForMessages"
+                    :error-message="errorMessage"
+                    :warning-message="warningMessage"
+            />
         </section>
     </template>
     <script>
         export default {
             data: () => {
                 return {
-                    inputValue: 'initial'
+                    inputValue: 'initial',
+                    valueForMessages: '',
                 }
+            },
+            computed: {
+              errorMessage() {
+                return this.valueForMessages.length === 0 ? 'Value is required.' : ''
+              },
+              warningMessage() {
+                return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
+              }
             },
             methods: {
                 _focus() {
