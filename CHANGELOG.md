@@ -1,3 +1,35 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.1.1...master
+
+## Summary
+
+* Bugfix - Fixed oc-text-input not appearing in generated docs: [#688](https://github.com/owncloud/owncloud-design-system/issues/688)
+* Change - Render error and warning messages in oc-text-input: [#689](https://github.com/owncloud/owncloud-design-system/issues/689)
+
+## Details
+
+* Bugfix - Fixed oc-text-input not appearing in generated docs: [#688](https://github.com/owncloud/owncloud-design-system/issues/688)
+
+   The oc-text-input element didn't appear in the generated docs because of a compilation
+   warning.
+
+   https://github.com/owncloud/owncloud-design-system/issues/688
+   https://github.com/owncloud/owncloud-design-system/pull/690
+
+
+* Change - Render error and warning messages in oc-text-input: [#689](https://github.com/owncloud/owncloud-design-system/issues/689)
+
+   The oc-text-input element now has properties for rendering a warning or error message below
+   the input field. The input field border receives the respective matching color as well. Also
+   it's possible to reserve a fixed vertical space below the input element, so that an appearing
+   message doesn't break the layout around the input element.
+
+   https://github.com/owncloud/owncloud-design-system/issues/689
+   https://github.com/owncloud/owncloud-design-system/pull/690
+
 # Changelog for [1.1.1] (2020-03-18)
 
 The following sections list the changes in ownCloud Design System 1.1.1.
