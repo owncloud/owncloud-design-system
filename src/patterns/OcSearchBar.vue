@@ -217,14 +217,14 @@ export default {
         Search example with visually hidden button
       </h3>
       <div class="uk-margin">
-        <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" button-hidden="true" />
+        <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" :button-hidden="true" />
       </div>
     </section>
     <section>
       <h3 class="uk-heading-divider">
           Filter examples
       </h3>
-      <oc-search-bar isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
     </section>
   </div>
