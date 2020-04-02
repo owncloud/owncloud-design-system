@@ -1,11 +1,10 @@
 <template>
-  <div>
     <input
       :aria-label="label"
       :class="{
         'oc-text-input': !stopClassPropagation,
-        'oc-text-input-warning': !!warningMessage,
-        'oc-text-input-danger': !!errorMessage,
+        'oc-text-input-warning': hasWarning,
+        'oc-text-input-danger': hasError,
       }"
       :placeholder="placeholder"
       :type="type"
@@ -15,11 +14,6 @@
       @keydown="$_ocTextInput_onKeyDown($event)"
       ref="input"
     />
-    <div class="oc-text-input-message" v-if="$_ocTextInput_showMessageLine">
-      <span v-if="!!warningMessage" class="oc-text-input-warning">{{ warningMessage }}</span>
-      <span v-if="!!errorMessage" class="oc-text-input-danger">{{ errorMessage }}</span>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -77,32 +71,19 @@ export default {
       default: false,
     },
     /**
-     * A warning message which is shown below the input.
+     * Whether or not to highlight a warning state.
      */
-    warningMessage: {
-      type: String,
-      default: null,
-    },
-    /**
-     * An error message which is shown below the input.
-     */
-    errorMessage: {
-      type: String,
-      default: null,
-    },
-    /**
-     * Whether or not vertical space below the input should be reserved for a one line message,
-     * so that content actually appearing there doesn't shift the layout.
-     */
-    fixMessageLine: {
+    hasWarning: {
       type: Boolean,
       default: false,
     },
-  },
-  computed: {
-    $_ocTextInput_showMessageLine() {
-      return this.fixMessageLine || !!this.warningMessage || !!this.errorMessage
-    },
+    /**
+     * Whether or not to highlight an error state.
+     */
+    hasError: {
+      type: Boolean,
+      default: false,
+    }
   },
   methods: {
     /**
@@ -171,24 +152,15 @@ export default {
             <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
             <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
             <h3 class="uk-heading-divider">
-                Messages
+                States
             </h3>
             <oc-text-input
-                    label="Input with error and warning messages with reserved space below"
-                    class="uk-margin-small-bottom"
-                    placeholder="Text produces error on empty value and warning on trailing whitespace"
+                    label="Input with highlighted error and warning state"
+                    placeholder="Text has error state on empty value and warning state on trailing whitespace"
                     v-model="valueForMessages"
-                    :error-message="errorMessage"
-                    :warning-message="warningMessage"
+                    :has-error="hasError"
+                    :has-warning="hasWarning"
                     :fix-message-line="true"
-            />
-            <oc-text-input
-                    label="Input with error and warning messages without reserved space below"
-                    class="uk-margin-small-bottom"
-                    placeholder="Text produces error on empty value and warning on trailing whitespace"
-                    v-model="valueForMessages"
-                    :error-message="errorMessage"
-                    :warning-message="warningMessage"
             />
         </section>
     </template>
@@ -201,11 +173,11 @@ export default {
                 }
             },
             computed: {
-              errorMessage() {
-                return this.valueForMessages.length === 0 ? 'Value is required.' : ''
+              hasError() {
+                return this.valueForMessages.length === 0
               },
-              warningMessage() {
-                return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
+              hasWarning() {
+                return this.valueForMessages.endsWith(' ')
               }
             },
             methods: {

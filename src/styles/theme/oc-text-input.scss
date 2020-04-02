@@ -24,9 +24,3 @@
   color: $danger-background !important;
   border-color: $danger-background !important;
 }
-.oc-text-input-message {
-  @extend .uk-flex;
-  @extend .uk-flex-middle;
-  @extend .uk-margin-xsmall-top;
-  min-height: $global-font-size * 1.5;
-}
