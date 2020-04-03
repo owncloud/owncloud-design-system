@@ -10,6 +10,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const SafeParser = require("postcss-safe-parser")
+const nodeExternals = require("webpack-node-externals")
 
 const env = require("../config/prod.env")
 
@@ -32,6 +33,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     library: "[name]",
     libraryTarget: config.system.libraryTarget,
   },
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
   performance: {
     hints: config.system.performanceHints,
   },
