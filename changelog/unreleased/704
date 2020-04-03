@@ -1,0 +1,8 @@
+Bugfix: Reverted oc-text-input and added oc-form-input instead
+
+As the `oc-text-input` component should stay as simple as possible, being only an input element,
+we have extracted the validation message features into a new pattern component, wrapping
+`oc-text-input` and a message. All properties and listeners applied to `oc-form-input` will be
+forwarded into the internally used `oc-text-input` component.
+
+https://github.com/owncloud/owncloud-design-system/pull/704
