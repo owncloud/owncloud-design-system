@@ -1,0 +1,18 @@
+//
+// Component: OC Form Input
+//
+// ========================================================================
+
+.oc-form-input-message {
+  @extend .uk-flex;
+  @extend .uk-flex-middle;
+  @extend .uk-margin-xsmall-top;
+  min-height: $global-font-size * 1.5;
+
+  .oc-form-input-warning {
+    color: $warning-background !important;
+  }
+  .oc-form-input-danger {
+    color: $danger-background !important;
+  }
+}
