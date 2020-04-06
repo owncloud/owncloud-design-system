@@ -10,11 +10,17 @@
     z-index: 0;
   }
 
-  &-input {
+  &-input > .oc-text-input {
+    padding-right: $medium-gutter;
+
     &::-ms-clear,
     &::-ms-reveal {
       display: none;
     }
+  }
+
+  &-input-icon > .oc-text-input {
+    padding-left: $medium-gutter;
   }
 
   &-clear {
@@ -22,9 +28,18 @@
   }
 
   &-small {
-    .oc-search-input {
-      @extend .uk-form-small;
-    }
+      .oc-search-input > .oc-text-input {
+        @extend .uk-form-small;
+  
+        // Overrride default padding of small from
+        // TODO: Remove `!important` after we get rid of UIkit
+        padding-right: $medium-gutter !important;
+      }
+
+      .oc-search-input-icon > .oc-text-input {
+        // TODO: Remove `!important` after we get rid of UIkit
+        padding-left: $medium-gutter !important;
+      }
 
     .oc-button {
       @extend .uk-button-small;

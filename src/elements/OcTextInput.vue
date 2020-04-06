@@ -1,6 +1,7 @@
 <template>
   <div>
     <input
+      v-bind="$attrs"
       :aria-label="label"
       :class="{
         'oc-text-input': !stopClassPropagation,
@@ -10,14 +11,15 @@
       :placeholder="placeholder"
       :type="type"
       :value="value"
+      v-on="$_ocTextInput_listeners"
       @input="$_ocTextInput_onInput($event.target.value)"
       @focus="$_ocTextInput_onFocus($event.target)"
       @keydown="$_ocTextInput_onKeyDown($event)"
       ref="input"
     />
     <div class="oc-text-input-message" v-if="$_ocTextInput_showMessageLine">
-      <span v-if="!!warningMessage" class="oc-text-input-warning">{{ warningMessage }}</span>
-      <span v-if="!!errorMessage" class="oc-text-input-danger">{{ errorMessage }}</span>
+      <span v-if="!!warningMessage" class="oc-text-input-warning" v-text="warningMessage" />
+      <span v-if="!!errorMessage" class="oc-text-input-danger" v-text="errorMessage" />
     </div>
   </div>
 </template>
@@ -35,6 +37,7 @@ export default {
   name: "oc-text-input",
   status: "review",
   release: "1.0.0",
+  inheritAttrs: false,
   props: {
     /**
      * The type of the form input field.
@@ -97,12 +100,19 @@ export default {
     fixMessageLine: {
       type: Boolean,
       default: false,
-    },
+    }
   },
   computed: {
     $_ocTextInput_showMessageLine() {
       return this.fixMessageLine || !!this.warningMessage || !!this.errorMessage
     },
+    $_ocTextInput_listeners() {
+      const listeners = this.$listeners
+      delete(listeners["input"])
+      delete(listeners["focus"])
+      delete(listeners["keydown"])
+      return listeners
+    }
   },
   methods: {
     /**
