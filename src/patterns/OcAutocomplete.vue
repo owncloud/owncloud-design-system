@@ -76,7 +76,7 @@
 import OcSpinner from "../elements/OcSpinner"
 
 import UiKit from "uikit"
-import { uniqueId as _uniqueId } from "lodash"
+import { uniqueId as _uniqueId } from "../utils/uniqueId"
 
 /**
  * The autocomplete component is used for searching in bigger list of data (usually involves remote calls over the network)

@@ -14,7 +14,7 @@
 
 <script>
 import designTokens from "@/assets/tokens/tokens.raw.json"
-import orderBy from "lodash/orderBy"
+import orderBy from "../../utils/orderBy"
 
 /**
  * This typographic scale makes it easier to achieve visual harmony in the
