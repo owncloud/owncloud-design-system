@@ -1,3 +1,31 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.0...master
+
+## Summary
+
+* Bugfix - Correct layout of search bar: [#706](https://github.com/owncloud/owncloud-design-system/pull/706)
+* Enhancement - Bind attributes and events to input in oc-text-input: [#706](https://github.com/owncloud/owncloud-design-system/pull/706)
+
+## Details
+
+* Bugfix - Correct layout of search bar: [#706](https://github.com/owncloud/owncloud-design-system/pull/706)
+
+   We've fixed layout of search bar which was broken after we introduced error message in
+   oc-text-input.
+
+   https://github.com/owncloud/owncloud-design-system/pull/706
+
+
+* Enhancement - Bind attributes and events to input in oc-text-input: [#706](https://github.com/owncloud/owncloud-design-system/pull/706)
+
+   We've binded attributes and events to input in oc-text-input so that they are passed properly
+   instead of passing them to the root element.
+
+   https://github.com/owncloud/owncloud-design-system/pull/706
+
 # Changelog for [1.2.0] (2020-03-27)
 
 The following sections list the changes in ownCloud Design System 1.2.0.
