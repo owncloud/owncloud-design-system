@@ -1,34 +1,32 @@
 <template>
-  <div
+  <oc-grid
+    flex
     :role="isFilter ? undefined : 'search'"
-    uk-grid
     class="oc-search"
     :class="{ 'oc-search-small': small }"
   >
-    <div class="uk-width-expand">
-      <div class="uk-inline uk-width-1-1">
-        <span v-if="icon" class="uk-form-icon">
-          <oc-icon v-show="!loading" :name="icon" />
-          <div v-show="loading" :uk-spinner="spinnerRatio" aria-hidden></div>
-        </span>
-        <oc-text-input
-          class="oc-search-input"
-          @input="onType"
-          @keydown.enter="onSearch"
-          :placeholder="placeholder"
-          :label="label"
-          :value="searchQuery"
-          :disabled="loading"
-        />
-        <div
-          uk-close
-          v-if="query.length > 0"
-          @click="onClear"
-          class="oc-search-clear uk-position-small uk-position-center-right"
-        />
-      </div>
+    <div class="uk-width-expand uk-position-relative">
+      <span v-if="icon" class="uk-form-icon">
+        <oc-icon v-show="!loading" :name="icon" />
+        <div v-show="loading" :uk-spinner="spinnerRatio" aria-hidden></div>
+      </span>
+      <oc-text-input
+        :class="[{ 'oc-search-input-icon' : icon }, 'oc-search-input']"
+        @input="onType"
+        @keydown.enter="onSearch"
+        :placeholder="placeholder"
+        :label="label"
+        :value="searchQuery"
+        :disabled="loading"
+      />
+      <div
+        uk-close
+        v-if="query.length > 0"
+        @click="onClear"
+        class="oc-search-clear uk-position-small uk-position-center-right"
+      />
     </div>
-    <div :class="[{ 'oc-visually-hidden': buttonHidden }, 'uk-width-auto']">
+    <div :class="{ 'oc-visually-hidden': buttonHidden }">
       <oc-button
         class="oc-search-button"
         :class="{ 'uk-button-small': small }"
@@ -38,7 +36,7 @@
         >{{ buttonLabel }}</oc-button
       >
     </div>
-  </div>
+  </oc-grid>
 </template>
 <script>
 /**
@@ -217,14 +215,14 @@ export default {
         Search example with visually hidden button
       </h3>
       <div class="uk-margin">
-        <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" button-hidden="true" />
+        <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" :button-hidden="true" />
       </div>
     </section>
     <section>
       <h3 class="uk-heading-divider">
           Filter examples
       </h3>
-      <oc-search-bar isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="uk-margin">Filter query: {{ filterQuery }}</div>
     </section>
   </div>
