@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from "@vue/test-utils"
-import filterSearch from "docs/utils/filterSearch.js"
+import filterSearch from "./filterSearch.js"
 
 // create an extended `Vue` constructor
 const localVue = createLocalVue()

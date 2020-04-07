@@ -1,7 +1,7 @@
 const path = require("path")
 
 module.exports = {
-  rootDir: path.resolve(__dirname, "../../"),
+  rootDir: path.resolve(__dirname, "./"),
   modulePaths: ["<rootDir>"],
   moduleFileExtensions: ["js", "json", "vue"],
   moduleNameMapper: {
@@ -12,11 +12,12 @@ module.exports = {
     ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
   },
   snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
-  setupFiles: ["<rootDir>/test/unit/setup"],
-  coverageDirectory: "<rootDir>/test/unit/coverage",
+  coverageDirectory: "<rootDir>/coverage",
   collectCoverageFrom: [
-    "<rootDir>/src/ExampleComponent.js",
-    "<rootDir>/src/util/**/*.{js,vue}",
+    "<rootDir>/src/elements/**/*.vue",
+    "<rootDir>/src/patterns/**/*.vue",
+    "<rootDir>/src/templates/**/*.vue",
+    "<rootDir>/src/utils/**/*.{js,vue}",
     "<rootDir>/docs/**/*.{js,vue}",
     "!<rootDir>/src/main.js",
     "!<rootDir>/src/router/index.js",

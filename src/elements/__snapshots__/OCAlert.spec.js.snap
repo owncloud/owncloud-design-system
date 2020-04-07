@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OCAlert displays correct message 1`] = `
+<div uk-alert="" class="oc-alert oc-alert"><a uk-close="" class="uk-alert-close"></a>
+  <p class="slot-message">Test message</p>
+</div>
+`;
+
+exports[`OCAlert hides the close button if disabled 1`] = `
+<div uk-alert="" class="oc-alert oc-alert">
+  <!---->
+  <p class="slot-message">Test message</p>
+</div>
+`;
+
+exports[`OCAlert sets correct variation 1`] = `
+<div uk-alert="" class="oc-alert oc-alert uk-alert-primary"><a uk-close="" class="uk-alert-close"></a>
+  <p class="slot-message">Test message</p>
+</div>
+`;

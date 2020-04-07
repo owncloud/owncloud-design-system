@@ -1,6 +1,6 @@
 <template>
-  <div v-on:hide="onClose" class="oc-alert" :class="_class" uk-alert>
-    <a v-if="!noClose" class="uk-alert-close" uk-close></a>
+  <div class="oc-alert" :class="_class" uk-alert>
+    <a v-if="!noClose" class="uk-alert-close" uk-close @click="$_ocAlert_onClose" />
     <slot />
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
     },
   },
   methods: {
-    onClose(val) {
+    $_ocAlert_onClose(val) {
       /**
        * The user closed / hid the alert
        * @event close

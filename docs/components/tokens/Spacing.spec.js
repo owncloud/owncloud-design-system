@@ -1,5 +1,5 @@
 import Vue from "vue"
-import Spacing from "docs/components/tokens/Spacing.vue"
+import Spacing from "./Spacing.vue"
 
 const Constructor = Vue.extend(Spacing)
 const vm = new Constructor().$mount()
