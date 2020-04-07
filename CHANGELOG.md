@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.1...master
+
+## Summary
+
+* Bugfix - Fix oc-autocomplete: [#710](https://github.com/owncloud/owncloud-design-system/pull/710)
+
+## Details
+
+* Bugfix - Fix oc-autocomplete: [#710](https://github.com/owncloud/owncloud-design-system/pull/710)
+
+   We fixed a bug in OcAutocomplete which was introduced with the removal of lodash as a
+   dependency.
+
+   https://github.com/owncloud/owncloud-design-system/pull/710
+
 # Changelog for [1.2.1] (2020-04-07)
 
 The following sections list the changes in ownCloud Design System 1.2.1.
