@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.2.2] (2020-04-08)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.2.2.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.1...master
+[1.2.2]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.1...v1.2.2
 
 ## Summary
 
