@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OcModal Matches snapshot 1`] = `
+<div class="oc-modal-background">
+  <div class="oc-modal oc-modal-info">
+    <div class="oc-modal-title">
+      <oc-icon-stub name="info" arialabel="icon" type="span" size="small" variation="system"></oc-icon-stub> <span>Example title</span>
+    </div>
+    <div class="oc-modal-body">
+      <p class="oc-modal-body-message">Example message</p>
+      <div class="oc-modal-body-actions">
+        <oc-button-stub type="button" variation="default">Cancel</oc-button-stub>
+        <oc-button-stub type="button" variation="primary">Confirm</oc-button-stub>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OcModal hides icon if not specified 1`] = `
+<div class="oc-modal-background">
+  <div class="oc-modal oc-modal-info">
+    <div class="oc-modal-title">
+      <!----> <span>Example title</span></div>
+    <div class="oc-modal-body">
+      <p class="oc-modal-body-message">Example message</p>
+      <div class="oc-modal-body-actions">
+        <oc-button-stub type="button" variation="default">Cancel</oc-button-stub>
+        <oc-button-stub type="button" variation="primary">Confirm</oc-button-stub>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OcModal overrides props message with slot 1`] = `
+<div class="oc-modal-background">
+  <div class="oc-modal oc-modal-info">
+    <div class="oc-modal-title">
+      <!----> <span>Example title</span></div>
+    <div class="oc-modal-body">
+      <div class="oc-modal-body-message">
+        <p>Slot message</p>
+      </div>
+      <div class="oc-modal-body-actions">
+        <oc-button-stub type="button" variation="default">Cancel</oc-button-stub>
+        <oc-button-stub type="button" variation="primary">Confirm</oc-button-stub>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -11,6 +11,7 @@ module.exports = {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
     ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
   },
+  setupFiles: ["./jest.setup.js"],
   snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
   coverageDirectory: "<rootDir>/coverage",
   collectCoverageFrom: [

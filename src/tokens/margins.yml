@@ -11,7 +11,7 @@ props:
   margin:
     value: "20px"
   medium-margin:
-    value: "40px"
+    value: "30px"
   large-margin:
     value: "70px"
   xlarge-margin:
