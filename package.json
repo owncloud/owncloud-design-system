@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --config ./build/webpack.dev.conf.js",
     "start": "npm-run-all --parallel styleguide theo:onchange theo dev",
-    "unit": "jest --config ./test/unit/jest.conf.js --coverage",
     "build:system": "npm-run-all theo node:build:system",
     "build:docs": "npm-run-all theo styleguide:build",
     "lint": "eslint '**/*.{js,vue}' --cache",
@@ -22,7 +21,7 @@
     "styleguide:build": "vue-styleguidist build --config ./config/docs.config.js",
     "theo": "theo ./src/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/assets/tokens",
     "theo:onchange": "onchange \"./src/tokens/*.yml\" -- npm run theo",
-    "test": "npm-run-all theo unit"
+    "test": "jest --config ./jest.conf.js --coverage"
   },
   "husky": {
     "hooks": {
@@ -158,7 +157,7 @@
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^1.0.0",
     "husky": "^4.2.3",
-    "jest": "^25.1.0",
+    "jest": "^25.2.4",
     "jest-haste-map": "^25.1.0",
     "jest-resolve": "^25.1.0",
     "jest-serializer-vue": "^2.0.2",

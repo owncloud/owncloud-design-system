@@ -1,5 +1,5 @@
 import Vue from "vue"
-import Color from "docs/components/tokens/Color.vue"
+import Color from "./Color.vue"
 
 const Constructor = Vue.extend(Color)
 const vm = new Constructor().$mount()

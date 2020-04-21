@@ -1,5 +1,5 @@
 import Vue from "vue"
-import FontSize from "docs/components/tokens/FontSize.vue"
+import FontSize from "./FontSize.vue"
 
 const Constructor = Vue.extend(FontSize)
 const vm = new Constructor().$mount()

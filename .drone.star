@@ -29,6 +29,33 @@ def testing(ctx):
                     'yarn lint',
                 ]
             },
+            {
+                'name': 'build docs',
+                'image': 'webhippie/nodejs:latest',
+                'pull': 'always',
+                'commands': [
+                    'yarn install',
+                    'yarn build:docs',
+                ]
+            },
+            {
+                'name': 'build system',
+                'image': 'webhippie/nodejs:latest',
+                'pull': 'always',
+                'commands': [
+                    'yarn install',
+                    'yarn build:system',
+                ]
+            },
+            {
+                'name': 'unit tests',
+                'image': 'webhippie/nodejs:latest',
+                'pull': 'always',
+                'commands': [
+                    'yarn install',
+                    'yarn test',
+                ]
+            },
         ],
         'trigger': {
             'ref': [
@@ -43,7 +70,7 @@ def build(ctx):
     return {
         'kind': 'pipeline',
         'type': 'docker',
-        'name': 'build',
+        'name': 'build and publish',
         'platform': {
             'os': 'linux',
             'arch': 'amd64',
@@ -56,7 +83,7 @@ def build(ctx):
                 'commands': [
                     'yarn install',
                     'yarn build:docs',
-                ]
+                ],
             },
             {
                 'name': 'build-system',
@@ -65,7 +92,7 @@ def build(ctx):
                 'commands': [
                     'yarn install',
                     'yarn build:system',
-                ]
+                ],
             },
             {
                 'name': 'publish-docs',
@@ -79,11 +106,6 @@ def build(ctx):
                         'from_secret': 'github_token',
                     },
                     'pages_directory': 'dist/docs',
-                },
-                'when': {
-                  'ref': [
-                      'refs/tags/**',
-                  ],
                 },
             },
             {
@@ -101,11 +123,6 @@ def build(ctx):
                         'from_secret': 'npm_token',
                     },
                 },
-                'when': {
-                  'ref': [
-                      'refs/tags/**',
-                  ],
-                },
             },
             {
                 'name': 'changelog',
@@ -115,11 +132,6 @@ def build(ctx):
                     'mkdir tmp',
                     'calens --version %s -o tmp/CHANGELOG.md' % ctx.build.ref.replace("refs/tags/v", "").split("-")[0],
                 ],
-                'when': {
-                  'ref': [
-                      'refs/tags/**',
-                  ],
-                },
             },
             {
                 'name': 'release',
@@ -135,18 +147,11 @@ def build(ctx):
                 'overwrite': True,
                 'prerelease': len(ctx.build.ref.split("-")) > 1,
                 },
-                'when': {
-                  'ref': [
-                      'refs/tags/**',
-                  ],
-                },
             },
         ],
         'trigger': {
             'ref': [
-                'refs/heads/master',
                 'refs/tags/**',
-                'refs/pull/**',
             ],
         },
         'depends_on': [
