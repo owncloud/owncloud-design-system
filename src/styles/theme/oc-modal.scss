@@ -1,0 +1,65 @@
+.oc-modal {
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 4px rgba(14, 30, 37, .25);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &-background {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize($primary-background, .8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-info {
+    border-top: 10px solid $color;
+  }
+
+  &-danger {
+    border-top: 10px solid $danger-background;
+  }
+
+  &-title {
+    display: flex;
+    flex-flow: row wrap;
+    padding: $small-gutter $gutter;
+    background-color: $invers-color;
+    font-weight: bold;
+    align-items: center;
+
+    & > .oc-icon {
+      margin-right: $small-margin;
+    }
+  }
+
+  &-danger > &-title {
+    color: $danger-background;
+  }
+
+  &-body {
+    padding: $gutter;
+    background-color: $muted-background;
+    color: $color;
+
+    &-message {
+      margin-bottom: $medium-margin;
+    }
+
+    &-actions {
+      text-align: right;
+
+      & .oc-button {
+        border-radius: 4px;
+
+        &.uk-button-default {
+          background-color: $invers-color;
+          color: $color;
+        }
+      }
+    }
+  }
+}

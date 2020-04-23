@@ -17,7 +17,7 @@
 </template>
 
 <script>
-const req = require.context("@/assets/icons/", true, /^\.\/.*\.svg$/)
+const req = require.context("../assets/icons/", true, /^\.\/.*\.svg$/)
 /**
  * Icons are used to visually communicate core parts of the product and
  * available actions. They can act as wayfinding tools to help users more
