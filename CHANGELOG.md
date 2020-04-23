@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.2...master
+
+## Summary
+
+* Enhancement - Added the modal component: [#723](https://github.com/owncloud/owncloud-design-system/pull/723)
+
+## Details
+
+* Enhancement - Added the modal component: [#723](https://github.com/owncloud/owncloud-design-system/pull/723)
+
+   We've added the modal component together with a basic documentation.
+
+   https://github.com/owncloud/owncloud-design-system/pull/723
+
 # Changelog for [1.2.2] (2020-04-08)
 
 The following sections list the changes in ownCloud Design System 1.2.2.
