@@ -361,8 +361,8 @@
     "medium-margin": {
       "type": "number",
       "category": "space",
-      "value": "40px",
-      "originalValue": "40px",
+      "value": "30px",
+      "originalValue": "30px",
       "name": "medium-margin"
     },
     "large-margin": {
@@ -389,15 +389,15 @@
     "gutter": {
       "type": "number",
       "category": "space",
-      "value": "30px",
-      "originalValue": "30px",
+      "value": "20px",
+      "originalValue": "20px",
       "name": "gutter"
     },
     "medium-gutter": {
       "type": "number",
       "category": "space",
-      "value": "40px",
-      "originalValue": "40px",
+      "value": "30px",
+      "originalValue": "30px",
       "name": "medium-gutter"
     },
     "large-gutter": {
