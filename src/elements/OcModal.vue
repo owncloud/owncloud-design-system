@@ -56,6 +56,8 @@ import OcIcon from "./OcIcon.vue"
  */
 export default {
   name: "oc-modal",
+  status: "ready",
+  release: "1.3.0",
 
   components: {
     OcButton,
