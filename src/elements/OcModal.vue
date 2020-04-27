@@ -17,6 +17,20 @@
         >
           <slot name="content" />
         </div>
+        <oc-text-input
+          v-else-if="hasInput"
+          key="modal-input"
+          ref="ocModalInput"
+          class="oc-modal-body-input"
+          v-model="inputValue"
+          :error-message="inputError"
+          :label="inputLabel"
+          :placeholder="inputPlaceholder"
+          :disabled="inputDisabled"
+          :fix-message-line="true"
+          @keydown="$_ocModal_input_type"
+          @change="$_ocModal_confirm"
+        />
         <p
           v-else
           key="modal-message"
@@ -25,14 +39,16 @@
         />
         <div class="oc-modal-body-actions">
           <oc-button
+            class="oc-modal-body-actions-cancel"
             @click="$_ocModal_buttonCancel_click"
             v-text="buttonCancelText"
           />
           <oc-button
+            class="oc-modal-body-actions-confirm"
             :variation="$_ocModal_buttonConfirm_variation"
             :disabled="buttonConfirmDisabled"
             v-text="buttonConfirmText"
-            @click="$_ocModal_buttonConfirm_click"
+            @click="$_ocModal_confirm"
           />
         </div>
       </div>
@@ -43,6 +59,7 @@
 <script>
 import OcButton from "./OcButton.vue"
 import OcIcon from "./OcIcon.vue"
+import OcTextInput from "./OcTextInput.vue"
 
 /**
  * Modals are generally used to force the user to focus on confirming or completing a single action.
@@ -61,7 +78,8 @@ export default {
 
   components: {
     OcButton,
-    OcIcon
+    OcIcon,
+    OcTextInput
   },
 
   props: {
@@ -121,6 +139,50 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    /**
+     * Asserts whether the modal contains input
+     */
+    hasInput: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    /**
+     * Value of the input
+     */
+    inputValue: {
+      type: String,
+      required: false
+    },
+    /**
+     * Label of the input
+     */
+    inputLabel: {
+      type: String,
+      required: false
+    },
+    /**
+     * Placeholder of the input
+     */
+    inputPlaceholder: {
+      type: String,
+      required: false
+    },
+    /**
+     * Error of the input
+     */
+    inputError: {
+      type: String,
+      required: false
+    },
+    /**
+     * Asserts whether the input is disabled or not
+     */
+    inputDisabled: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -146,17 +208,26 @@ export default {
     $_ocModal_buttonCancel_click() {
       /**
        * The user clicked on the cancel button
-       * @event cancel
        */
       this.$emit("cancel")
     },
 
-    $_ocModal_buttonConfirm_click() {
+    $_ocModal_confirm() {
       /**
-       * The user clicked on the confirm button
-       * @event confirm
+       * The user clicked on the confirm button. If input exists, emits it's value
+       * 
+       * @property {String} inputValue Value of the input
        */
-      this.$emit("confirm")
+      this.$emit("confirm", this.$refs.ocModalInput.value)
+    },
+
+    $_ocModal_input_type() {
+      /**
+       * The user typed into the input
+       * 
+       * @property {String} inputValue Value of the input
+       */
+      this.$emit("type", this.$refs.ocModalInput.value)
     }
   }
 }
@@ -164,53 +235,45 @@ export default {
 
 <docs>
   ```vue
-    <template>
-      <div>
-        <oc-modal
-          icon="info"
-          title="Accept terms of use"
-          message="Do you accept our terms of use?"
-          buttonCancelText="Decline"
-          buttonConfirmText="Accept"
-          class="uk-margin-large-bottom"
-          @cancel="onCancel"
-          @confirm="onConfirm"
+    <oc-modal
+      icon="info"
+      title="Accept terms of use"
+      message="Do you accept our terms of use?"
+      buttonCancelText="Decline"
+      buttonConfirmText="Accept"
+      class="uk-margin-large-bottom"
+    />
+    <oc-modal
+      variation="danger"
+      icon="warning"
+      title="Delete file lorem.txt"
+      message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
+      buttonCancelText="Cancel"
+      buttonConfirmText="Delete"
+      class="uk-margin-large-bottom"
+    />
+    <oc-modal
+      title="Create new folder"
+      buttonCancelText="Cancel"
+      buttonConfirmText="Create"
+      :hasInput="true"
+      inputValue="New folder"
+      inputLabel="Folder name"
+      inputPlaceholder="Enter a folder name"
+      inputError="This name is already taken"
+      :buttonConfirmDisabled="true"
+      class="uk-margin-large-bottom"
+    />
+    <oc-modal
+      title="Rename file lorem.txt"
+      buttonCancelText="Cancel"
+      buttonConfirmText="Rename"
+    >
+      <template v-slot:content>
+        <oc-text-input
+          value="lorem.txt"
         />
-        <oc-modal
-          variation="danger"
-          icon="warning"
-          title="Delete file lorem.txt"
-          message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
-          buttonCancelText="Cancel"
-          buttonConfirmText="Delete"
-          class="uk-margin-large-bottom"
-        />
-        <oc-modal
-          title="Rename file lorem.txt"
-          buttonCancelText="Cancel"
-          buttonConfirmText="Rename"
-          :buttonConfirmDisabled="true"
-        >
-          <template v-slot:content>
-            <oc-text-input
-              value="lorem.txt"
-            />
-          </template>
-        </oc-modal>
-      </div>
-    </template>
-    <script>
-      export default {
-        methods: {
-          onCancel() {
-            alert('Declined')
-          },
-
-          onConfirm() {
-            alert('Accepted')
-          }
-        }
-      }
-    </script>
+      </template>
+    </oc-modal>
   ```
 </docs>

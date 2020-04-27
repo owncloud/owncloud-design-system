@@ -6,6 +6,13 @@ const defaultProps = {
   message: 'Example message'
 }
 
+const inputProps = {
+  title: 'Create new folder',
+  hasInput: true,
+  inputValue: 'New folder',
+  inputLabel: 'Folder name'
+}
+
 describe("OcModal", () => {
   it('displays correct variation', () => {
     const wrapper = shallowMount(Modal, {
@@ -43,7 +50,7 @@ describe("OcModal", () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('Matches snapshot', () => {
+  it('matches snapshot', () => {
     const wrapper = shallowMount(Modal, {
       propsData: {
         ...defaultProps,
@@ -51,6 +58,15 @@ describe("OcModal", () => {
       }
     })
 
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('displays input', () => {
+    const wrapper = shallowMount(Modal, {
+      propsData: inputProps
+    })
+
+    expect(wrapper.findAll('.oc-modal-body-input').length).toBe(1)
     expect(wrapper).toMatchSnapshot()
   })
 })
