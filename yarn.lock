@@ -48,7 +48,7 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.7.5", "@babel/core@^7.8.4":
+"@babel/core@^7.1.0", "@babel/core@^7.7.5", "@babel/core@^7.8.4":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.8.4.tgz#d496799e5c12195b3602d0fddd77294e3e38e80e"
   integrity sha512-0LiLrB2PwrVI+a2/IEskBopDYSd8BCb3rOvH7D5tzoWd696TBEduBvuLVm4Nx6rltrLZqvI3MCalB2K2aVzQjA==
@@ -774,12 +774,19 @@
     pirates "^4.0.0"
     source-map-support "^0.5.16"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.7":
+"@babel/runtime@^7.3.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.7":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
   integrity sha512-neAp3zt80trRVBI1x0azq6c57aNBqYZH8KhMm3TaB7wEI5Q4A2SHfBHE8w9gOhI/lrqxtEbXZgQIrHP+wvSGwQ==
   dependencies:
     regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.7.6":
+  version "7.9.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
+  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+  dependencies:
+    regenerator-runtime "^0.13.4"
 
 "@babel/template@^7.7.4", "@babel/template@^7.8.3":
   version "7.8.3"
@@ -1509,10 +1516,15 @@ acorn@^4.0.4, acorn@~4.0.2:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
   integrity sha1-EFSVrlNh1pe9GVyCUZLhrX8lN4c=
 
-acorn@^6.0.1, acorn@^6.0.7, acorn@^6.1.1, acorn@^6.2.1, acorn@~6.4.0:
+acorn@^6.0.1, acorn@^6.0.7, acorn@^6.1.1, acorn@^6.2.1:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.0.tgz#b659d2ffbafa24baf5db1cdbb2c94a983ecd2784"
   integrity sha512-gac8OEcQ2Li1dxIEWGZzsp2BitJxwkwcOm0zHAJLcPJaVvm58FRnk6RkuLRpU1EujipU2ZFODv2P9DLMfnV8mw==
+
+acorn@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 acorn@^7.1.0:
   version "7.1.0"
@@ -2051,10 +2063,15 @@ ast-types@0.12.4, ast-types@^0.12.2:
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.12.4.tgz#71ce6383800f24efc9a1a3308f3a6e420a0974d1"
   integrity sha512-ky/YVYCbtVAS8TdMIaTiPFHwEpRB5z1hctepJplTr3UW5q8TDrpIMCILyk8pmLxGtn2KCtC/lSn7zOsaI7nzDw==
 
-ast-types@0.13.2, ast-types@^0.13.2, ast-types@~0.13.2:
+ast-types@0.13.2:
   version "0.13.2"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.13.2.tgz#df39b677a911a83f3a049644fb74fdded23cea48"
   integrity sha512-uWMHxJxtfj/1oZClOxDEV1sQ1HCDkA4MG8Gr69KKeBjEVH0R84WlejZ0y2DcwyBlpAEMltmVYkVgqfLFb2oyiA==
+
+ast-types@0.13.3, ast-types@^0.13.2, ast-types@~0.13.2:
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.13.3.tgz#50da3f28d17bdbc7969a3a2d83a0e4a72ae755a7"
+  integrity sha512-XTZ7xGML849LkQP86sWdQzfhwbt3YwIO6MqbX9mUNYY98VKaaVZP7YNNm70IpwecbkkxmfC5IYAzOQ/2p29zRA==
 
 ast-types@0.9.6:
   version "0.9.6"
@@ -3107,7 +3124,7 @@ clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
-clsx@^1.0.4:
+clsx@^1.0.4, clsx@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.0.tgz#62937c6adfea771247c34b54d320fb99624f5702"
   integrity sha512-3avwM37fSK5oP6M5rQ9CNe99lwxhXDOeSWVPAOYF6OazUTgZCMb0yWlJpmdD74REy1gkEaFiub2ULv4fq9GUhA==
@@ -3470,10 +3487,10 @@ core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
 
-core-js@^3.3.5:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
-  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
+core-js@^3.3.5, core-js@^3.6.0:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
+  integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -8038,6 +8055,11 @@ mimic-fn@^2.0.0, mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
+min-indent@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
+  integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
+
 mini-css-extract-plugin@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.9.0.tgz#47f2cf07aa165ab35733b1fc97d4c46c0564339e"
@@ -9939,30 +9961,31 @@ react-dev-utils@^9.1.0:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-docgen-annotation-resolver@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-docgen-annotation-resolver/-/react-docgen-annotation-resolver-1.1.0.tgz#0a0f8d5d4d7ba924866d479ec7e709ed6cf33807"
-  integrity sha512-wTUI7IqWkV+BNRmEh1eHkU+Ijwh0XcFUdbgktynWVqe++MgtovdlbfMehFAw5b49mv8NN2DK0NF/G8x+UdIyNw==
+react-docgen-annotation-resolver@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-docgen-annotation-resolver/-/react-docgen-annotation-resolver-2.0.0.tgz#c2c9ac2d6dd5c43396ebadad3b22323820dda78e"
+  integrity sha512-0rNR0SZAjd4eHTYP3Iq/pi0zTznHtXSLAKOXbK6tGjwd9bTaXUaKQK7hihRvGvqxNjUy0WGTcFgX+lT64vIXBg==
 
-react-docgen-displayname-handler@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/react-docgen-displayname-handler/-/react-docgen-displayname-handler-2.1.3.tgz#7ca8ec759a56600a23b4fa751378fa8e7baf9120"
-  integrity sha512-XfQCjDC/8hy0rDZ+VudYplQCdp/fx3z7Ffp22+6s2MSbZ2I/1yw4Tn+ntxkUgI0hrQzB6Nidg/wzLpA5Dbj+xg==
+react-docgen-displayname-handler@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-docgen-displayname-handler/-/react-docgen-displayname-handler-3.0.1.tgz#23b54a06db88a06ef840252140098b1ba303ec57"
+  integrity sha512-fBH3OjzI7I4NkvQ/8PES48uO8jqeBwbH20yrdgJK76RllxKLHOO2oYeBxsCgY2Hhr0pUffITIc7RdWG+2R7+7g==
   dependencies:
-    ast-types "0.13.2"
+    ast-types "0.13.3"
 
-react-docgen@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-4.1.1.tgz#8fef0212dbf14733e09edecef1de6b224d87219e"
-  integrity sha512-o1wdswIxbgJRI4pckskE7qumiFyqkbvCO++TylEDOo2RbMiueIOg8YzKU4X9++r0DjrbXePw/LHnh81GRBTWRw==
+react-docgen@^5.0.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.3.0.tgz#9aabde5e69f1993c8ba839fd9a86696504654589"
+  integrity sha512-hUrv69k6nxazOuOmdGeOpC/ldiKy7Qj/UFpxaQi0eDMrUFUTIPGtY5HJu7BggSmiyAMfREaESbtBL9UzdQ+hyg==
   dependencies:
-    "@babel/core" "^7.0.0"
-    "@babel/runtime" "^7.0.0"
-    async "^2.1.4"
+    "@babel/core" "^7.7.5"
+    "@babel/runtime" "^7.7.6"
+    ast-types "^0.13.2"
     commander "^2.19.0"
     doctrine "^3.0.0"
+    neo-async "^2.6.1"
     node-dir "^0.1.10"
-    recast "^0.17.3"
+    strip-indent "^3.0.0"
 
 react-dom@^16.8.0:
   version "16.12.0"
@@ -10025,13 +10048,13 @@ react-simple-code-editor@^0.11.0:
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.11.0.tgz#bb57c7c29b570f2ab229872599eac184f5bc673c"
   integrity sha512-xGfX7wAzspl113ocfKQAR8lWPhavGWHL3xSzNLeseDRHysT+jzRBi/ExdUqevSMos+7ZtdfeuBOXtgk9HTwsrw==
 
-react-styleguidist@^10.6.2:
-  version "10.6.2"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-10.6.2.tgz#2be036b64de0f381c427e88e3bd008ffe3118b44"
-  integrity sha512-wDvhklJAHiE/oBIxBg3nAxzGCfmO/V//5WC7DSLEzs+Z+wM5ynLnhgSldJgtqusoU3lAyyHYz8FOshNUbajsMw==
+react-styleguidist@^11.0.1:
+  version "11.0.5"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-11.0.5.tgz#b1a1eb91f8bf7c538fc0d652f83c2d8cd997f5aa"
+  integrity sha512-LsLZ4aIN1gsBRgRJcEmOAoobdwVMJbnhG+49F4CgKDuuYkPazkJ1l4GuBcMcOSNfiLz/vA2nkl3TpJHH/7CVug==
   dependencies:
     "@vxna/mini-html-webpack-template" "^1.0.0"
-    acorn "~6.4.0"
+    acorn "^6.4.1"
     acorn-jsx "^5.1.0"
     ast-types "~0.13.2"
     buble "0.19.8"
@@ -10076,9 +10099,9 @@ react-styleguidist@^10.6.2:
     q-i "^2.0.1"
     qss "^2.0.3"
     react-dev-utils "^9.1.0"
-    react-docgen "^4.1.1"
-    react-docgen-annotation-resolver "^1.0.0"
-    react-docgen-displayname-handler "^2.1.3"
+    react-docgen "^5.0.0"
+    react-docgen-annotation-resolver "^2.0.0"
+    react-docgen-displayname-handler "^3.0.0"
     react-group "^3.0.2"
     react-icons "^3.8.0"
     react-simple-code-editor "^0.10.0"
@@ -10274,6 +10297,11 @@ regenerator-runtime@^0.13.2:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
   integrity sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
+
+regenerator-runtime@^0.13.4:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
 
 regenerator-transform@^0.14.0:
   version "0.14.1"
@@ -11515,6 +11543,13 @@ strip-indent@^1.0.1:
   dependencies:
     get-stdin "^4.0.1"
 
+strip-indent@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
+  integrity sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==
+  dependencies:
+    min-indent "^1.0.0"
+
 strip-json-comments@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
@@ -12389,10 +12424,10 @@ vue-datetime@^1.0.0-beta.10:
   resolved "https://registry.yarnpkg.com/vue-datetime/-/vue-datetime-1.0.0-beta.11.tgz#283b5182dabe0ab372e375e9c47acb3b41524ffa"
   integrity sha512-znOQCX0n4nPMsfcwAhlCL47u52NwnYPrlGrqiSsT1sLZgtZmfNMBVO/c0QF6VA5ZszVtopxU0fjZVxu/VpM/Ug==
 
-vue-docgen-api@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.11.0.tgz#3ed102dae774ded198c1928a1b5692f21cddf2c7"
-  integrity sha512-kn//t7vaj4kMgNYmLhcaMX13ORavAcbuyhtAOjgvvD841PaNHoVPKJefnbGNq/m1o+vUKu+tOLLRobqX0yOt+Q==
+vue-docgen-api@^4.19.1:
+  version "4.19.1"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.19.1.tgz#1f50c7d655b8a9c5be7ff789fc7105c9448cd82d"
+  integrity sha512-E3BjC9BMZS3t9i4vbJCOHO7nOcOdDUT/w4QELpeOLLKlF3qk1ZH4ILZH+/Rpf5VZhHxJLsiB139LWGj7xT3ztg==
   dependencies:
     "@babel/parser" "^7.6.0"
     "@babel/types" "^7.6.0"
@@ -12421,23 +12456,23 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-inbrowser-compiler-utils@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler-utils/-/vue-inbrowser-compiler-utils-4.0.1.tgz#356d830ab1bdf5cd7ff1b72b2c9650c0a417e494"
-  integrity sha512-kzc4rWe4txh4qWAHKtrvVFtw2OHChTNKQpuF3DDQENbCtqEmP0bUIa0WcDD1zCBEBkZIejpddYDwOlO7WdMN2Q==
+vue-inbrowser-compiler-utils@^4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler-utils/-/vue-inbrowser-compiler-utils-4.16.0.tgz#6b9217d75c41ba7eb56033810f691addd5caadc6"
+  integrity sha512-D2khSYC7UiD232IFgQlcKpSyf0b5ecQVr5EhlJoLwDXHZURAfwLlJM9vJU1wjqsSlfYbyzIeaoYp7nRs1d7WOQ==
   dependencies:
     camelcase "^5.3.1"
 
-vue-inbrowser-compiler@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler/-/vue-inbrowser-compiler-4.2.2.tgz#51deea6eababcca33518328fd619841de8ef6348"
-  integrity sha512-hg8faywHUV7rGFS1jGBTAFKBbgXW5jpLbMK1dRGLZvdnC53vvFNyR7+6VAzcR41vAiXsMHl8sDVJcgRumoZ6Lw==
+vue-inbrowser-compiler@^4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler/-/vue-inbrowser-compiler-4.16.0.tgz#b97f84f9464d696511b9d6a398daa69761055b75"
+  integrity sha512-02EraHBdZtcxFgnmF2E+s2EGOzTJaR5tvH0ZzC0ZgLgAaIu3cIHWWvrWO/oAbIBq6X4d5jy1I/Qkp5AFyzeXrw==
   dependencies:
     acorn "^6.1.1"
     acorn-jsx "^5.0.1"
     buble "^0.19.7"
     camelcase "^5.3.1"
-    vue-inbrowser-compiler-utils "^4.0.1"
+    vue-inbrowser-compiler-utils "^4.16.0"
     walkes "^0.2.1"
 
 vue-jest@^3.0.4:
@@ -12488,9 +12523,9 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     loader-utils "^1.0.2"
 
 vue-styleguidist@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-4.11.0.tgz#28feef761a535655baf798f13bb10369708c79c5"
-  integrity sha512-rx5rmZp7/ghTPMqdEtuOy3ayQt4M95Iea5ounH+McQHGgiXDU7hnO/1XkabkfdlDjrCa71PSQ937rhhavrwMPQ==
+  version "4.19.1"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-4.19.1.tgz#9fbace592367b9736ff2a2a6b52e0f0fad70ebd2"
+  integrity sha512-zuZG/LzS/Q5VRecN/YZ7aaexvWpkiPxl5y5S48s+ZjYypCJap/vijJABfc+DIeMYow3ZgIGwE0TkthutWUBQLA==
   dependencies:
     "@vxna/mini-html-webpack-template" "^1.0.0"
     ast-types "^0.13.2"
@@ -12498,9 +12533,11 @@ vue-styleguidist@^4.11.0:
     clean-webpack-plugin "^3.0.0"
     cli-progress "^3.0.0"
     clipboard-copy "^3.0.0"
+    clsx "^1.1.0"
     codemirror "^5.39.0"
     common-dir "^2.0.2"
     copy-webpack-plugin "^5.1.0"
+    core-js "^3.6.0"
     css-loader "^2.1.1"
     es6-object-assign "^1.1.0"
     es6-promise "^4.2.6"
@@ -12533,14 +12570,14 @@ vue-styleguidist@^4.11.0:
     react-icons "^3.7.0"
     react-lifecycles-compat "^3.0.4"
     react-simple-code-editor "^0.11.0"
-    react-styleguidist "^10.6.2"
+    react-styleguidist "^11.0.1"
     rewrite-imports "^2.0.3"
     style-loader "^1.0.0"
     terser-webpack-plugin "^2.2.2"
     to-ast "^1.0.0"
-    vue-docgen-api "^4.11.0"
-    vue-inbrowser-compiler "^4.2.2"
-    vue-inbrowser-compiler-utils "^4.0.1"
+    vue-docgen-api "^4.19.1"
+    vue-inbrowser-compiler "^4.16.0"
+    vue-inbrowser-compiler-utils "^4.16.0"
     webpack-dev-server "^3.10.3"
     webpack-merge "^4.0.0"
 
