@@ -2,7 +2,27 @@
 
 The following sections list the changes in ownCloud Design System unreleased.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.2...master
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.3.0...master
+
+## Summary
+
+* Enhancement - Extended the modal component with input: [#730](https://github.com/owncloud/owncloud-design-system/pull/730)
+
+## Details
+
+* Enhancement - Extended the modal component with input: [#730](https://github.com/owncloud/owncloud-design-system/pull/730)
+
+   We've added an input into the modal component which can be displayed via prop. If the input is
+   displayed, the message gets overridden. The content slot can override the input. In the
+   confirm event is now emitted the value of input.
+
+   https://github.com/owncloud/owncloud-design-system/pull/730
+
+# Changelog for [1.3.0] (2020-04-23)
+
+The following sections list the changes in ownCloud Design System 1.3.0.
+
+[1.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.2.2...v1.3.0
 
 ## Summary
 
