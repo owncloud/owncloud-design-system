@@ -134,6 +134,13 @@ module.exports = {
       sectionDepth: 1,
     },
     {
+      name: "Animations",
+      content: "../docs/animations.md",
+      exampleMode: "hide",
+      usageMode: "hide",
+      sectionDepth: 1,
+    },
+    {
       name: "Use of ARIA",
       content: "../docs/use-of-aria.md",
       exampleMode: "hide",

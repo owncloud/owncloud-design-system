@@ -1,13 +1,11 @@
 <template>
   <li :class="$_ocSidebarNavItem_class">
-    <component
-      :is="$_ocSidebarNavItem_componentType"
+    <router-link
       :to="target"
-      v-on="!target ? { click: $_ocSidebarNavItem_onClick } : {}"
     >
-      <oc-icon :name="icon" v-if="icon" />
+      <oc-icon :name="icon" aria-hidden="true" />
       <slot name="default" />
-    </component>
+    </router-link>
     <ul class="uk-nav-sub" v-if="$slots.subnav">
       <slot name="subnav" />
     </ul>
@@ -31,7 +29,7 @@ export default {
     },
     icon: {
       type: String,
-      required: false,
+      required: true,
       default: "",
     },
     isolate: {
@@ -41,9 +39,6 @@ export default {
     },
   },
   computed: {
-    $_ocSidebarNavItem_componentType() {
-      return this.target ? "router-link" : "a"
-    },
     $_ocSidebarNavItem_class() {
       let classes = []
       if (this.$slots.subnav) {
@@ -56,11 +51,6 @@ export default {
         classes.push("uk-margin-medium-top")
       }
       return classes
-    },
-  },
-  methods: {
-    $_ocSidebarNavItem_onClick() {
-      this.$emit("click")
     },
   },
 }

@@ -1,0 +1,123 @@
+.oc-sidebar {
+  width: $width-medium;
+  height: 100vh;
+  max-height: 100vh;
+  padding: $gutter 0;
+  background-color: $primary-background;
+  overflow: hidden auto;
+  box-sizing: border-box;
+
+  &-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: $width-medium;
+    max-width: $width-medium;
+    height: 100%;
+  }
+
+  &-logo {
+    padding: 0 $small-gutter;
+    margin-bottom: $large-margin;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &-img {
+      @extend .uk-width-small;
+    }
+
+    &-text {
+      @extend .uk-text-lead;
+      @extend .oc-light;
+    }
+  }
+
+  &-upper-content {
+    padding: 0 $small-gutter $gutter;
+  }
+
+  &-nav {
+    flex: 1;
+
+    & > ul {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &-nav-item {
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: darken($primary-background, 5);
+    }
+
+    & > a,
+    & > a > .oc-icon > svg {
+      @extend .oc-light;
+    }
+
+    & > a {
+      display: flex;
+      flex-flow: row wrap;
+      padding: $small-gutter;
+      align-items: center;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    & .oc-icon {
+      margin-right: $small-margin;
+    }
+
+    &.uk-active {
+      background-color: darken($primary-background, 5);
+
+      & > a {
+        font-weight: bold;
+
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    padding: 0 $small-gutter;
+  }
+
+  &-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 3;
+  }
+
+  &-fixed &-button-close {
+    position: absolute;
+    top: $small-gutter;
+    right: $small-gutter;
+
+    & .oc-icon > svg {
+      @extend .oc-light;
+    }
+  }
+
+  &-fixed &-content-wrapper {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  &-fixed &-logo {
+    margin-top: $medium-margin;
+  }
+}

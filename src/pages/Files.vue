@@ -1,6 +1,5 @@
 <script>
 import OcCheckbox from "../elements/OcCheckbox"
-import OcApplicationMenu from "../patterns/OcApplicationMenu"
 import OcSidebarNavDivider from "../elements/_OcSidebarNavDivider"
 import OcButton from "../elements/OcButton"
 import OcAppBar from "../patterns/OcAppBar"
@@ -10,7 +9,7 @@ import OcNav from "../elements/OcNav"
  */
 export default {
   name: "Files",
-  components: { OcNav, OcButton, OcAppBar, OcSidebarNavDivider, OcApplicationMenu, OcCheckbox },
+  components: { OcNav, OcButton, OcAppBar, OcSidebarNavDivider, OcCheckbox },
   status: "deprecated",
   release: "1.0.0",
   metaInfo: {
@@ -173,21 +172,6 @@ export default {
         <span>version: 0.2.6</span>
       </div>
     </oc-drop>
-
-    <oc-application-menu v-model="leftMenuOpen" name="leftMenu" @close="leftMenuOpen = false">
-      <oc-sidebar-nav-item active icon="folder" target="home">
-        Files
-        <template slot="subnav">
-          <oc-sidebar-nav-item>All files</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Favorites</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Shared with me</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Shared public</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>External files</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Tags</oc-sidebar-nav-item>
-          <oc-sidebar-nav-item>Deleted files</oc-sidebar-nav-item>
-        </template>
-      </oc-sidebar-nav-item>
-    </oc-application-menu>
 
     <oc-app-layout :rightHidden="rightHidden" :leftHidden="true">
 
