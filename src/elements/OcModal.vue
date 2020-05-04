@@ -22,13 +22,13 @@
           key="modal-input"
           ref="ocModalInput"
           class="oc-modal-body-input"
-          v-model="inputValue"
+          v-model="$_ocModal_input_value"
           :error-message="inputError"
           :label="inputLabel"
           :placeholder="inputPlaceholder"
           :disabled="inputDisabled"
           :fix-message-line="true"
-          @keydown="$_ocModal_input_type"
+          @input="$_ocModal_input_onInput"
           @change="$_ocModal_confirm"
         />
         <p
@@ -46,7 +46,7 @@
           <oc-button
             class="oc-modal-body-actions-confirm"
             :variation="$_ocModal_buttonConfirm_variation"
-            :disabled="buttonConfirmDisabled"
+            :disabled="buttonConfirmDisabled || !!inputError"
             v-text="buttonConfirmText"
             @click="$_ocModal_confirm"
           />
@@ -92,7 +92,7 @@ export default {
       required: false,
       default: "info",
       validator: (variation) => {
-        return variation.indexOf("info") > -1 || variation.indexOf("danger") > -1
+        return variation === "info" || variation === "danger"
       }
     },
     /**
@@ -186,6 +186,12 @@ export default {
     }
   },
 
+  data () {
+    return {
+      $_ocModal_input_value: null
+    }
+  },
+
   computed: {
     $_ocModal_classes() {
       return ["oc-modal", `oc-modal-${this.variation}`]
@@ -204,6 +210,13 @@ export default {
     }
   },
 
+  watch: {
+    inputValue: {
+      handler: "$_ocModal_input_assignPropAsValue",
+      immediate: true
+    }
+  },
+
   methods: {
     $_ocModal_buttonCancel_click() {
       /**
@@ -213,23 +226,29 @@ export default {
     },
 
     $_ocModal_confirm() {
-      const value = this.hasInput ? this.$refs.ocModalInput.value : null
+      if (this.buttonConfirmDisabled || this.inputError) {
+        return
+      }
 
       /**
        * The user clicked on the confirm button. If input exists, emits it's value
        * 
-       * @property {String} inputValue Value of the input
+       * @property {String} value Value of the input
        */
-      this.$emit("confirm", value)
+      this.$emit("confirm", this.$_ocModal_input_value)
     },
 
-    $_ocModal_input_type() {
+    $_ocModal_input_onInput(value) {
       /**
        * The user typed into the input
        * 
-       * @property {String} inputValue Value of the input
+       * @property {String} value Value of the input
        */
-      this.$emit("type", this.$refs.ocModalInput.value)
+      this.$emit("input", value)
+    },
+
+    $_ocModal_input_assignPropAsValue(value) {
+      this.$_ocModal_input_value = value
     }
   }
 }
@@ -263,7 +282,6 @@ export default {
       inputLabel="Folder name"
       inputPlaceholder="Enter a folder name"
       inputError="This name is already taken"
-      :buttonConfirmDisabled="true"
       class="uk-margin-large-bottom"
     />
     <oc-modal
@@ -274,6 +292,7 @@ export default {
       <template v-slot:content>
         <oc-text-input
           value="lorem.txt"
+          label="File name"
         />
       </template>
     </oc-modal>
