@@ -8,6 +8,7 @@ dist/index.html
 dist/docs/
 dist/system/
 coverage/
+.codacy-coverage/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
