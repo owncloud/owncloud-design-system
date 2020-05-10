@@ -1,8 +1,7 @@
-### These downloads, links, and third-party tools will help you and your teams learn, design, and build products. Here you can also provide links to assets like fonts, icons, color swatches, Sketch UI kits and so&nbsp;on.
+### In this section, you can find all links through which you can download either our whole design system or tools necessary to use it.
 
-You’re looking at ownCloud Design System’s demo downloads section. Everything you see here is editable in Markdown format. To change or remove this content, see [/docs/downloads.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/downloads.md).
-
-## ownCloud Design System (zip)
+## ownCloud Design System
 
 - [Download latest version](https://github.com/owncloud/owncloud-design-system/archive/master.zip)
 - [All versions](https://github.com/owncloud/owncloud-design-system/releases)
+- [npm package](https://www.npmjs.com/package/owncloud-design-system)
