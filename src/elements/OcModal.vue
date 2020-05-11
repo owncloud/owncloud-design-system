@@ -213,12 +213,14 @@ export default {
     },
 
     $_ocModal_confirm() {
+      const value = this.hasInput ? this.$refs.ocModalInput.value : null
+
       /**
        * The user clicked on the confirm button. If input exists, emits it's value
        * 
        * @property {String} inputValue Value of the input
        */
-      this.$emit("confirm", this.$refs.ocModalInput.value)
+      this.$emit("confirm", value)
     },
 
     $_ocModal_input_type() {
