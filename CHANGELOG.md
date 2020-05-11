@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.4.0...master
+
+## Summary
+
+* Bugfix - Do not try to emit value after confirming modal if input is missing: [#749](https://github.com/owncloud/owncloud-design-system/pull/749)
+
+## Details
+
+* Bugfix - Do not try to emit value after confirming modal if input is missing: [#749](https://github.com/owncloud/owncloud-design-system/pull/749)
+
+   Confirming modal resulted in an error if the modal haven't got an input. We've fixed this by not
+   attempting to emit the value if the prop `hasInput` is set to false.
+
+   https://github.com/owncloud/owncloud-design-system/pull/749
+
 # Changelog for [1.4.0] (2020-04-29)
 
 The following sections list the changes in ownCloud Design System 1.4.0.
