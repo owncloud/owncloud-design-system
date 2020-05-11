@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Do not try to emit value after confirming modal if input is missing: [#749](https://github.com/owncloud/owncloud-design-system/pull/749)
+* Change - Do not enforce muted color as background of app bar: [#750](https://github.com/owncloud/owncloud-design-system/pull/750)
 
 ## Details
 
@@ -16,6 +17,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    attempting to emit the value if the prop `hasInput` is set to false.
 
    https://github.com/owncloud/owncloud-design-system/pull/749
+
+
+* Change - Do not enforce muted color as background of app bar: [#750](https://github.com/owncloud/owncloud-design-system/pull/750)
+
+   We've stopped enforcing the muted color as a background of the app bar.
+
+   https://github.com/owncloud/owncloud-design-system/pull/750
 
 # Changelog for [1.4.0] (2020-04-29)
 
