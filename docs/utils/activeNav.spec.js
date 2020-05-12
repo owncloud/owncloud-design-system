@@ -12,18 +12,21 @@ const MockComponent = {
     "<div class='rsg--sidebar-4'><div><div class='rsg--root-26'><nav><ul class='rsg--list-29'><li class='rsg--item-30 vueds-active'><a class='rsg--link-24 rsg--heading-32' href='/#/Getting Started'>Getting Started</a></li><li class='rsg--item-30 rsg--isChild-31'><a class='rsg--link-24' href='/#/Design Principles'>Design Principles</a></li><li class='rsg--item-30 rsg--isChild-31'><a class='rsg--link-24' href='/#/Tone of Voice'>Tone of Voice</a></li><li class='rsg--item-30 parent'><a class='rsg--link-24 rsg--heading-32 child' href='/example/'>Design Tokens</a><ul class='rsg--list-29'><li class='rsg--item-30 rsg--isChild-31'><a class='rsg--link-24 deep-child' href='/#/Design Tokens?id=color'>Color</a></li><li class='rsg--item-30 rsg--isChild-31'><a class='rsg--link-24' href='/#/Design Tokens?id=fontsize'>FontSize</a></li><li class='rsg--item-30 rsg--isChild-31'><a class='rsg--link-24' href='/#/Design Tokens?id=spacing'>Spacing</a></li></ul></li></ul></nav></div></div></div>",
 }
 
+const div = document.createElement('div')
+document.body.appendChild(div)
+
 const wrapper = mount(MockComponent, {
-  attachToDocument: true,
+  attachTo: div,
   localVue,
 })
 
 describe("activeNav.js", () => {
   it("contains a list", () => {
-    expect(wrapper.contains("ul")).toBe(true)
+    expect(wrapper.get("ul"))
   })
 
   it("should add an active class to the current nav item", () => {
-    expect(wrapper.contains(".vueds-active")).toBe(true)
+    expect(wrapper.get(".vueds-active"))
   })
 
   it("should add an active class to its parentNode on click", () => {
