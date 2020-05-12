@@ -8,6 +8,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Do not try to emit value after confirming modal if input is missing: [#749](https://github.com/owncloud/owncloud-design-system/pull/749)
 * Change - Do not enforce muted color as background of app bar: [#750](https://github.com/owncloud/owncloud-design-system/pull/750)
+* Change - Deprecated application menu component: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
+* Enhancement - Created sidebar component: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
+* Enhancement - Created animation section in docs: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
 
 ## Details
 
@@ -24,6 +27,29 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've stopped enforcing the muted color as a background of the app bar.
 
    https://github.com/owncloud/owncloud-design-system/pull/750
+
+
+* Change - Deprecated application menu component: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
+
+   We've deprecated the application menu component in favor of the sidebar component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/735
+
+
+* Enhancement - Created sidebar component: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
+
+   We've created a sidebar component which is to be used as an in-app navigation and which will
+   contain the branding.
+
+   https://github.com/owncloud/owncloud-design-system/pull/735
+
+
+* Enhancement - Created animation section in docs: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
+
+   We've added an animation section in the documentation to show available animations and how to
+   use them.
+
+   https://github.com/owncloud/owncloud-design-system/pull/735
 
 # Changelog for [1.4.0] (2020-04-29)
 
