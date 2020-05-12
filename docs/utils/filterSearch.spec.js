@@ -14,8 +14,11 @@ const MockComponent = {
     "<div class='container'><div class='rsg--search-11'><input type='text' value='' /></div><div class='rsg--sidebar-23'><ul><ul class='rsg--list-23 test'></ul></ul></div></div>",
 }
 
+const div = document.createElement('div')
+document.body.appendChild(div)
+
 const wrapper = mount(MockComponent, {
-  attachToDocument: true,
+  attachTo: div,
   localVue,
 })
 
@@ -30,11 +33,12 @@ describe("filterSearch.js", () => {
 
   it("should hide all links when the input is cleared", () => {
     const input = wrapper.find("input")
-    const parent = wrapper.find(".container")
     input.value = ""
     input.trigger("focus")
     input.trigger("input")
     input.trigger("blur")
-    expect(parent.contains(".vueds-visible")).toBe(false)
+
+    const visibleItem = wrapper.find(".vueds-visible")
+    expect(visibleItem.exists()).toBe(false)
   })
 })

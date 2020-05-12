@@ -14,14 +14,17 @@ const MockComponent = {
   template: "<div id='Example-container'><label class='status original'>undefined</label></div>",
 }
 
+const div = document.createElement('div')
+document.body.appendChild(div)
+
 const wrapper = mount(ExampleComponent, {
-  attachToDocument: true,
-  localVue,
+  attachTo: div,
+  localVue
 })
 
 describe("statusLabels.js", () => {
   it("should render status labels", () => {
-    expect(wrapper.contains("label")).toBe(true)
+    expect(wrapper.get("label"))
   })
 
   it("should render correct text value inside label", () => {
@@ -31,7 +34,7 @@ describe("statusLabels.js", () => {
 
   it("should remove existing labels", () => {
     const wrapper2 = mount(MockComponent, {
-      attachToDocument: true,
+      attachTo: div,
       localVue,
     })
     // Wait that statusLabels is finished
