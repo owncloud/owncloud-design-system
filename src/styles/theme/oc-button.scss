@@ -20,7 +20,8 @@
 
 .oc-button {
   @extend .uk-button;
-  @extend .uk-position-relative;
+
+  position: relative;
 
   .oc-icon + span {
     margin-left: $global-margin;

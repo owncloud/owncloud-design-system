@@ -46,3 +46,8 @@ $directions: "top", "right", "bottom", "left";
   background: none;
   font: inherit;
 }
+
+.oc-light {
+  color: $global-inverse-color !important;
+  fill: $global-inverse-color !important;
+}

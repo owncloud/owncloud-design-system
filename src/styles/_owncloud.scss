@@ -15,6 +15,8 @@
 @import "theme/login";
 @import "theme/menu-secondary";
 
+@import "theme/animations.scss";
+
 @import "theme/oc-alert";
 @import "theme/oc-app-container";
 @import "theme/oc-app-menu";
@@ -25,7 +27,6 @@
 @import "theme/oc-progress";
 @import "theme/oc-progress-pie";
 @import "theme/oc-checkbox";
-@import "theme/oc-sidebar-nav-item";
 @import "theme/oc-file";
 @import "theme/oc-topbar";
 @import "theme/oc-icon";
@@ -47,6 +48,7 @@
 @import "theme/oc-tabbed";
 @import "theme/oc-spinner.scss";
 @import "theme/oc-modal.scss";
+@import "theme/oc-sidebar.scss";
 
 // 4. Import UIkit.
 @import "../../node_modules/uikit/src/scss/uikit-theme.scss";
