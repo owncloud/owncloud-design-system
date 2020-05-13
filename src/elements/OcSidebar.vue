@@ -54,8 +54,8 @@ import OcIcon from "./OcIcon.vue"
 
 export default {
   name: "oc-sidebar",
-  status: "review",
-  released: "unreleased",
+  status: "ready",
+  released: "1.5.0",
 
   components: {
     OcSidebarNavItem,
