@@ -7,6 +7,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Do not try to emit value after confirming modal if input is missing: [#749](https://github.com/owncloud/owncloud-design-system/pull/749)
+* Bugfix - Disable confirm button in the modal component if there is an error: [#741](https://github.com/owncloud/owncloud-design-system/pull/741)
+* Bugfix - Use input event instead of keydown in the modal component: [#741](https://github.com/owncloud/owncloud-design-system/pull/741)
+* Bugfix - Do not mutate input value prop in the modal directly: [#741](https://github.com/owncloud/owncloud-design-system/pull/741)
 * Change - Do not enforce muted color as background of app bar: [#750](https://github.com/owncloud/owncloud-design-system/pull/750)
 * Change - Deprecated application menu component: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
 * Enhancement - Created sidebar component: [#735](https://github.com/owncloud/owncloud-design-system/pull/735)
@@ -20,6 +23,30 @@ The following sections list the changes in ownCloud Design System unreleased.
    attempting to emit the value if the prop `hasInput` is set to false.
 
    https://github.com/owncloud/owncloud-design-system/pull/749
+
+
+* Bugfix - Disable confirm button in the modal component if there is an error: [#741](https://github.com/owncloud/owncloud-design-system/pull/741)
+
+   We've added check to disable confirm button in the modal component in case the input inside of
+   the modal has an error.
+
+   https://github.com/owncloud/owncloud-design-system/pull/741
+
+
+* Bugfix - Use input event instead of keydown in the modal component: [#741](https://github.com/owncloud/owncloud-design-system/pull/741)
+
+   We've started using the input event instead of the keydown in the modal component to properly
+   pass the value of the input.
+
+   https://github.com/owncloud/owncloud-design-system/pull/741
+
+
+* Bugfix - Do not mutate input value prop in the modal directly: [#741](https://github.com/owncloud/owncloud-design-system/pull/741)
+
+   We've used a local state as a v-model of the input in the modal to avoid direct mutations of the
+   input value property.
+
+   https://github.com/owncloud/owncloud-design-system/pull/741
 
 
 * Change - Do not enforce muted color as background of app bar: [#750](https://github.com/owncloud/owncloud-design-system/pull/750)
