@@ -232,6 +232,13 @@
       "originalValue": "44px",
       "name": "tappable_square"
     },
+    "width-medium": {
+      "type": "number",
+      "category": "size",
+      "value": "300px",
+      "originalValue": "300px",
+      "name": "width-medium"
+    },
     "duration_quickly": {
       "type": "number",
       "category": "time",
