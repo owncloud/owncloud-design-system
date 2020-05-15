@@ -56,6 +56,19 @@ def testing(ctx):
                     'yarn test',
                 ]
             },
+            {
+                'name': 'codacy',
+                'image': 'frolvlad/alpine-glibc:latest',
+                'pull': 'always',
+                'commands': [
+                    'wget -qO - https://coverage.codacy.com/get.sh | sh -s report -l Javascript -r coverage/lcov.info',
+                ],
+                'environment': {
+                  'CODACY_PROJECT_TOKEN': {
+                     'from_secret': 'codacy_token',
+                  },
+                },
+            },
         ],
         'trigger': {
             'ref': [
