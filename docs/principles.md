@@ -1,35 +1,12 @@
-### Principles are the foundation of the system. They form the basis of a good product and help the team with decision making. They are here to guide you and your team when working with the myriad parts of the system and help you do better and more informed decisions.
+### Our design principles are the foundation of whole ownCloud's design. They form the basis of a good product and help the team with decision making. They are here to guide us when working with the myriad parts of the design process and help us do better and more informed decisions.
 
-You’re looking at ownCloud Design System’s demo <code>design principles</code>. Everything you see here is editable in Markdown format. To change or remove this content, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md). To get started defining your own principles, see my [article on getting started](https://viljamis.com/2018/vue-design-system/) with ownCloud Design System.
+## 1. Accessibility over aesthetics
+The highest goal we can achieve with our design is to make ownCloud accessible to everyone. By this we mean not only the accessibility and usability for people with special needs but also the joy and simplicity of using our products for all kinds of users.
 
-## 1. Design is how it works
+## 2. Guide for all
+Design is not a question of the isolated button or the singular application. Design for us at ownCloud means creating a comprehensive, holistic experience. With the product ownCloud and with the brand ownCloud. We strive to unify the user experience on all devices and in all environments.
 
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
+## 3. Always be building
+Design for us at ownCloud is the process in which it is created. For us, the tools we work with, the stakeholders we involve and the discussions that evolve are all important components of what the end results will become.
 
-## 2. Reduce concepts to increase confidence
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
-
-## 3. Design with real data
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
-
-## 4. Design systems, not pages
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
-
-## 5. Involve code early
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
-
-## 6. Fast is better than slow
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
-
-## 7. Let content determine breakpoints
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
-
-## 8. Strive for universality
-
-To edit or remove this principle, see [/docs/principles.md](https://github.com/owncloud/owncloud-design-system/blob/master/docs/principles.md).
+We listen to the voices of the many: the voices of the users and the voices of the experienced people in our company, regardless of their position or department.
