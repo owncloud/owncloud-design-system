@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.5.0...master
+
+## Summary
+
+* Bugfix - Made modal position fixed: [#769](https://github.com/owncloud/owncloud-design-system/pull/769)
+
+## Details
+
+* Bugfix - Made modal position fixed: [#769](https://github.com/owncloud/owncloud-design-system/pull/769)
+
+   We've made the position of modal fixed and added z-index so it is always going to be visible on top
+   of the content.
+
+   https://github.com/owncloud/owncloud-design-system/pull/769
+
 # Changelog for [1.5.0] (2020-05-13)
 
 The following sections list the changes in ownCloud Design System 1.5.0.
