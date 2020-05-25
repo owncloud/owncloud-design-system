@@ -14,7 +14,6 @@
       v-on="$_ocTextInput_listeners"
       @input="$_ocTextInput_onInput($event.target.value)"
       @focus="$_ocTextInput_onFocus($event.target)"
-      @keydown="$_ocTextInput_onKeyDown($event)"
       ref="input"
     />
     <div class="oc-text-input-message" v-if="$_ocTextInput_showMessageLine">
@@ -108,9 +107,11 @@ export default {
     },
     $_ocTextInput_listeners() {
       const listeners = this.$listeners
+
+      // Delete listeners for events which are emitted via methods
       delete(listeners["input"])
       delete(listeners["focus"])
-      delete(listeners["keydown"])
+
       return listeners
     }
   },
@@ -136,21 +137,6 @@ export default {
        * @type {event}
        **/
       this.$emit("focus", target.value)
-    },
-    $_ocTextInput_onKeyDown(e) {
-      if (e.keyCode === 13) {
-        /**
-         * Change event - emitted as soon as the user hits enter
-         * @type {string}
-         */
-        this.$emit("change", e.target.value)
-      }
-
-      /**
-       * KeyDown event - emitted as soon as the user hits a key
-       * @type {event}
-       */
-      this.$emit("keydown", e)
     },
   },
 }
