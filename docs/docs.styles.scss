@@ -667,17 +667,17 @@ div[class^="rsg--toolbar"] {
 // Hide private components
 .hide-private,
 .hide-private + div,
-a[href="#private-components"],
-a[href="#private-components"] + ul {
+a[href="/#/Private%20Components"],
+a[href="/#/Private%20Components"] + ul {
   display: none !important;
 }
 
 // Hide Private components and placeholder sections
-ul a[href*="/#/Getting Started/Components"],
-ul a[href*="/#/Design Tokens/Color"],
-ul a[href*="/#/Design Tokens/Spacing"],
-ul a[href*="/#/Design Tokens/FontSize"],
-ul a[href*="/#/Design Tokens/All"],
-ul a[href*="/#/Private Components"] {
+ul a[href*="/#/Getting%20Started/Components"],
+ul a[href*="/#/Design%20Tokens/Color"],
+ul a[href*="/#/Design%20Tokens/Spacing"],
+ul a[href*="/#/Design%20Tokens/FontSize"],
+ul a[href*="/#/Design%20Tokens/All"],
+ul a[href*="/#/Private%20Components"] {
   display: none !important;
 }
