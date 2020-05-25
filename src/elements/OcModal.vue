@@ -262,7 +262,7 @@ export default {
       message="Do you accept our terms of use?"
       buttonCancelText="Decline"
       buttonConfirmText="Accept"
-      class="uk-margin-large-bottom"
+      class="uk-margin-large-bottom uk-position-relative"
     />
     <oc-modal
       variation="danger"
@@ -271,7 +271,7 @@ export default {
       message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
       buttonCancelText="Cancel"
       buttonConfirmText="Delete"
-      class="uk-margin-large-bottom"
+      class="uk-margin-large-bottom uk-position-relative"
     />
     <oc-modal
       title="Create new folder"
@@ -282,12 +282,13 @@ export default {
       inputLabel="Folder name"
       inputPlaceholder="Enter a folder name"
       inputError="This name is already taken"
-      class="uk-margin-large-bottom"
+      class="uk-margin-large-bottom uk-position-relative"
     />
     <oc-modal
       title="Rename file lorem.txt"
       buttonCancelText="Cancel"
       buttonConfirmText="Rename"
+      class="uk-position-relative"
     >
       <template v-slot:content>
         <oc-text-input
