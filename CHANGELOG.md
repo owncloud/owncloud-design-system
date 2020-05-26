@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Made modal position fixed: [#769](https://github.com/owncloud/owncloud-design-system/pull/769)
+* Change - Removed change and keydown events from text input: [#768](https://github.com/owncloud/owncloud-design-system/pull/768)
 
 ## Details
 
@@ -16,6 +17,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    of the content.
 
    https://github.com/owncloud/owncloud-design-system/pull/769
+
+
+* Change - Removed change and keydown events from text input: [#768](https://github.com/owncloud/owncloud-design-system/pull/768)
+
+   We've removed change and keydown custom events from text input component. All listeners are
+   passed to the input element so all events are still accessible. Focus and input events are still
+   implemented as custom events.
+
+   https://github.com/owncloud/owncloud-design-system/pull/768
 
 # Changelog for [1.5.0] (2020-05-13)
 
