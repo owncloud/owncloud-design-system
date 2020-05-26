@@ -29,7 +29,7 @@
           :disabled="inputDisabled"
           :fix-message-line="true"
           @input="$_ocModal_input_onInput"
-          @change="$_ocModal_confirm"
+          @keydown.enter="$_ocModal_confirm"
         />
         <p
           v-else
