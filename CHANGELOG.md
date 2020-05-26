@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.6.0] (2020-05-26)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.6.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.5.0...master
+[1.6.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.5.0...v1.6.0
 
 ## Summary
 
