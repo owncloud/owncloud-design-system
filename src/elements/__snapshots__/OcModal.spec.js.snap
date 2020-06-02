@@ -2,7 +2,7 @@
 
 exports[`OcModal displays input 1`] = `
 <div class="oc-modal-background">
-  <div class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
       <!----> <span>Create new folder</span></div>
     <div class="oc-modal-body">
@@ -18,7 +18,7 @@ exports[`OcModal displays input 1`] = `
 
 exports[`OcModal hides icon if not specified 1`] = `
 <div class="oc-modal-background">
-  <div class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
       <!----> <span>Example title</span></div>
     <div class="oc-modal-body">
@@ -34,7 +34,7 @@ exports[`OcModal hides icon if not specified 1`] = `
 
 exports[`OcModal matches snapshot 1`] = `
 <div class="oc-modal-background">
-  <div class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
       <oc-icon-stub name="info" arialabel="icon" type="span" size="small" variation="system"></oc-icon-stub> <span>Example title</span>
     </div>
@@ -51,7 +51,7 @@ exports[`OcModal matches snapshot 1`] = `
 
 exports[`OcModal overrides props message with slot 1`] = `
 <div class="oc-modal-background">
-  <div class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
       <!----> <span>Example title</span></div>
     <div class="oc-modal-body">

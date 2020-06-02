@@ -5,6 +5,10 @@
   border-radius: 8px;
   overflow: hidden;
 
+  &:focus {
+    outline: none;
+  }
+
   &-background {
     position: fixed;
     top: 0;
