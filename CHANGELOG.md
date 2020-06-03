@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.6.0...master
+
+## Summary
+
+* Enhancement - Automatically focus modal: [#781](https://github.com/owncloud/owncloud-design-system/pull/781)
+
+## Details
+
+* Enhancement - Automatically focus modal: [#781](https://github.com/owncloud/owncloud-design-system/pull/781)
+
+   When the modal is mounted, it receives automatically a focus. The focus is sent directly to the
+   modal itself so skipping the wrapping div which works only as a background.
+
+   https://github.com/owncloud/owncloud-design-system/pull/781
+
 # Changelog for [1.6.0] (2020-05-26)
 
 The following sections list the changes in ownCloud Design System 1.6.0.
