@@ -1,6 +1,6 @@
 <template>
   <div class="oc-modal-background">
-    <div :class="$_ocModal_classes">
+    <div :class="$_ocModal_classes" tabindex="0" ref="$_ocModal">
       <div class="oc-modal-title">
         <oc-icon
           v-if="icon"
@@ -215,6 +215,12 @@ export default {
       handler: "$_ocModal_input_assignPropAsValue",
       immediate: true
     }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.$refs.$_ocModal.focus()
+    })
   },
 
   methods: {
