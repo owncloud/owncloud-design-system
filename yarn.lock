@@ -12474,9 +12474,9 @@ vue-meta@^2.3.2:
     deepmerge "^4.2.2"
 
 vue-router@^3.1.5:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.6.tgz#45f5a3a3843e31702c061dd829393554e4328f89"
-  integrity sha512-GYhn2ynaZlysZMkFE5oCHRUTqE8BWs/a9YbKpNLi0i7xD6KG1EzDqpHQmv1F5gXjr8kL5iIVS8EOtRaVUEXTqA==
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.3.tgz#92603966921f3f0c7e9ff3881cf0b7ab311533df"
+  integrity sha512-Qmzkurgmy9Muy8HItNQcMYAeANHi/NY4ppOJ/qhTWtrg4mFan+VLX+LEv5DqoYOX1XEabN3m3lLPOEEgUpRr0A==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
