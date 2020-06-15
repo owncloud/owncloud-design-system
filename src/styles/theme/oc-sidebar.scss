@@ -2,8 +2,8 @@
   width: $width-medium;
   height: 100vh;
   max-height: 100vh;
-  padding: $gutter 0;
-  background-color: $primary-background;
+  padding: $large-gutter 0 $gutter;
+  background-color: $brand-primary;
   overflow: hidden auto;
   box-sizing: border-box;
 
@@ -26,7 +26,7 @@
     }
 
     &-img {
-      @extend .uk-width-small;
+      height: $height-small;
     }
 
     &-text {
@@ -53,7 +53,7 @@
 
     &:hover,
     &:focus {
-      background-color: darken($primary-background, 5);
+      background-color: lighten($brand-primary, 5);
     }
 
     & > a,
@@ -65,6 +65,8 @@
       display: flex;
       flex-flow: row wrap;
       padding: $small-gutter;
+      font-size: 1.125rem;
+      font-weight: 600;
       align-items: center;
 
       &:hover,
@@ -78,14 +80,11 @@
     }
 
     &.uk-active {
-      background-color: darken($primary-background, 5);
+      background-color: lighten($brand-primary, 5);
 
-      & > a {
-        font-weight: bold;
-
-        &:hover {
-          cursor: default;
-        }
+      // Vue doesn't allow navigating to active route so we do not use pointer as it might mislead users
+      & > a:hover {
+        cursor: default;
       }
     }
   }

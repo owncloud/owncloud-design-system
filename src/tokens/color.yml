@@ -18,10 +18,10 @@ props:
     value: "#667fa3"
     category: "Font-colors"
   link-color:
-    value: "#0066ff"
+    value: "#4e85c8"
     category: "Font-colors"
   link-hover-color:
-    value: "#0066ff"
+    value: "#306db5"
     category: "Font-colors"
   inverse-color:
     value: "#fff"
@@ -68,6 +68,26 @@ props:
   danger-background:
     value: "#e00000"
     category: "Background-colors"
+
+  brand-primary:
+    value: "#1b223d"
+    category: "Brand-colors"
+
+  action-primary:
+    value: "#4e85c8"
+    category: "Action-colors"
+
+  action-primary-hover:
+    value: "#306db5"
+    category: "Action-colors"
+
+  shadow-global:
+    value: "#000000"
+    category: "Shadow-colors"
+
+  shadow-action-primary:
+    value: "#32325d"
+    category: "Shadow-colors"
 
 global:
   type: color
