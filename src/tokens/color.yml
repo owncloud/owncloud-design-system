@@ -23,7 +23,7 @@ props:
   link-hover-color:
     value: "#0066ff"
     category: "Font-colors"
-  invers-color:
+  inverse-color:
     value: "#fff"
     category: "Font-colors"
 
