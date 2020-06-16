@@ -35,7 +35,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: $small-gutter $gutter;
-    background-color: $invers-color;
+    background-color: $inverse-color;
     font-weight: bold;
     align-items: center;
 
@@ -70,7 +70,7 @@
         border-radius: 4px;
 
         &.uk-button-default {
-          background-color: $invers-color;
+          background-color: $inverse-color;
           color: $color;
         }
       }
