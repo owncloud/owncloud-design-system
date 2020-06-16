@@ -4,12 +4,38 @@
 // ========================================================================
 
 @mixin hook-button() {
-  text-transform: uppercase;
+  display: inline-flex;
+  flex-flow: row wrap;
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background-color $transition-duration-short ease-in-out,
+    color $transition-duration-short ease-in-out,
+    border-color $transition-duration-short ease-in-out;
 }
 
 @mixin hook-button-disabled() {
+  border-color: lighten($global-muted-color, 25%);
+  color: lighten($global-muted-color, 25%);
+
   .oc-icon > svg {
     fill: lighten($global-muted-color, 25%);
+  }
+
+  // Workaround for preventing hover effects on disabled buttons
+  &:hover,
+  &:focus {
+    border-color: lighten($global-muted-color, 25%);
+    color: lighten($global-muted-color, 25%);
+
+    .oc-icon > svg {
+      fill: lighten($global-muted-color, 25%);
+    }
   }
 }
 
@@ -24,13 +50,11 @@
   position: relative;
 
   .oc-icon + span {
-    margin-left: $global-margin;
+    margin-left: $small-margin;
   }
 
-  text-transform: none !important;
-
-  &:not(.uk-button-small):not(.uk-button-large):not(.uk-button-raw) {
-    min-height: $global-control-height;
+  .oc-icon > svg {
+    transition: fill $transition-duration-short ease-in-out;
   }
 
   &.uk-button-small {
@@ -39,6 +63,7 @@
 
   &.uk-button-large {
     min-height: $global-control-large-height;
+    font-size: 1.5rem;
   }
 
   &.uk-button-primary,
@@ -47,6 +72,72 @@
     .oc-icon > svg {
       fill: $global-inverse-color;
     }
+  }
+
+  &.uk-button-default {
+    border: 1px solid $action-primary;
+    background-color: transparent;
+    color: $action-primary;
+
+    .oc-icon > svg {
+      fill: $action-primary;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+
+      .oc-icon > svg {
+        fill: $action-primary-hover;
+      }
+    }
+  }
+
+  &.uk-button-primary {
+    background-color: $action-primary;
+    box-shadow: 0 4px 6px rgba($shadow-action-primary, 0.11), 0 1px 3px rgba($shadow-global, 0.08);
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: $action-primary-hover;
+    }
+  }
+
+  .uk-button-group & {
+    border-radius: 0;
+    // Prevent negative margin which is coming from UIkit
+    margin-left: 0 !important;
+
+    &:first-of-type {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-of-type {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.uk-button-default {
+      border-left: none;
+      border-right: none;
+
+      &:first-of-type {
+        border-left: 1px solid $action-primary;
+      }
+
+      &:last-of-type {
+        border-right: 1px solid $action-primary;
+      }
+    }
+
+    &.uk-button-primary {
+      box-shadow: none;
+    }
+  }
+
+  &:not(.uk-button-small):not(.uk-button-large):not(.uk-button-raw) {
+    min-height: $global-control-height;
   }
 }
 

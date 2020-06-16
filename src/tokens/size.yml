@@ -12,6 +12,9 @@ props:
   width-medium:
     value: "300px"
 
+  height-small:
+    value: "50px"
+
 global:
   type: number
   category: size

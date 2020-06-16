@@ -11,7 +11,10 @@ props:
   medium-gutter:
     value: "30px"
   large-gutter:
+    value: "50px"
+  xlarge-gutter:
     value: "70px"
+
 global:
   type: number
   category: space

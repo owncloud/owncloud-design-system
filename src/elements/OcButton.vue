@@ -9,7 +9,7 @@
     :disabled="disabled"
     @click="onClick"
   >
-    <oc-icon v-if="icon" :class="$_ocButton_iconClass" :name="icon" />
+    <oc-icon v-if="icon" :name="icon" />
     <span v-if="$slots.default">
       <slot name="default" />
     </span>
@@ -135,11 +135,6 @@ export default {
     },
   },
   computed: {
-    $_ocButton_iconClass() {
-      return this.$slots.default
-        ? "uk-position-small uk-position-center-left"
-        : "uk-position-center"
-    },
     $_ocButton_buttonClass() {
       if (this.stopClassPropagation) return ""
 
