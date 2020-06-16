@@ -6,9 +6,42 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Bring oC primary brand and interaction colors: [#546](https://github.com/owncloud/owncloud-design-system/issues/546)
+* Enhancement - Improve the design of buttons: [#784](https://github.com/owncloud/owncloud-design-system/issues/784)
+* Enhancement - Increase the logo clearspace: [#786](https://github.com/owncloud/owncloud-design-system/issues/786)
 * Enhancement - Automatically focus modal: [#781](https://github.com/owncloud/owncloud-design-system/pull/781)
+* Enhancement - Use Source Sans Pro: [#785](https://github.com/owncloud/owncloud-design-system/issues/785)
 
 ## Details
+
+* Enhancement - Bring oC primary brand and interaction colors: [#546](https://github.com/owncloud/owncloud-design-system/issues/546)
+
+   We've brought the ownCloud corporate identity brand and interaction colors. The primary
+   brand colour is used as a background in the sidebar. Interaction colours are used in buttons and
+   links.
+
+   https://github.com/owncloud/owncloud-design-system/issues/546
+   https://github.com/owncloud/owncloud-design-system/pull/791
+
+
+* Enhancement - Improve the design of buttons: [#784](https://github.com/owncloud/owncloud-design-system/issues/784)
+
+   We've added border-radius to buttons, added shadow to the primary button and adjusted
+   font-weight and padding.
+
+   https://github.com/owncloud/owncloud-design-system/issues/784
+   https://github.com/owncloud/owncloud-design-system/issues/777
+   https://github.com/owncloud/owncloud-design-system/pull/791
+
+
+* Enhancement - Increase the logo clearspace: [#786](https://github.com/owncloud/owncloud-design-system/issues/786)
+
+   We've increased the gutter between top corner of the sidebar and the logo. We've also decreased
+   the size of the logo itself.
+
+   https://github.com/owncloud/owncloud-design-system/issues/786
+   https://github.com/owncloud/owncloud-design-system/pull/791
+
 
 * Enhancement - Automatically focus modal: [#781](https://github.com/owncloud/owncloud-design-system/pull/781)
 
@@ -16,6 +49,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    modal itself so skipping the wrapping div which works only as a background.
 
    https://github.com/owncloud/owncloud-design-system/pull/781
+
+
+* Enhancement - Use Source Sans Pro: [#785](https://github.com/owncloud/owncloud-design-system/issues/785)
+
+   We've started using Source Sans Pro in the default theme as the font.
+
+   https://github.com/owncloud/owncloud-design-system/issues/785
+   https://github.com/owncloud/owncloud-design-system/pull/791
 
 # Changelog for [1.6.0] (2020-05-26)
 
