@@ -29,6 +29,13 @@
       "originalValue": "#667fa3",
       "name": "filetype-icon-color"
     },
+    "inverse-color": {
+      "type": "color",
+      "category": "Font-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "#fff",
+      "name": "inverse-color"
+    },
     "secondary-background": {
       "type": "color",
       "category": "Background-colors",
@@ -36,12 +43,12 @@
       "originalValue": "#6780a2",
       "name": "secondary-background"
     },
-    "invers-color": {
+    "action-primary": {
       "type": "color",
-      "category": "Font-colors",
-      "value": "rgb(255, 255, 255)",
-      "originalValue": "#fff",
-      "name": "invers-color"
+      "category": "Action-colors",
+      "value": "rgb(78, 133, 200)",
+      "originalValue": "#4e85c8",
+      "name": "action-primary"
     },
     "system-icon-color": {
       "type": "color",
@@ -57,6 +64,13 @@
       "originalValue": "#fff",
       "name": "background"
     },
+    "shadow-global": {
+      "type": "color",
+      "category": "Shadow-colors",
+      "value": "rgb(0, 0, 0)",
+      "originalValue": "#000000",
+      "name": "shadow-global"
+    },
     "muted-background": {
       "type": "color",
       "category": "Background-colors",
@@ -67,8 +81,8 @@
     "link-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(0, 102, 255)",
-      "originalValue": "#0066ff",
+      "value": "rgb(78, 133, 200)",
+      "originalValue": "#4e85c8",
       "name": "link-color"
     },
     "emphasis-color": {
@@ -99,6 +113,13 @@
       "originalValue": "#68d60e",
       "name": "success-background"
     },
+    "shadow-action-primary": {
+      "type": "color",
+      "category": "Shadow-colors",
+      "value": "rgb(50, 50, 93)",
+      "originalValue": "#32325d",
+      "name": "shadow-action-primary"
+    },
     "danger-background": {
       "type": "color",
       "category": "Background-colors",
@@ -113,11 +134,25 @@
       "originalValue": "#002966",
       "name": "primary-background"
     },
+    "action-primary-hover": {
+      "type": "color",
+      "category": "Action-colors",
+      "value": "rgb(48, 109, 181)",
+      "originalValue": "#306db5",
+      "name": "action-primary-hover"
+    },
+    "brand-primary": {
+      "type": "color",
+      "category": "Brand-colors",
+      "value": "rgb(27, 34, 61)",
+      "originalValue": "#1b223d",
+      "name": "brand-primary"
+    },
     "link-hover-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(0, 102, 255)",
-      "originalValue": "#0066ff",
+      "value": "rgb(48, 109, 181)",
+      "originalValue": "#306db5",
       "name": "link-hover-color"
     },
     "warning-background": {
@@ -238,6 +273,13 @@
       "value": "300px",
       "originalValue": "300px",
       "name": "width-medium"
+    },
+    "height-small": {
+      "type": "number",
+      "category": "size",
+      "value": "50px",
+      "originalValue": "50px",
+      "name": "height-small"
     },
     "duration_quickly": {
       "type": "number",
@@ -410,9 +452,16 @@
     "large-gutter": {
       "type": "number",
       "category": "space",
+      "value": "50px",
+      "originalValue": "50px",
+      "name": "large-gutter"
+    },
+    "xlarge-gutter": {
+      "type": "number",
+      "category": "space",
       "value": "70px",
       "originalValue": "70px",
-      "name": "large-gutter"
+      "name": "xlarge-gutter"
     },
     "line_height_m": {
       "type": "number",
