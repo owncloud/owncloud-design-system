@@ -8,7 +8,13 @@
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
         <oc-icon v-show="!loading" :name="icon" />
-        <div v-show="loading" :uk-spinner="spinnerRatio" aria-hidden></div>
+        <div
+          v-show="loading"
+          :class="$_ocSpinner_class"
+          :aria-label="ariaLabel"
+          tabindex="-1"
+          role="img"
+        />
       </span>
       <oc-text-input
         :class="[{ 'oc-search-input-icon' : icon }, 'oc-search-input']"
@@ -184,9 +190,11 @@ export default {
       // please don't treat empty string the same as null...
       return this.value === null ? this.query : this.value
     },
-    spinnerRatio() {
-      let ratio = this.small ? 0.5 : 0.75
-      return "ratio:" + ratio
+    $_ocSpinner_class() {
+      if (this.small) {
+        return "oc-spinner oc-spinner-xsmall"
+      }
+      return "oc-spinner oc-spinner-search"
     },
   },
 }
