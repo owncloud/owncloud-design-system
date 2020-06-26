@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.7.0...master
+
+## Summary
+
+* Change - Use oc-spinner css class in oc-search-bar component: [#802](https://github.com/owncloud/owncloud-design-system/pull/802)
+
+## Details
+
+* Change - Use oc-spinner css class in oc-search-bar component: [#802](https://github.com/owncloud/owncloud-design-system/pull/802)
+
+   UiKit spinner is not supporting IE11. The css classes around oc-spinner have been introduces
+   previously and now they are used in the component oc-search-bar as well.
+
+   https://github.com/owncloud/owncloud-design-system/pull/802
+
 # Changelog for [1.7.0] (2020-06-17)
 
 The following sections list the changes in ownCloud Design System 1.7.0.
