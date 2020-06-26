@@ -40,6 +40,10 @@ $oc-spinner-size: 24px;
     @include oc-spinner-size(0.7);
   }
 
+  &-search {
+    @include oc-spinner-size(0.8);
+  }
+
   &-medium {
     @include oc-spinner-size(1.5);
   }
