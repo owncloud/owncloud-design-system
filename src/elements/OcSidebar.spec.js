@@ -80,4 +80,19 @@ describe("OcSidebar", () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted().close).toBeTruthy()
   })
+
+  it('Replaces navigation with a main content', () => {
+    const productDesc = 'Securely access and share data from everywhere and any device'
+    const wrapper = shallowMount(Sidebar, {
+      propsData: defaultProps,
+      slots: {
+        mainContent: productDesc
+      }
+    })
+
+    expect(wrapper.findAll('.oc-sidebar-main-content').length).toBe(1)
+    expect(wrapper.find('.oc-sidebar-main-content').text()).toMatch(productDesc)
+    expect(wrapper.findAll('.oc-sidebar-nav').length).toBe(0)
+    expect(wrapper).toMatchSnapshot()
+  })
 })
