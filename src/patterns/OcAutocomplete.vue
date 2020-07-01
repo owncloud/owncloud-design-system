@@ -18,6 +18,7 @@
       @keydown.down.prevent="highlighted++"
       @keydown.enter="$_ocAutocomplete_selectSuggestion"
       @keydown.esc="$_ocAutocomplete_dropdown.hide"
+      @focus="$_ocAutocomplete_focus"
     />
     <div hidden :id="$_ocAutocomplete_boundryId" />
     <div
@@ -320,6 +321,17 @@ export default {
     },
     $_ocAutocomplete_resetSelectionText() {
       this.selectionText = ""
+    },
+    $_ocAutocomplete_focus() {
+      if (this.input.length === 0) {
+        this.$_ocAutocomplete_dropdown.hide()
+      } else {
+        this.$_ocAutocomplete_dropdown.show()
+      }
+
+      // The real update not depending on onblur
+      this.$_ocAutocomplete_userInput(this.input)
+      this.expanded = false
     },
   },
 }
