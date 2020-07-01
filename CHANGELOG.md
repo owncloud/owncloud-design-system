@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Use oc-spinner css class in oc-search-bar component: [#802](https://github.com/owncloud/owncloud-design-system/pull/802)
+* Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
 
 ## Details
 
@@ -16,6 +17,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    previously and now they are used in the component oc-search-bar as well.
 
    https://github.com/owncloud/owncloud-design-system/pull/802
+
+
+* Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
+
+   We've added slot called mainContent into the sidebar component. This slot replaces the
+   navigation if defined.
+
+   https://github.com/owncloud/owncloud-design-system/pull/804
 
 # Changelog for [1.7.0] (2020-06-17)
 
