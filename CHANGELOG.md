@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Use oc-spinner css class in oc-search-bar component: [#802](https://github.com/owncloud/owncloud-design-system/pull/802)
+* Enhancement - Show dropdown in autocomplete on focus: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
 * Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
 
 ## Details
@@ -17,6 +18,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    previously and now they are used in the component oc-search-bar as well.
 
    https://github.com/owncloud/owncloud-design-system/pull/802
+
+
+* Enhancement - Show dropdown in autocomplete on focus: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
+
+   In case the input is focused and it still has a value the dropdown will open
+
+   https://github.com/owncloud/owncloud-design-system/pull/804
 
 
 * Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
