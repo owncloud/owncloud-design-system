@@ -89,6 +89,11 @@
     }
   }
 
+  &-main-content {
+    padding: 0 $small-gutter $gutter;
+    color: $global-inverse-color;
+  }
+
   &-footer {
     padding: 0 $small-gutter;
   }

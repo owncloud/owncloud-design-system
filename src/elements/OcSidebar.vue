@@ -24,7 +24,7 @@
         <!-- @slot Content above the navigation block -->
         <slot name="upperContent" />
       </div>
-      <nav :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-nav']">
+      <nav v-if="navItems.length > 1 && !$slots.mainContent" key="sidebar-navigation" :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-nav']">
         <ul>
           <oc-sidebar-nav-item
             v-for="item in navItems"
@@ -38,6 +38,9 @@
           </oc-sidebar-nav-item>
         </ul>
       </nav>
+      <div v-else key="sidebar-main-content" :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-main-content']">
+        <slot name="mainContent" />
+      </div>
       <div v-if="$slots.footer" class="oc-sidebar-footer">
         <!-- @slot Footer of the sidebar -->
         <slot name="footer" />
@@ -84,7 +87,8 @@ export default {
      */
     navItems: {
       type: Array,
-      required: true
+      required: false,
+      default: () => []
     },
     /**
      * Asserts whether the sidebar's position is fixed
@@ -182,6 +186,23 @@ If a source of the logo image is not provided, the product name is used instead.
       }
     }
   </script>
+```
+
+The navigation inside of the sidebar can be replaced with a custom content via the slot called `mainContent`.
+In this content block, you can include e.g. a short description of the product, guide the user through the current action, etc.
+
+```js
+  <oc-sidebar
+    logoImg="https://owncloud.org/wp-content/themes/owncloud/img/owncloud-org-logo.svg"
+    productName="ownCloud"
+    class="uk-height-1-1"
+  >
+    <template v-slot:mainContent>
+      <div>
+        Securely access and share data from everywhere and any device
+      </div>
+    </template>
+  </oc-sidebar>
 ```
 
 To provide additional content above the navigation or in the footer, you can use the `upperContent` and `footer` slots.
