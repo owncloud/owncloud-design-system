@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Use oc-spinner css class in oc-search-bar component: [#802](https://github.com/owncloud/owncloud-design-system/pull/802)
 * Enhancement - Show dropdown in autocomplete on focus: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
 * Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
+* Enhancement - Add move icon: [#807](https://github.com/owncloud/owncloud-design-system/pull/807)
 
 ## Details
 
@@ -33,6 +34,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    navigation if defined.
 
    https://github.com/owncloud/owncloud-design-system/pull/804
+
+
+* Enhancement - Add move icon: [#807](https://github.com/owncloud/owncloud-design-system/pull/807)
+
+   We've added the material design folder move icon.
+
+   https://github.com/owncloud/owncloud-design-system/pull/807
 
 # Changelog for [1.7.0] (2020-06-17)
 
