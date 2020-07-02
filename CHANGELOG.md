@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Change - Use oc-spinner css class in oc-search-bar component: [#802](https://github.com/owncloud/owncloud-design-system/pull/802)
 * Enhancement - Show dropdown in autocomplete on focus: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
+* Enhancement - Add lead breadcrumb variation: [#806](https://github.com/owncloud/owncloud-design-system/pull/806)
 * Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
 * Enhancement - Add move icon: [#807](https://github.com/owncloud/owncloud-design-system/pull/807)
 
@@ -26,6 +27,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    In case the input is focused and it still has a value the dropdown will open
 
    https://github.com/owncloud/owncloud-design-system/pull/804
+
+
+* Enhancement - Add lead breadcrumb variation: [#806](https://github.com/owncloud/owncloud-design-system/pull/806)
+
+   We've added a lead variation to the breadcrumbs. This variation gives large font size to
+   breadcrumb items.
+
+   https://github.com/owncloud/owncloud-design-system/pull/806
 
 
 * Enhancement - Add mainContent slot to the sidebar: [#804](https://github.com/owncloud/owncloud-design-system/pull/804)
