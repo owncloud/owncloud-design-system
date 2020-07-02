@@ -35,4 +35,13 @@
       }
     }
   }
+
+  &-lead &-list-item {
+    &::before,
+    a,
+    span {
+      // FIXME: Remove important after we get rid of UIKit
+      font-size: $large-font-size !important;
+    }
+  }
 }

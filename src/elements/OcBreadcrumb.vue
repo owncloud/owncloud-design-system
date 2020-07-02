@@ -1,7 +1,7 @@
 <template>
-  <div class="oc-breadcrumb">
+  <div :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
     <ul class="oc-breadcrumb-list">
-      <li v-for="(item, index) in items" :key="index">
+      <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
         <router-link v-if="home && index === 0" :to="item.to" class="uk-flex"
           ><oc-icon name="home"
         /></router-link>
@@ -33,6 +33,9 @@
 </template>
 
 <script>
+import OcDrop from "./OCDrop.vue"
+import OcIcon from "./OcIcon.vue"
+
 /**
  * Displays a breadcrumb. Each item in the items property has the following elements:
  *
@@ -44,13 +47,18 @@ export default {
   name: "oc-breadcrumb",
   status: "review",
   release: "1.0.0",
+
+  components: {
+    OcDrop,
+    OcIcon
+  },
+
   props: {
     /**
      * Array of breadcrub items
      */
     items: {
       type: Array,
-      default: () => [],
       required: true,
     },
     /**
@@ -61,6 +69,16 @@ export default {
       type: [Boolean],
       default: false,
     },
+    /**
+     * Variation of breadcrumbs
+     * Can be `default` or `lead`
+     */
+    variation: {
+      type: String,
+      required: false,
+      default: "default",
+      validator: value => value === "lead" || value === "default"
+    }
   },
   computed: {
     $_ocBreadcrumb_dropdownItems() {
@@ -78,11 +96,12 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
 <template>
-  <section>
-    <oc-breadcrumb :items="items" home></oc-breadcrumb>
-  </section>
+  <div>
+    <oc-breadcrumb :items="items" home class="uk-margin-bottom" />
+    <oc-breadcrumb :items="items" variation="lead" />
+  </div>
 </template>
 <script>
   export default {
