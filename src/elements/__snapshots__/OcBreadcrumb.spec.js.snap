@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OcBreadcrumb displays all items 1`] = `
+<div class="oc-breadcrumb oc-breadcrumb-default">
+  <ul class="oc-breadcrumb-list">
+    <li class="oc-breadcrumb-list-item">
+      <router-link-stub tag="a" to="[object Object]">First folder</router-link-stub>
+    </li>
+    <li class="oc-breadcrumb-list-item"><a>Subfolder</a></li>
+    <li class="oc-breadcrumb-list-item">
+      <router-link-stub tag="a" to="[object Object]">Deep</router-link-stub>
+    </li>
+    <li class="oc-breadcrumb-list-item"><span>Deeper ellipsize in responsive mode</span></li>
+  </ul>
+  <div class="oc-breadcrumb-drop"><label class="oc-breadcrumb-drop-label"><span class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
+      <oc-icon-stub name="expand_more" arialabel="icon" type="span" size="small" variation="system" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
+    </label>
+    <oc-drop-stub toggle="- *" position="bottom-left" mode="click" options="[object Object]">
+      <ul class="uk-nav uk-nav-default">
+        <li>
+          <router-link-stub tag="a" to="[object Object]">Deep</router-link-stub>
+        </li>
+        <li><a>Subfolder</a></li>
+        <li>
+          <router-link-stub tag="a" to="[object Object]">First folder</router-link-stub>
+        </li>
+      </ul>
+    </oc-drop-stub>
+  </div>
+</div>
+`;
+
+exports[`OcBreadcrumb sets correct variation 1`] = `
+<div class="oc-breadcrumb oc-breadcrumb-lead">
+  <ul class="oc-breadcrumb-list">
+    <li class="oc-breadcrumb-list-item">
+      <router-link-stub tag="a" to="[object Object]">First folder</router-link-stub>
+    </li>
+    <li class="oc-breadcrumb-list-item"><a>Subfolder</a></li>
+    <li class="oc-breadcrumb-list-item">
+      <router-link-stub tag="a" to="[object Object]">Deep</router-link-stub>
+    </li>
+    <li class="oc-breadcrumb-list-item"><span>Deeper ellipsize in responsive mode</span></li>
+  </ul>
+  <div class="oc-breadcrumb-drop"><label class="oc-breadcrumb-drop-label"><span class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
+      <oc-icon-stub name="expand_more" arialabel="icon" type="span" size="small" variation="system" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
+    </label>
+    <oc-drop-stub toggle="- *" position="bottom-left" mode="click" options="[object Object]">
+      <ul class="uk-nav uk-nav-default">
+        <li>
+          <router-link-stub tag="a" to="[object Object]">Deep</router-link-stub>
+        </li>
+        <li><a>Subfolder</a></li>
+        <li>
+          <router-link-stub tag="a" to="[object Object]">First folder</router-link-stub>
+        </li>
+      </ul>
+    </oc-drop-stub>
+  </div>
+</div>
+`;
