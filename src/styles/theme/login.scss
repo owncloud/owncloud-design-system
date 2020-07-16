@@ -1,22 +1,22 @@
-@import "login-wallpaper";
-@import "owncloudx-logo-white";
+@import 'login-wallpaper';
+@import 'owncloudx-logo-white';
 
 .oc-login {
   @extend .uk-background-cover;
-  position: relative;
+
   background-image: $login-wallpaper;
+  position: relative;
 
   &-logo {
     @extend .uk-background-cover;
 
-    position: absolute;
-    height: 80px;
-    width: 200px;
-    left: 50%;
-    transform: translate(-50%, -150%);
-
-    text-indent: -9999px;
     background-image: $owncloudx-logo-white;
+    height: 80px;
+    left: 50%;
+    position: absolute;
+    text-indent: -9999px;
+    transform: translate(-50%, -150%);
+    width: 200px;
   }
 
   &-authorize-button {

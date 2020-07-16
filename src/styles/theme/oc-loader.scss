@@ -2,34 +2,36 @@
   @extend .uk-progress;
   @extend .uk-position-relative;
 
-  &:after {
+  &::after {
     @extend .uk-position-absolute;
     @extend .uk-display-block;
 
-    content: "";
+    background: $global-muted-color;
+    content: '';
     height: 100%;
     width: 0;
-    background: $global-muted-color;
 
     animation: {
-      name: oc-loader;
       duration: $spinner-duration;
       iteration-count: infinite;
+      name: oc-loader;
     }
   }
 }
 
 @keyframes oc-loader {
   0% {
+    left: 0;
     width: 0%;
-    left: 0;
   }
+
   50% {
-    width: 66%;
     left: 0;
+    width: 66%;
   }
+
   100% {
-    width: 10%;
     left: 100%;
+    width: 10%;
   }
 }

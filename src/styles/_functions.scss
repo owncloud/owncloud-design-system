@@ -32,9 +32,11 @@
   $sum-rgb: $r + $g + $b;
 
   @if $sum-rgb < 350 {
-    @return "false";
-  } @else {
-    @return "true";
+    @return 'false';
+  }
+
+  @else {
+    @return 'true';
   }
 }
 
@@ -47,9 +49,12 @@
   @if $fallback == null {
     $fallback: #000;
   }
-  @if (color-difference($color, $background) == "false") {
+
+  @if (color-difference($color, $background) == 'false') {
     @return $fallback;
-  } @else {
+  }
+
+  @else {
     @return $color;
   }
 }
@@ -62,7 +67,7 @@
 /// @return {Color} The modified color.
 @function color-multiply($foreground, $background: null) {
   @if $background == null {
-    $background: #ffffff;
+    $background: #fff;
   }
 
   @return $foreground * $background / 255;
@@ -74,14 +79,20 @@
 @function rem($value) {
   $unit: unit($value);
 
-  @if $unit == "rem" {
+  @if $unit == 'rem' {
     @return $value;
-  } @else if $unit == "px" {
+  }
+
+  @else if $unit == 'px' {
     @return $value / $size-m * 1rem;
-  } @else if $unit == "em" {
+  }
+
+  @else if $unit == 'em' {
     @return $unit / 1em * 1rem;
-  } @else {
-    @error "Value must be in px, em, or rem.";
+  }
+
+  @else {
+    @error 'Value must be in px, em, or rem.';
   }
 }
 
@@ -91,14 +102,20 @@
 @function px($value) {
   $unit: unit($value);
 
-  @if $unit == "px" {
+  @if $unit == 'px' {
     @return $value;
-  } @else if $unit == "em" {
+  }
+
+  @else if $unit == 'em' {
     @return ($value / 1em) * $size-m;
-  } @else if $unit == "rem" {
+  }
+
+  @else if $unit == 'rem' {
     @return ($value / 1rem) * $size-m;
-  } @else {
-    @error "Value must be in rem, em, or px.";
+  }
+
+  @else {
+    @error 'Value must be in rem, em, or px.';
   }
 }
 
@@ -107,28 +124,30 @@
 /// @param {Number} $map - The level of depth to get names from.
 /// @return {String} The list of names in the map.
 @function available-names($map, $level: 1) {
-  @if type-of($map) != "map" {
+  @if type-of($map) != 'map' {
     @return null;
   }
 
-  $output: "";
-  $newline: "\A ";
+  $output: '';
+  $newline: '\A ';
 
   @if $level == 1 {
     @each $key, $value in $map {
-      $output: $output + "#{$newline}- #{$key} #{available-names($value, $level + 1)}";
+      $output: $output + '#{$newline}- #{$key} #{available-names($value, $level + 1)}';
     }
-  } @else {
-    $output: "(";
+  }
+
+  @else {
+    $output: '(';
     $i: 1;
 
     @each $key, $value in $map {
-      $sep: if($i < length($map), ", ", "");
-      $output: $output + "#{$key}#{$sep}#{available-names($value, $level + 1)}";
+      $sep: if($i < length($map), ', ', '');
+      $output: $output + '#{$key}#{$sep}#{available-names($value, $level + 1)}';
       $i: $i + 1;
     }
 
-    $output: $output + ")";
+    $output: $output + ')';
   }
 
   @return $output;

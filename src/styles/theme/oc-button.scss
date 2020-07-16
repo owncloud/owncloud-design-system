@@ -4,15 +4,15 @@
 // ========================================================================
 
 @mixin hook-button() {
+  align-items: center;
+  border-radius: 3px;
   display: inline-flex;
   flex-flow: row wrap;
-  border-radius: 3px;
-  padding: 0.5rem 0.75rem;
   font-size: 1.125rem;
   font-weight: 600;
-  line-height: 1.4;
   justify-content: center;
-  align-items: center;
+  line-height: 1.4;
+  padding: 0.5rem 0.75rem;
   transition:
     background-color $transition-duration-short ease-in-out,
     color $transition-duration-short ease-in-out,
@@ -62,8 +62,8 @@
   }
 
   &.uk-button-large {
-    min-height: $global-control-large-height;
     font-size: 1.5rem;
+    min-height: $global-control-large-height;
   }
 
   &.uk-button-primary,
@@ -75,8 +75,8 @@
   }
 
   &.uk-button-default {
-    border: 1px solid $action-primary;
     background-color: transparent;
+    border: 1px solid $action-primary;
     color: $action-primary;
 
     .oc-icon > svg {
@@ -97,7 +97,7 @@
   &.uk-button-primary {
     background-color: $action-primary;
     box-shadow: 0 4px 6px rgba($shadow-action-primary, 0.11), 0 1px 3px rgba($shadow-global, 0.08);
-    color: white;
+    color: $global-inverse-color;
 
     &:hover,
     &:focus {
@@ -119,8 +119,8 @@
     }
 
     &.uk-button-default {
-      border-left: none;
-      border-right: none;
+      border-left: 0;
+      border-right: 0;
 
       &:first-of-type {
         border-left: 1px solid $action-primary;

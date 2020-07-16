@@ -3,6 +3,7 @@
 
   &-dropdown {
     @extend .uk-box-shadow-medium;
+
     background: $global-background;
   }
 
@@ -12,13 +13,15 @@
 
   &-spinner {
     @extend .uk-position-absolute;
-    top: 50%;
+
     left: $global-gutter;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
 
   &-suggestion {
     @extend .uk-margin-remove;
+
     color: $global-muted-color;
     padding: $global-small-gutter;
 
@@ -30,36 +33,38 @@
         @extend .uk-position-relative;
         @extend .uk-text-meta;
         @extend .uk-margin-remove;
+
+        background-color: $global-muted-background;
         padding: $global-small-gutter;
         padding-left: $spinner-size + $global-small-gutter * 2;
-        background-color: $global-muted-background;
       }
     }
 
     &-selected,
     &:hover,
     &:focus {
-      color: $global-inverse-color;
       background-color: $global-primary-background;
+      color: $global-inverse-color;
     }
 
     &-overflow {
       @extend .uk-text-meta;
       @extend .uk-margin-remove;
+
+      background-color: $global-muted-background;
       cursor: pointer;
       padding: $global-small-gutter;
-      background-color: $global-muted-background;
     }
 
+    &-selected .uk-text-meta,
     &:hover .uk-text-meta,
-    &:focus .uk-text-meta,
-    &-selected .uk-text-meta {
+    &:focus .uk-text-meta {
       color: $global-inverse-color;
     }
 
+    &-selected .oc-icon > svg,
     &:hover .oc-icon > svg,
-    &:focus .oc-icon > svg,
-    &-selected .oc-icon > svg {
+    &:focus .oc-icon > svg {
       fill: $global-inverse-color;
     }
   }

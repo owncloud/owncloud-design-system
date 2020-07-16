@@ -20,6 +20,7 @@
     fill: $alert-warning-color;
   }
 }
+
 @mixin hook-alert-danger() {
   svg {
     fill: $alert-danger-color;

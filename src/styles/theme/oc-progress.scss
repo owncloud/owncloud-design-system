@@ -8,18 +8,18 @@ $progress-height-small: 5px !default;
 // ========================================================================
 
 .oc-progress {
-  // Add the correct vertical alignment in Chrome, Firefox, and Opera.
-  vertical-align: baseline;
   // Remove default style
   -webkit-appearance: none;
   -moz-appearance: none;
-  display: block;
-  width: 100%;
-  // Remove default style
-  border: 0;
   // Set background color for progress container in Firefox, IE11 and Edge
   background-color: $global-inverse-color;
+  // Remove default style
+  border: 0;
+  display: block;
   height: $progress-height;
+  // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+  vertical-align: baseline;
+  width: 100%;
 
   &:focus {
     outline: none;
@@ -50,9 +50,9 @@ $progress-height-small: 5px !default;
 
   &::-ms-fill {
     background-color: $action-primary;
-    transition: width $transition-duration-short ease;
     // Remove right border in IE11 and Edge
     border: 0;
+    transition: width $transition-duration-short ease;
   }
 
   &-small {

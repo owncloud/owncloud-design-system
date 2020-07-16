@@ -2,17 +2,17 @@
   @extend .uk-offcanvas;
 
   &.uk-offcanvas-bottom {
-    left: auto;
     height: 100vh;
+    left: auto;
   }
 
-  & > .uk-offcanvas-bar {
-    top: auto;
-    width: 100vw;
+  > .uk-offcanvas-bar {
     background: $global-muted-background;
+    top: auto;
     transform: translateX(0) translateY(100%);
+    width: 100vw;
 
-    & .oc-icon > svg {
+    .oc-icon > svg {
       fill: $system-icon-color;
     }
   }

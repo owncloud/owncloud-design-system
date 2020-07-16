@@ -1,12 +1,4 @@
 //
-// Component: Input
-//
-// ========================================================================
-
-@mixin hook-input() {
-}
-
-//
 // Component: OC Text Input
 //
 // ========================================================================
@@ -14,19 +6,23 @@
 .oc-text-input {
   @extend .uk-input;
 }
+
 .oc-text-input-warning,
 .oc-text-input-warning:focus {
-  color: $warning-background !important;
   border-color: $warning-background !important;
+  color: $warning-background !important;
 }
+
 .oc-text-input-danger,
 .oc-text-input-danger:focus {
-  color: $danger-background !important;
   border-color: $danger-background !important;
+  color: $danger-background !important;
 }
+
 .oc-text-input-message {
   @extend .uk-flex;
   @extend .uk-flex-middle;
   @extend .uk-margin-xsmall-top;
+
   min-height: $global-font-size * 1.5;
 }

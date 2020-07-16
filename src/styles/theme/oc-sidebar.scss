@@ -1,23 +1,23 @@
 .oc-sidebar {
-  width: $width-medium;
+  background-color: $brand-primary;
+  box-sizing: border-box;
   height: 100vh;
   max-height: 100vh;
-  padding: $large-gutter 0 $gutter;
-  background-color: $brand-primary;
   overflow: hidden auto;
-  box-sizing: border-box;
+  padding: $large-gutter 0 $gutter;
+  width: $width-medium;
 
   &-content-wrapper {
     display: flex;
     flex-direction: column;
-    width: $width-medium;
-    max-width: $width-medium;
     height: 100%;
+    max-width: $width-medium;
+    width: $width-medium;
   }
 
   &-logo {
-    padding: 0 $small-gutter;
     margin-bottom: $large-margin;
+    padding: 0 $small-gutter;
     text-align: center;
 
     &:hover,
@@ -42,9 +42,9 @@
   &-nav {
     flex: 1;
 
-    & > ul {
-      padding: 0;
+    > ul {
       margin: 0;
+      padding: 0;
     }
   }
 
@@ -56,18 +56,18 @@
       background-color: lighten($brand-primary, 5);
     }
 
-    & > a,
-    & > a > .oc-icon > svg {
+    > a,
+    > a > .oc-icon > svg {
       @extend .oc-light;
     }
 
-    & > a {
+    > a {
+      align-items: center;
       display: flex;
       flex-flow: row wrap;
-      padding: $small-gutter;
       font-size: 1.125rem;
       font-weight: 600;
-      align-items: center;
+      padding: $small-gutter;
 
       &:hover,
       &:focus {
@@ -75,7 +75,7 @@
       }
     }
 
-    & .oc-icon {
+    .oc-icon {
       margin-right: $small-margin;
     }
 
@@ -83,15 +83,15 @@
       background-color: lighten($brand-primary, 5);
 
       // Vue doesn't allow navigating to active route so we do not use pointer as it might mislead users
-      & > a:hover {
+      > a:hover {
         cursor: default;
       }
     }
   }
 
   &-main-content {
-    padding: 0 $small-gutter $gutter;
     color: $global-inverse-color;
+    padding: 0 $small-gutter $gutter;
   }
 
   &-footer {
@@ -99,26 +99,26 @@
   }
 
   &-fixed {
+    left: 0;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100vw;
     z-index: 3;
   }
 
   &-fixed &-button-close {
     position: absolute;
-    top: $small-gutter;
     right: $small-gutter;
+    top: $small-gutter;
 
-    & .oc-icon > svg {
+    .oc-icon > svg {
       @extend .oc-light;
     }
   }
 
   &-fixed &-content-wrapper {
-    width: 100vw;
     max-width: 100vw;
+    width: 100vw;
   }
 
   &-fixed &-logo {

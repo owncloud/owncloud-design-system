@@ -2,6 +2,7 @@
   .uk-margin-xsmall {
     margin-bottom: $xsmall-margin;
   }
+
   * + .uk-margin-xsmall {
     margin-top: $xsmall-margin !important;
   }
@@ -9,12 +10,15 @@
   .uk-margin-xsmall-top {
     margin-top: $xsmall-margin !important;
   }
+
   .uk-margin-xsmall-bottom {
     margin-bottom: $xsmall-margin !important;
   }
+
   .uk-margin-xsmall-left {
     margin-left: $xsmall-margin !important;
   }
+
   .uk-margin-xsmall-right {
     margin-right: $xsmall-margin !important;
   }

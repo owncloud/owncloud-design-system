@@ -2,8 +2,8 @@
   margin-top: 60px;
 
   .material-icons {
+    font-size: $global-font-size + 2;
     position: relative;
     top: 3px;
-    font-size: $global-font-size + 2;
   }
 }
