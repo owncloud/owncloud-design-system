@@ -29,7 +29,7 @@
         role="menu"
       >
         <ul class="uk-nav uk-nav-default">
-          <li v-for="(item, index) in $_ocBreadcrumb_dropdownItems" :key="index">
+          <li v-for="(item, index) in $_ocBreadcrumb_dropdownItems" :key="index" @click="isDropdownVisible = false">
             <router-link v-if="item.to" :to="item.to">{{ item.text }}</router-link>
             <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
             <span v-else v-text="item.text" />
