@@ -49,6 +49,14 @@ export default {
       default: () => [0, 0]
     },
     /**
+     * Defines whether the drop element should match the width of its parent
+     */
+    matchParentWidth: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    /**
      * More modifiers are available - see https://popper.js.org/docs/v2/modifiers/
      **/
     modifiers: {
@@ -90,6 +98,10 @@ export default {
       placement: this.position,
       modifiers: this.$_ocDrop_modifiers
     })
+
+    if (this.matchParentWidth) {
+      this.$refs.ocDrop.style.width = this.$_ocDrop_boundary.offsetWidth + "px"
+    }
   }
 }
 </script>

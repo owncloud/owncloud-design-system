@@ -11,7 +11,7 @@
       </li>
     </ul>
     <div class="oc-breadcrumb-drop">
-      <label class="oc-breadcrumb-drop-label">
+      <label class="oc-breadcrumb-drop-label" @click="$_ocBreadcrumb_toggleDropdown">
         <span
           v-if="$_ocBreadcrumb_currentFolder"
           class="oc-breadcrumb-drop-label-text"
@@ -19,7 +19,15 @@
         />
         <oc-icon class="oc-breadcrumb-drop-label-icon" name="expand_more" />
       </label>
-      <oc-drop v-if="$_ocBreadcrumb_dropdownItems" :options="{ offset: 20 }">
+      <oc-drop
+        v-if="$_ocBreadcrumb_dropdownItems && isDropdownVisible"
+        id="oc-breadcrumb-mobile-drop"
+        class="uk-padding-small"
+        boundary=".oc-breadcrumb-drop"
+        position="bottom"
+        :match-parent-width="true"
+        role="menu"
+      >
         <ul class="uk-nav uk-nav-default">
           <li v-for="(item, index) in $_ocBreadcrumb_dropdownItems" :key="index">
             <router-link v-if="item.to" :to="item.to">{{ item.text }}</router-link>
@@ -80,6 +88,11 @@ export default {
       validator: value => value === "lead" || value === "default"
     }
   },
+
+  data: () => ({
+    isDropdownVisible: false
+  }),
+
   computed: {
     $_ocBreadcrumb_dropdownItems() {
       if (this.items.length <= 1 || !this.items) return false
@@ -92,15 +105,21 @@ export default {
       return [...this.items].reverse()[0]
     },
   },
+
+  methods: {
+    $_ocBreadcrumb_toggleDropdown() {
+      this.isDropdownVisible = !this.isDropdownVisible
+    }
+  }
 }
 </script>
 
 <docs>
 ```js
 <template>
-  <div>
+  <div class="oc-height-medium">
     <oc-breadcrumb :items="items" home class="uk-margin-bottom" />
-    <oc-breadcrumb :items="items" variation="lead" />
+    <oc-breadcrumb :items="items" variation="lead" class="uk-visible@s" />
   </div>
 </template>
 <script>
