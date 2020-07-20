@@ -1,155 +1,163 @@
 <template>
-  <div :id="dropId" :uk-drop="$_ocDrop_props" @click="$_ocDrop_close">
-    <div v-if="$slots.default" class="uk-card uk-card-default uk-card-small uk-card-body">
-      <slot />
-    </div>
-    <slot v-else name="special" />
+  <div :id="$_ocDrop_id" ref="ocDrop" class="oc-drop">
+    <!-- @slot Content of the drop -->
+    <slot />
   </div>
 </template>
 <script>
-import UiKit from "uikit"
+import { createPopper } from "@popperjs/core"
+import uniqueId from "../utils/uniqueId"
 
-/**
- * Position any element in relation to another element.
- */
 export default {
   name: "oc-drop",
   status: "review",
   release: "1.0.0",
   props: {
     /**
-     * Id of the drop.
+     * ID of the drop element. If not defined, the element will automatically receive a unique ID.
      */
-    dropId: {
+    id: {
       type: String,
-      required: false,
+      required: false
     },
     /**
-     * CSS selector of the element to maintain the drop's visibility. see https://getuikit.com/docs/drop#boundary
+     * CSS selector of the element to maintain the drop's visibility
      **/
     boundary: {
-      type: [String, Boolean],
-      default: false,
-    },
-    /**
-     * CSS selector for the element to be used as toggle. By default, the preceding element is used.
-     **/
-    toggle: {
       type: String,
-      default: "- *",
+      required: true
     },
     /**
      * The position of the drop.
      **/
     position: {
       type: String,
-      default: "bottom-left",
+      required: false,
+      default: "bottom-end",
       validator: value => {
         return value.match(
-          /((top|bottom)-(left|center|right|justify)|(left|right)-(top|center|bottom))/
+          /((top|bottom)|(top|bottom)-(start|end)|(left|right)|(left|right)-(start|end))/
         )
       },
     },
     /**
-     * Comma separated list of drop trigger behaviour modes: `click or hover`
-     **/
-    mode: {
-      type: String,
-      default: "click",
-      validator: value => {
-        return value.match(/(click|hover)/)
-      },
-    },
-    /**
-     * Defines if the drop should be closed after clicking on it. Needs to have defined dropId to work.
+     * The offset of the drop
      */
-    closeOnClick: {
-      type: Boolean,
+    offset: {
+      type: Array,
       required: false,
+      default: () => [0, 0]
     },
     /**
-     * More options are available - see https://getuikit.com/docs/drop
+     * More modifiers are available - see https://popper.js.org/docs/v2/modifiers/
      **/
-    options: {
-      type: Object,
-      default() {
-        return {
-          "boundary-align": true,
-        }
-      },
+    modifiers: {
+      type: Array,
+      required: false,
+      default: () => []
     },
   },
+
   computed: {
-    $_ocDrop_props() {
-      // from properties
-      let boundary = this.boundary || this.toggle
-      let toggle = this.toggle
-      let mode = this.mode
-      let pos = this.position
-
-      // Collected properties
-      let props = Object.assign({ boundary, toggle, mode, pos }, this.options)
-
-      return JSON.stringify(props)
+    $_ocDrop_id() {
+      return this.id || uniqueId("oc-drop-")
     },
-  },
-  methods: {
-    $_ocDrop_close() {
-      if (this.closeOnClick) {
-        UiKit.drop(`#${this.dropId}`).hide()
-      }
+
+    $_ocDrop_modifiers() {
+      const defaultModifiers = [
+        {
+          name: "offset",
+          options: {
+            offset: this.offset
+          }
+        }
+      ]
+
+      return defaultModifiers.concat(this.modifiers)
     },
+
+    $_ocDrop_boundary() {
+      return document.querySelector(this.boundary)
+    },
+
+    $_ocDrop_element() {
+      return document.querySelector("#" + this.$refs.ocDrop.id)
+    }
   },
+
+  mounted() {
+    createPopper(this.$_ocDrop_boundary, this.$_ocDrop_element, {
+      placement: this.position,
+      modifiers: this.$_ocDrop_modifiers
+    })
+  }
 }
 </script>
 <docs>
+Contextual overlays for displaying lists of links and more.
+
+## Caveats
+### A unique key needs to be always defined
+It can happen that in some cases the drop component is quickly exchanged with a new one.
+Vue.js in that case tries to improve the performance by not creating a new element but only replacing the content of the existing one.
+This breaks the selectors which are used by popper.js and result in a lost dropdown.
+To prevent this issue, it is required to always define a unique key.
+
 ```jsx
-<div>
-  <div class="uk-button-group">
-    <oc-button id="my_menu">Menu</oc-button>
-    <oc-button id="my_filter">Filter</oc-button>
-    <oc-button id="my_advanced">Advanced</oc-button>
-  </div>
-
-  <oc-drop toggle="#my_menu" mode="click">
-    <oc-nav>
-      <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>
-      <oc-nav-item>Item without icon</oc-nav-item>
-      <oc-nav-item>Active item</oc-nav-item>
-    </oc-nav>
-  </oc-drop>
-
-  <oc-drop toggle="#my_filter" mode="hover">
-    <p>
-      Lets filter:
-    </p>
-    <ul class="uk-list">
-      <li>
-        <label><oc-checkbox /> <span class="uk-text-meta">Show Files</span></label>
-      </li>
-      <li>
-        <label><oc-checkbox /> <span class="uk-text-meta">Show Folders</span></label>
-      </li>
-      <li>
-        <oc-search-bar small placeholder="Filter by name" :button="false" />
-      </li>
-    </ul>
-  </oc-drop>
-
-  <oc-drop dropId="oc-drop" toggle="#my_advanced" mode="click" closeOnClick :options="{ 'delay-hide': '0' }">
-    <div slot="special" class="uk-card uk-card-default">
-      <div class="uk-card-header">
-        <h3 class="uk-card-title">
-          Advanced
-        </h3>
-      </div>
-      <div class="uk-card-body">
-        <p>
-          I'm a slightly more advanced drop down and I'll be closed as soon as you click on me.
-        </p>
-      </div>
+<template>
+  <div class="oc-height-medium">
+    <div class="uk-flex uk-flex-row uk-flex-center">
+      <oc-button id="my_menu" class="uk-margin-small-right" @click.native="toggleMenu">Menu</oc-button>
+      <transition name="fade">
+        <oc-drop v-if="menuVisible" key="menu-drop" boundary="#my_menu">
+          <oc-nav class="uk-padding-small">
+            <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>
+            <oc-nav-item>Item without icon</oc-nav-item>
+            <oc-nav-item>Active item</oc-nav-item>
+          </oc-nav>
+        </oc-drop>
+      </transition>
+      <oc-button id="my_filter" @click.native="toggleFilters">Filter</oc-button>
+      <transition name="fade">
+        <oc-drop v-if="filtersVisible" key="filter-drop" boundary="#my_filter" :offset="[0, 20]" class="uk-padding-small">
+          <p>
+            Lets filter:
+          </p>
+          <ul class="uk-list">
+            <li>
+              <label><oc-checkbox /> <span class="uk-text-meta">Show Files</span></label>
+            </li>
+            <li>
+              <label><oc-checkbox /> <span class="uk-text-meta">Show Folders</span></label>
+            </li>
+            <li>
+              <oc-search-bar small placeholder="Filter by name" :buttonHidden="true" />
+            </li>
+          </ul>
+        </oc-drop>
+      </transition>
     </div>
-  </oc-drop>
-</div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      menuVisible: false,
+      filtersVisible: false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.filtersVisible = false
+      this.menuVisible = !this.menuVisible
+    },
+    toggleFilters() {
+      this.menuVisible = false
+      this.filtersVisible = !this.filtersVisible
+    }
+  }
+}
+</script>
 ```
 </docs>

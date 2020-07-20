@@ -47,7 +47,7 @@ props:
     value: "#fff"
     category: "Background-colors"
   muted-background:
-    value: "#f8f8f8"
+    value: "#e5e5e5"
     category: "Background-colors"
   primary-background:
     value: "#002966"

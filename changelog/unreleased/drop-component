@@ -1,0 +1,6 @@
+Change: Use custom drop component instead of the UIKit one
+
+We've removed UIKit from our drop component and used a custom styles for it.
+To keep correct positioning of the element, we brought a popper.js library.
+
+https://github.com/owncloud/owncloud-design-system/pull/816

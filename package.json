@@ -70,45 +70,8 @@
       }
     }
   },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "plugin:vue/essential"
-    ],
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "rules": {
-      "indent": [
-        "error",
-        2
-      ],
-      "vue/no-unused-vars": "error",
-      "quotes": [
-        "error",
-        "double"
-      ],
-      "no-extra-semi": "off",
-      "semi": [
-        "error",
-        "never"
-      ],
-      "semi-style": [
-        "error",
-        "last"
-      ],
-      "no-console": "off"
-    },
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 8,
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    }
-  },
   "dependencies": {
+    "@popperjs/core": "^2.4.4",
     "luxon": "^1.22.0",
     "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.24.0",
