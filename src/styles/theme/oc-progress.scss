@@ -1,0 +1,75 @@
+// Variables
+// ========================================================================
+
+$progress-height: 15px !default;
+$progress-height-small: 5px !default;
+
+// Component
+// ========================================================================
+
+.oc-progress {
+  // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+  vertical-align: baseline;
+  // Remove default style
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 100%;
+  // Remove default style
+  border: 0;
+  // Set background color for progress container in Firefox, IE11 and Edge
+  background-color: $global-inverse-color;
+  height: $progress-height;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Remove animated circles for indeterminate state in IE11 and Edge
+  &:indeterminate {
+    color: transparent;
+  }
+
+  &::-webkit-progress-bar {
+    background-color: $global-inverse-color;
+  }
+
+  &::-moz-progress-bar {
+    background-color: $action-primary;
+  }
+
+  // Remove progress bar for indeterminate state in Firefox
+  &:indeterminate::-moz-progress-bar {
+    width: 0;
+  }
+
+  &::-webkit-progress-value {
+    background-color: $action-primary;
+    transition: width $transition-duration-short ease;
+  }
+
+  &::-ms-fill {
+    background-color: $action-primary;
+    transition: width $transition-duration-short ease;
+    // Remove right border in IE11 and Edge
+    border: 0;
+  }
+
+  &-small {
+    height: $progress-height-small;
+  }
+
+  &-warning {
+    &::-webkit-progress-value {
+      background-color: $warning-background;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $warning-background;
+    }
+
+    &::-ms-fill {
+      background-color: $warning-background;
+    }
+  }
+}
