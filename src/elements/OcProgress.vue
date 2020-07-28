@@ -39,7 +39,10 @@ export default {
     size: {
       type: String,
       required: false,
-      default: "default"
+      default: "default",
+      validator: value => {
+        return value.match(/(default|small)/)
+      }
     },
     /**
      * The variation of the progress bar.
@@ -48,7 +51,10 @@ export default {
     variation: {
       type: String,
       required: false,
-      default: "primary"
+      default: "primary",
+      validator: value => {
+        return value.match(/(primary|warning)/)
+      }
     }
   },
 
