@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.8.0...master
+
+## Summary
+
+* Enhancement - Add new variations and sizes of progress bar: [#819](https://github.com/owncloud/owncloud-design-system/pull/819)
+
+## Details
+
+* Enhancement - Add new variations and sizes of progress bar: [#819](https://github.com/owncloud/owncloud-design-system/pull/819)
+
+   We've added new variations and sizes of the progress bar component. Variations change the
+   color of the progress bar and can be either `primary` or `warning`. Sizes affect the height of
+   the progress bar where it can be either `default` or `small`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/819
+
 # Changelog for [1.8.0] (2020-07-03)
 
 The following sections list the changes in ownCloud Design System 1.8.0.
