@@ -6,15 +6,12 @@
     :aria-valuenow="value"
     aria-busy="true"
     aria-valuemin="0"
-    class="uk-progress oc-progress"
+    :class="$_ocProgress_classes"
     tabindex="-1"
     role="progressbar"
-  ></progress>
+  />
 </template>
 <script>
-/**
- * Show progress to the users.
- */
 export default {
   name: "oc-progress",
   status: "review",
@@ -35,11 +32,40 @@ export default {
       type: Number,
       required: true,
     },
+    /**
+     * The size of the progress bar.
+     * Can be `default` or `small`
+     */
+    size: {
+      type: String,
+      required: false,
+      default: "default"
+    },
+    /**
+     * The variation of the progress bar.
+     * Can be `primary` or `warning`
+     */
+    variation: {
+      type: String,
+      required: false,
+      default: "primary"
+    }
   },
+
+  computed: {
+    $_ocProgress_classes() {
+      return `oc-progress oc-progress-${this.size} oc-progress-${this.variation}`
+    }
+  }
 }
 </script>
 <docs>
+Show progress to the users.
+
 ```jsx
-<oc-progress :value="4" :max="10" />
+<div>
+  <oc-progress :value="4" :max="10" class="uk-margin-small-bottom" />
+  <oc-progress :value="8" :max="10" size="small" variation="warning" />
+</div>
 ```
 </docs>

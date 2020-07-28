@@ -1,6 +1,0 @@
-.oc-progress {
-  &[tabindex="-1"]:focus {
-    // Remove focus when focus is set to element programmatically
-    outline: 0;
-  }
-}
