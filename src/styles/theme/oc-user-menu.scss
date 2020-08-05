@@ -1,30 +1,38 @@
 .oc-user-menu:extend(.uk-navbar-dropdown, .uk-background-secondary) {
-  &:before {
-    content: "";
-    width: 0;
+  &::before {
+    content: '';
     height: 0;
     position: absolute;
+    width: 0;
   }
 
-  ul:extend(.uk-nav, .uk-navbar-dropdown-nav) {
+  ul {
+    @extend .uk-nav;
+    @extend .uk-navbar-dropdown-nav;
   }
 
   li:extend(.uk-flex, .uk-flex-middle) {
-    transition: opacity 0.5s;
     cursor: pointer;
     opacity: 0.75;
+    transition: opacity 0.5s;
 
     &._is_active,
     &:hover {
       opacity: 1;
     }
 
-    &:not(:last-child):extend(.uk-margin-small-bottom) {
+    &:not(:last-child) {
+      @extend .uk-margin-small-bottom;
     }
 
-    span:extend(.uk-text-inverse) {
+    span {
+      color: $global-inverse-color;
     }
-    .material-icons:extend(.uk-text-inverse, .uk-margin-small-right) {
+
+    .material-icons {
+      @extend .uk-margin-small-right;
+
+      color: $global-inverse-color;
     }
   }
 }

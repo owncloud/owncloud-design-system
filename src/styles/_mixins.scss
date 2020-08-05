@@ -15,7 +15,7 @@
 */
 @mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
   $responsive-unitless: $responsive / ($responsive - $responsive + 1);
-  $dimension: if(unit($responsive) == "vh", "height", "width");
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
   $min-breakpoint: $min / $responsive-unitless * 100;
 
   @media (max-#{$dimension}: #{$min-breakpoint}) {
@@ -40,36 +40,34 @@
 // Reset
 @mixin reset {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 // Used to prevent text selection on an element
 @mixin prevent-user-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
 }
 
 /// Used to hide an element visually, but keeping it accessible for
 /// accessibility tools.
 @mixin visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
   // Need to make sure we override any existing styles.
   position: absolute !important;
   top: 0;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  overflow: hidden !important;
   white-space: nowrap;
-  height: 1px !important;
   width: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
 }
 
 /// To be used on flex items. Resolves some common layout issues, such as
 /// text truncation not respecting padding or breaking out of container.
 /// https://css-tricks.com/flexbox-truncated-text/
 @mixin layout-flex-fix {
-  min-width: 0;
   max-width: 100%;
+  min-width: 0;
 }

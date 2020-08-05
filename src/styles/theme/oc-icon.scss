@@ -4,9 +4,10 @@
 // ========================================================================
 
 $oc-icon-size: 24px;
+
 @mixin oc-icon-size($factor) {
-  width: $oc-icon-size * $factor;
   height: $oc-icon-size * $factor;
+  width: $oc-icon-size * $factor;
 }
 
 .oc-icon {
@@ -58,7 +59,6 @@ $oc-icon-size: 24px;
       @include oc-icon-size(8);
     }
   }
-
 
   // Variations
 

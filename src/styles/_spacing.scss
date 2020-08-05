@@ -29,6 +29,7 @@ $spacing-ratio: 1.7;
 // @param  {Number} stack-space to set
 @mixin stack-space($value) {
   margin-bottom: $value;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -39,6 +40,7 @@ $spacing-ratio: 1.7;
 // @param  {Number} inline-space to set
 @mixin inline-space($value) {
   margin-right: $value;
+
   &:last-child {
     margin-right: 0;
   }

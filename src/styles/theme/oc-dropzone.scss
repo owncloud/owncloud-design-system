@@ -5,11 +5,11 @@
   @extend .uk-flex-middle;
   @extend .uk-position-z-index;
 
-  top: 2 * $navbar-nav-item-height;
-  left: 0;
-  width: 100%;
-  height: calc(100% - (2 * #{$navbar-nav-item-height}));
   background-color: rgba($global-background, 0.8);
+  height: calc(100% - (2 * #{$navbar-nav-item-height}));
+  left: 0;
+  top: 2 * $navbar-nav-item-height;
+  width: 100%;
 }
 
 .oc-dropzone span {

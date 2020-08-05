@@ -5,25 +5,23 @@ body {
 
 #oc-content {
   height: 100vh;
-
-  overflow-y: auto;
   overflow-x: hidden;
-
+  overflow-y: auto;
   scrollbar-width: thin;
 
-  &::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 5px;
   }
 
-  &::-webkit-scrollbar-track-piece {
+  ::-webkit-scrollbar-track-piece {
     background-color: transparent;
   }
 
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: none;
+  ::-webkit-scrollbar-track {
+    box-shadow: none;
   }
 
-  &::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background-color: lighten(#8e959c, 10%);
     // outline: 1px solid $global-muted-background;
   }

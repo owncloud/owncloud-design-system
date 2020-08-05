@@ -9,12 +9,12 @@
     transform: translateY(3px);
 
     &,
-    & > svg {
-      width: $global-font-size + 1 !important;
+    > svg {
       height: $global-font-size + 1 !important;
+      width: $global-font-size + 1 !important;
     }
 
-    & > svg {
+    > svg {
       fill: $global-color !important;
     }
   }

@@ -4,43 +4,43 @@
 // ========================================================================
 
 .oc-switch {
-  position: relative;
   display: block;
-  width: $form-radio-size * 1.75;
   height: $form-radio-size;
+  position: relative;
   transition: background-color 0.25s;
+  width: $form-radio-size * 1.75;
 
   &,
   * {
     cursor: pointer;
   }
 
-  > input[type="checkbox"] {
+  > input[type='checkbox'] {
     display: none;
   }
 
-  &:before {
-    content: "";
+  &::before {
+    background-color: $global-inverse-color;
+    content: '';
+    height: $form-radio-size - 2;
     position: absolute;
     transform: translate(1px, 1px);
-    width: $form-radio-size - 2;
-    height: $form-radio-size - 2;
-    background-color: $global-inverse-color;
     transition: transform 0.25s;
+    width: $form-radio-size - 2;
   }
 
-  &[data-state="off"] {
+  &[data-state='off'] {
     background-color: lighten($global-muted-color, 10%);
 
-    &:before {
+    &::before {
       transform: translate(1px, 1px);
     }
   }
 
-  &[data-state="on"] {
+  &[data-state='on'] {
     background-color: $global-primary-background;
 
-    &:before {
+    &::before {
       transform: translate(calc(100% - 1px), 1px);
     }
   }

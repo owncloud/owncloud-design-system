@@ -1,6 +1,7 @@
 .oc-search {
   @extend .uk-grid-collapse;
   @extend .uk-flex-middle;
+
   min-width: $form-width-medium;
 
   &-button {
@@ -28,18 +29,18 @@
   }
 
   &-small {
-      .oc-search-input > .oc-text-input {
-        @extend .uk-form-small;
-  
-        // Overrride default padding of small from
-        // TODO: Remove `!important` after we get rid of UIkit
-        padding-right: $medium-gutter !important;
-      }
+    .oc-search-input > .oc-text-input {
+      @extend .uk-form-small;
 
-      .oc-search-input-icon > .oc-text-input {
-        // TODO: Remove `!important` after we get rid of UIkit
-        padding-left: $medium-gutter !important;
-      }
+      // Overrride default padding of small from
+      // TODO: Remove `!important` after we get rid of UIkit
+      padding-right: $medium-gutter !important;
+    }
+
+    .oc-search-input-icon > .oc-text-input {
+      // TODO: Remove `!important` after we get rid of UIkit
+      padding-left: $medium-gutter !important;
+    }
 
     .oc-button {
       @extend .uk-button-small;
@@ -47,9 +48,9 @@
 
     .oc-icon {
       &,
-      & svg {
-        width: 18px;
+      svg {
         height: 18px;
+        width: 18px;
       }
     }
   }

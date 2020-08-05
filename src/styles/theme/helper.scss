@@ -3,18 +3,17 @@
 }
 
 // Directions
-$directions: "top", "right", "bottom", "left";
+$directions: 'top', 'right', 'bottom', 'left';
 
 .oc-cursor-pointer {
   cursor: pointer;
 }
 
 .oc-button-reset {
-  padding: 0;
-  -webkit-appearance: none;
   background: transparent;
+  border: 0;
   font: inherit;
-  border: none;
+  padding: 0;
 
   &::-moz-focus-inner {
     border: 0;
@@ -37,14 +36,6 @@ $directions: "top", "right", "bottom", "left";
       border-#{$direction}: $global-border-width solid $global-border !important;
     }
   }
-}
-  
-.oc-button-reset {
-  @extend .uk-padding-remove;
-  -webkit-appearance: none;
-  border: none;
-  background: none;
-  font: inherit;
 }
 
 .oc-light {
