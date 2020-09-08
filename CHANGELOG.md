@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.9.0...master
+
+## Summary
+
+* Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
+
+## Details
+
+* Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
+
+   We've added a new icon to represent state when visibility is off. This can be used e.g. when
+   toggling the visibility of a password.
+
+   https://github.com/owncloud/owncloud-design-system/pull/855
+   https://material.io/resources/icons/?search=eye&icon=visibility_off&style=baseline
+
 # Changelog for [1.9.0] (2020-07-28)
 
 The following sections list the changes in ownCloud Design System 1.9.0.
