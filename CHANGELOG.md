@@ -6,9 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Remove icon prop from buttons and use css grid: [#418](https://github.com/owncloud/owncloud-design-system/pull/418)
 * Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
 
 ## Details
+
+* Change - Remove icon prop from buttons and use css grid: [#418](https://github.com/owncloud/owncloud-design-system/pull/418)
+
+   We've removed the prop which was responsible for displaying icons in the button component. To
+   add an icon into the button, it needs to be included in the slot together with the text. We've
+   added css grid into the button to ensure that all child items of the button will have a predefined
+   gutter between them. We've removed all UIKit button styles from the button component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/418
+
 
 * Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
 
