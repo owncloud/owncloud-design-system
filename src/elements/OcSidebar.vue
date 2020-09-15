@@ -24,7 +24,7 @@
         <!-- @slot Content above the navigation block -->
         <slot name="upperContent" />
       </div>
-      <nav v-if="$_ocSidebar_isNavigationVisible" key="sidebar-navigation" :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-nav']">
+      <nav v-if="$_ocSidebar_isNavigationVisible" key="sidebar-navigation" class="oc-sidebar-nav">
         <ul>
           <oc-sidebar-nav-item
             v-for="item in navItems"
@@ -38,10 +38,10 @@
           </oc-sidebar-nav-item>
         </ul>
       </nav>
-      <div v-else key="sidebar-main-content" :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-main-content']">
+      <div v-if="$slots.mainContent" key="sidebar-main-content" class="oc-sidebar-main-content uk-margin-top">
         <slot name="mainContent" />
       </div>
-      <div v-if="$slots.footer" class="oc-sidebar-footer">
+      <div v-if="$slots.footer" class="oc-sidebar-footer uk-margin-top">
         <!-- @slot Footer of the sidebar -->
         <slot name="footer" />
       </div>
