@@ -49,7 +49,7 @@ describe("OcSidebar", () => {
     expect(wrapper.find('.upper-slot').text()).toMatch('Files app')
     expect(wrapper.findAll('.footer-slot').length).toBe(1)
     expect(wrapper.find('.footer-slot').text()).toMatch('Made by ownClouders')
-    expect(wrapper.find('.oc-sidebar-nav').classes()).toContain('uk-margin-bottom')
+    expect(wrapper.find('.oc-sidebar-footer').classes()).toContain('uk-margin-top')
     expect(wrapper).toMatchSnapshot()
   })
 
@@ -61,7 +61,7 @@ describe("OcSidebar", () => {
         closeButtonLabel: 'Close sidebar'
       }
     })
-  
+
     expect(wrapper.classes()).toContain('oc-sidebar-fixed')
     expect(wrapper.findAll('.oc-sidebar-button-close').length).toBe(1)
     expect(wrapper.find('.oc-sidebar-button-close').attributes('arialabel')).toMatch('Close sidebar')
@@ -81,7 +81,7 @@ describe("OcSidebar", () => {
     expect(wrapper.emitted().close).toBeTruthy()
   })
 
-  it('Replaces navigation with a main content', () => {
+  it('Has navigation and main content', () => {
     const productDesc = 'Securely access and share data from everywhere and any device'
     const wrapper = shallowMount(Sidebar, {
       propsData: defaultProps,
@@ -90,9 +90,11 @@ describe("OcSidebar", () => {
       }
     })
 
+    expect(wrapper.findAll('.oc-sidebar-nav').length).toBe(1)
+    expect(wrapper.findAll('.oc-sidebar-nav-item').length).toBe(3)
     expect(wrapper.findAll('.oc-sidebar-main-content').length).toBe(1)
     expect(wrapper.find('.oc-sidebar-main-content').text()).toMatch(productDesc)
-    expect(wrapper.findAll('.oc-sidebar-nav').length).toBe(0)
+    expect(wrapper.find('.oc-sidebar-main-content').classes()).toContain('uk-margin-top')
     expect(wrapper).toMatchSnapshot()
   })
 })

@@ -5,7 +5,7 @@
         v-if="fixed"
         class="oc-sidebar-button-close"
         variation="raw"
-        @click.native="$_ocSidebar_buttonClose_click" 
+        @click.native="$_ocSidebar_buttonClose_click"
         :aria-label="closeButtonLabel"
       >
         <oc-icon name="close" aria-hidden="true" />
@@ -24,7 +24,7 @@
         <!-- @slot Content above the navigation block -->
         <slot name="upperContent" />
       </div>
-      <nav v-if="navItems.length > 1 && !$slots.mainContent" key="sidebar-navigation" :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-nav']">
+      <nav v-if="$_ocSidebar_isNavigationVisible" key="sidebar-navigation" class="oc-sidebar-nav">
         <ul>
           <oc-sidebar-nav-item
             v-for="item in navItems"
@@ -38,10 +38,16 @@
           </oc-sidebar-nav-item>
         </ul>
       </nav>
-      <div v-else key="sidebar-main-content" :class="[{ 'uk-margin-bottom' : $slots.footer },  'oc-sidebar-main-content']">
+      <div
+        v-if="$slots.mainContent"
+        key="sidebar-main-content"
+        class="oc-sidebar-main-content"
+        :class="{ 'uk-margin-top': $slots.upperContent || $_ocSidebar_isNavigationVisible }"
+      >
+        <!-- @slot Content below the navigation block and above the footer -->
         <slot name="mainContent" />
       </div>
-      <div v-if="$slots.footer" class="oc-sidebar-footer">
+      <div v-if="$slots.footer" class="oc-sidebar-footer uk-margin-top">
         <!-- @slot Footer of the sidebar -->
         <slot name="footer" />
       </div>
@@ -64,7 +70,7 @@ export default {
     OcSidebarNavItem,
     OcImg,
     OcButton,
-    OcIcon
+    OcIcon,
   },
 
   props: {
@@ -73,14 +79,14 @@ export default {
      */
     logoImg: {
       type: String,
-      required: false
+      required: false,
     },
     /**
      * Name of the product where the sidebar is used
      */
     productName: {
       type: String,
-      required: true
+      required: true,
     },
     /**
      * Navigation items of the product
@@ -88,7 +94,15 @@ export default {
     navItems: {
       type: Array,
       required: false,
-      default: () => []
+      default: () => [],
+    },
+    /**
+     * Hide navigation entirely
+     */
+    hideNav: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     /**
      * Asserts whether the sidebar's position is fixed
@@ -96,7 +110,7 @@ export default {
     fixed: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     /**
      * Accessibility label of the close button
@@ -104,8 +118,8 @@ export default {
     closeButtonLabel: {
       type: String,
       required: false,
-      default: "Close navigation menu"
-    }
+      default: "Close navigation menu",
+    },
   },
 
   computed: {
@@ -117,7 +131,10 @@ export default {
       }
 
       return classes
-    }
+    },
+    $_ocSidebar_isNavigationVisible() {
+      return !this.hideNav && this.navItems.length > 0
+    },
   },
 
   methods: {
@@ -126,8 +143,8 @@ export default {
        * The user clicked on the close button
        */
       this.$emit("close")
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -188,7 +205,7 @@ If a source of the logo image is not provided, the product name is used instead.
   </script>
 ```
 
-The navigation inside of the sidebar can be replaced with a custom content via the slot called `mainContent`.
+Custom content can be placed below the navigation inside of the sidebar via a slot called `mainContent`.
 In this content block, you can include e.g. a short description of the product, guide the user through the current action, etc.
 
 ```js
@@ -236,6 +253,39 @@ The navigation block will automatically receive bottom margin in case the `foote
             { name: 'Home', route: { path: '/' }, icon: 'home' },
             { name: 'All files', route: { path: '/files' }, icon: 'folder' },
             { name: 'Shared files', route: { path: '/shared' }, icon: 'share', active: true }
+          ]
+        }
+      }
+    }
+  </script>
+```
+
+The navigation block can be hidden entirely - for example in favor of the `mainContent` slot.
+
+```jsx
+  <template>
+    <div>
+      <oc-sidebar
+          logoImg="https://owncloud.org/wp-content/themes/owncloud/img/owncloud-org-logo.svg"
+          productName="ownCloud"
+          :navItems="navItems"
+          :hide-nav="true"
+          class="uk-height-1-1"
+      >
+        <template v-slot:mainContent>
+          <div>
+            There are navItems in the code but the navigation is hidden anyway.
+          </div>
+        </template>
+      </oc-sidebar>
+    </div>
+  </template>
+  <script>
+    export default {
+      computed: {
+        navItems() {
+          return [
+            { name: 'Home', route: { path: '/' }, icon: 'home' },
           ]
         }
       }
