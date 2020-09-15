@@ -38,7 +38,13 @@
           </oc-sidebar-nav-item>
         </ul>
       </nav>
-      <div v-if="$slots.mainContent" key="sidebar-main-content" class="oc-sidebar-main-content uk-margin-top">
+      <div
+        v-if="$slots.mainContent"
+        key="sidebar-main-content"
+        class="oc-sidebar-main-content"
+        :class="{ 'uk-margin-top': $slots.upperContent || $_ocSidebar_isNavigationVisible }"
+      >
+        <!-- @slot Content below the navigation block and above the footer -->
         <slot name="mainContent" />
       </div>
       <div v-if="$slots.footer" class="oc-sidebar-footer uk-margin-top">
@@ -64,7 +70,7 @@ export default {
     OcSidebarNavItem,
     OcImg,
     OcButton,
-    OcIcon
+    OcIcon,
   },
 
   props: {
@@ -73,14 +79,14 @@ export default {
      */
     logoImg: {
       type: String,
-      required: false
+      required: false,
     },
     /**
      * Name of the product where the sidebar is used
      */
     productName: {
       type: String,
-      required: true
+      required: true,
     },
     /**
      * Navigation items of the product
@@ -88,7 +94,7 @@ export default {
     navItems: {
       type: Array,
       required: false,
-      default: () => []
+      default: () => [],
     },
     /**
      * Hide navigation entirely
@@ -96,7 +102,7 @@ export default {
     hideNav: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     /**
      * Asserts whether the sidebar's position is fixed
@@ -104,7 +110,7 @@ export default {
     fixed: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     /**
      * Accessibility label of the close button
@@ -112,8 +118,8 @@ export default {
     closeButtonLabel: {
       type: String,
       required: false,
-      default: "Close navigation menu"
-    }
+      default: "Close navigation menu",
+    },
   },
 
   computed: {
@@ -128,7 +134,7 @@ export default {
     },
     $_ocSidebar_isNavigationVisible() {
       return !this.hideNav && this.navItems.length > 0
-    }
+    },
   },
 
   methods: {
@@ -137,8 +143,8 @@ export default {
        * The user clicked on the close button
        */
       this.$emit("close")
-    }
-  }
+    },
+  },
 }
 </script>
 

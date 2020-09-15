@@ -1,12 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OcSidebar Replaces navigation with a main content 1`] = `
+exports[`OcSidebar Has navigation and main content 1`] = `
 <div class="oc-sidebar">
   <div class="oc-sidebar-content-wrapper">
     <!---->
     <router-link-stub tag="a" to="/" class="oc-sidebar-logo"><span class="oc-sidebar-logo-text">ownCloud</span></router-link-stub>
     <!---->
-    <div class="oc-sidebar-main-content">Securely access and share data from everywhere and any device</div>
+    <nav class="oc-sidebar-nav">
+      <ul>
+        <oc-sidebar-nav-item-stub target="/" icon="home" class="oc-sidebar-nav-item">
+          Home
+        </oc-sidebar-nav-item-stub>
+        <oc-sidebar-nav-item-stub target="/files" icon="folder" class="oc-sidebar-nav-item">
+          All files
+        </oc-sidebar-nav-item-stub>
+        <oc-sidebar-nav-item-stub active="true" target="/shared" icon="share" class="oc-sidebar-nav-item">
+          Shared files
+        </oc-sidebar-nav-item-stub>
+      </ul>
+    </nav>
+    <div class="oc-sidebar-main-content uk-margin-top">Securely access and share data from everywhere and any device</div>
     <!---->
   </div>
 </div>
@@ -34,6 +47,7 @@ exports[`OcSidebar Sets fixed position 1`] = `
       </ul>
     </nav>
     <!---->
+    <!---->
   </div>
 </div>
 `;
@@ -60,6 +74,7 @@ exports[`OcSidebar displays a logo image if its source is specified 1`] = `
       </ul>
     </nav>
     <!---->
+    <!---->
   </div>
 </div>
 `;
@@ -84,6 +99,7 @@ exports[`OcSidebar displays nav items 1`] = `
       </ul>
     </nav>
     <!---->
+    <!---->
   </div>
 </div>
 `;
@@ -94,7 +110,7 @@ exports[`OcSidebar displays upperContent and footer slots 1`] = `
     <!---->
     <router-link-stub tag="a" to="/" class="oc-sidebar-logo"><span class="oc-sidebar-logo-text">ownCloud</span></router-link-stub>
     <div class="oc-sidebar-upper-content"><strong class="upper-slot">Files app</strong></div>
-    <nav class="uk-margin-bottom oc-sidebar-nav">
+    <nav class="oc-sidebar-nav">
       <ul>
         <oc-sidebar-nav-item-stub target="/" icon="home" class="oc-sidebar-nav-item">
           Home
@@ -107,7 +123,8 @@ exports[`OcSidebar displays upperContent and footer slots 1`] = `
         </oc-sidebar-nav-item-stub>
       </ul>
     </nav>
-    <div class="oc-sidebar-footer"><small slot="footer" class="footer-slot">Made by ownClouders</small></div>
+    <!---->
+    <div class="oc-sidebar-footer uk-margin-top"><small slot="footer" class="footer-slot">Made by ownClouders</small></div>
   </div>
 </div>
 `;
