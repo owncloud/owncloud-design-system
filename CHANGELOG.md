@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Remove icon prop from buttons and use css grid: [#418](https://github.com/owncloud/owncloud-design-system/pull/418)
+* Enhancement - Add new icons: [#858](https://github.com/owncloud/owncloud-design-system/pull/858)
 * Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
 
 ## Details
@@ -19,6 +20,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    gutter between them. We've removed all UIKit button styles from the button component.
 
    https://github.com/owncloud/owncloud-design-system/pull/418
+
+
+* Enhancement - Add new icons: [#858](https://github.com/owncloud/owncloud-design-system/pull/858)
+
+   We've added new icons which can be used to symbolise adding new shares, creating links and
+   shared with lists. We've also removed a wrong fill color from visibility off icon.
+
+   https://github.com/owncloud/owncloud-design-system/pull/858
+   https://fontawesome.com/icons/share-square?style=solid
+   https://material.io/resources/icons/?search=group&icon=group_add&style=baseline
 
 
 * Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
