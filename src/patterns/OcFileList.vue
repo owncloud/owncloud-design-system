@@ -68,9 +68,9 @@ export default {
       <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
       <oc-table-cell>
         <div class="uk-button-group">
-          <oc-button icon="edit" aria-label="Edit Picture" />
-          <oc-button icon="file_download" aria-label="Download Picture" />
-          <oc-button icon="delete" aria-label="Delete Picture" />
+          <oc-button aria-label="Edit Picture"><oc-icon name="edit" /></oc-button>
+          <oc-button aria-label="Download Picture"><oc-icon name="file_download" /></oc-button>
+          <oc-button aria-label="Delete Picture"><oc-icon name="delete" /></oc-button>
         </div>
       </oc-table-cell>
     </oc-table-row>

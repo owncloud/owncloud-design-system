@@ -7,6 +7,7 @@
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
     :disabled="disabled"
+    @click="$emit('click')"
   >
     <!-- @slot Content of the button -->
     <slot />

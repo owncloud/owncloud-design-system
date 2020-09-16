@@ -37,7 +37,7 @@ export default {
   <div class="uk-width-auto">
     <div class="uk-button-group">
       <oc-button id="_new">+ New</oc-button>
-      <oc-button id="_filter" icon="filter_list" />
+      <oc-button id="_filter"><oc-icon name="filter_list" /></oc-button>
     </div>
   </div>
 </oc-app-bar>

@@ -5,11 +5,12 @@
         <div v-if="!disableAction" class="action">
           <slot name="action">
             <oc-button
-              icon="close"
               class="uk-float-right"
               :aria-label="closeButtonLabel"
-              @click="$emit('close', $event)"
-            ></oc-button>
+              @click="$emit('close')"
+            >
+              <oc-icon name="close" />
+            </oc-button>
           </slot>
         </div>
         <div class="sidebar-title">
@@ -64,7 +65,7 @@ export default {
   <template>
     <oc-app-side-bar>
         <template slot="action">
-          <oc-button icon="close" class="uk-float-right uk-margin-small-right"/>
+          <oc-button class="uk-float-right uk-margin-small-right"><oc-icon name="close" /></oc-button>
         </template>
         <template slot="title">
           <span class="uk-text-lead">Title</span>

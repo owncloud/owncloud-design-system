@@ -1,6 +1,6 @@
 <template>
   <div class="uk-navbar-item uk-logo">
-    <oc-button :icon="icon" @click="$_ocTopBarLogo_click"></oc-button>
+    <oc-button @click="$_ocTopBarLogo_click"><oc-icon :name="icon" /></oc-button>
     <span v-if="title" class="uk-navbar-item">{{ title }}</span>
   </div>
 </template>

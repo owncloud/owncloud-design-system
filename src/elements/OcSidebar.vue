@@ -5,7 +5,7 @@
         v-if="fixed"
         class="oc-sidebar-button-close"
         variation="raw"
-        @click.native="$_ocSidebar_buttonClose_click"
+        @click="$_ocSidebar_buttonClose_click"
         :aria-label="closeButtonLabel"
       >
         <oc-icon name="close" aria-hidden="true" />
