@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount, mount } from "@vue/test-utils"
 import Sidebar from "./OcSidebar.vue"
 
 const defaultProps = {
@@ -69,7 +69,7 @@ describe("OcSidebar", () => {
   })
 
   it('Emits closed event', async () => {
-    const wrapper = shallowMount(Sidebar, {
+    const wrapper = mount(Sidebar, {
       propsData: {
         ...defaultProps,
         fixed: true

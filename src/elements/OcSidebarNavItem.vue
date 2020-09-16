@@ -12,10 +12,15 @@
   </li>
 </template>
 <script>
+import OcIcon from "./OcIcon.vue"
+
 export default {
   name: "oc-sidebar-nav-item",
   status: "prototype",
   release: "1.0.0",
+  components: {
+    OcIcon
+  },
   props: {
     active: {
       type: Boolean,

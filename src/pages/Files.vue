@@ -39,7 +39,9 @@ export default {
 ```jsx
 <template>
   <!-- top container to fill the whole screen/area, but with scrollbars  -->
-  <div id="oc-content" style="background-color: white; overflow: auto; height: 70vh; ">
+  <div id="oc-content" style="background-color: #fff;
+  height: 70vh;
+  overflow: auto;">
     <oc-dialog name="OcDialog" title="Not implemented">
       <template slot="content">
         This feature is not implemented yet.
@@ -72,11 +74,12 @@ export default {
           />
           <oc-button
             id="_apps"
-            icon="apps"
             variation="primary"
             class="oc-cursor-pointer uk-padding-small uk-height-1-1"
             aria-label="Application Switcher"
-           />
+          >
+            <oc-icon name="apps" />
+          </oc-button>
           <div class="padding-small uk-height-1-1">
             <oc-avatar
               class="oc-topbar-personal-avatar oc-cursor-pointer"
@@ -100,10 +103,7 @@ export default {
           <h5 class="uk-h4">Hello World !</h5>
           <p class="uk-text-small">Welcome to The System</p>
           <div class="uk-button-group uk-width-1-1 uk-flex-right">
-            <oc-button
-              id="resolve-notification-button"
-              size="small"
-            >Mark as read</oc-button>
+            <oc-button id="resolve-notification-button" size="small">Mark as read</oc-button>
           </div>
           <hr/>
         </div>
@@ -115,10 +115,7 @@ export default {
             <a href="#" class="uk-link" target="_blank">Link</a>
           </p>
           <div class="uk-button-group uk-width-1-1 uk-flex-right">
-            <oc-button
-              id="resolve-notification-button"
-              size="small"
-            >Mark as read</oc-button>
+            <oc-button id="resolve-notification-button" size="small">Mark as read</oc-button>
           </div>
         </div>
       </div>
@@ -241,9 +238,9 @@ export default {
               <oc-table-cell class="uk-text-muted uk-text-nowrap uk-visible@s" v-text=" ++o + ' days ago'" />
               <oc-table-cell>
                 <div class="uk-button-group">
-                  <oc-button icon="edit" aria-label="Edit Picture" />
-                  <oc-button icon="file_download" aria-label="Download Picture" />
-                  <oc-button icon="delete" aria-label="Delete Picture" />
+                  <oc-button aria-label="Edit Picture"><oc-icon name="edit" /></oc-button>
+                  <oc-button aria-label="Download Picture"><oc-icon name="file_download" /></oc-button>
+                  <oc-button aria-label="Delete Picture"><oc-icon name="delete" /></oc-button>
                 </div>
               </oc-table-cell>
             </oc-table-row>
