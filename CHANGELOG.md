@@ -37,6 +37,7 @@ The following sections list the changes in ownCloud Design System 1.10.0.
    shared with lists. We've also removed a wrong fill color from visibility off icon.
 
    https://github.com/owncloud/owncloud-design-system/pull/858
+   https://github.com/owncloud/owncloud-design-system/pull/864
    https://fontawesome.com/icons/share-square?style=solid
    https://material.io/resources/icons/?search=group&icon=group_add&style=baseline
 
