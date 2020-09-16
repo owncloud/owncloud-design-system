@@ -1,16 +1,25 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.10.0] (2020-09-16)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.10.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.9.0...master
+[1.10.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.9.0...v1.10.0
 
 ## Summary
 
+* Change - Add prop to hide navigation in sidebar: [#859](https://github.com/owncloud/owncloud-design-system/pull/859)
 * Change - Remove icon prop from buttons and use css grid: [#418](https://github.com/owncloud/owncloud-design-system/pull/418)
 * Enhancement - Add new icons: [#858](https://github.com/owncloud/owncloud-design-system/pull/858)
 * Enhancement - Add visibility off icon: [#855](https://github.com/owncloud/owncloud-design-system/pull/855)
 
 ## Details
+
+* Change - Add prop to hide navigation in sidebar: [#859](https://github.com/owncloud/owncloud-design-system/pull/859)
+
+   We added a prop for the sidebar component to hide the navigation. This is a breaking change, as we
+   removed the internal logic hiding the navigation entirely in favor of the new prop.
+
+   https://github.com/owncloud/owncloud-design-system/pull/859
+
 
 * Change - Remove icon prop from buttons and use css grid: [#418](https://github.com/owncloud/owncloud-design-system/pull/418)
 
