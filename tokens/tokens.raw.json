@@ -36,6 +36,13 @@
       "originalValue": "#fff",
       "name": "inverse-color"
     },
+    "danger-background-hover": {
+      "type": "color",
+      "category": "Background-colors",
+      "value": "rgb(181, 0, 0)",
+      "originalValue": "#b50000",
+      "name": "danger-background-hover"
+    },
     "secondary-background": {
       "type": "color",
       "category": "Background-colors",
