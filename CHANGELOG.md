@@ -29,6 +29,7 @@ The following sections list the changes in ownCloud Design System 1.10.0.
    gutter between them. We've removed all UIKit button styles from the button component.
 
    https://github.com/owncloud/owncloud-design-system/pull/418
+   https://github.com/owncloud/owncloud-design-system/pull/865
 
 
 * Enhancement - Add new icons: [#858](https://github.com/owncloud/owncloud-design-system/pull/858)
