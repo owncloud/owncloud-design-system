@@ -6,3 +6,4 @@ We've added css grid into the button to ensure that all child items of the butto
 We've removed all UIKit button styles from the button component.
 
 https://github.com/owncloud/owncloud-design-system/pull/418
+https://github.com/owncloud/owncloud-design-system/pull/865
