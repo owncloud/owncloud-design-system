@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Pass event in button click handler: [#872](https://github.com/owncloud/owncloud-design-system/pull/872)
+* Change - Align buttons content to center: [#875](https://github.com/owncloud/owncloud-design-system/pull/875)
 * Change - Use flexbox in buttons instead of css grid: [#873](https://github.com/owncloud/owncloud-design-system/pull/873)
 
 ## Details
@@ -16,6 +17,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    The click event for oc-button now passes the actual click event into the handler.
 
    https://github.com/owncloud/owncloud-design-system/pull/872
+
+
+* Change - Align buttons content to center: [#875](https://github.com/owncloud/owncloud-design-system/pull/875)
+
+   We've aligned the buttons content to the center.
+
+   https://github.com/owncloud/owncloud-design-system/pull/875
 
 
 * Change - Use flexbox in buttons instead of css grid: [#873](https://github.com/owncloud/owncloud-design-system/pull/873)
