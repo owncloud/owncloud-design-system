@@ -2,11 +2,10 @@
   align-items: center;
   border-color: transparent;
   border-radius: 3px;
-  column-gap: 10px;
-  display: grid;
+  display: flex;
   font-size: 1.125rem;
   font-weight: 600;
-  grid-auto-flow: column;
+  gap: 10px;
   line-height: 1.4;
   min-height: $global-control-height;
   padding: 0.5rem 0.75rem;
