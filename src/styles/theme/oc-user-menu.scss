@@ -1,4 +1,7 @@
-.oc-user-menu:extend(.uk-navbar-dropdown, .uk-background-secondary) {
+.oc-user-menu {
+  @extend .uk-navbar-dropdown;
+  @extend .uk-background-secondary;
+
   &::before {
     content: '';
     height: 0;
@@ -11,7 +14,10 @@
     @extend .uk-navbar-dropdown-nav;
   }
 
-  li:extend(.uk-flex, .uk-flex-middle) {
+  li {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+
     cursor: pointer;
     opacity: 0.75;
     transition: opacity 0.5s;
