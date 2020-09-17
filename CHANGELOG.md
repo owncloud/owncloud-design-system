@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.10.0...master
+
+## Summary
+
+* Bugfix - Fix wrong extend syntax: [#870](https://github.com/owncloud/owncloud-design-system/pull/870)
+
+## Details
+
+* Bugfix - Fix wrong extend syntax: [#870](https://github.com/owncloud/owncloud-design-system/pull/870)
+
+   We've fixed the wrong extend syntax in oc-user-menu which was written in LESS. This syntax
+   caused an issue with loading all styles and e.g. margin utility classes were not working.
+
+   https://github.com/owncloud/owncloud-design-system/pull/870
+
 # Changelog for [1.10.0] (2020-09-16)
 
 The following sections list the changes in ownCloud Design System 1.10.0.
