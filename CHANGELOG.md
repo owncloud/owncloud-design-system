@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.10.1] (2020-09-17)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.10.1.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.10.0...master
+[1.10.1]: https://github.com/owncloud/owncloud-design-system/compare/v1.10.0...v1.10.1
 
 ## Summary
 
