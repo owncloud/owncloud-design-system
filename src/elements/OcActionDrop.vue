@@ -1,18 +1,18 @@
 <template>
   <div class="oc-dropdown-wrapper" ref="menu" @keyup.esc="closeHandler(true)">
-    <button
+    <oc-button
       :aria-expanded="isOpen.toString()"
-      :class="$_ocButton_buttonClass"
+      :variation="buttonVariation"
       ref="button"
       aria-haspopup="true"
       @click="toggleDropdown"
-      @keydown.enter.prevent="openMenuAndFocus(0)"
-      @keydown.space.prevent="openMenuAndFocus(0)"
-      @keydown.down.prevent="openMenuAndFocus(0)"
-      @keydown.up.prevent="openMenuAndFocus(-1)"
+      @keydown.native.enter.prevent="openMenuAndFocus(0)"
+      @keydown.native.space.prevent="openMenuAndFocus(0)"
+      @keydown.native.down.prevent="openMenuAndFocus(0)"
+      @keydown.native.up.prevent="openMenuAndFocus(-1)"
     >
       <slot name="button"></slot>
-    </button>
+    </oc-button>
     <div
       class="uk-card-default oc-dropdown-menu"
       role="menu"
@@ -75,23 +75,15 @@ export default {
   props: {
     /**
      * Supplies button variation to give additional meaning.
-     * `primary, secondary, danger`
+     * `primary, danger`
      */
     buttonVariation: {
       type: String,
       default: "default",
       validator: value => {
-        return value.match(/(default|primary|secondary|danger)/)
+        return value.match(/(default|primary|danger)/)
       },
-    },
-  },
-  computed: {
-    $_ocButton_buttonClass() {
-      let classes = ["oc-button"]
-      if (this.buttonVariation) classes.push(`uk-button-${this.buttonVariation}`)
-
-      return classes
-    },
+    }
   },
   methods: {
     toggleDropdown() {
@@ -163,17 +155,18 @@ export default {
 
 <docs>
 ```jsx
-    <oc-action-drop button-variation="primary">
+    <oc-action-drop button-variation="primary" class="uk-margin-small-left">
         <template v-slot:button>Action</template>
         <template v-slot:actions>
-            <div tabindex="0" role="menuitem">Action 1</div>
-            <div tabindex="0" role="menuitem">Action 2</div>
+            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 1</div>
+            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 2</div>
         </template>
-    </oc-action-drop><oc-action-drop button-variation="default">
+    </oc-action-drop>
+    <oc-action-drop button-variation="default" class="uk-margin-small-left">
         <template v-slot:button>Action</template>
         <template v-slot:actions>
-            <div tabindex="0" role="menuitem">Action 3</div>
-            <div tabindex="0" role="menuitem">Action 4</div>
+            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 3</div>
+            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 4</div>
         </template>
     </oc-action-drop>
 ```
