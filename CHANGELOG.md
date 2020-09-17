@@ -7,8 +7,10 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Pass event in button click handler: [#872](https://github.com/owncloud/owncloud-design-system/pull/872)
+* Bugfix - Fix buttons in modal: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
 * Change - Align buttons content to center: [#875](https://github.com/owncloud/owncloud-design-system/pull/875)
 * Change - Use flexbox in buttons instead of css grid: [#873](https://github.com/owncloud/owncloud-design-system/pull/873)
+* Change - Delete pages: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
 
 ## Details
 
@@ -17,6 +19,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    The click event for oc-button now passes the actual click event into the handler.
 
    https://github.com/owncloud/owncloud-design-system/pull/872
+
+
+* Bugfix - Fix buttons in modal: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
+
+   We fixed the button layout of the oc-modal component, which was broken since we introduced our
+   new oc-button.
+
+   https://github.com/owncloud/owncloud-design-system/pull/876
 
 
 * Change - Align buttons content to center: [#875](https://github.com/owncloud/owncloud-design-system/pull/875)
@@ -32,6 +42,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    correctly. This gives us more flexibility for the alignment of children.
 
    https://github.com/owncloud/owncloud-design-system/pull/873
+
+
+* Change - Delete pages: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
+
+   We deleted the pages from our documentation. They were showcasing some of our components, but
+   hard to maintain.
+
+   https://github.com/owncloud/owncloud-design-system/pull/876
 
 # Changelog for [1.10.1] (2020-09-17)
 
