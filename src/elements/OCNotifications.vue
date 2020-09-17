@@ -47,30 +47,36 @@ export default {
         Notifications examples
       </h3>
 
-      <oc-button @click="show('center')">Show center notifications</oc-button>
-      <oc-notifications position="top-center">
-        <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
-          <oc-notification-message
-            v-for="item in messages.center"
-            :key="item.title"
-            :status="item.status"
-            :title="item.title"
-            :message="item.message"
-            @close="removeNotification('center', item)"
-          />
-        </transition-group>
-      </oc-notifications>
-      <oc-button @click="show('right')">Show right notifications</oc-button>
-      <oc-notifications position="top-right">
-        <oc-notification-message
+      <oc-grid gutter="small">
+        <div>
+          <oc-button @click="show('center')">Show center notifications</oc-button>
+          <oc-notifications position="top-center">
+            <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
+              <oc-notification-message
+                  v-for="item in messages.center"
+                  :key="item.title"
+                  :status="item.status"
+                  :title="item.title"
+                  :message="item.message"
+                  @close="removeNotification('center', item)"
+              />
+            </transition-group>
+          </oc-notifications>
+        </div>
+        <div>
+          <oc-button @click="show('right')">Show right notifications</oc-button>
+          <oc-notifications position="top-right">
+            <oc-notification-message
                 v-for="(item, index) in messages.right"
                 :key="index"
                 :status="item.status"
                 :title="item.title"
                 :message="item.message"
                 @close="removeNotification('right', item)"
-        />
-      </oc-notifications>
+            />
+          </oc-notifications>
+        </div>
+      </oc-grid>
     </section>
   </template>
   <script>

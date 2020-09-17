@@ -37,14 +37,14 @@
           class="oc-modal-body-message"
           v-text="message"
         />
-        <div class="oc-modal-body-actions">
+        <div class="oc-modal-body-actions uk-flex uk-flex-right">
           <oc-button
             class="oc-modal-body-actions-cancel"
             @click="$_ocModal_buttonCancel_click"
             v-text="buttonCancelText"
           />
           <oc-button
-            class="oc-modal-body-actions-confirm"
+            class="oc-modal-body-actions-confirm uk-margin-small-left"
             :variation="$_ocModal_buttonConfirm_variation"
             :disabled="buttonConfirmDisabled || !!inputError"
             v-text="buttonConfirmText"
@@ -238,7 +238,7 @@ export default {
 
       /**
        * The user clicked on the confirm button. If input exists, emits it's value
-       * 
+       *
        * @property {String} value Value of the input
        */
       this.$emit("confirm", this.$_ocModal_input_value)
@@ -247,7 +247,7 @@ export default {
     $_ocModal_input_onInput(value) {
       /**
        * The user typed into the input
-       * 
+       *
        * @property {String} value Value of the input
        */
       this.$emit("input", value)

@@ -84,7 +84,6 @@ export default {
           require.context("@/elements/", true, /\.vue$/),
           require.context("@/patterns/", true, /\.vue$/),
           require.context("@/templates/", true, /\.vue$/),
-          require.context("@/pages/", true, /\.vue$/),
         ]
       } else if (this.show === "elements") {
         contexts = [require.context("@/elements/", true, /\.vue$/)]
@@ -92,8 +91,6 @@ export default {
         contexts = [require.context("@/patterns/", true, /\.vue$/)]
       } else if (this.show === "templates") {
         contexts = [require.context("@/templates/", true, /\.vue$/)]
-      } else if (this.show === "pages") {
-        contexts = [require.context("@/pages/", true, /\.vue$/)]
       }
 
       const components = []

@@ -1,13 +1,14 @@
 <template>
   <div class="oc-dropdown-wrapper" ref="menu" @keyup.esc="closeHandler(true)">
-    <button
+    <oc-button
       :aria-expanded="isOpen.toString()"
-      :class="$_ocButton_buttonClass"
+      :variation="buttonVariation"
       ref="button"
+      aria-haspopup="true"
       @click="toggleDropdown"
     >
       <slot name="button"></slot>
-    </button>
+    </oc-button>
     <div class="uk-card-default oc-dropdown-menu" ref="dropdown" :hidden="!isOpen">
       <slot name="content"></slot>
     </div>
@@ -50,7 +51,7 @@ export default {
       type: String,
       default: "default",
       validator: value => {
-        return value.match(/(default|primary|secondary|danger)/)
+        return value.match(/(default|primary|danger)/)
       },
     },
   },
@@ -104,7 +105,7 @@ export default {
 
 <docs>
     ```jsx
-    <oc-disclosure-drop button-variation="primary">
+    <oc-disclosure-drop button-variation="primary" class="uk-margin-small-left">
         <template v-slot:button>Show / Hide</template>
         <template v-slot:content>
             <ul class="uk-list">
@@ -112,7 +113,7 @@ export default {
                 <li><a href="#0">Link 2</a></li>
             </ul>
         </template>
-    </oc-disclosure-drop><oc-disclosure-drop button-variation="default">
+    </oc-disclosure-drop><oc-disclosure-drop button-variation="default" class="uk-margin-small-left">
         <template v-slot:button>Show / Hide</template>
         <template v-slot:content>
             You could also place text, input elements, images, or other form of media here.
