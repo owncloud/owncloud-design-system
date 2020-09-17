@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.10.1...master
+
+## Summary
+
+* Bugfix - Pass event in button click handler: [#872](https://github.com/owncloud/owncloud-design-system/pull/872)
+
+## Details
+
+* Bugfix - Pass event in button click handler: [#872](https://github.com/owncloud/owncloud-design-system/pull/872)
+
+   The click event for oc-button now passes the actual click event into the handler.
+
+   https://github.com/owncloud/owncloud-design-system/pull/872
+
 # Changelog for [1.10.1] (2020-09-17)
 
 The following sections list the changes in ownCloud Design System 1.10.1.
