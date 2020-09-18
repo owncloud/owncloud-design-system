@@ -9,9 +9,10 @@
   min-height: $global-control-height;
   padding: 0.5rem 0.75rem;
   text-align: center;
-  transition: background-color $transition-duration-short ease-in-out,
-  color $transition-duration-short ease-in-out,
-  border-color $transition-duration-short ease-in-out;
+  transition:
+    background-color $transition-duration-short ease-in-out,
+    color $transition-duration-short ease-in-out,
+    border-color $transition-duration-short ease-in-out;
 
   &-justify-content {
     &-left {
@@ -43,18 +44,23 @@
     &-xsmall {
       gap: $xsmall-margin;
     }
+
     &-small {
       gap: $small-margin;
     }
+
     &-normal {
       gap: $margin;
     }
+
     &-medium {
       gap: $medium-margin;
     }
+
     &-large {
       gap: $large-margin;
     }
+
     &-xlarge {
       gap: $xlarge-margin;
     }
