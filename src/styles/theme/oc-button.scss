@@ -5,38 +5,59 @@
   display: flex;
   font-size: 1.125rem;
   font-weight: 600;
-  gap: 10px;
   line-height: 1.4;
   min-height: $global-control-height;
   padding: 0.5rem 0.75rem;
   text-align: center;
-  transition:
-    background-color $transition-duration-short ease-in-out,
-    color $transition-duration-short ease-in-out,
-    border-color $transition-duration-short ease-in-out;
+  transition: background-color $transition-duration-short ease-in-out,
+  color $transition-duration-short ease-in-out,
+  border-color $transition-duration-short ease-in-out;
 
-  &-justify-left {
-    justify-content: left;
+  &-justify-content {
+    &-left {
+      justify-content: left;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+
+    &-right {
+      justify-content: right;
+    }
+
+    &-space-between {
+      justify-content: space-between;
+    }
+
+    &-space-around {
+      justify-content: space-around;
+    }
+
+    &-space-evenly {
+      justify-content: space-evenly;
+    }
   }
 
-  &-justify-center {
-    justify-content: center;
-  }
-
-  &-justify-right {
-    justify-content: right;
-  }
-
-  &-justify-space-between {
-    justify-content: space-between;
-  }
-
-  &-justify-space-around {
-    justify-content: space-around;
-  }
-
-  &-justify-space-evenly {
-    justify-content: space-evenly;
+  &-gap {
+    &-xsmall {
+      gap: $xsmall-margin;
+    }
+    &-small {
+      gap: $small-margin;
+    }
+    &-normal {
+      gap: $margin;
+    }
+    &-medium {
+      gap: $medium-margin;
+    }
+    &-large {
+      gap: $large-margin;
+    }
+    &-xlarge {
+      gap: $xlarge-margin;
+    }
   }
 
   &:hover {
