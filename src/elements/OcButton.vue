@@ -98,12 +98,34 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * How to justify content within the button. Defaults to center.
+     * `left, center, right, space-around, space-between, space-evenly`
+     */
+    justifyContent: {
+      type: String,
+      default: "center",
+      validator: value => {
+        return value.match(/(left|center|right|space-around|space-between|space-evenly)/)
+      }
+    },
+    /**
+     * Distance between children of the button. Defaults to small. Might be overruled by justify-content value.
+     * `xsmall, small, normal, medium, large, xlarge`
+     */
+    gapSize: {
+      type: String,
+      default: "small",
+      validator: value => {
+        return value.match(/(xsmall|small|normal|medium|large|xlarge)/)
+      }
+    }
   },
   computed: {
     $_ocButton_buttonClass() {
       if (this.stopClassPropagation) return ""
 
-      let classes = ["oc-button"]
+      let classes = ["oc-button", `oc-button-justify-content-${this.justifyContent}`, `oc-button-gap-${this.gapSize}`]
 
       if (this.variation && !this.disabled) classes.push(`oc-button-${this.variation}`)
 
