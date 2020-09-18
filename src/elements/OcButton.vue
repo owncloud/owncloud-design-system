@@ -98,12 +98,23 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * How to justify content within the button. Defaults to center.
+     * `left, center, right, space-around, space-between, space-evenly`
+     */
+    justifyContent: {
+      type: String,
+      default: "center",
+      validator: value => {
+        return value.match(/(left|center|right|space-around|space-between|space-evenly)/)
+      }
+    }
   },
   computed: {
     $_ocButton_buttonClass() {
       if (this.stopClassPropagation) return ""
 
-      let classes = ["oc-button"]
+      let classes = ["oc-button", `oc-button-justify-${this.justifyContent}`]
 
       if (this.variation && !this.disabled) classes.push(`oc-button-${this.variation}`)
 
