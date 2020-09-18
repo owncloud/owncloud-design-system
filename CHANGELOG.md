@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.11.0] (2020-09-18)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.11.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.10.1...master
+[1.11.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.10.1...v1.11.0
 
 ## Summary
 
@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Fix buttons in modal: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
 * Change - Align buttons content to center: [#875](https://github.com/owncloud/owncloud-design-system/pull/875)
 * Change - Use flexbox in buttons instead of css grid: [#873](https://github.com/owncloud/owncloud-design-system/pull/873)
+* Change - Option for gap on oc-button: [#878](https://github.com/owncloud/owncloud-design-system/pull/878)
 * Change - Option for justify-content on oc-button: [#878](https://github.com/owncloud/owncloud-design-system/pull/878)
 * Change - Delete pages: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
 
@@ -43,6 +44,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    correctly. This gives us more flexibility for the alignment of children.
 
    https://github.com/owncloud/owncloud-design-system/pull/873
+
+
+* Change - Option for gap on oc-button: [#878](https://github.com/owncloud/owncloud-design-system/pull/878)
+
+   OcButton now has a property for defining a `gap` value out of xsmall, small, normal, medium,
+   large and xlarge. The sizes are the same as in our margin classes.
+
+   https://github.com/owncloud/owncloud-design-system/pull/878
 
 
 * Change - Option for justify-content on oc-button: [#878](https://github.com/owncloud/owncloud-design-system/pull/878)
