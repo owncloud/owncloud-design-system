@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Fix buttons in modal: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
 * Change - Align buttons content to center: [#875](https://github.com/owncloud/owncloud-design-system/pull/875)
 * Change - Use flexbox in buttons instead of css grid: [#873](https://github.com/owncloud/owncloud-design-system/pull/873)
+* Change - Option for justify-content on oc-button: [#878](https://github.com/owncloud/owncloud-design-system/pull/878)
 * Change - Delete pages: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
 
 ## Details
@@ -42,6 +43,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    correctly. This gives us more flexibility for the alignment of children.
 
    https://github.com/owncloud/owncloud-design-system/pull/873
+
+
+* Change - Option for justify-content on oc-button: [#878](https://github.com/owncloud/owncloud-design-system/pull/878)
+
+   OcButton now has a property for defining a `justify-content` value out of left, center, right,
+   space-between, space-around and space-evenly.
+
+   https://github.com/owncloud/owncloud-design-system/pull/878
+   https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 
 
 * Change - Delete pages: [#876](https://github.com/owncloud/owncloud-design-system/pull/876)
