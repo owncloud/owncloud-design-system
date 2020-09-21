@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.11.0...master
+
+## Summary
+
+* Change - Switch UI icon: [#882](https://github.com/owncloud/owncloud-design-system/pull/882)
+
+## Details
+
+* Change - Switch UI icon: [#882](https://github.com/owncloud/owncloud-design-system/pull/882)
+
+   We've added a new icon for switching between UI versions - or resources in general.
+
+   https://github.com/owncloud/owncloud-design-system/pull/882
+
 # Changelog for [1.11.0] (2020-09-18)
 
 The following sections list the changes in ownCloud Design System 1.11.0.
