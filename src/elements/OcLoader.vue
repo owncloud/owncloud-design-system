@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-loader" :aria-label="ariaLabel"></div>
+  <div :class="['oc-loader', {'oc-loader-flat': flat}]" :aria-label="ariaLabel"></div>
 </template>
 <script>
 /**
@@ -17,13 +17,30 @@ export default {
       type: String,
       default: "Loading",
     },
+    /**
+     * Removes border radius and shrinks the height. Defaults to false.
+     */
+    flat: {
+      type: Boolean,
+      default: false
+    }
   },
 }
 </script>
 <docs>
 ```jsx
+<h3 class="uk-heading-divider">
+  Default style
+</h3>
 <div>
   <oc-loader />
+</div>
+
+<h3 class="uk-heading-divider">
+  Flat style
+</h3>
+<div>
+  <oc-loader :flat="true" />
 </div>
 ```
 </docs>
