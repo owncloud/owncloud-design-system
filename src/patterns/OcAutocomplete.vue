@@ -345,22 +345,22 @@ export default {
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
       <oc-autocomplete ariaLabel="Simple selection autocomplete" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
-      <div class="uk-background-muted uk-padding-small uk-margin-small-top">
+      <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected simple item:</p>
         <code>{{ simpleSelection }}</code>
       </div>
-      <div class="uk-margin-top">
+      <div class="oc-mt">
         <button @click="focusTest1()">Focus the field by calling .focus()</button>
       </div>
     </div>
-    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+    <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete ariaLabel="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" placeholder="type 'er' for example results">
         <template v-slot:item="{item}">
-          <span class="uk-text-bold">{{ item.forename }} {{ item.surname }}</span>
+          <span class="oc-text-bold">{{ item.forename }} {{ item.surname }}</span>
           <div class="uk-text-meta">(Age: {{ item.age }})</div>
         </template>
       </oc-autocomplete>
-      <div class="uk-background-muted uk-padding-small uk-margin-small-top">
+      <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected complex item:</p>
         <code>{{ complexSelection }}</code>
       </div>
@@ -368,9 +368,9 @@ export default {
     <h3 class="uk-heading-divider">
       Autocomplete with delayed fetch
     </h3>
-    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+    <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete ariaLabel="Delayed selection autocomplete" v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" placeholder="type 'le' and wait a little" @update:input="onInput"/>
-      <div class="uk-background-muted uk-padding-small uk-margin-small-top">
+      <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected complex item:</p>
         <code>{{ delayedItem }}</code>
       </div>
@@ -378,13 +378,13 @@ export default {
     <h3 class="uk-heading-divider">
       Autocomplete overflow with "more results" button
     </h3>
-    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+    <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete ariaLabel="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
     </div>
     <h3 class="uk-heading-divider">
       Autocomplete with :fillOnSelection=false
     </h3>
-    <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-top">
+    <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete ariaLabel="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
     </div>
   </section>

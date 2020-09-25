@@ -3,10 +3,8 @@
   border-color: transparent;
   border-radius: 3px;
   display: flex;
-  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
-  min-height: $global-control-height;
   padding: 0.5rem 0.75rem;
   text-align: center;
   transition:
@@ -41,28 +39,24 @@
   }
 
   &-gap {
-    &-xsmall {
-      gap: $xsmall-margin;
+    &-xs {
+      gap: $space-xsmall;
     }
 
-    &-small {
-      gap: $small-margin;
+    &-s {
+      gap: $space-small;
     }
 
-    &-normal {
-      gap: $margin;
+    &-m {
+      gap: $space-medium;
     }
 
-    &-medium {
-      gap: $medium-margin;
+    &-l {
+      gap: $space-large;
     }
 
-    &-large {
-      gap: $large-margin;
-    }
-
-    &-xlarge {
-      gap: $xlarge-margin;
+    &-xl {
+      gap: $space-xlarge;
     }
   }
 
@@ -74,12 +68,17 @@
     transition: fill $transition-duration-short ease-in-out;
   }
 
-  &-small {
+  &-s {
     font-size: 0.9rem;
     min-height: $global-control-small-height;
   }
 
-  &-large {
+  &-m {
+    font-size: 1.125rem;
+    min-height: $global-control-height;
+  }
+
+  &-l {
     font-size: 1.5rem;
     min-height: $global-control-large-height;
   }

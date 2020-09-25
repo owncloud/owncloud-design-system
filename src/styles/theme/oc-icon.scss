@@ -3,11 +3,9 @@
 //
 // ========================================================================
 
-$oc-icon-size: 24px;
-
 @mixin oc-icon-size($factor) {
-  height: $oc-icon-size * $factor;
-  width: $oc-icon-size * $factor;
+  height: $icons-size-default * $factor;
+  width: $icons-size-default * $factor;
 }
 
 .oc-icon {
@@ -25,35 +23,49 @@ $oc-icon-size: 24px;
     @include oc-icon-size(1);
   }
 
-  &-xsmall {
+  &-xs {
+    &,
+    > svg {
+      @include oc-icon-size(0.5);
+    }
+  }
+
+  &-s {
     &,
     > svg {
       @include oc-icon-size(0.7);
     }
   }
 
-  &-medium {
+  &-m {
+    &,
+    > svg {
+      @include oc-icon-size(1);
+    }
+  }
+
+  &-l {
     &,
     > svg {
       @include oc-icon-size(1.5);
     }
   }
 
-  &-large {
+  &-xl {
     &,
     > svg {
       @include oc-icon-size(2);
     }
   }
 
-  &-xlarge {
+  &-xxl {
     &,
     > svg {
       @include oc-icon-size(4);
     }
   }
 
-  &-xxlarge {
+  &-xxxl {
     &,
     > svg {
       @include oc-icon-size(8);

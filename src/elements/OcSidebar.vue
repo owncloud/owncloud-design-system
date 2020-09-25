@@ -42,12 +42,12 @@
         v-if="$slots.mainContent"
         key="sidebar-main-content"
         class="oc-sidebar-main-content"
-        :class="{ 'uk-margin-top': $slots.upperContent || $_ocSidebar_isNavigationVisible }"
+        :class="{ 'oc-mt': $slots.upperContent || $_ocSidebar_isNavigationVisible }"
       >
         <!-- @slot Content below the navigation block and above the footer -->
         <slot name="mainContent" />
       </div>
-      <div v-if="$slots.footer" class="oc-sidebar-footer uk-margin-top">
+      <div v-if="$slots.footer" class="oc-sidebar-footer oc-mt">
         <!-- @slot Footer of the sidebar -->
         <slot name="footer" />
       </div>

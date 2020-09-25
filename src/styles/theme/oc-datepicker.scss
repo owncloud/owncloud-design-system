@@ -34,7 +34,7 @@
     }
 
     &__item {
-      @extend .uk-padding-small;
+      @extend .oc-p-s;
       @extend .uk-text-center;
       @extend .uk-text-large;
 
@@ -76,7 +76,7 @@
     }
 
     &__item {
-      @extend .uk-padding-small;
+      @extend .oc-p-s;
       @extend .uk-text-center;
       @extend .uk-text-large;
 
@@ -130,7 +130,7 @@
     &__title {
       @extend .uk-text-center;
       @extend .uk-heading-divider;
-      @extend .uk-margin-small-bottom;
+      @extend .oc-mb-s;
 
       color: $global-inverse-color !important; // L109
     }
@@ -168,7 +168,7 @@
       &--previous,
       &--next {
         @extend .uk-width-auto;
-        @extend .uk-padding-small;
+        @extend .oc-p-s;
 
         cursor: pointer;
 
@@ -234,7 +234,7 @@
       }
 
       &__weekday {
-        @extend .uk-text-bold;
+        @extend .oc-text-bold;
       }
     }
   }

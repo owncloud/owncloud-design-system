@@ -2,7 +2,7 @@
   <li>
     <a class="uk-accordion-title" href="#">
       <slot name="title" />
-      <span v-if="$slots.subtitle" class="uk-text-meta uk-margin-left">
+      <span v-if="$slots.subtitle" class="uk-text-meta oc-ml">
         <slot name="subtitle" />
       </span>
     </a>

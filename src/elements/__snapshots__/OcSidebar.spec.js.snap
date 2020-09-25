@@ -19,7 +19,7 @@ exports[`OcSidebar Has navigation and main content 1`] = `
         </oc-sidebar-nav-item-stub>
       </ul>
     </nav>
-    <div class="oc-sidebar-main-content uk-margin-top">Securely access and share data from everywhere and any device</div>
+    <div class="oc-sidebar-main-content oc-mt">Securely access and share data from everywhere and any device</div>
     <!---->
   </div>
 </div>
@@ -28,8 +28,8 @@ exports[`OcSidebar Has navigation and main content 1`] = `
 exports[`OcSidebar Sets fixed position 1`] = `
 <div class="oc-sidebar oc-sidebar-fixed">
   <div class="oc-sidebar-content-wrapper">
-    <oc-button-stub type="button" arialabel="Close sidebar" variation="raw" justifycontent="center" gapsize="small" class="oc-sidebar-button-close">
-      <oc-icon-stub name="close" arialabel="icon" type="span" size="small" variation="system" aria-hidden="true"></oc-icon-stub>
+    <oc-button-stub type="button" size="medium" arialabel="Close sidebar" variation="raw" justifycontent="center" gapsize="medium" class="oc-sidebar-button-close">
+      <oc-icon-stub name="close" arialabel="icon" type="span" size="medium" variation="system" aria-hidden="true"></oc-icon-stub>
     </oc-button-stub>
     <router-link-stub tag="a" to="/" class="oc-sidebar-logo"><span class="oc-sidebar-logo-text">ownCloud</span></router-link-stub>
     <!---->
@@ -124,7 +124,7 @@ exports[`OcSidebar displays upperContent and footer slots 1`] = `
       </ul>
     </nav>
     <!---->
-    <div class="oc-sidebar-footer uk-margin-top"><small slot="footer" class="footer-slot">Made by ownClouders</small></div>
+    <div class="oc-sidebar-footer oc-mt"><small slot="footer" class="footer-slot">Made by ownClouders</small></div>
   </div>
 </div>
 `;

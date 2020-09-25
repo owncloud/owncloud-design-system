@@ -122,8 +122,20 @@ module.exports = {
       name: "Utilities",
       content: "../docs/utilities.md",
       exampleMode: "hide",
-      usageMode: "hide",
-      sectionDepth: 1,
+      usageMode: "expand",
+      sectionDepth: 2,
+      sections: [
+        {
+          name: "Margin",
+          content: "../docs/margins.md",
+          description: "Utility classes to assign a margin to elements"
+        },
+        {
+          name: "Padding",
+          content: "../docs/paddings.md",
+          description: "Utility classes to assign a padding to elements"
+        }
+      ]
     },
     {
       name: "Animations",

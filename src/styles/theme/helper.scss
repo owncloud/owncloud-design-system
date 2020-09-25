@@ -2,9 +2,6 @@
   display: none;
 }
 
-// Directions
-$directions: 'top', 'right', 'bottom', 'left';
-
 .oc-cursor-pointer {
   cursor: pointer;
 }
@@ -31,11 +28,13 @@ $directions: 'top', 'right', 'bottom', 'left';
 }
 
 .oc-border {
-  border: $global-border-width solid $global-border !important;
+  border: $global-border-width solid $border-primary !important;
 
-  @each $direction in $directions {
-    &-#{$direction} {
-      border-#{$direction}: $global-border-width solid $global-border !important;
+  @each $directionKey, $directionValues in $directions {
+    &-#{$directionKey} {
+      @each $direction in $directionValues {
+        border-#{$direction}: $global-border-width solid $border-primary !important;
+      }
     }
   }
 }
@@ -43,4 +42,8 @@ $directions: 'top', 'right', 'bottom', 'left';
 .oc-light {
   color: $global-inverse-color !important;
   fill: $global-inverse-color !important;
+}
+
+.oc-text-bold {
+  font-weight: 600 !important;
 }

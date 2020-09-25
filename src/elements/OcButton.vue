@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { getSizeClass } from "../utils/sizeClasses"
+
 export default {
   name: "oc-button",
   status: "review",
@@ -44,9 +46,9 @@ export default {
      */
     size: {
       type: String,
-      default: null,
+      default: "medium",
       validator: value => {
-        return value.match(/(small|large)/)
+        return value.match(/(small|medium|large)/)
       },
     },
     /**
@@ -110,14 +112,14 @@ export default {
       }
     },
     /**
-     * Distance between children of the button. Defaults to small. Might be overruled by justify-content value.
-     * `xsmall, small, normal, medium, large, xlarge`
+     * Distance between children of the button. Defaults to medium. Might be overruled by justify-content value.
+     * `xsmall, small, medium, large, xlarge`
      */
     gapSize: {
       type: String,
-      default: "small",
+      default: "medium",
       validator: value => {
-        return value.match(/(xsmall|small|normal|medium|large|xlarge)/)
+        return value.match(/(xsmall|small|medium|large|xlarge)/)
       }
     }
   },
@@ -125,13 +127,16 @@ export default {
     $_ocButton_buttonClass() {
       if (this.stopClassPropagation) return ""
 
-      let classes = ["oc-button", `oc-button-justify-content-${this.justifyContent}`, `oc-button-gap-${this.gapSize}`]
+      let classes = [
+        "oc-button",
+        `oc-button-${getSizeClass(this.size)}`,
+        `oc-button-justify-content-${this.justifyContent}`,
+        `oc-button-gap-${getSizeClass(this.gapSize)}`
+      ]
 
       if (this.variation && !this.disabled) classes.push(`oc-button-${this.variation}`)
 
       if (this.disabled) classes.push("oc-button-default")
-
-      if (this.size && this.variation !== "raw") classes.push(`oc-button-${this.size}`)
 
       return classes
     },
@@ -175,13 +180,13 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     Button Types
   </h3>
   <div class="uk-flex">
-    <oc-button  class="uk-margin-small-right" v-text="'Default button'" />
-    <oc-button variation="primary" class="uk-margin-small-right">Primary button</oc-button>
-    <oc-button variation="danger" class="uk-margin-small-right">
+    <oc-button  class="oc-mr-s" v-text="'Default button'" />
+    <oc-button variation="primary" class="oc-mr-s">Primary button</oc-button>
+    <oc-button variation="danger" class="oc-mr-s">
       <oc-icon name="delete" aria-hidden="true" />
       Danger Button
     </oc-button>
-    <oc-button disabled class="uk-margin-small-right">Disabled button</oc-button>
+    <oc-button disabled class="oc-mr-s">Disabled button</oc-button>
     <oc-button variation="raw">Raw button</oc-button>
   </div>
 
@@ -189,7 +194,8 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     Button sizes
   </h3>
   <div class="uk-flex">
-    <oc-button size="large" class="uk-margin-small-right">Large</oc-button>
+    <oc-button size="large" class="oc-mr-s">Large</oc-button>
+    <oc-button class="oc-mr-s oc-align-self-center">Medium (default)</oc-button>
     <oc-button size="small" class="oc-align-self-center">Small</oc-button>
   </div>
 
@@ -197,11 +203,11 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     Button with icons
   </h3>
   <div class="uk-flex">
-    <oc-button class="uk-margin-small-right">
+    <oc-button class="oc-mr-s">
       <oc-icon name="home" aria-hidden="true" />
       Home
     </oc-button>
-    <oc-button variation="primary" class="uk-margin-small-right">
+    <oc-button variation="primary" class="oc-mr-s">
       Select
       <oc-icon name="expand_more" aria-hidden="true" />
     </oc-button>

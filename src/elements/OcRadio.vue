@@ -1,11 +1,21 @@
 <template>
-  <label class="radio-container">
-    <span class="label" v-text="label" />
-    <input type="radio" v-model="model" :value="value" name="radio" @change="$_ocRadio_change" />
-    <span class="checkmark"></span>
+  <label :for="$_ocRadio_id" :class="{'oc-cursor-pointer': !disabled}">
+    <input
+      type="radio"
+      name="radio"
+      :id="$_ocRadio_id"
+      :aria-label="label"
+      :class="$_ocRadio_classes"
+      v-model="$_ocRadio_model"
+      :value="option"
+      :disabled="disabled"
+    />
+    <span v-if="!hideLabel" v-text="label" :aria-hidden="true" />
   </label>
 </template>
 <script>
+import { getSizeClass } from "../utils/sizeClasses"
+import * as _uniqueId from "../utils/uniqueId"
 /**
  * The radio element. Can be grouped to give the user to choose between different options.
  */
@@ -15,51 +25,112 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Data-model
-     *
-     * No type: can be an object, a number or a string but must be same as value
-     *
-     * @model
-     **/
-    model: {
-      required: false,
+     * Id for the radio. If it's empty, a generated one will be used.
+     */
+    id: {
+      type: String,
+      required: false
     },
     /**
-     * Value
+     * Disables the radio button
+     */
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * The model of the radio button or radio button group. Bind it with v-model.
      *
-     * No type: can be an object, a number or a string but must be same as model
+     * Can be any type.
      **/
     value: {
       required: false,
     },
     /**
+     * The value of this radio button
+     *
+     * Can be of any type.
+     */
+    option: {
+      required: false,
+      default: null,
+    },
+    /**
      * Label of the Radio.
+     *
+     * Always required for aria-label property. If you want to hide the label, use `hideLabel` property.
      **/
     label: {
       type: String,
       required: true,
       default: null,
     },
-  },
-  methods: {
-    $_ocRadio_change(val) {
-      /**
-       * The onChange event
-       * @event change
-       * @type {event}
-       */
-      this.$emit("change", val)
+    /**
+     * Is the label of the Radio visually hidden?
+     **/
+    hideLabel: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * Size of the Radio. Valid values are `small`, `medium` and `large`.
+     * If not specified, defaults to `medium`
+     */
+    size: {
+      type: String,
+      required: false,
+      default: "medium",
+      validator: size => /(small|medium|large)/.test(size),
     },
   },
+  computed: {
+    $_ocRadio_model: {
+      get() {
+        return this.value
+      },
+      set(value) {
+        this.$emit("input", value)
+      }
+    },
+    $_ocRadio_id() {
+      return this.id || _uniqueId("oc-radio-")
+    },
+    $_ocRadio_classes() {
+      return ["oc-radio", "oc-radio-" + getSizeClass(this.size)]
+    },
+  }
 }
 </script>
-<style lang="scss" scoped></style>
 <docs>
-  ```jsx
-  <div>
-    <oc-radio label="Water" />
-    <oc-radio label="Wine" />
-    <oc-radio label="Beer" />
-  </div>
+  ```
+  <template>
+    <div>
+      <section>
+        <h3 class="uk-heading-divider oc-mt-s">
+          Radio button group
+        </h3>
+        <div class="oc-mb-s">
+          <oc-radio
+              v-for="o in availableOptions"
+              :key="'option-' + o"
+              v-model="selectedOption"
+              :option="o"
+              :label="o"
+              class="oc-mr-s"
+          />
+        </div>
+        Selected option: {{ selectedOption || "None" }}
+      </section>
+    </div>
+  </template>
+  <script>
+    export default {
+      data: () => ({
+        availableOptions: ["Water", "Wine", "Beer"],
+        selectedOption: null
+      })
+    }
+  </script>
   ```
 </docs>

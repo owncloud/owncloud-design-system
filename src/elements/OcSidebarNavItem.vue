@@ -53,7 +53,7 @@ export default {
         classes.push("uk-active")
       }
       if (this.isolate) {
-        classes.push("uk-margin-medium-top")
+        classes.push("oc-mt")
       }
       return classes
     },

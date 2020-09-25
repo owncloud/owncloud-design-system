@@ -142,13 +142,13 @@ export default {
 ```vue
   <template>
     <div>
-      <div class="uk-margin">
+      <div class="oc-m">
         <h3 class="uk-heading-divider">
           Default picker
         </h3>
         <oc-datepicker></oc-datepicker>
       </div>
-      <div class="uk-margin">
+      <div class="oc-m">
         <h3 class="uk-heading-divider">
           Datetime picker with a minimum date
         </h3>

@@ -44,7 +44,7 @@
             v-text="buttonCancelText"
           />
           <oc-button
-            class="oc-modal-body-actions-confirm uk-margin-small-left"
+            class="oc-modal-body-actions-confirm oc-ml-s"
             :variation="$_ocModal_buttonConfirm_variation"
             :disabled="buttonConfirmDisabled || !!inputError"
             v-text="buttonConfirmText"
@@ -268,7 +268,7 @@ export default {
       message="Do you accept our terms of use?"
       buttonCancelText="Decline"
       buttonConfirmText="Accept"
-      class="uk-margin-large-bottom uk-position-relative"
+      class="oc-mb-l uk-position-relative"
     />
     <oc-modal
       variation="danger"
@@ -277,7 +277,7 @@ export default {
       message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
       buttonCancelText="Cancel"
       buttonConfirmText="Delete"
-      class="uk-margin-large-bottom uk-position-relative"
+      class="oc-mb-l uk-position-relative"
     />
     <oc-modal
       title="Create new folder"
@@ -288,7 +288,7 @@ export default {
       inputLabel="Folder name"
       inputPlaceholder="Enter a folder name"
       inputError="This name is already taken"
-      class="uk-margin-large-bottom uk-position-relative"
+      class="oc-mb-l uk-position-relative"
     />
     <oc-modal
       title="Rename file lorem.txt"

@@ -99,7 +99,7 @@ export default {
 ```js
 <template>
   <div>
-    <oc-breadcrumb :items="items" home class="uk-margin-bottom" />
+    <oc-breadcrumb :items="items" home class="oc-mb" />
     <oc-breadcrumb :items="items" variation="lead" />
   </div>
 </template>

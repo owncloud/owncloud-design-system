@@ -15,6 +15,14 @@ props:
   height-small:
     value: "50px"
 
+  icons-size-default:
+    value: "24px"
+    category: "size"
+
+  form-check-size-default:
+    value: "16px"
+    category: "size"
+
 global:
   type: number
   category: size

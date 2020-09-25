@@ -149,11 +149,11 @@ export default {
             <h3 class="uk-heading-divider">
                 Input Types
             </h3>
-            <oc-text-input class="uk-margin-small-bottom" label="Text" placeholder="Write your text"/>
-            <oc-text-input class="uk-margin-small-bottom" disabled label="Disabled" value="I am disabled"/>
-            <oc-text-input class="uk-margin-small-bottom" type="number" label="Number" placeholder="Enter a number"/>
-            <oc-text-input class="uk-margin-small-bottom" type="email" label="Email" placeholder="Enter an email"/>
-            <oc-text-input class="uk-margin-small-bottom" type="password" label="Password" placeholder="Enter your password ;-)"/>
+            <oc-text-input class="oc-mb-s" label="Text" placeholder="Write your text"/>
+            <oc-text-input class="oc-mb-s" disabled label="Disabled" value="I am disabled"/>
+            <oc-text-input class="oc-mb-s" type="number" label="Number" placeholder="Enter a number"/>
+            <oc-text-input class="oc-mb-s" type="email" label="Email" placeholder="Enter an email"/>
+            <oc-text-input class="oc-mb-s" type="password" label="Password" placeholder="Enter your password ;-)"/>
             <h3 class="uk-heading-divider">
                 Binding
             </h3>
@@ -171,7 +171,7 @@ export default {
             </h3>
             <oc-text-input
                     label="Input with error and warning messages with reserved space below"
-                    class="uk-margin-small-bottom"
+                    class="oc-mb-s"
                     placeholder="Text produces error on empty value and warning on trailing whitespace"
                     v-model="valueForMessages"
                     :error-message="errorMessage"
@@ -180,7 +180,7 @@ export default {
             />
             <oc-text-input
                     label="Input with error and warning messages without reserved space below"
-                    class="uk-margin-small-bottom"
+                    class="oc-mb-s"
                     placeholder="Text produces error on empty value and warning on trailing whitespace"
                     v-model="valueForMessages"
                     :error-message="errorMessage"

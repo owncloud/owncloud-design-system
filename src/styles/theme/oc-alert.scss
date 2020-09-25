@@ -46,7 +46,7 @@
 }
 
 .oc-alerts-transition-leave-to {
-  transform: translateY(-$gutter);
+  transform: translateY(-$space-medium);
 }
 
 .oc-alert.oc-alerts-transition-leave-active {

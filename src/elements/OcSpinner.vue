@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { getSizeClass } from "../utils/sizeClasses"
+
 /**
  * Remote actions can take an undefined portion of time. The spinner gives feedback to the users about an actions being processed.
  *
@@ -30,36 +32,34 @@ export default {
     },
     /**
      * The size of the spinner. Defaults to medium.
-     * `xsmall, small, medium, large, xlarge, xxlarge`
+     * `xsmall, small, medium, large, xlarge, xxlarge` and `xxxlarge`
      */
     size: {
       type: String,
       default: "medium",
       validator: value => {
-        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge)/)
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge)/)
       },
     },
   },
   computed: {
     $_ocSpinner_class() {
-      if (!this.size) return "oc-spinner"
-
-      return `oc-spinner oc-spinner-${this.size}`
+      return ["oc-spinner", `oc-spinner-${getSizeClass(this.size)}`]
     },
   },
 }
 </script>
-<style lang="scss"></style>
 <docs>
 ```jsx
 <div class="uk-flex uk-flex-middle">
-  <oc-spinner aria-label="Loading with extra small spinner" size="xsmall" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with small spinner" size="small" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with default sized spinner" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with medium spinner" size="medium" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with large spinner" size="large" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with extra large spinner" size="xlarge" class="uk-margin-small-right" />
-  <oc-spinner aria-label="Loading with extra extra large spinner" size="xxlarge" />
+  <oc-spinner aria-label="Loading with extra small spinner" size="xsmall" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with small spinner" size="small" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with default sized spinner" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with medium spinner" size="medium" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with large spinner" size="large" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with extra large spinner" size="xlarge" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with extra extra large spinner" size="xxlarge" class="oc-mr-s" />
+  <oc-spinner aria-label="Loading with extra extra extra large spinner" size="xxxlarge" />
 </div>
 ```
 </docs>

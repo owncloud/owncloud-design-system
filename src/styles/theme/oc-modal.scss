@@ -37,10 +37,10 @@
     display: flex;
     flex-flow: row wrap;
     font-weight: bold;
-    padding: $small-gutter $gutter;
+    padding: $space-small $space-medium;
 
     > .oc-icon {
-      margin-right: $small-margin;
+      margin-right: $space-small;
     }
   }
 
@@ -51,16 +51,16 @@
   &-body {
     background-color: $muted-background;
     color: $color;
-    padding: $gutter;
+    padding: $space-medium;
 
     &-message {
-      margin-bottom: $medium-margin;
+      margin-bottom: $space-medium;
     }
 
     &-input {
       /* FIXME: this is ugly, but required so that the bottom padding doesn't look off when reserving vertical space for error messages below the input. */
       margin-bottom: -20px;
-      padding-bottom: $medium-gutter;
+      padding-bottom: $space-medium;
     }
 
     &-actions {
