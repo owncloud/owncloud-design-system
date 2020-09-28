@@ -2,6 +2,11 @@
   @extend .uk-progress;
   @extend .uk-position-relative;
 
+  &-flat {
+    border-radius: 0 !important;
+    height: 5px !important;
+  }
+
   &::after {
     @extend .uk-position-absolute;
     @extend .uk-display-block;
@@ -22,7 +27,7 @@
 @keyframes oc-loader {
   0% {
     left: 0;
-    width: 0%;
+    width: 0;
   }
 
   50% {
