@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.11.1...master
+
+## Summary
+
+* Change - Add flat style for oc-loader: [#884](https://github.com/owncloud/owncloud-design-system/pull/884)
+
+## Details
+
+* Change - Add flat style for oc-loader: [#884](https://github.com/owncloud/owncloud-design-system/pull/884)
+
+   The oc-loader component now has a `flat` style, which removes the border radius and shrinks the
+   height. It can be enabled by setting the `flat` property on the component to `true`. With this
+   the visual appearance of the loader is less prominent.
+
+   https://github.com/owncloud/owncloud-design-system/pull/884
+
 # Changelog for [1.11.1] (2020-09-21)
 
 The following sections list the changes in ownCloud Design System 1.11.1.
