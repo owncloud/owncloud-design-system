@@ -10,7 +10,7 @@
         <span v-else v-text="item.text" />
       </li>
     </ul>
-    <div class="oc-breadcrumb-drop" ref="ocBreadcrumbDropdown">
+    <div class="oc-breadcrumb-drop">
       <label class="oc-breadcrumb-drop-label" @click="$_ocBreadcrumb_toggleDropdown">
         <span
           v-if="$_ocBreadcrumb_currentFolder"
@@ -27,6 +27,7 @@
         position="bottom"
         :match-parent-width="true"
         role="menu"
+        @outsideClick="$_ocBreadcrumb_toggleDropdown"
       >
         <ul class="uk-nav uk-nav-default">
           <li v-for="(item, index) in $_ocBreadcrumb_dropdownItems" :key="index" @click="isDropdownVisible = false">
@@ -106,32 +107,9 @@ export default {
     },
   },
 
-  created() {
-    // Add a general event listener to catch outside clicks
-    document.addEventListener("click", this.documentClick)
-  },
-  destroyed: function() {
-    // Remove the general event listener to catch outside clicks
-    document.removeEventListener("click", this.documentClick)
-  },
-
   methods: {
     $_ocBreadcrumb_toggleDropdown() {
       this.isDropdownVisible = !this.isDropdownVisible
-    },
-
-    // Clicks everywhere outside the menu closes it
-    documentClick(e) {
-      if (!this.isDropdownVisible) {
-        return
-      }
-
-      const el = this.$refs.ocBreadcrumbDropdown
-      const target = e.target
-
-      if (el !== target && !el.contains(target)) {
-        this.isDropdownVisible = false
-      }
     }
   }
 }

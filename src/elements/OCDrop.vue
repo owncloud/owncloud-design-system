@@ -99,8 +99,36 @@ export default {
       modifiers: this.$_ocDrop_modifiers
     })
 
-    if (this.matchParentWidth) {
-      this.$refs.ocDrop.style.width = this.$_ocDrop_boundary.offsetWidth + "px"
+    this.$_ocDrop_checkParentWidth()
+
+    window.addEventListener("resize", this.$_ocDrop_checkParentWidth)
+
+    // Use timeout to avoid triggering a click event when clicking on trigger
+    setTimeout(() => {
+      // Add a general event listener to catch outside clicks
+      document.addEventListener("click", this.$_ocDrop_documentClick)
+    })
+  },
+
+  beforeDestroy() {
+    document.removeEventListener("click", this.$_ocDrop_documentClick)
+    window.removeEventListener("resize", this.$_ocDrop_checkParentWidth)
+  },
+
+  methods: {
+    $_ocDrop_documentClick(e) {
+      const el = this.$refs.ocDrop
+      const target = e.target
+
+      if (el !== target && !el.contains(target)) {
+        this.$emit("outsideClick")
+      }
+    },
+
+    $_ocDrop_checkParentWidth() {
+      if (this.matchParentWidth && this.$refs.ocDrop.offsetWidth !== this.$_ocDrop_boundary.offsetWidth ) {
+        this.$refs.ocDrop.style.width = this.$_ocDrop_boundary.offsetWidth + "px"
+      }
     }
   }
 }
