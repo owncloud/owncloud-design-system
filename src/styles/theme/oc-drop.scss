@@ -1,6 +1,7 @@
 .oc-drop {
-  width: 250px;
-  border: 1px solid $muted-background;
   background-color: $background;
+  border: 1px solid $muted-background;
   box-sizing: border-box;
+  max-width: 400px;
+  min-width: 250px;
 }
