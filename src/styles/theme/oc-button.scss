@@ -2,13 +2,20 @@
   gap: round($space-small * $factor / 2) * 2;
 }
 
+@mixin oc-button-line-height($factor) {
+  line-height: $icons-size-default * $factor;
+}
+
 .oc-button {
+  @include oc-button-line-height(1);
+
   align-items: center;
+  border: 1px solid;
   border-color: transparent;
   border-radius: 3px;
+  box-sizing: border-box;
   display: flex;
   font-weight: 600;
-  line-height: 1.4;
   padding: 0.5rem 0.75rem;
   text-align: center;
   transition:
@@ -73,16 +80,22 @@
   }
 
   &-s {
+    @include oc-button-line-height(0.7);
+
     font-size: 0.9rem;
     min-height: $global-control-small-height;
   }
 
   &-m {
+    @include oc-button-line-height(1);
+
     font-size: 1.125rem;
     min-height: $global-control-height;
   }
 
   &-l {
+    @include oc-button-line-height(1.5);
+
     font-size: 1.5rem;
     min-height: $global-control-large-height;
   }
@@ -96,7 +109,7 @@
 
   &-default {
     background-color: transparent;
-    border: 1px solid $action-primary;
+    border-color: $action-primary;
     color: $action-primary;
 
     .oc-icon > svg {
