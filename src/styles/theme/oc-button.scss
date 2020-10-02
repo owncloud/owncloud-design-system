@@ -1,3 +1,7 @@
+@mixin oc-button-gap($factor) {
+  gap: round($space-small * $factor / 2) * 2;
+}
+
 .oc-button {
   align-items: center;
   border-color: transparent;
@@ -40,23 +44,23 @@
 
   &-gap {
     &-xs {
-      gap: $space-xsmall;
+      @include oc-button-gap(0.5);
     }
 
     &-s {
-      gap: $space-small;
+      @include oc-button-gap(0.7);
     }
 
     &-m {
-      gap: $space-medium;
+      @include oc-button-gap(1);
     }
 
     &-l {
-      gap: $space-large;
+      @include oc-button-gap(1.5);
     }
 
     &-xl {
-      gap: $space-xlarge;
+      @include oc-button-gap(2);
     }
   }
 

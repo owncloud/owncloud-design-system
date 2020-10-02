@@ -8,30 +8,61 @@
   width: $form-check-size-default * $factor;
 }
 
-// TODO: Move to .oc-checkbox when we get rid of UIKit
-@mixin hook-form-radio {
+.oc-checkbox {
   @include oc-form-check-size(1);
 
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background-color: $input-background;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 80%;
   border: 1px solid $input-border;
   border-radius: 3px;
-}
 
-.oc-checkbox {
-  @extend .uk-checkbox;
-
-  // FIXME: Do not use such specific selectors after we get rid of UIkit
-  &.oc-checkbox-s {
+  &-s {
     @include oc-form-check-size(0.7);
   }
 
-  &.oc-checkbox-m {
+  &-m {
     @include oc-form-check-size(1);
   }
 
-  &.oc-checkbox-l {
+  &-l {
     @include oc-form-check-size(1.5);
   }
+
+  // Bring back when custom focus styles are created
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:checked,
+  &:indeterminate {
+    background-color: $input-background-checked;
+  }
+
+  &:checked {
+    @include svg-fill($internal-form-checkbox-image, '#000', $form-radio-checked-icon-color);
+  }
+
+  &:indeterminate {
+    @include svg-fill($internal-form-checkbox-indeterminate-image, '#000', $form-radio-checked-icon-color);
+  }
+
+  &:disabled {
+    background-color: $form-radio-disabled-background;
+  }
+
+  &:disabled:checked { @include svg-fill($internal-form-checkbox-image, '#000', $form-radio-disabled-icon-color); }
+  &:disabled:indeterminate { @include svg-fill($internal-form-checkbox-indeterminate-image, '#000', $form-radio-disabled-icon-color); }
 }
 
 label > .oc-checkbox + span {

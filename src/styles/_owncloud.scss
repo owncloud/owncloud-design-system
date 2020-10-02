@@ -7,6 +7,9 @@
 @import '../../node_modules/uikit/src/scss/variables-theme';
 @import '../../node_modules/uikit/src/scss/mixins-theme';
 
+// // 4. Import UIkit.
+@import '../../node_modules/uikit/src/scss/uikit-theme';
+
 // 3. Your custom mixin overwrites.
 @import 'theme/helper';
 @import 'theme/oc-spacing';
@@ -48,6 +51,3 @@
 @import 'theme/oc-modal';
 @import 'theme/oc-sidebar';
 @import 'theme/oc-radio';
-
-// // 4. Import UIkit.
-@import '../../node_modules/uikit/src/scss/uikit-theme';

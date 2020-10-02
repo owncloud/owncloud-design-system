@@ -98,11 +98,15 @@ props:
 
   input-background:
     value: 'rgba(78,133,200,.05)'
-    category: 'Search-bar-colors'
+    category: 'Input-colors'
+
+  input-background-checked:
+    value: '#1b223d'
+    category: 'Input-colors'
 
   input-border:
     value: "rgba(78,133,200,.25)"
-    category: "Search-bar-colors"
+    category: "Input-colors"
 
 global:
   type: color
