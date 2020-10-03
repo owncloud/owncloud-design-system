@@ -13,14 +13,15 @@
         {{ message }}
       </div>
     </div>
-    <oc-icon
-      aria-label="Close"
-      :variation="status"
+    <oc-button
       name="close"
-      class="uk-position-top-right oc-mt-s oc-mr-s oc-alert-close-icon"
-      type="button"
+      variation="raw"
+      aria-label="Close"
+      class="uk-position-top-right oc-mt-s oc-mr-s"
       @click="$_ocNotificationMessage_close"
-    ></oc-icon>
+    >
+      <oc-icon name="close" :variation="status" />
+    </oc-button>
   </div>
 </template>
 <script>
