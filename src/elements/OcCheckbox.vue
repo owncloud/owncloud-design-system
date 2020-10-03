@@ -39,13 +39,16 @@ export default {
       default: false,
     },
     /**
-     * The model of the checkbox. Bind it with v-model.
+     * The model of the checkbox. It determines, based on the option this checkbox represents, whether or not this
+     * checkbox is checked. Provide it as value or bind it with v-model.
+     *
+     * Can be any type, but most common is boolean for singular checkbox use, or array when used in a group of checkboxes.
      **/
     value: {
       required: false
     },
     /**
-     * The value of this checkbox
+     * The value/object this checkbox represents.
      *
      * Can be of any type. If the model is an array, the type of the value needs to match the model item types.
      **/

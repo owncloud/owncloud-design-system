@@ -39,7 +39,10 @@ export default {
       default: false,
     },
     /**
-     * The model of the radio button or radio button group. Bind it with v-model.
+     * The model of the radio button or radio button group. It determines, based on the option this radio button
+     * represents, whether or not this radio button is checked. Provide it as value or bind it with v-model.
+     *
+     * When used in a radio group, provide a variable that tracks which of the `option` values of the group is checked.
      *
      * Can be any type.
      **/
