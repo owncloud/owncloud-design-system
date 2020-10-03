@@ -50,7 +50,7 @@ export default {
       required: false,
     },
     /**
-     * The value of this radio button
+     * The value of this radio button. Can be omitted if the radio button is not used in a group.
      *
      * Can be of any type.
      */

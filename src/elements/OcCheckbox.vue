@@ -50,7 +50,8 @@ export default {
     /**
      * The value/object this checkbox represents.
      *
-     * Can be of any type. If the model is an array, the type of the value needs to match the model item types.
+     * Can be of any type. If `value` is an array, the type of the option needs to match the value item types. If the
+     * checkbox is used standalone (not in a group on a shared model) the option can be omitted.
      **/
     option: {
       required: false,

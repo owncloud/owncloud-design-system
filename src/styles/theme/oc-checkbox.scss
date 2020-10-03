@@ -11,9 +11,6 @@
 .oc-checkbox {
   @include oc-form-check-size(1);
 
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: $input-background;
@@ -22,6 +19,9 @@
   background-size: 80%;
   border: 1px solid $input-border;
   border-radius: 3px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
 
   &-s {
     @include oc-form-check-size(0.7);
