@@ -6,9 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Small design improvements: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
 * Change - Add flat style for oc-loader: [#884](https://github.com/owncloud/owncloud-design-system/pull/884)
+* Change - Updated checkbox and radiobutton components: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
+* Enhancement - Add margin and padding utility classes: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
 
 ## Details
+
+* Change - Small design improvements: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
+
+   We've changed a few color design tokens. We've rotated the icon 45 degrees to the left. We've
+   changed the spacing values and united them in one design tokens for both margin and padding.
+
+   https://github.com/owncloud/owncloud-design-system/pull/890
+
 
 * Change - Add flat style for oc-loader: [#884](https://github.com/owncloud/owncloud-design-system/pull/884)
 
@@ -17,6 +28,24 @@ The following sections list the changes in ownCloud Design System unreleased.
    the visual appearance of the loader is less prominent.
 
    https://github.com/owncloud/owncloud-design-system/pull/884
+
+
+* Change - Updated checkbox and radiobutton components: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
+
+   We updated the OcCheckbox and OcRadio components so that it's possible to use them properly
+   with `v-model`. OcRadio had the radiobutton on the right side of the label. We moved it over to
+   the left side for consistency.
+
+   https://github.com/owncloud/owncloud-design-system/pull/890
+
+
+* Enhancement - Add margin and padding utility classes: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
+
+   We've added utility classes which can assign margin and padding to elements. In their own
+   subsections of utilities section in our design system documentation can be found how to use
+   them.
+
+   https://github.com/owncloud/owncloud-design-system/pull/890
 
 # Changelog for [1.11.1] (2020-09-21)
 
