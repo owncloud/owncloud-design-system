@@ -105,7 +105,7 @@ export default {
 
 <docs>
     ```jsx
-    <oc-disclosure-drop button-variation="primary" class="uk-margin-small-left">
+    <oc-disclosure-drop button-variation="primary" class="oc-ml-s">
         <template v-slot:button>Show / Hide</template>
         <template v-slot:content>
             <ul class="uk-list">
@@ -113,7 +113,7 @@ export default {
                 <li><a href="#0">Link 2</a></li>
             </ul>
         </template>
-    </oc-disclosure-drop><oc-disclosure-drop button-variation="default" class="uk-margin-small-left">
+    </oc-disclosure-drop><oc-disclosure-drop button-variation="default" class="oc-ml-s">
         <template v-slot:button>Show / Hide</template>
         <template v-slot:content>
             You could also place text, input elements, images, or other form of media here.

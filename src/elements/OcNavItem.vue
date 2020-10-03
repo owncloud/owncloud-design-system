@@ -2,7 +2,7 @@
   <li :class="{ 'uk-active': active }">
     <a href="#" @click.prevent="$_ocCheckbox_click">
       <div v-if="icon" class="uk-flex uk-flex-middle">
-        <oc-icon :name="icon" class="uk-margin-small-right" />
+        <oc-icon :name="icon" class="oc-mr-s" />
         <slot name="default" />
       </div>
       <template v-else>

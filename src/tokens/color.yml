@@ -9,13 +9,13 @@
 
 props:
   color:
-    value: "#002966"
+    value: "#1b223d"
     category: "Font-colors"
   emphasis-color:
     value: "#002966"
     category: "Font-colors"
   muted-color:
-    value: "#667fa3"
+    value: "rgba(4,30,66,.7)"
     category: "Font-colors"
   link-color:
     value: "#4e85c8"
@@ -28,7 +28,7 @@ props:
     category: "Font-colors"
 
   filetype-icon-color:
-    value: "#667fa3"
+    value: "rgba(4, 30, 66, 0.75)"
     category: "icon-colors"
 
   active-icon-color:
@@ -36,11 +36,11 @@ props:
     category: "icon-colors"
 
   passive-icon-color:
-    value: "#cccccc"
+    value: "rgba(4,30,66,.7)"
     category: "icon-colors"
 
   system-icon-color:
-    value: "#667fa3"
+    value: "rgba(4, 30, 66, 0.75)"
     category: "icon-colors"
 
   background:
@@ -56,7 +56,7 @@ props:
     value: "#6780a2"
     category: "Background-colors"
   selected-background:
-    value: "#e5efff"
+    value: "rgba(78,133,200,.1)"
     category: "Background-colors"
 
   success-background:
@@ -91,6 +91,22 @@ props:
   shadow-action-primary:
     value: "#32325d"
     category: "Shadow-colors"
+
+  border-primary:
+    value: '#ecebee'
+    category: "Border-colors"
+
+  input-background:
+    value: 'rgba(78,133,200,.05)'
+    category: 'Input-colors'
+
+  input-background-checked:
+    value: '#1b223d'
+    category: 'Input-colors'
+
+  input-border:
+    value: "rgba(78,133,200,.25)"
+    category: "Input-colors"
 
 global:
   type: color

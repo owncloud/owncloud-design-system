@@ -70,7 +70,7 @@ Show progress to the users.
 
 ```jsx
 <div>
-  <oc-progress :value="4" :max="10" class="uk-margin-small-bottom" />
+  <oc-progress :value="4" :max="10" class="oc-mb-s" />
   <oc-progress :value="8" :max="10" size="small" variation="warning" />
 </div>
 ```

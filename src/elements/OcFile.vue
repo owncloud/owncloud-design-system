@@ -1,9 +1,8 @@
 <template>
   <span class="oc-file" @click="onClick" role="button">
     <oc-icon :name="icon" :url="iconUrl" variation="file-type" class="uk-position-center-left" />
-    <span class="oc-file-name" v-text="name" /><span v-if="extension" class="oc-file-extension"
-      >.{{ extension }}</span
-    >
+    <span class="oc-file-name" v-text="name" />
+    <span v-if="extension" class="oc-file-extension">.{{ extension }}</span>
   </span>
 </template>
 <script>

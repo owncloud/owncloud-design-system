@@ -93,7 +93,7 @@ export default {
 <docs>
 ```jsx
 <div>
-	<oc-textarea class="uk-margin-small-bottom" placeholder="Write your text" label="Comment" />
+	<oc-textarea class="oc-mb-s" placeholder="Write your text" label="Comment" />
 	<oc-textarea disabled value="I am disabled" label="Example" />
 </div>
 ```

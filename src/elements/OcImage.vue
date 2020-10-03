@@ -41,13 +41,13 @@ export default {
 <docs>
 ```jsx
 <div>
-  <p class="uk-margin">
+  <p class="oc-m">
     <oc-img width="100" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
   </p>
-  <p class="uk-margin">
+  <p class="oc-m">
     <oc-img width="300" height="200" src="https://picsum.photos/200/300/?random" title="I am random" />
   </p>
-  <p class="uk-margin">
+  <p class="oc-m">
     <oc-img src="https://picsum.photos/g/200/300" title="Grayscale" />
   </p>
 </div>

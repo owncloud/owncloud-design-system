@@ -105,9 +105,9 @@ export default {
 <docs>
 ```jsx
 <div>
-  <div class="uk-button-group">
-    <oc-button id="my_menu">Menu</oc-button>
-    <oc-button id="my_filter">Filter</oc-button>
+  <div class="uk-button-group oc-mt-s">
+    <oc-button id="my_menu" class="oc-mr-s">Menu</oc-button>
+    <oc-button id="my_filter" class="oc-mr-s">Filter</oc-button>
     <oc-button id="my_advanced">Advanced</oc-button>
   </div>
 

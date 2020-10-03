@@ -9,7 +9,7 @@
   &-list {
     @extend .uk-visible\@s;
     @extend .uk-breadcrumb;
-    @extend .uk-margin-remove;
+    @extend .oc-m-rm;
   }
 
   &-drop {
@@ -24,10 +24,7 @@
       border: $global-border-width solid $global-border;
       cursor: pointer;
       height: $global-control-height;
-      padding: {
-        left: $global-small-gutter;
-        right: $global-small-gutter / 3 * 2; // Consider icon padding
-      }
+      padding: $space-small;
 
       &-text {
         @extend .uk-text-muted;

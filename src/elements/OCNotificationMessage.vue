@@ -1,8 +1,8 @@
 <template>
   <div class="oc-alert" :class="$_ocNotificationMessage_classes">
-    <oc-icon :variation="status" size="large" name="info" class="uk-margin-small-right"></oc-icon>
+    <oc-icon :variation="status" size="large" name="info" class="oc-mr-s"></oc-icon>
     <div
-      class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 uk-margin-right"
+      class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
       :role="status === 'danger' ? 'alert' : 'status'"
       :aria-live="status === 'danger' ? 'assertive' : 'polite'"
     >
@@ -13,14 +13,15 @@
         {{ message }}
       </div>
     </div>
-    <oc-icon
-      aria-label="Close"
-      :variation="status"
+    <oc-button
       name="close"
-      class="uk-position-top-right uk-margin-small-top uk-margin-small-right oc-alert-close-icon"
-      type="button"
+      variation="raw"
+      aria-label="Close"
+      class="uk-position-top-right oc-mt-s oc-mr-s"
       @click="$_ocNotificationMessage_close"
-    ></oc-icon>
+    >
+      <oc-icon name="close" :variation="status" />
+    </oc-button>
   </div>
 </template>
 <script>

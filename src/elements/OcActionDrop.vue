@@ -155,14 +155,14 @@ export default {
 
 <docs>
 ```jsx
-    <oc-action-drop button-variation="primary" class="uk-margin-small-left">
+    <oc-action-drop button-variation="primary" class="oc-ml-s">
         <template v-slot:button>Action</template>
         <template v-slot:actions>
             <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 1</div>
             <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 2</div>
         </template>
     </oc-action-drop>
-    <oc-action-drop button-variation="default" class="uk-margin-small-left">
+    <oc-action-drop button-variation="default" class="oc-ml-s">
         <template v-slot:button>Action</template>
         <template v-slot:actions>
             <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 3</div>

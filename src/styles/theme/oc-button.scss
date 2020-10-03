@@ -1,12 +1,21 @@
+@mixin oc-button-gap($factor) {
+  gap: round($space-small * $factor / 2) * 2;
+}
+
+@mixin oc-button-line-height($factor) {
+  line-height: $icons-size-default * $factor;
+}
+
 .oc-button {
+  @include oc-button-line-height(1);
+
   align-items: center;
+  border: 1px solid;
   border-color: transparent;
   border-radius: 3px;
+  box-sizing: border-box;
   display: flex;
-  font-size: 1.125rem;
   font-weight: 600;
-  line-height: 1.4;
-  min-height: $global-control-height;
   padding: 0.5rem 0.75rem;
   text-align: center;
   transition:
@@ -41,28 +50,24 @@
   }
 
   &-gap {
-    &-xsmall {
-      gap: $xsmall-margin;
+    &-xs {
+      @include oc-button-gap(0.5);
     }
 
-    &-small {
-      gap: $small-margin;
+    &-s {
+      @include oc-button-gap(0.7);
     }
 
-    &-normal {
-      gap: $margin;
+    &-m {
+      @include oc-button-gap(1);
     }
 
-    &-medium {
-      gap: $medium-margin;
+    &-l {
+      @include oc-button-gap(1.5);
     }
 
-    &-large {
-      gap: $large-margin;
-    }
-
-    &-xlarge {
-      gap: $xlarge-margin;
+    &-xl {
+      @include oc-button-gap(2);
     }
   }
 
@@ -74,12 +79,23 @@
     transition: fill $transition-duration-short ease-in-out;
   }
 
-  &-small {
+  &-s {
+    @include oc-button-line-height(0.7);
+
     font-size: 0.9rem;
     min-height: $global-control-small-height;
   }
 
-  &-large {
+  &-m {
+    @include oc-button-line-height(1);
+
+    font-size: 1.125rem;
+    min-height: $global-control-height;
+  }
+
+  &-l {
+    @include oc-button-line-height(1.5);
+
     font-size: 1.5rem;
     min-height: $global-control-large-height;
   }
@@ -93,7 +109,7 @@
 
   &-default {
     background-color: transparent;
-    border: 1px solid $action-primary;
+    border-color: $action-primary;
     color: $action-primary;
 
     .oc-icon > svg {

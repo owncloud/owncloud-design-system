@@ -65,7 +65,7 @@ export default {
   </oc-alert>
   <oc-alert variation="primary">
     <p>
-      <oc-icon name="info" class="uk-float-left uk-margin-small-right" />
+      <oc-icon name="info" class="uk-float-left oc-mr-s" />
       I am nice and blue and have an icon
     </p>
   </oc-alert>

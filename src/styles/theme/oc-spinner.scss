@@ -3,14 +3,14 @@
 //
 // ========================================================================
 
-$oc-spinner-size: 24px;
-
 @mixin oc-spinner-size($factor) {
-  height: $oc-spinner-size * $factor;
-  width: $oc-spinner-size * $factor;
+  height: round($icons-size-default * $factor / 2) * 2;
+  width: round($icons-size-default * $factor / 2) * 2;
 }
 
 .oc-spinner {
+  @include oc-spinner-size(1);
+
   color: $global-color;
   display: inline-block;
 
@@ -32,12 +32,11 @@ $oc-spinner-size: 24px;
     position: relative;
   }
 
-  &,
-  &-small {
-    @include oc-spinner-size(1);
+  &-xs {
+    @include oc-spinner-size(0.5);
   }
 
-  &-xsmall {
+  &-s {
     @include oc-spinner-size(0.7);
   }
 
@@ -45,19 +44,23 @@ $oc-spinner-size: 24px;
     @include oc-spinner-size(0.8);
   }
 
-  &-medium {
+  &-m {
+    @include oc-spinner-size(1);
+  }
+
+  &-l {
     @include oc-spinner-size(1.5);
   }
 
-  &-large {
+  &-xl {
     @include oc-spinner-size(2);
   }
 
-  &-xlarge {
+  &-xxl {
     @include oc-spinner-size(4);
   }
 
-  &-xxlarge {
+  &-xxxl {
     @include oc-spinner-size(8);
   }
 }

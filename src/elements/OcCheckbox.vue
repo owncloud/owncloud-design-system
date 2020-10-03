@@ -1,16 +1,21 @@
 <template>
-  <label>
+  <label :for="$_ocCheckbox_id" :class="{'oc-cursor-pointer': !disabled}">
     <input
-      class="oc-checkbox"
       type="checkbox"
-      v-model="$_ocCheckbox_checkboxState"
-      @change="$_ocCheckbox_change($event)"
-      @click.stop
+      name="checkbox"
+      :id="$_ocCheckbox_id"
+      :aria-label="label"
+      :class="$_ocCheckbox_classes"
+      v-model="$_ocCheckbox_model"
+      :value="option"
+      :disabled="disabled"
     />
-    <span v-text="label" :class="{ 'oc-visually-hidden': hideLabel }" />
+    <span v-if="!hideLabel" v-text="label" :aria-hidden="true" />
   </label>
 </template>
 <script>
+import { getSizeClass } from "../utils/sizeClasses"
+import * as _uniqueId from "../utils/uniqueId"
 /**
  * A checkbox input element. The checkbox is either checked or unchecked.
  */
@@ -20,15 +25,42 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Data-model
-     **/
-    value: {
+     * Id for the checkbox. If it's empty, a generated one will be used.
+     */
+    id: {
+      type: String,
+      required: false
+    },
+    /**
+     * Disables the checkbox
+     */
+    disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     /**
+     * The model of the checkbox. It determines, based on the option this checkbox represents, whether or not this
+     * checkbox is checked. Provide it as value or bind it with v-model.
+     *
+     * Can be any type, but most common is boolean for singular checkbox use, or array when used in a group of checkboxes.
+     **/
+    value: {
+      required: false
+    },
+    /**
+     * The value/object this checkbox represents.
+     *
+     * Can be of any type. If `value` is an array, the type of the option needs to match the value item types. If the
+     * checkbox is used standalone (not in a group on a shared model) the option can be omitted.
+     **/
+    option: {
+      required: false,
+      default: null,
+    },
+    /**
      * Label of the Checkbox
+     *
+     * Always required for aria-label property. If you want to hide the label, use `hideLabel` property.
      **/
     label: {
       type: String,
@@ -43,32 +75,33 @@ export default {
       required: false,
       default: false,
     },
-  },
-  methods: {
-    $_ocCheckbox_change(event) {
-      /**
-       * State change event
-       * @event change
-       * @type {event}
-       */
-      this.$emit("change", event)
+    /**
+     * Size of the Checkbox. Valid values are `small`, `medium` and `large`.
+     * If not specified, defaults to `medium`
+     */
+    size: {
+      type: String,
+      required: false,
+      default: "medium",
+      validator: size => /(small|medium|large)/.test(size),
     },
   },
   computed: {
-    $_ocCheckbox_checkboxState: {
-      get: function() {
+    $_ocCheckbox_model: {
+      get() {
         return this.value
       },
-      set: function(value) {
-        /**
-         * State change event
-         * @event input
-         * @type {event}
-         */
+      set(value) {
         this.$emit("input", value)
-      },
+      }
     },
-  },
+    $_ocCheckbox_id() {
+      return this.id || _uniqueId("oc-checkbox-")
+    },
+    $_ocCheckbox_classes() {
+      return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
+    },
+  }
 }
 </script>
 <docs>
@@ -76,30 +109,50 @@ export default {
     <template>
         <div>
             <section>
-                <h3 class="uk-heading-divider">
+                <h3 class="uk-heading-divider oc-mt-s">
                     Checkboxes Types
                 </h3>
-                <oc-checkbox label="Label" />
-                <oc-checkbox v-model="checkState1" label="Label"/>
-                <div @click="parentClick">
-                    <oc-checkbox label="Label" />
+                <div class="oc-mb-s">
+                  <oc-checkbox size="small" label="Small checkbox" aria-label="Small checkbox"/>
+                </div>
+                <div class="oc-mb-s">
+                  <oc-checkbox :value="true" label="Medium checkbox (default)"/>
+                </div>
+                <div>
+                    <oc-checkbox size="large" label="Large checkbox" />
                 </div>
             </section>
-
         </div>
     </template>
-    <script>
-        export default {
-            data: () => ({
-                checkState1: true
-            }),
-            methods: {
-                parentClick: function () {
-                    // we should never see this ;-)
-                    alert('Click on parent received')
-                }
-            }
-        }
-    </script>
+  ```
+  ```
+  <template>
+    <div>
+      <section>
+        <h3 class="uk-heading-divider oc-mt-s">
+          Checkbox group with array model
+        </h3>
+        <div class="oc-mb-s">
+          <oc-checkbox
+              v-for="o in availableOptions"
+              :key="'option-' + o"
+              v-model="selectedOptions"
+              :option="o"
+              :label="o"
+              class="oc-mr-s"
+          />
+        </div>
+        Selected option: {{ selectedOptions || "None" }}
+      </section>
+    </div>
+  </template>
+  <script>
+    export default {
+      data: () => ({
+        availableOptions: ["Water", "Wine", "Beer"],
+        selectedOptions: []
+      })
+    }
+  </script>
   ```
 </docs>

@@ -5,6 +5,8 @@
   min-width: $form-width-medium;
 
   &-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
     // Prevend double borders
     // from input and button
     transform: translateX(-1px);
@@ -12,7 +14,7 @@
   }
 
   &-input > .oc-text-input {
-    padding-right: $medium-gutter;
+    padding-right: $space-medium;
 
     &::-ms-clear,
     &::-ms-reveal {
@@ -21,7 +23,12 @@
   }
 
   &-input-icon > .oc-text-input {
-    padding-left: $medium-gutter;
+    padding-left: $space-large + $space-small;
+  }
+
+  &-input-button > .oc-text-input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
   }
 
   &-clear {
@@ -34,16 +41,16 @@
 
       // Overrride default padding of small from
       // TODO: Remove `!important` after we get rid of UIkit
-      padding-right: $medium-gutter !important;
+      padding-right: $space-medium !important;
     }
 
     .oc-search-input-icon > .oc-text-input {
       // TODO: Remove `!important` after we get rid of UIkit
-      padding-left: $medium-gutter !important;
+      padding-left: $space-large !important;
     }
 
     .oc-button {
-      @extend .uk-button-small;
+      @extend .oc-button-s;
     }
 
     .oc-icon {

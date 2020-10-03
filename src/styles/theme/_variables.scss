@@ -9,7 +9,7 @@ $global-link-color: $link-color;
 $global-link-hover-color: $link-hover-color;
 
 $global-muted-background: $muted-background;
-$global-primary-background: $primary-background;
+$global-primary-background: $brand-primary;
 $global-secondary-background: $secondary-background;
 $global-selected-background: $selected-background;
 
@@ -25,3 +25,6 @@ $navbar-nav-item-height: 60px;
 $transition-duration-short: 200ms;
 
 $global-font-family: 'Source Sans Pro', sans-serif;
+
+$directions: ('t': 'top', 'r': 'right', 'b': 'bottom', 'l': 'left', 'x': ('right', 'left'), 'y': ('top', 'bottom'));
+$sizes: ('xs': $space-xsmall, 's': $space-small, 'm': $space-medium, 'l': $space-large, 'xl': $space-xlarge, 'xxl': $space-xxlarge);

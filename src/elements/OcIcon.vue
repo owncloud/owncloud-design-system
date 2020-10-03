@@ -3,7 +3,7 @@
     v-if="iconNotLoaded"
     :is="$_ocIcon_type"
     :aria-label="ariaLabel"
-    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', prefix(size), prefix(variation)]"
+    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', sizeClass(size), variationClass(variation)]"
     v-html="$_ocIcon_svg"
     @click="$_ocIcon_click"
   />
@@ -11,13 +11,14 @@
     v-else
     :src="iconUrl"
     :aria-label="ariaLabel"
-    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', prefix(size), prefix(variation)]"
+    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', sizeClass(size), variationClass(variation)]"
     @click="$_ocIcon_click"
   />
 </template>
 
 <script>
 const req = require.context("../assets/icons/", true, /^\.\/.*\.svg$/)
+import { getSizeClass } from "../utils/sizeClasses"
 /**
  * Icons are used to visually communicate core parts of the product and
  * available actions. They can act as wayfinding tools to help users more
@@ -63,9 +64,9 @@ export default {
      */
     size: {
       type: String,
-      default: "small",
+      default: "medium",
       validator: value => {
-        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge)/)
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge)/)
       },
     },
     /**
@@ -90,6 +91,12 @@ export default {
     this.loadImage()
   },
   methods: {
+    sizeClass(c) {
+      return this.prefix(getSizeClass(c))
+    },
+    variationClass(c) {
+      return this.prefix(c)
+    },
     prefix(string) {
       if (string !== null) return `oc-icon-${string}`
     },
@@ -126,7 +133,6 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
 <docs>
   ```jsx
 <section>
@@ -177,7 +183,7 @@ export default {
         <oc-table-cell shrink type="head">Size</oc-table-cell>
         <oc-table-cell expand type="head" class="">Icons</oc-table-cell>
       </oc-table-row>
-      <oc-table-row v-for="size in ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']" :key="size">
+      <oc-table-row v-for="size in ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'xxxlarge']" :key="size">
         <oc-table-cell shrink>{{size}}</oc-table-cell>
         <oc-table-cell expand class="uk-text-nowrap">
           <oc-icon :size="size" name="close"/>
@@ -191,7 +197,7 @@ export default {
   <h3 class="uk-heading-divider">
     Icons loaded via URL
   </h3>
-  <div class="uk-margin">
+  <div class="oc-m">
     <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
     <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
     <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv"/>

@@ -4,7 +4,7 @@
   height: 100vh;
   max-height: 100vh;
   overflow: hidden auto;
-  padding: $large-gutter 0 $gutter;
+  padding: $space-large 0 $space-medium;
   width: $width-medium;
 
   &-content-wrapper {
@@ -16,8 +16,8 @@
   }
 
   &-logo {
-    margin-bottom: $large-margin;
-    padding: 0 $small-gutter;
+    margin-bottom: $space-xxlarge;
+    padding: 0 $space-small;
     text-align: center;
 
     &:hover,
@@ -36,7 +36,7 @@
   }
 
   &-upper-content {
-    padding: 0 $small-gutter $gutter;
+    padding: 0 $space-small $space-medium;
   }
 
   &-nav {
@@ -67,7 +67,7 @@
       flex-flow: row wrap;
       font-size: 1.125rem;
       font-weight: 600;
-      padding: $small-gutter;
+      padding: $space-small;
 
       &:hover,
       &:focus {
@@ -76,7 +76,7 @@
     }
 
     .oc-icon {
-      margin-right: $small-margin;
+      margin-right: $space-medium;
     }
 
     &.uk-active {
@@ -91,11 +91,11 @@
 
   &-main-content {
     color: $global-inverse-color;
-    padding: 0 $small-gutter $gutter;
+    padding: 0 $space-small $space-medium;
   }
 
   &-footer {
-    padding: 0 $small-gutter;
+    padding: 0 $space-small;
   }
 
   &-fixed {
@@ -108,8 +108,8 @@
 
   &-fixed &-button-close {
     position: absolute;
-    right: $small-gutter;
-    top: $small-gutter;
+    right: $space-small;
+    top: $space-small;
 
     .oc-icon > svg {
       @extend .oc-light;
@@ -122,6 +122,6 @@
   }
 
   &-fixed &-logo {
-    margin-top: $medium-margin;
+    margin-top: $space-medium;
   }
 }

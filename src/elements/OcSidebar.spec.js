@@ -49,7 +49,7 @@ describe("OcSidebar", () => {
     expect(wrapper.find('.upper-slot').text()).toMatch('Files app')
     expect(wrapper.findAll('.footer-slot').length).toBe(1)
     expect(wrapper.find('.footer-slot').text()).toMatch('Made by ownClouders')
-    expect(wrapper.find('.oc-sidebar-footer').classes()).toContain('uk-margin-top')
+    expect(wrapper.find('.oc-sidebar-footer').classes()).toContain('oc-mt')
     expect(wrapper).toMatchSnapshot()
   })
 
@@ -94,7 +94,7 @@ describe("OcSidebar", () => {
     expect(wrapper.findAll('.oc-sidebar-nav-item').length).toBe(3)
     expect(wrapper.findAll('.oc-sidebar-main-content').length).toBe(1)
     expect(wrapper.find('.oc-sidebar-main-content').text()).toMatch(productDesc)
-    expect(wrapper.find('.oc-sidebar-main-content').classes()).toContain('uk-margin-top')
+    expect(wrapper.find('.oc-sidebar-main-content').classes()).toContain('oc-mt')
     expect(wrapper).toMatchSnapshot()
   })
 })
