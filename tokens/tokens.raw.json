@@ -4,29 +4,36 @@
     "selected-background": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(229, 239, 255)",
-      "originalValue": "#e5efff",
+      "value": "rgba(78, 133, 200, 0.1)",
+      "originalValue": "rgba(78,133,200,.1)",
       "name": "selected-background"
     },
     "muted-color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(102, 127, 163)",
-      "originalValue": "#667fa3",
+      "value": "rgba(4, 30, 66, 0.7)",
+      "originalValue": "rgba(4,30,66,.7)",
       "name": "muted-color"
+    },
+    "border-primary": {
+      "type": "color",
+      "category": "Border-colors",
+      "value": "rgb(236, 235, 238)",
+      "originalValue": "#ecebee",
+      "name": "border-primary"
     },
     "color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(0, 41, 102)",
-      "originalValue": "#002966",
+      "value": "rgb(27, 34, 61)",
+      "originalValue": "#1b223d",
       "name": "color"
     },
     "filetype-icon-color": {
       "type": "color",
       "category": "icon-colors",
-      "value": "rgb(102, 127, 163)",
-      "originalValue": "#667fa3",
+      "value": "rgba(4, 30, 66, 0.75)",
+      "originalValue": "rgba(4, 30, 66, 0.75)",
       "name": "filetype-icon-color"
     },
     "inverse-color": {
@@ -50,6 +57,13 @@
       "originalValue": "#6780a2",
       "name": "secondary-background"
     },
+    "input-background-checked": {
+      "type": "color",
+      "category": "Input-colors",
+      "value": "rgb(27, 34, 61)",
+      "originalValue": "#1b223d",
+      "name": "input-background-checked"
+    },
     "action-primary": {
       "type": "color",
       "category": "Action-colors",
@@ -60,8 +74,8 @@
     "system-icon-color": {
       "type": "color",
       "category": "icon-colors",
-      "value": "rgb(102, 127, 163)",
-      "originalValue": "#667fa3",
+      "value": "rgba(4, 30, 66, 0.75)",
+      "originalValue": "rgba(4, 30, 66, 0.75)",
       "name": "system-icon-color"
     },
     "background": {
@@ -70,6 +84,13 @@
       "value": "rgb(255, 255, 255)",
       "originalValue": "#fff",
       "name": "background"
+    },
+    "input-border": {
+      "type": "color",
+      "category": "Input-colors",
+      "value": "rgba(78, 133, 200, 0.25)",
+      "originalValue": "rgba(78,133,200,.25)",
+      "name": "input-border"
     },
     "shadow-global": {
       "type": "color",
@@ -92,6 +113,13 @@
       "originalValue": "#4e85c8",
       "name": "link-color"
     },
+    "input-background": {
+      "type": "color",
+      "category": "Input-colors",
+      "value": "rgba(78, 133, 200, 0.05)",
+      "originalValue": "rgba(78,133,200,.05)",
+      "name": "input-background"
+    },
     "emphasis-color": {
       "type": "color",
       "category": "Font-colors",
@@ -102,8 +130,8 @@
     "passive-icon-color": {
       "type": "color",
       "category": "icon-colors",
-      "value": "rgb(204, 204, 204)",
-      "originalValue": "#cccccc",
+      "value": "rgba(4, 30, 66, 0.7)",
+      "originalValue": "rgba(4,30,66,.7)",
       "name": "passive-icon-color"
     },
     "active-icon-color": {
@@ -288,6 +316,20 @@
       "originalValue": "50px",
       "name": "height-small"
     },
+    "icons-size-default": {
+      "type": "number",
+      "category": "size",
+      "value": "24px",
+      "originalValue": "24px",
+      "name": "icons-size-default"
+    },
+    "form-check-size-default": {
+      "type": "number",
+      "category": "size",
+      "value": "16px",
+      "originalValue": "16px",
+      "name": "form-check-size-default"
+    },
     "duration_quickly": {
       "type": "number",
       "category": "time",
@@ -393,82 +435,47 @@
       "originalValue": "50%",
       "name": "radius_circle"
     },
-    "xsmall-margin": {
+    "space-xsmall": {
       "type": "number",
       "category": "space",
       "value": "5px",
       "originalValue": "5px",
-      "name": "xsmall-margin"
+      "name": "space-xsmall"
     },
-    "small-margin": {
+    "space-small": {
       "type": "number",
       "category": "space",
       "value": "10px",
       "originalValue": "10px",
-      "name": "small-margin"
+      "name": "space-small"
     },
-    "margin": {
+    "space-medium": {
       "type": "number",
       "category": "space",
       "value": "20px",
       "originalValue": "20px",
-      "name": "margin"
+      "name": "space-medium"
     },
-    "medium-margin": {
+    "space-large": {
       "type": "number",
       "category": "space",
       "value": "30px",
       "originalValue": "30px",
-      "name": "medium-margin"
+      "name": "space-large"
     },
-    "large-margin": {
-      "type": "number",
-      "category": "space",
-      "value": "70px",
-      "originalValue": "70px",
-      "name": "large-margin"
-    },
-    "xlarge-margin": {
-      "type": "number",
-      "category": "space",
-      "value": "140px",
-      "originalValue": "140px",
-      "name": "xlarge-margin"
-    },
-    "small-gutter": {
-      "type": "number",
-      "category": "space",
-      "value": "15px",
-      "originalValue": "15px",
-      "name": "small-gutter"
-    },
-    "gutter": {
-      "type": "number",
-      "category": "space",
-      "value": "20px",
-      "originalValue": "20px",
-      "name": "gutter"
-    },
-    "medium-gutter": {
-      "type": "number",
-      "category": "space",
-      "value": "30px",
-      "originalValue": "30px",
-      "name": "medium-gutter"
-    },
-    "large-gutter": {
+    "space-xlarge": {
       "type": "number",
       "category": "space",
       "value": "50px",
       "originalValue": "50px",
-      "name": "large-gutter"
+      "name": "space-xlarge"
     },
-    "xlarge-gutter": {
+    "space-xxlarge": {
       "type": "number",
       "category": "space",
-      "value": "70px",
-      "originalValue": "70px",
-      "name": "xlarge-gutter"
+      "value": "100px",
+      "originalValue": "100px",
+      "name": "space-xxlarge"
     },
     "line_height_m": {
       "type": "number",
