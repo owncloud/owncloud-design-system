@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.12.0] (2020-10-03)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.12.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.11.1...master
+[1.12.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.11.1...v1.12.0
 
 ## Summary
 
@@ -15,8 +15,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Change - Small design improvements: [#890](https://github.com/owncloud/owncloud-design-system/pull/890)
 
-   We've changed a few color design tokens. We've rotated the icon 45 degrees to the left. We've
-   changed the spacing values and united them in one design tokens for both margin and padding.
+   We've changed a few color design tokens. We've rotated the `link` icon 45 degrees to the left.
+   We've changed the spacing values and united them in one design token for both margin and
+   padding.
 
    https://github.com/owncloud/owncloud-design-system/pull/890
 
