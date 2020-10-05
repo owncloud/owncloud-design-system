@@ -1,6 +1,6 @@
 <template>
   <div class="oc-alert" :class="$_ocNotificationMessage_classes">
-    <oc-icon :variation="status" size="large" name="info" class="oc-mr-s"></oc-icon>
+    <oc-icon :variation="$_ocNotificationMessage_iconVariation" size="large" name="info" class="oc-mr-s" />
     <div
       class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
       :role="status === 'danger' ? 'alert' : 'status'"
@@ -20,7 +20,7 @@
       class="uk-position-top-right oc-mt-s oc-mr-s"
       @click="$_ocNotificationMessage_close"
     >
-      <oc-icon name="close" :variation="status" />
+      <oc-icon name="close" :variation="$_ocNotificationMessage_iconVariation" />
     </oc-button>
   </div>
 </template>
@@ -75,6 +75,12 @@ export default {
     $_ocNotificationMessage_classes() {
       return `uk-flex uk-flex-wrap uk-notification-message uk-notification-message-${this.status}`
     },
+    $_ocNotificationMessage_iconVariation() {
+      if (this.status === "primary") {
+        return "system"
+      }
+      return this.status
+    }
   },
 }
 </script>
