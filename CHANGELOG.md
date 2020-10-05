@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.0...master
+
+## Summary
+
+* Bugfix - Use correct input background color: [#892](https://github.com/owncloud/owncloud-design-system/pull/892)
+
+## Details
+
+* Bugfix - Use correct input background color: [#892](https://github.com/owncloud/owncloud-design-system/pull/892)
+
+   We've moved definition of the input background color from hook into its class.
+
+   https://github.com/owncloud/owncloud-design-system/pull/892
+
 # Changelog for [1.12.0] (2020-10-03)
 
 The following sections list the changes in ownCloud Design System 1.12.0.
