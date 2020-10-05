@@ -6,9 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Icon variation on notification message: [#843](https://github.com/owncloud/owncloud-design-system/issues/843)
 * Bugfix - Use correct input background color: [#892](https://github.com/owncloud/owncloud-design-system/pull/892)
 
 ## Details
+
+* Bugfix - Icon variation on notification message: [#843](https://github.com/owncloud/owncloud-design-system/issues/843)
+
+   We fixed a bug in the notification message component where the a wrong variation was applied to
+   icons.
+
+   https://github.com/owncloud/owncloud-design-system/issues/843
+   https://github.com/owncloud/owncloud-design-system/pull/893
+
 
 * Bugfix - Use correct input background color: [#892](https://github.com/owncloud/owncloud-design-system/pull/892)
 
