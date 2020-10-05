@@ -3,38 +3,35 @@
 //
 // ========================================================================
 
-// TODO: Move to .oc-text-input when we get rid of UIKit
-@mixin hook-form {
+.oc-text-input {
+  @extend .uk-input;
+
   background-color: $input-background;
   border: 1px solid $input-border;
   border-radius: 3px;
-}
 
-@mixin hook-form-focus {
-  background-color: $input-background;
-  border-color: $brand-primary;
-}
+  &:focus {
+    background-color: $input-background;
+    border-color: $brand-primary;
+  }
 
-.oc-text-input {
-  @extend .uk-input;
-}
+  &-warning,
+  &-warning:focus {
+    border-color: $warning-background;
+    color: $warning-background;
+  }
 
-.oc-text-input-warning,
-.oc-text-input-warning:focus {
-  border-color: $warning-background !important;
-  color: $warning-background !important;
-}
+  &-danger,
+  &-danger:focus {
+    border-color: $danger-background;
+    color: $danger-background;
+  }
 
-.oc-text-input-danger,
-.oc-text-input-danger:focus {
-  border-color: $danger-background !important;
-  color: $danger-background !important;
-}
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
 
-.oc-text-input-message {
-  @extend .uk-flex;
-  @extend .uk-flex-middle;
-  @extend .oc-mt-xs;
-
-  min-height: $global-font-size * 1.5;
+    min-height: $global-font-size * 1.5;
+  }
 }
