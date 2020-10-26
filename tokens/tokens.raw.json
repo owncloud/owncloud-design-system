@@ -127,6 +127,13 @@
       "originalValue": "#002966",
       "name": "emphasis-color"
     },
+    "action-disabled": {
+      "type": "color",
+      "category": "Action-colors",
+      "value": "rgb(191, 201, 217)",
+      "originalValue": "#bfc9d9",
+      "name": "action-disabled"
+    },
     "passive-icon-color": {
       "type": "color",
       "category": "icon-colors",
