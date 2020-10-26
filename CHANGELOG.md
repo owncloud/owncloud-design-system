@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.1...master
+
+## Summary
+
+* Change - Adjust styles of buttons with disabled state: [#909](https://github.com/owncloud/owncloud-design-system/pull/909)
+
+## Details
+
+* Change - Adjust styles of buttons with disabled state: [#909](https://github.com/owncloud/owncloud-design-system/pull/909)
+
+   We've changed the background color of buttons with disabled state to properly differentiate
+   them from all other buttons.
+
+   https://github.com/owncloud/owncloud-design-system/pull/909
+
 # Changelog for [1.12.1] (2020-10-05)
 
 The following sections list the changes in ownCloud Design System 1.12.1.
