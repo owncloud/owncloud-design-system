@@ -1,12 +1,13 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [1.12.2] (2020-10-26)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 1.12.2.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.1...master
+[1.12.2]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.1...v1.12.2
 
 ## Summary
 
 * Change - Adjust styles of buttons with disabled state: [#909](https://github.com/owncloud/owncloud-design-system/pull/909)
+* Change - Remove fill color for document icon: [#902](https://github.com/owncloud/owncloud-design-system/pull/902)
 
 ## Details
 
@@ -16,6 +17,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    them from all other buttons.
 
    https://github.com/owncloud/owncloud-design-system/pull/909
+
+
+* Change - Remove fill color for document icon: [#902](https://github.com/owncloud/owncloud-design-system/pull/902)
+
+   We've removed the hardcoded fill color of the document icon.
+
+   https://github.com/owncloud/owncloud-design-system/pull/902
 
 # Changelog for [1.12.1] (2020-10-05)
 
