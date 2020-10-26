@@ -134,9 +134,7 @@ export default {
         `oc-button-gap-${getSizeClass(this.gapSize)}`
       ]
 
-      if (this.variation && !this.disabled) classes.push(`oc-button-${this.variation}`)
-
-      if (this.disabled) classes.push("oc-button-default")
+      if (this.variation) classes.push(`oc-button-${this.variation}`)
 
       return classes
     },

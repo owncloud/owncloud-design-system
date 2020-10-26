@@ -84,6 +84,10 @@ props:
     value: "#306db5"
     category: "Action-colors"
 
+  action-disabled:
+    value: "#bfc9d9"
+    category: "Action-colors"
+
   shadow-global:
     value: "#000000"
     category: "Shadow-colors"

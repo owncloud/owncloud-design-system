@@ -149,12 +149,13 @@
   }
 
   &:disabled {
-    border-color: lighten($global-muted-color, 25%);
-    color: lighten($global-muted-color, 25%);
+    background-color: $action-disabled;
+    border-color: transparent;
+    color: $global-inverse-color;
     cursor: default;
 
     .oc-icon > svg {
-      fill: lighten($global-muted-color, 25%);
+      fill: $global-inverse-color;
     }
   }
 
@@ -200,6 +201,12 @@
     &:hover,
     &:focus {
       color: $action-primary-hover;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $action-disabled;
+      fill: $action-disabled;
     }
   }
 }
