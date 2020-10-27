@@ -29,7 +29,7 @@ export default {
       const collapseOthers = !this.multiple
 
       this.$children.forEach(child => {
-        const toggled = child.$_ocAccordionItem_ref === id
+        const toggled = child.$_ocAccordionItem_id === id
 
         if (toggled) {
           return child.$data.expanded = !child.$data.expanded
