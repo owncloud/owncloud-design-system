@@ -64,13 +64,13 @@ export default {
 </script>
 <docs>
 ```jsx
-<oc-accordion :multiple=false>
-  <oc-accordion-item :expandedByDefault=true title="My accordion item">
+<oc-accordion :multiple=false class="uk-width-1-2">
+  <oc-accordion-item :expandedByDefault=true title="My accordion item" icon="folder">
     <p>
       I am the content of this accordion
     </p>
   </oc-accordion-item>
-  <oc-accordion-item title="Something else with content" description="And a subtitle">
+  <oc-accordion-item title="Something else with content" description="And a subtitle" icon="file">
       <p>Enter some text!</p>
       <oc-text-input label="Text"></oc-text-input>
   </oc-accordion-item>

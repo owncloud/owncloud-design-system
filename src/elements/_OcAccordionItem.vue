@@ -1,25 +1,27 @@
 <template>
-  <li :id="$_ocAccordionItem_ref">
+  <li :id="$_ocAccordionItem_ref" class="oc-accordion-item">
     <h3 class="oc-accordion-title">
       <oc-button
-          variation="raw"
-          justify-content="space-between"
-          :aria-expanded="expanded"
-          :aria-controls="$_ocAccordionItem_contentId"
-          @click="$_ocAccordionItem_toggleExpanded"
-          @keydown.space="$_ocAccordionItem_toggleExpanded"
-          @keydown.enter="$_ocAccordionItem_toggleExpanded"
+        variation="raw"
+        justify-content="space-between"
+        class="uk-text-left uk-width-1-1"
+        :aria-expanded="expanded"
+        :aria-controls="$_ocAccordionItem_contentId"
+        @click="$_ocAccordionItem_toggleExpanded"
+        @keydown.space="$_ocAccordionItem_toggleExpanded"
+        @keydown.enter="$_ocAccordionItem_toggleExpanded"
       >
-        <oc-grid>
-          <div v-if="icon">
-            <oc-icon name="icon" />
-          </div>
-          <div>
-            <div>{{ title }}</div>
-            <div v-if="description" class="uk-text-meta">{{ description }}</div>
-          </div>
-        </oc-grid>
-        <oc-icon :key="`chevron-${$_ocAccordionItem_headerIconName}`" :name="$_ocAccordionItem_headerIconName" />
+        <div class="uk-width-1-1">
+          <oc-grid flex>
+            <oc-icon v-if="icon" :name="icon" class="oc-mr-s" />
+            <div class="uk-width-expand" v-text="title" />
+            <oc-icon :key="`chevron-${$_ocAccordionItem_headerIconName}`" :name="$_ocAccordionItem_headerIconName" class="oc-ml-xs" size="large" />
+          </oc-grid>
+          <oc-grid v-if="description">
+            <div v-if="icon" class="oc-icon-m oc-mr-s" />
+            <div class="uk-text-meta">{{ description }}</div>
+          </oc-grid>
+        </div>
       </oc-button>
     </h3>
     <div v-if="expanded" class="oc-accordion-content" :id="$_ocAccordionItem_contentId">

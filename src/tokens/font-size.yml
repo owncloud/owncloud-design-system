@@ -7,7 +7,7 @@ props:
   small-font-size:
     value: "0.875rem"
   font-size:
-    value: "15px"
+    value: "1rem"
   medium-font-size:
     value: "1.25rem"
   large-font-size:
