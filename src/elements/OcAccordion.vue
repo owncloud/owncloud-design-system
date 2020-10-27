@@ -22,26 +22,50 @@ export default {
       default: false,
     },
   },
-  computed: {
-    accordionOptions() {
-      return "multiple: " + this.multiple
-    },
-  },
   mounted() {
-    this.$on("toggle", id => {
+    this.$on("toggle", id => this.$_ocAccordion_toggleItem(id))
+    this.$_ocAccordion_init()
+  },
+
+  methods: {
+    $_ocAccordion_toggleItem(id) {
       const collapseOthers = !this.multiple
-      this.$el.children.forEach(child => {
-        const toggled = child.attributes.id.nodeValue === id
-        console.log(child)
+
+      this.$children.forEach(child => {
+        const toggled = child.$_ocAccordionItem_ref === id
+
+        if (toggled) {
+          return child.$data.expanded = !child.$data.expanded
+        }
+
+        if (collapseOthers) {
+          child.$data.expanded = false
+        }
       })
-    })
+    },
+
+    $_ocAccordion_init() {
+      if (!this.multiple) {
+        let found = false
+
+        this.$children.forEach(child => {
+          if (!found && child.$props.expandedByDefault) {
+            return found = true
+          }
+
+          if (found) {
+            child.$data.expanded = false
+          }
+        })
+      }
+    }
   }
 }
 </script>
 <docs>
 ```jsx
 <oc-accordion :multiple=false>
-  <oc-accordion-item title="My accordion item">
+  <oc-accordion-item :expandedByDefault=true title="My accordion item">
     <p>
       I am the content of this accordion
     </p>

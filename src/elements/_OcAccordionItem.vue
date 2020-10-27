@@ -44,11 +44,6 @@ export default {
       required: false,
       default: null,
     },
-    expanded: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
     title: {
       type: String,
       required: true,
@@ -57,8 +52,16 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    expandedByDefault: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
+  data: () => ({
+    expanded: false
+  }),
   computed: {
     $_ocAccordionItem_headerIconName() {
       return this.expanded ? "expand_less" : "expand_more"
@@ -69,6 +72,9 @@ export default {
     $_ocAccordionItem_contentId() {
       return this.contentId || _uniqueId("oc-accordion-content-")
     }
+  },
+  mounted() {
+    this.expanded = this.expandedByDefault
   },
   methods: {
     $_ocAccordionItem_toggleExpanded() {
