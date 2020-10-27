@@ -1,5 +1,5 @@
 <template>
-  <li :id="$_ocAccordionItem_ref" class="oc-accordion-item">
+  <li :id="$_ocAccordionItem_id" class="oc-accordion-item">
     <component :is="'h' + headingLevel" :id="$_ocAccordionItem_titleId" class="oc-accordion-title">
       <oc-button
         variation="raw"
@@ -38,15 +38,7 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Id of the content of the accordion item. If not specified, unique id will be generated.
-     */
-    contentId: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    /**
-     * Icon to be displayed on the left side of the accordion title
+     * Icon to be displayed on the left side of the accordion title.
      */
     icon: {
       type: String,
@@ -54,14 +46,14 @@ export default {
       default: null,
     },
     /**
-     * Title to be displayed
+     * Title to be displayed.
      */
     title: {
       type: String,
       required: true,
     },
     /**
-     * Description of the accordion item to be displayed below the accordion title
+     * Description of the accordion item to be displayed below the accordion title.
      */
     description: {
       type: String,
@@ -69,7 +61,8 @@ export default {
       default: null
     },
     /**
-     * Asserts whether the accordion item should be expanded by default
+     * Asserts whether the accordion item should be expanded by default. If the accordion doesn't allow multiple items
+     * to be expanded, but multiple items have only the first one to be found will actually be expanded.
      */
     expandedByDefault: {
       type: Boolean,
@@ -77,7 +70,15 @@ export default {
       default: false
     },
     /**
-     * Id of the accordion title
+     * Id of the accordion item. If not specified, a unique id will be generated.
+     */
+    id: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    /**
+     * Id of the accordion title. If not specified, a unique id will be generated.
      */
     titleId: {
       type: String,
@@ -85,7 +86,15 @@ export default {
       default: null
     },
     /**
-     * Heading level of the accordion title
+     * Id of the content of the accordion item. If not specified, a unique id will be generated.
+     */
+    contentId: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    /**
+     * Heading level of the accordion title. Defaults to 3 (i.e. `h3`).
      */
     headingLevel: {
       type: String,
@@ -100,22 +109,22 @@ export default {
     $_ocAccordionItem_headerIconName() {
       return this.expanded ? "expand_less" : "expand_more"
     },
-    $_ocAccordionItem_ref() {
-      return _uniqueId("oc-accordion-ref-")
+    $_ocAccordionItem_id() {
+      return this.id || _uniqueId("oc-accordion-id-")
+    },
+    $_ocAccordionItem_titleId() {
+      return this.titleId || _uniqueId("oc-accordion-title-")
     },
     $_ocAccordionItem_contentId() {
       return this.contentId || _uniqueId("oc-accordion-content-")
     },
-    $_ocAccordionItem_titleId() {
-      return this.titleId || _uniqueId("oc-accordion-title-")
-    }
   },
   mounted() {
     this.expanded = this.expandedByDefault
   },
   methods: {
     $_ocAccordionItem_toggleExpanded() {
-      this.$parent.$emit("toggle", this.$_ocAccordionItem_ref)
+      this.$parent.$emit("toggle", this.$_ocAccordionItem_id)
     }
   }
 }
