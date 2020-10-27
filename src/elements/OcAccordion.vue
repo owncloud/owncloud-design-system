@@ -5,9 +5,6 @@
   </ul>
 </template>
 <script>
-/**
- * Creates a list with items that are expandable
- */
 export default {
   name: "oc-accordion",
   status: "review",
@@ -63,6 +60,13 @@ export default {
 }
 </script>
 <docs>
+An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content.
+The headings function as controls that enable users to reveal or hide their associated sections of content.
+Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page.
+
+The accordion component is using `oc-accordion-item` as its children.
+To see documentation on how to use this component, see [oc-accordion-item](/#/Elements/oc-accordion-item).
+
 ```jsx
 <oc-accordion :multiple=false class="uk-width-1-2">
   <oc-accordion-item :expandedByDefault=true title="My accordion item" icon="folder">
