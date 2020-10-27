@@ -1,0 +1,48 @@
+$accordion-item-margin-top:                     $global-margin !default;
+
+$accordion-title-font-size:                     $global-medium-font-size !default;
+$accordion-title-line-height:                   1.4 !default;
+$accordion-title-color:                         $global-emphasis-color !default;
+$accordion-title-hover-color:                   $global-color !default;
+
+$accordion-content-margin-top:                  $global-margin !default;
+
+.oc-accordion {
+  padding: 0;
+  list-style: none;
+}
+
+.oc-accordion > :nth-child(n+2) {
+  margin-top: $accordion-item-margin-top;
+}
+
+.oc-accordion-title {
+  display: block;
+  font-size: $accordion-title-font-size;
+  line-height: $accordion-title-line-height;
+  color: $accordion-title-color;
+}
+
+.oc-accordion-title:hover,
+.oc-accordion-title:focus {
+  color: $accordion-title-hover-color;
+  text-decoration: none;
+  outline: none;
+}
+
+.oc-accordion-content {
+  margin-top: $accordion-content-margin-top;
+}
+
+.oc-accordion-content::before,
+.oc-accordion-content::after {
+  content: "";
+  display: table;
+}
+
+.oc-accordion-content::after { clear: both; }
+
+/*
+ * Remove margin from the last-child
+ */
+.oc-accordion-content > :last-child { margin-bottom: 0; }

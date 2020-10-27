@@ -1,5 +1,5 @@
 <template>
-  <ul :uk-accordion="accordionOptions">
+  <ul class="oc-accordion">
     <!-- @slot Many oc-accordion-item elements  -->
     <slot />
   </ul>
@@ -27,30 +27,28 @@ export default {
       return "multiple: " + this.multiple
     },
   },
+  mounted() {
+    this.$on("toggle", id => {
+      const collapseOthers = !this.multiple
+      this.$el.children.forEach(child => {
+        const toggled = child.attributes.id.nodeValue === id
+        console.log(child)
+      })
+    })
+  }
 }
 </script>
 <docs>
 ```jsx
 <oc-accordion :multiple=false>
-  <oc-accordion-item>
-    <template slot="title">
-      My accordion item
-    </template>
-    <p slot="content">
+  <oc-accordion-item title="My accordion item">
+    <p>
       I am the content of this accordion
     </p>
   </oc-accordion-item>
-  <oc-accordion-item>
-    <template slot="title">
-      Something else with content
-    </template>
-    <template slot="subtitle">
-      And a subtitle
-    </template>
-    <template slot="content">
+  <oc-accordion-item title="Something else with content" description="And a subtitle">
       <p>Enter some text!</p>
       <oc-text-input label="Text"></oc-text-input>
-    </template>
   </oc-accordion-item>
 </oc-accordion>
 ```
