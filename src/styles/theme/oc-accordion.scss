@@ -19,8 +19,14 @@
       outline: none;
       text-decoration: none;
 
-      .oc-icon > svg {
-        fill: $color;
+      .oc-icon {
+        transition-duration: 0.3s;
+        &.rotate {
+          transform: rotate(180deg);
+        }
+        > svg {
+          fill: $color;
+        }
       }
     }
   }

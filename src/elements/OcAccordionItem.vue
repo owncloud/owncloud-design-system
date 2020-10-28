@@ -15,7 +15,7 @@
           <oc-grid flex>
             <oc-icon v-if="icon" :name="icon" class="oc-mr-s" aria-hidden="true" />
             <div class="uk-width-expand" v-text="title" />
-            <oc-icon :key="`chevron-${$_ocAccordionItem_headerIconName}`" :name="$_ocAccordionItem_headerIconName" class="oc-ml-xs" size="large" />
+            <oc-icon name="expand_more" class="oc-ml-xs" :class="{'rotate': expanded}" size="large" />
           </oc-grid>
           <oc-grid v-if="description">
             <div v-if="icon" class="oc-icon-m oc-mr-s" />
@@ -106,9 +106,6 @@ export default {
     expanded: false
   }),
   computed: {
-    $_ocAccordionItem_headerIconName() {
-      return this.expanded ? "expand_less" : "expand_more"
-    },
     $_ocAccordionItem_id() {
       return this.id || _uniqueId("oc-accordion-id-")
     },
