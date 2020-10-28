@@ -5,8 +5,10 @@
   </ul>
 </template>
 <script>
+import OcAccordionItem from "./OcAccordionItem"
 export default {
   name: "oc-accordion",
+  components: { OcAccordionItem },
   status: "review",
   release: "1.0.0",
   props: {
@@ -136,5 +138,64 @@ To see documentation on how to use this component, see [oc-accordion-item](/#/El
       <oc-text-input label="Text"></oc-text-input>
   </oc-accordion-item>
 </oc-accordion>
+```
+
+The expanded/collapsed state of accordion items can be controlled by setting `ids` for the oc-accordion-items and then
+utilizing the property `expanded-id` in case of `multiple=false` or `expanded-ids` in case of `multiple=true` of
+oc-accordion. The accordion component watches these properties, so it can be for external collapse/expand triggers.
+Try the buttons below to show/hide the accordion items.
+
+```jsx
+<template>
+  <div>
+    <oc-grid gutter="small" class="oc-my">
+      <div><oc-button size="small" @click="toggleItem(FIRST)">Toggle first</oc-button></div>
+      <div><oc-button size="small" @click="toggleItem(SECOND)">Toggle second</oc-button></div>
+      <div><oc-button size="small" @click="toggleItem(THIRD)">Toggle third</oc-button></div>
+      <div><oc-button variation="primary" size="small" @click="expandAll()">Expand all</oc-button></div>
+      <div><oc-button variation="danger" size="small" @click="collapseAll()">Collapse all</oc-button></div>
+    </oc-grid>
+    <div>
+      <oc-accordion :expanded-ids="expandedIds" :multiple="true" class="uk-width-1-2">
+        <oc-accordion-item :id="FIRST" icon="filter_1" title="First accordion item">
+          <p>Hello there.</p>
+        </oc-accordion-item>
+        <oc-accordion-item :id="SECOND" icon="filter_2" title="Second accordion item">
+          <p>Hello here.</p>
+        </oc-accordion-item>
+        <oc-accordion-item :id="THIRD" icon="filter_3" title="Third accordion item">
+          <p>Hello world.</p>
+        </oc-accordion-item>
+      </oc-accordion>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        expandedIds: [],
+        FIRST: "first",
+        SECOND: "second",
+        THIRD: "third"
+      }
+    },
+    methods: {
+      toggleItem(id) {
+        if (this.expandedIds.includes(id)) {
+          this.expandedIds = this.expandedIds.filter(a => a !== id)
+        } else {
+          this.expandedIds.push(id)
+        }
+      },
+      expandAll() {
+        this.expandedIds = [this.FIRST, this.SECOND, this.THIRD]
+      },
+      collapseAll() {
+        this.expandedIds = []
+      }
+    }
+  }
+</script>
 ```
 </docs>
