@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...master
+
+## Summary
+
+* Change - Accordion improvements: [#916](https://github.com/owncloud/owncloud-design-system/pull/916)
+
+## Details
+
+* Change - Accordion improvements: [#916](https://github.com/owncloud/owncloud-design-system/pull/916)
+
+   We improved the accordion component to allow external control for the expanded/collapsed
+   state of accordion items.
+
+   https://github.com/owncloud/owncloud-design-system/pull/916
+
 # Changelog for [1.13.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.13.0.
