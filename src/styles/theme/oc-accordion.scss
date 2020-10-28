@@ -21,9 +21,11 @@
 
       .oc-icon {
         transition-duration: 0.3s;
+
         &.rotate {
           transform: rotate(180deg);
         }
+
         > svg {
           fill: $color;
         }
