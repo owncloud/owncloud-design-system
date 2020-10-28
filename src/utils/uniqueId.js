@@ -6,5 +6,5 @@ let uniqueId = (function () {
     return prefix + num
   }
 }())
- 
-module.exports = uniqueId  
+
+module.exports = uniqueId

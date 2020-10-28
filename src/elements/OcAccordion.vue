@@ -11,7 +11,7 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Allow multiple items to be expanded at the same time.
+     * Allow multiple items to be expanded at the same time. Defaults to `false`.
      */
     multiple: {
       type: Boolean,
@@ -19,7 +19,7 @@ export default {
       default: false,
     },
     /**
-     * Set the ids of the expanded accordion items. Listens to changes.
+     * Set the ids of the expanded accordion items. Listens to changes and defaults to an empty array.
      * To be used when `multiple=true`.
      */
     expandedIds: {
@@ -28,7 +28,7 @@ export default {
       default: () => [],
     },
     /**
-     * Set the id of the expanded accordion item. Listens to changes.
+     * Set the id of the expanded accordion item. Listens to changes and defaults to an empty string.
      * To be used when `multiple=false`.
      */
     expandedId: {
@@ -37,7 +37,8 @@ export default {
       default: "",
     },
     /**
-     * Let the first accordion item be expanded on load. Will be ignored if a non-empty `value` is provided.
+     * Let the first accordion item be expanded on load. Defaults to `false`.
+     * Will be ignored if non-empty `expandedId` or `expandedIds` is/are provided.
      */
     expandFirst: {
       type: Boolean,
@@ -75,13 +76,13 @@ export default {
   methods: {
     $_ocAccordion_init() {
       if (this.multiple) {
-        if (this.expandedIds.length === 0 && this.expandFirst && this.$children.length > 0) {
+        if ((this.expandedIds === null || this.expandedIds.length === 0) && this.expandFirst && this.$children.length > 0) {
           this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
         } else {
           this.$_ocAccordion_updateExpandedIdsInternal(this.expandedIds)
         }
       } else {
-        if (this.expandedId === "" && this.expandFirst && this.$children.length > 0) {
+        if ((this.expandedId === null || this.expandedId === "") && this.expandFirst && this.$children.length > 0) {
           this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
         } else {
           this.$_ocAccordion_updateExpandedIdsInternal(this.expandedId)
