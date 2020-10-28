@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Accordion improvements: [#916](https://github.com/owncloud/owncloud-design-system/pull/916)
+* Change - Add file version icon: [#917](https://github.com/owncloud/owncloud-design-system/pull/917)
 
 ## Details
 
@@ -16,6 +17,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    state of accordion items.
 
    https://github.com/owncloud/owncloud-design-system/pull/916
+
+
+* Change - Add file version icon: [#917](https://github.com/owncloud/owncloud-design-system/pull/917)
+
+   We added an icon for `file version`
+
+   https://github.com/owncloud/owncloud-design-system/pull/917
 
 # Changelog for [1.13.0] (2020-10-28)
 
