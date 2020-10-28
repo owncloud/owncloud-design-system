@@ -11,51 +11,107 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Allow multiple items to be expanded at the same time
+     * Allow multiple items to be expanded at the same time.
      */
     multiple: {
       type: Boolean,
       required: false,
       default: false,
     },
+    /**
+     * Set the ids of the expanded accordion items. Listens to changes.
+     * To be used when `multiple=true`.
+     */
+    expandedIds: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
+    /**
+     * Set the id of the expanded accordion item. Listens to changes.
+     * To be used when `multiple=false`.
+     */
+    expandedId: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * Let the first accordion item be expanded on load. Will be ignored if a non-empty `value` is provided.
+     */
+    expandFirst: {
+      type: Boolean,
+      required: false,
+      default: false,
+    }
   },
+
+  data() {
+    return {
+      expandedIdsInternal: []
+    }
+  },
+
+  watch: {
+    expandedIds(ids) {
+      this.$_ocAccordion_updateExpandedIdsInternal(ids)
+    },
+    expandedId(id) {
+      this.$_ocAccordion_updateExpandedIdsInternal(id ? [id] : [])
+    },
+    expandedIdsInternal(ids) {
+      this.$children.forEach(child => {
+        child.$data.expanded = ids.includes(child.$_ocAccordionItem_id)
+      })
+    }
+  },
+
   mounted() {
-    this.$on("toggle", id => this.$_ocAccordion_toggleItem(id))
     this.$_ocAccordion_init()
+    this.$on("expand", id => this.$_ocAccordion_expandItem(id))
+    this.$on("collapse", id => this.$_ocAccordion_collapseItem(id))
   },
 
   methods: {
-    $_ocAccordion_toggleItem(id) {
-      const collapseOthers = !this.multiple
-
-      this.$children.forEach(child => {
-        const toggled = child.$_ocAccordionItem_id === id
-
-        if (toggled) {
-          return child.$data.expanded = !child.$data.expanded
+    $_ocAccordion_init() {
+      if (this.multiple) {
+        if (this.expandedIds.length === 0 && this.expandFirst && this.$children.length > 0) {
+          this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
+        } else {
+          this.$_ocAccordion_updateExpandedIdsInternal(this.expandedIds)
         }
-
-        if (collapseOthers) {
-          child.$data.expanded = false
+      } else {
+        if (this.expandedId === "" && this.expandFirst && this.$children.length > 0) {
+          this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
+        } else {
+          this.$_ocAccordion_updateExpandedIdsInternal(this.expandedId)
         }
-      })
+      }
     },
 
-    $_ocAccordion_init() {
-      if (!this.multiple) {
-        let found = false
-
-        this.$children.forEach(child => {
-          if (!found && child.$props.expandedByDefault) {
-            return found = true
-          }
-
-          if (found) {
-            child.$data.expanded = false
-          }
-        })
+    $_ocAccordion_updateExpandedIdsInternal(ids) {
+      if (Array.isArray(ids)) {
+        if (this.multiple) {
+          this.expandedIdsInternal = ids
+        } else {
+          this.expandedIdsInternal = ids ? [ids[0]] : []
+        }
+      } else {
+        this.expandedIdsInternal = ids ? [ids] : []
       }
-    }
+    },
+
+    $_ocAccordion_expandItem(id) {
+      if (this.multiple) {
+        this.expandedIdsInternal.push(id)
+      } else {
+        this.expandedIdsInternal = [id]
+      }
+    },
+
+    $_ocAccordion_collapseItem(id) {
+      this.expandedIdsInternal = this.expandedIdsInternal.filter(expandedId => expandedId !== id)
+    },
   }
 }
 </script>
@@ -68,8 +124,8 @@ The accordion component is using `oc-accordion-item` as its children.
 To see documentation on how to use this component, see [oc-accordion-item](/#/Elements/oc-accordion-item).
 
 ```jsx
-<oc-accordion :multiple=false class="uk-width-1-2">
-  <oc-accordion-item :expandedByDefault=true title="My accordion item" icon="folder">
+<oc-accordion :expand-first="true" :multiple="false" class="uk-width-1-2">
+  <oc-accordion-item title="My accordion item" icon="folder">
     <p>
       I am the content of this accordion
     </p>

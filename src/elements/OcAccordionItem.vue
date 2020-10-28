@@ -61,16 +61,9 @@ export default {
       default: null
     },
     /**
-     * Asserts whether the accordion item should be expanded by default. If the accordion doesn't allow multiple items
-     * to be expanded, but multiple items have only the first one to be found will actually be expanded.
-     */
-    expandedByDefault: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    /**
      * Id of the accordion item. If not specified, a unique id will be generated.
+     * If the expanded items are supposed to be controlled via `expandedIds` or `expandedId` on the
+     * wrapping accordion element, the `id` must be provided.
      */
     id: {
       type: String,
@@ -116,13 +109,14 @@ export default {
       return this.contentId || _uniqueId("oc-accordion-content-")
     },
   },
-  mounted() {
-    this.expanded = this.expandedByDefault
-  },
   methods: {
     $_ocAccordionItem_toggleExpanded() {
-      this.$parent.$emit("toggle", this.$_ocAccordionItem_id)
-    }
+      if (this.expanded) {
+        this.$parent.$emit("collapse", this.$_ocAccordionItem_id)
+      } else {
+        this.$parent.$emit("expand", this.$_ocAccordionItem_id)
+      }
+    },
   }
 }
 </script>
