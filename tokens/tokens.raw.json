@@ -214,8 +214,8 @@
     "font-size": {
       "type": "number",
       "category": "font-size",
-      "value": "15px",
-      "originalValue": "15px",
+      "value": "1rem",
+      "originalValue": "1rem",
       "name": "font-size"
     },
     "medium-font-size": {
