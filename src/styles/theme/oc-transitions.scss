@@ -1,10 +1,36 @@
+/**
+ * Fade
+ */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity $transition-duration-short ease-in-out;
 }
 
-/* .fade-leave-active below version 2.1.8 */
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+/**
+ * Push
+ */
+.push-right-enter-active,
+.push-right-leave-active {
+  transition: width $transition-duration-short ease-in-out;
+}
+
+.push-right-enter,
+.push-right-leave-to {
+  width: 0 !important;
+}
+
+.push-y-enter-active,
+.push-y-leave-active {
+  transition: height $transition-duration-short ease-in-out;
+}
+
+.push-y-enter,
+.push-y-leave-to {
+  height: 0 !important;
+  overflow: hidden !important;
 }

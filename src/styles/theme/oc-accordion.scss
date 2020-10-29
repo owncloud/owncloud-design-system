@@ -10,10 +10,6 @@
     &-expanded + & {
       margin-top: $space-xlarge;
     }
-
-    &:last-of-type &-separator {
-      display: none;
-    }
   }
 
   &-title {
