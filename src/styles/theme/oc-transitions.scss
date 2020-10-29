@@ -26,11 +26,11 @@
 
 .push-y-enter-active,
 .push-y-leave-active {
-  transition: height $transition-duration-short ease-in-out;
+  overflow: hidden !important;
+  transition: max-height $transition-duration-short ease-in-out;
 }
 
 .push-y-enter,
 .push-y-leave-to {
-  height: 0 !important;
-  overflow: hidden !important;
+  max-height: 0 !important;
 }

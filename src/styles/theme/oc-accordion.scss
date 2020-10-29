@@ -8,7 +8,7 @@
     }
 
     &-expanded + & {
-      margin-top: $space-xlarge;
+      // margin-top: $space-xlarge;
     }
   }
 
@@ -38,9 +38,5 @@
         }
       }
     }
-  }
-
-  &-content {
-    padding-top: $space-small;
   }
 }

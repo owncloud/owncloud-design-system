@@ -26,7 +26,7 @@
     </component>
     <div :aria-labelledby="$_ocAccordionItem_titleId" :id="$_ocAccordionItem_contentId" role="region">
       <transition name="push-y">
-        <div v-if="expanded">
+        <div v-if="expanded" class="oc-accordion-item-content">
           <!-- @slot Content of the accordion item -->
           <slot />
         </div>
@@ -120,6 +120,12 @@ export default {
       return classes
     }
   },
+  watch: {
+    expanded: {
+      handler: "$_ocAccordionItem_checkHeight",
+      immediate: true
+    }
+  },
   methods: {
     $_ocAccordionItem_toggleExpanded() {
       if (this.expanded) {
@@ -128,6 +134,21 @@ export default {
         this.$parent.$emit("expand", this.$_ocAccordionItem_id)
       }
     },
+    $_ocAccordionItem_checkHeight(isExpanded) {
+      if (isExpanded) {
+        setTimeout(() => {
+          const content = document.querySelector(`#${this.$_ocAccordionItem_contentId} .oc-accordion-item-content`)
+          const child = content.childNodes[content.childNodes.length - 1]
+          const childMargin = child.style
+
+          content.style.maxHeight = content.scrollHeight + "px"
+
+          setTimeout(() => {
+            content.style.maxHeight = ""
+          }, 200)
+        })
+      }
+    }
   }
 }
 </script>
