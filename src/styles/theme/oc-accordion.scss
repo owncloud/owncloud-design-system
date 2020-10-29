@@ -2,8 +2,18 @@
   list-style: none;
   padding: 0;
 
-  &-item + &-item {
-    margin-top: $space-medium;
+  &-item {
+    & + & {
+      margin-top: $space-medium;
+    }
+
+    &-expanded + & {
+      margin-top: $space-xlarge;
+    }
+
+    &:last-of-type &-separator {
+      display: none;
+    }
   }
 
   &-title {
@@ -11,6 +21,7 @@
 
     display: block;
     font-size: $medium-font-size;
+    margin-bottom: $space-small;
 
     > .oc-button,
     > .oc-button:hover,
@@ -34,6 +45,6 @@
   }
 
   &-content {
-    margin-top: $space-small;
+    padding-top: $space-small;
   }
 }

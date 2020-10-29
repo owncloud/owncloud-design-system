@@ -1,5 +1,5 @@
 <template>
-  <li :id="$_ocAccordionItem_id" class="oc-accordion-item">
+  <li :id="$_ocAccordionItem_id" :class="$_ocAccordionItem_class">
     <component :is="'h' + headingLevel" :id="$_ocAccordionItem_titleId" class="oc-accordion-title">
       <oc-button
         variation="raw"
@@ -19,14 +19,18 @@
           </oc-grid>
           <oc-grid v-if="description">
             <div v-if="icon" class="oc-icon-m oc-mr-s" />
-            <div class="uk-text-meta">{{ description }}</div>
+            <div class="uk-text-meta" v-text="description" />
           </oc-grid>
         </div>
       </oc-button>
     </component>
-    <div class="oc-accordion-content" :aria-labelledby="$_ocAccordionItem_titleId" :id="$_ocAccordionItem_contentId" role="region">
-      <!-- @slot Content of the accordion item -->
-      <slot v-if="expanded" />
+    <div :aria-labelledby="$_ocAccordionItem_titleId" :id="$_ocAccordionItem_contentId" role="region">
+      <transition name="push-y">
+        <div v-if="expanded">
+          <!-- @slot Content of the accordion item -->
+          <slot />
+        </div>
+      </transition>
     </div>
   </li>
 </template>
@@ -108,6 +112,13 @@ export default {
     $_ocAccordionItem_contentId() {
       return this.contentId || _uniqueId("oc-accordion-content-")
     },
+    $_ocAccordionItem_class() {
+      const classes = ["oc-accordion-item"]
+
+      this.expanded && classes.push("oc-accordion-item-expanded")
+
+      return classes
+    }
   },
   methods: {
     $_ocAccordionItem_toggleExpanded() {
