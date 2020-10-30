@@ -5,10 +5,15 @@
   &-item {
     & + & {
       margin-top: $space-medium;
+      transition: margin-top $transition-duration-short ease-in-out;
     }
 
     &-expanded + & {
-      // margin-top: $space-xlarge;
+      margin-top: $space-xlarge;
+    }
+
+    &-content > *:last-child {
+      margin-bottom: 0 !important;
     }
   }
 

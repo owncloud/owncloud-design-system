@@ -135,19 +135,23 @@ export default {
       }
     },
     $_ocAccordionItem_checkHeight(isExpanded) {
-      if (isExpanded) {
-        setTimeout(() => {
-          const content = document.querySelector(`#${this.$_ocAccordionItem_contentId} .oc-accordion-item-content`)
-          const child = content.childNodes[content.childNodes.length - 1]
-          const childMargin = child.style
+      setTimeout(() => {
+        const content = document.querySelector(`#${this.$_ocAccordionItem_contentId} .oc-accordion-item-content`)
 
+        if (!content) {
+          return
+        }
+
+        if (isExpanded) {
           content.style.maxHeight = content.scrollHeight + "px"
 
           setTimeout(() => {
             content.style.maxHeight = ""
           }, 200)
-        })
-      }
+        } else {
+          content.style.maxHeight = content.clientHeight + "px"
+        }
+      })
     }
   }
 }
