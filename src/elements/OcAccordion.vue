@@ -90,9 +90,6 @@ export default {
     if (this.mode === "click") {
       this.$on("expand", id => this.$_ocAccordion_expandItem(id))
       this.$on("collapse", id => this.$_ocAccordion_collapseItem(id))
-    } else {
-      this.$on("expand", id => this.$emit("expand", id))
-      this.$on("collapse", id => this.$emit("collapse", id))
     }
   },
 
