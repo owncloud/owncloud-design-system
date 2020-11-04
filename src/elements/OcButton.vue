@@ -121,6 +121,18 @@ export default {
       validator: value => {
         return value.match(/(xsmall|small|medium|large|xlarge)/)
       }
+    },
+    /**
+     * Color to be given to the content of the button with variation `raw`.
+     * Will not do anything when combined with different variations.
+     */
+    color: {
+      type: String,
+      required: false,
+      default: "default",
+      validator: value => {
+        return value.match(/(default|text|primary)/)
+      }
     }
   },
   computed: {
@@ -134,7 +146,13 @@ export default {
         `oc-button-gap-${getSizeClass(this.gapSize)}`
       ]
 
-      if (this.variation) classes.push(`oc-button-${this.variation}`)
+      if (this.variation) {
+        classes.push(`oc-button-${this.variation}`)
+      }
+
+      if (this.variation === "raw") {
+        classes.push(`oc-button-raw-color-${this.color}`)
+      }
 
       return classes
     },
@@ -225,5 +243,21 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     </oc-button>
     <oc-button variation="danger">Delete</oc-button>
   </div>
+```
+
+### Coloring buttons with variation "raw"
+```js
+<oc-button color="default" variation="raw">
+  <oc-icon name="add" aria-hidden="true" />
+  Add
+</oc-button>
+<oc-button color="text" variation="raw">
+  <oc-icon name="folder-move" aria-hidden="true" />
+  Move
+</oc-button>
+<oc-button color="primary" variation="raw">
+  <oc-icon name="file_copy" aria-hidden="true" />
+  Copy
+</oc-button>
 ```
 </docs>

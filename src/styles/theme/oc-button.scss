@@ -203,6 +203,30 @@
       color: $action-primary-hover;
     }
 
+    &-color {
+      &-text {
+        color: $color;
+
+        .oc-icon > svg {
+          fill: $color;
+        }
+
+        &:hover,
+        &:focus {
+          color: $color;
+        }
+      }
+
+      &-primary .oc-icon > svg {
+        fill: $action-primary;
+
+        &:hover,
+        &:focus {
+          color: $action-primary-hover;
+        }
+      }
+    }
+
     &:disabled {
       background-color: transparent;
       color: $action-disabled;
