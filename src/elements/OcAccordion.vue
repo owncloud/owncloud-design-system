@@ -46,6 +46,18 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Decide if the accordion should be used with clicks or via the `expandedIds`/`expandedId` property.
+     * Defaults to `click`.
+     */
+    mode: {
+      type: String,
+      required: false,
+      default: "click",
+      validator: value => {
+        return value.match(/(click|data)/)
+      },
     }
   },
 
@@ -57,10 +69,14 @@ export default {
 
   watch: {
     expandedIds(ids) {
-      this.$_ocAccordion_updateExpandedIdsInternal(ids)
+      if (this.mode === "data") {
+        this.$_ocAccordion_updateExpandedIdsInternal(ids)
+      }
     },
     expandedId(id) {
-      this.$_ocAccordion_updateExpandedIdsInternal(id ? [id] : [])
+      if (this.mode === "data") {
+        this.$_ocAccordion_updateExpandedIdsInternal(id ? [id] : [])
+      }
     },
     expandedIdsInternal(ids) {
       this.$children.forEach(child => {
@@ -71,8 +87,10 @@ export default {
 
   mounted() {
     this.$_ocAccordion_init()
-    this.$on("expand", id => this.$_ocAccordion_expandItem(id))
-    this.$on("collapse", id => this.$_ocAccordion_collapseItem(id))
+    if (this.mode === "click") {
+      this.$on("expand", id => this.$_ocAccordion_expandItem(id))
+      this.$on("collapse", id => this.$_ocAccordion_collapseItem(id))
+    }
   },
 
   methods: {
@@ -143,7 +161,8 @@ To see documentation on how to use this component, see [oc-accordion-item](/#/El
 The expanded/collapsed state of accordion items can be controlled by setting `ids` for the oc-accordion-items and then
 utilizing the property `expanded-id` in case of `multiple=false` or `expanded-ids` in case of `multiple=true` of
 oc-accordion. The accordion component watches these properties, so it can be for external collapse/expand triggers.
-Try the buttons below to show/hide the accordion items.
+Try the buttons below to show/hide the accordion items. In case you want to react on clicks on the accordion items,
+you need to listen to the `expand` and `collapse` events, which are emitted on the oc-accordion.
 
 ```jsx
 <template>
@@ -156,7 +175,7 @@ Try the buttons below to show/hide the accordion items.
       <div><oc-button variation="danger" size="small" @click="collapseAll()">Collapse all</oc-button></div>
     </oc-grid>
     <div>
-      <oc-accordion :expanded-ids="expandedIds" :multiple="true" class="uk-width-1-2">
+      <oc-accordion :expanded-ids="expandedIds" :multiple="true" mode="data" class="uk-width-1-2">
         <oc-accordion-item :id="FIRST" icon="filter_1" title="First accordion item">
           <p>Hello there.</p>
         </oc-accordion-item>
