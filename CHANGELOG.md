@@ -1,3 +1,42 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...master
+
+## Summary
+
+* Change - Introduce mode for accordion: [#925](https://github.com/owncloud/owncloud-design-system/pull/925)
+* Change - Add folder open icon: [#923](https://github.com/owncloud/owncloud-design-system/pull/923)
+* Enhancement - Add color prop to buttons: [#924](https://github.com/owncloud/owncloud-design-system/pull/924)
+
+## Details
+
+* Change - Introduce mode for accordion: [#925](https://github.com/owncloud/owncloud-design-system/pull/925)
+
+   The oc-accordion component was allowing both clicks on accordion items and modified property
+   values for `expandedId`/`expandedIds` to modify the internal state of the accordion. We now
+   introduced a property `mode`, which defaults to `click`, for selecting the mode for
+   controlling the internal state. From now on it can be either click or data, but not mixed
+   anymore.
+
+   https://github.com/owncloud/owncloud-design-system/pull/925
+
+
+* Change - Add folder open icon: [#923](https://github.com/owncloud/owncloud-design-system/pull/923)
+
+   We added an icon for `folder open`
+
+   https://github.com/owncloud/owncloud-design-system/pull/923
+
+
+* Enhancement - Add color prop to buttons: [#924](https://github.com/owncloud/owncloud-design-system/pull/924)
+
+   We've added a new property to the button component to enable setting a different color when the
+   variation is set to `raw`. Available colors are `default`, `primary` and `text`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/924
+
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
