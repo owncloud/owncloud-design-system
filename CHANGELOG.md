@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v1.15.0...master
+
+## Summary
+
+* Enhancement - Add tag component: [#927](https://github.com/owncloud/owncloud-design-system/pull/927)
+
+## Details
+
+* Enhancement - Add tag component: [#927](https://github.com/owncloud/owncloud-design-system/pull/927)
+
+   We've added a tag component which is to be used for displaying various information.
+
+   https://github.com/owncloud/owncloud-design-system/pull/927
+
 # Changelog for [1.15.0] (2020-11-04)
 
 The following sections list the changes in ownCloud Design System 1.15.0.
