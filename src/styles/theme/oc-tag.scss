@@ -1,0 +1,38 @@
+.oc-tag {
+  align-items: center;
+  background-color: $background;
+  border: 1px solid $border-primary;
+  border-radius: 7px;
+  box-sizing: border-box;
+  color: $muted-color;
+  display: flex;
+  font-size: 0.875rem;
+  gap: $space-xsmall;
+  min-height: $icons-size-default + (2 * $space-xsmall) + 2px;
+  padding: $space-xsmall $space-small;
+  text-decoration: none;
+
+  .oc-icon > svg {
+    fill: $muted-color;
+  }
+
+  &-link,
+  &-button {
+    transition: color $transition-duration-short ease-in-out;
+
+    .oc-icon > svg {
+      transition: fill $transition-duration-short ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      color: $action-primary-hover;
+      cursor: pointer;
+      text-decoration: none;
+
+      .oc-icon > svg {
+        fill: $action-primary-hover;
+      }
+    }
+  }
+}
