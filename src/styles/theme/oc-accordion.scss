@@ -2,8 +2,19 @@
   list-style: none;
   padding: 0;
 
-  &-item + &-item {
-    margin-top: $space-medium;
+  &-item {
+    & + & {
+      margin-top: $space-medium;
+      transition: margin-top $transition-duration-short ease-in-out;
+    }
+
+    &-expanded + & {
+      margin-top: $space-xlarge;
+    }
+
+    &-content > *:last-child {
+      margin-bottom: 0 !important;
+    }
   }
 
   &-title {
@@ -11,6 +22,7 @@
 
     display: block;
     font-size: $medium-font-size;
+    margin-bottom: $space-small;
 
     > .oc-button,
     > .oc-button:hover,
@@ -31,9 +43,5 @@
         }
       }
     }
-  }
-
-  &-content {
-    margin-top: $space-small;
   }
 }
