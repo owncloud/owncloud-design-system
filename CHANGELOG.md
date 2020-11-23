@@ -6,9 +6,25 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Change license to Apache 2: [#933](https://github.com/owncloud/owncloud-design-system/pull/933)
+* Change - Move all elements into components section: [#933](https://github.com/owncloud/owncloud-design-system/pull/933)
 * Enhancement - Add tag component: [#927](https://github.com/owncloud/owncloud-design-system/pull/927)
 
 ## Details
+
+* Change - Change license to Apache 2: [#933](https://github.com/owncloud/owncloud-design-system/pull/933)
+
+   We've changed the license of the design system to Apache 2.
+
+   https://github.com/owncloud/owncloud-design-system/pull/933
+
+
+* Change - Move all elements into components section: [#933](https://github.com/owncloud/owncloud-design-system/pull/933)
+
+   We've moved all elements into a new section called components.
+
+   https://github.com/owncloud/owncloud-design-system/pull/933
+
 
 * Enhancement - Add tag component: [#927](https://github.com/owncloud/owncloud-design-system/pull/927)
 
