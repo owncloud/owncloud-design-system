@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import OcIcon from "../../../src/elements/OcIcon"
+import OcIcon from "../../../src/components/OcIcon"
 const req = require.context("@/assets/icons/", true, /^\.\/.*\.svg$/)
 
 /**

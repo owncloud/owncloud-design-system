@@ -370,13 +370,11 @@ div[class^="rsg--preview"] {
 
 // If you edit the component categories, you have to edit
 // these to match as well.
-div[data-preview="Elements"],
-div[data-preview="Patterns"],
-div[data-preview="Templates"] {
+div[data-preview="Elements"] {
   background: transparent;
+  border: 0;
   box-shadow: none;
   padding: 0;
-  border: 0;
 
   // This hides code previews from the above examples
   & + div + div[class^="rsg--tab"] {

@@ -25,10 +25,7 @@
     <table>
       <thead>
         <tr>
-          <th v-if="show === 'all'">Component Name</th>
-          <th v-if="show === 'elements'">Element Name</th>
-          <th v-if="show === 'patterns'">Pattern Name</th>
-          <th v-if="show === 'templates'">Template Name</th>
+          <th>Component Name</th>
           <th>Released in</th>
           <th>Status</th>
         </tr>
@@ -66,37 +63,17 @@ import orderBy from "../../utils/orderBy"
 
 export default {
   name: "Components",
-  props: {
-    show: {
-      type: String,
-      default: "all",
-      validator: value => {
-        return value.match(/(all|patterns|templates|elements)/)
-      },
-    },
-  },
   methods: {
     getComponents: function() {
-      let contexts
-
-      if (this.show === "all") {
-        contexts = [
-          require.context("@/elements/", true, /\.vue$/),
-          require.context("@/patterns/", true, /\.vue$/),
-          require.context("@/templates/", true, /\.vue$/),
-        ]
-      } else if (this.show === "elements") {
-        contexts = [require.context("@/elements/", true, /\.vue$/)]
-      } else if (this.show === "patterns") {
-        contexts = [require.context("@/patterns/", true, /\.vue$/)]
-      } else if (this.show === "templates") {
-        contexts = [require.context("@/templates/", true, /\.vue$/)]
-      }
-
       const components = []
+      const contexts = [
+        require.context("@/components/", true, /\.vue$/)
+      ]
+
       contexts.forEach(context => {
         context.keys().forEach(key => components.push(context(key).default))
       })
+
       return components.map(c => {
         return c
       })

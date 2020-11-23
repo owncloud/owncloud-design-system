@@ -6,10 +6,7 @@
  */
 
 // Define contexts to require
-const contexts = [
-  require.context("@/elements/", true, /\.vue$/),
-  require.context("@/patterns/", true, /\.vue$/),
-]
+const contexts = [require.context("@/components/", true, /\.vue$/)]
 
 // Define components
 const components = []
