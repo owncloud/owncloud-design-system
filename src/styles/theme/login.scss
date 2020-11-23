@@ -1,16 +1,11 @@
-@import 'login-wallpaper';
-@import 'owncloudx-logo-white';
-
 .oc-login {
   @extend .uk-background-cover;
 
-  background-image: $login-wallpaper;
   position: relative;
 
   &-logo {
     @extend .uk-background-cover;
 
-    background-image: $owncloudx-logo-white;
     height: 80px;
     left: 50%;
     position: absolute;

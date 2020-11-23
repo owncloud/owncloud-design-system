@@ -74,7 +74,7 @@
   </div>
 </template>
 <script>
-import OcSpinner from "../elements/OcSpinner"
+import OcSpinner from "../components/OcSpinner"
 
 import UiKit from "uikit"
 import * as _uniqueId from "../utils/uniqueId"

@@ -41,5 +41,5 @@ export default {
 </script>
 
 <docs>
-  Single tab as part of a tablist for a tab component, not meant to be used in isolation. Please have a look at the component [oc-tabbed](#/Elements/oc-tabbed) for complete tab component code.
+  Single tab as part of a tablist for a tab component, not meant to be used in isolation. Please have a look at the component [oc-tabbed](#/Components/oc-tabbed) for complete tab component code.
 </docs>
