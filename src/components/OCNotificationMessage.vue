@@ -85,5 +85,5 @@ export default {
 }
 </script>
 <docs>
-  Please have a look at the component [oc-notifications](#/Components/oc-notifications) for example code.
+  Please have a look at the component [oc-notifications](#/oC%20Components/oc-notifications) for example code.
 </docs>

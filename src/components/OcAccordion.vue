@@ -142,7 +142,7 @@ The headings function as controls that enable users to reveal or hide their asso
 Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page.
 
 The accordion component is using `oc-accordion-item` as its children.
-To see documentation on how to use this component, see [oc-accordion-item](/#/Components/oc-accordion-item).
+To see documentation on how to use this component, see [oc-accordion-item](/#/oC%20Components/oc-accordion-item).
 
 ```jsx
 <oc-accordion :expand-first="true" :multiple="false" class="uk-width-1-2">

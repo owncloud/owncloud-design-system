@@ -53,7 +53,7 @@ module.exports = {
       name: "Getting Started",
       content: "../docs/getting-started.md",
       // Needs to be loaded in somewhere as this is also shown in
-      // element, Pattern & Template overviews.
+      // components overviews.
       components: "../docs/components/status/**/[A-Z]*.vue",
       sectionDepth: 1,
       exampleMode: "hide",
@@ -95,7 +95,7 @@ module.exports = {
       ],
     },
     {
-      name: "Components",
+      name: "oC Components",
       content: "../docs/components.md",
       components: "../src/components/**/[A-Z]*.vue",
       exampleMode: "expand",
@@ -190,8 +190,7 @@ module.exports = {
     "**/*.test.js",
     "**/*.test.jsx",
     "**/*.spec.js",
-    "**/*.spec.jsx",
-    "**/ExampleComponent.vue",
+    "**/*.spec.jsx"
   ],
   webpackConfig: merge(baseConfig, {
     module: {

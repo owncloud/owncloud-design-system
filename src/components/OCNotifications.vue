@@ -7,7 +7,7 @@
 /**
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
  *
- * The default slot can be filled with [oc-notification-message](#/Components/oc-notification-message) elements.
+ * The default slot can be filled with [oc-notification-message](#/oC%20Components/oc-notification-message) elements.
  *
  * ## Accessibility
  *
