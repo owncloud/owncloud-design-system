@@ -31,5 +31,5 @@ export default {
 </script>
 
 <docs>
-  Single panel as part of a tab component, not meant to be used in isolation. Please have a look at the component [oc-tabbed](#/Components/oc-tabbed) for complete tab component code.
+  Single panel as part of a tab component, not meant to be used in isolation. Please have a look at the component [oc-tabbed](#/oC%20Components/oc-tabbed) for complete tab component code.
 </docs>
