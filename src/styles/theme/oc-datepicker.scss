@@ -1,6 +1,8 @@
 .vdatetime {
   &-input {
     @extend .uk-input;
+
+    border-radius: 3px;
   }
 
   &-overlay {
