@@ -143,7 +143,7 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "chalk": "^3.0.0",
+    "chalk": "^4.1.0",
     "codemirror": "^5.52.0",
     "compression-webpack-plugin": "^6.1.1",
     "copy-webpack-plugin": "^5.1.1",
