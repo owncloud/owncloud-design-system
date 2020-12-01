@@ -183,7 +183,7 @@
     "stylelint": "^13.6.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-config-standard": "^20.0.0",
-    "terser-webpack-plugin": "^2.3.5",
+    "terser-webpack-plugin": "^4.2.3",
     "theo": "^8.1.5",
     "url-loader": "^3.0.0",
     "vue-jest": "^3.0.4",
