@@ -4,7 +4,8 @@ exports[`OcModal displays input 1`] = `
 <div class="oc-modal-background">
   <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
-      <!----> <span>Create new folder</span></div>
+      <!----> <span>Create new folder</span>
+    </div>
     <div class="oc-modal-body">
       <oc-text-input-stub type="text" value="New folder" label="Folder name" fixmessageline="true" class="oc-modal-body-input"></oc-text-input-stub>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
@@ -20,7 +21,8 @@ exports[`OcModal hides icon if not specified 1`] = `
 <div class="oc-modal-background">
   <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
-      <!----> <span>Example title</span></div>
+      <!----> <span>Example title</span>
+    </div>
     <div class="oc-modal-body">
       <p class="oc-modal-body-message">Example message</p>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
@@ -53,7 +55,8 @@ exports[`OcModal overrides props message with slot 1`] = `
 <div class="oc-modal-background">
   <div tabindex="0" class="oc-modal oc-modal-info">
     <div class="oc-modal-title">
-      <!----> <span>Example title</span></div>
+      <!----> <span>Example title</span>
+    </div>
     <div class="oc-modal-body">
       <div class="oc-modal-body-message">
         <p>Slot message</p>
