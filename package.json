@@ -171,7 +171,7 @@
     "onchange": "^7.1.0",
     "optimist": "^0.6.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "ora": "^4.0.3",
+    "ora": "^5.1.0",
     "portfinder": "^1.0.20",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
