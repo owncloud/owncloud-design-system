@@ -10,7 +10,7 @@
   "homepage": "https://owncloud.github.io/owncloud-design-system/",
   "license": "AGPL-3.0",
   "scripts": {
-    "dev": "webpack-dev-server --inline --config ./build/webpack.dev.conf.js",
+    "dev": "webpack serve --inline --config ./build/webpack.dev.conf.js",
     "start": "npm-run-all --parallel styleguide theo:onchange theo dev",
     "build:system": "npm-run-all theo node:build:system",
     "build:docs": "npm-run-all theo styleguide:build",
