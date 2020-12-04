@@ -8,6 +8,7 @@
 import OcAccordionItem from "./OcAccordionItem"
 export default {
   name: "oc-accordion",
+  // eslint-disable-next-line vue/no-unused-components
   components: { OcAccordionItem },
   status: "review",
   release: "1.0.0",
