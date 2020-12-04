@@ -1,6 +1,6 @@
 const path = require("path")
 const baseConfig = require("../build/webpack.base.conf.js")
-const merge = require("webpack-merge")
+const { merge } = require("webpack-merge")
 const packageConfig = require("../package.json")
 const chalk = require("chalk")
 
