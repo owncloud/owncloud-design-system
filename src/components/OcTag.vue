@@ -1,5 +1,5 @@
 <template>
-  <component :class="$_ocTag_class" :is="type" @click="$_ocTag_click">
+  <component :class="$_ocTag_class" :is="type" :to="to" @click="$_ocTag_click">
     <!-- @slot Content of the tag -->
     <slot />
   </component>
@@ -19,6 +19,15 @@ export default {
       required: false,
       default: "span",
       validator: (type) => type.match(/(span|button|router-link|a)/)
+    },
+
+    /**
+     * Target of the router link
+     */
+    to: {
+      type: [String, Object],
+      required: false,
+      default: null
     }
   },
 
