@@ -114,7 +114,7 @@
     "moment": "^2.24.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "postcss-safe-parser": "^4.0.2",
+    "postcss-safe-parser": "^5.0.2",
     "postcss-url": "^8.0.0",
     "tinycolor2": "^1.4.1",
     "uikit": "3.5.10",
