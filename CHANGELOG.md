@@ -1,3 +1,32 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v2.0.1...master
+
+## Summary
+
+* Bugfix - Add `to` prop to `oc-tag` component: [#975](https://github.com/owncloud/owncloud-design-system/pull/975)
+* Enhancement - Add new icons: [#975](https://github.com/owncloud/owncloud-design-system/pull/975)
+
+## Details
+
+* Bugfix - Add `to` prop to `oc-tag` component: [#975](https://github.com/owncloud/owncloud-design-system/pull/975)
+
+   We've added an optional `to` prop to the `oc-tag` component so that it is properly assigned to
+   the element in case of `router-link` type.
+
+   https://github.com/owncloud/owncloud-design-system/pull/975
+
+
+* Enhancement - Add new icons: [#975](https://github.com/owncloud/owncloud-design-system/pull/975)
+
+   We've added a `key` and `checklist` icons.
+
+   https://github.com/owncloud/owncloud-design-system/pull/975
+   https://fontawesome.com/icons/key?style=solid
+   https://fontawesome.com/icons/tasks?style=solid
+
 # Changelog for [2.0.1] (2020-12-02)
 
 The following sections list the changes in ownCloud Design System 2.0.1.
