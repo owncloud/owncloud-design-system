@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v2.0.2...master
+
+## Summary
+
+* Bugfix - Breadcrumb icon floating: [#1053](https://github.com/owncloud/ocis/issues/1053)
+
+## Details
+
+* Bugfix - Breadcrumb icon floating: [#1053](https://github.com/owncloud/ocis/issues/1053)
+
+   Home icon in breadcrumb don't break into second line anymore
+
+   https://github.com/owncloud/ocis/issues/1053
+   https://github.com/owncloud/owncloud-design-system/pull/997
+
 # Changelog for [2.0.2] (2020-12-07)
 
 The following sections list the changes in ownCloud Design System 2.0.2.
