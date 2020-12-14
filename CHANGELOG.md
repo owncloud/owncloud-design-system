@@ -1,3 +1,29 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v2.0.3...master
+
+## Summary
+
+* Bugfix - Positioning of dropzone: [#1052](https://github.com/owncloud/ocis/issues/1052)
+
+## Details
+
+* Bugfix - Positioning of dropzone: [#1052](https://github.com/owncloud/ocis/issues/1052)
+
+   Switch oc-dropzone positioning from fixed to absolute, fixed always orientates by the
+   viewport which means it always covers the entire screen. This is something we can't know and the
+   decision should be left to the consuming app.
+
+   Instead we use position absolute to just cover the next parent which ist positioned relative to
+   the viewport. In situations where the body is higher or wider than the viewport fixed works
+   better because absolute won't cover the scrollable parts of the content.
+
+   Since oc apps always do scrolling on their own this is no problem
+
+   https://github.com/owncloud/ocis/issues/1052
+
 # Changelog for [2.0.3] (2020-12-12)
 
 The following sections list the changes in ownCloud Design System 2.0.3.
