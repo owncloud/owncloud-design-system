@@ -117,7 +117,7 @@
     "postcss-safe-parser": "^5.0.2",
     "postcss-url": "^9.0.0",
     "tinycolor2": "^1.4.1",
-    "uikit": "3.6.1",
+    "uikit": "3.6.3",
     "vue": "^2.6.11",
     "vue-avatar": "^2.2.0",
     "vue-datetime": "^1.0.0-beta.10",
