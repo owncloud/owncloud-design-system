@@ -4724,7 +4724,7 @@ es6-promise@^4.2.6, es6-promise@^4.2.8:
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
   integrity sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==
 
-es6-promisify@^6.0.0:
+es6-promisify@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.1.1.tgz#46837651b7b06bf6fff893d03f29393668d01621"
   integrity sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==
@@ -13474,12 +13474,12 @@ webpack-log@^2.0.0:
     uuid "^3.3.2"
 
 webpack-merge-and-include-globally@^2.1.24:
-  version "2.1.26"
-  resolved "https://registry.yarnpkg.com/webpack-merge-and-include-globally/-/webpack-merge-and-include-globally-2.1.26.tgz#9f8671f26197080250714b17156c4df6be961bd0"
-  integrity sha512-nvh04ZQO4k9d1/h75bmIEsw65zk5S2Whuo+W5E/djMVaZffiIAybjPa93B8gYOUon2VlvdLCZ5gVhptO+zD03A==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/webpack-merge-and-include-globally/-/webpack-merge-and-include-globally-2.2.2.tgz#5be16c7629753e1a217bb39523da9e291c3e688d"
+  integrity sha512-c4YwMG7q9NhaXL9dYcMlCsN7Xuy8h+JSdTl3keKLl6B7ZH5pIDiZLCUzM3uufUekoIZZNwqQn7Ez17mISe8otA==
   dependencies:
-    es6-promisify "^6.0.0"
-    glob "^7.1.2"
+    es6-promisify "^6.1.1"
+    glob "^7.1.6"
     rev-hash "^3.0.0"
 
 webpack-merge@^4.0.0, webpack-merge@^4.2.2:
