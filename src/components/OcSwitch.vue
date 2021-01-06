@@ -1,6 +1,6 @@
 <template>
   <div class="oc-switch" :data-state="state" @click="toggle">
-    <input type="checkbox" ref="input" :aria-label="label" v-model="model" />
+    <input type="checkbox" ref="input" :aria-label="label" v-model="checked" />
   </div>
 </template>
 <script>
@@ -11,13 +11,16 @@ export default {
   name: "oc-switch",
   status: "review",
   release: "1.0.0",
+  model: {
+    prop: "model",
+    event: "change",
+  },
   props: {
     /**
      * Default value can be `Boolean` or `Number`
      *
      * @model
      **/
-
     model: {
       required: false,
       default: false,

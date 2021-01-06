@@ -1,5 +1,5 @@
 <template>
-  <label :for="$_ocCheckbox_id" :class="{'oc-cursor-pointer': !disabled}">
+  <label :for="$_ocCheckbox_id" :class="{ 'oc-cursor-pointer': !disabled }">
     <input
       type="checkbox"
       name="checkbox"
@@ -15,7 +15,7 @@
 </template>
 <script>
 import { getSizeClass } from "../utils/sizeClasses"
-import * as _uniqueId from "../utils/uniqueId"
+import uniqueId from "../utils/uniqueId"
 /**
  * A checkbox input element. The checkbox is either checked or unchecked.
  */
@@ -29,7 +29,7 @@ export default {
      */
     id: {
       type: String,
-      required: false
+      required: false,
     },
     /**
      * Disables the checkbox
@@ -45,7 +45,7 @@ export default {
      * Can be any type, but most common is boolean for singular checkbox use, or array when used in a group of checkboxes.
      **/
     value: {
-      required: false
+      required: false,
     },
     /**
      * The value/object this checkbox represents.
@@ -93,17 +93,91 @@ export default {
       },
       set(value) {
         this.$emit("input", value)
-      }
+      },
     },
     $_ocCheckbox_id() {
-      return this.id || _uniqueId("oc-checkbox-")
+      return this.id || uniqueId("oc-checkbox-")
     },
     $_ocCheckbox_classes() {
       return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
     },
-  }
+  },
 }
 </script>
+<style lang="scss" scoped>
+@mixin oc-form-check-size($factor) {
+  height: $form-check-size-default * $factor;
+  width: $form-check-size-default * $factor;
+}
+
+.oc-checkbox {
+  @include oc-form-check-size(1);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: $input-background;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  border: 1px solid $input-border;
+  border-radius: 3px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+
+  &-s {
+    @include oc-form-check-size(0.7);
+  }
+
+  &-m {
+    @include oc-form-check-size(1);
+  }
+
+  &-l {
+    @include oc-form-check-size(1.5);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:checked,
+  &:indeterminate {
+    background-color: $input-background-checked;
+  }
+
+  &:checked {
+    @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-checked-icon-color);
+  }
+
+  &:indeterminate {
+    @include svg-fill(
+      $internal-form-checkbox-indeterminate-image,
+      "#000",
+      $form-radio-checked-icon-color
+    );
+  }
+
+  &:disabled {
+    background-color: $form-radio-disabled-background;
+  }
+
+  &:disabled:checked {
+    @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-disabled-icon-color);
+  }
+  &:disabled:indeterminate {
+    @include svg-fill(
+      $internal-form-checkbox-indeterminate-image,
+      "#000",
+      $form-radio-disabled-icon-color
+    );
+  }
+}
+
+label > .oc-checkbox + span {
+  margin-left: $space-xsmall;
+}
+</style>
 <docs>
   ```
     <template>

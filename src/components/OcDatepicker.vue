@@ -15,7 +15,6 @@
 
 <script>
 import { Datetime } from "vue-datetime"
-import moment from "moment"
 
 /**
  * Example component is used to visually communicate core parts of the product
@@ -53,7 +52,7 @@ export default {
      */
     date: {
       type: String,
-      default: moment().format(),
+      default: new Date().toISOString(),
     },
     /**
      * The placeholder value for the form input field.

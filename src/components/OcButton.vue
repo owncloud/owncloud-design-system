@@ -113,13 +113,13 @@ export default {
     },
     /**
      * Distance between children of the button. Defaults to medium. Might be overruled by justify-content value.
-     * `xsmall, small, medium, large, xlarge`
+     * @values none, xsmall, small, medium, large, xlarge
      */
     gapSize: {
       type: String,
       default: "medium",
       validator: value => {
-        return value.match(/(xsmall|small|medium|large|xlarge)/)
+        return value.match(/(none|xsmall|small|medium|large|xlarge)/)
       }
     },
     /**

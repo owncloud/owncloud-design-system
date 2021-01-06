@@ -7,9 +7,7 @@ module.exports = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
-  modulePathIgnorePatterns: [
-    "<rootDir>/docs/utils/statusLabels.spec.js"
-  ],
+  modulePathIgnorePatterns: ["<rootDir>/docs/utils/statusLabels.spec.js"],
   transform: {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
     ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",

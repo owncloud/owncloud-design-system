@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[owncloud.owncloud-design-system]
+file_filter = <lang>/owncloud-design-system.po
+source_file = owncloud-design-system.pot
+source_lang = en
+type = PO

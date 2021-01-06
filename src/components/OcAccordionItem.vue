@@ -15,7 +15,12 @@
           <oc-grid flex>
             <oc-icon v-if="icon" :name="icon" class="oc-mr-s" aria-hidden="true" />
             <div class="uk-width-expand" v-text="title" />
-            <oc-icon name="expand_more" class="oc-ml-xs" :class="{'rotate': expanded}" size="large" />
+            <oc-icon
+              name="expand_more"
+              class="oc-ml-xs"
+              :class="{ rotate: expanded }"
+              size="large"
+            />
           </oc-grid>
           <oc-grid v-if="description">
             <div v-if="icon" class="oc-icon-m oc-mr-s" />
@@ -24,14 +29,19 @@
         </div>
       </oc-button>
     </component>
-    <div class="oc-accordion-content" :aria-labelledby="$_ocAccordionItem_titleId" :id="$_ocAccordionItem_contentId" role="region">
+    <div
+      class="oc-accordion-content"
+      :aria-labelledby="$_ocAccordionItem_titleId"
+      :id="$_ocAccordionItem_contentId"
+      role="region"
+    >
       <!-- @slot Content of the accordion item -->
       <slot v-if="expanded" />
     </div>
   </li>
 </template>
 <script>
-import * as _uniqueId from "../utils/uniqueId"
+import uniqueId from "../utils/uniqueId"
 export default {
   name: "oc-accordion-item",
   status: "review",
@@ -58,7 +68,7 @@ export default {
     description: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     /**
      * Id of the accordion item. If not specified, a unique id will be generated.
@@ -76,7 +86,7 @@ export default {
     titleId: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     /**
      * Id of the content of the accordion item. If not specified, a unique id will be generated.
@@ -92,21 +102,21 @@ export default {
     headingLevel: {
       type: String,
       required: false,
-      default: "3"
-    }
+      default: "3",
+    },
   },
   data: () => ({
-    expanded: false
+    expanded: false,
   }),
   computed: {
     $_ocAccordionItem_id() {
-      return this.id || _uniqueId("oc-accordion-id-")
+      return this.id || uniqueId("oc-accordion-id-")
     },
     $_ocAccordionItem_titleId() {
-      return this.titleId || _uniqueId("oc-accordion-title-")
+      return this.titleId || uniqueId("oc-accordion-title-")
     },
     $_ocAccordionItem_contentId() {
-      return this.contentId || _uniqueId("oc-accordion-content-")
+      return this.contentId || uniqueId("oc-accordion-content-")
     },
   },
   methods: {
@@ -117,6 +127,6 @@ export default {
         this.$parent.$emit("expand", this.$_ocAccordionItem_id)
       }
     },
-  }
+  },
 }
 </script>
