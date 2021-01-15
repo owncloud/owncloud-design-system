@@ -112,14 +112,19 @@ module.exports = {
         {
           name: "Margin",
           content: "../docs/margins.md",
-          description: "Utility classes to assign a margin to elements"
+          description: "Utility classes to assign a margin to elements",
         },
         {
           name: "Padding",
           content: "../docs/paddings.md",
-          description: "Utility classes to assign a padding to elements"
-        }
-      ]
+          description: "Utility classes to assign a padding to elements",
+        },
+        {
+          name: "Visibility",
+          content: "../docs/visibility.md",
+          description: "Utility classes to hide/display from a certain screen width",
+        },
+      ],
     },
     {
       name: "Animations",
@@ -190,7 +195,7 @@ module.exports = {
     "**/*.test.js",
     "**/*.test.jsx",
     "**/*.spec.js",
-    "**/*.spec.jsx"
+    "**/*.spec.jsx",
   ],
   webpackConfig: merge(baseConfig, {
     module: {
