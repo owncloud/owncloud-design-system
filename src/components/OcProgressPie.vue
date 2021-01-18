@@ -1,7 +1,7 @@
 <template>
   <div class="oc-progress-pie" :data-fill="_fill">
     <div class="oc-progress-pie-container"></div>
-    <label class="oc-progress-pie-label" v-if="showLabel" v-text="_label" />
+    <label v-if="showLabel" class="oc-progress-pie-label" v-text="_label" />
   </div>
 </template>
 <script>
@@ -9,7 +9,7 @@
  * Show progress to the users in a pie shape.
  */
 export default {
-  name: "oc-progress-pie",
+  name: "OcProgressPie",
   status: "review",
   release: "1.0.0",
   props: {

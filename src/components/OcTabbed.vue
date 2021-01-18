@@ -1,9 +1,9 @@
 <template>
   <div>
     <div
+      ref="tablist"
       class="oc-tabbed"
       role="tablist"
-      ref="tablist"
       @click="clickHandler"
       @keydown="keydownHandler"
     >
@@ -17,22 +17,22 @@
 
 <script>
 export default {
-  name: "oc-tabbed",
+  name: "OcTabbed",
   status: "prototype",
   release: "1.0.0",
-  data() {
-    return {
-      tabs: [],
-      panels: [],
-      activeTab: `tab-${this.initial}`,
-    }
-  },
   props: {
     initial: {
       type: String,
       required: true,
       default: null,
     },
+  },
+  data() {
+    return {
+      tabs: [],
+      panels: [],
+      activeTab: `tab-${this.initial}`,
+    }
   },
   mounted() {
     for (const slotEl of this.$slots.tabs) {
@@ -87,30 +87,30 @@ export default {
       if (!e.target.attributes["aria-controls"]) return
       this.changeTab(e.target.id)
     },
-    keydownHandler: function(e) {
+    keydownHandler: function (e) {
       const activeElem = this.$refs.tablist.querySelector(`#${this.activeTab}`)
       const activeIndex = Array.from(this.$refs.tablist.children).indexOf(activeElem)
       let targetTab
 
       switch (e.keyCode) {
-      case 37:
-        if (activeIndex - 1 < 0) {
-          targetTab = this.tabs[this.tabs.length - 1]
-        } else {
-          targetTab = this.tabs[activeIndex - 1]
-        }
-        this.changeTab(targetTab.id)
-        break
-      case 39:
-        if (activeIndex + 1 > this.tabs.length - 1) {
-          targetTab = this.tabs[0]
-        } else {
-          targetTab = this.tabs[activeIndex + 1]
-        }
-        this.changeTab(targetTab.id)
-        break
-      default:
-        return
+        case 37:
+          if (activeIndex - 1 < 0) {
+            targetTab = this.tabs[this.tabs.length - 1]
+          } else {
+            targetTab = this.tabs[activeIndex - 1]
+          }
+          this.changeTab(targetTab.id)
+          break
+        case 39:
+          if (activeIndex + 1 > this.tabs.length - 1) {
+            targetTab = this.tabs[0]
+          } else {
+            targetTab = this.tabs[activeIndex + 1]
+          }
+          this.changeTab(targetTab.id)
+          break
+        default:
+          return
       }
     },
   },

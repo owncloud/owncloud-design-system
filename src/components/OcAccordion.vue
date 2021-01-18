@@ -7,7 +7,7 @@
 <script>
 import OcAccordionItem from "./OcAccordionItem"
 export default {
-  name: "oc-accordion",
+  name: "OcAccordion",
   // eslint-disable-next-line vue/no-unused-components
   components: { OcAccordionItem },
   status: "review",
@@ -59,12 +59,12 @@ export default {
       validator: value => {
         return value.match(/(click|data)/)
       },
-    }
+    },
   },
 
   data() {
     return {
-      expandedIdsInternal: []
+      expandedIdsInternal: [],
     }
   },
 
@@ -83,7 +83,7 @@ export default {
       this.$children.forEach(child => {
         child.$data.expanded = ids.includes(child.$_ocAccordionItem_id)
       })
-    }
+    },
   },
 
   mounted() {
@@ -97,13 +97,21 @@ export default {
   methods: {
     $_ocAccordion_init() {
       if (this.multiple) {
-        if ((this.expandedIds === null || this.expandedIds.length === 0) && this.expandFirst && this.$children.length > 0) {
+        if (
+          (this.expandedIds === null || this.expandedIds.length === 0) &&
+          this.expandFirst &&
+          this.$children.length > 0
+        ) {
           this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
         } else {
           this.$_ocAccordion_updateExpandedIdsInternal(this.expandedIds)
         }
       } else {
-        if ((this.expandedId === null || this.expandedId === "") && this.expandFirst && this.$children.length > 0) {
+        if (
+          (this.expandedId === null || this.expandedId === "") &&
+          this.expandFirst &&
+          this.$children.length > 0
+        ) {
           this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
         } else {
           this.$_ocAccordion_updateExpandedIdsInternal(this.expandedId)
@@ -134,7 +142,7 @@ export default {
     $_ocAccordion_collapseItem(id) {
       this.expandedIdsInternal = this.expandedIdsInternal.filter(expandedId => expandedId !== id)
     },
-  }
+  },
 }
 </script>
 <docs>

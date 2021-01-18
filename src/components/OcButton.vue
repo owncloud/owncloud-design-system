@@ -18,7 +18,7 @@
 import { getSizeClass } from "../utils/sizeClasses"
 
 export default {
-  name: "oc-button",
+  name: "OcButton",
   status: "review",
   release: "1.0.0",
   props: {
@@ -109,7 +109,7 @@ export default {
       default: "center",
       validator: value => {
         return value.match(/(left|center|right|space-around|space-between|space-evenly)/)
-      }
+      },
     },
     /**
      * Distance between children of the button. Defaults to medium. Might be overruled by justify-content value.
@@ -120,7 +120,7 @@ export default {
       default: "medium",
       validator: value => {
         return value.match(/(none|xsmall|small|medium|large|xlarge)/)
-      }
+      },
     },
     /**
      * Color to be given to the content of the button with variation `raw`.
@@ -132,8 +132,8 @@ export default {
       default: "default",
       validator: value => {
         return value.match(/(default|text|primary)/)
-      }
-    }
+      },
+    },
   },
   computed: {
     $_ocButton_buttonClass() {
@@ -143,7 +143,7 @@ export default {
         "oc-button",
         `oc-button-${getSizeClass(this.size)}`,
         `oc-button-justify-content-${this.justifyContent}`,
-        `oc-button-gap-${getSizeClass(this.gapSize)}`
+        `oc-button-gap-${getSizeClass(this.gapSize)}`,
       ]
 
       if (this.variation) {
@@ -160,8 +160,8 @@ export default {
   methods: {
     $_ocButton_onClick(event) {
       this.$emit("click", event)
-    }
-  }
+    },
+  },
 }
 </script>
 <docs>

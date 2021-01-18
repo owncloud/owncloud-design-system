@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "oc-navbar-item",
+  name: "OcNavbarItem",
   status: "review",
   release: "1.0.0",
   props: {

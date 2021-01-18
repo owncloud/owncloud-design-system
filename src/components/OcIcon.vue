@@ -1,17 +1,29 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <component
-    v-if="iconNotLoaded"
     :is="$_ocIcon_type"
+    v-if="iconNotLoaded"
     :aria-label="ariaLabel"
-    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', sizeClass(size), variationClass(variation)]"
-    v-html="$_ocIcon_svg"
+    :class="[
+      { 'oc-button-reset': type === 'button' },
+      'oc-icon',
+      sizeClass(size),
+      variationClass(variation),
+    ]"
     @click="$_ocIcon_click"
+    v-html="$_ocIcon_svg"
   />
+  <!-- eslint-enable vue/no-v-html -->
   <img
     v-else
     :src="iconUrl"
     :aria-label="ariaLabel"
-    :class="[{ 'oc-button-reset': type === 'button' }, 'oc-icon', sizeClass(size), variationClass(variation)]"
+    :class="[
+      { 'oc-button-reset': type === 'button' },
+      'oc-icon',
+      sizeClass(size),
+      variationClass(variation),
+    ]"
     @click="$_ocIcon_click"
   />
 </template>
@@ -25,7 +37,7 @@ import { getSizeClass } from "../utils/sizeClasses"
  * easily understand where they are in the product.
  */
 export default {
-  name: "oc-icon",
+  name: "OcIcon",
   status: "review",
   release: "1.0.0",
   props: {
@@ -43,6 +55,8 @@ export default {
      */
     url: {
       type: String,
+      required: false,
+      default: null,
     },
     /**
      * Descriptive text to be read to screenreaders.
@@ -87,6 +101,19 @@ export default {
       iconNotLoaded: true,
     }
   },
+  computed: {
+    $_ocIcon_type() {
+      return this.type
+    },
+    $_ocIcon_svg() {
+      return req("./" + this.name + ".svg")
+    },
+  },
+  watch: {
+    url() {
+      this.loadImage()
+    },
+  },
   mounted() {
     this.loadImage()
   },
@@ -103,9 +130,9 @@ export default {
     $_ocIcon_click() {
       this.$emit("click")
     },
-    loadImage () {
+    loadImage() {
       this.iconUrl = this.url
-      if (this.url !== undefined) {
+      if (this.url !== "") {
         const img = new Image()
         img.addEventListener("load", () => {
           this.iconNotLoaded = false
@@ -116,21 +143,8 @@ export default {
         })
         img.src = this.iconUrl
       }
-    }
-  },
-  computed: {
-    $_ocIcon_type() {
-      return this.type
-    },
-    $_ocIcon_svg() {
-      return req("./" + this.name + ".svg")
     },
   },
-  watch: {
-    url () {
-      this.loadImage()
-    }
-  }
 }
 </script>
 <docs>

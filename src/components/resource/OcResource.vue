@@ -11,9 +11,9 @@
     <oc-icon v-else :name="resource.icon" variation="file-type" size="large" aria-hidden="true" />
     <div class="oc-resource-details">
       <component
-        v-if="isResourceClickable"
         :is="componentType"
         v-bind="componentProps"
+        v-if="isResourceClickable"
         @click.stop="emitClick"
       >
         <oc-resource-name :full-path="resource.path" :is-path-displayed="isPathDisplayed" />
@@ -36,7 +36,7 @@ import OcResourceName from "./OcResourceName.vue"
  * Displays a resource together with the resource type icon or preview
  */
 export default {
-  name: "oc-resource",
+  name: "OcResource",
   status: "review",
   release: "2.1.0",
   components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName },

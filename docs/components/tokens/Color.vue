@@ -28,20 +28,20 @@ import orderBy from "../../utils/orderBy"
  */
 export default {
   name: "Color",
+
+  computed: {
+    tokens() {
+      return this.orderData(designTokens.props).filter(token => token.type === "color")
+    },
+  },
   methods: {
-    orderData: function(data) {
+    orderData: function (data) {
       // let byValue = orderBy(data, "value", "asc")
       let byName = orderBy(data, "name", "asc")
       let byCategoryAndName = orderBy(byName, "category")
       return byCategoryAndName
     },
   },
-
-  computed: {
-    tokens () {
-      return this.orderData(designTokens.props).filter(token => token.type === "color")
-    }
-  }
 }
 </script>
 

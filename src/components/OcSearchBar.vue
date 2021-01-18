@@ -18,18 +18,18 @@
       </span>
       <oc-text-input
         :class="$_ocSearchBar_input_class"
-        @input="onType"
-        @keydown.enter="onSearch"
         :placeholder="placeholder"
         :label="label"
         :value="searchQuery"
         :disabled="loading"
+        @input="onType"
+        @keydown.enter="onSearch"
       />
       <div
-        uk-close
         v-if="query.length > 0"
-        @click="onClear"
+        uk-close
         class="oc-search-clear uk-position-small uk-position-center-right"
+        @click="onClear"
       />
     </div>
     <div :class="{ 'oc-visually-hidden': buttonHidden }">
@@ -58,7 +58,7 @@
  * Both a search and filter form does need a submit button, regardless if the button is visually perceivable or not. If a "buttonless" look is desired, use `button-hidden="true"`, which renders the button visually hidden.
  */
 export default {
-  name: "oc-search-bar",
+  name: "OcSearchBar",
   status: "prototype",
   release: "1.0.0",
   props: {
@@ -153,6 +153,26 @@ export default {
   data: () => ({
     query: "",
   }),
+  computed: {
+    searchQuery() {
+      // please don't treat empty string the same as null...
+      return this.value === null ? this.query : this.value
+    },
+    $_ocSpinner_class() {
+      if (this.small) {
+        return "oc-spinner oc-spinner-xs"
+      }
+      return "oc-spinner oc-spinner-m"
+    },
+    $_ocSearchBar_input_class() {
+      const classes = ["oc-search-input"]
+
+      this.icon && classes.push("oc-search-input-icon")
+      !this.buttonHidden && classes.push("oc-search-input-button")
+
+      return classes
+    },
+  },
   methods: {
     onSearch() {
       /**
@@ -184,26 +204,6 @@ export default {
        */
       this.$emit("clear")
     },
-  },
-  computed: {
-    searchQuery() {
-      // please don't treat empty string the same as null...
-      return this.value === null ? this.query : this.value
-    },
-    $_ocSpinner_class() {
-      if (this.small) {
-        return "oc-spinner oc-spinner-xs"
-      }
-      return "oc-spinner oc-spinner-m"
-    },
-    $_ocSearchBar_input_class() {
-      const classes = ["oc-search-input"]
-
-      this.icon && classes.push("oc-search-input-icon")
-      !this.buttonHidden && classes.push("oc-search-input-button")
-
-      return classes
-    }
   },
 }
 </script>

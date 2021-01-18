@@ -24,18 +24,18 @@ import orderBy from "../../utils/orderBy"
  */
 export default {
   name: "FontSize",
+
+  computed: {
+    tokens() {
+      return this.orderData(designTokens.props).filter(token => token.category === "font-size")
+    },
+  },
   methods: {
-    orderData: function(data) {
+    orderData: function (data) {
       let order = orderBy(data, "value", "desc")
       return order
     },
   },
-
-  computed: {
-    tokens () {
-      return this.orderData(designTokens.props).filter(token => token.category === "font-size")
-    }
-  }
 }
 </script>
 

@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: "oc-topbar-item",
+  name: "OcTopbarItem",
   status: "review",
   release: "1.0.0",
 }

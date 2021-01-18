@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "oc-app-layout",
+  name: "OcAppLayout",
   components: {},
   status: "review",
   release: "1.0.0",

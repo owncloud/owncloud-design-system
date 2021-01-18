@@ -1,6 +1,11 @@
 <template>
   <div class="oc-alert" :class="$_ocNotificationMessage_classes">
-    <oc-icon :variation="$_ocNotificationMessage_iconVariation" size="large" name="info" class="oc-mr-s" />
+    <oc-icon
+      :variation="$_ocNotificationMessage_iconVariation"
+      size="large"
+      name="info"
+      class="oc-mr-s"
+    />
     <div
       class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
       :role="status === 'danger' ? 'alert' : 'status'"
@@ -29,7 +34,7 @@
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
  */
 export default {
-  name: "oc-notification-message",
+  name: "OcNotificationMessage",
   status: "review",
   release: "1.0.0",
   props: {
@@ -60,15 +65,7 @@ export default {
     message: {
       type: String,
       required: false,
-    },
-  },
-  methods: {
-    $_ocNotificationMessage_close() {
-      /**
-       * The close event is emitted when the user clicks the close icon.
-       * @type {void}
-       */
-      this.$emit("close")
+      default: null,
     },
   },
   computed: {
@@ -80,7 +77,16 @@ export default {
         return "system"
       }
       return this.status
-    }
+    },
+  },
+  methods: {
+    $_ocNotificationMessage_close() {
+      /**
+       * The close event is emitted when the user clicks the close icon.
+       * @type {void}
+       */
+      this.$emit("close")
+    },
   },
 }
 </script>

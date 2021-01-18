@@ -22,7 +22,7 @@
  * Actions can be added to the `actions` slot.
  */
 export default {
-  name: "oc-user",
+  name: "OcUser",
   status: "review",
   release: "1.0.0",
   props: {
@@ -39,6 +39,7 @@ export default {
     displayName: {
       type: String,
       required: false,
+      default: null,
     },
     /**
      * User name / login of the user
@@ -46,6 +47,7 @@ export default {
     userName: {
       type: String,
       required: false,
+      default: null,
     },
     /**
      * Email of the user
@@ -53,6 +55,7 @@ export default {
     email: {
       type: String,
       required: false,
+      default: null,
     },
   },
 }

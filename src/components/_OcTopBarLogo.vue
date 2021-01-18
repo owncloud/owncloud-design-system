@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "oc-topbar-logo",
+  name: "OcTopbarLogo",
   status: "review",
   release: "1.0.0",
   props: {

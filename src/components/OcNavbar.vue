@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: "oc-navbar",
+  name: "OcNavbar",
   status: "review",
   release: "1.0.0",
   props: {

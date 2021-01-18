@@ -10,7 +10,7 @@
  * Count of avatars which weren't displayed.
  */
 export default {
-  name: "oc-avatar-count",
+  name: "OcAvatarCount",
   status: "review",
   release: "2.1.0",
   props: {

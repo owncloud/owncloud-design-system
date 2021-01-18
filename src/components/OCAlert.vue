@@ -9,7 +9,7 @@
  * Display success, warning and error messages.
  */
 export default {
-  name: "oc-alert",
+  name: "OcAlert",
   status: "review",
   release: "1.0.0",
   props: {

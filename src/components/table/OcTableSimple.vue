@@ -1,6 +1,6 @@
 <template>
   <table :class="tableClasses">
-    <slot/>
+    <slot />
   </table>
 </template>
 <script>
@@ -8,7 +8,7 @@
  * A table component with manually built layout.
  */
 export default {
-  name: "oc-table-simple",
+  name: "OcTableSimple",
   status: "review",
   release: "2.1.0",
   props: {

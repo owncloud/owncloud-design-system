@@ -1,5 +1,5 @@
 <template>
-  <button role="tab" :id="id" @click="$_ocTabItem_onClick" tabindex="-1" aria-controls>
+  <button :id="id" role="tab" tabindex="-1" aria-controls @click="$_ocTabItem_onClick">
     <slot />
   </button>
 </template>
@@ -8,21 +8,25 @@
  * Create a tab item (for a tab component).
  */
 export default {
-  name: "oc-tabbed-tab",
+  name: "OcTabbedTab",
   status: "prototype",
   release: "1.0.0",
-  data() {
-    return {
-      id: null,
-    }
-  },
   props: {
     /**
      * Name of the tab.
      */
     name: {
       type: String,
+      required: true,
     },
+  },
+  data() {
+    return {
+      id: null,
+    }
+  },
+  mounted() {
+    this.id = `tab-${this.name}`
   },
   methods: {
     $_ocTabItem_onClick(val) {
@@ -33,9 +37,6 @@ export default {
        */
       this.$emit("click", val)
     },
-  },
-  mounted() {
-    this.id = `tab-${this.name}`
   },
 }
 </script>

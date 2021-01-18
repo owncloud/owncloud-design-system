@@ -56,7 +56,7 @@ export default previewComponent => {
           parent.appendChild(tabs)
 
           CodeMirror(
-            function(code) {
+            function (code) {
               elem.parentNode.replaceChild(code, elem)
               code.className += " vueds-html vueds-hidden"
             },

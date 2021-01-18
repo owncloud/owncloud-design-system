@@ -18,7 +18,7 @@
  * - [ ] Implement https://getuikit.com/docs/tab#component-options
  */
 export default {
-  name: "oc-tabs",
+  name: "OcTabs",
   status: "prototype",
   release: "1.0.0",
 }

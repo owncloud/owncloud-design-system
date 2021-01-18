@@ -8,7 +8,7 @@
  * list navigation.
  */
 export default {
-  name: "oc-nav",
+  name: "OcNav",
   status: "review",
   release: "1.0.0",
 }

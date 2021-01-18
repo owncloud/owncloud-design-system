@@ -5,8 +5,8 @@
 </template>
 <script>
 export default {
-  name: "oc-tr",
+  name: "OcTr",
   status: "review",
-  release: "1.0.0"
+  release: "1.0.0",
 }
 </script>

@@ -1,6 +1,6 @@
-export default function uniqueId() {
+export default function uniqueId(prefix) {
   let num = 0
-  return function (prefix) {
+  return function () {
     prefix = String(prefix) || ""
     num += 1
     return prefix + num

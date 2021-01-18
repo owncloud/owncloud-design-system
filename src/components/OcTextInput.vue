@@ -2,6 +2,7 @@
   <div>
     <input
       v-bind="$attrs"
+      ref="input"
       :aria-label="label"
       :class="{
         'oc-text-input': !stopClassPropagation,
@@ -14,9 +15,8 @@
       v-on="$_ocTextInput_listeners"
       @input="$_ocTextInput_onInput($event.target.value)"
       @focus="$_ocTextInput_onFocus($event.target)"
-      ref="input"
     />
-    <div class="oc-text-input-message" v-if="$_ocTextInput_showMessageLine">
+    <div v-if="$_ocTextInput_showMessageLine" class="oc-text-input-message">
       <span v-if="!!warningMessage" class="oc-text-input-warning" v-text="warningMessage" />
       <span v-if="!!errorMessage" class="oc-text-input-danger" v-text="errorMessage" />
     </div>
@@ -33,7 +33,7 @@
  * The attributes `placeholder` and `aria-label` have different functions. The first specifies a short hint describing the expected value of an input field/text area, or gives an example (e.g. email@example.com). `aria-label` provides the accessible name of the text input (e.g. "Your address", "Comment",...).
  */
 export default {
-  name: "oc-text-input",
+  name: "OcTextInput",
   status: "review",
   release: "1.0.0",
   inheritAttrs: false,
@@ -54,6 +54,8 @@ export default {
      * @model
      */
     value: {
+      type: String,
+      required: false,
       default: null,
     },
     /**
@@ -99,7 +101,7 @@ export default {
     fixMessageLine: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   computed: {
     $_ocTextInput_showMessageLine() {
@@ -109,11 +111,11 @@ export default {
       const listeners = this.$listeners
 
       // Delete listeners for events which are emitted via methods
-      delete(listeners["input"])
-      delete(listeners["focus"])
+      delete listeners["input"]
+      delete listeners["focus"]
 
       return listeners
-    }
+    },
   },
   methods: {
     /**

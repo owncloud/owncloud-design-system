@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: "oc-table-cell",
+  name: "OcTableCell",
   status: "review",
   release: "1.0.0",
   props: {
@@ -13,7 +13,7 @@ export default {
       type: String,
       default: "td",
       required: false,
-      validator: type => /(td|th)/.test(type)
+      validator: type => /(td|th)/.test(type),
     },
     alignH: {
       type: String,
@@ -29,11 +29,16 @@ export default {
       type: String,
       default: "auto",
       validator: width => /(auto|shrink|expand)/.test(width),
-    }
+    },
   },
   computed: {
     cellClasses() {
-      return ["oc-table-cell", `oc-table-cell-align-${this.alignH}`, `oc-table-cell-align-${this.alignV}`, `oc-table-cell-width-${this.width}`]
+      return [
+        "oc-table-cell",
+        `oc-table-cell-align-${this.alignH}`,
+        `oc-table-cell-align-${this.alignV}`,
+        `oc-table-cell-width-${this.width}`,
+      ]
     },
   },
 }
