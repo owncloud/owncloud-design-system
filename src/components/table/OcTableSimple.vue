@@ -22,34 +22,32 @@ export default {
   },
   computed: {
     tableClasses() {
-      const result = ["oc-table"]
+      const result = ["oc-table-simple"]
       if (this.hover) {
-        result.push("oc-table-hover")
+        result.push("oc-table-simple-hover")
       }
       return result
     },
   },
 }
 </script>
-<style lang="scss" scoped>
-.oc-table {
+<style lang="scss">
+.oc-table-simple {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 
-  // stylelint-disable selector-pseudo-element-no-unknown
-  &-hover ::v-deep tr {
+  &-hover tr {
     transition: background-color $transition-duration-short ease-in-out;
   }
 
-  ::v-deep tr + tr {
+  tr + tr {
     border-top: 1px solid $border-primary;
   }
 
-  &-hover ::v-deep tr:hover {
+  &-hover tr:hover {
     background-color: lighten($selected-background, 0.2);
   }
-  // stylelint-enable selector-pseudo-element-no-unknown
 }
 </style>
 <docs>

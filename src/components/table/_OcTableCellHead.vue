@@ -19,7 +19,7 @@ export default {
     },
     alignV: {
       type: String,
-      default: "middle",
+      default: "bottom",
       validator: alignment => /(top|middle|bottom)/.test(alignment),
     },
     width: {
@@ -30,12 +30,9 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-th {
   color: $muted-color;
   font-weight: inherit;
-
-  /* vertical-align is not configurable until we need it */
-  vertical-align: bottom;
 }
 </style>

@@ -128,7 +128,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-resource {
   align-items: center;
   display: flex;

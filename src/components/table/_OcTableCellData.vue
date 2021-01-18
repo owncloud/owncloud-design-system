@@ -30,9 +30,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.oc-td {
-  /* vertical-align is not configurable until we need it */
-  vertical-align: middle;
-}
-</style>

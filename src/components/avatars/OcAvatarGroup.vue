@@ -93,7 +93,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-avatar-group {
   display: flex;
   flex-flow: row wrap;

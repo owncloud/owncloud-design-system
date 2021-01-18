@@ -43,7 +43,7 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-table-cell {
   /* padding is not configurable until we need it */
   padding: $space-xsmall;

@@ -75,7 +75,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-status-indicators {
   align-items: center;
   display: flex;

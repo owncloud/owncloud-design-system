@@ -105,7 +105,7 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @mixin oc-form-check-size($factor) {
   height: $form-check-size-default * $factor;
   width: $form-check-size-default * $factor;
