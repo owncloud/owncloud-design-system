@@ -1,14 +1,15 @@
 def main(ctx):
-  before = [
-      testing(ctx),
-  ]
+    before = [
+        testing(ctx),
+    ]
 
-  stages = [
-      changelog(ctx),
-      build(ctx),
-  ]
+    stages = [
+        changelog(ctx),
+        build(ctx),
+    ]
 
-  return before + stages
+    return before + stages
+
 
 def testing(ctx):
     return {
@@ -21,40 +22,60 @@ def testing(ctx):
         },
         'steps': [
             {
-                'name': 'lint',
-                'image': 'webhippie/nodejs:latest',
+                'name': 'dependencies',
+                'image': 'owncloudci/nodejs:12',
                 'pull': 'always',
                 'commands': [
-                    'yarn install',
-                    'yarn lint',
+                    'yarn install'
                 ]
             },
             {
+                'name': 'eslint',
+                'image': 'owncloudci/nodejs:12',
+                'pull': 'always',
+                'commands': [
+                    'yarn lint:eslint',
+                ],
+                'depends_on': ['dependencies']
+            },
+            {
+                'name': 'stylelint',
+                'image': 'owncloudci/nodejs:12',
+                'pull': 'always',
+                'commands': [
+                    'yarn lint:stylelint',
+                ],
+                'depends_on': ['dependencies']
+            },
+            {
                 'name': 'build docs',
-                'image': 'webhippie/nodejs:latest',
+                'image': 'owncloudci/nodejs:12',
                 'pull': 'always',
                 'commands': [
                     'yarn install',
                     'yarn build:docs',
-                ]
+                ],
+                'depends_on': ['eslint', 'stylelint']
             },
             {
                 'name': 'build system',
-                'image': 'webhippie/nodejs:latest',
+                'image': 'owncloudci/nodejs:12',
                 'pull': 'always',
                 'commands': [
                     'yarn install',
                     'yarn build:system',
-                ]
+                ],
+                'depends_on': ['eslint', 'stylelint']
             },
             {
                 'name': 'unit tests',
-                'image': 'webhippie/nodejs:latest',
+                'image': 'owncloudci/nodejs:12',
                 'pull': 'always',
                 'commands': [
                     'yarn install',
                     'yarn test',
-                ]
+                ],
+                'depends_on': ['build system']
             },
             {
                 'name': 'codacy',
@@ -64,10 +85,11 @@ def testing(ctx):
                     'wget -qO - https://coverage.codacy.com/get.sh | sh -s report -l Javascript -r coverage/lcov.info',
                 ],
                 'environment': {
-                  'CODACY_PROJECT_TOKEN': {
-                     'from_secret': 'codacy_token',
-                  },
+                    'CODACY_PROJECT_TOKEN': {
+                        'from_secret': 'codacy_token',
+                    },
                 },
+                'depends_on': ['unit tests']
             },
         ],
         'trigger': {
@@ -78,6 +100,7 @@ def testing(ctx):
             ],
         },
     }
+
 
 def build(ctx):
     return {
@@ -143,7 +166,8 @@ def build(ctx):
                 'pull': 'always',
                 'commands': [
                     'mkdir tmp',
-                    'calens --version %s -o tmp/CHANGELOG.md' % ctx.build.ref.replace("refs/tags/v", "").split("-")[0],
+                    'calens --version %s -o tmp/CHANGELOG.md' % ctx.build.ref.replace(
+                        "refs/tags/v", "").split("-")[0],
                 ],
             },
             {
@@ -151,14 +175,14 @@ def build(ctx):
                 'image': 'plugins/github-release:1',
                 'pull': 'always',
                 'settings': {
-                'api_key': {
-                    'from_secret': 'github_token',
-                },
-                'files': [],
-                'title': ctx.build.ref.replace("refs/tags/v", ""),
-                'note': 'tmp/CHANGELOG.md',
-                'overwrite': True,
-                'prerelease': len(ctx.build.ref.split("-")) > 1,
+                    'api_key': {
+                        'from_secret': 'github_token',
+                    },
+                    'files': [],
+                    'title': ctx.build.ref.replace("refs/tags/v", ""),
+                    'note': 'tmp/CHANGELOG.md',
+                    'overwrite': True,
+                    'prerelease': len(ctx.build.ref.split("-")) > 1,
                 },
             },
         ],
@@ -168,104 +192,105 @@ def build(ctx):
             ],
         },
         'depends_on': [
-          'changelog',
-          'testing',
+            'changelog',
+            'testing',
         ],
     }
 
+
 def changelog(ctx):
-  repo_slug = ctx.build.source_repo if ctx.build.source_repo else ctx.repo.slug
-  return {
-    'kind': 'pipeline',
-    'type': 'docker',
-    'name': 'changelog',
-    'platform': {
-      'os': 'linux',
-      'arch': 'amd64',
-    },
-    'clone': {
-      'disable': True,
-    },
-    'steps': [
-      {
-        'name': 'clone',
-        'image': 'plugins/git-action:1',
-        'pull': 'always',
-        'settings': {
-          'actions': [
-            'clone',
-          ],
-          'remote': 'https://github.com/%s' % (repo_slug),
-          'branch': ctx.build.source if ctx.build.event == 'pull_request' else 'master',
-          'path': '/drone/src',
-          'netrc_machine': 'github.com',
-          'netrc_username': {
-            'from_secret': 'github_username',
-          },
-          'netrc_password': {
-            'from_secret': 'github_token',
-          },
+    repo_slug = ctx.build.source_repo if ctx.build.source_repo else ctx.repo.slug
+    return {
+        'kind': 'pipeline',
+        'type': 'docker',
+        'name': 'changelog',
+        'platform': {
+            'os': 'linux',
+            'arch': 'amd64',
         },
-      },
-      {
-				'name': 'generate',
-				'image': 'toolhippie/calens:latest',
-				'pull': 'always',
-				'commands': [
-					'calens >| CHANGELOG.md',
-				],
-			},
-      {
-        'name': 'diff',
-        'image': 'owncloudci/alpine:latest',
-        'pull': 'always',
-        'commands': [
-          'git diff',
-        ],
-      },
-      {
-        'name': 'output',
-        'image': 'owncloudci/alpine:latest',
-        'pull': 'always',
-        'commands': [
-          'cat CHANGELOG.md',
-        ],
-      },
-      {
-        'name': 'publish',
-        'image': 'plugins/git-action:1',
-        'pull': 'always',
-        'settings': {
-          'actions': [
-            'commit',
-            'push',
-          ],
-          'message': 'Automated changelog update [skip ci]',
-          'branch': 'master',
-          'author_email': 'devops@owncloud.com',
-          'author_name': 'ownClouders',
-          'netrc_machine': 'github.com',
-          'netrc_username': {
-            'from_secret': 'github_username',
-          },
-          'netrc_password': {
-            'from_secret': 'github_token',
-          },
+        'clone': {
+            'disable': True,
         },
-        'when': {
-          'ref': {
-            'exclude': [
-              'refs/pull/**',
+        'steps': [
+            {
+                'name': 'clone',
+                'image': 'plugins/git-action:1',
+                'pull': 'always',
+                'settings': {
+                    'actions': [
+                        'clone',
+                    ],
+                    'remote': 'https://github.com/%s' % (repo_slug),
+                    'branch': ctx.build.source if ctx.build.event == 'pull_request' else 'master',
+                    'path': '/drone/src',
+                    'netrc_machine': 'github.com',
+                    'netrc_username': {
+                        'from_secret': 'github_username',
+                    },
+                    'netrc_password': {
+                        'from_secret': 'github_token',
+                    },
+                },
+            },
+            {
+                'name': 'generate',
+                'image': 'toolhippie/calens:latest',
+                'pull': 'always',
+                'commands': [
+                    'calens >| CHANGELOG.md',
+                ],
+            },
+            {
+                'name': 'diff',
+                'image': 'owncloudci/alpine:latest',
+                'pull': 'always',
+                'commands': [
+                    'git diff',
+                ],
+            },
+            {
+                'name': 'output',
+                'image': 'owncloudci/alpine:latest',
+                'pull': 'always',
+                'commands': [
+                    'cat CHANGELOG.md',
+                ],
+            },
+            {
+                'name': 'publish',
+                'image': 'plugins/git-action:1',
+                'pull': 'always',
+                'settings': {
+                    'actions': [
+                        'commit',
+                        'push',
+                    ],
+                    'message': 'Automated changelog update [skip ci]',
+                    'branch': 'master',
+                    'author_email': 'devops@owncloud.com',
+                    'author_name': 'ownClouders',
+                    'netrc_machine': 'github.com',
+                    'netrc_username': {
+                        'from_secret': 'github_username',
+                    },
+                    'netrc_password': {
+                        'from_secret': 'github_token',
+                    },
+                },
+                'when': {
+                    'ref': {
+                        'exclude': [
+                            'refs/pull/**',
+                        ],
+                    },
+                },
+            },
+        ],
+        'depends_on': [],
+        'trigger': {
+            'ref': [
+                'refs/heads/master',
+                'refs/pull/**',
             ],
-          },
         },
-      },
-    ],
-    'depends_on': [],
-    'trigger': {
-      'ref': [
-        'refs/heads/master',
-        'refs/pull/**',
-      ],
-    },
-  }
+    }
