@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OcResourceName displays full path 1`] = `<div uk-tooltip="images/nature/forest.jpg" class="oc-resource-name"><span class="oc-resource-path">…/nature/</span> <span class="oc-resource-basename">forest</span> <span class="oc-resource-extension">.jpg</span></div>`;
+
+exports[`OcResourceName displays only direct parent 1`] = `<div class="oc-resource-name"><span class="oc-resource-path">Documents/</span> <span class="oc-resource-basename">notes</span> <span class="oc-resource-extension">.txt</span></div>`;
+
+exports[`OcResourceName doesn't add extension to hidden folder 1`] = `
+<div class="oc-resource-name">
+  <!----> <span class="oc-resource-basename">.hidden</span>
+  <!---->
+</div>
+`;
+
+exports[`OcResourceName hides the path if not enabled 1`] = `
+<div class="oc-resource-name">
+  <!----> <span class="oc-resource-basename">forest</span> <span class="oc-resource-extension">.jpg</span>
+</div>
+`;

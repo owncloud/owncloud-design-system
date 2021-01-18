@@ -8,9 +8,12 @@ import statusLabels from "./utils/statusLabels"
 import activeNav from "./utils/activeNav"
 import filterSearch from "./utils/filterSearch"
 import "codemirror/mode/jsx/jsx"
+// Vue-gettext is bundled only in the docs. The design system itself depends on the consuming app in providing it
+import GetTextPlugin from "vue-gettext"
 
 Vue.config.productionTip = false
 Vue.mixin(statusLabels)
+Vue.use(GetTextPlugin, { translations: {} })
 
 document.addEventListener("DOMContentLoaded", () => {
   filterSearch.methods.init()

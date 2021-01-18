@@ -77,7 +77,7 @@
 import OcSpinner from "../components/OcSpinner"
 
 import UiKit from "uikit"
-import * as _uniqueId from "../utils/uniqueId"
+import uniqueId from "../utils/uniqueId"
 
 /**
  * The autocomplete component is used for searching in bigger list of data (usually involves remote calls over the network)
@@ -124,7 +124,7 @@ export default {
      */
     text: {
       type: Object,
-      default: function() {
+      default: function () {
         return {}
       },
     },
@@ -155,7 +155,7 @@ export default {
      */
     items: {
       type: Array,
-      default: function() {
+      default: function () {
         return []
       },
     },
@@ -236,16 +236,16 @@ export default {
       })
     },
     $_ocAutocomplete_dropdownId() {
-      return _uniqueId("oc-autocomplete-dropdown-")
+      return uniqueId("oc-autocomplete-dropdown-")
     },
     $_ocAutocomplete_listboxId() {
-      return _uniqueId("oc-autocomplete-listbox-")
+      return uniqueId("oc-autocomplete-listbox-")
     },
     $_ocAutocomplete_descriptionId() {
-      return _uniqueId("oc-autocomplete-description-")
+      return uniqueId("oc-autocomplete-description-")
     },
     $_ocAutocomplete_boundryId() {
-      return _uniqueId("oc-autocomplete-boundry-")
+      return uniqueId("oc-autocomplete-boundry-")
     },
     $_ocAutocomplete_dropdown() {
       return UiKit.drop(`#${this.$_ocAutocomplete_dropdownId}`)
@@ -292,7 +292,7 @@ export default {
        */
       this.$emit("update:input", value)
     },
-    $_ocAutocomplete_selectSuggestion: function() {
+    $_ocAutocomplete_selectSuggestion: function () {
       if (this.$_ocAutocomplete_matchesShown[this.highlighted]) {
         this.$emit("input", this.$_ocAutocomplete_matchesShown[this.highlighted])
         this.expanded = false

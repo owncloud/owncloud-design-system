@@ -1,5 +1,5 @@
 <template>
-  <label :for="$_ocRadio_id" :class="{'oc-cursor-pointer': !disabled}">
+  <label :for="$_ocRadio_id" :class="{ 'oc-cursor-pointer': !disabled }">
     <input
       type="radio"
       name="radio"
@@ -15,7 +15,7 @@
 </template>
 <script>
 import { getSizeClass } from "../utils/sizeClasses"
-import * as _uniqueId from "../utils/uniqueId"
+import uniqueId from "../utils/uniqueId"
 /**
  * The radio element. Can be grouped to give the user to choose between different options.
  */
@@ -29,7 +29,7 @@ export default {
      */
     id: {
       type: String,
-      required: false
+      required: false,
     },
     /**
      * Disables the radio button
@@ -94,15 +94,15 @@ export default {
       },
       set(value) {
         this.$emit("input", value)
-      }
+      },
     },
     $_ocRadio_id() {
-      return this.id || _uniqueId("oc-radio-")
+      return this.id || uniqueId("oc-radio-")
     },
     $_ocRadio_classes() {
       return ["oc-radio", "oc-radio-" + getSizeClass(this.size)]
     },
-  }
+  },
 }
 </script>
 <docs>
