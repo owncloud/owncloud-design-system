@@ -10,7 +10,7 @@ imports:
   - ./size.yml
   - ./timing.yml
   - ./z-index.yml
-  - ./media-query.yml
+  - ./breakpoints.yml
   - ./box-shadow.yml
   - ./letter-spacing.yml
   - ./border-radius.yml

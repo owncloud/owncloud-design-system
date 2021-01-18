@@ -1,0 +1,33 @@
+#
+# BREAKPOINTS TOKENS
+# Use these tokens to set media query width ranges.
+#
+
+props:
+  breakpoint-small:
+    value: "640px"
+
+  breakpoint-medium:
+    value: "960px"
+
+  breakpoint-large:
+    value: "1200px"
+
+  breakpoint-xlarge:
+    value: "1600px"
+
+  breakpoint-xsmall-max:
+    value: "639px"
+
+  breakpoint-small-max:
+    value: "959px"
+
+  breakpoint-medium-max:
+    value: "1199px"
+
+  breakpoint-large-max:
+    value: "1599px"
+
+global:
+  type: number
+  category: breakpoints

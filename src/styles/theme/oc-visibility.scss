@@ -1,0 +1,73 @@
+/*
+ * Hidden
+ * `hidden` attribute also set here to make it stronger
+ */
+
+[hidden],
+.oc-hidden {
+  display: none !important;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small) {
+  .oc-hidden\@s {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+  .oc-hidden\@m {
+    display: none !important;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+  .oc-hidden\@l {
+    display: none !important;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+  .oc-hidden\@xl {
+    display: none !important;
+  }
+}
+
+/*
+ * Visible
+ */
+
+.oc-invisible {
+  visibility: hidden !important;
+}
+
+/* Phone portrait and smaller */
+@media (max-width: $breakpoint-xsmall-max) {
+  .oc-visible\@s {
+    display: none !important;
+  }
+}
+
+/* Phone landscape and smaller */
+@media (max-width: $breakpoint-small-max) {
+  .oc-visible\@m {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape and smaller */
+@media (max-width: $breakpoint-medium-max) {
+  .oc-visible\@l {
+    display: none !important;
+  }
+}
+
+/* Desktop and smaller */
+@media (max-width: $breakpoint-large-max) {
+  .oc-visible\@xl {
+    display: none !important;
+  }
+}
