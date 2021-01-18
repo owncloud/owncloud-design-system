@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Create new table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
+* Enhancement - Introduce breakpoints tokens and utility classes: [#1045](https://github.com/owncloud/owncloud-design-system/pull/1045)
 * Enhancement - Create new files table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
 
 ## Details
@@ -19,6 +20,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/ocis/issues/1177
    https://github.com/owncloud/owncloud-design-system/pull/1034
+
+
+* Enhancement - Introduce breakpoints tokens and utility classes: [#1045](https://github.com/owncloud/owncloud-design-system/pull/1045)
+
+   We've added tokens and utility classes to dynamically display/hide content depending on the
+   breakpoints.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1045
 
 
 * Enhancement - Create new files table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
