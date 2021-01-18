@@ -19,7 +19,7 @@
  * - [ ] add capability to have the topbar stick to the browser window - remaining content is scrollable
  */
 export default {
-  name: "oc-app-bar",
+  name: "OcAppBar",
   status: "review",
   release: "1.0.0",
 }

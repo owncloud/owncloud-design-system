@@ -9,7 +9,7 @@
  * The Grid system allows you to arrange block elements in columns.
  */
 export default {
-  name: "oc-grid",
+  name: "OcGrid",
   status: "prototype",
   release: "1.0.0",
   props: {

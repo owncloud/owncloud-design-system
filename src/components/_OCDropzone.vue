@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: "oc-dropzone",
+  name: "OcDropzone",
   status: "review",
   release: "0.0.1",
 }

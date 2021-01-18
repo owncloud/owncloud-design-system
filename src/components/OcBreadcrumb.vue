@@ -3,7 +3,7 @@
     <ul class="oc-breadcrumb-list">
       <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
         <router-link v-if="home && index === 0" :to="item.to" class="uk-flex uk-float-left">
-          <oc-icon name="home"/>
+          <oc-icon name="home" />
         </router-link>
         <router-link v-else-if="item.to" :to="item.to">{{ item.text }}</router-link>
         <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
@@ -44,13 +44,13 @@ import OcIcon from "./OcIcon.vue"
  *
  */
 export default {
-  name: "oc-breadcrumb",
+  name: "OcBreadcrumb",
   status: "review",
   release: "1.0.0",
 
   components: {
     OcDrop,
-    OcIcon
+    OcIcon,
   },
 
   props: {
@@ -77,8 +77,8 @@ export default {
       type: String,
       required: false,
       default: "default",
-      validator: value => value === "lead" || value === "default"
-    }
+      validator: value => value === "lead" || value === "default",
+    },
   },
   computed: {
     $_ocBreadcrumb_dropdownItems() {

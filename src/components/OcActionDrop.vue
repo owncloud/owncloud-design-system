@@ -1,9 +1,9 @@
 <template>
-  <div class="oc-dropdown-wrapper" ref="menu" @keyup.esc="closeHandler(true)">
+  <div ref="menu" class="oc-dropdown-wrapper" @keyup.esc="closeHandler(true)">
     <oc-button
+      ref="button"
       :aria-expanded="isOpen.toString()"
       :variation="buttonVariation"
-      ref="button"
       aria-haspopup="true"
       @click="toggleDropdown"
       @keydown.native.enter.prevent="openMenuAndFocus(0)"
@@ -14,9 +14,9 @@
       <slot name="button"></slot>
     </oc-button>
     <div
+      ref="dropdown"
       class="uk-card-default oc-dropdown-menu"
       role="menu"
-      ref="dropdown"
       :hidden="!isOpen"
       @click="closeHandler"
       @keydown.down.prevent="focusNext"
@@ -61,17 +61,9 @@
  *
  * */
 export default {
-  name: "oc-action-drop",
+  name: "OcActionDrop",
   status: "review",
   release: "1.0.0",
-  data: () => {
-    return {
-      isOpen: false,
-      focusableElements: "button, [tabindex='0']",
-      focusables: null,
-      focusedMenuItem: null,
-    }
-  },
   props: {
     /**
      * Supplies button variation to give additional meaning.
@@ -83,7 +75,34 @@ export default {
       validator: value => {
         return value.match(/(default|primary|danger)/)
       },
+    },
+  },
+  data: () => {
+    return {
+      isOpen: false,
+      focusableElements: "button, [tabindex='0']",
+      focusables: null,
+      focusedMenuItem: null,
     }
+  },
+  created() {
+    // Add a general event listener to catch outside clicks
+    document.addEventListener("click", this.documentClick)
+  },
+  destroyed: function () {
+    // Remove the general event listener to catch outside clicks
+    document.removeEventListener("click", this.documentClick)
+  },
+  mounted() {
+    // Add ESC key event listener
+    window.addEventListener("keyup", e => {
+      if (e.key === "Escape") {
+        this.closeHandler()
+      }
+    })
+  },
+  updated: function () {
+    this.focusables = this.$refs.dropdown.querySelectorAll(this.focusableElements)
   },
   methods: {
     toggleDropdown() {
@@ -130,25 +149,6 @@ export default {
         this.focusables[index].focus()
       }, 0)
     },
-  },
-  created() {
-    // Add a general event listener to catch outside clicks
-    document.addEventListener("click", this.documentClick)
-  },
-  destroyed: function() {
-    // Remove the general event listener to catch outside clicks
-    document.removeEventListener("click", this.documentClick)
-  },
-  mounted() {
-    // Add ESC key event listener
-    window.addEventListener("keyup", e => {
-      if (e.key === "Escape") {
-        this.closeHandler()
-      }
-    })
-  },
-  updated: function() {
-    this.focusables = this.$refs.dropdown.querySelectorAll(this.focusableElements)
   },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <span v-text="formattedSize" class="oc-resource-size" />
+  <span class="oc-resource-size" v-text="formattedSize" />
 </template>
 
 <script>
@@ -20,8 +20,8 @@ export default {
      */
     size: {
       type: [String, Number],
-      required: true
-    }
+      required: true,
+    },
   },
 
   computed: {
@@ -38,10 +38,10 @@ export default {
 
       return filesize(this.size, {
         round: this.size < mb ? 0 : 1,
-        locale: this.$language.current
+        locale: this.$language.current,
       })
     },
-  }
+  },
 }
 </script>
 

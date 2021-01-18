@@ -1,7 +1,7 @@
 <template>
   <span
-    class="oc-visually-hidden oc-hidden-announcer"
     :id="id"
+    class="oc-visually-hidden oc-hidden-announcer"
     :aria-live="level"
     aria-atomic="true"
     v-text="announcement"
@@ -22,21 +22,9 @@
  * Debug live regions without starting a screen reader using [NerdeRegion](https://chrome.google.com/webstore/detail/nerderegion/lkcampbojgmgobcfinlkgkodlnlpjieb).
  */
 export default {
-  name: "oc-hidden-announcer",
+  name: "OcHiddenAnnouncer",
   status: "review",
   release: "1.0.0",
-  data() {
-    return {
-      // Generate id for compatibility reasons
-      id:
-        Math.random()
-          .toString(36)
-          .substring(2, 15) +
-        Math.random()
-          .toString(36)
-          .substring(2, 15),
-    }
-  },
   props: {
     /**
      * `polite` adds the announcement to the screen reader speech queue at the end, `assertive` forces it to output directly, `off` disables the live region
@@ -54,6 +42,12 @@ export default {
       required: true,
       default: "",
     },
+  },
+  data() {
+    return {
+      // Generate id for compatibility reasons
+      id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+    }
   },
 }
 </script>

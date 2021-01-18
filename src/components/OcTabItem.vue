@@ -10,7 +10,7 @@
  * Create a tab item.
  */
 export default {
-  name: "oc-tab-item",
+  name: "OcTabItem",
   status: "prototype",
   release: "1.0.0",
   props: {

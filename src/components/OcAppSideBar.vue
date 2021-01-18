@@ -35,7 +35,7 @@
  * in the corner.
  */
 export default {
-  name: "oc-app-side-bar",
+  name: "OcAppSideBar",
   status: "prototype",
   release: "1.0.0",
   props: {

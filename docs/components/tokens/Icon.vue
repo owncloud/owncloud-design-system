@@ -24,11 +24,7 @@ export default {
   data() {
     return {
       icons: req.keys().map(filename => {
-        return filename
-          .split(".")
-          .slice(0, -1)
-          .join(".")
-          .substring(2)
+        return filename.split(".").slice(0, -1).join(".").substring(2)
       }),
     }
   },

@@ -53,17 +53,17 @@ import orderBy from "../../utils/orderBy"
  */
 export default {
   name: "All",
-  methods: {
-    orderData: function(data) {
-      let byName = orderBy(data, "name", "asc")
-      let byCategoryAndName = orderBy(byName, "category")
-      return byCategoryAndName
-    },
-  },
   data() {
     return {
       tokens: this.orderData(designTokens.props),
     }
+  },
+  methods: {
+    orderData: function (data) {
+      let byName = orderBy(data, "name", "asc")
+      let byCategoryAndName = orderBy(byName, "category")
+      return byCategoryAndName
+    },
   },
 }
 </script>

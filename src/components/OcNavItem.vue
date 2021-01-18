@@ -20,7 +20,7 @@
  * - [ ] Add router-link capabilities
  */
 export default {
-  name: "oc-nav-item",
+  name: "OcNavItem",
   status: "prototype",
   release: "0.0.1",
   props: {

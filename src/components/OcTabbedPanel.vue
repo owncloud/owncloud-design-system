@@ -1,5 +1,5 @@
 <template>
-  <div role="tabpanel" :id="id" aria-labelledby>
+  <div :id="id" role="tabpanel" aria-labelledby>
     <slot />
   </div>
 </template>
@@ -8,21 +8,22 @@
  * Create a panel item (for a tab component).
  */
 export default {
-  name: "oc-tabbed-panel",
+  name: "OcTabbedPanel",
   status: "prototype",
   release: "1.0.0",
-  data() {
-    return {
-      id: null,
-    }
-  },
   props: {
     /**
      * Name of the panel.
      */
     name: {
       type: String,
+      required: true,
     },
+  },
+  data() {
+    return {
+      id: null,
+    }
   },
   mounted() {
     this.id = `panel-${this.name}`

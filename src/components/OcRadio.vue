@@ -1,16 +1,16 @@
 <template>
-  <label :for="$_ocRadio_id" :class="{ 'oc-cursor-pointer': !disabled }">
+  <label :for="id" :class="{ 'oc-cursor-pointer': !disabled }">
     <input
+      :id="id"
+      v-model="$_ocRadio_model"
       type="radio"
       name="radio"
-      :id="$_ocRadio_id"
       :aria-label="label"
       :class="$_ocRadio_classes"
-      v-model="$_ocRadio_model"
       :value="option"
       :disabled="disabled"
     />
-    <span v-if="!hideLabel" v-text="label" :aria-hidden="true" />
+    <span v-if="!hideLabel" :aria-hidden="true" v-text="label" />
   </label>
 </template>
 <script>
@@ -20,7 +20,7 @@ import uniqueId from "../utils/uniqueId"
  * The radio element. Can be grouped to give the user to choose between different options.
  */
 export default {
-  name: "oc-radio",
+  name: "OcRadio",
   status: "review",
   release: "1.0.0",
   props: {
@@ -30,6 +30,7 @@ export default {
     id: {
       type: String,
       required: false,
+      default: uniqueId("oc-radio-"),
     },
     /**
      * Disables the radio button
@@ -46,14 +47,17 @@ export default {
      *
      * Can be any type.
      **/
+    // eslint-disable-next-line vue/require-prop-types
     value: {
       required: false,
+      default: false,
     },
     /**
      * The value of this radio button. Can be omitted if the radio button is not used in a group.
      *
      * Can be of any type.
      */
+    // eslint-disable-next-line vue/require-prop-types
     option: {
       required: false,
       default: null,
@@ -95,9 +99,6 @@ export default {
       set(value) {
         this.$emit("input", value)
       },
-    },
-    $_ocRadio_id() {
-      return this.id || uniqueId("oc-radio-")
     },
     $_ocRadio_classes() {
       return ["oc-radio", "oc-radio-" + getSizeClass(this.size)]

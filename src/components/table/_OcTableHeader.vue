@@ -5,9 +5,9 @@
 </template>
 <script>
 export default {
-  name: "oc-thead",
+  name: "OcThead",
   status: "review",
-  release: "2.1.0"
+  release: "2.1.0",
 }
 </script>
 <style lang="scss" scoped>

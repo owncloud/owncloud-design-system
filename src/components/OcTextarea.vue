@@ -3,10 +3,10 @@
     class="uk-textarea"
     :value="value"
     :placeholder="placeholder"
+    :aria-label="label"
     @input="$_ocTextArea_onInput($event.target.value)"
     @focus="$_ocTextArea_onFocus($event.target.value)"
     @keydown="$_ocTextArea_onKeyDown($event)"
-    :aria-label="label"
   />
 </template>
 
@@ -20,7 +20,7 @@
  * The attributes `placeholder` and `aria-label` have different functions. The first specifies a short hint describing the expected value of an input field/text area, or gives an example (e.g. email@example.com). `aria-label` provides the accessible name of the textarea (e.g. "Your address", "Comment",...).
  */
 export default {
-  name: "oc-textarea",
+  name: "OcTextarea",
   status: "review",
   release: "1.0.0",
   props: {

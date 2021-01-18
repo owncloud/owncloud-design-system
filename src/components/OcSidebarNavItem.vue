@@ -1,12 +1,10 @@
 <template>
   <li :class="$_ocSidebarNavItem_class">
-    <router-link
-      :to="target"
-    >
+    <router-link :to="target">
       <oc-icon :name="icon" aria-hidden="true" />
       <slot name="default" />
     </router-link>
-    <ul class="uk-nav-sub" v-if="$slots.subnav">
+    <ul v-if="$slots.subnav" class="uk-nav-sub">
       <slot name="subnav" />
     </ul>
   </li>
@@ -15,11 +13,11 @@
 import OcIcon from "./OcIcon.vue"
 
 export default {
-  name: "oc-sidebar-nav-item",
+  name: "OcSidebarNavItem",
   status: "prototype",
   release: "1.0.0",
   components: {
-    OcIcon
+    OcIcon,
   },
   props: {
     active: {

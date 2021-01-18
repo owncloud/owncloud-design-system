@@ -8,12 +8,13 @@
 </template>
 <script>
 import UiKit from "uikit"
+import uniqueId from "../utils/uniqueId"
 
 /**
  * Position any element in relation to another element.
  */
 export default {
-  name: "oc-drop",
+  name: "OcDrop",
   status: "review",
   release: "1.0.0",
   props: {
@@ -23,6 +24,7 @@ export default {
     dropId: {
       type: String,
       required: false,
+      default: uniqueId("oc-drop-"),
     },
     /**
      * CSS selector of the element to maintain the drop's visibility. see https://getuikit.com/docs/drop#boundary

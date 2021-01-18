@@ -1,6 +1,6 @@
 <template>
   <div class="oc-switch" :data-state="state" @click="toggle">
-    <input type="checkbox" ref="input" :aria-label="label" v-model="checked" />
+    <input ref="input" v-model="checked" type="checkbox" :aria-label="label" />
   </div>
 </template>
 <script>
@@ -8,7 +8,7 @@
  * The switch has two states between users can choose.
  */
 export default {
-  name: "oc-switch",
+  name: "OcSwitch",
   status: "review",
   release: "1.0.0",
   model: {
@@ -46,7 +46,7 @@ export default {
     },
   },
   watch: {
-    checked: function(val) {
+    checked: function (val) {
       /**
        * Change event
        * @event change

@@ -1,5 +1,5 @@
 <template>
-  <component :class="$_ocTag_class" :is="type" :to="to" @click="$_ocTag_click">
+  <component :is="type" :class="$_ocTag_class" :to="to" @click="$_ocTag_click">
     <!-- @slot Content of the tag -->
     <slot />
   </component>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "oc-tag",
+  name: "OcTag",
 
   props: {
     /**
@@ -18,7 +18,7 @@ export default {
       type: String,
       required: false,
       default: "span",
-      validator: (type) => type.match(/(span|button|router-link|a)/)
+      validator: type => type.match(/(span|button|router-link|a)/),
     },
 
     /**
@@ -27,8 +27,8 @@ export default {
     to: {
       type: [String, Object],
       required: false,
-      default: null
-    }
+      default: null,
+    },
   },
 
   computed: {
@@ -40,7 +40,7 @@ export default {
         : classes.push(`oc-tag-${this.type}`)
 
       return classes
-    }
+    },
   },
 
   methods: {
@@ -50,8 +50,8 @@ export default {
        * @type {event}
        */
       this.$emit("click", event)
-    }
-  }
+    },
+  },
 }
 </script>
 

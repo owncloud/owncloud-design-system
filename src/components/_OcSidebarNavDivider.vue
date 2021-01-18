@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "oc-sidebar-nav-divider",
+  name: "OcSidebarNavDivider",
   status: "prototype",
   release: "1.0.0",
   props: {},

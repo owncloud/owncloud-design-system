@@ -3,8 +3,8 @@
     <template v-for="indicator in indicators">
       <oc-button
         v-if="hasHandler(indicator)"
-        :key="indicator.id"
         :id="indicator.id"
+        :key="indicator.id"
         class="oc-status-indicators-indicator"
         :aria-label="indicator.label"
         :uk-tooltip="indicator.label"
@@ -15,10 +15,10 @@
       </oc-button>
       <oc-icon
         v-else
-        tabindex="-1"
-        class="oc-status-indicators-indicator"
         :id="indicator.id"
         :key="indicator.id"
+        tabindex="-1"
+        class="oc-status-indicators-indicator"
         :name="indicator.icon"
         :aria-label="indicator.label"
         :uk-tooltip="indicator.label"
@@ -36,7 +36,7 @@ import OcButton from "./OcButton.vue"
  * Status indicators which can be attatched to a resource
  */
 export default {
-  name: "oc-status-indicators",
+  name: "OcStatusIndicators",
   status: "review",
   release: "2.0.1",
 

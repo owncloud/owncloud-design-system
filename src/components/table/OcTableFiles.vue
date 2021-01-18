@@ -3,11 +3,11 @@
     :data="resources"
     :fields="fields"
     :highlighted="highlighted"
-    @highlight="showDetails"
     :row-height="rowHeight"
     :sticky="true"
+    @highlight="showDetails"
   >
-    <template v-slot:selectHeader>
+    <template #selectHeader>
       <div class="oc-table-files-select-all">
         <oc-checkbox
           id="oc-table-files-select-all"
@@ -18,7 +18,7 @@
         />
       </div>
     </template>
-    <template v-slot:select="rowData">
+    <template #select="rowData">
       <oc-checkbox
         :id="`oc-table-files-select-${rowData.item.id}`"
         :label="$gettext('Select')"
@@ -30,7 +30,7 @@
         @click.native.stop
       />
     </template>
-    <template v-slot:name="rowData">
+    <template #name="rowData">
       <oc-resource
         :resource="rowData.item"
         :is-path-displayed="arePathsDisplayed"
@@ -40,11 +40,11 @@
         @click="emitFileClick(rowData.item)"
       />
     </template>
-    <template v-slot:status="rowData">
+    <template #status="rowData">
       <!-- @slot Status column -->
       <slot name="status" :resource="rowData.item" />
     </template>
-    <template v-slot:sharedWith="rowData">
+    <template #sharedWith="rowData">
       <oc-avatar-group
         class="oc-table-files-people"
         :users="rowData.item.sharedWith"
@@ -53,25 +53,25 @@
         :is-tooltip-displayed="true"
       />
     </template>
-    <template v-slot:size="rowData">
+    <template #size="rowData">
       <oc-resource-size :size="rowData.item.size" />
     </template>
-    <template v-slot:owner="rowData">
+    <template #owner="rowData">
       <oc-avatar-group
         class="oc-table-files-people"
         :users="rowData.item.owner"
         :is-tooltip-displayed="true"
       />
     </template>
-    <template v-slot:actions="rowData">
+    <template #actions="rowData">
       <div class="oc-table-files-actions">
         <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
         <slot name="quickActions" :resource="rowData.item" />
         <oc-button
           :aria-label="$gettext('Show details')"
           class="oc-table-files-btn-show-details"
-          @click="showDetails(rowData.item)"
           variation="raw"
+          @click="showDetails(rowData.item)"
         >
           <oc-icon name="more_vert" aria-hidden="true" />
         </oc-button>
@@ -190,13 +190,15 @@ export default {
       }
 
       const firstResource = this.resources[0]
-      const fields = [{
-        name: "select",
-        title: "",
-        type: "slot",
-        headerType: "slot",
-        width: "shrink",
-      }]
+      const fields = [
+        {
+          name: "select",
+          title: "",
+          type: "slot",
+          headerType: "slot",
+          width: "shrink",
+        },
+      ]
       fields.push(
         ...[
           {

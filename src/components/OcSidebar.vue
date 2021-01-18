@@ -5,8 +5,8 @@
         v-if="fixed"
         class="oc-sidebar-button-close"
         variation="raw"
-        @click="$_ocSidebar_buttonClose_click"
         :aria-label="closeButtonLabel"
+        @click="$_ocSidebar_buttonClose_click"
       >
         <oc-icon name="close" aria-hidden="true" />
       </oc-button>
@@ -62,7 +62,7 @@ import OcButton from "./OcButton.vue"
 import OcIcon from "./OcIcon.vue"
 
 export default {
-  name: "oc-sidebar",
+  name: "OcSidebar",
   status: "ready",
   released: "1.5.0",
 
@@ -80,6 +80,7 @@ export default {
     logoImg: {
       type: String,
       required: false,
+      default: null,
     },
     /**
      * Name of the product where the sidebar is used

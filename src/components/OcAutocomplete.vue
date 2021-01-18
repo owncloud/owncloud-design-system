@@ -1,6 +1,8 @@
 <template>
   <div class="oc-autocomplete">
     <input
+      ref="$_ocAutocompleteInput"
+      v-model="input"
       class="oc-autocomplete-input"
       autocomplete="off"
       role="combobox"
@@ -10,34 +12,33 @@
       :aria-activedescendant="$_ocAutocomplete_optionId(highlighted)"
       :aria-label="ariaLabel"
       :aria-describedby="$_ocAutocomplete_descriptionId"
-      v-model="input"
       :placeholder="placeholder"
       :disabled="disabled"
-      ref="$_ocAutocompleteInput"
       @keydown.up.prevent="highlighted--"
       @keydown.down.prevent="highlighted++"
       @keydown.enter="$_ocAutocomplete_selectSuggestion"
       @keydown.esc="$_ocAutocomplete_dropdown.hide"
       @focus="$_ocAutocomplete_focus"
     />
-    <div hidden :id="$_ocAutocomplete_boundryId" />
+    <div :id="$_ocAutocomplete_boundryId" hidden />
     <div
+      :id="$_ocAutocomplete_dropdownId"
       :ref="$_ocAutocomplete_dropdownId"
       class="oc-autocomplete-dropdown uk-overflow-auto"
       :class="dropdownClass"
       :uk-drop="'mode:click;delay-hide:0;toggle:#' + $_ocAutocomplete_boundryId"
-      :id="$_ocAutocomplete_dropdownId"
     >
       <ul
-        class="oc-autocomplete-suggestion-list"
-        role="listbox"
         :id="$_ocAutocomplete_listboxId"
         ref="listbox"
+        class="oc-autocomplete-suggestion-list"
+        role="listbox"
       >
         <template v-for="(item, i) in $_ocAutocomplete_matchesShown">
           <li
-            role="option"
             :id="$_ocAutocomplete_optionId(i)"
+            :key="i"
+            role="option"
             :aria-posinset="i + 1"
             :aria-setsize="$_ocAutocomplete_matchesShown.length"
             :aria-selected="i === highlighted"
@@ -45,11 +46,10 @@
               'oc-autocomplete-suggestion',
               { 'oc-autocomplete-suggestion-selected': i === highlighted },
             ]"
-            :key="i"
             @mouseenter="highlighted = i"
             @click="$_ocAutocomplete_selectSuggestion"
           >
-            <slot name="item" v-bind:item="item">
+            <slot name="item" :item="item">
               <!-- Fallback content -->
               {{ item }}
             </slot>
@@ -70,7 +70,7 @@
         </li>
       </ul>
     </div>
-    <div hidden :id="$_ocAutocomplete_descriptionId" v-text="ariaDescription" />
+    <div :id="$_ocAutocomplete_descriptionId" hidden v-text="ariaDescription" />
   </div>
 </template>
 <script>
@@ -91,7 +91,7 @@ import uniqueId from "../utils/uniqueId"
  *  Please provide at least an accessible name via the `ariaLabel` prop. By default this component comes with a description to screen reader users on how to use this component (it is a thin line of when it is good to supply help text for screen reader users and [when it's just too verbose](https://adrianroselli.com/2019/10/stop-giving-control-hints-to-screen-readers.html)). This description text is `When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.` but can be overridden with the `ariaDescription` prop.
  */
 export default {
-  name: "oc-autocomplete",
+  name: "OcAutocomplete",
   components: { OcSpinner },
   status: "review",
   release: "1.0.0",
@@ -102,6 +102,7 @@ export default {
     placeholder: {
       type: String,
       required: false,
+      default: null,
     },
     /**
      * Label (accessible name) of the input
@@ -181,6 +182,7 @@ export default {
     dropdownClass: {
       type: String,
       required: false,
+      default: null,
     },
     /**
      * After selection of a suggestion, should the input be filled?
@@ -200,20 +202,6 @@ export default {
       selectionText: "",
       overflowingMatches: this.$_ocAutocomplete_matchesOverflowing,
     }
-  },
-  mounted() {
-    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "show", () => {
-      let dd = this.$refs[this.$_ocAutocomplete_dropdownId],
-        ddOffsetTop = Math.floor(dd.getBoundingClientRect().top) - 20,
-        maxHeight = `calc(100vh - ${ddOffsetTop}px )`
-
-      dd.style.maxHeight = maxHeight
-      this.ariaExpanded = true
-    })
-
-    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "hide", () => {
-      this.ariaExpanded = false
-    })
   },
   computed: {
     $_ocAutocomplete_matchesShown() {
@@ -284,6 +272,20 @@ export default {
       }
     },
   },
+  mounted() {
+    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "show", () => {
+      let dd = this.$refs[this.$_ocAutocomplete_dropdownId],
+        ddOffsetTop = Math.floor(dd.getBoundingClientRect().top) - 20,
+        maxHeight = `calc(100vh - ${ddOffsetTop}px )`
+
+      dd.style.maxHeight = maxHeight
+      this.ariaExpanded = true
+    })
+
+    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "hide", () => {
+      this.ariaExpanded = false
+    })
+  },
   methods: {
     $_ocAutocomplete_userInput(value) {
       /**
@@ -307,7 +309,8 @@ export default {
     },
     $_ocAutocomplete_getSelectionText(index) {
       const selectionText = this.$refs.listbox
-        .querySelectorAll("[role='option']")[index].textContent.trim()
+        .querySelectorAll("[role='option']")
+        [index].textContent.trim()
       this.selectionText = selectionText
       return selectionText
     },

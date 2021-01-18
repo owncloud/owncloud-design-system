@@ -23,7 +23,7 @@ import OcAvatarCount from "./OcAvatarCount.vue"
  * Display a group of avatars
  */
 export default {
-  name: "oc-avatar-group",
+  name: "OcAvatarGroup",
   status: "review",
   release: "2.1.0",
 

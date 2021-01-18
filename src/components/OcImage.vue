@@ -7,7 +7,7 @@
  *
  */
 export default {
-  name: "oc-img",
+  name: "OcImg",
   status: "review",
   release: "1.0.0",
   props: {
@@ -24,15 +24,17 @@ export default {
      * The alt-attribute of the image.
      */
     alt: {
-      required: false,
       type: String,
+      required: false,
+      default: null,
     },
     /**
      * The title of the image. Displayed when hover.
      */
     title: {
-      required: false,
       type: String,
+      required: false,
+      default: null,
     },
   },
 }

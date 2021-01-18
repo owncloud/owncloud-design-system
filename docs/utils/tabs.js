@@ -23,7 +23,7 @@ export default {
   init() {
     const tabs = document.querySelectorAll(".vueds-tab")
     if (tabs) {
-      tabs.forEach(function(element) {
+      tabs.forEach(function (element) {
         element.addEventListener("click", event => {
           event.preventDefault()
           document.querySelector(".vueds-tab--active").classList.remove("vueds-tab--active")

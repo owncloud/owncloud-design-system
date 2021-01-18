@@ -30,9 +30,9 @@
       </oc-button>
     </component>
     <div
+      :id="$_ocAccordionItem_contentId"
       class="oc-accordion-content"
       :aria-labelledby="$_ocAccordionItem_titleId"
-      :id="$_ocAccordionItem_contentId"
       role="region"
     >
       <!-- @slot Content of the accordion item -->
@@ -43,7 +43,7 @@
 <script>
 import uniqueId from "../utils/uniqueId"
 export default {
-  name: "oc-accordion-item",
+  name: "OcAccordionItem",
   status: "review",
   release: "1.0.0",
   props: {

@@ -25,17 +25,17 @@ import orderBy from "../../utils/orderBy"
  */
 export default {
   name: "Spacing",
+  computed: {
+    tokens() {
+      return this.orderData(designTokens.props).filter(token => token.category === "space")
+    },
+  },
   methods: {
-    orderData: function(data) {
+    orderData: function (data) {
       let order = orderBy(data, "category", "asc")
       return order
     },
   },
-  computed: {
-    tokens () {
-      return this.orderData(designTokens.props).filter(token => token.category === "space")
-    }
-  }
 }
 </script>
 

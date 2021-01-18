@@ -15,7 +15,7 @@ import Avatar from "vue-avatar"
  * Avatar is a thumbnail representing user or group
  */
 export default {
-  name: "oc-avatar",
+  name: "OcAvatar",
   status: "review",
   release: "1.0.0",
   components: {

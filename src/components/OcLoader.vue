@@ -1,12 +1,12 @@
 <template>
-  <div :class="['oc-loader', {'oc-loader-flat': flat}]" :aria-label="ariaLabel"></div>
+  <div :class="['oc-loader', { 'oc-loader-flat': flat }]" :aria-label="ariaLabel"></div>
 </template>
 <script>
 /**
  * Remote actions can take an undefined portion of time. The spinner gives feedback to the users about an actions being processed.
  */
 export default {
-  name: "oc-loader",
+  name: "OcLoader",
   status: "review",
   release: "1.0.0",
   props: {
@@ -22,8 +22,8 @@ export default {
      */
     flat: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 }
 </script>

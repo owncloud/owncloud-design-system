@@ -1,13 +1,13 @@
 <template>
   <oc-table-cell type="th" :align-h="alignH" :align-v="alignV" :width="width" class="oc-th">
-    <slot/>
+    <slot />
   </oc-table-cell>
 </template>
 <script>
 import OcTableCell from "./_OcTableCell"
 
 export default {
-  name: "oc-th",
+  name: "OcTh",
   status: "review",
   release: "2.1.0",
   components: { OcTableCell },
@@ -26,8 +26,8 @@ export default {
       type: String,
       default: "auto",
       validator: width => /(auto|shrink|expand)/.test(width),
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>

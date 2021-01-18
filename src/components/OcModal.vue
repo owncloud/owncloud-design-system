@@ -1,28 +1,20 @@
 <template>
   <div class="oc-modal-background">
-    <div :class="$_ocModal_classes" tabindex="0" ref="$_ocModal">
+    <div ref="$_ocModal" :class="$_ocModal_classes" tabindex="0">
       <div class="oc-modal-title">
-        <oc-icon
-          v-if="icon"
-          :name="icon"
-          :variation="$_ocModal_titleIcon_variation"
-        />
+        <oc-icon v-if="icon" :name="icon" :variation="$_ocModal_titleIcon_variation" />
         <span v-text="title" />
       </div>
       <div class="oc-modal-body">
-        <div
-          v-if="$slots.content"
-          key="modal-slot-content"
-          class="oc-modal-body-message"
-        >
+        <div v-if="$slots.content" key="modal-slot-content" class="oc-modal-body-message">
           <slot name="content" />
         </div>
         <oc-text-input
           v-else-if="hasInput"
           key="modal-input"
           ref="ocModalInput"
-          class="oc-modal-body-input"
           v-model="$_ocModal_input_value"
+          class="oc-modal-body-input"
           :error-message="inputError"
           :label="inputLabel"
           :placeholder="inputPlaceholder"
@@ -31,12 +23,7 @@
           @input="$_ocModal_input_onInput"
           @keydown.enter="$_ocModal_confirm"
         />
-        <p
-          v-else
-          key="modal-message"
-          class="oc-modal-body-message"
-          v-text="message"
-        />
+        <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
         <div class="oc-modal-body-actions uk-flex uk-flex-right">
           <oc-button
             class="oc-modal-body-actions-cancel"
@@ -47,8 +34,8 @@
             class="oc-modal-body-actions-confirm oc-ml-s"
             :variation="$_ocModal_buttonConfirm_variation"
             :disabled="buttonConfirmDisabled || !!inputError"
-            v-text="buttonConfirmText"
             @click="$_ocModal_confirm"
+            v-text="buttonConfirmText"
           />
         </div>
       </div>
@@ -72,14 +59,14 @@ import OcTextInput from "./OcTextInput.vue"
  * Use only if the action cannot be undone.
  */
 export default {
-  name: "oc-modal",
+  name: "OcModal",
   status: "ready",
   release: "1.3.0",
 
   components: {
     OcButton,
     OcIcon,
-    OcTextInput
+    OcTextInput,
   },
 
   props: {
@@ -91,30 +78,32 @@ export default {
       type: String,
       required: false,
       default: "info",
-      validator: (variation) => {
+      validator: variation => {
         return variation === "info" || variation === "danger"
-      }
+      },
     },
     /**
      * Optional icon to be displayed next to the title
      */
     icon: {
       type: String,
-      required: false
+      required: false,
+      default: null,
     },
     /**
      * Modal title
      */
     title: {
       type: String,
-      required: true
+      required: true,
     },
     /**
      * Modal message. Can be replaced by content slot
      */
     message: {
       type: String,
-      required: false
+      required: false,
+      default: null,
     },
     /**
      * Text of cancel button
@@ -122,7 +111,7 @@ export default {
     buttonCancelText: {
       type: String,
       required: false,
-      default: "Cancel"
+      default: "Cancel",
     },
     /**
      * Text of confirm button
@@ -130,7 +119,7 @@ export default {
     buttonConfirmText: {
       type: String,
       required: false,
-      default: "Confirm"
+      default: "Confirm",
     },
     /**
      * Asserts whether the confirm action is disabled
@@ -138,7 +127,7 @@ export default {
     buttonConfirmDisabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     /**
      * Asserts whether the modal contains input
@@ -146,35 +135,39 @@ export default {
     hasInput: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     /**
      * Value of the input
      */
     inputValue: {
       type: String,
-      required: false
+      required: false,
+      default: null,
     },
     /**
      * Label of the input
      */
     inputLabel: {
       type: String,
-      required: false
+      required: false,
+      default: null,
     },
     /**
      * Placeholder of the input
      */
     inputPlaceholder: {
       type: String,
-      required: false
+      required: false,
+      default: null,
     },
     /**
      * Error of the input
      */
     inputError: {
       type: String,
-      required: false
+      required: false,
+      default: null,
     },
     /**
      * Asserts whether the input is disabled or not
@@ -182,13 +175,13 @@ export default {
     inputDisabled: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  data () {
+  data() {
     return {
-      $_ocModal_input_value: null
+      $_ocModal_input_value: null,
     }
   },
 
@@ -198,23 +191,19 @@ export default {
     },
 
     $_ocModal_titleIcon_variation() {
-      return this.variation === "info"
-        ? "system"
-        : this.variation
+      return this.variation === "info" ? "system" : this.variation
     },
 
     $_ocModal_buttonConfirm_variation() {
-      return this.variation === "danger"
-        ? "danger"
-        : "primary"
-    }
+      return this.variation === "danger" ? "danger" : "primary"
+    },
   },
 
   watch: {
     inputValue: {
       handler: "$_ocModal_input_assignPropAsValue",
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   mounted() {
@@ -255,8 +244,8 @@ export default {
 
     $_ocModal_input_assignPropAsValue(value) {
       this.$_ocModal_input_value = value
-    }
-  }
+    },
+  },
 }
 </script>
 

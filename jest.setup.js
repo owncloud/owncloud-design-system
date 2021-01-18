@@ -6,7 +6,7 @@ import { config } from "@vue/test-utils"
 
 config.mocks["$gettext"] = str => str
 config.mocks["$language"] = {
-  current: "en_US"
+  current: "en_US",
 }
 
 Vue.component("RouterLink", {

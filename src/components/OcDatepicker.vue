@@ -24,7 +24,7 @@ export default {
   /**
    * Component names should be short, pronounceable and Capitalized.
    */
-  name: "oc-datepicker",
+  name: "OcDatepicker",
   /**
    * Components in the system are labelled with status labels that reflect their
    * state of completion. See example below. All available statuses are:
@@ -42,6 +42,9 @@ export default {
    * (in which design system version)
    */
   release: "1.0.0",
+  components: {
+    Datetime,
+  },
   /**
    * Prop definitions should be as detailed as possible, specifying at least
    * type(s). See examples below:
@@ -104,9 +107,6 @@ export default {
       type: [Object, String],
       default: null,
     },
-  },
-  components: {
-    Datetime,
   },
   data() {
     return {

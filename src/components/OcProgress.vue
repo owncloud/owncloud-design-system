@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-  name: "oc-progress",
+  name: "OcProgress",
   status: "review",
   release: "1.0.0",
   props: {
@@ -42,7 +42,7 @@ export default {
       default: "default",
       validator: value => {
         return value.match(/(default|small)/)
-      }
+      },
     },
     /**
      * The variation of the progress bar.
@@ -54,15 +54,15 @@ export default {
       default: "primary",
       validator: value => {
         return value.match(/(primary|warning)/)
-      }
-    }
+      },
+    },
   },
 
   computed: {
     $_ocProgress_classes() {
       return `oc-progress oc-progress-${this.size} oc-progress-${this.variation}`
-    }
-  }
+    },
+  },
 }
 </script>
 <docs>

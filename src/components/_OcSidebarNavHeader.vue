@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: "oc-sidebar-nav-header",
+  name: "OcSidebarNavHeader",
   status: "prototype",
   release: "1.0.0",
 }

@@ -1,16 +1,16 @@
 <template>
-  <label :for="$_ocCheckbox_id" :class="{ 'oc-cursor-pointer': !disabled }">
+  <label :for="id" :class="{ 'oc-cursor-pointer': !disabled }">
     <input
+      :id="id"
+      v-model="$_ocCheckbox_model"
       type="checkbox"
       name="checkbox"
-      :id="$_ocCheckbox_id"
       :aria-label="label"
       :class="$_ocCheckbox_classes"
-      v-model="$_ocCheckbox_model"
       :value="option"
       :disabled="disabled"
     />
-    <span v-if="!hideLabel" v-text="label" :aria-hidden="true" />
+    <span v-if="!hideLabel" :aria-hidden="true" v-text="label" />
   </label>
 </template>
 <script>
@@ -20,7 +20,7 @@ import uniqueId from "../utils/uniqueId"
  * A checkbox input element. The checkbox is either checked or unchecked.
  */
 export default {
-  name: "oc-checkbox",
+  name: "OcCheckbox",
   status: "review",
   release: "1.0.0",
   props: {
@@ -30,6 +30,7 @@ export default {
     id: {
       type: String,
       required: false,
+      default: uniqueId("oc-checkbox-"),
     },
     /**
      * Disables the checkbox
@@ -44,8 +45,10 @@ export default {
      *
      * Can be any type, but most common is boolean for singular checkbox use, or array when used in a group of checkboxes.
      **/
+    // eslint-disable-next-line vue/require-prop-types
     value: {
       required: false,
+      default: false,
     },
     /**
      * The value/object this checkbox represents.
@@ -53,6 +56,7 @@ export default {
      * Can be of any type. If `value` is an array, the type of the option needs to match the value item types. If the
      * checkbox is used standalone (not in a group on a shared model) the option can be omitted.
      **/
+    // eslint-disable-next-line vue/require-prop-types
     option: {
       required: false,
       default: null,
@@ -94,9 +98,6 @@ export default {
       set(value) {
         this.$emit("input", value)
       },
-    },
-    $_ocCheckbox_id() {
-      return this.id || uniqueId("oc-checkbox-")
     },
     $_ocCheckbox_classes() {
       return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
@@ -165,6 +166,7 @@ export default {
   &:disabled:checked {
     @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-disabled-icon-color);
   }
+
   &:disabled:indeterminate {
     @include svg-fill(
       $internal-form-checkbox-indeterminate-image,

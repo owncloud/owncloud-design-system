@@ -63,12 +63,16 @@ import orderBy from "../../utils/orderBy"
 
 export default {
   name: "Components",
+  data() {
+    return {
+      components: this.orderData(this.getComponents()),
+      tokens: designTokens.props,
+    }
+  },
   methods: {
-    getComponents: function() {
+    getComponents: function () {
       const components = []
-      const contexts = [
-        require.context("@/components/", true, /\.vue$/)
-      ]
+      const contexts = [require.context("@/components/", true, /\.vue$/)]
 
       contexts.forEach(context => {
         context.keys().forEach(key => components.push(context(key).default))
@@ -78,15 +82,9 @@ export default {
         return c
       })
     },
-    orderData: function(data) {
+    orderData: function (data) {
       return orderBy(data, "name", "asc")
     },
-  },
-  data() {
-    return {
-      components: this.orderData(this.getComponents()),
-      tokens: designTokens.props,
-    }
   },
 }
 </script>

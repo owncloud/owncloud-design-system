@@ -1,15 +1,15 @@
 <template>
-  <div class="oc-dropdown-wrapper" ref="menu" @keyup.esc="closeHandler(true)">
+  <div ref="menu" class="oc-dropdown-wrapper" @keyup.esc="closeHandler(true)">
     <oc-button
+      ref="button"
       :aria-expanded="isOpen.toString()"
       :variation="buttonVariation"
-      ref="button"
       aria-haspopup="true"
       @click="toggleDropdown"
     >
       <slot name="button"></slot>
     </oc-button>
-    <div class="uk-card-default oc-dropdown-menu" ref="dropdown" :hidden="!isOpen">
+    <div ref="dropdown" class="uk-card-default oc-dropdown-menu" :hidden="!isOpen">
       <slot name="content"></slot>
     </div>
   </div>
@@ -34,14 +34,9 @@
  *
  * */
 export default {
-  name: "oc-disclosure-drop",
+  name: "OcDisclosureDrop",
   status: "review",
   release: "1.0.0",
-  data: () => {
-    return {
-      isOpen: false,
-    }
-  },
   props: {
     /**
      * Supplies button variation to give additional meaning.
@@ -55,6 +50,11 @@ export default {
       },
     },
   },
+  data: () => {
+    return {
+      isOpen: false,
+    }
+  },
   computed: {
     $_ocButton_buttonClass() {
       let classes = ["oc-button"]
@@ -62,6 +62,22 @@ export default {
 
       return classes
     },
+  },
+  created() {
+    // Add a general event listener to catch outside clicks
+    document.addEventListener("click", this.documentClick)
+  },
+  destroyed: function () {
+    // Remove the general event listener to catch outside clicks
+    document.removeEventListener("click", this.documentClick)
+  },
+  mounted() {
+    // Add ESC key event listener
+    window.addEventListener("keyup", this.escKeyHandler)
+  },
+  beforeDestroy() {
+    // Remove ESC key event listener
+    window.removeEventListener("keyup", this.escKeyHandler)
   },
   methods: {
     toggleDropdown() {
@@ -83,22 +99,6 @@ export default {
     closeHandler() {
       this.isOpen = false
     },
-  },
-  created() {
-    // Add a general event listener to catch outside clicks
-    document.addEventListener("click", this.documentClick)
-  },
-  destroyed: function() {
-    // Remove the general event listener to catch outside clicks
-    document.removeEventListener("click", this.documentClick)
-  },
-  mounted() {
-    // Add ESC key event listener
-    window.addEventListener("keyup", this.escKeyHandler)
-  },
-  beforeDestroy() {
-    // Remove ESC key event listener
-    window.removeEventListener("keyup", this.escKeyHandler)
   },
 }
 </script>

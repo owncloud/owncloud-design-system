@@ -19,7 +19,7 @@ import { getSizeClass } from "../utils/sizeClasses"
  *
  */
 export default {
-  name: "oc-spinner",
+  name: "OcSpinner",
   status: "review",
   release: "1.0.0",
   props: {

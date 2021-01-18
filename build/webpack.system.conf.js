@@ -74,8 +74,8 @@ const webpackConfig = merge(baseWebpackConfig, {
           to: config.system.assetsSubDirectory,
           globOptions: {
             ignore: [".*"],
-          }
-        }
+          },
+        },
       ],
     }),
   ],
