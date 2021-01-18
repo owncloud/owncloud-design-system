@@ -307,8 +307,7 @@ export default {
     },
     $_ocAutocomplete_getSelectionText(index) {
       const selectionText = this.$refs.listbox
-        .querySelectorAll("[role='option']")
-        [index].textContent.trim()
+        .querySelectorAll("[role='option']")[index].textContent.trim()
       this.selectionText = selectionText
       return selectionText
     },
