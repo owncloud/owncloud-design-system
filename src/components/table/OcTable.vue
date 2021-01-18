@@ -100,14 +100,22 @@ export default {
       required: true,
     },
     /**
-     * Whether or not the table has a header. The header markup is defined in the `fields` array.
+     * Asserts whether the table has a header. The header markup is defined in the `fields` array.
      */
     hasHeader: {
       type: Boolean,
       default: true,
     },
     /**
-     * Whether or not table rows should be highlighted when hovered.
+     * Asserts whether the header of the table is sticky.
+     */
+    sticky: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * Asserts whether table rows should be highlighted when hovered.
      */
     hover: {
       type: Boolean,
@@ -127,14 +135,6 @@ export default {
       type: Number,
       required: false,
       default: 64,
-    },
-    /**
-     * Asserts whether the header of the table is sticky
-     */
-    sticky: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
   },
   computed: {
@@ -347,7 +347,7 @@ export default {
     <h3 class="uk-heading-divider">
       An interactive table showcasing different table features/properties
     </h3>
-    <oc-table :fields="fields" :data="data" :has-header="hasHeader" :hover="hover">
+    <oc-table :fields="fields" :data="data" :has-header="hasHeader" :sticky="stickyHeader" :hover="hover">
       <template v-slot:action="rowData">
         <oc-button @click="toggle(rowData)" size="small">Toggle</oc-button>
       </template>
@@ -359,6 +359,7 @@ export default {
     data() {
       return {
         hasHeader: true,
+        stickyHeader: false,
         hover: true,
       }
     },
@@ -394,6 +395,12 @@ export default {
             description: "Whether or not the table header is visible",
             state: this.hasHeader,
             variable: "hasHeader",
+          },
+          {
+            property: "sticky",
+            description: "Whether or not the table header is sticky, causing it to float above the table content when scrolling",
+            state: this.stickyHeader,
+            variable: "stickyHeader",
           },
           {
             property: "hover",
