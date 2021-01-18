@@ -13417,10 +13417,10 @@ vue-datetime@^1.0.0-beta.10:
   resolved "https://registry.yarnpkg.com/vue-datetime/-/vue-datetime-1.0.0-beta.14.tgz#791e724500929cdfeb31395154d9a26fd27ffb46"
   integrity sha512-n25LqldE1xryeoweohiqlxy8iUsi+UwZnKLaN4gXjk7xxGL6rUl1y/GGvkoMwJUzRKttw+QnQV4oFAYupUQdug==
 
-vue-docgen-api@^4.34.1:
-  version "4.34.1"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.34.1.tgz#223ecd1d7339bca3e824eda46ea59164cbbb911f"
-  integrity sha512-hjlrB43MkvUrnFZdPqLVEA42774zVMHGPcKVwLGnh4kxk73Az+wYmcf607tooA0mea3hF6grEQ+VxfiqRiIRdA==
+vue-docgen-api@^4.34.2:
+  version "4.34.2"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.34.2.tgz#282efc6f29fa56a74fdaf567b70c463ba91af8c3"
+  integrity sha512-iS6TrpyPC9zPgz0D+vB9ceDWRXNfBKbQAFzc9rdmz1iOqW0QoLpTg/9Bjqn4HQiRHR6mFMK2TZ1yqs0+T8yDMQ==
   dependencies:
     "@babel/parser" "^7.6.0"
     "@babel/types" "^7.6.0"
@@ -13525,9 +13525,9 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     loader-utils "^1.0.2"
 
 vue-styleguidist@^4.34.1:
-  version "4.34.1"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-4.34.1.tgz#2c33adae011e70ddd42f83e73931813179ab0c7c"
-  integrity sha512-LYDjdbMqNDY4yoY67yk4mdIFEDuDGxQzuwFN1AkjQMythtI0kZdW0Ac2L88KGljIxZLcZfui8b2tFXcK5FFAeQ==
+  version "4.34.2"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-4.34.2.tgz#2c3446d6aca014c3e078347b9f3600cf11fb14f8"
+  integrity sha512-2YV/Fkk6yVl+3APyAyC4OXbevNWj5Mo4f70HYXvqmli/HfRA4aEhOGw3H2UOCJ19hZbDKpIF24HBYlLCOXlkNw==
   dependencies:
     "@vxna/mini-html-webpack-template" "^1.0.0"
     ast-types "^0.13.3"
@@ -13577,7 +13577,7 @@ vue-styleguidist@^4.34.1:
     style-loader "^1.0.0"
     terser-webpack-plugin "^2.2.2"
     to-ast "^1.0.0"
-    vue-docgen-api "^4.34.1"
+    vue-docgen-api "^4.34.2"
     vue-inbrowser-compiler "^4.33.6"
     vue-inbrowser-compiler-utils "^4.33.6"
     webpack-dev-server "^3.11.0"
