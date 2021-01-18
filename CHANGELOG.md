@@ -1,3 +1,37 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v2.0.4...master
+
+## Summary
+
+* Change - Create new table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
+* Enhancement - Create new files table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
+
+## Details
+
+* Change - Create new table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
+
+   We've dropped the table component and created a new one from scratch. The new component is
+   defining its fields and data via props. To still use more "traditional" table, take a look at
+   component `OcTableSimple`.
+
+   https://github.com/owncloud/ocis/issues/1177
+   https://github.com/owncloud/owncloud-design-system/pull/1034
+
+
+* Enhancement - Create new files table component: [#1177](https://github.com/owncloud/ocis/issues/1177)
+
+   We've built a new files table component which has a set of pre-defined fields. Which fields will
+   be displayed depends on the provided resources. This component also wraps a few other
+   components:
+
+   - OcResource - OcAvatarGroup
+
+   https://github.com/owncloud/ocis/issues/1177
+   https://github.com/owncloud/owncloud-design-system/pull/1034
+
 # Changelog for [2.0.4] (2020-12-15)
 
 The following sections list the changes in ownCloud Design System 2.0.4.
