@@ -1,6 +1,6 @@
 {
   "name": "owncloud-design-system",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "ownCloud Design System is based on VueDesign Systems and is used to design ownCloud UI components",
   "author": "ownClouders",
   "main": "dist/system/system.js",
