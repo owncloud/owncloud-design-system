@@ -4,33 +4,33 @@ exports[`OcTableFiles displays all fields 1`] = `
 <table class="oc-table oc-table-sticky" slots="[object Object]">
   <thead class="oc-thead">
     <tr>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-header-cell oc-table-header-cell-select">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-table-header-cell oc-table-header-cell-select">
         <div class="oc-table-files-select-all"><label for="oc-table-files-select-all" class="oc-cursor-pointer"><input id="oc-table-files-select-all" type="checkbox" name="checkbox" aria-label="Select all resources" class="oc-checkbox oc-checkbox-m" value="">
             <!---->
           </label></div>
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-header-cell oc-table-header-cell-name">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-table-header-cell oc-table-header-cell-name">
         Name
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-size">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-size">
         Size
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-sharedWith">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-sharedWith">
         Shared with
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-owner">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-owner">
         Owner
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-mdate">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-mdate">
         Modified
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-sdate">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-sdate">
         Shared
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-ddate">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-ddate">
         Deleted
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-actions">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-actions">
         Actions
       </th>
     </tr>

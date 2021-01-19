@@ -10,7 +10,7 @@ export default {
   release: "2.1.0",
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-thead {
   border-bottom: 1px solid $border-primary;
 }

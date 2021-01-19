@@ -38,7 +38,7 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-avatar-count {
   align-items: center;
   background-color: $brand-primary;

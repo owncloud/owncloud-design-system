@@ -88,8 +88,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
-
 <docs>
 ```jsx
 <div>
