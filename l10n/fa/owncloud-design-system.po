@@ -1,0 +1,66 @@
+# 
+# Translators:
+# Hossein Raysehman <rayeshman@gmail.com>, 2021
+# Mohammad Dashtizadeh <mohammad@dashtizadeh.net>, 2021
+# mahdi Kereshteh <miki_mika1362@yahoo.com>, 2021
+# ximbesto <mashomid@gmail.com>, 2021
+# میلاد صفاجوی <miladsafa@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: میلاد صفاجوی <miladsafa@gmail.com>, 2021\n"
+"Language-Team: Persian (https://www.transifex.com/owncloud-org/teams/6149/fa/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: fa\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "فعالیت‌ها"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "حذف شده"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "ویرایش شده"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "نام"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "انتخاب"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "اشتراک گذاشته شده"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "به اشتراک گذاشته شده با"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "نمایش جزئیات"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "اندازه"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "وضعیت"

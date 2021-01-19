@@ -1,0 +1,64 @@
+# 
+# Translators:
+# Miguel Branco <mgl.branco@gmail.com>, 2021
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2021
+# Xosé M. <correo@xmgz.eu>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Xosé M. <correo@xmgz.eu>, 2021\n"
+"Language-Team: Galician (https://www.transifex.com/owncloud-org/teams/6149/gl/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: gl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Accións"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Eliminado"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Modificado"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nome"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "Propietario"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Seleccionar"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr "Selecciona todos os recursos"
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Compartido"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Compartido con"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Amosar os detalles"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Tamaño"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Estado"

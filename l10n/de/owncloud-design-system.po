@@ -1,0 +1,67 @@
+# 
+# Translators:
+# Mario Siegmann <mario_siegmann@web.de>, 2021
+# d6c1c4c51a224ab258fc79d7bc799f3c_ea78f3e <096a1eda3e74be51309d5992faf80f0b_22241>, 2021
+# Marcel Kühlhorn <tux93@opensuse.org>, 2021
+# 4928884c0f42d8bb4efe816acb3d9455_6f2b11f, 2021
+# Wachhund <wachhund@wachhund.to>, 2021
+# I Robot, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: I Robot, 2021\n"
+"Language-Team: German (https://www.transifex.com/owncloud-org/teams/6149/de/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Aktionen"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "gelöscht"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Geändert"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Name"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "Besitzer"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Auswählen"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Geteilt"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Geteilt mit"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Details anzeigen"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Größe"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"

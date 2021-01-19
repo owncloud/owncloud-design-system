@@ -1,0 +1,68 @@
+# 
+# Translators:
+# Helder Meneses <helder.meneses@gmail.com>, 2021
+# rlameiro <geral@ricardolameiro.pt>, 2021
+# 026affe33c406d4d7512475fe101afdf_149d513 <53a94500ae9d93eae8d950e9f1c85cfa_20562>, 2021
+# Nelson Rosado <nelsontrosado@gmail.com>, 2021
+# ced5c79479af6d707aec1435f1eb0228_e93382a, 2021
+# Manuela Silva <manuelarodsilva@gmail.com>, 2021
+# rjgpp1994 <rjgpp.1994@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: rjgpp1994 <rjgpp.1994@gmail.com>, 2021\n"
+"Language-Team: Portuguese (Portugal) (https://www.transifex.com/owncloud-org/teams/6149/pt_PT/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Ações"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Eliminado"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Modificado"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nome"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Selecionar"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Partilhado"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Partilhado com:"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Mostrar detalhes"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Tamanho"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Estado"

@@ -1,0 +1,66 @@
+# 
+# Translators:
+# Rancher, 2021
+# Bojan Beloica <beloica.b@mfkv.rs>, 2021
+# Slobodan Simić <slsimic@gmail.com>, 2021
+# Ilija Pecelj <pecelj@gmail.com>, 2021
+# Mladen Pejaković, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Mladen Pejaković, 2021\n"
+"Language-Team: Serbian (https://www.transifex.com/owncloud-org/teams/6149/sr/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Радње"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Обрисано"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Измењен"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Назив"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Изабери"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Дељено"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Подељено са:"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Прикажи детаље"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "величина"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Статус"

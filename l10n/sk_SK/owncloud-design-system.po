@@ -1,0 +1,67 @@
+# 
+# Translators:
+# zixo <zixo@zixo.sk>, 2021
+# Roman Priesol <roman@priesol.net>, 2021
+# Martin Babik <martin.babik@gmail.com>, 2021
+# Marián Hvolka <marian.hvolka@stuba.sk>, 2021
+# MrWay DM <mrway@differment.net>, 2021
+# Martin Čarnogurský (RootLUG) <intense.feel@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Martin Čarnogurský (RootLUG) <intense.feel@gmail.com>, 2021\n"
+"Language-Team: Slovak (Slovakia) (https://www.transifex.com/owncloud-org/teams/6149/sk_SK/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: sk_SK\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Akcie"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Zmazané"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Upravené"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Názov"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Vybrať"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Zdieľané"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Zdieľaný s:"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Zobraziť podrobnosti"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Veľkosť"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Stav"

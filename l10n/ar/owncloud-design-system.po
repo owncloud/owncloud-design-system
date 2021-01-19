@@ -1,0 +1,66 @@
+# 
+# Translators:
+# blackcoder <tarek.taha@gmail.com>, 2021
+# Hussein Atef Salem <hussein-atef@hotmail.com>, 2021
+# attaryz <markosberg123@gmail.com>, 2021
+# Jana Sterger <jana.sterger@e-kern.com>, 2021
+# Christian Scherm <christian.scherm@owncloud.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Christian Scherm <christian.scherm@owncloud.com>, 2021\n"
+"Language-Team: Arabic (https://www.transifex.com/owncloud-org/teams/6149/ar/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "إجراءات"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "تم الحذف"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "تم التعديل"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "الاسم"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "مالك"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "تحديد"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "تمت المشاركة"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "تمت المشاركة مع"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "الحجم"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "الحالة"

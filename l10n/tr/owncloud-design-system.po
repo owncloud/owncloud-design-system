@@ -1,0 +1,69 @@
+# 
+# Translators:
+# Necdet Yücel <necdetyucel@gmail.com>, 2021
+# akaplan <ahmet_kaplan@hotmail.com>, 2021
+# Mesut Güngör <mesutgungor@iyte.edu.tr>, 2021
+# ismail yenigül <ismail.yenigul@surgate.com>, 2021
+# Volkan Gezer <volkangezer@gmail.com>, 2021
+# TayançKILIÇLI <tayancatakan@gmail.com>, 2021
+# Semih Karakaya <karakayasemi@itu.edu.tr>, 2021
+# Aranel Surion <aranel@aranelsurion.org>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Aranel Surion <aranel@aranelsurion.org>, 2021\n"
+"Language-Team: Turkish (https://www.transifex.com/owncloud-org/teams/6149/tr/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Eylemler"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Silinme"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Değiştirilme"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Ad"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "Sahip"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Seç"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Paylaşılan"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Paylaş"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Detayları göster"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Boyut"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Durum"

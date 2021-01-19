@@ -1,0 +1,65 @@
+# 
+# Translators:
+# André Koot <meneer@tken.net>, 2021
+# 960ff2920aa46957197965849f900042_7227203, 2021
+# Sander van der Somme <sander.vandersomme@surfnet.nl>, 2021
+# Richard Bos <radoeka@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Richard Bos <radoeka@gmail.com>, 2021\n"
+"Language-Team: Dutch (https://www.transifex.com/owncloud-org/teams/6149/nl/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Acties"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Verwijderd"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Aangepast"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Naam"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "Eigenaar"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Selecteer"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Gedeeld"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Gedeeld met"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Tonen details"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Grootte"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"

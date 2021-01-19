@@ -1,0 +1,65 @@
+# 
+# Translators:
+# rodin <romihardiyanto@gmail.com>, 2021
+# Arif Budiman <arifpedia@gmail.com>, 2021
+# Widya Walesa <walecha99@gmail.com>, 2021
+# Muhammad Radifar <m_radifar05@yahoo.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Muhammad Radifar <m_radifar05@yahoo.com>, 2021\n"
+"Language-Team: Indonesian (https://www.transifex.com/owncloud-org/teams/6149/id/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Tindakan"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Dihapus"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Dimodifikasi"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nama"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Pilih"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Dibagikan"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Dibagikan dengan"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Tampilkan detail"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Ukuran"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"

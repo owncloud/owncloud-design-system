@@ -1,0 +1,68 @@
+# 
+# Translators:
+# Stein-Aksel Basma <stabasm@hotmail.com>, 2021
+# anjar <ajarmund@gmail.com>, 2021
+# Håvard Dalgrav, 2021
+# Espen Bye, 2021
+# Ivar Bredesen <ivar.bredesen@gmail.com>, 2021
+# vidaren, 2021
+# Arvid Nornes <arvid.nornes@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Arvid Nornes <arvid.nornes@gmail.com>, 2021\n"
+"Language-Team: Norwegian Bokmål (Norway) (https://www.transifex.com/owncloud-org/teams/6149/nb_NO/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: nb_NO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Handlinger"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Slettet"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Endret"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Navn"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Velg"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Delt"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Delt med"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Vis detaljer"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Størrelse"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"

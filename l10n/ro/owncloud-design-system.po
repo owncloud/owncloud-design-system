@@ -1,0 +1,66 @@
+# 
+# Translators:
+# Arthur Țițeică <arthur.titeica@gmail.com>, 2021
+# Ciprian Ghenciu <g.ciprian@osn.ro>, 2021
+# Popescu Ionut <ripkid666@gmail.com>, 2021
+# Manuel Pacurar, 2021
+# Rawbeef64, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Rawbeef64, 2021\n"
+"Language-Team: Romanian (https://www.transifex.com/owncloud-org/teams/6149/ro/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "A fost șters."
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Modificat"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nume"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Alege"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Partajat"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Partajat cu:"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Arată detali"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Mărime"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Stare"

@@ -1,0 +1,66 @@
+# 
+# Translators:
+# Sedir G. Morais <philippi.sedir@gmail.com>, 2021
+# Rodrigo Tavares, 2021
+# Flávio Zarur Lucarelli <flavio@lucanet.com.br>, 2021
+# Flávio Veras <flaviove@gmail.com>, 2021
+# Van Der Fran <transifex@vanderland.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Van Der Fran <transifex@vanderland.com>, 2021\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/owncloud-org/teams/6149/pt_BR/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Ações"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Excluído"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Modificado"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nome"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "Proprietário"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Selecionar"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr "Selecione todos os recursos"
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Compartilhado"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Compartilhado com"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Mostrar detalhes"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Tamanho"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"

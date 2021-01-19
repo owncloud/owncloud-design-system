@@ -1,0 +1,67 @@
+# 
+# Translators:
+# Romain DEP. <rom1dep@gmail.com>, 2021
+# Ldm Public <ldmpub@gmail.com>, 2021
+# MathieuP, 2021
+# I Robot, 2021
+# Fabian Lemaître <ptit.boogy@gmail.com>, 2021
+# gp4004 <gp4004@arghh.org>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: gp4004 <gp4004@arghh.org>, 2021\n"
+"Language-Team: French (https://www.transifex.com/owncloud-org/teams/6149/fr/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Actions"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Supprimé"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Modifié"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nom"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Sélectionner"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Partagé"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Partagé avec"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Afficher les détails"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Taille"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"

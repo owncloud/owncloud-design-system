@@ -1,0 +1,62 @@
+# 
+# Translators:
+# Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2021\n"
+"Language-Team: Japanese (Japan) (https://www.transifex.com/owncloud-org/teams/6149/ja_JP/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "アクション"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "削除日時"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "更新日時"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "名前"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "選択"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "共有中"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "共有"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "詳細を表示"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "サイズ"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "状態"

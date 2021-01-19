@@ -1,0 +1,66 @@
+# 
+# Translators:
+# Martin Skopal <fireball@atlas.cz>, 2021
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2021
+# Jakub Sycha <jacobcz@mineland.cz>, 2021
+# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2021
+# Michal Hrušecký <Michal@hrusecky.net>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Michal Hrušecký <Michal@hrusecky.net>, 2021\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/owncloud-org/teams/6149/cs_CZ/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Činnosti"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Smazáno"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Upraveno"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Název"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Vybrat"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Sdílené"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Sdíleno s"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Zobrazit podrobnosti"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Velikost"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Stav"

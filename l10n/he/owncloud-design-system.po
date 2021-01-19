@@ -1,0 +1,66 @@
+# 
+# Translators:
+# Meni Nuriel <nurielmeni@gmail.com>, 2021
+# Gilad Naaman <gilad.doom@gmail.com>, 2021
+# duvdevan, 2021
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2021
+# Tomer Cohen <tomerc+transifex.net@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Tomer Cohen <tomerc+transifex.net@gmail.com>, 2021\n"
+"Language-Team: Hebrew (https://www.transifex.com/owncloud-org/teams/6149/he/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: he\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "פעולות"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "נמחק"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "זמן שינוי"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "שם"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr "בעלים"
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "בחר"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr "לבחור את כל המשאבים"
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "שותף"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "משותף עם:"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "הצגת פרטים"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "גודל"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "מצב"

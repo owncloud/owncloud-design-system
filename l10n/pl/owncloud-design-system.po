@@ -1,0 +1,67 @@
+# 
+# Translators:
+# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2021
+# Paweł Ciecierski <pciecierski@gmail.com>, 2021
+# Michal Plichta <mplichta@gmail.com>, 2021
+# szymon.filip <koalamis0@gmail.com>, 2021
+# ff9da4ae6a607dfc9694c598f356ebfc_a18d30e <f447441e688bad51d903d21f637db17b_46654>, 2021
+# Maciej Tarmas <maciej@tarmas.pl>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Last-Translator: Maciej Tarmas <maciej@tarmas.pl>, 2021\n"
+"Language-Team: Polish (https://www.transifex.com/owncloud-org/teams/6149/pl/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: ../src/components/table/OcTableFiles.vue:178
+msgid "Actions"
+msgstr "Akcje"
+
+#: ../src/components/table/OcTableFiles.vue:167
+msgid "Deleted"
+msgstr "Usunięte"
+
+#: ../src/components/table/OcTableFiles.vue:153
+msgid "Modified"
+msgstr "Modyfikacja"
+
+#: ../src/components/table/OcTableFiles.vue:123
+msgid "Name"
+msgstr "Nazwa"
+
+#: ../src/components/table/OcTableFiles.vue:147
+msgid "Owner"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:37
+msgid "Select"
+msgstr "Wybierz"
+
+#: ../src/components/table/OcTableFiles.vue:27
+msgid "Select all resources"
+msgstr ""
+
+#: ../src/components/table/OcTableFiles.vue:160
+msgid "Shared"
+msgstr "Udostępniono"
+
+#: ../src/components/table/OcTableFiles.vue:135
+msgid "Shared with"
+msgstr "Współdzielone z:"
+
+#: ../src/components/table/OcTableFiles.vue:90
+msgid "Show details"
+msgstr "Pokaż szczegóły"
+
+#: ../src/components/table/OcTableFiles.vue:129
+msgid "Size"
+msgstr "Rozmiar"
+
+#: ../src/components/table/OcTableFiles.vue:141
+msgid "Status"
+msgstr "Status"
