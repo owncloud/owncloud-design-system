@@ -20,6 +20,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/ocis/issues/1177
    https://github.com/owncloud/owncloud-design-system/pull/1034
+   https://github.com/owncloud/owncloud-design-system/pull/1050
 
 
 * Enhancement - Introduce breakpoints tokens and utility classes: [#1045](https://github.com/owncloud/owncloud-design-system/pull/1045)
@@ -40,6 +41,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/ocis/issues/1177
    https://github.com/owncloud/owncloud-design-system/pull/1034
+   https://github.com/owncloud/owncloud-design-system/pull/1050
 
 # Changelog for [2.0.4] (2020-12-15)
 
