@@ -38,4 +38,4 @@ $(TEMPLATE_FILE):
 
 # Generate translations.json file from .pot template.
 $(OUTPUT_DIR)/translations.json:
-	gettext-compile --output $(OUTPUT_DIR)/translations.json $(patsubst %,$(OUTPUT_DIR)/locale/%/LC_MESSAGES/app.po,$(LOCALES));
+	gettext-compile --output $(OUTPUT_DIR)/translations.json $(patsubst %,$(OUTPUT_DIR)/%/owncloud-design-system.po,$(LOCALES));
