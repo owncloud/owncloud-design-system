@@ -1,0 +1,240 @@
+<template>
+  <nav class="oc-pagination" :aria-label="$gettext('Pagination')">
+    <ul class="oc-pagination-list">
+      <li v-if="isPrevPageAvailable" class="oc-pagination-list-item">
+        <router-link
+          class="oc-pagination-list-item-prev"
+          :aria-label="$gettext('Go to the previous page')"
+          :to="previousPageLink"
+        >
+          <oc-icon name="chevron_left" />
+        </router-link>
+      </li>
+      <li v-for="(page, index) in displayedPages" :key="index" class="oc-pagination-list-item">
+        <component
+          :is="pageComponent(page)"
+          :class="pageClass(page)"
+          v-bind="pageProps(page)"
+          v-text="page"
+        />
+      </li>
+      <li v-if="isNextPageAvailable" class="oc-pagination-list-item">
+        <router-link
+          class="oc-pagination-list-item-next"
+          :aria-label="$gettext('Go to the next page')"
+          :to="nextPageLink"
+        >
+          <oc-icon name="chevron_right" />
+        </router-link>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+import OcIcon from "../OcIcon.vue"
+
+/**
+ * A list of links used for switching to different pages
+ */
+export default {
+  name: "OcPagination",
+
+  components: { OcIcon },
+
+  props: {
+    /**
+     * Number of pages to be displayed
+     */
+    pages: {
+      type: Number,
+      required: true,
+    },
+    /**
+     * Currently active page
+     */
+    currentPage: {
+      type: Number,
+      required: true,
+    },
+    /**
+     * Number of pages to be displayed. Needs to be an even number.
+     * Pages will be equaly split into two parts and remaining pages will be displayed as ellipsis
+     */
+    maxDisplayed: {
+      type: Number,
+      required: false,
+      default: null,
+      validator: value => {
+        if (value % 2 === 0) {
+          return true
+        }
+
+        // Since Vue doens't support custom validator error message, log the error manually
+        console.error("maxDisplayed needs to be an even number")
+      },
+    },
+    /**
+     * Current route which is used to render pages
+     */
+    currentRoute: {
+      type: String,
+      required: true,
+    },
+  },
+
+  computed: {
+    displayedPages() {
+      if (this.maxDisplayed && this.maxDisplayed < this.pages) {
+        let pages = []
+
+        for (let i = 0; i < this.pages; i++) {
+          pages.push(i + 1)
+        }
+
+        const pagesRight = pages.slice(this.currentPage, this.currentPage + this.maxDisplayed / 2)
+        const pagesLeft = pages.slice(
+          this.currentPage - 1 - this.maxDisplayed / 2,
+          this.currentPage - 1
+        )
+
+        pages = [...pagesLeft, this.currentPage, ...pagesRight]
+
+        pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
+        pages[pages.length - 1] < this.pages - 1
+          ? pages.push("...", this.pages)
+          : pages.push(this.pages)
+
+        return pages
+      }
+
+      return this.pages
+    },
+
+    isPrevPageAvailable() {
+      return this.currentPage !== 1
+    },
+
+    isNextPageAvailable() {
+      return this.pages !== this.currentPage
+    },
+
+    _currentRoute() {
+      return JSON.parse(JSON.stringify(this.currentRoute)).replace(/\/$/, "")
+    },
+
+    previousPageLink() {
+      return this._currentRoute + "/" + (this.currentPage - 1)
+    },
+
+    nextPageLink() {
+      return this._currentRoute + "/" + (this.currentPage + 1)
+    },
+  },
+
+  methods: {
+    pageLabel(page) {
+      const translated = this.$gettext("Go to page %{ page }")
+
+      return this.$gettextInterpolate(translated, { page })
+    },
+
+    isCurrentPage(page) {
+      return this.currentPage === page
+    },
+
+    pageComponent(page) {
+      return page === "..." || this.isCurrentPage(page) ? "span" : "router-link"
+    },
+
+    pageProps(page) {
+      if (this.isCurrentPage(page)) {
+        return {
+          "aria-current": "true",
+        }
+      }
+
+      return {
+        "aria-label": this.pageLabel(page),
+        to: this._currentRoute + "/" + page,
+      }
+    },
+
+    pageClass(page) {
+      const classes = ["oc-pagination-list-item-page"]
+
+      if (this.isCurrentPage(page)) {
+        classes.push("oc-pagination-list-item-current")
+      } else if (page === "...") {
+        classes.push("oc-pagination-list-item-ellipsis")
+      } else {
+        classes.push("oc-pagination-list-item-link")
+      }
+
+      return classes
+    },
+  },
+}
+</script>
+
+<style lang="scss">
+.oc-pagination {
+  &-list {
+    align-items: center;
+    display: flex;
+    gap: var(--oc-space-small);
+    list-style: none;
+
+    &-item {
+      &-page {
+        border-radius: 4px;
+        color: var(--oc-color-swatch-brand-default);
+        padding: var(--oc-space-xsmall) var(--oc-space-small);
+        transition: background-color $transition-duration-short ease-in-out;
+
+        &:not(span):hover,
+        &:not(span):focus {
+          background-color: var(--oc-color-swatch-brand-default);
+          color: var(--oc-color-text-inverse);
+          text-decoration: none;
+        }
+      }
+
+      &-current {
+        background-color: var(--oc-color-swatch-brand-default);
+        color: var(--oc-color-text-inverse);
+        font-weight: bold;
+      }
+
+      &-prev,
+      &-next {
+        display: flex;
+
+        > .oc-icon > svg {
+          fill: var(--oc-color-swatch-brand-default);
+        }
+      }
+    }
+  }
+}
+</style>
+
+<docs>
+## Examples
+```vue
+<div>
+    <oc-pagination :pages="3" :currentPage="3" currentRoute="/files" />
+    <oc-pagination :pages="4" :currentPage="1" currentRoute="/files" />
+    <oc-pagination :pages="5" :currentPage="5" currentRoute="/files" />
+</div>
+```
+
+### Truncate visible pages with ellipsis
+```vue
+<div>
+    <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="2" currentRoute="/files" />
+    <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="2" currentRoute="/files" />
+    <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="4" currentRoute="/files" />
+</div>
+```
+</docs>
