@@ -365,19 +365,61 @@
       "originalValue": "100",
       "name": "z_index_sticky"
     },
-    "media_query_m": {
-      "type": "...",
-      "category": "media-query",
-      "value": "(min-width: 768px)",
-      "originalValue": "(min-width: 768px)",
-      "name": "media_query_m"
+    "breakpoint-small": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "640px",
+      "originalValue": "640px",
+      "name": "breakpoint-small"
     },
-    "media_query_l": {
-      "type": "...",
-      "category": "media-query",
-      "value": "(min-width: 1024px)",
-      "originalValue": "(min-width: 1024px)",
-      "name": "media_query_l"
+    "breakpoint-medium": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "960px",
+      "originalValue": "960px",
+      "name": "breakpoint-medium"
+    },
+    "breakpoint-large": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "1200px",
+      "originalValue": "1200px",
+      "name": "breakpoint-large"
+    },
+    "breakpoint-xlarge": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "1600px",
+      "originalValue": "1600px",
+      "name": "breakpoint-xlarge"
+    },
+    "breakpoint-xsmall-max": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "639px",
+      "originalValue": "639px",
+      "name": "breakpoint-xsmall-max"
+    },
+    "breakpoint-small-max": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "959px",
+      "originalValue": "959px",
+      "name": "breakpoint-small-max"
+    },
+    "breakpoint-medium-max": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "1199px",
+      "originalValue": "1199px",
+      "name": "breakpoint-medium-max"
+    },
+    "breakpoint-large-max": {
+      "type": "number",
+      "category": "breakpoints",
+      "value": "1599px",
+      "originalValue": "1599px",
+      "name": "breakpoint-large-max"
     },
     "shadow_s": {
       "type": "...",
