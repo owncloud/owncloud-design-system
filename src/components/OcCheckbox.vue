@@ -30,7 +30,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: uniqueId("oc-checkbox-"),
+      default: () => uniqueId("oc-checkbox-"),
     },
     /**
      * Disables the checkbox

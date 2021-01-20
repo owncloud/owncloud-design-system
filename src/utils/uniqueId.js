@@ -1,8 +1,7 @@
+let num = 0
+
 export default function uniqueId(prefix) {
-  let num = 0
-  return function () {
-    prefix = String(prefix) || ""
-    num += 1
-    return prefix + num
-  }
+  prefix = prefix || ""
+  num += 1
+  return prefix + num
 }

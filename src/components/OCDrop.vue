@@ -24,7 +24,7 @@ export default {
     dropId: {
       type: String,
       required: false,
-      default: uniqueId("oc-drop-"),
+      default: () => uniqueId("oc-drop-"),
     },
     /**
      * CSS selector of the element to maintain the drop's visibility. see https://getuikit.com/docs/drop#boundary
