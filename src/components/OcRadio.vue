@@ -30,7 +30,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: uniqueId("oc-radio-"),
+      default: () => uniqueId("oc-radio-"),
     },
     /**
      * Disables the radio button
