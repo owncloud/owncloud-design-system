@@ -1019,6 +1019,8 @@ The following sections list the changes in ownCloud Design System 1.0.2.
 
 The following sections list the changes in ownCloud Design System 1.0.1.
 
+[1.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v1.0.1
+
 [1.0.1]: https://github.com/owncloud/owncloud-design-system/compare/9c9d14acc7df90254e857e9c2de7bad8f77a238c...v1.0.1
 
 ## Summary
@@ -1034,4 +1036,23 @@ The following sections list the changes in ownCloud Design System 1.0.1.
 
    https://github.com/owncloud/owncloud-design-system/issues/10
    https://owncloud.github.io/owncloud-design-system/
+
+# Changelog for [2.1.2] (2020-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.2.
+
+## Summary
+
+* Change - Pin UIkit version to 3.5.16: [#1064](https://github.com/owncloud/owncloud-design-system/pull/1064)
+
+## Details
+
+* Change - Pin UIkit version to 3.5.16: [#1064](https://github.com/owncloud/owncloud-design-system/pull/1064)
+
+   We've pinned the version of UIkit to 3.5.16. The reason for this is that the version 3.5.17
+   caused a regression to our autocomplete component. Since we want to remove UIkit from the ODS in
+   the near future, we are not taking the time to come up with a fix. We do not plan to upgrade UIkit
+   anymore.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1064
 
