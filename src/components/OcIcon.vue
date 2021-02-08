@@ -2,7 +2,6 @@
   <!-- eslint-disable vue/no-v-html -->
   <component
     :is="type"
-    v-if="iconNotLoaded"
     :class="[
       { 'oc-button-reset': type === 'button' },
       'oc-icon',
@@ -20,19 +19,6 @@
       :role="accessibleLabel === '' ? 'presentation' : 'img'"
     ></inline-svg>
   </component>
-  <!-- eslint-enable vue/no-v-html -->
-  <img
-    v-else
-    :src="iconUrl"
-    :alt="accessibleLabel"
-    :class="[
-      { 'oc-button-reset': type === 'button' },
-      'oc-icon',
-      sizeClass(size),
-      variationClass(variation),
-    ]"
-    @click="onClick"
-  />
 </template>
 
 <script>
@@ -67,16 +53,6 @@ export default {
     name: {
       type: String,
       default: "info",
-    },
-    /**
-     * Alternative way to specify the svg icon via an url.
-     * In case no image can be loaded from ths give url the icon
-     * as defined by the name property will be displayed.
-     */
-    url: {
-      type: String,
-      required: false,
-      default: null,
     },
     /**
      * Descriptive text to be read to screenreaders.
@@ -117,12 +93,6 @@ export default {
       },
     },
   },
-  data() {
-    return {
-      iconUrl: undefined,
-      iconNotLoaded: true,
-    }
-  },
   computed: {
     svgPath() {
       return require("../assets/icons/" + this.name + ".svg")
@@ -130,14 +100,6 @@ export default {
     svgTitleId() {
       return uniqueId("oc-icon-title-")
     },
-  },
-  watch: {
-    url() {
-      this.loadImage()
-    },
-  },
-  mounted() {
-    this.loadImage()
   },
   methods: {
     sizeClass(c) {
@@ -151,20 +113,6 @@ export default {
     },
     onClick() {
       this.$emit("click")
-    },
-    loadImage() {
-      this.iconUrl = this.url
-      if (this.url !== "") {
-        const img = new Image()
-        img.addEventListener("load", () => {
-          this.iconNotLoaded = false
-        })
-        img.addEventListener("error", () => {
-          this.$emit("error")
-          this.iconUrl = ""
-        })
-        img.src = this.iconUrl
-      }
     },
     transformSvgElement(svg) {
       if (this.accessibleLabel !== "") {
@@ -205,7 +153,7 @@ export default {
       <oc-tbody>
         <oc-tr v-for="variation in variations" :key="'variation-' + variation.id">
           <oc-td>{{ variation.name }}</oc-td>
-          <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverted'}">
+          <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverse'}">
             <oc-icon :variation="variation.name" name="close"/>
             <oc-icon :variation="variation.name" name="delete"/>
             <oc-icon :variation="variation.name" name="info"/>
@@ -238,15 +186,6 @@ export default {
       </oc-tbody>
     </oc-table-simple>
 
-    <h3 class="uk-heading-divider">
-      Icons loaded via URL
-    </h3>
-    <div class="oc-m">
-      <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" accessible-label="Firefox logo"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
-      <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv" accessible-label="Account"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
-    </div>
   </section>
 </template>
 <script>
@@ -268,6 +207,9 @@ export default {
       }, {
         id: "2769-7633-8478-1257",
         name: "warning",
+      }, {
+        id: "2324-8956-9042",
+        name: "inverse",
       }]
     },
     sizes() {
