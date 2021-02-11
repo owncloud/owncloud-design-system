@@ -15,6 +15,7 @@
         v-bind="componentProps"
         v-if="isResourceClickable"
         @click.stop="emitClick"
+        @click.native.stop
       >
         <oc-resource-name :full-path="resource.path" :is-path-displayed="isPathDisplayed" />
       </component>
@@ -99,6 +100,12 @@ export default {
       return this.isResourceClickable && this.isFolder
     },
 
+    folderLink() {
+      const path = this.resource.path.replace(/^\//, "") // remove leading slash
+
+      return `${this.targetRoute}/${encodeURIComponent(path)}`
+    },
+
     componentProps() {
       if (!this.isRouterLink) {
         return {
@@ -108,7 +115,7 @@ export default {
       }
 
       return {
-        to: { path: this.targetRoute, params: { item: this.resource.path } },
+        to: this.folderLink,
       }
     },
   },
