@@ -101,9 +101,10 @@ export default {
     },
 
     folderLink() {
-      const path = this.resource.path.replace(/^\//, "") // remove leading slash
+      const path = this.resource.path.replace(/^\//, "")
+      const targetPath = this.targetRoute.replace(/\/$/, "")
 
-      return `${this.targetRoute}/${encodeURIComponent(path)}`
+      return `${targetPath}/${encodeURIComponent(path)}`
     },
 
     componentProps() {
