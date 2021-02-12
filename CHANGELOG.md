@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
+* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
 
 ## Details
 
@@ -17,6 +18,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    design system. Any specific styling like that should be done in the consuming app.
 
    https://github.com/owncloud/owncloud-design-system/pull/1084
+
+
+* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
+
+   We've merged the resource target route path with the folder path in the `router-link`. When
+   passing the path as a parameter, it wasn't being recognised and the navigation just pointed to
+   the target route path. By explicitly merging them, we make sure that the navigation behaves as
+   expected.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1085
 
 # Changelog for [2.1.1] (2021-01-21)
 
