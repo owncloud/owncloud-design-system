@@ -6,10 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
-* Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
+* Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
+* Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
 
 ## Details
+
+* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
+
+   We've merged the resource target route path with the folder path in the `router-link`. When
+   passing the path as a parameter, it wasn't being recognised and the navigation just pointed to
+   the target route path. By explicitly merging them, we make sure that the navigation behaves as
+   expected.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1085
+
 
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
 
@@ -20,14 +31,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/1084
 
 
-* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
+* Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
 
-   We've merged the resource target route path with the folder path in the `router-link`. When
-   passing the path as a parameter, it wasn't being recognised and the navigation just pointed to
-   the target route path. By explicitly merging them, we make sure that the navigation behaves as
-   expected.
+   We've removed the trailing slash from the resource target path. We're merging target path with
+   the folder path into one and place a slash in between them. Having trailing slash in the target
+   path resulted in two slashes in the final path.
 
-   https://github.com/owncloud/owncloud-design-system/pull/1085
+   https://github.com/owncloud/owncloud-design-system/pull/1087
 
 # Changelog for [2.1.1] (2021-01-21)
 
