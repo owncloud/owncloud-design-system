@@ -134,8 +134,8 @@
 
     &:hover,
     &:focus {
-      color: $global-inverse-color;
       background-color: $action-primary-hover;
+      color: $global-inverse-color;
       text-decoration: none;
     }
   }
