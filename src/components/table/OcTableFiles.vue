@@ -20,14 +20,14 @@
         />
       </div>
     </template>
-    <template #select="rowData">
+    <template #select="{ item }">
       <oc-checkbox
-        :id="`oc-table-files-select-${rowData.item.id}`"
+        :id="`oc-table-files-select-${item.id}`"
         :label="$gettext('Select')"
         :hide-label="true"
         size="large"
         :value="selection"
-        :option="rowData.item.id"
+        :option="item"
         @input="emitSelect"
         @click.native.stop
       />
@@ -42,38 +42,38 @@
         @click="emitFileClick(item)"
       />
     </template>
-    <template #status="rowData">
+    <template #status="{ item }">
       <!-- @slot Status column -->
-      <slot name="status" :resource="rowData.item" />
+      <slot name="status" :resource="item" />
     </template>
-    <template #sharedWith="rowData">
+    <template #sharedWith="{ item }">
       <oc-avatar-group
         class="oc-table-files-people"
-        :users="rowData.item.sharedWith"
+        :users="item.sharedWith"
         :stacked="true"
         :max-displayed="3"
         :is-tooltip-displayed="true"
       />
     </template>
-    <template #size="rowData">
-      <oc-resource-size :size="rowData.item.size" />
+    <template #size="{ item }">
+      <oc-resource-size :size="item.size" />
     </template>
-    <template #owner="rowData">
+    <template #owner="{ item }">
       <oc-avatar-group
         class="oc-table-files-people"
-        :users="rowData.item.owner"
+        :users="item.owner"
         :is-tooltip-displayed="true"
       />
     </template>
-    <template #actions="rowData">
+    <template #actions="{ item }">
       <div class="oc-table-files-actions">
         <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
-        <slot name="quickActions" :resource="rowData.item" />
+        <slot name="quickActions" :resource="item" />
         <oc-button
           :aria-label="$gettext('Show details')"
           class="oc-table-files-btn-show-details"
           variation="raw"
-          @click="showDetails(rowData.item)"
+          @click="showDetails(item)"
         >
           <oc-icon name="more_vert" aria-hidden="true" />
         </oc-button>
@@ -303,8 +303,8 @@ export default {
   methods: {
     showDetails(resource) {
       /**
-       * Triggered when the showDetails button in actions column is clicked
-       * @property {object} resource resource for which the event is triggered
+       * Triggered when the showDetails button in the actions column is clicked
+       * @property {object} resource The resource for which the event is triggered
        */
       this.$emit("showDetails", resource)
     },
@@ -313,12 +313,12 @@ export default {
       return DateTime.fromJSDate(new Date(date)).toRelative()
     },
 
-    emitSelect(ids) {
+    emitSelect(resources) {
       /**
-       * Triggered a checkbox for selecting resource or all is clicked
-       * @property {array} ids ids of selected resources
+       * Triggered when a checkbox for selecting a resource or the checkbox for selecting all resources is clicked
+       * @property {array} resources The selected resources
        */
-      this.$emit("select", ids)
+      this.$emit("select", resources)
     },
 
     toggleSelectionAll() {
@@ -326,7 +326,7 @@ export default {
         return this.emitSelect([])
       }
 
-      this.emitSelect(this.resources.map(resource => resource.id))
+      this.emitSelect(this.resources)
     },
 
     emitFileClick(resource) {
@@ -390,14 +390,14 @@ export default {
       </template>
     </oc-table-files>
     <div>
-      Selected resources: {{ selected }}
+      Selected resources: {{ selectedIds }}
     </div>
   </div>
 </template>
 <script>
 export default {
   data: () => ({
-    selected: ['notes'],
+    selected: [],
     highlighted: 'forest'
   }),
   computed: {
@@ -452,6 +452,9 @@ export default {
         }
       ]
     },
+    selectedIds() {
+      return this.selected.map(resource => resource.id)
+    }
   },
   methods: {
     highlightResource(resource) {
@@ -460,6 +463,9 @@ export default {
     handleAction(resource) {
       alert(`Clicked ${resource.name}`)
     }
+  },
+  mounted() {
+    this.selected = [this.resources[1]]
   }
 }
 </script>
