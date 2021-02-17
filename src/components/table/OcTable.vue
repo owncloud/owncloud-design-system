@@ -31,7 +31,7 @@
       >
         <oc-td
           v-for="field in fields"
-          :key="`oc-tbody-tr-${item[idKey] || index}-${field.name}`"
+          :key="'oc-tbody-tr-' + cellKey(field, index, item)"
           :class="`oc-table-data-cell oc-table-data-cell-${field.name}`"
           v-bind="extractTdProps(field)"
         >
@@ -223,6 +223,20 @@ export default {
       }
 
       return this.disabled === item[this.idKey]
+    },
+
+    cellKey(field, index, item) {
+      const prefix = (item[this.idKey] || index) + "-"
+
+      if (this.isFieldTypeSlot(field)) {
+        return prefix + field.name
+      }
+
+      if (this.isFieldTypeCallback(field)) {
+        return prefix + field.callback(item[field.name])
+      }
+
+      return prefix + item[field.name]
     },
   },
 }

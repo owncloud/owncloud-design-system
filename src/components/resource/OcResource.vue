@@ -17,7 +17,11 @@
         @click.stop="emitClick"
         @click.native.stop
       >
-        <oc-resource-name :full-path="resource.path" :is-path-displayed="isPathDisplayed" />
+        <oc-resource-name
+          :key="resource.name"
+          :full-path="resource.path"
+          :is-path-displayed="isPathDisplayed"
+        />
       </component>
       <oc-resource-name v-else :full-path="resource.path" :is-path-displayed="isPathDisplayed" />
       <div v-if="resource.indicators.length > 0" class="oc-resource-indicators">
