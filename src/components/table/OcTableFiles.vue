@@ -38,7 +38,7 @@
         :is-path-displayed="arePathsDisplayed"
         :is-preview-displayed="arePreviewsDisplayed"
         :target-route="targetRoute"
-        :is-resource-clickable="$_isResourceClickable(item.id)"
+        :is-resource-clickable="isResourceClickable(item.id)"
         @click="emitFileClick(item)"
       />
     </template>
@@ -179,7 +179,7 @@ export default {
     /**
      * Asserts whether clicking on the resource name triggers any action
      */
-    isResourceClickable: {
+    areResourcesClickable: {
       type: Boolean,
       required: false,
       default: true,
@@ -337,12 +337,14 @@ export default {
       this.$emit("fileClick", resource)
     },
 
-    $_isResourceClickable(resourceId) {
-      const isDisabled = Array.isArray(this.disabled)
-        ? this.disabled.contains(resourceId)
-        : this.disabled === resourceId
+    isResourceClickable(resourceId) {
+      if (!this.areResourcesClickable) {
+        return false
+      }
 
-      return this.isResourceClickable && !isDisabled
+      return Array.isArray(this.disabled)
+        ? !this.disabled.includes(resourceId)
+        : this.disabled !== resourceId
     },
   },
 }
