@@ -37,7 +37,7 @@ exports[`OcTableFiles displays all fields 1`] = `
   </thead>
   <tbody>
     <tr class="oc-tbody-tr oc-tbody-tr-forest" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-forest" class="oc-cursor-pointer"><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="forest">
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-forest" class="oc-cursor-pointer"><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
           <!---->
         </label></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
@@ -99,7 +99,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
     </tr>
     <tr class="oc-tbody-tr oc-tbody-tr-notes" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-notes" class="oc-cursor-pointer"><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="notes">
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-notes" class="oc-cursor-pointer"><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
           <!---->
         </label></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
@@ -166,7 +166,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
     </tr>
     <tr class="oc-tbody-tr oc-tbody-tr-documents" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-documents" class="oc-cursor-pointer"><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="documents">
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-documents" class="oc-cursor-pointer"><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
           <!---->
         </label></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
