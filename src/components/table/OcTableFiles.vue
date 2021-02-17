@@ -3,6 +3,7 @@
     :data="resources"
     :fields="fields"
     :highlighted="highlighted"
+    :disabled="disabled"
     :row-height="rowHeight"
     :sticky="true"
     :header-position="headerPosition"
@@ -31,14 +32,14 @@
         @click.native.stop
       />
     </template>
-    <template #name="rowData">
+    <template #name="{ item }">
       <oc-resource
-        :resource="rowData.item"
+        :resource="item"
         :is-path-displayed="arePathsDisplayed"
         :is-preview-displayed="arePreviewsDisplayed"
         :target-route="targetRoute"
-        :is-resource-clickable="isResourceClickable"
-        @click="emitFileClick(rowData.item)"
+        :is-resource-clickable="$_isResourceClickable(item.id)"
+        @click="emitFileClick(item)"
       />
     </template>
     <template #status="rowData">
@@ -191,6 +192,22 @@ export default {
       required: false,
       default: 0,
     },
+    /**
+     * Asserts whether resources in the table can be selected
+     */
+    isSelectable: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    /**
+     * The ids of disabled resources. Null or an empty string/array for no disabled resources.
+     */
+    disabled: {
+      type: [String, Array],
+      required: false,
+      default: null,
+    },
   },
   computed: {
     fields() {
@@ -199,15 +216,18 @@ export default {
       }
 
       const firstResource = this.resources[0]
-      const fields = [
-        {
+      const fields = []
+
+      if (this.isSelectable) {
+        fields.push({
           name: "select",
           title: "",
           type: "slot",
           headerType: "slot",
           width: "shrink",
-        },
-      ]
+        })
+      }
+
       fields.push(
         ...[
           {
@@ -316,6 +336,14 @@ export default {
        */
       this.$emit("fileClick", resource)
     },
+
+    $_isResourceClickable(resourceId) {
+      const isDisabled = Array.isArray(this.disabled)
+        ? this.disabled.contains(resourceId)
+        : this.disabled === resourceId
+
+      return this.isResourceClickable && !isDisabled
+    },
   },
 }
 </script>
@@ -349,7 +377,7 @@ export default {
 ```vue
 <template>
   <div>
-    <oc-table-files :resources="resources" :highlighted="highlighted" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction">
+    <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="raw" aria-label="Share">
           <oc-icon name="group-add" aria-hidden="true" />

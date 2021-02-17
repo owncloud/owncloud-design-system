@@ -24,6 +24,7 @@
           'oc-tbody-tr',
           `oc-tbody-tr-${item[idKey] || index}`,
           { 'oc-table-highlighted': isHighlighted(item) },
+          { 'oc-table-disabled': isDisabled(item) },
         ]"
         :style="{ height: rowHeight + 'px' }"
         @click.native="$emit('highlight', item)"
@@ -130,6 +131,13 @@ export default {
       default: null,
     },
     /**
+     * The ids of disabled data items. Null or an empty string/array for no disabled items.
+     */
+    disabled: {
+      type: [String, Array],
+      default: null,
+    },
+    /**
      * Height of the row in pixels
      */
     rowHeight: {
@@ -204,6 +212,18 @@ export default {
 
       return this.highlighted === item[this.idKey]
     },
+
+    isDisabled(item) {
+      if (!this.disabled) {
+        return false
+      }
+
+      if (Array.isArray(this.disabled)) {
+        return this.disabled.indexOf(item[this.idKey]) > -1
+      }
+
+      return this.disabled === item[this.idKey]
+    },
   },
 }
 </script>
@@ -229,6 +249,12 @@ export default {
     background-color: $selected-background;
   }
 
+  &-disabled {
+    background-color: $muted-background;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
   &-sticky {
     position: relative;
 
@@ -247,7 +273,7 @@ export default {
     <h3 class="uk-heading-divider">
       A simple table with plain field types
     </h3>
-    <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003" :sticky="true" />
+    <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003" disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true" />
   </section>
 </template>
 <script>
