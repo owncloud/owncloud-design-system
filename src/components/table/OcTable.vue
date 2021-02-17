@@ -31,7 +31,7 @@
       >
         <oc-td
           v-for="field in fields"
-          :key="cellKey(field, index, item)"
+          :key="'oc-tbody-tr-' + cellKey(field, index, item)"
           :class="`oc-table-data-cell oc-table-data-cell-${field.name}`"
           v-bind="extractTdProps(field)"
         >
