@@ -7,6 +7,7 @@
           :key="`oc-thead-${field.name}`"
           v-bind="extractThProps(field)"
           :class="`oc-table-header-cell oc-table-header-cell-${field.name}`"
+          :style="{ top: sticky ? headerPosition + 'px' : null }"
         >
           <slot v-if="field.headerType === 'slot'" :name="field.name + 'Header'" />
           <template v-else>
@@ -136,6 +137,14 @@ export default {
       required: false,
       default: 64,
     },
+    /**
+     * Top position of header used when the header is sticky in pixels
+     */
+    headerPosition: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   computed: {
     tableClasses() {
@@ -226,7 +235,6 @@ export default {
     .oc-table-header-cell {
       background-color: $inverse-color;
       position: sticky;
-      top: 0;
       z-index: 1;
     }
   }

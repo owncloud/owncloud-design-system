@@ -5,6 +5,7 @@
     :highlighted="highlighted"
     :row-height="rowHeight"
     :sticky="true"
+    :header-position="headerPosition"
     @highlight="showDetails"
   >
     <template #selectHeader>
@@ -181,6 +182,14 @@ export default {
       type: Boolean,
       required: false,
       default: true,
+    },
+    /**
+     * Top position of header used when the header is sticky in pixels
+     */
+    headerPosition: {
+      type: Number,
+      required: false,
+      default: 0,
     },
   },
   computed: {
