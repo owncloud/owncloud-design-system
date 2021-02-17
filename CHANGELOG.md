@@ -10,6 +10,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
 * Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)
 * Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
+* Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+* Enhancement - Add `isSelectable` prop to files table component: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
 
 ## Details
 
@@ -47,6 +49,23 @@ The following sections list the changes in ownCloud Design System unreleased.
    path resulted in two slashes in the final path.
 
    https://github.com/owncloud/owncloud-design-system/pull/1087
+
+
+* Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+
+   We've added `disabled` prop to `oc-table` and `oc-table-files` components. This prop is used
+   to pass IDs of disabled resources so that they are clearly distinguishable from the other
+   resources.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1093
+
+
+* Enhancement - Add `isSelectable` prop to files table component: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+
+   We've added `isSelectable` prop to `oc-table-files` component. This prop is used to assert
+   whether resources in the table can be selected.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1093
 
 # Changelog for [2.1.1] (2021-01-21)
 
@@ -243,7 +262,7 @@ The following sections list the changes in ownCloud Design System 2.0.0.
 
 The following sections list the changes in ownCloud Design System 1.15.0.
 
-[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.15.0
+[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.15.0
 
 ## Summary
 
@@ -278,31 +297,11 @@ The following sections list the changes in ownCloud Design System 1.15.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/924
 
-# Changelog for [1.13.0] (2020-10-28)
-
-The following sections list the changes in ownCloud Design System 1.13.0.
-
-[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.13.0
-
-## Summary
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-## Details
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
-   accessibility aspects are already implement, for example expanding and collapsing
-   accordion items by pressing space or enter already works. More will come later on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/911
-
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
 
-[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.14.0
+[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.14.0
 
 ## Summary
 
@@ -324,6 +323,26 @@ The following sections list the changes in ownCloud Design System 1.14.0.
    We added an icon for `file version`
 
    https://github.com/owncloud/owncloud-design-system/pull/917
+
+# Changelog for [1.13.0] (2020-10-28)
+
+The following sections list the changes in ownCloud Design System 1.13.0.
+
+[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.13.0
+
+## Summary
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+## Details
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
+   accessibility aspects are already implement, for example expanding and collapsing
+   accordion items by pressing space or enter already works. More will come later on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/911
 
 # Changelog for [1.12.2] (2020-10-26)
 
