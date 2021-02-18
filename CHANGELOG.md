@@ -6,11 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Button hover color fix: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
 * Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
 
 ## Details
+
+* Bugfix - Button hover color fix: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
+
+   When hovering the oc-button (*primary*) component had different styling, depending on if it was used as `a` or `button` tag.
+   This was caused by the underlying `ui-kit` styles, since no specific component-based styling was provided.
+   By making the hover styling explicit in the component stylesheet, this is fixed.
+   https://github.com/owncloud/owncloud-design-system/pull/1091
 
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
 
