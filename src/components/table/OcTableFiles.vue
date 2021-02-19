@@ -79,6 +79,10 @@
         </oc-button>
       </div>
     </template>
+    <template v-if="$slots.footer" #footer>
+      <!-- @slot Footer of the files table -->
+      <slot name="footer" />
+    </template>
   </oc-table>
 </template>
 
@@ -387,6 +391,9 @@ export default {
         <oc-button @click.stop variation="raw" aria-label="Create a public link">
           <oc-icon name="link-add" aria-hidden="true" />
         </oc-button>
+      </template>
+      <template #footer>
+        {{ resources.length }} resources
       </template>
     </oc-table-files>
     <div>
