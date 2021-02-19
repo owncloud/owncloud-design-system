@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .oc-dropzone {
   align-items: center;
   background-color: rgba($global-background, 0.8);
