@@ -48,6 +48,7 @@ exports[`OcTable displays all field types 1`] = `
       </td>
     </tr>
   </tbody>
+  <!---->
 </table>
 `;
 
@@ -77,5 +78,6 @@ exports[`OcTable hides header 1`] = `
       </oc-td-stub>
     </oc-tr-stub>
   </oc-tbody-stub>
+  <!---->
 </table>
 `;
