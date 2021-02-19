@@ -79,6 +79,10 @@
         </oc-button>
       </div>
     </template>
+    <template v-if="$slots.footer" #footer>
+      <!-- @slot Footer of the files table -->
+      <slot name="footer" />
+    </template>
   </oc-table>
 </template>
 

@@ -43,6 +43,10 @@
         </oc-td>
       </oc-tr>
     </oc-tbody>
+    <tfoot v-if="$slots.footer">
+      <!-- @slot Footer of the table -->
+      <slot name="footer" />
+    </tfoot>
   </table>
 </template>
 <script>
