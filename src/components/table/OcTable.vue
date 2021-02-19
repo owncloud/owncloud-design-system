@@ -43,9 +43,13 @@
         </oc-td>
       </oc-tr>
     </oc-tbody>
-    <tfoot v-if="$slots.footer">
-      <!-- @slot Footer of the table -->
-      <slot name="footer" />
+    <tfoot v-if="$slots.footer" class="oc-table-footer">
+      <tr>
+        <td :colspan="footerColspan" class="oc-table-footer-cell">
+          <!-- @slot Footer of the table -->
+          <slot name="footer" />
+        </td>
+      </tr>
     </tfoot>
   </table>
 </template>
@@ -172,6 +176,10 @@ export default {
 
       return result
     },
+
+    footerColspan() {
+      return this.fields.length
+    },
   },
   methods: {
     isFieldTypeSlot(field) {
@@ -282,6 +290,17 @@ export default {
       z-index: 1;
     }
   }
+
+  &-footer {
+    border-top: 1px solid $border-primary;
+
+    &-cell {
+      color: $muted-color;
+      font-size: 0.875rem;
+      line-height: 1.4;
+      padding: $space-xsmall;
+    }
+  }
 }
 </style>
 <docs>
@@ -291,7 +310,11 @@ export default {
     <h3 class="uk-heading-divider">
       A simple table with plain field types
     </h3>
-    <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003" disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true" />
+    <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003" disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true">
+      <template #footer>
+        3 resources
+      </template>
+    </oc-table>
   </section>
 </template>
 <script>

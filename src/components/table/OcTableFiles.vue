@@ -392,6 +392,9 @@ export default {
           <oc-icon name="link-add" aria-hidden="true" />
         </oc-button>
       </template>
+      <template #footer>
+        {{ resources.length }} resources
+      </template>
     </oc-table-files>
     <div>
       Selected resources: {{ selectedIds }}
