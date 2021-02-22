@@ -21,6 +21,9 @@ describe("OcResource", () => {
     const wrapper = mount(Resource, {
       propsData: {
         resource: folderResource,
+        targetRoute: {
+          name: "tests-route"
+        }
       },
     })
 
