@@ -176,7 +176,7 @@ exports[`OcTableFiles displays all fields 1`] = `
     Object.assign({}, props, {'data-file-name': SvgFolder.name})
   );
 }</span>
-          <div class="oc-resource-details"><a to="/Documents">
+          <div class="oc-resource-details"><a to="[object Object]">
               <div class="oc-resource-name">
                 <!----> <span class="oc-resource-basename">Documents</span>
                 <!---->

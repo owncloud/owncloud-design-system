@@ -70,12 +70,37 @@ export default {
       default: true,
     },
     /**
-     * Target route path used to build the link when navigating into a resource
+     * Target route object used to build the link when navigating into a resource.
+     * @values { name, query }
      */
     targetRoute: {
-      type: String,
+      type: Object,
       required: false,
-      default: "",
+      default: null,
+      validator: value => {
+        if (!Object.prototype.hasOwnProperty.call(value, "name")) {
+          console.error("Target route needs to have a route name")
+
+          return false
+        }
+
+        if (typeof value.name !== "string") {
+          console.error("Target route name needs to be of type String")
+
+          return false
+        }
+
+        if (
+          Object.prototype.hasOwnProperty.call(value, "query") &&
+          typeof value.query !== "object"
+        ) {
+          console.error("Target route query needs to be of type Object")
+
+          return false
+        }
+
+        return true
+      },
     },
     /**
      * Asserts whether clicking on the resource name triggers any action
@@ -106,9 +131,15 @@ export default {
 
     folderLink() {
       const path = this.resource.path.replace(/^\//, "")
-      const targetPath = this.targetRoute.replace(/\/$/, "")
 
-      return `${targetPath}/${encodeURIComponent(path)}`
+      return {
+        name: this.targetRoute.name,
+        query: this.targetRoute.query,
+        params: {
+          item: path,
+          ...this.targetRoute.params,
+        },
+      }
     },
 
     componentProps() {
@@ -172,7 +203,7 @@ export default {
   ```vue
     <template>
       <div>
-        <oc-resource :resource="documents" targetRoute="/home" class="oc-mb" />
+        <oc-resource :resource="documents" :targetRoute="targetRoute" class="oc-mb" />
         <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
         <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
         <oc-resource :resource="forest" :isPathDisplayed="true" />
@@ -224,6 +255,17 @@ export default {
               icon: 'link',
             }
           ]
+        },
+        targetRoute() {
+          return {
+            name: "home",
+            params: {
+              action: "copy"
+            },
+            query: {
+              resource: "notes"
+            }
+          }
         }
       },
     }
