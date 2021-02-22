@@ -10,8 +10,10 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
 * Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
+* Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
 * Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
 * Change - Use resources instead of ids in selection model: [#1095](https://github.com/owncloud/owncloud-design-system/pull/1095)
+* Enhancement - Add link avatar component: [#1101](https://github.com/owncloud/owncloud-design-system/pull/1101)
 * Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)
 * Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
 * Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
@@ -56,6 +58,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/1084
 
 
+* Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
+
+   We've changed the `targetRoute` prop in the `oc-resource` component to accept an object
+   instead of a string. This object is now accepting keys `name`, `params` and `query`. Only
+   `name` is required. All keys are then passed to the router link which enables using more complex
+   routes.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1102
+
+
 * Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
 
    We've started using values as keys for the table cells so that they are reactive to the changes in
@@ -70,6 +82,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    their ids.
 
    https://github.com/owncloud/owncloud-design-system/pull/1095
+
+
+* Enhancement - Add link avatar component: [#1101](https://github.com/owncloud/owncloud-design-system/pull/1101)
+
+   We've created a link avatar component which mimics styles of the avatar component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1101
 
 
 * Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)

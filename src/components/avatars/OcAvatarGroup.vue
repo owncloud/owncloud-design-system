@@ -4,13 +4,19 @@
     :class="{ 'oc-avatar-group-stacked': stacked }"
     :uk-tooltip="tooltip"
   >
-    <oc-avatar
-      v-for="avatar in avatars"
-      :key="avatar.id"
-      :src="avatar.avatar"
-      :user-name="avatar.username"
-      :width="30"
-    />
+    <template v-if="avatars.length > 0">
+      <oc-avatar
+        v-for="avatar in avatars"
+        :key="avatar.username"
+        :src="avatar.avatar"
+        :user-name="avatar.username"
+        :width="30"
+      />
+      {{ avatars.length }}
+    </template>
+    <template v-if="links.length > 0">
+      <oc-avatar-link v-for="(link, index) in links" :key="link.name + index" :name="link.name" />
+    </template>
     <oc-avatar-count v-if="isOverlapping" :count="users.length - maxDisplayed" />
   </div>
 </template>
@@ -18,6 +24,7 @@
 <script>
 import OcAvatar from "./OcAvatar.vue"
 import OcAvatarCount from "./OcAvatarCount.vue"
+import OcAvatarLink from "./OcAvatarLink.vue"
 
 /**
  * Display a group of avatars
@@ -27,7 +34,7 @@ export default {
   status: "review",
   release: "2.1.0",
 
-  components: { OcAvatar, OcAvatarCount },
+  components: { OcAvatar, OcAvatarCount, OcAvatarLink },
 
   props: {
     /**
@@ -72,6 +79,10 @@ export default {
       if (this.isTooltipDisplayed) {
         let tooltip = this.avatars.map(user => user.displayName).join(", ")
 
+        if (this.links.length > 0) {
+          tooltip += ", " + this.links.map(link => link.name).join(", ")
+        }
+
         if (this.isOverlapping) {
           tooltip += ` +${this.users.length - this.maxDisplayed}`
         }
@@ -84,10 +95,18 @@ export default {
 
     avatars() {
       if (this.maxDisplayed) {
-        return this.users.slice(0, this.maxDisplayed)
+        return this.users.slice(0, this.maxDisplayed).filter(user => !user.link)
       }
 
-      return this.users
+      return this.users.filter(user => !user.link)
+    },
+
+    links() {
+      if (this.maxDisplayed && this.avatars.length === this.maxDisplayed) {
+        return []
+      }
+
+      return this.users.filter(user => user.link)
     },
   },
 }
@@ -102,7 +121,9 @@ export default {
 
   &-stacked {
     .oc-avatar + .oc-avatar,
-    .oc-avatar-count {
+    .oc-avatar-count,
+    .oc-avatar + .oc-avatar-link,
+    .oc-avatar-link + .oc-avatar-link {
       border: 1px solid $inverse-color;
       margin-left: -25px;
       transition: margin-left $transition-duration-short ease-in-out;
@@ -111,7 +132,9 @@ export default {
     &:hover,
     &:focus {
       .oc-avatar + .oc-avatar,
-      .oc-avatar-count {
+      .oc-avatar-count,
+      .oc-avatar + .oc-avatar-link,
+      .oc-avatar-link + .oc-avatar-link {
         margin-left: 0;
       }
     }
@@ -133,21 +156,22 @@ export default {
   data: () => ({
     users: [
       {
-        id: "bob",
         username: "bob",
         displayName: "Bob",
         avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
       },
       {
-        id: "marie",
         username: "marie",
         displayName: "Marie",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
       },
       {
-        id: "john",
         username: "john",
         displayName: "John Richards Emperor of long names"
+      },
+      {
+        name: "Public link",
+        link: true
       }
     ]
   })
