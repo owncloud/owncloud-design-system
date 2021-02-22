@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
 * Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
+* Change - Add resource path attribute to oc-resource-name: [#1103](https://github.com/owncloud/owncloud-design-system/pull/1103)
 * Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
 * Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
 * Change - Use resources instead of ids in selection model: [#1095](https://github.com/owncloud/owncloud-design-system/pull/1095)
@@ -56,6 +57,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    design system. Any specific styling like that should be done in the consuming app.
 
    https://github.com/owncloud/owncloud-design-system/pull/1084
+
+
+* Change - Add resource path attribute to oc-resource-name: [#1103](https://github.com/owncloud/owncloud-design-system/pull/1103)
+
+   We added a custom attribute to the oc-resource-name component which contains the full
+   resource path. While this is not needed for rendering the component, this makes end to end
+   testing much easier.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1103
 
 
 * Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
