@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-resource-name" v-bind="tooltip">
+  <div class="oc-resource-name" v-bind="tooltip" :resource-path="fullPath">
     <span v-if="hasPath" class="oc-resource-path" v-text="path" />
     <span class="oc-resource-basename" v-text="name" />
     <span v-if="extension" class="oc-resource-extension" v-text="extension" />

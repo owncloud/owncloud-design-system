@@ -43,7 +43,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
           <div class="oc-resource-details"><button class="oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
-              <div class="oc-resource-name">
+              <div resource-path="images/nature/forest.jpg" class="oc-resource-name">
                 <!----> <span class="oc-resource-basename">forest</span> <span class="oc-resource-extension">.jpg</span>
               </div>
             </button>
@@ -114,7 +114,7 @@ exports[`OcTableFiles displays all fields 1`] = `
   );
 }</span>
           <div class="oc-resource-details"><button class="oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
-              <div class="oc-resource-name">
+              <div resource-path="/Documents/notes.txt" class="oc-resource-name">
                 <!----> <span class="oc-resource-basename">notes</span> <span class="oc-resource-extension">.txt</span>
               </div>
             </button>
@@ -185,7 +185,7 @@ exports[`OcTableFiles displays all fields 1`] = `
   );
 }</span>
           <div class="oc-resource-details"><a to="[object Object]">
-              <div class="oc-resource-name">
+              <div resource-path="/Documents" class="oc-resource-name">
                 <!----> <span class="oc-resource-basename">Documents</span>
                 <!---->
               </div>
