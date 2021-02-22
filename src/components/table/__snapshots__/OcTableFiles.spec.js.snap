@@ -71,12 +71,16 @@ exports[`OcTableFiles displays all fields 1`] = `
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" alt="">
             <!----> <span>J</span>
           </div>
+          3
+          <!---->
           <!---->
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          1
+          <!---->
           <!---->
         </div>
       </td>
@@ -138,12 +142,16 @@ exports[`OcTableFiles displays all fields 1`] = `
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" alt="">
             <!----> <span>J</span>
           </div>
+          3
+          <!---->
           <!---->
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          1
+          <!---->
           <!---->
         </div>
       </td>
@@ -206,12 +214,16 @@ exports[`OcTableFiles displays all fields 1`] = `
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" alt="">
             <!----> <span>J</span>
           </div>
+          3
+          <!---->
           <!---->
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          1
+          <!---->
           <!---->
         </div>
       </td>
