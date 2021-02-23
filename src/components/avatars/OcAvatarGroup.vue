@@ -12,7 +12,6 @@
         :user-name="avatar.username"
         :width="30"
       />
-      {{ avatars.length }}
     </template>
     <template v-if="links.length > 0">
       <oc-avatar-link v-for="(link, index) in links" :key="link.name + index" :name="link.name" />
