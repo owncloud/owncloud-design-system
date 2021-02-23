@@ -176,9 +176,9 @@ export default {
      * Target route path used to build the link when navigating into a resource
      */
     targetRoute: {
-      type: String,
+      type: Object,
       required: false,
-      default: "",
+      default: null,
     },
     /**
      * Asserts whether clicking on the resource name triggers any action
@@ -239,36 +239,42 @@ export default {
             title: this.$gettext("Name"), // How do we get the translations here?
             type: "slot",
             width: "expand",
+            wrap: "truncate",
           },
           {
             name: "size",
             title: this.$gettext("Size"),
             type: "slot",
             alignH: "right",
+            wrap: "nowrap",
           },
           {
             name: "sharedWith",
             title: this.$gettext("Shared with"),
             type: "slot",
             alignH: "right",
+            wrap: "nowrap",
           },
           {
             name: "status",
             title: this.$gettext("Status"),
             type: "slot",
             alignH: "right",
+            wrap: "nowrap",
           },
           {
             name: "owner",
             title: this.$gettext("Owner"),
             type: "slot",
             alignH: "right",
+            wrap: "nowrap",
           },
           {
             name: "mdate",
             title: this.$gettext("Modified"),
             type: "callback",
             alignH: "right",
+            wrap: "nowrap",
             callback: date => this.formatDate(date),
           },
           {
@@ -276,6 +282,7 @@ export default {
             title: this.$gettext("Shared"),
             type: "callback",
             alignH: "right",
+            wrap: "nowrap",
             callback: date => this.formatDate(date),
           },
           {
@@ -283,6 +290,7 @@ export default {
             title: this.$gettext("Deleted"),
             type: "callback",
             alignH: "right",
+            wrap: "nowrap",
             callback: date => this.formatDate(date),
           },
         ].filter(field => Object.prototype.hasOwnProperty.call(firstResource, field.name))
@@ -294,6 +302,7 @@ export default {
           title: this.$gettext("Actions"),
           type: "slot",
           alignH: "right",
+          wrap: "nowrap",
         })
       }
 
@@ -765,6 +774,16 @@ export default {
           indicators: [],
           type: "folder",
           size: "5324435",
+          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+        },
+        {
+          id: "pictures",
+          name: "Pictures and Movies as well as other resources",
+          path: "/Pictures and Movies as well as other resources",
+          icon: "folder",
+          indicators: [],
+          type: "folder",
+          size: "4323556",
           mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
         }
       ]

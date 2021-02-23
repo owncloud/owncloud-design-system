@@ -30,15 +30,24 @@ export default {
       default: "auto",
       validator: width => /(auto|shrink|expand)/.test(width),
     },
+    wrap: {
+      type: String,
+      default: null,
+      validator: wrap => (wrap ? /(break|nowrap|truncate)/.test(wrap) : true),
+    },
   },
   computed: {
     cellClasses() {
-      return [
+      const classes = [
         "oc-table-cell",
         `oc-table-cell-align-${this.alignH}`,
         `oc-table-cell-align-${this.alignV}`,
         `oc-table-cell-width-${this.width}`,
       ]
+      if (this.wrap) {
+        classes.push(`oc-text-${this.wrap}`)
+      }
+      return classes
     },
   },
 }

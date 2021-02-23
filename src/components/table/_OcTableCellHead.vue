@@ -1,5 +1,12 @@
 <template>
-  <oc-table-cell type="th" :align-h="alignH" :align-v="alignV" :width="width" class="oc-th">
+  <oc-table-cell
+    type="th"
+    :align-h="alignH"
+    :align-v="alignV"
+    :width="width"
+    :wrap="wrap"
+    class="oc-th"
+  >
     <slot />
   </oc-table-cell>
 </template>
@@ -26,6 +33,11 @@ export default {
       type: String,
       default: "auto",
       validator: width => /(auto|shrink|expand)/.test(width),
+    },
+    wrap: {
+      type: String,
+      default: "nowrap",
+      validator: wrap => /(break|nowrap|truncate)/.test(wrap),
     },
   },
 }
