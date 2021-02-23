@@ -157,7 +157,7 @@ Sidebar component containing branding and navigation
   <template>
     <div>
       <oc-sidebar
-        logoImg="https://owncloud.org/wp-content/themes/owncloud/img/owncloud-org-logo.svg"
+        logoImg="examples/placeholder_brand_logo.svg"
         productName="ownCloud"
         :navItems="navItems"
         class="uk-height-1-1"
@@ -211,7 +211,7 @@ In this content block, you can include e.g. a short description of the product, 
 
 ```js
   <oc-sidebar
-    logoImg="https://owncloud.org/wp-content/themes/owncloud/img/owncloud-org-logo.svg"
+    logoImg="examples/placeholder_brand_logo.svg"
     productName="ownCloud"
     class="uk-height-1-1"
   >
@@ -230,7 +230,7 @@ The navigation block will automatically receive bottom margin in case the `foote
   <template>
     <div>
       <oc-sidebar
-        logoImg="https://owncloud.org/wp-content/themes/owncloud/img/owncloud-org-logo.svg"
+        logoImg="examples/placeholder_brand_logo.svg"
         productName="ownCloud"
         :navItems="navItems"
         class="uk-height-1-1"
@@ -267,7 +267,7 @@ The navigation block can be hidden entirely - for example in favor of the `mainC
   <template>
     <div>
       <oc-sidebar
-          logoImg="https://owncloud.org/wp-content/themes/owncloud/img/owncloud-org-logo.svg"
+          logoImg="examples/placeholder_brand_logo.svg"
           productName="ownCloud"
           :navItems="navItems"
           :hide-nav="true"
