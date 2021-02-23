@@ -2,13 +2,21 @@
   <div class="oc-resource">
     <oc-img
       v-if="hasPreview"
-      :src="resource.preview"
+      :key="preview"
+      :src="preview"
       class="oc-resource-preview"
       aria-hidden="true"
       width="40"
       height="40"
     />
-    <oc-icon v-else :name="resource.icon" variation="file-type" size="large" aria-hidden="true" />
+    <oc-icon
+      v-else
+      key="resource-icon"
+      :name="resource.icon"
+      variation="file-type"
+      size="large"
+      aria-hidden="true"
+    />
     <div class="oc-resource-details">
       <component
         :is="componentType"
@@ -118,7 +126,13 @@ export default {
     },
 
     hasPreview() {
-      return this.isPreviewDisplayed && this.resource.preview
+      return (
+        this.isPreviewDisplayed && Object.prototype.hasOwnProperty.call(this.resource, "preview")
+      )
+    },
+
+    preview() {
+      return this.resource.preview
     },
 
     componentType() {
