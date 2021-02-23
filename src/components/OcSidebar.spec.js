@@ -12,7 +12,7 @@ const defaultProps = {
 
 describe("OcSidebar", () => {
   it('displays a logo image if its source is specified', () => {
-    const logoSrc = 'https://owncloud.com/wp-content/uploads/2020/06/oc-logo-1c-1.svg'
+    const logoSrc = 'examples/placeholder_brand_logo.svg'
     const wrapper = shallowMount(Sidebar, {
       propsData: {
         ...defaultProps,
