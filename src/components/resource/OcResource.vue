@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-resource">
+  <div class="oc-resource oc-text-overflow">
     <oc-img
       v-if="hasPreview"
       :key="preview"
@@ -22,6 +22,7 @@
         :is="componentType"
         v-bind="componentProps"
         v-if="isResourceClickable"
+        class="oc-text-overflow"
         @click.stop="emitClick"
         @click.native.stop
       >
@@ -201,12 +202,15 @@ export default {
 
   &-preview {
     border-radius: 2px;
-    height: $icons-size-default * 1.5;
     object-fit: cover;
+    height: $icons-size-default * 1.5;
+    max-height: $icons-size-default * 1.5;
     width: $icons-size-default * 1.5;
+    max-width: $icons-size-default * 1.5;
   }
 
   &-details {
+    display: block;
     padding-left: $space-small;
 
     a:hover,
@@ -255,7 +259,7 @@ export default {
         forest() {
           return {
             name: "forest.jpg",
-            path: "images/nature/forest.jpg",
+            path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
             preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file"
