@@ -49,21 +49,6 @@
   user-select: none;
 }
 
-/// Used to hide an element visually, but keeping it accessible for
-/// accessibility tools.
-@mixin visually-hidden {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  // Need to make sure we override any existing styles.
-  position: absolute !important;
-  top: 0;
-  white-space: nowrap;
-  width: 1px !important;
-}
-
 /// To be used on flex items. Resolves some common layout issues, such as
 /// text truncation not respecting padding or breaking out of container.
 /// https://css-tricks.com/flexbox-truncated-text/

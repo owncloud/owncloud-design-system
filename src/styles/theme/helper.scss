@@ -23,10 +23,6 @@
   align-self: center;
 }
 
-.oc-visually-hidden {
-  @include visually-hidden;
-}
-
 .oc-border {
   border: $global-border-width solid $border-primary !important;
 

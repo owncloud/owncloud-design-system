@@ -1,7 +1,15 @@
-## CSS
+## CSS utility classes
 
-| class name          | Description                                                                                                                                                                                      |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| .oc-visually-hidden | Hides text visually, but not for screen readers. For that use case, <u>do not use</u> `display: none` or `visibility: hidden` since these CSS properties also hide elements from screen readers. |
-| .oc-border          | Adds a border with default size and color. Can be extended with side (e. g. `oc-bt`) to assign border only to one side of the element |
-| .oc-padding         | Adds a padding to the element. Can be extended with size (e. g. `oc-padding-small`) to assign specific size of the padding or with direction (e. g. `oc-padding-top`) to give padding only to a specific direction. |
+ownCloud Design System has some utility classes builtin. Some of them
+have their own page because of their amount of variations.
+
+## Text wrapping behaviour
+
+Use one of the following classes to enforce a certain wrapping behaviour.
+
+| Class             | Description                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| .oc-text-overflow | Sets overflow to `hidden` without resizing its container.                                     |
+| .oc-text-nowrap   | Doesn't break to new lines.                                                                   |
+| .oc-text-truncate | Doesn't break to new lines. Text will be truncated, showing an ellipsis instead if necessary. |
+| .oc-text-break    | Text will break to new lines at word ends if it exceeds one line.                             |
