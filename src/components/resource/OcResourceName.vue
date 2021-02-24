@@ -1,5 +1,10 @@
 <template>
-  <div class="oc-resource-name oc-text-truncate" v-bind="tooltip" :resource-path="fullPath">
+  <div
+    class="oc-resource-name oc-text-truncate"
+    v-bind="tooltip"
+    :resource-path="fullPath"
+    :resource-name="fullName"
+  >
     <span v-if="hasPath" class="oc-resource-path" v-text="path" /><span
       class="oc-resource-basename"
       v-text="name"
@@ -48,6 +53,10 @@ export default {
         return { "uk-tooltip": this.pathTooltip }
       }
       return null
+    },
+
+    fullName() {
+      return this.path + this.name + this.extension
     },
   },
 
