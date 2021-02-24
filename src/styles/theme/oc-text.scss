@@ -1,7 +1,9 @@
 /*
  * Prevent text from wrapping onto multiple lines
  */
-.oc-text-nowrap { white-space: nowrap; }
+.oc-text-nowrap {
+  white-space: nowrap;
+}
 
 /*
  * Truncate text with an ellipsis if it's exceeding the available width
@@ -11,12 +13,16 @@
   max-width: 100%;
   overflow: hidden;
 }
+
 .oc-text-truncate {
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 th.oc-text-truncate,
-td.oc-text-truncate { max-width: 0; }
+td.oc-text-truncate {
+  max-width: 0;
+}
 
 /*
  * Wrap long words onto the next line and break them if they are too long to fit
@@ -25,5 +31,8 @@ td.oc-text-truncate { max-width: 0; }
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
 th.oc-text-break,
-td.oc-text-break { word-break: break-all; }
+td.oc-text-break {
+  word-break: break-all;
+}
