@@ -34,6 +34,7 @@
     </template>
     <template #name="{ item }">
       <oc-resource
+        :key="`${item.path}-${item.id}-${item.preview}`"
         :resource="item"
         :is-path-displayed="arePathsDisplayed"
         :is-preview-displayed="arePreviewsDisplayed"

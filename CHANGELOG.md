@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Button hover color: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
+* Bugfix - Missing logo in OcSidebar: [#1090](https://github.com/owncloud/owncloud-design-system/pull/1090)
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
 * Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
 * Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
@@ -31,6 +32,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    component stylesheet, this is fixed.
 
    https://github.com/owncloud/owncloud-design-system/pull/1091
+
+
+* Bugfix - Missing logo in OcSidebar: [#1090](https://github.com/owncloud/owncloud-design-system/pull/1090)
+
+   After to changes in the formerly referenced structure of the ownCloud.com website, no logo was
+   displayed in the sidebar anymore. Due to license changes in this repository, it was decided not
+   to include an ownCloud-branded logo anymore, so this change adds a placeholder svg file in
+   `assets/example/`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1090
 
 
 * Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)

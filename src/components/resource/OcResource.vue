@@ -1,20 +1,27 @@
 <template>
-  <div class="oc-resource oc-text-overflow">
+  <div class="oc-resource">
     <oc-img
       v-if="hasPreview"
-      :src="resource.preview"
+      :key="preview"
+      :src="preview"
       class="oc-resource-preview"
       aria-hidden="true"
       width="40"
       height="40"
     />
-    <oc-icon v-else :name="resource.icon" variation="file-type" size="large" aria-hidden="true" />
+    <oc-icon
+      v-else
+      key="resource-icon"
+      :name="resource.icon"
+      variation="file-type"
+      size="large"
+      aria-hidden="true"
+    />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
         v-bind="componentProps"
         v-if="isResourceClickable"
-        class="oc-text-overflow"
         @click.stop="emitClick"
         @click.native.stop
       >
@@ -123,7 +130,13 @@ export default {
     },
 
     hasPreview() {
-      return this.isPreviewDisplayed && this.resource.preview
+      return (
+        this.isPreviewDisplayed && Object.prototype.hasOwnProperty.call(this.resource, "preview")
+      )
+    },
+
+    preview() {
+      return this.resource.preview
     },
 
     componentType() {
@@ -194,7 +207,6 @@ export default {
   }
 
   &-details {
-    display: block;
     padding-left: $space-small;
 
     a:hover,
@@ -243,7 +255,7 @@ export default {
         forest() {
           return {
             name: "forest.jpg",
-            path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
+            path: "images/nature/forest.jpg",
             preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file"
