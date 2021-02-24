@@ -1,8 +1,9 @@
 <template>
-  <div class="oc-resource-name" v-bind="tooltip" :resource-path="fullPath">
-    <span v-if="hasPath" class="oc-resource-path" v-text="path" />
-    <span class="oc-resource-basename" v-text="name" />
-    <span v-if="extension" class="oc-resource-extension" v-text="extension" />
+  <div class="oc-resource-name oc-text-truncate" v-bind="tooltip" :resource-path="fullPath">
+    <span v-if="hasPath" class="oc-resource-path" v-text="path" /><span
+      class="oc-resource-basename"
+      v-text="name"
+    /><span v-if="extension" class="oc-resource-extension" v-text="extension" />
   </div>
 </template>
 
@@ -89,10 +90,7 @@ export default {
 <style lang="scss">
 .oc-resource {
   &-name {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    width: fit-content;
+    display: block;
   }
 
   &-basename {
@@ -113,5 +111,6 @@ export default {
 ```vue
 <oc-resource-name full-path="documents/notes.txt" />
 <oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" />
+<oc-resource-name full-path="super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root-super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root/asdf.txt" :is-path-displayed="true" />
 ```
 </docs>

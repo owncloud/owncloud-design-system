@@ -5,6 +5,8 @@
 
 @mixin oc-icon-size($factor) {
   height: $icons-size-default * $factor;
+  max-height: $icons-size-default * $factor;
+  max-width: $icons-size-default * $factor;
   width: $icons-size-default * $factor;
 }
 

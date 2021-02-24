@@ -32,7 +32,7 @@
         @click="onClear"
       />
     </div>
-    <div :class="{ 'oc-visually-hidden': buttonHidden }">
+    <div :class="{ 'oc-invisible-sr': buttonHidden }">
       <oc-button
         class="oc-search-button"
         :class="{ 'uk-button-small': small }"

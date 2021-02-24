@@ -4,33 +4,33 @@ exports[`OcTableFiles displays all fields 1`] = `
 <table class="oc-table oc-table-sticky" slots="[object Object]">
   <thead class="oc-thead">
     <tr>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-table-header-cell oc-table-header-cell-select" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-text-nowrap oc-table-header-cell oc-table-header-cell-select" style="top: 0px;">
         <div class="oc-table-files-select-all"><label for="oc-table-files-select-all" class="oc-cursor-pointer"><input id="oc-table-files-select-all" type="checkbox" name="checkbox" aria-label="Select all resources" class="oc-checkbox oc-checkbox-m" value="">
             <!---->
           </label></div>
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-table-header-cell oc-table-header-cell-name" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-text-nowrap oc-table-header-cell oc-table-header-cell-name" style="top: 0px;">
         Name
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-size" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-size" style="top: 0px;">
         Size
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-sharedWith" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" style="top: 0px;">
         Shared with
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-owner" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" style="top: 0px;">
         Owner
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-mdate" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-mdate" style="top: 0px;">
         Modified
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-sdate" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sdate" style="top: 0px;">
         Shared
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-ddate" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-ddate" style="top: 0px;">
         Deleted
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-table-header-cell oc-table-header-cell-actions" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-actions" style="top: 0px;">
         Actions
       </th>
     </tr>
@@ -40,11 +40,11 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-forest" class="oc-cursor-pointer"><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
           <!---->
         </label></td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
-        <div class="oc-resource"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
-          <div class="oc-resource-details"><button class="oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
-              <div resource-path="images/nature/forest.jpg" class="oc-resource-name">
-                <!----> <span class="oc-resource-basename">forest</span> <span class="oc-resource-extension">.jpg</span>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
+        <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
+          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
+              <div resource-path="images/nature/forest.jpg" class="oc-resource-name oc-text-truncate">
+                <!----><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span>
               </div>
             </button>
             <div class="oc-resource-indicators">
@@ -63,8 +63,8 @@ exports[`OcTableFiles displays all fields 1`] = `
           </div>
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">105.9 MB</span></td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-sharedWith">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">105.9 MB</span></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
         <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
@@ -75,23 +75,23 @@ exports[`OcTableFiles displays all fields 1`] = `
           <!---->
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-owner">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-mdate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-sdate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sdate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-ddate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-ddate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-actions">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
         <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-raw oc-button-raw-color-default"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-system" aria-hidden="true">function SvgMore_vert(props) {
   return React.createElement(
     'svg', 
@@ -104,16 +104,16 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-notes" class="oc-cursor-pointer"><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
           <!---->
         </label></td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
-        <div class="oc-resource"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-file-type" aria-hidden="true">function SvgText(props) {
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
+        <div class="oc-resource oc-text-overflow"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-file-type" aria-hidden="true">function SvgText(props) {
   return React.createElement(
     'svg', 
     Object.assign({}, props, {'data-file-name': SvgText.name})
   );
 }</span>
-          <div class="oc-resource-details"><button class="oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
-              <div resource-path="/Documents/notes.txt" class="oc-resource-name">
-                <!----> <span class="oc-resource-basename">notes</span> <span class="oc-resource-extension">.txt</span>
+          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
+              <div resource-path="/Documents/notes.txt" class="oc-resource-name oc-text-truncate">
+                <!----><span class="oc-resource-basename">notes</span><span class="oc-resource-extension">.txt</span>
               </div>
             </button>
             <div class="oc-resource-indicators">
@@ -132,8 +132,8 @@ exports[`OcTableFiles displays all fields 1`] = `
           </div>
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">?</span></td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-sharedWith">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">?</span></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
         <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
@@ -144,23 +144,23 @@ exports[`OcTableFiles displays all fields 1`] = `
           <!---->
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-owner">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-mdate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-sdate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sdate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-ddate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-ddate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-actions">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
         <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-raw oc-button-raw-color-default"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-system" aria-hidden="true">function SvgMore_vert(props) {
   return React.createElement(
     'svg', 
@@ -173,16 +173,16 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-documents" class="oc-cursor-pointer"><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
           <!---->
         </label></td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-table-data-cell oc-table-data-cell-name">
-        <div class="oc-resource"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-file-type" aria-hidden="true">function SvgFolder(props) {
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
+        <div class="oc-resource oc-text-overflow"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-file-type" aria-hidden="true">function SvgFolder(props) {
   return React.createElement(
     'svg', 
     Object.assign({}, props, {'data-file-name': SvgFolder.name})
   );
 }</span>
-          <div class="oc-resource-details"><a to="[object Object]">
-              <div resource-path="/Documents" class="oc-resource-name">
-                <!----> <span class="oc-resource-basename">Documents</span>
+          <div class="oc-resource-details oc-text-overflow"><a class="oc-text-overflow">
+              <div resource-path="/Documents" class="oc-resource-name oc-text-truncate">
+                <!----><span class="oc-resource-basename">Documents</span>
                 <!---->
               </div>
             </a>
@@ -202,8 +202,8 @@ exports[`OcTableFiles displays all fields 1`] = `
           </div>
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size"></span></td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-sharedWith">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size"></span></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
         <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
@@ -214,23 +214,23 @@ exports[`OcTableFiles displays all fields 1`] = `
           <!---->
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-owner">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
           <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt=""><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
         </div>
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-mdate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-sdate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sdate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-ddate">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-ddate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-table-data-cell oc-table-data-cell-actions">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
         <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-raw oc-button-raw-color-default"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-system" aria-hidden="true">function SvgMore_vert(props) {
   return React.createElement(
     'svg', 

@@ -6,7 +6,6 @@
           v-for="field in fields"
           :key="`oc-thead-${field.name}`"
           v-bind="extractThProps(field)"
-          :class="`oc-table-header-cell oc-table-header-cell-${field.name}`"
           :style="{ top: sticky ? headerPosition + 'px' : null }"
         >
           <slot v-if="field.headerType === 'slot'" :name="field.name + 'Header'" />
@@ -32,7 +31,6 @@
         <oc-td
           v-for="field in fields"
           :key="'oc-tbody-tr-' + cellKey(field, index, item)"
-          :class="`oc-table-data-cell oc-table-data-cell-${field.name}`"
           v-bind="extractTdProps(field)"
         >
           <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
@@ -96,14 +94,17 @@ export default {
      * The column layout of the table.
      *
      * Each field can have the following data:<br />
-     * - name: values need to be keys of your data items. Required.<br />
-     * - title: title as displayed in the table header. Optional, falls back to the value of name.<br />
-     * - headerType: the header field type, can be `slot`, entirely absent or unknown. If absent or unknown, the data will be rendered into a plain table cell.<br />
-     * - type: the field type, can be `slot`, `callback`, entirely absent or unknown. If absent or unknown, the data will be rendered into a plain table cell.<br />
-     * - callback: if `type="callback"` the return value of field.callback will be rendered into a plain table cell.<br />
-     * - alignH: horizontal cell content alignment, can be `left`, `center` or `right`. Defaults to `left`.<br />
-     * - alignV: vertical cell content alignment, can be `top`, `middle` or `bottom`. Defaults to `middle`.<br />
-     * - width: horizontal size of a cell, can be `auto`, `shrink` or `expand`. Defaults to `auto`.<br />
+     * - **name**: values need to be keys of your data items. Required.<br />
+     * - **title**: title as displayed in the table header. Optional, falls back to the value of name.<br />
+     * - **headerType**: the header field type, can be `slot`, entirely absent or unknown. If absent or unknown, the data will be rendered into a plain table cell.<br />
+     * - **type**: the field type, can be `slot`, `callback`, entirely absent or unknown. If absent or unknown, the data will be rendered into a plain table cell.<br />
+     * - **callback**: if `type="callback"` the return value of field.callback will be rendered into a plain table cell.<br />
+     * - **alignH**: horizontal cell content alignment, can be `left`, `center` or `right`. Defaults to `left`.<br />
+     * - **alignV**: vertical cell content alignment, can be `top`, `middle` or `bottom`. Defaults to `middle`.<br />
+     * - **width**: horizontal size of a cell, can be `auto`, `shrink` or `expand`. Defaults to `auto`.<br />
+     * - **wrap**: text behaviour of a data cell, can be `truncate`, `overflow`, `nowrap`, `break`. Omitted if not set. Header cells are always fixed to `nowrap`.<br />
+     * - **thClass**:additional classes on header cells, provided as a string, classes separated by spaces. Optional, falls back to an empty string.<br />
+     * - **tdClass**: additional classes on data cells, provided as a string, classes separated by spaces. Optional, falls back to an empty string.
      */
     fields: {
       type: Array,
@@ -194,11 +195,24 @@ export default {
       }
       return field.name
     },
-    extractTdProps(field) {
-      return this.extractCellProps(field)
-    },
     extractThProps(field) {
-      return this.extractCellProps(field)
+      const props = this.extractCellProps(field)
+      props.class = `oc-table-header-cell oc-table-header-cell-${field.name}`
+      if (Object.prototype.hasOwnProperty.call(field, "thClass")) {
+        props.class += ` ${field.thClass}`
+      }
+      return props
+    },
+    extractTdProps(field) {
+      const props = this.extractCellProps(field)
+      props.class = `oc-table-data-cell oc-table-data-cell-${field.name}`
+      if (Object.prototype.hasOwnProperty.call(field, "tdClass")) {
+        props.class += ` ${field.tdClass}`
+      }
+      if (Object.prototype.hasOwnProperty.call(field, "wrap")) {
+        props.wrap = field.wrap
+      }
+      return props
     },
     extractCellProps(field) {
       const result = {}
@@ -413,6 +427,50 @@ export default {
         }]
       },
     },
+  }
+</script>
+```
+```
+<template>
+  <section>
+    <h3 class="uk-heading-divider">
+      A table with long text showing the different text wrapping mechanisms
+    </h3>
+    <oc-table :fields="fields" :data="data" :has-header="true" :hover="true" />
+  </section>
+</template>
+<script>
+  export default {
+    computed: {
+      fields() {
+        return [
+          {
+            name: "truncate",
+            title: "truncate",
+            wrap: "truncate"
+          },
+          {
+            name: "break",
+            title: "break",
+            wrap: "break"
+          },
+          {
+            name: "nowrap",
+            title: "nowrap",
+            wrap: "nowrap"
+          }
+        ]
+      },
+      data() {
+        return [
+          {
+            truncate: "This is very long text that will get truncated eventually. This is very long text that will get truncated eventually. This is very long text that will get truncated eventually. This is very long text that will get truncated eventually. This is very long text that will get truncated eventually. This is very long text that will get truncated eventually. This is very long text that will get truncated eventually.",
+            break: "This text is supposed to break to new lines if it becomes too long. This text is supposed to break to new lines if it becomes too long. This text is supposed to break to new lines if it becomes too long. This text is supposed to break to new lines if it becomes too long.",
+            nowrap: "This text stays on one line."
+          }
+        ]
+      }
+    }
   }
 </script>
 ```

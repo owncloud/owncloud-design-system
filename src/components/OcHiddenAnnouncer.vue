@@ -1,7 +1,7 @@
 <template>
   <span
     :id="id"
-    class="oc-visually-hidden oc-hidden-announcer"
+    class="oc-invisible-sr oc-hidden-announcer"
     :aria-live="level"
     aria-atomic="true"
     v-text="announcement"
