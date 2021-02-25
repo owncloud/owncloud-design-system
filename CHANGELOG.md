@@ -1,8 +1,191 @@
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
+
+# Changelog for [3.0.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.0.0.
+
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.0.0
+
+## Summary
+
+* Bugfix - Button hover color: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
+* Bugfix - Missing logo in OcSidebar: [#1090](https://github.com/owncloud/owncloud-design-system/pull/1090)
+* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
+* Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
+* Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
+* Change - Add resource path attribute to oc-resource-name: [#1103](https://github.com/owncloud/owncloud-design-system/pull/1103)
+* Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
+* Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
+* Change - Use resources instead of ids in selection model: [#1095](https://github.com/owncloud/owncloud-design-system/pull/1095)
+* Change - Text utility classes: [#1115](https://github.com/owncloud/owncloud-design-system/pull/1115)
+* Enhancement - Add link avatar component: [#1101](https://github.com/owncloud/owncloud-design-system/pull/1101)
+* Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)
+* Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
+* Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+* Enhancement - Add table footer: [#1099](https://github.com/owncloud/owncloud-design-system/pull/1099)
+* Enhancement - Add `isSelectable` prop to files table component: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+
+## Details
+
+* Bugfix - Button hover color: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
+
+   When hovering the oc-button (*primary*) component had different styling, depending on if it
+   was used as `a` or `button` tag. This was caused by the underlying `ui-kit` styles, since no
+   specific component-based styling was provided. By making the hover styling explicit in the
+   component stylesheet, this is fixed.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1091
+
+
+* Bugfix - Missing logo in OcSidebar: [#1090](https://github.com/owncloud/owncloud-design-system/pull/1090)
+
+   After to changes in the formerly referenced structure of the ownCloud.com website, no logo was
+   displayed in the sidebar anymore. Due to license changes in this repository, it was decided not
+   to include an ownCloud-branded logo anymore, so this change adds a placeholder svg file in
+   `assets/example/`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1090
+
+
+* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
+
+   We've merged the resource target route path with the folder path in the `router-link`. When
+   passing the path as a parameter, it wasn't being recognised and the navigation just pointed to
+   the target route path. By explicitly merging them, we make sure that the navigation behaves as
+   expected.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1085
+
+
+* Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
+
+   We've made the dropzone component public so that it appears in the documentation.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1100
+
+
+* Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
+
+   We've removed styles from the body element and from the #oc-content element. We were forcing
+   styles on a global level which were too specific and because of that limited the usage of the
+   design system. Any specific styling like that should be done in the consuming app.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1084
+
+
+* Change - Add resource path attribute to oc-resource-name: [#1103](https://github.com/owncloud/owncloud-design-system/pull/1103)
+
+   We added a custom attribute to the oc-resource-name component which contains the full
+   resource path. While this is not needed for rendering the component, this makes end to end
+   testing much easier.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1103
+
+
+* Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
+
+   We've changed the `targetRoute` prop in the `oc-resource` component to accept an object
+   instead of a string. This object is now accepting keys `name`, `params` and `query`. Only
+   `name` is required. All keys are then passed to the router link which enables using more complex
+   routes.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1102
+
+
+* Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
+
+   We've started using values as keys for the table cells so that they are reactive to the changes in
+   values.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1094
+
+
+* Change - Use resources instead of ids in selection model: [#1095](https://github.com/owncloud/owncloud-design-system/pull/1095)
+
+   We changed the selection model of the `oc-table-files` component to use resources instead of
+   their ids.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1095
+
+
+* Change - Text utility classes: [#1115](https://github.com/owncloud/owncloud-design-system/pull/1115)
+
+   We introduced text utility classes for deciding if a text element should break into multiple
+   lines, prevent line breaks or truncate text with an ellipsis.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1115
+
+
+* Enhancement - Add link avatar component: [#1101](https://github.com/owncloud/owncloud-design-system/pull/1101)
+
+   We've created a link avatar component which mimics styles of the avatar component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1101
+
+
+* Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)
+
+   We've added a prop which is defining the top position of the table header if the `sticky` prop is
+   set to `true`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1092
+
+
+* Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
+
+   We've removed the trailing slash from the resource target path. We're merging target path with
+   the folder path into one and place a slash in between them. Having trailing slash in the target
+   path resulted in two slashes in the final path.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1087
+
+
+* Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+
+   We've added `disabled` prop to `oc-table` and `oc-table-files` components. This prop is used
+   to pass IDs of disabled resources so that they are clearly distinguishable from the other
+   resources.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1093
+
+
+* Enhancement - Add table footer: [#1099](https://github.com/owncloud/owncloud-design-system/pull/1099)
+
+   We've added a footer to the table and table files components. To add any content to the footer,
+   use `footer` slot.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1099
+
+
+* Enhancement - Add `isSelectable` prop to files table component: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
+
+   We've added `isSelectable` prop to `oc-table-files` component. This prop is used to assert
+   whether resources in the table can be selected.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1093
+
 # Changelog for [2.1.1] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.1.
 
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
 
 ## Summary
 
@@ -15,6 +198,27 @@ The following sections list the changes in ownCloud Design System 2.1.1.
    The uniqueId helper function returned a callback instead of a string.
 
    https://github.com/owncloud/owncloud-design-system/pull/1060
+
+# Changelog for [2.1.2] (2021-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.2.
+
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
+
+## Summary
+
+* Change - Pin UIkit version to 3.5.16: [#1064](https://github.com/owncloud/owncloud-design-system/pull/1064)
+
+## Details
+
+* Change - Pin UIkit version to 3.5.16: [#1064](https://github.com/owncloud/owncloud-design-system/pull/1064)
+
+   We've pinned the version of UIkit to 3.5.16. The reason for this is that the version 3.5.17
+   caused a regression to our autocomplete component. Since we want to remove UIkit from the ODS in
+   the near future, we are not taking the time to come up with a fix. We do not plan to upgrade UIkit
+   anymore.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1064
 
 # Changelog for [2.1.0] (2021-01-19)
 
@@ -980,7 +1184,7 @@ The following sections list the changes in ownCloud Design System 1.0.4.
 
 The following sections list the changes in ownCloud Design System 1.0.3.
 
-[1.0.3]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v1.0.3
+[1.0.3]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.2...v1.0.3
 
 ## Summary
 
@@ -994,189 +1198,6 @@ The following sections list the changes in ownCloud Design System 1.0.3.
 
    https://github.com/owncloud/owncloud-design-system/issues/442
    https://github.com/owncloud/owncloud-design-system/pull/652
-
-# Changelog for [3.0.0] (2020-02-24)
-
-The following sections list the changes in ownCloud Design System 3.0.0.
-
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
-
-## Summary
-
-* Bugfix - Button hover color: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
-* Bugfix - Missing logo in OcSidebar: [#1090](https://github.com/owncloud/owncloud-design-system/pull/1090)
-* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
-* Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
-* Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
-* Change - Add resource path attribute to oc-resource-name: [#1103](https://github.com/owncloud/owncloud-design-system/pull/1103)
-* Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
-* Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
-* Change - Use resources instead of ids in selection model: [#1095](https://github.com/owncloud/owncloud-design-system/pull/1095)
-* Change - Text utility classes: [#1115](https://github.com/owncloud/owncloud-design-system/pull/1115)
-* Enhancement - Add link avatar component: [#1101](https://github.com/owncloud/owncloud-design-system/pull/1101)
-* Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)
-* Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
-* Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
-* Enhancement - Add table footer: [#1099](https://github.com/owncloud/owncloud-design-system/pull/1099)
-* Enhancement - Add `isSelectable` prop to files table component: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
-
-## Details
-
-* Bugfix - Button hover color: [#1091](https://github.com/owncloud/owncloud-design-system/pull/1091)
-
-   When hovering the oc-button (*primary*) component had different styling, depending on if it
-   was used as `a` or `button` tag. This was caused by the underlying `ui-kit` styles, since no
-   specific component-based styling was provided. By making the hover styling explicit in the
-   component stylesheet, this is fixed.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1091
-
-
-* Bugfix - Missing logo in OcSidebar: [#1090](https://github.com/owncloud/owncloud-design-system/pull/1090)
-
-   After to changes in the formerly referenced structure of the ownCloud.com website, no logo was
-   displayed in the sidebar anymore. Due to license changes in this repository, it was decided not
-   to include an ownCloud-branded logo anymore, so this change adds a placeholder svg file in
-   `assets/example/`.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1090
-
-
-* Change - Merge resource target path with folder path: [#1085](https://github.com/owncloud/owncloud-design-system/pull/1085)
-
-   We've merged the resource target route path with the folder path in the `router-link`. When
-   passing the path as a parameter, it wasn't being recognised and the navigation just pointed to
-   the target route path. By explicitly merging them, we make sure that the navigation behaves as
-   expected.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1085
-
-
-* Change - Make dropzone component public: [#1100](https://github.com/owncloud/owncloud-design-system/pull/1100)
-
-   We've made the dropzone component public so that it appears in the documentation.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1100
-
-
-* Change - Remove basic styles: [#1084](https://github.com/owncloud/owncloud-design-system/pull/1084)
-
-   We've removed styles from the body element and from the #oc-content element. We were forcing
-   styles on a global level which were too specific and because of that limited the usage of the
-   design system. Any specific styling like that should be done in the consuming app.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1084
-
-
-* Change - Add resource path attribute to oc-resource-name: [#1103](https://github.com/owncloud/owncloud-design-system/pull/1103)
-
-   We added a custom attribute to the oc-resource-name component which contains the full
-   resource path. While this is not needed for rendering the component, this makes end to end
-   testing much easier.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1103
-
-
-* Change - Pass object as the target route: [#1102](https://github.com/owncloud/owncloud-design-system/pull/1102)
-
-   We've changed the `targetRoute` prop in the `oc-resource` component to accept an object
-   instead of a string. This object is now accepting keys `name`, `params` and `query`. Only
-   `name` is required. All keys are then passed to the router link which enables using more complex
-   routes.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1102
-
-
-* Change - Use values as keys for table cells: [#1094](https://github.com/owncloud/owncloud-design-system/pull/1094)
-
-   We've started using values as keys for the table cells so that they are reactive to the changes in
-   values.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1094
-
-
-* Change - Use resources instead of ids in selection model: [#1095](https://github.com/owncloud/owncloud-design-system/pull/1095)
-
-   We changed the selection model of the `oc-table-files` component to use resources instead of
-   their ids.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1095
-
-
-* Change - Text utility classes: [#1115](https://github.com/owncloud/owncloud-design-system/pull/1115)
-
-   We introduced text utility classes for deciding if a text element should break into multiple
-   lines, prevent line breaks or truncate text with an ellipsis.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1115
-
-
-* Enhancement - Add link avatar component: [#1101](https://github.com/owncloud/owncloud-design-system/pull/1101)
-
-   We've created a link avatar component which mimics styles of the avatar component.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1101
-
-
-* Enhancement - Add prop for the table header position: [#1092](https://github.com/owncloud/owncloud-design-system/pull/1092)
-
-   We've added a prop which is defining the top position of the table header if the `sticky` prop is
-   set to `true`.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1092
-
-
-* Enhancement - Remove the trailing slash from resource target path: [#1087](https://github.com/owncloud/owncloud-design-system/pull/1087)
-
-   We've removed the trailing slash from the resource target path. We're merging target path with
-   the folder path into one and place a slash in between them. Having trailing slash in the target
-   path resulted in two slashes in the final path.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1087
-
-
-* Enhancement - Add `disabled` prop to table components: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
-
-   We've added `disabled` prop to `oc-table` and `oc-table-files` components. This prop is used
-   to pass IDs of disabled resources so that they are clearly distinguishable from the other
-   resources.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1093
-
-
-* Enhancement - Add table footer: [#1099](https://github.com/owncloud/owncloud-design-system/pull/1099)
-
-   We've added a footer to the table and table files components. To add any content to the footer,
-   use `footer` slot.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1099
-
-
-* Enhancement - Add `isSelectable` prop to files table component: [#1093](https://github.com/owncloud/owncloud-design-system/pull/1093)
-
-   We've added `isSelectable` prop to `oc-table-files` component. This prop is used to assert
-   whether resources in the table can be selected.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1093
-
-# Changelog for [3.1.0] (2020-02-24)
-
-The following sections list the changes in ownCloud Design System 3.1.0.
-
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.0.2...v3.1.0
-
-## Summary
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-## Details
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1119
 
 # Changelog for [1.0.2] (2020-02-24)
 
@@ -1202,8 +1223,6 @@ The following sections list the changes in ownCloud Design System 1.0.2.
 
 The following sections list the changes in ownCloud Design System 1.0.1.
 
-[1.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v1.0.1
-
 [1.0.1]: https://github.com/owncloud/owncloud-design-system/compare/9c9d14acc7df90254e857e9c2de7bad8f77a238c...v1.0.1
 
 ## Summary
@@ -1219,23 +1238,4 @@ The following sections list the changes in ownCloud Design System 1.0.1.
 
    https://github.com/owncloud/owncloud-design-system/issues/10
    https://owncloud.github.io/owncloud-design-system/
-
-# Changelog for [2.1.2] (2020-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.2.
-
-## Summary
-
-* Change - Pin UIkit version to 3.5.16: [#1064](https://github.com/owncloud/owncloud-design-system/pull/1064)
-
-## Details
-
-* Change - Pin UIkit version to 3.5.16: [#1064](https://github.com/owncloud/owncloud-design-system/pull/1064)
-
-   We've pinned the version of UIkit to 3.5.16. The reason for this is that the version 3.5.17
-   caused a regression to our autocomplete component. Since we want to remove UIkit from the ODS in
-   the near future, we are not taking the time to come up with a fix. We do not plan to upgrade UIkit
-   anymore.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1064
 
