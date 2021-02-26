@@ -160,7 +160,6 @@ Sidebar component containing branding and navigation
         logoImg="examples/placeholder_brand_logo.svg"
         productName="ownCloud"
         :navItems="navItems"
-        class="uk-height-1-1"
       />
     </div>
   </template>
@@ -187,7 +186,6 @@ If a source of the logo image is not provided, the product name is used instead.
       <oc-sidebar
         productName="ownCloud"
         :navItems="navItems"
-        class="uk-height-1-1"
       />
     </div>
   </template>
@@ -233,7 +231,6 @@ The navigation block will automatically receive bottom margin in case the `foote
         logoImg="examples/placeholder_brand_logo.svg"
         productName="ownCloud"
         :navItems="navItems"
-        class="uk-height-1-1"
       >
         <template v-slot:upperContent>
           <strong class="oc-light">Files app</strong>
@@ -267,11 +264,10 @@ The navigation block can be hidden entirely - for example in favor of the `mainC
   <template>
     <div>
       <oc-sidebar
-          logoImg="examples/placeholder_brand_logo.svg"
-          productName="ownCloud"
-          :navItems="navItems"
-          :hide-nav="true"
-          class="uk-height-1-1"
+        logoImg="examples/placeholder_brand_logo.svg"
+        productName="ownCloud"
+        :navItems="navItems"
+        :hide-nav="true"
       >
         <template v-slot:mainContent>
           <div>
