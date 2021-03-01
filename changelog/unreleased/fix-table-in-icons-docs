@@ -1,0 +1,7 @@
+Bugfix: Update table component in OcIcon docs
+
+When the old `<oc-table` was deprecated in the *2.1.0* release, 
+it silently broke the [button component docs](https://owncloud.design/#/oC%20Components/OcIcon).
+This change fixes it by replacing the deprecated table with the the new `<oc-table-simple>` component.
+
+https://github.com/owncloud/owncloud-design-system/pull/1127
