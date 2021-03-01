@@ -4,8 +4,8 @@
     :username="userName"
     :size="width"
     :src="src"
-    :alt="accessibilityLabel"
-    :aria-hidden="accessibilityLabel === ''"
+    :alt="accessibleLabel"
+    :aria-hidden="accessibleLabel === ''"
   />
 </template>
 <script>
@@ -41,7 +41,7 @@ export default {
      * In case the avatar is used next to username or display name leave empty.
      * If not specified, avatar will get `aria-hidden="true"`.
      **/
-    accessibilityLabel: {
+    accessibleLabel: {
       type: String,
       required: false,
       default: "",
@@ -57,7 +57,7 @@ export default {
 </script>
 <docs>
 ```
-  <oc-avatar src="https://picsum.photos/50/50?image=1074" accessibilityLabel="Lion" />
-  <oc-avatar userName="Bruce Lee" accessibilityLabel="Lion" />
+  <oc-avatar src="https://picsum.photos/50/50?image=1074" accessibleLabel="Lion" />
+  <oc-avatar userName="Bruce Lee" accessibleLabel="Lion" />
 ```
 </docs>
