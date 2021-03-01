@@ -147,76 +147,132 @@ export default {
   },
 }
 </script>
+
 <docs>
-  ```jsx
-<section>
-  <h3 class="uk-heading-divider">
-    Default icons
-  </h3>
-  <oc-icon name="close" aria-label="Close"/>
-  <oc-icon name="delete" aria-label="Delete"/>
-  <oc-icon name="info" aria-label="Information"/>
-  <oc-icon name="account_circle" aria-label="My Account"/>
+```
+<template>
+  <section>
+    <h3 class="uk-heading-divider">
+      Default icons
+    </h3>
+    <oc-icon name="close" aria-label="Close"/>
+    <oc-icon name="delete" aria-label="Delete"/>
+    <oc-icon name="info" aria-label="Information"/>
+    <oc-icon name="account_circle" aria-label="My Account"/>
 
-  <h3 class="uk-heading-divider">
-    Icon color variations
-  </h3>
-  <div class="uk-grid-collapse uk-child-width-auto">
-    <oc-table middle divider>
-      <oc-table-row>
-        <oc-table-cell shrink type="head">Variation</oc-table-cell>
-        <oc-table-cell expand type="head" class="">Icons</oc-table-cell>
-      </oc-table-row>
-      <oc-table-row>
-        <oc-table-cell shrink>inverted</oc-table-cell>
-        <oc-table-cell expand class="uk-background-primary">
-          <oc-icon variation="inverted" name="close"/>
-          <oc-icon variation="inverted" name="delete"/>
-          <oc-icon variation="inverted" name="info"/>
-          <oc-icon variation="inverted" name="account_circle"/>
-        </oc-table-cell>
-      </oc-table-row>
-      <oc-table-row v-for="variation in ['danger', 'success', 'warning', 'file-type', 'system', 'active', 'passive']" :key="variation">
-        <oc-table-cell shrink>{{variation}}</oc-table-cell>
-        <oc-table-cell expand>
-          <oc-icon :variation="variation" name="close"/>
-          <oc-icon :variation="variation" name="delete"/>
-          <oc-icon :variation="variation" name="info"/>
-          <oc-icon :variation="variation" name="account_circle"/>
-        </oc-table-cell>
-      </oc-table-row>
-    </oc-table>
-  </div>
+    <h3 class="uk-heading-divider">
+      Icon color variations
+    </h3>
+    <oc-table-simple :hover="true">
+      <oc-thead>
+        <oc-tr>
+          <oc-th>Variation</oc-th>
+          <oc-th>Icons</oc-th>
+        </oc-tr>
+      </oc-thead>
+      <oc-tbody>
+        <oc-tr v-for="variation in variations" :key="'variation-' + variation.id">
+          <oc-td>{{ variation.name }}</oc-td>
+          <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverted'}">
+            <oc-icon :variation="variation.name" name="close"/>
+            <oc-icon :variation="variation.name" name="delete"/>
+            <oc-icon :variation="variation.name" name="info"/>
+            <oc-icon :variation="variation.name" name="account_circle"/>
+          </oc-td>
+        </oc-tr>
+      </oc-tbody>
+    </oc-table-simple>
 
-  <h3 class="uk-heading-divider">
-    Icon sizes
-  </h3>
-  <div class="uk-grid-collapse uk-child-width-auto uk-overflow-hidden">
-    <oc-table middle divider>
-      <oc-table-row>
-        <oc-table-cell shrink type="head">Size</oc-table-cell>
-        <oc-table-cell expand type="head" class="">Icons</oc-table-cell>
-      </oc-table-row>
-      <oc-table-row v-for="size in ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'xxxlarge']" :key="size">
-        <oc-table-cell shrink>{{size}}</oc-table-cell>
-        <oc-table-cell expand class="uk-text-nowrap">
-          <oc-icon :size="size" name="close"/>
-          <oc-icon :size="size" name="delete"/>
-          <oc-icon :size="size" name="info"/>
-          <oc-icon :size="size" name="account_circle"/>
-        </oc-table-cell>
-      </oc-table-row>
-    </oc-table>
-  </div>
-  <h3 class="uk-heading-divider">
-    Icons loaded via URL
-  </h3>
-  <div class="oc-m">
-    <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
-    <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
-    <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv"/>
-    <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
-  </div>
-</section>
+    <h3 class="uk-heading-divider">
+      Icon sizes
+    </h3>
+    <oc-table-simple :hover="true">
+      <oc-thead>
+        <oc-tr>
+          <oc-th>Size</oc-th>
+          <oc-th>Icons</oc-th>
+        </oc-tr>
+      </oc-thead>
+      <oc-tbody>
+        <oc-tr v-for="size in sizes" :key="size.name">
+          <oc-td>{{ size.name }}</oc-td>
+          <oc-td>
+            <oc-icon :size="size.name" name="close"/>
+            <oc-icon :size="size.name" name="delete"/>
+            <oc-icon :size="size.name" name="info"/>
+            <oc-icon :size="size.name" name="account_circle"/>
+          </oc-td>
+        </oc-tr>
+      </oc-tbody>
+    </oc-table-simple>
+
+    <h3 class="uk-heading-divider">
+      Icons loaded via URL
+    </h3>
+    <div class="oc-m">
+      <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
+      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
+      <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv"/>
+      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+  computed: {
+    variations() {
+      return [{
+        id: "1857-7432-9675-5145",
+        name: "file-type",
+      }, {
+        id: "9828-4946-1277-7396",
+        name: "system",
+      }, {
+        id: "7828-3285-4787-2127",
+        name: "active",
+      }, {
+        id: "2971-4568-2460-9940",
+        name: "passive",
+      }, {
+        id: "6649-3907-5985-2695",
+        name: "inverted",
+      }, {
+        id: "8376-8902-1172-2699",
+        name: "danger",
+      }, {
+        id: "4935-2899-4697-2615",
+        name: "success",
+      }, {
+        id: "2769-7633-8478-1257",
+        name: "warning",
+      }]
+    },
+    sizes() {
+      return [{
+        id: "6343-1519-1328-9822",
+        name: "xsmall",
+      }, {
+        id: "9041-7650-9126-4291",
+        name: "small",
+      }, {
+        id: "9665-6662-8676-4866",
+        name: "medium",
+      }, {
+        id: "9130-7140-3870-5438",
+        name: "large",
+      }, {
+        id: "5022-6406-9625-7093",
+        name: "xlarge",
+      }, {
+        id: "9337-2657-4486-1014",
+        name: "xxlarge",
+      }, {
+        id: "8234-4209-7553-9253",
+        name: "xxxlarge",
+      }]
+    },
+  },
+}
+</script>
   ```
 </docs>
