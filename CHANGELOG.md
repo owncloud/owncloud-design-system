@@ -6,9 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Update table component in OcIcon docs: [#1127](https://github.com/owncloud/owncloud-design-system/pull/1127)
 * Enhancement - Use accessible labels for avatars in the avatars group component: [#1126](https://github.com/owncloud/owncloud-design-system/pull/1126)
 
 ## Details
+
+* Bugfix - Update table component in OcIcon docs: [#1127](https://github.com/owncloud/owncloud-design-system/pull/1127)
+
+   The `<oc-table>` component had a breaking change in the *2.1.0* release, which broke the
+   [oc-icon component docs](https://owncloud.design/#/oC%20Components/OcIcon). To fix it
+   we needed to use the new `<oc-table-simple>` component instead, which mimics the behaviour of
+   the old `<oc-table>` component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1127
+
 
 * Enhancement - Use accessible labels for avatars in the avatars group component: [#1126](https://github.com/owncloud/owncloud-design-system/pull/1126)
 
