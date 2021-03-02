@@ -1,5 +1,10 @@
 <template>
-  <div class="oc-avatar-link" :style="{ backgroundColor: color }" :aria-label="name" />
+  <div
+    class="oc-avatar-link"
+    :style="{ backgroundColor: color }"
+    :alt="accessibleLabel"
+    :aria-hidden="accessibleLabel === ''"
+  />
 </template>
 
 <script>
@@ -15,6 +20,16 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    /**
+     * Accessibility label used as alt. Use only in case the avatar is used alone.
+     * In case the avatar is used next to username or display name leave empty.
+     * If not specified, avatar will get `aria-hidden="true"`.
+     **/
+    accessibleLabel: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
 

@@ -10,11 +10,17 @@
         :key="avatar.username"
         :src="avatar.avatar"
         :user-name="avatar.username"
+        :accessible-label="avatar.displayName"
         :width="30"
       />
     </template>
     <template v-if="links.length > 0">
-      <oc-avatar-link v-for="(link, index) in links" :key="link.name + index" :name="link.name" />
+      <oc-avatar-link
+        v-for="(link, index) in links"
+        :key="link.name + index"
+        :name="link.name"
+        :accessible-label="link.name"
+      />
     </template>
     <oc-avatar-count v-if="isOverlapping" :count="users.length - maxDisplayed" />
   </div>
