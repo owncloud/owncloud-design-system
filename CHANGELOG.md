@@ -2,15 +2,25 @@
 
 The following sections list the changes in ownCloud Design System unreleased.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...master
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...master
 
 ## Summary
 
+* Bugfix - Use correct color for the accordion title: [#1130](https://github.com/owncloud/owncloud-design-system/pull/1130)
 * Bugfix - Update table component in OcIcon docs: [#1127](https://github.com/owncloud/owncloud-design-system/pull/1127)
 * Enhancement - Use accessible labels for avatars in the avatars group component: [#1126](https://github.com/owncloud/owncloud-design-system/pull/1126)
 * Enhancement - Improve documentation for image and user component: [#1133](https://github.com/owncloud/owncloud-design-system/pull/1133)
 
 ## Details
+
+* Bugfix - Use correct color for the accordion title: [#1130](https://github.com/owncloud/owncloud-design-system/pull/1130)
+
+   In the last release, we introduced a regression in the accordion component. The custom color
+   set for its title had not been respected and the button color was used instead. We've fixed this
+   to use the custom color again.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1130
+
 
 * Bugfix - Update table component in OcIcon docs: [#1127](https://github.com/owncloud/owncloud-design-system/pull/1127)
 
@@ -36,30 +46,11 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/pull/1133
 
-# Changelog for [3.1.0] (2021-02-24)
-
-The following sections list the changes in ownCloud Design System 3.1.0.
-
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
-
-## Summary
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-## Details
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1119
-
 # Changelog for [3.0.0] (2021-02-24)
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
 
 ## Summary
 
@@ -218,6 +209,25 @@ The following sections list the changes in ownCloud Design System 3.0.0.
    whether resources in the table can be selected.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
+
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
 
 # Changelog for [2.1.1] (2021-01-21)
 
