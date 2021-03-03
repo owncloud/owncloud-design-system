@@ -215,6 +215,7 @@ module.exports = {
                   path.join(__dirname, "../src/assets/tokens/tokens.map.scss"),
                   path.join(__dirname, "../docs/docs.mixins.scss"),
                   path.join(__dirname, "../docs/docs.functions.scss"),
+                  path.join(__dirname, "../docs/docs.spacing.scss"),
                   path.join(__dirname, "../src/styles/styles.scss"),
                 ],
               },
