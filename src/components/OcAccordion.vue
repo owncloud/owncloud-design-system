@@ -145,6 +145,49 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.oc-accordion {
+  list-style: none;
+  padding: 0;
+
+  &-item + &-item {
+    margin-top: $space-medium;
+  }
+
+  &-title {
+    @extend .oc-mb-rm;
+
+    display: block;
+    font-size: $medium-font-size;
+
+    > .oc-button.oc-button-raw,
+    > .oc-button.oc-button-raw:hover,
+    > .oc-button.oc-button-raw:focus {
+      color: $color;
+      outline: none;
+      text-decoration: none;
+
+      .oc-icon {
+        transition-duration: 0.3s;
+
+        &.rotate {
+          transform: rotate(180deg);
+        }
+
+        > svg {
+          fill: $color;
+        }
+      }
+    }
+  }
+
+  &-content {
+    margin-top: $space-small;
+  }
+}
+</style>
+
 <docs>
 An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content.
 The headings function as controls that enable users to reveal or hide their associated sections of content.
