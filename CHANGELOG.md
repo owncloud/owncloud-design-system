@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Use correct color for the accordion title: [#1130](https://github.com/owncloud/owncloud-design-system/pull/1130)
 * Bugfix - Update table component in OcIcon docs: [#1127](https://github.com/owncloud/owncloud-design-system/pull/1127)
 * Enhancement - Use accessible labels for avatars in the avatars group component: [#1126](https://github.com/owncloud/owncloud-design-system/pull/1126)
+* Enhancement - Extract SAAS functionality from `src/` to `docs/``: [#1134](https://github.com/owncloud/owncloud-design-system/pull/1134)
 * Enhancement - Improve documentation for image and user component: [#1133](https://github.com/owncloud/owncloud-design-system/pull/1133)
 
 ## Details
@@ -38,6 +39,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    are shown there without any supporting label thus rendering them hidden from screen readers.
 
    https://github.com/owncloud/owncloud-design-system/pull/1126
+
+
+* Enhancement - Extract SAAS functionality from `src/` to `docs/``: [#1134](https://github.com/owncloud/owncloud-design-system/pull/1134)
+
+   Some SCSS-files were only used to build the ODS documentation, but lived within the design
+   system styles. We moved them to the documentation folder to avoid shipping them with the
+   official ODS releases.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1134
 
 
 * Enhancement - Improve documentation for image and user component: [#1133](https://github.com/owncloud/owncloud-design-system/pull/1133)
