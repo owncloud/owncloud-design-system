@@ -3,6 +3,7 @@
     <input ref="input" v-model="checked" type="checkbox" :aria-label="label" />
   </div>
 </template>
+
 <script>
 /**
  * The switch has two states between users can choose.
@@ -62,14 +63,16 @@ export default {
   },
 }
 </script>
+
 <docs>
   ```vue
   <template>
     <section>
       <h3>Switcher behavior</h3>
       <oc-switch label="Demo Label" @change="onChange" :model="state" />
-      <br>
-      <oc-star :shining="state"></oc-star>
+      <p>
+        The switch is turned <strong v-if="state">on</strong><strong v-else="state">off</strong>.
+      </p>
     </section>
   </template>
   <script>
@@ -85,7 +88,6 @@ export default {
         }
       }
     }
-
   </script>
   ```
 </docs>
