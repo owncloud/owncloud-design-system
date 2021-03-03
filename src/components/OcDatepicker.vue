@@ -126,12 +126,6 @@ export default {
 </script>
 
 <style lang="css">
-/**
- * Styles in a top-level App component and in layout components may be global,
- * but all other components should always be scoped (using either scoped
- * attribute or class based scoping).
- */
-
 [data-preview="oc-datepicker"] .vdatetime-popup {
   z-index: 9999;
 }

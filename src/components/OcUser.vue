@@ -63,21 +63,18 @@ export default {
 
 <docs>
 ```jsx
-<div>
-Minimal version:<br>
-  <oc-user avatar="https://picsum.photos/64/64?image=718"/>
+<h2>Minimal Version:</h2>
+<oc-user avatar="https://picsum.photos/64/64?image=718"/>
 
-
-All slots and properties used:<br>
-  <oc-user avatar="https://picsum.photos/64/64?image=1074" user-name="simba1" display-name="Simba" email="simba@djungle.com">
-    <template slot="properties">
-      <span>Owner | Expires: July 4, 2019</span>
-    </template>
-    <template slot="actions">
-      <oc-icon name="delete"/>
-      <oc-icon name="edit"/>
-    </template>
-  </oc-user>
-</div>
+<h2>Using all slots and properties:</h2>
+<oc-user avatar="https://picsum.photos/64/64?image=1074" user-name="simba1" display-name="Simba" email="simba@djungle.com">
+  <template slot="properties">
+    <span>Owner | Expires: July 4, 2019</span>
+  </template>
+  <template slot="actions">
+    <oc-icon name="delete"/>
+    <oc-icon name="edit"/>
+  </template>
+</oc-user>
 ```
 </docs>
