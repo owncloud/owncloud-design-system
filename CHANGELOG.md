@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Update OcSwitch docs: [#1135](https://github.com/owncloud/owncloud-design-system/pull/1135)
 * Bugfix - Use correct color for the accordion title: [#1130](https://github.com/owncloud/owncloud-design-system/pull/1130)
 * Bugfix - Update table component in OcIcon docs: [#1127](https://github.com/owncloud/owncloud-design-system/pull/1127)
 * Enhancement - Use accessible labels for avatars in the avatars group component: [#1126](https://github.com/owncloud/owncloud-design-system/pull/1126)
@@ -13,6 +14,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Improve documentation for image and user component: [#1133](https://github.com/owncloud/owncloud-design-system/pull/1133)
 
 ## Details
+
+* Bugfix - Update OcSwitch docs: [#1135](https://github.com/owncloud/owncloud-design-system/pull/1135)
+
+   The OcSwitch documentation was featuring the `<oc-star>` component which was dropped a while
+   ago. This change deletes an obsolete `oc-star.scss` file and updates the OcSwitch
+   documentation by displaying its reactive functionality using other HTML elements.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1135
+
 
 * Bugfix - Use correct color for the accordion title: [#1130](https://github.com/owncloud/owncloud-design-system/pull/1130)
 
