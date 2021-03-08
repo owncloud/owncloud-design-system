@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { getSizeClass } from "../utils/sizeClasses"
+import { getSizeClass } from "../../utils/sizeClasses"
 
 export default {
   name: "OcButton",

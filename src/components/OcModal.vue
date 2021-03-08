@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import OcButton from "./OcButton.vue"
+import OcButton from "./OcButton/OcButton.vue"
 import OcIcon from "./OcIcon.vue"
 import OcTextInput from "./OcTextInput.vue"
 

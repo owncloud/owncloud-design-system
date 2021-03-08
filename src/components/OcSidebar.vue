@@ -58,7 +58,7 @@
 <script>
 import OcSidebarNavItem from "./OcSidebarNavItem.vue"
 import OcImg from "./OcImage.vue"
-import OcButton from "./OcButton.vue"
+import OcButton from "./OcButton/OcButton.vue"
 import OcIcon from "./OcIcon.vue"
 
 export default {

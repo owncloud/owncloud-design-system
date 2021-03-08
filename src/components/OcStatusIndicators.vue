@@ -30,7 +30,7 @@
 
 <script>
 import OcIcon from "./OcIcon.vue"
-import OcButton from "./OcButton.vue"
+import OcButton from "./OcButton/OcButton.vue"
 
 /**
  * Status indicators which can be attatched to a resource
