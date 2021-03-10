@@ -27,10 +27,6 @@ props:
     value: "#fff"
     category: "Font-colors"
 
-  filetype-icon-color:
-    value: "rgba(4, 30, 66, 0.75)"
-    category: "icon-colors"
-
   active-icon-color:
     value: "#002966"
     category: "icon-colors"
