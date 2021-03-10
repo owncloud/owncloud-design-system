@@ -91,7 +91,7 @@ export default {
       type: String,
       default: "system",
       validator: value => {
-        return value.match(/(file-type|system|active|passive|inverted|danger|success|warning)/)
+        return value.match(/(system|active|passive|inverted|danger|success|warning)/)
       },
     },
   },
@@ -222,9 +222,6 @@ export default {
   computed: {
     variations() {
       return [{
-        id: "1857-7432-9675-5145",
-        name: "file-type",
-      }, {
         id: "9828-4946-1277-7396",
         name: "system",
       }, {

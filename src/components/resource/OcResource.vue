@@ -13,7 +13,7 @@
       v-else
       key="resource-icon"
       :name="resource.icon"
-      variation="file-type"
+      variation="system"
       size="large"
       aria-hidden="true"
     />
