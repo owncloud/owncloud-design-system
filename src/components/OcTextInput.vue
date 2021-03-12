@@ -1,12 +1,12 @@
 <template>
   <div>
-    <label :id="$_ocTextInputLabel_Id" class="oc-label" :for="$_ocTextInput_Id" v-text="label" />
+    <label :id="labelId" class="oc-label" :for="inputId" v-text="label" />
     <input
-      :id="$_ocTextInput_Id"
-      v-bind="$_$attrs"
+      :id="inputId"
+      v-bind="additionalAttributes"
       ref="input"
-      :aria-labelledby="$_ocTextInputLabel_Id"
-      :aria-invalid="$_ariaInvalid"
+      :aria-labelledby="labelId"
+      :aria-invalid="ariaInvalid"
       :class="{
         'oc-text-input': !stopClassPropagation,
         'oc-text-input-warning': !!warningMessage,
@@ -14,19 +14,19 @@
       }"
       :type="type"
       :value="value"
-      v-on="$_ocTextInput_listeners"
-      @input="$_ocTextInput_onInput($event.target.value)"
-      @focus="$_ocTextInput_onFocus($event.target)"
+      v-on="listeners"
+      @input="onInput($event.target.value)"
+      @focus="onFocus($event.target)"
     />
-    <div v-if="$_ocTextInput_showMessageLine" class="oc-text-input-message">
+    <div v-if="showMessageLine" class="oc-text-input-message">
       <span
-        :id="$_ocTextInputMessage_Id"
+        :id="messageId"
         :class="{
           'oc-text-input-description': !!descriptionMessage,
           'oc-text-input-warning': !!warningMessage,
           'oc-text-input-danger': !!errorMessage,
         }"
-        v-text="$_message"
+        v-text="messageText"
       ></span>
     </div>
   </div>
@@ -129,7 +129,7 @@ export default {
     },
   },
   computed: {
-    $_ocTextInput_showMessageLine() {
+    showMessageLine() {
       return (
         this.fixMessageLine ||
         !!this.warningMessage ||
@@ -137,7 +137,7 @@ export default {
         !!this.descriptionMessage
       )
     },
-    $_ocTextInput_listeners() {
+    listeners() {
       const listeners = this.$listeners
 
       // Delete listeners for events which are emitted via methods
@@ -146,29 +146,29 @@ export default {
 
       return listeners
     },
-    $_ocTextInput_Id() {
+    inputId() {
       if (this.id) {
         return this.id
       }
       return uniqueId("oc-textinput-")
     },
-    $_ocTextInputLabel_Id() {
-      return `${this.$_ocTextInput_Id}-label`
+    labelId() {
+      return `${this.inputId}-label`
     },
-    $_ocTextInputMessage_Id() {
-      return `${this.$_ocTextInput_Id}-message`
+    messageId() {
+      return `${this.inputId}-message`
     },
-    $_$attrs() {
+    additionalAttributes() {
       const additionalAttrs = {}
       if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
-        additionalAttrs["aria-describedby"] = this.$_ocTextInputMessage_Id
+        additionalAttrs["aria-describedby"] = this.messageId
       }
       return { ...this.$attrs, ...additionalAttrs }
     },
-    $_ariaInvalid() {
+    ariaInvalid() {
       return (!!this.errorMessage).toString()
     },
-    $_message() {
+    messageText() {
       if (this.errorMessage) {
         return this.errorMessage
       }
@@ -188,14 +188,14 @@ export default {
     focus() {
       this.$refs.input.focus()
     },
-    $_ocTextInput_onInput(value) {
+    onInput(value) {
       /**
        * Input event
        * @type {event}
        **/
       this.$emit("input", value)
     },
-    $_ocTextInput_onFocus(target) {
+    onFocus(target) {
       target.select()
       /**
        * Focus event - emitted as soon as the input field is focused
