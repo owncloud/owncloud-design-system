@@ -1,17 +1,17 @@
 <template>
-  <label :for="id" :class="{ 'oc-cursor-pointer': !disabled }">
+  <span>
     <input
       :id="id"
-      v-model="$_ocCheckbox_model"
+      v-model="model"
       type="checkbox"
       name="checkbox"
-      :aria-label="label"
-      :class="$_ocCheckbox_classes"
+      :aria-checked="checked.toString()"
+      :class="classes"
       :value="option"
       :disabled="disabled"
     />
-    <span v-if="!hideLabel" :aria-hidden="true" v-text="label" />
-  </label>
+    <label :for="id" :class="labelClasses" v-text="label" />
+  </span>
 </template>
 <script>
 import { getSizeClass } from "../utils/sizeClasses"
@@ -90,17 +90,40 @@ export default {
       validator: size => /(small|medium|large)/.test(size),
     },
   },
+  data: function () {
+    return {
+      checked: false,
+    }
+  },
   computed: {
-    $_ocCheckbox_model: {
+    model: {
       get() {
         return this.value
       },
-      set(value) {
+      set: function (value) {
         this.$emit("input", value)
+        this.setChecked(value)
       },
     },
-    $_ocCheckbox_classes() {
+    classes() {
       return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
+    },
+    labelClasses() {
+      return {
+        "oc-invisible-sr": this.hideLabel,
+        "oc-cursor-pointer": !this.disabled,
+      }
+  },
+  created() {
+    this.setChecked(this.model)
+  },
+  methods: {
+    setChecked: function (value) {
+      if (typeof value === "boolean") {
+        this.checked = value
+      } else {
+        this.checked = value.includes(this.option)
+      }
     },
   },
 }
