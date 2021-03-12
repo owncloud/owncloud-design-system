@@ -29,13 +29,6 @@
       "originalValue": "#1b223d",
       "name": "color"
     },
-    "filetype-icon-color": {
-      "type": "color",
-      "category": "icon-colors",
-      "value": "rgba(4, 30, 66, 0.75)",
-      "originalValue": "rgba(4, 30, 66, 0.75)",
-      "name": "filetype-icon-color"
-    },
     "inverse-color": {
       "type": "color",
       "category": "Font-colors",
