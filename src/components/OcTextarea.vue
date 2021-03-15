@@ -10,7 +10,6 @@
         'oc-textarea-danger': !!errorMessage,
       }"
       :value="value"
-      :aria-labelledby="labelId"
       :aria-invalid="ariaInvalid"
       @input="onInput($event.target.value)"
       @focus="onFocus($event.target.value)"
@@ -39,8 +38,7 @@ import uniqueId from "../utils/uniqueId"
  * use the `Input` element.
  *
  * ## Accessibility
- * The label is required and represents the name of the textarea. The label element will automatically be
- * referenced via the `aria-labelledby` property.
+ * The label is required and represents the name of the textarea.
  *
  * The description-message can be used additionally to give further information about the textarea . When a
  * description is given, it will be automatically referenced via the `aria-describedby` property.
@@ -68,7 +66,7 @@ export default {
       default: null,
     },
     /**
-     * Label of the textarea. Also referenced by aria-labelledby.
+     * Label of the textarea.
      **/
     label: {
       type: String,
