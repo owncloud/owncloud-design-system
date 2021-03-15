@@ -102,7 +102,7 @@
     @extend .uk-box-shadow-large;
     @extend .uk-background-default;
 
-    z-index: 9000;
+    z-index: $z-index-modal;
 
     * {
       box-sizing: border-box;
