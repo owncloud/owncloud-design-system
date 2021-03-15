@@ -99,9 +99,10 @@
   &-popup {
     @extend .uk-position-fixed;
     @extend .uk-position-center;
-    @extend .uk-position-z-index;
     @extend .uk-box-shadow-large;
     @extend .uk-background-default;
+
+    z-index: 9000;
 
     * {
       box-sizing: border-box;

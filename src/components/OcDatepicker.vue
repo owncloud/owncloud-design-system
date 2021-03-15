@@ -125,12 +125,6 @@ export default {
 }
 </script>
 
-<style lang="css">
-[data-preview="oc-datepicker"] .vdatetime-popup {
-  z-index: 9999;
-}
-</style>
-
 <docs>
 ```vue
   <template>
