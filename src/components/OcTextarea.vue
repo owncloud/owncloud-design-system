@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label :id="labelId" class="oc-label" :for="textareaId" v-text="label" />
+    <label class="oc-label" :for="textareaId" v-text="label" />
     <textarea
       :id="textareaId"
       v-bind="additionalAttributes"
@@ -117,9 +117,6 @@ export default {
         return this.id
       }
       return uniqueId("oc-textarea-")
-    },
-    labelId() {
-      return `${this.textareaId}-label`
     },
     messageId() {
       return `${this.textareaId}-message`
