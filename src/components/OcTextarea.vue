@@ -1,8 +1,8 @@
 <template>
   <div>
-    <label class="oc-label" :for="textareaId" v-text="label" />
+    <label class="oc-label" :for="id" v-text="label" />
     <textarea
-      :id="textareaId"
+      :id="id"
       v-bind="additionalAttributes"
       class="oc-textarea"
       :class="{
@@ -56,7 +56,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: null,
+      default: uniqueId("oc-textarea-"),
     },
     /**
      * Text value of the form textarea.
@@ -112,14 +112,8 @@ export default {
         !!this.descriptionMessage
       )
     },
-    textareaId() {
-      if (this.id) {
-        return this.id
-      }
-      return uniqueId("oc-textarea-")
-    },
     messageId() {
-      return `${this.textareaId}-message`
+      return `${this.id}-message`
     },
     additionalAttributes() {
       const additionalAttrs = {}
