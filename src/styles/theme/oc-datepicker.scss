@@ -253,6 +253,26 @@
   }
 }
 
+.oc-datepicker {
+  &-description input,
+  &-description:focus input {
+    border-color: $muted-color;
+  }
+
+  &-description,
+  &-description:focus {
+    color: $muted-color;
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
+}
+
 // Animation
 .vdatetime-fade-enter-active,
 .vdatetime-fade-leave-active {
