@@ -1,11 +1,10 @@
 <template>
   <div>
-    <label :id="labelId" class="oc-label" :for="inputId" v-text="label" />
+    <label class="oc-label" :for="inputId" v-text="label" />
     <input
       :id="inputId"
       v-bind="additionalAttributes"
       ref="input"
-      :aria-labelledby="labelId"
       :aria-invalid="ariaInvalid"
       :class="{
         'oc-text-input': !stopClassPropagation,
@@ -151,9 +150,6 @@ export default {
         return this.id
       }
       return uniqueId("oc-textinput-")
-    },
-    labelId() {
-      return `${this.inputId}-label`
     },
     messageId() {
       return `${this.inputId}-message`
