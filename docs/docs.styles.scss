@@ -310,7 +310,7 @@ div[class^="rsg--sidebar"] {
   }
 
   // Sidebar active link
-  .vueds-active {
+  .vueds-active, li[class*="rsg--isSelected-"] {
     ul[class^="rsg--list"] {
       display: block;
     }
