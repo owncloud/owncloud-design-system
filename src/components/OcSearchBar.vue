@@ -8,21 +8,20 @@
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
         <oc-icon v-show="!loading" :name="icon" />
-        <div
+        <oc-spinner
           v-show="loading"
-          :class="$_ocSpinner_class"
-          :aria-label="ariaLabel"
-          tabindex="-1"
-          role="img"
+          :size="spinnerSize"
+          role="alert"
+          aria-label="Loading results"
         />
       </span>
-      <oc-text-input
-        :class="$_ocSearchBar_input_class"
-        :placeholder="placeholder"
-        :label="label"
+      <input
+        :class="inputClass"
+        :aria-label="label"
         :value="searchQuery"
         :disabled="loading"
-        @input="onType"
+        :placeholder="placeholder"
+        @input="onType($event.target.value)"
         @keydown.enter="onSearch"
       />
       <div
@@ -158,13 +157,13 @@ export default {
       // please don't treat empty string the same as null...
       return this.value === null ? this.query : this.value
     },
-    $_ocSpinner_class() {
+    spinnerSize() {
       if (this.small) {
-        return "oc-spinner oc-spinner-xs"
+        return "xsmall"
       }
-      return "oc-spinner oc-spinner-m"
+      return "medium"
     },
-    $_ocSearchBar_input_class() {
+    inputClass() {
       const classes = ["oc-search-input"]
 
       this.icon && classes.push("oc-search-input-icon")

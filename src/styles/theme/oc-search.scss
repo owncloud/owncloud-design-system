@@ -36,7 +36,7 @@
   }
 
   &-small {
-    .oc-search-input > .oc-text-input {
+    .oc-search-input {
       @extend .uk-form-small;
 
       // Overrride default padding of small from
@@ -44,7 +44,7 @@
       padding-right: $space-medium !important;
     }
 
-    .oc-search-input-icon > .oc-text-input {
+    .oc-search-input-icon {
       // TODO: Remove `!important` after we get rid of UIkit
       padding-left: $space-large !important;
     }
@@ -59,6 +59,19 @@
         height: 18px;
         width: 18px;
       }
+    }
+  }
+
+  .oc-search-input {
+    @extend .uk-input;
+
+    background-color: $input-background;
+    border: 1px solid $input-border;
+    border-radius: 3px;
+
+    &:focus {
+      background-color: $input-background;
+      border-color: $brand-primary;
     }
   }
 }
