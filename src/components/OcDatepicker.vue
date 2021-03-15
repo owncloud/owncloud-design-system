@@ -1,9 +1,9 @@
 <template>
   <div>
-    <label class="oc-label" :for="datepickerId" v-text="label" />
+    <label class="oc-label" :for="id" v-text="label" />
     <datetime
       v-model="update"
-      :input-id="datepickerId"
+      :input-id="id"
       v-bind="additionalAttributes"
       class="oc-datepicker"
       :title="title"
@@ -66,7 +66,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: null,
+      default: uniqueId("oc-datepicker-"),
     },
     /**
      * The html element name used for the container of Example component.
@@ -141,14 +141,8 @@ export default {
     }
   },
   computed: {
-    datepickerId() {
-      if (this.id) {
-        return this.id
-      }
-      return uniqueId("oc-datepicker-")
-    },
     messageId() {
-      return `${this.datepickerId}-message`
+      return `${this.id}-message`
     },
     additionalAttributes() {
       const additionalAttrs = {}
