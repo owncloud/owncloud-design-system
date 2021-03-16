@@ -12,6 +12,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add aria properties to checkbox: [#1145](https://github.com/owncloud/owncloud-design-system/pull/1145)
 * Enhancement - Add aria properties to radio input: [#1148](https://github.com/owncloud/owncloud-design-system/pull/1148)
 * Enhancement - Remove the OcTextInput component from the OcSearchBar component: [#1151](https://github.com/owncloud/owncloud-design-system/pull/1151)
+* Enhancement - Implement labels and descriptions for text input fields: [#1141](https://github.com/owncloud/owncloud-design-system/pull/1141)
 
 ## Details
 
@@ -57,6 +58,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    Also replace the loading spinner with the OcSpinner component in the course of this.
 
    https://github.com/owncloud/owncloud-design-system/pull/1151
+
+
+* Enhancement - Implement labels and descriptions for text input fields: [#1141](https://github.com/owncloud/owncloud-design-system/pull/1141)
+
+   This also implies all the required accessibility changes.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1141
 
 # Changelog for [3.2.0] (2021-03-12)
 
