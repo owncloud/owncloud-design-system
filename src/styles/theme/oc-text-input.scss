@@ -27,6 +27,12 @@
     color: $danger-background;
   }
 
+  &-description,
+  &-description:focus {
+    border-color: $muted-color;
+    color: $muted-color;
+  }
+
   &-message {
     @extend .uk-flex;
     @extend .uk-flex-middle;
