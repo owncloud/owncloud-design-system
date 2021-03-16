@@ -176,6 +176,38 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.oc-textarea {
+  @extend .uk-textarea;
+
+  &-warning,
+  &-warning:focus {
+    border-color: $warning-background;
+    color: $warning-background;
+  }
+
+  &-danger,
+  &-danger:focus {
+    border-color: $danger-background;
+    color: $danger-background;
+  }
+
+  &-description,
+  &-description:focus {
+    border-color: $muted-color;
+    color: $muted-color;
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
+}
+</style>
+
 <docs>
   ```jsx
   <template>
