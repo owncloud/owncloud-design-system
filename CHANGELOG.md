@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add label and messages to datepicker: [#1149](https://github.com/owncloud/owncloud-design-system/pull/1149)
 * Enhancement - Add label and messages to textarea: [#1144](https://github.com/owncloud/owncloud-design-system/pull/1144)
 * Enhancement - Add aria properties to radio input: [#1148](https://github.com/owncloud/owncloud-design-system/pull/1148)
+* Enhancement - Remove the OcTextInput component from the OcSearchBar component: [#1151](https://github.com/owncloud/owncloud-design-system/pull/1151)
 
 ## Details
 
@@ -41,6 +42,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    This also implies all the necessary accessibility changes.
 
    https://github.com/owncloud/owncloud-design-system/pull/1148
+
+
+* Enhancement - Remove the OcTextInput component from the OcSearchBar component: [#1151](https://github.com/owncloud/owncloud-design-system/pull/1151)
+
+   Also replace the loading spinner with the OcSpinner component in the course of this.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1151
 
 # Changelog for [3.2.0] (2021-03-12)
 
