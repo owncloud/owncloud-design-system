@@ -69,7 +69,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: uniqueId("oc-datepicker-"),
+      default: () => uniqueId("oc-datepicker-"),
     },
     /**
      * The html element name used for the container of Example component.
