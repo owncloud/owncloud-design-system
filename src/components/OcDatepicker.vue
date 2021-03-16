@@ -1,24 +1,40 @@
 <template>
-  <datetime
-    v-model="update"
-    class="oc-datepicker"
-    :title="title"
-    :type="type"
-    :phrases="phrases"
-    :min-datetime="minDatetime"
-    :max-datetime="maxDatetime"
-    :placeholder="placeholder"
-    @cancel="$_cancel()"
-    @input="$_input()"
-  ></datetime>
+  <div>
+    <label class="oc-label" :for="id" v-text="label" />
+    <datetime
+      v-model="update"
+      :input-id="id"
+      v-bind="additionalAttributes"
+      class="oc-datepicker"
+      :title="title"
+      :type="type"
+      :phrases="phrases"
+      :min-datetime="minDatetime"
+      :max-datetime="maxDatetime"
+      @cancel="cancel()"
+      @input="input()"
+    ></datetime>
+    <div v-if="!!descriptionMessage" class="oc-datepicker-message">
+      <span
+        :id="descriptionId"
+        class="oc-datepicker-description"
+        v-text="descriptionMessage"
+      ></span>
+    </div>
+  </div>
 </template>
 
 <script>
 import { Datetime } from "vue-datetime"
+import uniqueId from "../utils/uniqueId"
 
 /**
- * Example component is used to visually communicate core parts of the product
- * and available actions.
+ * Datepicker inputs are used to select a date from a calendar.
+ *
+ * ## Accessibility
+ * The label is required and represents the name of the datepicker.
+ *
+ * The description-message can be used additionally to give further information about the datepicker. When a description is given, it will be automatically referenced via the `aria-describedby` property.
  */
 export default {
   /**
@@ -50,19 +66,17 @@ export default {
    * type(s). See examples below:
    */
   props: {
+    id: {
+      type: String,
+      required: false,
+      default: () => uniqueId("oc-datepicker-"),
+    },
     /**
      * The html element name used for the container of Example component.
      */
     date: {
       type: String,
       default: new Date().toISOString(),
-    },
-    /**
-     * The placeholder value for the form input field.
-     */
-    placeholder: {
-      type: String,
-      default: null,
     },
     /**
      * Popup title.
@@ -107,6 +121,21 @@ export default {
       type: [Object, String],
       default: null,
     },
+    /**
+     * Label of the datepicker.
+     **/
+    label: {
+      type: String,
+      required: true,
+      default: null,
+    },
+    /**
+     * A description text which is shown below the datepicker.
+     */
+    descriptionMessage: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
@@ -114,11 +143,23 @@ export default {
       update: this.date,
     }
   },
+  computed: {
+    descriptionId() {
+      return `${this.id}-description`
+    },
+    additionalAttributes() {
+      const additionalAttrs = {}
+      if (this.descriptionMessage) {
+        additionalAttrs["aria-describedby"] = this.descriptionId
+      }
+      return { ...this.$attrs, ...additionalAttrs }
+    },
+  },
   methods: {
-    $_input() {
+    input() {
       this.$emit("input", this.update)
     },
-    $_cancel() {
+    cancel() {
       this.$emit("cancel")
     },
   },
@@ -131,15 +172,20 @@ export default {
     <div>
       <div class="oc-m">
         <h3 class="uk-heading-divider">
-          Default picker
+          Datepicker inputs
         </h3>
-        <oc-datepicker></oc-datepicker>
+        <oc-datepicker label="Default datepicker"></oc-datepicker>
+        <oc-datepicker label="Datepicker with a minimum date" title="I have a minimum date" type="datetime" :minDatetime="minDatetime"></oc-datepicker>
       </div>
       <div class="oc-m">
         <h3 class="uk-heading-divider">
-          Datetime picker with a minimum date
+          Messages
         </h3>
-        <oc-datepicker title="I have a minimum date" type="datetime" :minDatetime="minDatetime"></oc-datepicker>
+        <oc-datepicker
+            label="Datepicker with description message below"
+            class="oc-mb-s"
+            description-message="This is a description message."
+        ></oc-datepicker>
       </div>
     </div>
   </template>
@@ -150,7 +196,7 @@ export default {
         return {
           minDatetime : moment().day(-3).format()
         }
-      }
+      },
     }
   </script>
 ```
