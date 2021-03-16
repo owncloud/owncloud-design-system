@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Increase the datepicker z-index: [#1147](https://github.com/owncloud/owncloud-design-system/pull/1147)
+* Enhancement - Add aria properties to radio input: [#1148](https://github.com/owncloud/owncloud-design-system/pull/1148)
 
 ## Details
 
@@ -17,6 +18,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    system.
 
    https://github.com/owncloud/owncloud-design-system/pull/1147
+
+
+* Enhancement - Add aria properties to radio input: [#1148](https://github.com/owncloud/owncloud-design-system/pull/1148)
+
+   This also implies all the necessary accessibility changes.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1148
 
 # Changelog for [3.2.0] (2021-03-12)
 
