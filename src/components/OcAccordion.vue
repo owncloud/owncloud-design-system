@@ -204,7 +204,6 @@ To see documentation on how to use this component, see [oc-accordion-item](/#/oC
     </p>
   </oc-accordion-item>
   <oc-accordion-item title="Something else with content" description="And a subtitle" icon="file">
-      <p>Enter some text!</p>
       <oc-text-input label="Text"></oc-text-input>
   </oc-accordion-item>
 </oc-accordion>
