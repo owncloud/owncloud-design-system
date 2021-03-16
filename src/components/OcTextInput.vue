@@ -1,8 +1,8 @@
 <template>
   <div>
-    <label class="oc-label" :for="inputId" v-text="label" />
+    <label class="oc-label" :for="id" v-text="label" />
     <input
-      :id="inputId"
+      :id="id"
       v-bind="additionalAttributes"
       ref="input"
       :aria-invalid="ariaInvalid"
@@ -40,8 +40,7 @@ import uniqueId from "../utils/uniqueId"
  * formats including numbers. For longer input, use the form `Textarea` element.*
  *
  * ## Accessibility
- * The label is required and represents the name of the input. The label element will automatically be referenced via
- * the `aria-labelledby` property.
+ * The label is required and represents the name of the input.
  *
  * The description-message can be used additionally to give further information about the input field. When a
  * description is given, it will be automatically referenced via the `aria-describedby` property.
@@ -60,7 +59,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: null,
+      default: () => uniqueId("oc-textinput-"),
     },
     /**
      * The type of the form input field.
@@ -145,14 +144,8 @@ export default {
 
       return listeners
     },
-    inputId() {
-      if (this.id) {
-        return this.id
-      }
-      return uniqueId("oc-textinput-")
-    },
     messageId() {
-      return `${this.inputId}-message`
+      return `${this.id}-message`
     },
     additionalAttributes() {
       const additionalAttrs = {}
