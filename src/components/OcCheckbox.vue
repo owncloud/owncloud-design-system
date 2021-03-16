@@ -113,6 +113,7 @@ export default {
         "oc-invisible-sr": this.hideLabel,
         "oc-cursor-pointer": !this.disabled,
       }
+    },
   },
   created() {
     this.setChecked(this.model)
