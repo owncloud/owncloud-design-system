@@ -8,21 +8,19 @@
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
         <oc-icon v-show="!loading" :name="icon" />
-        <div
+        <oc-spinner
           v-show="loading"
-          :class="$_ocSpinner_class"
-          :aria-label="ariaLabel"
-          tabindex="-1"
-          role="img"
+          :size="spinnerSize"
+          :aria-label="loadingAccessibleLabelValue"
         />
       </span>
-      <oc-text-input
-        :class="$_ocSearchBar_input_class"
-        :placeholder="placeholder"
-        :label="label"
+      <input
+        :class="inputClass"
+        :aria-label="label"
         :value="searchQuery"
         :disabled="loading"
-        @input="onType"
+        :placeholder="placeholder"
+        @input="onType($event.target.value)"
         @keydown.enter="onSearch"
       />
       <div
@@ -56,6 +54,8 @@
  * ### Making sure a submit button exits
  *
  * Both a search and filter form does need a submit button, regardless if the button is visually perceivable or not. If a "buttonless" look is desired, use `button-hidden="true"`, which renders the button visually hidden.
+ *
+ * The `aria-label` of the loading spinner can be set via `customLoadingAccessibleLabel`. If not set, it will default to "Loading results".
  */
 export default {
   name: "OcSearchBar",
@@ -149,6 +149,14 @@ export default {
       required: false,
       default: false,
     },
+    /**
+     * The aria-label for the loading spinner
+     */
+    loadingAccessibleLabel: {
+      type: String,
+      required: false,
+      default: "",
+    },
   },
   data: () => ({
     query: "",
@@ -158,19 +166,22 @@ export default {
       // please don't treat empty string the same as null...
       return this.value === null ? this.query : this.value
     },
-    $_ocSpinner_class() {
+    spinnerSize() {
       if (this.small) {
-        return "oc-spinner oc-spinner-xs"
+        return "xsmall"
       }
-      return "oc-spinner oc-spinner-m"
+      return "medium"
     },
-    $_ocSearchBar_input_class() {
+    inputClass() {
       const classes = ["oc-search-input"]
 
       this.icon && classes.push("oc-search-input-icon")
       !this.buttonHidden && classes.push("oc-search-input-button")
 
       return classes
+    },
+    loadingAccessibleLabelValue() {
+      return this.loadingAccessibleLabel || this.$gettext("Loading results")
     },
   },
   methods: {
@@ -220,7 +231,7 @@ export default {
       <div v-if="searchQuery" class="oc-m">Search query: {{ searchQuery }}</div>
       <hr>
       <div class="oc-mb">
-        <oc-search-bar label="Loading..." placeholder="Loading ..." :loading="true"></oc-search-bar>
+        <oc-search-bar label="Loading..." placeholder="Loading ..." loadingAccessibleLabel="Custom loading aria label" :loading="true"></oc-search-bar>
       </div>
       <div class="oc-mb">
         <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" :loading="true"></oc-search-bar>

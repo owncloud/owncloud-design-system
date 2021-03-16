@@ -13,8 +13,18 @@
     z-index: 0;
   }
 
-  &-input > .oc-text-input {
+  &-input {
+    @extend .uk-input;
+
+    background-color: $input-background;
+    border: 1px solid $input-border;
+    border-radius: 3px;
     padding-right: $space-medium;
+
+    &:focus {
+      background-color: $input-background;
+      border-color: $brand-primary;
+    }
 
     &::-ms-clear,
     &::-ms-reveal {
@@ -22,11 +32,11 @@
     }
   }
 
-  &-input-icon > .oc-text-input {
+  &-input-icon {
     padding-left: $space-large + $space-small;
   }
 
-  &-input-button > .oc-text-input {
+  &-input-button {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
@@ -36,7 +46,7 @@
   }
 
   &-small {
-    .oc-search-input > .oc-text-input {
+    .oc-search-input {
       @extend .uk-form-small;
 
       // Overrride default padding of small from
@@ -44,7 +54,7 @@
       padding-right: $space-medium !important;
     }
 
-    .oc-search-input-icon > .oc-text-input {
+    .oc-search-input-icon {
       // TODO: Remove `!important` after we get rid of UIkit
       padding-left: $space-large !important;
     }
