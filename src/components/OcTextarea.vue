@@ -1,29 +1,63 @@
 <template>
-  <textarea
-    class="uk-textarea"
-    :value="value"
-    :placeholder="placeholder"
-    :aria-label="label"
-    @input="$_ocTextArea_onInput($event.target.value)"
-    @focus="$_ocTextArea_onFocus($event.target.value)"
-    @keydown="$_ocTextArea_onKeyDown($event)"
-  />
+  <div>
+    <label class="oc-label" :for="id" v-text="label" />
+    <textarea
+      :id="id"
+      v-bind="additionalAttributes"
+      class="oc-textarea"
+      :class="{
+        'oc-textarea-warning': !!warningMessage,
+        'oc-textarea-danger': !!errorMessage,
+      }"
+      :value="value"
+      :aria-invalid="ariaInvalid"
+      @input="onInput($event.target.value)"
+      @focus="onFocus($event.target.value)"
+      @keydown="onKeyDown($event)"
+    />
+    <div v-if="showMessageLine" class="oc-textarea-message">
+      <span
+        :id="messageId"
+        :class="{
+          'oc-textarea-description': !!descriptionMessage,
+          'oc-textarea-warning': !!warningMessage,
+          'oc-textarea-danger': !!errorMessage,
+        }"
+        v-text="messageText"
+      ></span>
+    </div>
+  </div>
 </template>
 
 <script>
+import uniqueId from "../utils/uniqueId"
+
 /**
  * Textareas are used to allow users to provide text input when the expected
  * input is long. Textarea has a range of options. For shorter input,
  * use the `Input` element.
  *
  * ## Accessibility
- * The attributes `placeholder` and `aria-label` have different functions. The first specifies a short hint describing the expected value of an input field/text area, or gives an example (e.g. email@example.com). `aria-label` provides the accessible name of the textarea (e.g. "Your address", "Comment",...).
+ * The label is required and represents the name of the textarea.
+ *
+ * The description-message can be used additionally to give further information about the textarea . When a
+ * description is given, it will be automatically referenced via the `aria-describedby` property.
+ * An error or warning will replace the description as well as the `aria-describedby` property until the error
+ * or warning is fixed.
  */
 export default {
   name: "OcTextarea",
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * The ID of the element.
+     */
+    id: {
+      type: String,
+      required: false,
+      default: () => uniqueId("oc-textarea-"),
+    },
     /**
      * Text value of the form textarea.
      */
@@ -32,19 +66,73 @@ export default {
       default: null,
     },
     /**
-     * The placeholder value for the form textarea.
-     */
-    placeholder: {
-      type: String,
-      default: null,
-    },
-    /**
-     * Accessible of the Textarea, via aria-label.
+     * Label of the textarea.
      **/
     label: {
       type: String,
       required: true,
       default: null,
+    },
+    /**
+     * A warning message which is shown below the textarea.
+     */
+    warningMessage: {
+      type: String,
+      default: null,
+    },
+    /**
+     * An error message which is shown below the textarea.
+     */
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    /**
+     * A description text which is shown below the textarea.
+     */
+    descriptionMessage: {
+      type: String,
+      default: null,
+    },
+    /**
+     * Whether or not vertical space below the textarea should be reserved for a one line message,
+     * so that content actually appearing there doesn't shift the layout.
+     */
+    fixMessageLine: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    showMessageLine() {
+      return (
+        this.fixMessageLine ||
+        !!this.warningMessage ||
+        !!this.errorMessage ||
+        !!this.descriptionMessage
+      )
+    },
+    messageId() {
+      return `${this.id}-message`
+    },
+    additionalAttributes() {
+      const additionalAttrs = {}
+      if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
+        additionalAttrs["aria-describedby"] = this.messageId
+      }
+      return { ...this.$attrs, ...additionalAttrs }
+    },
+    ariaInvalid() {
+      return (!!this.errorMessage).toString()
+    },
+    messageText() {
+      if (this.errorMessage) {
+        return this.errorMessage
+      }
+      if (this.warningMessage) {
+        return this.warningMessage
+      }
+      return this.descriptionMessage
     },
   },
   methods: {
@@ -55,21 +143,21 @@ export default {
     focus() {
       this.$refs.input.focus()
     },
-    $_ocTextArea_onInput(value) {
+    onInput(value) {
       /**
        * Input event
        * @type {event}
        **/
       this.$emit("input", value)
     },
-    $_ocTextArea_onFocus(value) {
+    onFocus(value) {
       /**
        * Focus event - emitted as soon as the input field is focused
        * @type {event}
        **/
       this.$emit("focus", value)
     },
-    $_ocTextArea_onKeyDown(e) {
+    onKeyDown(e) {
       if (e.keyCode === 13) {
         /**
          * Change event - emitted as soon as the user hits enter
@@ -88,11 +176,98 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.oc-textarea {
+  @extend .uk-textarea;
+
+  &-warning,
+  &-warning:focus {
+    border-color: $warning-background;
+    color: $warning-background;
+  }
+
+  &-danger,
+  &-danger:focus {
+    border-color: $danger-background;
+    color: $danger-background;
+  }
+
+  &-description,
+  &-description:focus {
+    border-color: $muted-color;
+    color: $muted-color;
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
+}
+</style>
+
 <docs>
-```jsx
-<div>
-	<oc-textarea class="oc-mb-s" placeholder="Write your text" label="Comment" />
-	<oc-textarea disabled value="I am disabled" label="Example" />
-</div>
-```
+  ```jsx
+  <template>
+    <div>
+      <h3 class="uk-heading-divider">
+        Textarea fields
+      </h3>
+      <oc-textarea class="oc-mb-s" label="A simple textarea" />
+      <oc-textarea disabled value="I am disabled" label="Disabled Textarea" />
+      <h3 class="uk-heading-divider">
+        Messages
+      </h3>
+      <oc-textarea
+          label="Textarea with description message below"
+          class="oc-mb-s"
+          description-message="This is a description message."
+          :fix-message-line="true"
+      />
+      <oc-textarea
+          label="Textarea with error and warning messages with reserved space below"
+          class="oc-mb-s"
+          v-model="valueForMessages"
+          :error-message="errorMessage"
+          :warning-message="warningMessage"
+          :fix-message-line="true"
+      />
+      <oc-textarea
+          label="Textarea with error and warning messages without reserved space below"
+          class="oc-mb-s"
+          v-model="valueForMessages"
+          :error-message="errorMessage"
+          :warning-message="warningMessage"
+      />
+    </div>
+  </template>
+  <script>
+    export default {
+      data: () => {
+        return {
+          inputValue: 'initial',
+          valueForMessages: '',
+        }
+      },
+      computed: {
+        errorMessage() {
+          return this.valueForMessages.length === 0 ? 'Value is required.' : ''
+        },
+        warningMessage() {
+          return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
+        }
+      },
+      methods: {
+        _focus() {
+          this.$refs.inputForFocus.focus()
+        },
+        _focusAndSelect() {
+          this.$refs.inputForFocusSelect.focus()
+        }
+      }
+    }
+  </script>
+  ```
 </docs>
