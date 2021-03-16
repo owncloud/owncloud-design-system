@@ -1,17 +1,17 @@
 <template>
-  <label :for="id" :class="{ 'oc-cursor-pointer': !disabled }">
+  <span>
     <input
       :id="id"
-      v-model="$_ocRadio_model"
+      v-model="model"
       type="radio"
       name="radio"
-      :aria-label="label"
-      :class="$_ocRadio_classes"
+      :class="classes"
+      :aria-checked="(option === value).toString()"
       :value="option"
       :disabled="disabled"
     />
-    <span v-if="!hideLabel" :aria-hidden="true" v-text="label" />
-  </label>
+    <label :for="id" :class="labelClasses" v-text="label" />
+  </span>
 </template>
 <script>
 import { getSizeClass } from "../utils/sizeClasses"
@@ -92,7 +92,7 @@ export default {
     },
   },
   computed: {
-    $_ocRadio_model: {
+    model: {
       get() {
         return this.value
       },
@@ -100,8 +100,14 @@ export default {
         this.$emit("input", value)
       },
     },
-    $_ocRadio_classes() {
+    classes() {
       return ["oc-radio", "oc-radio-" + getSizeClass(this.size)]
+    },
+    labelClasses() {
+      return {
+        "oc-invisible-sr": this.hideLabel,
+        "oc-cursor-pointer": !this.disabled,
+      }
     },
   },
 }
