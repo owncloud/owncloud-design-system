@@ -5,9 +5,7 @@ exports[`OcTableFiles displays all fields 1`] = `
   <thead class="oc-thead">
     <tr>
       <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-text-nowrap oc-table-header-cell oc-table-header-cell-select" style="top: 0px;">
-        <div class="oc-table-files-select-all"><label for="oc-table-files-select-all" class="oc-cursor-pointer"><input id="oc-table-files-select-all" type="checkbox" name="checkbox" aria-label="Select all resources" class="oc-checkbox oc-checkbox-m" value="">
-            <!---->
-          </label></div>
+        <div class="oc-table-files-select-all"><span><input id="oc-table-files-select-all" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-m" value=""> <label for="oc-table-files-select-all" class="oc-invisible-sr oc-cursor-pointer">Select all resources</label></span></div>
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-text-nowrap oc-table-header-cell oc-table-header-cell-name" style="top: 0px;">
         Name
@@ -37,9 +35,7 @@ exports[`OcTableFiles displays all fields 1`] = `
   </thead>
   <tbody>
     <tr class="oc-tbody-tr oc-tbody-tr-forest" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-forest" class="oc-cursor-pointer"><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
-          <!---->
-        </label></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
           <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
@@ -101,9 +97,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
     </tr>
     <tr class="oc-tbody-tr oc-tbody-tr-notes" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-notes" class="oc-cursor-pointer"><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
-          <!---->
-        </label></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-notes" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-system" aria-hidden="true">function SvgText(props) {
   return React.createElement(
@@ -170,9 +164,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
     </tr>
     <tr class="oc-tbody-tr oc-tbody-tr-documents" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><label for="oc-table-files-select-documents" class="oc-cursor-pointer"><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" aria-label="Select" class="oc-checkbox oc-checkbox-l" value="[object Object]">
-          <!---->
-        </label></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-documents" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-system" aria-hidden="true">function SvgFolder(props) {
   return React.createElement(
