@@ -8,7 +8,7 @@
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
         <oc-icon v-show="!loading" :name="icon" />
-        <oc-spinner v-show="loading" :size="spinnerSize" aria-label="Loading results" />
+        <oc-spinner v-show="loading" :size="spinnerSize" :aria-label="loadingAccessibleLabel" />
       </span>
       <input
         :class="inputClass"
@@ -143,6 +143,13 @@ export default {
       required: false,
       default: false,
     },
+    /**
+     * The aria label for the loading spinner
+     */
+    loadingAccessibleLabel: {
+      type: String,
+      required: true,
+    },
   },
   data: () => ({
     query: "",
@@ -210,14 +217,14 @@ export default {
       <h3 class="uk-heading-divider">
           Search examples
       </h3>
-      <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" />
+      <oc-search-bar label="Search files" placeholder="Search files" loadingAccessibleLabel="Loading..." @search="onSearch" @clear="onClear" />
       <div v-if="searchQuery" class="oc-m">Search query: {{ searchQuery }}</div>
       <hr>
       <div class="oc-mb">
-        <oc-search-bar label="Loading..." placeholder="Loading ..." :loading="true"></oc-search-bar>
+        <oc-search-bar label="Loading..." placeholder="Loading ..." loadingAccessibleLabel="Loading..." :loading="true"></oc-search-bar>
       </div>
       <div class="oc-mb">
-        <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" :loading="true"></oc-search-bar>
+        <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" loadingAccessibleLabel="Loading..." :loading="true"></oc-search-bar>
       </div>
     </section>
     <section>
@@ -225,14 +232,14 @@ export default {
         Search example with visually hidden button
       </h3>
       <div class="oc-mb">
-        <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" :button-hidden="true" />
+        <oc-search-bar label="Search files" placeholder="Search files" loadingAccessibleLabel="Loading..." @search="onSearch" @clear="onClear" :button-hidden="true" />
       </div>
     </section>
     <section>
       <h3 class="uk-heading-divider">
           Filter examples
       </h3>
-      <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." loadingAccessibleLabel="Loading..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="oc-m">Filter query: {{ filterQuery }}</div>
     </section>
   </div>

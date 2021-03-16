@@ -13,8 +13,18 @@
     z-index: 0;
   }
 
-  &-input > .oc-text-input {
+  &-input {
+    @extend .uk-input;
+
+    background-color: $input-background;
+    border: 1px solid $input-border;
+    border-radius: 3px;
     padding-right: $space-medium;
+
+    &:focus {
+      background-color: $input-background;
+      border-color: $brand-primary;
+    }
 
     &::-ms-clear,
     &::-ms-reveal {
@@ -22,11 +32,11 @@
     }
   }
 
-  &-input-icon > .oc-text-input {
+  &-input-icon {
     padding-left: $space-large + $space-small;
   }
 
-  &-input-button > .oc-text-input {
+  &-input-button {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
@@ -59,19 +69,6 @@
         height: 18px;
         width: 18px;
       }
-    }
-  }
-
-  .oc-search-input {
-    @extend .uk-input;
-
-    background-color: $input-background;
-    border: 1px solid $input-border;
-    border-radius: 3px;
-
-    &:focus {
-      background-color: $input-background;
-      border-color: $brand-primary;
     }
   }
 }
