@@ -8,12 +8,7 @@
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
         <oc-icon v-show="!loading" :name="icon" />
-        <oc-spinner
-          v-show="loading"
-          :size="spinnerSize"
-          role="alert"
-          aria-label="Loading results"
-        />
+        <oc-spinner v-show="loading" :size="spinnerSize" aria-label="Loading results" />
       </span>
       <input
         :class="inputClass"
