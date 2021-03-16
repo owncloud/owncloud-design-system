@@ -9,14 +9,17 @@
       :title="title"
       :type="type"
       :phrases="phrases"
-      :aria-invalid="ariaInvalid"
       :min-datetime="minDatetime"
       :max-datetime="maxDatetime"
       @cancel="cancel()"
       @input="input()"
     ></datetime>
     <div v-if="!!descriptionMessage" class="oc-datepicker-message">
-      <span :id="messageId" class="oc-datepicker-description" v-text="descriptionMessage"></span>
+      <span
+        :id="descriptionId"
+        class="oc-datepicker-description"
+        v-text="descriptionMessage"
+      ></span>
     </div>
   </div>
 </template>
@@ -141,18 +144,15 @@ export default {
     }
   },
   computed: {
-    messageId() {
-      return `${this.id}-message`
+    descriptionId() {
+      return `${this.id}-description`
     },
     additionalAttributes() {
       const additionalAttrs = {}
       if (this.descriptionMessage) {
-        additionalAttrs["aria-describedby"] = this.messageId
+        additionalAttrs["aria-describedby"] = this.descriptionId
       }
       return { ...this.$attrs, ...additionalAttrs }
-    },
-    ariaInvalid() {
-      return "false"
     },
   },
   methods: {
