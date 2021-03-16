@@ -8,7 +8,11 @@
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
         <oc-icon v-show="!loading" :name="icon" />
-        <oc-spinner v-show="loading" :size="spinnerSize" :aria-label="loadingAccessibleLabel" />
+        <oc-spinner
+          v-show="loading"
+          :size="spinnerSize"
+          :aria-label="loadingAccessibleLabelValue"
+        />
       </span>
       <input
         :class="inputClass"
@@ -146,9 +150,9 @@ export default {
       default: false,
     },
     /**
-     * A custom aria label for the loading spinner
+     * The aria-label for the loading spinner
      */
-    customLoadingAccessibleLabel: {
+    loadingAccessibleLabel: {
       type: String,
       required: false,
       default: "",
@@ -176,12 +180,8 @@ export default {
 
       return classes
     },
-    loadingAccessibleLabel() {
-      if (this.customLoadingAccessibleLabel) {
-        return this.customLoadingAccessibleLabel
-      }
-
-      return this.$gettext("Loading results")
+    loadingAccessibleLabelValue() {
+      return this.loadingAccessibleLabel || this.$gettext("Loading results")
     },
   },
   methods: {
@@ -231,7 +231,7 @@ export default {
       <div v-if="searchQuery" class="oc-m">Search query: {{ searchQuery }}</div>
       <hr>
       <div class="oc-mb">
-        <oc-search-bar label="Loading..." placeholder="Loading ..." customLoadingAccessibleLabel="Custom loading aria label" :loading="true"></oc-search-bar>
+        <oc-search-bar label="Loading..." placeholder="Loading ..." loadingAccessibleLabel="Custom loading aria label" :loading="true"></oc-search-bar>
       </div>
       <div class="oc-mb">
         <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" :loading="true"></oc-search-bar>
