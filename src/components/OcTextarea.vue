@@ -56,7 +56,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: uniqueId("oc-textarea-"),
+      default: () => uniqueId("oc-textarea-"),
     },
     /**
      * Text value of the form textarea.
