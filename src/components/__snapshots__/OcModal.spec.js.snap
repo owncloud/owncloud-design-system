@@ -7,7 +7,7 @@ exports[`OcModal displays input 1`] = `
       <!----> <span>Create new folder</span>
     </div>
     <div class="oc-modal-body">
-      <oc-text-input-stub type="text" value="New folder" label="Folder name" fixmessageline="true" class="oc-modal-body-input"></oc-text-input-stub>
+      <oc-text-input-stub id="oc-textinput-1" type="text" value="New folder" label="Folder name" fixmessageline="true" class="oc-modal-body-input"></oc-text-input-stub>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
         <oc-button-stub type="button" size="medium" variation="default" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
         <oc-button-stub type="button" size="medium" variation="primary" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
