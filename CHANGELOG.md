@@ -2,7 +2,7 @@
 
 The following sections list the changes in ownCloud Design System unreleased.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v3.2.0...master
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v3.2.1...master
 
 ## Summary
 
@@ -65,6 +65,27 @@ The following sections list the changes in ownCloud Design System unreleased.
    This also implies all the required accessibility changes.
 
    https://github.com/owncloud/owncloud-design-system/pull/1141
+
+# Changelog for [3.2.1] (2021-03-17)
+
+The following sections list the changes in ownCloud Design System 3.2.1.
+
+[3.2.1]: https://github.com/owncloud/owncloud-design-system/compare/v3.2.0...v3.2.1
+
+## Summary
+
+* Bugfix - Folder names with dots: [#1153](https://github.com/owncloud/owncloud-design-system/pull/1153)
+
+## Details
+
+* Bugfix - Folder names with dots: [#1153](https://github.com/owncloud/owncloud-design-system/pull/1153)
+
+   Folder names with dots showed were separated into a basename and extension part in the
+   oc-resource-name component, which has been fixed. Additionally, the oc-resource-name
+   component now as a `resource-type` attribute, which reflects the `type` property of the
+   displayed resource. This makes testing easier.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1153
 
 # Changelog for [3.2.0] (2021-03-12)
 
@@ -166,7 +187,7 @@ The following sections list the changes in ownCloud Design System 3.1.0.
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.0.0
 
 ## Summary
 
@@ -326,29 +347,11 @@ The following sections list the changes in ownCloud Design System 3.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
 
-# Changelog for [2.1.1] (2021-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.1.
-
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
-
-## Summary
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-## Details
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-   The uniqueId helper function returned a callback instead of a string.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1060
-
 # Changelog for [2.1.2] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.2.
 
-[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v2.1.2
 
 ## Summary
 
@@ -364,6 +367,24 @@ The following sections list the changes in ownCloud Design System 2.1.2.
    anymore.
 
    https://github.com/owncloud/owncloud-design-system/pull/1064
+
+# Changelog for [2.1.1] (2021-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.1.
+
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
+
+## Summary
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+## Details
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+   The uniqueId helper function returned a callback instead of a string.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.0] (2021-01-19)
 
