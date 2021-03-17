@@ -262,12 +262,12 @@ Every button has to have an accessible name. It cannot be provided by a text bet
         {{ variation.description }}
       </oc-td>
         <oc-td v-for="appearance in appearances">
-            <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
-              {{ variation.title }}
-            </oc-button>
-            <oc-button :variation="variation.title" :appearance="appearance" disabled>
-              {{ variation.title }}
-            </oc-button>
+          <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
+            {{ variation.title }}
+          </oc-button>
+          <oc-button :variation="variation.title" :appearance="appearance" disabled>
+            {{ variation.title }}
+          </oc-button>
         </oc-td>
       </oc-tr>
     </oc-tbody>
@@ -281,24 +281,24 @@ export default {
       return [
         {
           title: "passive",
-          description: ""
+          description: "Default appearance of interactive elements (links and buttons)"
         },
         {
           title: "primary",
-          description: ""
+          description: "Used as a visual clue to the main action on each page"
         },
         {
           title: "success",
-          description: ""
+          description: "Useful as confirmations or to finish a multi-step process"
         },
         {
           title: "warning",
-          description: ""
+          description: "Used as a visual hint for certain actions, like publicly sharing a file or removing a share"
 
         },
         {
           title: "danger",
-          description: ""
+          description: "Use for triggering possible destructive and non-reversible actions, like permanently deleting a file"
         }
       ]
     },
