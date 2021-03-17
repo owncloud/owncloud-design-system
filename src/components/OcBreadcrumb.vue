@@ -2,7 +2,12 @@
   <div :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
     <ul class="oc-breadcrumb-list">
       <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
-        <router-link v-if="home && index === 0" :to="item.to" class="uk-flex uk-float-left">
+        <router-link
+          v-if="home && index === 0"
+          :to="item.to"
+          class="uk-flex uk-float-left"
+          :aria-label="homeAccessibilityLabelValue"
+        >
           <oc-icon name="home" />
         </router-link>
         <router-link v-else-if="item.to" :to="item.to">{{ item.text }}</router-link>
@@ -13,15 +18,15 @@
     <div class="oc-breadcrumb-drop">
       <label class="oc-breadcrumb-drop-label">
         <span
-          v-if="$_ocBreadcrumb_currentFolder"
+          v-if="currentFolder"
           class="oc-breadcrumb-drop-label-text"
-          v-text="$_ocBreadcrumb_currentFolder.text"
+          v-text="currentFolder.text"
         />
         <oc-icon class="oc-breadcrumb-drop-label-icon" name="expand_more" />
       </label>
-      <oc-drop v-if="$_ocBreadcrumb_dropdownItems" :options="{ offset: 20 }">
+      <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
         <ul class="uk-nav uk-nav-default">
-          <li v-for="(item, index) in $_ocBreadcrumb_dropdownItems" :key="index">
+          <li v-for="(item, index) in dropdownItems" :key="index">
             <router-link v-if="item.to" :to="item.to">{{ item.text }}</router-link>
             <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
             <span v-else v-text="item.text" />
@@ -42,6 +47,9 @@ import OcIcon from "./OcIcon.vue"
  *  - text: mandatory element, holds the text which is to be displayed in the breadcrumb
  *  - to: optional element, the vue router link
  *
+ * ## Accessibility
+ *
+ * You can provide an accessibility label to the home icon via `homeAccessibilityLabel`. If not set, it will default to "Go to Home".
  */
 export default {
   name: "OcBreadcrumb",
@@ -70,6 +78,14 @@ export default {
       default: false,
     },
     /**
+     * Aria-label for the home icon
+     */
+    homeAccessibilityLabel: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
      * Variation of breadcrumbs
      * Can be `default` or `lead`
      */
@@ -81,15 +97,18 @@ export default {
     },
   },
   computed: {
-    $_ocBreadcrumb_dropdownItems() {
+    dropdownItems() {
       if (this.items.length <= 1 || !this.items) return false
 
       return [...this.items].reverse().slice(1)
     },
-    $_ocBreadcrumb_currentFolder() {
+    currentFolder() {
       if (this.items.length === 0 || !this.items) return false
 
       return [...this.items].reverse()[0]
+    },
+    homeAccessibilityLabelValue() {
+      return this.homeAccessibilityLabel || this.$gettext("Go to Home")
     },
   },
 }
