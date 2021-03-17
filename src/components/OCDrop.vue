@@ -127,10 +127,10 @@ export default {
     </p>
     <ul class="uk-list">
       <li>
-        <label><oc-checkbox /> <span class="uk-text-meta">Show Files</span></label>
+        <oc-checkbox /> <span class="uk-text-meta">Show Files</span>
       </li>
       <li>
-        <label><oc-checkbox /> <span class="uk-text-meta">Show Folders</span></label>
+        <oc-checkbox /> <span class="uk-text-meta">Show Folders</span>
       </li>
       <li>
         <oc-search-bar small placeholder="Filter by name" :button="false" />
