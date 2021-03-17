@@ -16,14 +16,14 @@
   &-input {
     @extend .uk-input;
 
-    background-color: $input-background;
-    border: 1px solid $input-border;
+    background-color: var(--oc-input-background);
+    border: 1px solid var(--oc--input-border);
     border-radius: 3px;
     padding-right: $space-medium;
 
     &:focus {
-      background-color: $input-background;
-      border-color: $brand-primary;
+      background-color: var(--oc-input-background);
+      border-color: var(--oc-brand-primary);
     }
 
     &::-ms-clear,

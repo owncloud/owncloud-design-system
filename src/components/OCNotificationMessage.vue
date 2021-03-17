@@ -20,7 +20,8 @@
     </div>
     <oc-button
       name="close"
-      variation="raw"
+      appearance="raw"
+      :variation="$_ocNotificationMessage_iconVariation"
       aria-label="Close"
       class="uk-position-top-right oc-mt-s oc-mr-s"
       @click="$_ocNotificationMessage_close"
@@ -73,9 +74,6 @@ export default {
       return `uk-flex uk-flex-wrap uk-notification-message uk-notification-message-${this.status}`
     },
     $_ocNotificationMessage_iconVariation() {
-      if (this.status === "primary") {
-        return "system"
-      }
       return this.status
     },
   },
@@ -90,6 +88,24 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.uk-notification-message {
+  &-primary {
+    color: var(--oc-variation-primary);
+  }
+  &-success {
+    color: var(--oc-variation-success);
+  }
+  &-warning {
+    color: var(--oc-variation-warning);
+  }
+  &-danger {
+    color: var(--oc-variation-danger);
+  }
+}
+</style>
+
 <docs>
   Please have a look at the component [oc-notifications](#/oC%20Components/oc-notifications) for example code.
 </docs>

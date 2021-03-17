@@ -1,36 +1,37 @@
-//
-// Component: OC Text Input
-//
-// ========================================================================
-
 .oc-text-input {
   @extend .uk-input;
 
-  background-color: $input-background;
-  border: 1px solid $input-border;
+  background-color: var(--oc-input-background);
+  border: 1px solid var(--oc-input-border);
   border-radius: 3px;
+  color: var(--oc-color);
 
   &:focus {
-    background-color: $input-background;
-    border-color: $brand-primary;
+    background-color: var(--oc-input-background);
+    border-color: var(--oc-brand-primary);
+    color: var(--oc-color);
+  }
+
+  &:disabled {
+    color: var(--oc-color-muted);
   }
 
   &-warning,
   &-warning:focus {
-    border-color: $warning-background;
-    color: $warning-background;
+    border-color: var(--oc-variation-warning);
+    color: var(--oc-variation-warning);
   }
 
   &-danger,
   &-danger:focus {
-    border-color: $danger-background;
-    color: $danger-background;
+    border-color: var(--oc-variation-danger);
+    color: var(--oc-variation-danger);
   }
 
   &-description,
   &-description:focus {
-    border-color: $muted-color;
-    color: $muted-color;
+    border-color: var(--oc-color-muted);
+    color: var(--oc-color-muted);
   }
 
   &-message {

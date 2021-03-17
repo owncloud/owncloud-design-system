@@ -8,7 +8,7 @@
   &-overlay {
     @extend .uk-position-cover;
 
-    background-color: $modal-background;
+    background-color: rgba(100, 100, 100, 0.3);
   }
 
   &-time-picker {
@@ -49,7 +49,7 @@
       &--selected {
         @extend .uk-background-primary;
 
-        color: $global-inverse-color;
+        color: var(--oc-color-inverse);
       }
     }
   }
@@ -91,7 +91,7 @@
       &--selected {
         @extend .uk-background-primary;
 
-        color: $global-inverse-color;
+        color: var(--oc-color-inverse);
       }
     }
   }
@@ -120,12 +120,12 @@
     &__year {
       @extend .uk-text-small;
 
-      color: rgba($global-inverse-color, 0.75);
+      color: var(--oc-color-inverse);
       cursor: pointer;
       transition: color $animation-duration;
 
       &:hover {
-        color: $global-inverse-color !important; // L109
+        color: var(--oc-color-inverse) !important;
         opacity: 1;
       }
     }
@@ -135,13 +135,13 @@
       @extend .uk-heading-divider;
       @extend .oc-mb-s;
 
-      color: $global-inverse-color !important; // L109
+      color: var(--oc-color-inverse) !important;
     }
 
     &__date {
       @extend .uk-text-lead;
 
-      color: $global-inverse-color !important; // L109
+      color: var(--oc-color-inverse) !important;
       cursor: pointer;
       line-height: 1;
     }
@@ -228,7 +228,7 @@
         &--selected:hover > span > span {
           @extend .uk-background-primary;
 
-          color: $global-inverse-color;
+          color: var(--oc-color-inverse);
         }
 
         &:hover > span > span {
@@ -247,8 +247,8 @@
 
     &,
     * {
-      background-color: $global-background !important;
-      color: rgba($global-muted-color, 0.5) !important;
+      background-color: var(--oc-background) !important;
+      color: var(--oc-color-muted) !important;
     }
   }
 }
@@ -256,12 +256,12 @@
 .oc-datepicker {
   &-description input,
   &-description:focus input {
-    border-color: $muted-color;
+    border-color: var(--oc-color-muted);
   }
 
   &-description,
   &-description:focus {
-    color: $muted-color;
+    color: var(--oc-color-muted);
   }
 
   &-message {

@@ -3,7 +3,7 @@
   position: relative;
 
   &::before {
-    border-bottom: 1px solid #ccd4e0;
+    border-bottom: 1px solid var(--oc-variation-primary-muted);
     bottom: 0;
     content: '';
     left: 0;
@@ -15,7 +15,7 @@
     @extend .oc-button-reset;
 
     border-bottom: 1px solid transparent;
-    color: #667fa3;
+    color: var(--oc-color-muted);
     display: inline-block;
     font-size: 0.875rem;
     padding: 5px 10px;
@@ -24,12 +24,12 @@
     transition: color 0.1s ease-in-out;
 
     &:focus {
-      background-color: rgba(#002966, 0.25);
+      background-color: var(--oc-variation-primary-muted);
     }
 
     &[aria-selected='true'] {
-      border-color: #002966;
-      color: #002966;
+      border-color: var(--oc-brand-primary);
+      color: var(--oc-brand-primary);
       position: relative;
     }
   }

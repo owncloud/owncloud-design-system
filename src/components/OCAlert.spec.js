@@ -35,7 +35,7 @@ describe("OCAlert", () => {
     })
 
     expect(wrapper.props().variation).toMatch("primary")
-    expect(wrapper.classes()).toContain("uk-alert-primary")
+    expect(wrapper.classes()).toContain("oc-alert-primary")
     expect(wrapper).toMatchSnapshot()
   })
 

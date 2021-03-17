@@ -3,6 +3,7 @@
     <slot />
   </thead>
 </template>
+
 <script>
 export default {
   name: "OcThead",
@@ -10,8 +11,9 @@ export default {
   release: "2.1.0",
 }
 </script>
+
 <style lang="scss">
 .oc-thead {
-  border-bottom: 1px solid $border-primary;
+  border-bottom: 1px solid var(--oc-border-primary);
 }
 </style>

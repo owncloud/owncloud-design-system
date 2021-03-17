@@ -197,80 +197,80 @@ export default {
 </script>
 
 <docs>
-    ```jsx
-    <template>
-        <section>
-            <h3 class="uk-heading-divider">
-                Input Types
-            </h3>
-            <oc-text-input class="oc-mb-s" label="Text"/>
-            <oc-text-input class="oc-mb-s" disabled label="Disabled" value="I am disabled"/>
-            <oc-text-input class="oc-mb-s" type="number" label="Number"/>
-            <oc-text-input class="oc-mb-s" type="email" label="Email"/>
-            <oc-text-input class="oc-mb-s" type="password" label="Password"/>
-            <h3 class="uk-heading-divider">
-                Binding
-            </h3>
-            <oc-text-input label="Text" v-model="inputValue"/>
-            <oc-text-input disabled label="Text" v-model="inputValue"/>
-            <h3 class="uk-heading-divider">
-                Interactions
-            </h3>
-            <oc-button @click="_focus">Focus input below</oc-button>
-            <oc-text-input label="Focus field" ref="inputForFocus"/>
-            <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
-            <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
-            <h3 class="uk-heading-divider">
-                Messages
-            </h3>
-            <oc-text-input
-                    label="Input with description message below"
-                    class="oc-mb-s"
-                    description-message="This is a description message."
-                    :fix-message-line="true"
-            />
-            <oc-text-input
-                    label="Input with error and warning messages with reserved space below"
-                    class="oc-mb-s"
-                    v-model="valueForMessages"
-                    :error-message="errorMessage"
-                    :warning-message="warningMessage"
-                    :fix-message-line="true"
-            />
-            <oc-text-input
-                    label="Input with error and warning messages without reserved space below"
-                    class="oc-mb-s"
-                    v-model="valueForMessages"
-                    :error-message="errorMessage"
-                    :warning-message="warningMessage"
-            />
-        </section>
-    </template>
-    <script>
-        export default {
-            data: () => {
-                return {
-                    inputValue: 'initial',
-                    valueForMessages: '',
-                }
-            },
-            computed: {
-              errorMessage() {
-                return this.valueForMessages.length === 0 ? 'Value is required.' : ''
-              },
-              warningMessage() {
-                return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
-              }
-            },
-            methods: {
-                _focus() {
-                    this.$refs.inputForFocus.focus()
-                },
-                _focusAndSelect() {
-                    this.$refs.inputForFocusSelect.focus()
-                }
-            }
+```vue
+  <template>
+    <section>
+      <h3 class="uk-heading-divider">
+          Input Types
+      </h3>
+      <oc-text-input class="oc-mb-s" label="Text"/>
+      <oc-text-input class="oc-mb-s" disabled label="Disabled" value="I am disabled"/>
+      <oc-text-input class="oc-mb-s" type="number" label="Number"/>
+      <oc-text-input class="oc-mb-s" type="email" label="Email"/>
+      <oc-text-input class="oc-mb-s" type="password" label="Password"/>
+      <h3 class="uk-heading-divider">
+        Binding
+      </h3>
+      <oc-text-input label="Text" v-model="inputValue"/>
+      <oc-text-input disabled label="Text" v-model="inputValue"/>
+      <h3 class="uk-heading-divider">
+        Interactions
+      </h3>
+      <oc-button @click="_focus">Focus input below</oc-button>
+      <oc-text-input label="Focus field" ref="inputForFocus"/>
+      <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
+      <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
+      <h3 class="uk-heading-divider">
+        Messages
+      </h3>
+      <oc-text-input
+        label="Input with description message below"
+        class="oc-mb-s"
+        description-message="This is a description message."
+        :fix-message-line="true"
+      />
+      <oc-text-input
+        label="Input with error and warning messages with reserved space below"
+        class="oc-mb-s"
+        v-model="valueForMessages"
+        :error-message="errorMessage"
+        :warning-message="warningMessage"
+        :fix-message-line="true"
+      />
+      <oc-text-input
+        label="Input with error and warning messages without reserved space below"
+        class="oc-mb-s"
+        v-model="valueForMessages"
+        :error-message="errorMessage"
+        :warning-message="warningMessage"
+      />
+    </section>
+  </template>
+  <script>
+    export default {
+      data: () => {
+        return {
+          inputValue: 'initial',
+          valueForMessages: '',
         }
-    </script>
-    ```
+      },
+      computed: {
+        errorMessage() {
+          return this.valueForMessages.length === 0 ? 'Value is required.' : ''
+        },
+        warningMessage() {
+          return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
+        }
+      },
+      methods: {
+        _focus() {
+          this.$refs.inputForFocus.focus()
+        },
+        _focusAndSelect() {
+          this.$refs.inputForFocusSelect.focus()
+        }
+      }
+    }
+  </script>
+```
 </docs>

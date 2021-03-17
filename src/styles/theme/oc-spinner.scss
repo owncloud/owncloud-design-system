@@ -1,8 +1,3 @@
-//
-// Component: OcSpinner
-//
-// ========================================================================
-
 @mixin oc-spinner-size($factor) {
   height: round($icons-size-default * $factor / 2) * 2;
   width: round($icons-size-default * $factor / 2) * 2;
@@ -11,7 +6,7 @@
 .oc-spinner {
   @include oc-spinner-size(1);
 
-  color: $global-color;
+  color: var(--oc-color);
   display: inline-block;
 
   &::after {

@@ -1,44 +1,51 @@
-//
-// Component: Alert
-//
-// ========================================================================
-
-@mixin hook-alert-primary() {
-  svg {
-    fill: $alert-primary-color;
-  }
-}
-
-@mixin hook-alert-success() {
-  svg {
-    fill: $alert-success-color;
-  }
-}
-
-@mixin hook-alert-warning() {
-  svg {
-    fill: $alert-warning-color;
-  }
-}
-
-@mixin hook-alert-danger() {
-  svg {
-    fill: $alert-danger-color;
-  }
-}
-
-//
-// Component: OC-Alert
-//
-// ========================================================================
-
 .oc-alert {
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out, margin-top 0.5s ease-out;
+  &-passive {
+    background-color: var(--oc-variation-passive-hover);
+
+    svg,
+    p {
+      color: var(--oc-variation-passive);
+    }
+  }
+
+  &-primary {
+    background-color: var(--oc-variation-primary-hover);
+
+    svg,
+    p {
+      color: var(--oc-variation-primary);
+    }
+  }
+
+  &-success {
+    background-color: var(--oc-variation-success-hover);
+
+    svg,
+    p {
+      color: var(--oc-variation-success-muted);
+    }
+  }
+
+  &-warning {
+    background-color: var(--oc-variation-warning-hover);
+
+    svg,
+    p {
+      color: var(--oc-variation-warning-muted);
+    }
+  }
+
+  &-danger {
+    background-color: var(--oc-variation-danger-hover);
+
+    svg,
+    p {
+      color: var(--oc-variation-danger-muted);
+    }
+  }
 }
 
-//
 // Transition: OC-Alerts-Transition
-//
 
 .oc-alerts-transition-enter,
 .oc-alerts-transition-leave-to {

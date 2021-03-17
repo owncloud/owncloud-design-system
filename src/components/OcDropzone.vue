@@ -15,9 +15,9 @@ export default {
 <style lang="scss">
 .oc-dropzone {
   align-items: center;
-  background-color: rgba($global-background, 0.8);
-  border: 1px dashed $global-border;
-  color: $emphasis-color;
+  background-color: var(--oc-background);
+  border: 1px dashed var(--oc-variation-primary-muted);
+  color: var(--oc-brand-primary);
   display: flex;
   font-size: 1.5rem;
   justify-content: center;

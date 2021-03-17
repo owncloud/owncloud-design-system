@@ -11,6 +11,7 @@
     role="progressbar"
   />
 </template>
+
 <script>
 export default {
   name: "OcProgress",
@@ -46,14 +47,15 @@ export default {
     },
     /**
      * The variation of the progress bar.
-     * Can be `primary` or `warning`
+     * Defaults to `primary`.
+     * Can be `passive, primary, danger, success, warning`.
      */
     variation: {
       type: String,
       required: false,
       default: "primary",
       validator: value => {
-        return value.match(/(primary|warning)/)
+        return value.match(/(primary|passive|success|warning|danger)/)
       },
     },
   },
@@ -65,10 +67,11 @@ export default {
   },
 }
 </script>
+
 <docs>
 Show progress to the users.
 
-```jsx
+```vue
 <div>
   <oc-progress :value="4" :max="10" class="oc-mb-s" />
   <oc-progress :value="8" :max="10" size="small" variation="warning" />

@@ -1,3 +1,29 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+.oc-page-title {
+  color: var(--oc-color);
+}
+
+a {
+  color: var(--oc-variation-primary);
+
+  &:hover {
+    color: var(--oc-variation-primary-hover);
+  }
+}
+
+.uk-text-meta {
+  color: var(--oc-color-muted);
+}
+
+.uk-heading-divider {
+  border-bottom-color: var(--oc-border-primary);
+}
+
 /*
  * Prevent text from wrapping onto multiple lines
  */

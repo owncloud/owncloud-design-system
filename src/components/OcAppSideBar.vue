@@ -60,8 +60,14 @@ export default {
 }
 </script>
 
+<style scoped>
+.oc-app-side-bar {
+  height: 100vh;
+}
+</style>
+
 <docs>
-```jsx
+```vue
   <template>
     <oc-app-side-bar>
         <template slot="action">
@@ -78,9 +84,5 @@ export default {
         </template>
     </oc-app-side-bar>
   </template>
-  <script>
-    export default {
-    }
-  </script>
 ```
 </docs>

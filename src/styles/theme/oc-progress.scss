@@ -1,24 +1,17 @@
-// Variables
-// ========================================================================
-
 $progress-height: 15px !default;
 $progress-height-small: 5px !default;
-
-// Component
-// ========================================================================
 
 .oc-progress {
   // Remove default style
   -webkit-appearance: none;
   -moz-appearance: none;
   // Set background color for progress container in Firefox, IE11 and Edge
-  background-color: $global-inverse-color;
+  background-color: var(--oc-color-inverse);
   // Remove default style
   border: 0;
   display: block;
   height: $progress-height;
   // Add the correct vertical alignment in Chrome, Firefox, and Opera.
-  vertical-align: baseline;
   width: 100%;
 
   &:focus {
@@ -31,11 +24,11 @@ $progress-height-small: 5px !default;
   }
 
   &::-webkit-progress-bar {
-    background-color: $global-inverse-color;
+    background-color: var(--oc-color-inverse);
   }
 
   &::-moz-progress-bar {
-    background-color: $action-primary;
+    background-color: var(--oc-variation-passive);
   }
 
   // Remove progress bar for indeterminate state in Firefox
@@ -44,12 +37,12 @@ $progress-height-small: 5px !default;
   }
 
   &::-webkit-progress-value {
-    background-color: $action-primary;
+    background-color: var(--oc-variation-passive);
     transition: width $transition-duration-short ease;
   }
 
   &::-ms-fill {
-    background-color: $action-primary;
+    background-color: var(--oc-variation-passive);
     // Remove right border in IE11 and Edge
     border: 0;
     transition: width $transition-duration-short ease;
@@ -59,17 +52,59 @@ $progress-height-small: 5px !default;
     height: $progress-height-small;
   }
 
-  &-warning {
+  &-primary {
     &::-webkit-progress-value {
-      background-color: $warning-background;
+      background-color: var(--oc-variation-primary);
     }
 
     &::-moz-progress-bar {
-      background-color: $warning-background;
+      background-color: var(--oc-variation-primary);
     }
 
     &::-ms-fill {
-      background-color: $warning-background;
+      background-color: var(--oc-variation-primary);
+    }
+  }
+
+  &-success {
+    &::-webkit-progress-value {
+      background-color: var(--oc-variation-success);
+    }
+
+    &::-moz-progress-bar {
+      background-color: var(--oc-variation-success);
+    }
+
+    &::-ms-fill {
+      background-color: var(--oc-variation-success);
+    }
+  }
+
+  &-warning {
+    &::-webkit-progress-value {
+      background-color: var(--oc-variation-warning);
+    }
+
+    &::-moz-progress-bar {
+      background-color: var(--oc-variation-warning);
+    }
+
+    &::-ms-fill {
+      background-color: var(--oc-variation-warning);
+    }
+  }
+
+  &-danger {
+    &::-webkit-progress-value {
+      background-color: var(--oc-variation-danger);
+    }
+
+    &::-moz-progress-bar {
+      background-color: var(--oc-variation-danger);
+    }
+
+    &::-ms-fill {
+      background-color: var(--oc-variation-danger);
     }
   }
 }

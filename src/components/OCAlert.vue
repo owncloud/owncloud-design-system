@@ -32,14 +32,15 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `primary, success, warning, danger`
+     * Defaults to `passive`.
+     * Can be `passive, primary, danger, success, warning`.
      */
     variation: {
       type: String,
       required: false,
-      default: null,
+      default: "passive",
       validator: value => {
-        return value.match(/(primary|success|warning|danger)/)
+        return value.match(/(passive|primary|success|warning|danger)/)
       },
     },
   },
@@ -47,7 +48,7 @@ export default {
     _class() {
       let classes = ["oc-alert"]
 
-      if (this.variation) classes.push(`uk-alert-${this.variation}`)
+      if (this.variation) classes.push(`oc-alert-${this.variation}`)
 
       return classes
     },
@@ -69,12 +70,12 @@ export default {
 <div>
   <oc-alert>
     <p>
-      This is an plain alert-box.
+      This is a plain alert-box.
     </p>
   </oc-alert>
   <oc-alert variation="primary">
     <p>
-      <oc-icon name="info" class="uk-float-left oc-mr-s" />
+      <oc-icon name="info" variation="primary" class="uk-float-left oc-mr-s" />
       I am nice and blue and have an icon
     </p>
   </oc-alert>

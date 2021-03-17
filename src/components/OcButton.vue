@@ -84,13 +84,21 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `primary, danger`
+     * Defaults to `primary`.
+     * Can be `passive, primary, danger, success, warning`.
      */
     variation: {
       type: String,
-      default: "default",
+      default: "primary",
       validator: value => {
-        return value.match(/(default|primary|danger|raw)/)
+        return value.match(/(passive|primary|success|danger|warning)/)
+      },
+    },
+    appearance: {
+      type: String,
+      default: "outline",
+      validator: value => {
+        return value.match(/(filled|outline|raw)/)
       },
     },
     /**
@@ -122,18 +130,6 @@ export default {
         return value.match(/(none|xsmall|small|medium|large|xlarge)/)
       },
     },
-    /**
-     * Color to be given to the content of the button with variation `raw`.
-     * Will not do anything when combined with different variations.
-     */
-    color: {
-      type: String,
-      required: false,
-      default: "default",
-      validator: value => {
-        return value.match(/(default|text|primary)/)
-      },
-    },
   },
   computed: {
     $_ocButton_buttonClass() {
@@ -150,8 +146,11 @@ export default {
         classes.push(`oc-button-${this.variation}`)
       }
 
-      if (this.variation === "raw") {
-        classes.push(`oc-button-raw-color-${this.color}`)
+      if (this.appearance === "raw") {
+        classes.push(`oc-button-${this.variation}-raw`)
+      }
+      if (this.appearance === "outline") {
+        classes.push(`oc-button-${this.variation}-outline`)
       }
 
       return classes
@@ -164,11 +163,12 @@ export default {
   },
 }
 </script>
+
 <docs>
 Buttons are generally used for interface actions. Suitable for all-purpose use.
 
 Defaults to appearance that has white background with blue border.
-Primary style should be used only once per view for main call-to-action.
+Filled appearance should be used only once per view for main call-to-action.
 All buttons are built with a css grid which ensures that there will be a pre-defined gutter between all child items.
 
 ## Accessibility
@@ -191,19 +191,19 @@ When an aria-label attribute exists, its value will override the button text. So
 
 Every button has to have an accessible name. It cannot be provided by a text between the button tags (for example, because it is an icon button; see "Upload" example below), the accessible name has to be provided by `aria-label`.
 
-```js
+## Examples
+
+```vue
+<template>
+<div>
+
   <h3 class="uk-heading-divider">
-    Button Types
+    Button variations
   </h3>
   <div class="uk-flex">
-    <oc-button  class="oc-mr-s" v-text="'Default button'" />
-    <oc-button variation="primary" class="oc-mr-s">Primary button</oc-button>
-    <oc-button variation="danger" class="oc-mr-s">
-      <oc-icon name="delete" aria-hidden="true" />
-      Danger Button
+    <oc-button v-for="variation in variations" :variation="variation.title" class="oc-mr-s oc-mb-s">
+      {{ variation.title }}
     </oc-button>
-    <oc-button disabled class="oc-mr-s">Disabled button</oc-button>
-    <oc-button variation="raw">Raw button</oc-button>
   </div>
 
   <h3 class="uk-heading-divider">
@@ -236,28 +236,81 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     Using buttons in a group
   </h3>
   <div class="oc-button-group">
-    <oc-button variation="primary">Hello</oc-button>
+    <oc-button variation="primary" appearance="filled">Hello</oc-button>
     <oc-button>
       <oc-icon name="folder" />
       Demo Button
     </oc-button>
-    <oc-button variation="danger">Delete</oc-button>
+    <oc-button variation="danger" appearance="filled">Delete</oc-button>
   </div>
-```
 
-### Coloring buttons with variation "raw"
-```js
-<oc-button color="default" variation="raw">
-  <oc-icon name="add" aria-hidden="true" />
-  Add
-</oc-button>
-<oc-button color="text" variation="raw">
-  <oc-icon name="folder-move" aria-hidden="true" />
-  Move
-</oc-button>
-<oc-button color="primary" variation="raw">
-  <oc-icon name="file_copy" aria-hidden="true" />
-  Copy
-</oc-button>
+  <h3 class="uk-heading-divider">
+    All available button combinations
+  </h3>
+  <oc-table-simple>
+    <oc-thead>
+      <oc-tr>
+        <oc-th>Variation &amp; usage</oc-th>
+        <oc-th>Outline (default)</oc-th>
+        <oc-th>Filled</oc-th>
+        <oc-th>Raw</oc-th>
+      </oc-tr>
+    </oc-thead>
+    <oc-tbody>
+      <oc-tr v-for="variation in variations">
+      <oc-td>
+        {{ variation.description }}
+      </oc-td>
+        <oc-td v-for="appearance in appearances">
+            <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
+              {{ variation.title }}
+            </oc-button>
+            <oc-button :variation="variation.title" :appearance="appearance" disabled>
+              {{ variation.title }}
+            </oc-button>
+        </oc-td>
+      </oc-tr>
+    </oc-tbody>
+  </oc-table-simple>
+  </div>
+</template>
+<script>
+export default {
+  computed: {
+    variations() {
+      return [
+        {
+          title: "passive",
+          description: ""
+        },
+        {
+          title: "primary",
+          description: ""
+        },
+        {
+          title: "success",
+          description: ""
+        },
+        {
+          title: "warning",
+          description: ""
+
+        },
+        {
+          title: "danger",
+          description: ""
+        }
+      ]
+    },
+    appearances() {
+      return [
+        "outline",
+        "filled",
+        "raw"
+      ]
+    },
+  },
+}
+</script>
 ```
 </docs>

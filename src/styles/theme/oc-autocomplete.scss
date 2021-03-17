@@ -4,19 +4,20 @@
   &-dropdown {
     @extend .uk-box-shadow-medium;
 
-    background: $global-background;
+    background: var(--oc-background);
   }
 
   &-input {
     @extend .uk-input;
 
-    background-color: $input-background;
-    border: 1px solid $input-border;
+    background-color: var(--oc-input-background);
+    border: 1px solid var(--oc-input-border);
     border-radius: 3px;
+    color: var(--oc-color-muted);
 
     &:focus {
-      background-color: $input-background;
-      border-color: $brand-primary;
+      background: var(--oc-input-background);
+      border-color: var(--oc-brand-primary);
     }
   }
 
@@ -31,7 +32,7 @@
   &-suggestion {
     @extend .oc-m-rm;
 
-    color: $global-muted-color;
+    color: var(--oc-color-muted);
     padding: $space-small;
 
     &-list {
@@ -43,7 +44,7 @@
         @extend .uk-text-meta;
         @extend .oc-m-rm;
 
-        background-color: $global-muted-background;
+        background-color: var(--oc-background);
         padding: $space-small;
         padding-left: $spinner-size + $space-medium;
       }
@@ -52,15 +53,15 @@
     &-selected,
     &:hover,
     &:focus {
-      background-color: $global-primary-background;
-      color: $global-inverse-color;
+      background-color: var(--oc-brand-primary);
+      color: var(--oc-color-inverse);
     }
 
     &-overflow {
       @extend .uk-text-meta;
       @extend .oc-m-rm;
 
-      background-color: $global-muted-background;
+      background-color: var(--oc-background);
       cursor: pointer;
       padding: $space-small;
     }
@@ -68,13 +69,13 @@
     &-selected .uk-text-meta,
     &:hover .uk-text-meta,
     &:focus .uk-text-meta {
-      color: $global-inverse-color;
+      color: var(--oc-color-inverse);
     }
 
     &-selected .oc-icon > svg,
     &:hover .oc-icon > svg,
     &:focus .oc-icon > svg {
-      fill: $global-inverse-color;
+      fill: var(--oc-color-inverse);
     }
   }
 }

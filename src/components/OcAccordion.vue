@@ -169,7 +169,8 @@ export default {
     > .oc-button.oc-button-raw,
     > .oc-button.oc-button-raw:hover,
     > .oc-button.oc-button-raw:focus {
-      color: $color;
+      color: var(--oc-color);
+      outline: none;
       position: relative;
       text-decoration: none;
 
@@ -181,7 +182,7 @@ export default {
         }
 
         > svg {
-          fill: $color;
+          fill: var(--oc-color);
         }
       }
     }

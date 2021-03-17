@@ -13,7 +13,7 @@
       v-else
       key="resource-icon"
       :name="resource.icon"
-      variation="system"
+      variation="passive"
       size="large"
       aria-hidden="true"
     />
@@ -150,6 +150,7 @@ export default {
       return this.resource.preview
     },
 
+    // broken due to recent button change (displays grey background around ressource name if button)
     componentType() {
       return this.isFolder ? "router-link" : "oc-button"
     },
@@ -178,7 +179,7 @@ export default {
     componentProps() {
       if (!this.isRouterLink) {
         return {
-          variation: "raw",
+          appearance: "raw",
           gapSize: "none",
         }
       }

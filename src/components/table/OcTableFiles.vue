@@ -73,7 +73,8 @@
         <oc-button
           :aria-label="$gettext('Show details')"
           class="oc-table-files-btn-show-details"
-          variation="raw"
+          variation="passive"
+          appearance="raw"
           @click="showDetails(item)"
         >
           <oc-icon name="more_vert" aria-hidden="true" />
@@ -395,10 +396,10 @@ export default {
   <div>
     <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction">
       <template v-slot:quickActions="props">
-        <oc-button @click.stop variation="raw" aria-label="Share">
+        <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share">
           <oc-icon name="group-add" aria-hidden="true" />
         </oc-button>
-        <oc-button @click.stop variation="raw" aria-label="Create a public link">
+        <oc-button @click.stop variation="passive" appearance="raw" aria-label="Create a public link">
           <oc-icon name="link-add" aria-hidden="true" />
         </oc-button>
       </template>

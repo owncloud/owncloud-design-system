@@ -140,11 +140,11 @@ export default {
 
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: $input-background;
+  background-color: var(--oc-input-background);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 80%;
-  border: 1px solid $input-border;
+  border: 1px solid var(--oc-input-border);
   border-radius: 3px;
   display: inline-block;
   overflow: hidden;
@@ -168,7 +168,7 @@ export default {
 
   &:checked,
   &:indeterminate {
-    background-color: $input-background-checked;
+    background-color: var(--oc-brand-primary);
   }
 
   &:checked {

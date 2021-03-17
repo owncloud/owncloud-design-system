@@ -15,7 +15,7 @@ $default-size: 64px;
 
   // Shadow
   &::after {
-    border: $default-size / 10 solid rgba($global-muted-color, 0.333);
+    border: $default-size / 10 solid var(--oc-variation-passive-hover);
     border-radius: 50%;
     box-sizing: border-box;
     content: '';
@@ -34,8 +34,8 @@ $default-size: 64px;
 
     &::before,
     &::after {
-      border: ($default-size / 10) solid $global-primary-background;
-      border-color: $global-primary-background;
+      border: ($default-size / 10) solid var(--oc-brand-primary);
+      border-color: var(--oc-brand-primary);
       border-radius: 50%;
       clip: rect(0, $default-size / 2, $default-size, 0);
       content: '';
@@ -51,6 +51,7 @@ $default-size: 64px;
   &-label {
     @extend .uk-text-muted;
 
+    color: var(--oc-color-muted) !important;
     left: 50%;
     position: absolute;
     top: 50%;

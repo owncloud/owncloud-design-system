@@ -24,20 +24,20 @@
 }
 
 .oc-border {
-  border: $global-border-width solid $border-primary !important;
+  border: $global-border-width solid var(--oc-border-primary) !important;
 
   @each $directionKey, $directionValues in $directions {
     &-#{$directionKey} {
       @each $direction in $directionValues {
-        border-#{$direction}: $global-border-width solid $border-primary !important;
+        border-#{$direction}: $global-border-width solid var(--oc-border-primary) !important;
       }
     }
   }
 }
 
 .oc-light {
-  color: $global-inverse-color !important;
-  fill: $global-inverse-color !important;
+  color: var(--oc-color-inverse) !important;
+  fill: var(--oc-color-inverse) !important;
 }
 
 .oc-text-bold {

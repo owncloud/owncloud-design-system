@@ -14,6 +14,7 @@
   border-color: transparent;
   border-radius: 3px;
   box-sizing: border-box;
+  color: var(--oc-color-inverse);
   display: flex;
   font-weight: 600;
   padding: 0.5rem 0.75rem;
@@ -75,10 +76,6 @@
     cursor: pointer;
   }
 
-  .oc-icon > svg {
-    transition: fill $transition-duration-short ease-in-out;
-  }
-
   &-s {
     @include oc-button-line-height(0.7);
 
@@ -100,65 +97,329 @@
     min-height: $global-control-large-height;
   }
 
-  &-primary,
-  &-danger {
-    .oc-icon > svg {
-      fill: $global-inverse-color;
-    }
+  .oc-icon > svg {
+    fill: var(--oc-color-inverse);
+    transition: fill $transition-duration-short ease-in-out;
   }
 
-  &-default {
-    background-color: transparent;
-    border-color: $action-primary;
-    color: $action-primary;
+  &-passive {
+    background-color: var(--oc-variation-passive);
+    border-color: var(--oc-variation-passive);
 
-    .oc-icon > svg {
-      fill: $action-primary;
+    &:disabled {
+      background-color: var(--oc-variation-passive-muted);
+      border-color: var(--oc-variation-passive-muted);
+      color: var(--oc-color-inverse);
     }
 
-    &:hover,
-    &:focus {
-      border-color: $action-primary-hover;
-      color: $action-primary-hover;
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: var(--oc-variation-passive-hover);
+      border-color: var(--oc-variation-passive-hover);
+    }
+
+    &-raw {
+      background-color: transparent;
+      border-style: none;
+      color: var(--oc-variation-passive);
+      min-height: 0;
+      padding: 0;
 
       .oc-icon > svg {
-        fill: $action-primary-hover;
+        fill: var(--oc-variation-passive);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-passive-muted);
+      }
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    &-outline {
+      background-color: transparent;
+      color: var(--oc-variation-passive);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-passive);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-passive-muted);
+      }
+    }
+
+    &-outline:hover:not([disabled]),
+    &-outline:focus:not([disabled]) {
+      color: var(--oc-variation-passive-muted);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-passive-muted);
       }
     }
   }
 
   &-primary {
-    background-color: $action-primary;
-    box-shadow: 0 4px 6px rgba($shadow-action-primary, 0.11), 0 1px 3px rgba($shadow-global, 0.08);
-    color: $global-inverse-color;
+    background-color: var(--oc-variation-primary);
+    border-color: var(--oc-variation-primary);
 
-    &:hover,
-    &:focus {
-      background-color: $action-primary-hover;
-      color: $global-inverse-color;
-      text-decoration: none;
+    &:disabled {
+      background-color: var(--oc-variation-primary-muted);
+      border-color: var(--oc-variation-primary-muted);
+      color: var(--oc-color-inverse);
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: var(--oc-variation-primary-hover);
+      border-color: var(--oc-variation-primary-hover);
+    }
+
+    &-raw {
+      background-color: transparent;
+      border-style: none;
+      color: var(--oc-variation-primary);
+      min-height: 0;
+      padding: 0;
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-primary);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-primary-muted);
+      }
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    &-outline {
+      background-color: transparent;
+      color: var(--oc-variation-primary);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-primary);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-primary-muted);
+      }
+    }
+
+    &-outline:hover:not([disabled]),
+    &-outline:focus:not([disabled]) {
+      color: var(--oc-variation-primary-muted);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-primary-muted);
+      }
+    }
+  }
+
+  &-success {
+    background-color: var(--oc-variation-success);
+    border-color: var(--oc-variation-success);
+
+    &:disabled {
+      background-color: var(--oc-variation-success-muted);
+      border-color: var(--oc-variation-success-muted);
+      color: var(--oc-color-inverse);
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: var(--oc-variation-success-hover);
+      border-color: var(--oc-variation-success-hover);
+    }
+
+    &-raw {
+      background-color: transparent;
+      border-style: none;
+      color: var(--oc-variation-success);
+      min-height: 0;
+      padding: 0;
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-success);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-success-muted);
+      }
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    &-outline {
+      background-color: transparent;
+      color: var(--oc-variation-success);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-success);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-success-muted);
+      }
+    }
+
+    &-outline:hover:not([disabled]),
+    &-outline:focus:not([disabled]) {
+      color: var(--oc-variation-success-muted);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-success-muted);
+      }
+    }
+  }
+
+  &-warning {
+    background-color: var(--oc-variation-warning);
+    border-color: var(--oc-variation-warning);
+
+    &:disabled {
+      background-color: var(--oc-variation-warning-muted);
+      border-color: var(--oc-variation-warning-muted);
+      color: var(--oc-color-inverse);
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: var(--oc-variation-warning-hover);
+      border-color: var(--oc-variation-warning-hover);
+    }
+
+    &-raw {
+      background-color: transparent;
+      border-style: none;
+      color: var(--oc-variation-warning);
+      min-height: 0;
+      padding: 0;
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-warning);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-warning-muted);
+      }
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    &-outline {
+      background-color: transparent;
+      color: var(--oc-variation-warning);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-warning);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-warning-muted);
+      }
+    }
+
+    &-outline:hover:not([disabled]),
+    &-outline:focus:not([disabled]) {
+      color: var(--oc-variation-warning-muted);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-warning-muted);
+      }
     }
   }
 
   &-danger {
-    background-color: $danger-background;
-    color: $global-inverse-color;
+    background-color: var(--oc-variation-danger);
+    border-color: var(--oc-variation-danger);
 
-    &:hover,
-    &:focus {
-      background-color: $danger-background-hover;
+    &:disabled {
+      background-color: var(--oc-variation-danger-muted);
+      border-color: var(--oc-variation-danger-muted);
+      color: var(--oc-color-inverse);
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: var(--oc-variation-danger-hover);
+      border-color: var(--oc-variation-danger-hover);
+    }
+
+    &-raw {
+      background-color: transparent;
+      border-style: none;
+      color: var(--oc-variation-danger);
+      min-height: 0;
+      padding: 0;
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-danger);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-danger-muted);
+      }
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    &-outline {
+      background-color: transparent;
+      color: var(--oc-variation-danger);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-danger);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--oc-variation-danger-muted);
+      }
+    }
+
+    &-outline:hover:not([disabled]),
+    &-outline:focus:not([disabled]) {
+      color: var(--oc-variation-danger-muted);
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-danger-muted);
+      }
     }
   }
 
   &:disabled {
-    background-color: $action-disabled;
-    border-color: transparent;
-    color: $global-inverse-color;
     cursor: default;
-
-    .oc-icon > svg {
-      fill: $global-inverse-color;
-    }
+    opacity: 0.6;
   }
 
   &-group {
@@ -181,58 +442,13 @@
         border-right: 0;
 
         &:first-of-type {
-          border-left: 1px solid $action-primary;
+          border-left: 1px solid var(--oc-variation-primary);
         }
 
         &:last-of-type {
-          border-right: 1px solid $action-primary;
+          border-right: 1px solid var(--oc-variation-primary);
         }
       }
-
-      &-primary {
-        box-shadow: none;
-      }
-    }
-  }
-
-  &.oc-button-raw {
-    @extend .oc-button-reset;
-
-    color: $action-primary;
-
-    &:hover,
-    &:focus {
-      color: $action-primary-hover;
-    }
-
-    &-color {
-      &-text {
-        color: $color;
-
-        .oc-icon > svg {
-          fill: $color;
-        }
-
-        &:hover,
-        &:focus {
-          color: $color;
-        }
-      }
-
-      &-primary .oc-icon > svg {
-        fill: $action-primary;
-
-        &:hover,
-        &:focus {
-          color: $action-primary-hover;
-        }
-      }
-    }
-
-    &:disabled {
-      background-color: transparent;
-      color: $action-disabled;
-      fill: $action-disabled;
     }
   }
 }

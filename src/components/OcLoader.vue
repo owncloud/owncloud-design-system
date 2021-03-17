@@ -1,6 +1,7 @@
 <template>
   <div :class="['oc-loader', { 'oc-loader-flat': flat }]" :aria-label="ariaLabel"></div>
 </template>
+
 <script>
 /**
  * Remote actions can take an undefined portion of time. The spinner gives feedback to the users about an actions being processed.
@@ -27,8 +28,9 @@ export default {
   },
 }
 </script>
+
 <docs>
-```jsx
+```vue
 <h3 class="uk-heading-divider">
   Default style
 </h3>

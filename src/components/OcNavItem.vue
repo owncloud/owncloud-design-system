@@ -1,5 +1,5 @@
 <template>
-  <li :class="{ 'uk-active': active }">
+  <li class="oc-nav-item" :class="{ 'uk-active': active }">
     <a href="#" @click.prevent="$_ocCheckbox_click">
       <div v-if="icon" class="uk-flex uk-flex-middle">
         <oc-icon :name="icon" class="oc-mr-s" />
@@ -12,6 +12,7 @@
     <slot name="outer-content" />
   </li>
 </template>
+
 <script>
 /**
  * Create a list menu item.
@@ -53,8 +54,18 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+// ugly hack to overwrite uikit
+.oc-nav-item > a {
+  color: var(--oc-color-muted) !important;
+  &:hover {
+    color: var(--oc-color) !important;
+  }
+}
+</style>
+
 <docs>
-```jsx
+```vue
 <template>
   <oc-nav>
     <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>

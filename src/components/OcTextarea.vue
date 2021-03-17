@@ -182,20 +182,20 @@ export default {
 
   &-warning,
   &-warning:focus {
-    border-color: $warning-background;
-    color: $warning-background;
+    border-color: var(--oc-variation-warning);
+    color: var(--oc-variation-warning);
   }
 
   &-danger,
   &-danger:focus {
-    border-color: $danger-background;
-    color: $danger-background;
+    border-color: var(--oc-variation-danger);
+    color: var(--oc-variation-danger);
   }
 
   &-description,
   &-description:focus {
-    border-color: $muted-color;
-    color: $muted-color;
+    border-color: var(--oc-color-muted);
+    color: var(--oc-color-muted);
   }
 
   &-message {
@@ -209,65 +209,65 @@ export default {
 </style>
 
 <docs>
-  ```jsx
-  <template>
-    <div>
-      <h3 class="uk-heading-divider">
-        Textarea fields
-      </h3>
-      <oc-textarea class="oc-mb-s" label="A simple textarea" />
-      <oc-textarea disabled value="I am disabled" label="Disabled Textarea" />
-      <h3 class="uk-heading-divider">
-        Messages
-      </h3>
-      <oc-textarea
-          label="Textarea with description message below"
-          class="oc-mb-s"
-          description-message="This is a description message."
-          :fix-message-line="true"
-      />
-      <oc-textarea
-          label="Textarea with error and warning messages with reserved space below"
-          class="oc-mb-s"
-          v-model="valueForMessages"
-          :error-message="errorMessage"
-          :warning-message="warningMessage"
-          :fix-message-line="true"
-      />
-      <oc-textarea
-          label="Textarea with error and warning messages without reserved space below"
-          class="oc-mb-s"
-          v-model="valueForMessages"
-          :error-message="errorMessage"
-          :warning-message="warningMessage"
-      />
-    </div>
-  </template>
-  <script>
-    export default {
-      data: () => {
-        return {
-          inputValue: 'initial',
-          valueForMessages: '',
-        }
+```vue
+<template>
+  <div>
+    <h3 class="uk-heading-divider">
+      Textarea fields
+    </h3>
+    <oc-textarea class="oc-mb-s" label="A simple textarea" />
+    <oc-textarea disabled value="I am disabled" label="Disabled Textarea" />
+    <h3 class="uk-heading-divider">
+      Messages
+    </h3>
+    <oc-textarea
+        label="Textarea with description message below"
+        class="oc-mb-s"
+        description-message="This is a description message."
+        :fix-message-line="true"
+    />
+    <oc-textarea
+        label="Textarea with error and warning messages with reserved space below"
+        class="oc-mb-s"
+        v-model="valueForMessages"
+        :error-message="errorMessage"
+        :warning-message="warningMessage"
+        :fix-message-line="true"
+    />
+    <oc-textarea
+        label="Textarea with error and warning messages without reserved space below"
+        class="oc-mb-s"
+        v-model="valueForMessages"
+        :error-message="errorMessage"
+        :warning-message="warningMessage"
+    />
+  </div>
+</template>
+<script>
+  export default {
+    data: () => {
+      return {
+        inputValue: 'initial',
+        valueForMessages: '',
+      }
+    },
+    computed: {
+      errorMessage() {
+        return this.valueForMessages.length === 0 ? 'Value is required.' : ''
       },
-      computed: {
-        errorMessage() {
-          return this.valueForMessages.length === 0 ? 'Value is required.' : ''
-        },
-        warningMessage() {
-          return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
-        }
+      warningMessage() {
+        return this.valueForMessages.endsWith(' ') ? 'Trailing whitespace should be avoided.' : ''
+      }
+    },
+    methods: {
+      _focus() {
+        this.$refs.inputForFocus.focus()
       },
-      methods: {
-        _focus() {
-          this.$refs.inputForFocus.focus()
-        },
-        _focusAndSelect() {
-          this.$refs.inputForFocusSelect.focus()
-        }
+      _focusAndSelect() {
+        this.$refs.inputForFocusSelect.focus()
       }
     }
-  </script>
-  ```
+  }
+</script>
+```
 </docs>

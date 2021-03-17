@@ -1,28 +1,39 @@
-$global-font-size: $font-size;
-$global-background: $background;
+// Initialize CSS variables from new color scheme
 
-$global-color: $color;
-$global-emphasis-color: $emphasis-color;
-$global-muted-color: $muted-color;
+:root {
+  --oc-brand-primary: #{$brand-primary};
+  --oc-brand-primary-hover: #{$brand-primary-hover};
+  --oc-background: #{$background};
+  --oc-background-muted: #{$background-muted};
+  --oc-background-highlight: #{$background-highlight};
+  --oc-color: #{$color};
+  --oc-color-muted: #{$color-muted};
+  --oc-color-inverse: #{$color-inverse};
+  --oc-input-border: #{$input-border};
+  --oc-input-background: #{$input-background};
+  --oc-variation-primary: #{$variation-primary};
+  --oc-variation-primary-hover: #{$variation-primary-hover};
+  --oc-variation-primary-muted: #{$variation-primary-muted};
+  --oc-variation-passive: #{$variation-passive};
+  --oc-variation-passive-hover: #{$variation-passive-hover};
+  --oc-variation-passive-muted: #{$variation-passive-muted};
+  --oc-variation-success: #{$variation-success};
+  --oc-variation-success-hover: #{$variation-success-hover};
+  --oc-variation-success-muted: #{$variation-success-muted};
+  --oc-variation-warning: #{$variation-warning};
+  --oc-variation-warning-hover: #{$variation-warning-hover};
+  --oc-variation-warning-muted: #{$variation-warning-muted};
+  --oc-variation-danger: #{$variation-danger};
+  --oc-variation-danger-hover: #{$variation-danger-hover};
+  --oc-variation-danger-muted: #{$variation-danger-muted};
+  --oc-border-primary: #{$border-primary};
+}
 
-$global-link-color: $link-color;
-$global-link-hover-color: $link-hover-color;
-
-$global-muted-background: $muted-background;
-$global-primary-background: $brand-primary;
-$global-secondary-background: $secondary-background;
-$global-selected-background: $selected-background;
-
-$global-success-background: $success-background;
-$global-warning-background: $warning-background;
-$global-danger-background: $danger-background;
-
-$global-border: #ccd4e0;
+$transition-duration-short: 200ms;
 
 $navbar-nav-item-height: 60px;
 
-// Transition durations
-$transition-duration-short: 200ms;
+$global-font-size: $font-size;
 
 $global-font-family: 'Source Sans Pro', sans-serif;
 
