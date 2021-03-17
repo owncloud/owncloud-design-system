@@ -28,11 +28,21 @@
       >
         <oc-resource-name
           :key="resource.name"
+          :name="resource.name"
+          :extension="resource.extension"
+          :type="resource.type"
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
         />
       </component>
-      <oc-resource-name v-else :full-path="resource.path" :is-path-displayed="isPathDisplayed" />
+      <oc-resource-name
+        v-else
+        :name="resource.name"
+        :extension="resource.extension"
+        :type="resource.type"
+        :full-path="resource.path"
+        :is-path-displayed="isPathDisplayed"
+      />
       <div v-if="resource.indicators.length > 0" class="oc-resource-indicators">
         <oc-status-indicators :resource="resource" :indicators="resource.indicators" />
       </div>
