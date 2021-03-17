@@ -4,11 +4,12 @@
     v-bind="tooltip"
     :resource-path="fullPath"
     :resource-name="fullName"
+    :resource-type="type"
   >
-    <span v-if="hasPath" class="oc-resource-path" v-text="path" /><span
+    <span v-if="displayPath" class="oc-resource-path" v-text="displayPath" /><span
       class="oc-resource-basename"
-      v-text="name"
-    /><span v-if="extension" class="oc-resource-extension" v-text="extension" />
+      v-text="displayName"
+    /><span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
   </div>
 </template>
 
@@ -19,6 +20,28 @@ export default {
   released: "2.1.0",
 
   props: {
+    /**
+     * The name of the resource
+     */
+    name: {
+      type: String,
+      required: true,
+    },
+    /**
+     * The extension of the resource, if there is one
+     */
+    extension: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * The type of the resource
+     */
+    type: {
+      type: String,
+      required: true,
+    },
     /**
      * A full path of the resource
      */
@@ -36,18 +59,7 @@ export default {
     },
   },
 
-  data: () => ({
-    name: "",
-    extension: "",
-    path: "",
-    pathTooltip: "",
-  }),
-
   computed: {
-    hasPath() {
-      return this.path !== ""
-    },
-
     tooltip() {
       if (this.pathTooltip) {
         return { "uk-tooltip": this.pathTooltip }
@@ -56,41 +68,42 @@ export default {
     },
 
     fullName() {
-      return this.path + this.name + this.extension
+      return (this.displayPath || "") + this.name
     },
-  },
 
-  watch: {
-    name: {
-      handler: "splitName",
-      immediate: true,
+    displayName() {
+      if (this.extension) {
+        return this.name.substr(0, this.name.length - this.extension.length - 1)
+      }
+      return this.name
     },
-  },
 
-  methods: {
-    splitName() {
-      const hasLeadingSlash = this.fullPath.startsWith("/")
-      const pathSplit = this.fullPath.substr(hasLeadingSlash ? 1 : 0).split("/")
+    displayExtension() {
+      return this.extension ? "." + this.extension : ""
+    },
 
-      if (this.isPathDisplayed) {
-        if (pathSplit.length === 2) {
-          this.path = pathSplit[0] + "/"
-        } else if (pathSplit.length > 2) {
-          this.path = `…/${pathSplit[pathSplit.length - 2]}/`
-          this.pathTooltip = this.fullPath
-        }
+    displayPath() {
+      if (!this.isPathDisplayed) {
+        return null
       }
-
-      const name = pathSplit[pathSplit.length - 1]
-      const dotIndex = name.lastIndexOf(".")
-
-      // If last index of "dot" is 0 or less, it is folder and we do not display extension
-      if (dotIndex <= 0) {
-        return (this.name = name)
+      const pathSplit = this.fullPath.replace(/^\//, "").split("/")
+      if (pathSplit.length < 2) {
+        return null
       }
+      if (pathSplit.length === 2) {
+        return pathSplit[0] + "/"
+      }
+      return `…/${pathSplit[pathSplit.length - 2]}/`
+    },
 
-      this.name = name.substring(0, dotIndex)
-      this.extension = name.substring(dotIndex)
+    pathTooltip() {
+      if (!this.isPathDisplayed) {
+        return null
+      }
+      if (this.displayPath === this.fullPath) {
+        return null
+      }
+      return this.fullPath
     },
   },
 }
@@ -118,8 +131,10 @@ export default {
 
 <docs>
 ```vue
-<oc-resource-name full-path="documents/notes.txt" />
-<oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" />
-<oc-resource-name full-path="super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root-super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root/asdf.txt" :is-path-displayed="true" />
+<oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" />
+<oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" name="forest.jpg" extension="jpg" type="file" />
+<oc-resource-name full-path="super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root-super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root/asdf.txt" :is-path-displayed="true" name="asdf.txt" extension="txt" type="file" />
+<oc-resource-name full-path="some-folder" name="regular-folder" extension="" type="folder" />
+<oc-resource-name full-path="folder-name-with.dot" name="folder-name-with.dot" extension="" type="folder" />
 ```
 </docs>

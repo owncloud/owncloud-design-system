@@ -1,18 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OcResourceName displays full path 1`] = `<div resource-path="images/nature/forest.jpg" resource-name="…/nature/forest.jpg" uk-tooltip="images/nature/forest.jpg" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">…/nature/</span><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span></div>`;
+exports[`OcResourceName displays full path 1`] = `<div resource-path="images/nature/forest.jpg" resource-name="…/nature/forest.jpg" resource-type="file" uk-tooltip="images/nature/forest.jpg" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">…/nature/</span><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span></div>`;
 
-exports[`OcResourceName displays only direct parent 1`] = `<div resource-path="Documents/notes.txt" resource-name="Documents/notes.txt" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">Documents/</span><span class="oc-resource-basename">notes</span><span class="oc-resource-extension">.txt</span></div>`;
+exports[`OcResourceName displays only direct parent 1`] = `<div resource-path="Documents/notes.txt" resource-name="Documents/notes.txt" resource-type="file" uk-tooltip="Documents/notes.txt" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">Documents/</span><span class="oc-resource-basename">notes</span><span class="oc-resource-extension">.txt</span></div>`;
 
 exports[`OcResourceName doesn't add extension to hidden folder 1`] = `
-<div resource-path=".hidden" resource-name=".hidden" class="oc-resource-name oc-text-truncate">
+<div resource-path=".hidden" resource-name=".hidden" resource-type="folder" class="oc-resource-name oc-text-truncate">
   <!----><span class="oc-resource-basename">.hidden</span>
   <!---->
 </div>
 `;
 
 exports[`OcResourceName hides the path if not enabled 1`] = `
-<div resource-path="images/nature/forest.jpg" resource-name="forest.jpg" class="oc-resource-name oc-text-truncate">
+<div resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate">
   <!----><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span>
+</div>
+`;
+
+exports[`OcResourceName renders folder names with dots completely in the basename 1`] = `
+<div resource-path="folder.with.dots" resource-name="folder.with.dots" resource-type="folder" class="oc-resource-name oc-text-truncate">
+  <!----><span class="oc-resource-basename">folder.with.dots</span>
+  <!---->
 </div>
 `;
