@@ -260,7 +260,8 @@ export default {
         notes() {
           return {
             name: "notes.txt",
-            path: "/Documents/notes.txt",
+            extension: "txt",
+            path: "Documents/notes.txt",
             icon: "text",
             indicators: this.indicators,
             type: "file"
@@ -268,7 +269,8 @@ export default {
         },
         forest() {
           return {
-            name: "forest.jpg",
+            name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
+            extension: "jpg",
             path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
             preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
