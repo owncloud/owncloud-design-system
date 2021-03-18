@@ -3,7 +3,7 @@
     <label class="oc-label" :for="inputId" v-text="label" />
     <input
       :id="inputId"
-      ref="input"
+      :ref="inputId"
       v-model="input"
       class="oc-autocomplete-input"
       autocomplete="off"
@@ -322,7 +322,7 @@ export default {
       return this.ariaExpanded ? activeDescendantId : ""
     },
     focus() {
-      this.$refs.input.focus()
+      this.$refs[this.inputId].focus()
     },
     resetSelectionText() {
       this.selectionText = ""

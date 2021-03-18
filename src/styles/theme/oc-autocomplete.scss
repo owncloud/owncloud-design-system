@@ -9,6 +9,15 @@
 
   &-input {
     @extend .uk-input;
+
+    background-color: $input-background;
+    border: 1px solid $input-border;
+    border-radius: 3px;
+
+    &:focus {
+      background-color: $input-background;
+      border-color: $brand-primary;
+    }
   }
 
   &-spinner {
