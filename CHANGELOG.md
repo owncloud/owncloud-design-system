@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Increase the datepicker z-index: [#1147](https://github.com/owncloud/owncloud-design-system/pull/1147)
+* Change - Add label to the autocomplete component: [#1156](https://github.com/owncloud/owncloud-design-system/pull/1156)
 * Enhancement - Add label and messages to datepicker: [#1149](https://github.com/owncloud/owncloud-design-system/pull/1149)
 * Enhancement - Add label and messages to textarea: [#1144](https://github.com/owncloud/owncloud-design-system/pull/1144)
 * Enhancement - Add aria properties to checkbox: [#1145](https://github.com/owncloud/owncloud-design-system/pull/1145)
@@ -23,6 +24,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    system.
 
    https://github.com/owncloud/owncloud-design-system/pull/1147
+
+
+* Change - Add label to the autocomplete component: [#1156](https://github.com/owncloud/owncloud-design-system/pull/1156)
+
+   Adding the label "from the outside" is not a11y compliant as you cannot get the id of the actual
+   input element which therefore cannot be referenced. This change also removes all the
+   unnecessary prefixes which were used in the component.
+
+   https://github.com/owncloud/web/issues/4329
+   https://github.com/owncloud/owncloud-design-system/pull/1156
 
 
 * Enhancement - Add label and messages to datepicker: [#1149](https://github.com/owncloud/owncloud-design-system/pull/1149)
