@@ -1,53 +1,49 @@
 <template>
   <div class="oc-autocomplete">
+    <label class="oc-label" :for="inputId" v-text="label" />
     <input
-      ref="$_ocAutocompleteInput"
+      :id="inputId"
+      :ref="inputId"
       v-model="input"
       class="oc-autocomplete-input"
       autocomplete="off"
       role="combobox"
       aria-autocomplete="list"
       :aria-expanded="ariaExpanded.toString()"
-      :aria-owns="$_ocAutocomplete_listboxId"
-      :aria-activedescendant="$_ocAutocomplete_optionId(highlighted)"
-      :aria-label="ariaLabel"
-      :aria-describedby="$_ocAutocomplete_descriptionId"
+      :aria-owns="listboxId"
+      :aria-activedescendant="optionId(highlighted)"
+      :aria-describedby="descriptionId"
       :placeholder="placeholder"
       :disabled="disabled"
       @keydown.up.prevent="highlighted--"
       @keydown.down.prevent="highlighted++"
-      @keydown.enter="$_ocAutocomplete_selectSuggestion"
-      @keydown.esc="$_ocAutocomplete_dropdown.hide"
-      @focus="$_ocAutocomplete_focus"
+      @keydown.enter="selectSuggestion"
+      @keydown.esc="dropdown.hide"
+      @focus="onFocus"
     />
-    <div :id="$_ocAutocomplete_boundryId" hidden />
+    <div :id="boundryId" hidden />
     <div
-      :id="$_ocAutocomplete_dropdownId"
-      :ref="$_ocAutocomplete_dropdownId"
+      :id="dropdownId"
+      :ref="dropdownId"
       class="oc-autocomplete-dropdown uk-overflow-auto"
       :class="dropdownClass"
-      :uk-drop="'mode:click;delay-hide:0;toggle:#' + $_ocAutocomplete_boundryId"
+      :uk-drop="'mode:click;delay-hide:0;toggle:#' + boundryId"
     >
-      <ul
-        :id="$_ocAutocomplete_listboxId"
-        ref="listbox"
-        class="oc-autocomplete-suggestion-list"
-        role="listbox"
-      >
-        <template v-for="(item, i) in $_ocAutocomplete_matchesShown">
+      <ul :id="listboxId" ref="listbox" class="oc-autocomplete-suggestion-list" role="listbox">
+        <template v-for="(item, i) in matchesShown">
           <li
-            :id="$_ocAutocomplete_optionId(i)"
+            :id="optionId(i)"
             :key="i"
             role="option"
             :aria-posinset="i + 1"
-            :aria-setsize="$_ocAutocomplete_matchesShown.length"
+            :aria-setsize="matchesShown.length"
             :aria-selected="i === highlighted"
             :class="[
               'oc-autocomplete-suggestion',
               { 'oc-autocomplete-suggestion-selected': i === highlighted },
             ]"
             @mouseenter="highlighted = i"
-            @click="$_ocAutocomplete_selectSuggestion"
+            @click="selectSuggestion"
           >
             <slot name="item" :item="item">
               <!-- Fallback content -->
@@ -56,21 +52,19 @@
           </li>
         </template>
         <li
-          v-if="$_ocAutocomplete_matchesOverflowing > 0 && !itemsLoading && !expanded"
+          v-if="matchesOverflowing > 0 && !itemsLoading && !expanded"
           class="oc-autocomplete-suggestion-overflow"
           @click.stop="expanded = true"
         >
-          <span
-            >{{ $_ocAutocomplete_matchesOverflowing }} {{ $_ocAutocomplete_text.moreResults }}</span
-          >
+          <span>{{ matchesOverflowing }} {{ textInformation.moreResults }}</span>
         </li>
         <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
-          <oc-spinner :aria-label="$_ocAutocomplete_text.spinner" class="oc-autocomplete-spinner" />
-          <span :aria-hidden="true">{{ $_ocAutocomplete_text.spinner }}</span>
+          <oc-spinner :aria-label="textInformation.spinner" class="oc-autocomplete-spinner" />
+          <span :aria-hidden="true">{{ textInformation.spinner }}</span>
         </li>
       </ul>
     </div>
-    <div :id="$_ocAutocomplete_descriptionId" hidden v-text="ariaDescription" />
+    <div :id="descriptionId" hidden v-text="ariaDescription" />
   </div>
 </template>
 <script>
@@ -88,7 +82,7 @@ import uniqueId from "../utils/uniqueId"
  *  ## Accessibility
  *  This component is built based on the [WAI-ARIA 1.1 Authoring Practice](https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/grid-combo.html) and [GOV.UK's implementation](https://alphagov.github.io/accessible-autocomplete/examples/) (their frontend team is considered an authority in accessibility community).
  *
- *  Please provide at least an accessible name via the `ariaLabel` prop. By default this component comes with a description to screen reader users on how to use this component (it is a thin line of when it is good to supply help text for screen reader users and [when it's just too verbose](https://adrianroselli.com/2019/10/stop-giving-control-hints-to-screen-readers.html)). This description text is `When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.` but can be overridden with the `ariaDescription` prop.
+ *  Please provide at least a name via the `label` prop. By default this component comes with a description to screen reader users on how to use this component (it is a thin line of when it is good to supply help text for screen reader users and [when it's just too verbose](https://adrianroselli.com/2019/10/stop-giving-control-hints-to-screen-readers.html)). This description text is `When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.` but can be overridden with the `ariaDescription` prop.
  */
 export default {
   name: "OcAutocomplete",
@@ -96,6 +90,14 @@ export default {
   status: "review",
   release: "1.0.0",
   props: {
+    /**
+     * The ID of the input element.
+     */
+    inputId: {
+      type: String,
+      required: false,
+      default: () => uniqueId("oc-autocomplete-"),
+    },
     /**
      * Informative placeholder about the data to be entered
      */
@@ -107,7 +109,7 @@ export default {
     /**
      * Label (accessible name) of the input
      */
-    ariaLabel: {
+    label: {
       type: String,
       required: true,
     },
@@ -200,21 +202,21 @@ export default {
       ariaExpanded: false,
       activeDescendant: "",
       selectionText: "",
-      overflowingMatches: this.$_ocAutocomplete_matchesOverflowing,
+      overflowingMatches: this.matchesOverflowing,
     }
   },
   computed: {
-    $_ocAutocomplete_matchesShown() {
-      if (this.expanded) return this.$_ocAutocomplete_matches
+    matchesShown() {
+      if (this.expanded) return this.matches
 
-      return this.$_ocAutocomplete_matches.slice(0, this.maxListLength)
+      return this.matches.slice(0, this.maxListLength)
     },
-    $_ocAutocomplete_matchesOverflowing() {
-      return this.$_ocAutocomplete_matches.length - this.$_ocAutocomplete_matchesShown.length
+    matchesOverflowing() {
+      return this.matches.length - this.matchesShown.length
     },
-    $_ocAutocomplete_matches() {
+    matches() {
       if (this.input.length === 0 || this.selectionText !== "") {
-        this.$_ocAutocomplete_resetSelectionText()
+        this.resetSelectionText()
         return []
       }
 
@@ -223,22 +225,22 @@ export default {
         return this.filter(item, searchString)
       })
     },
-    $_ocAutocomplete_dropdownId() {
+    dropdownId() {
       return uniqueId("oc-autocomplete-dropdown-")
     },
-    $_ocAutocomplete_listboxId() {
+    listboxId() {
       return uniqueId("oc-autocomplete-listbox-")
     },
-    $_ocAutocomplete_descriptionId() {
+    descriptionId() {
       return uniqueId("oc-autocomplete-description-")
     },
-    $_ocAutocomplete_boundryId() {
+    boundryId() {
       return uniqueId("oc-autocomplete-boundry-")
     },
-    $_ocAutocomplete_dropdown() {
-      return UiKit.drop(`#${this.$_ocAutocomplete_dropdownId}`)
+    dropdown() {
+      return UiKit.drop(`#${this.dropdownId}`)
     },
-    $_ocAutocomplete_text() {
+    textInformation() {
       let text = {
         spinner: this.loadingText,
         moreResults: this.moreResultsText,
@@ -252,13 +254,13 @@ export default {
       if (input === before) return
 
       if (input.length === 0) {
-        this.$_ocAutocomplete_dropdown.hide()
+        this.dropdown.hide()
       } else {
-        this.$_ocAutocomplete_dropdown.show()
+        this.dropdown.show()
       }
 
       // The real update not depending on onblur
-      this.$_ocAutocomplete_userInput(input)
+      this.userInput(input)
       this.expanded = false
     },
     highlighted(next, current) {
@@ -266,15 +268,15 @@ export default {
 
       // come around
       if (next < 0) {
-        this.highlighted = this.$_ocAutocomplete_matchesShown.length - 1
-      } else if (next > this.$_ocAutocomplete_matchesShown.length - 1) {
+        this.highlighted = this.matchesShown.length - 1
+      } else if (next > this.matchesShown.length - 1) {
         this.highlighted = 0
       }
     },
   },
   mounted() {
-    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "show", () => {
-      let dd = this.$refs[this.$_ocAutocomplete_dropdownId],
+    UiKit.util.on(`#${this.dropdownId}`, "show", () => {
+      let dd = this.$refs[this.dropdownId],
         ddOffsetTop = Math.floor(dd.getBoundingClientRect().top) - 20,
         maxHeight = `calc(100vh - ${ddOffsetTop}px )`
 
@@ -282,58 +284,58 @@ export default {
       this.ariaExpanded = true
     })
 
-    UiKit.util.on(`#${this.$_ocAutocomplete_dropdownId}`, "hide", () => {
+    UiKit.util.on(`#${this.dropdownId}`, "hide", () => {
       this.ariaExpanded = false
     })
   },
   methods: {
-    $_ocAutocomplete_userInput(value) {
+    userInput(value) {
       /**
        * This event is emitted as soon as the user changes the search term
        * @type {string}
        */
       this.$emit("update:input", value)
     },
-    $_ocAutocomplete_selectSuggestion: function () {
-      if (this.$_ocAutocomplete_matchesShown[this.highlighted]) {
-        this.$emit("input", this.$_ocAutocomplete_matchesShown[this.highlighted])
+    selectSuggestion: function () {
+      if (this.matchesShown[this.highlighted]) {
+        this.$emit("input", this.matchesShown[this.highlighted])
         this.expanded = false
 
         if (this.fillOnSelection) {
-          this.input = this.$_ocAutocomplete_getSelectionText(this.highlighted)
+          this.input = this.getSelectionText(this.highlighted)
         } else {
-          this.$_ocAutocomplete_dropdown.hide()
+          this.dropdown.hide()
           this.input = ""
         }
       }
     },
-    $_ocAutocomplete_getSelectionText(index) {
+    getSelectionText(index) {
       const selectionText = this.$refs.listbox
         .querySelectorAll("[role='option']")
         [index].textContent.trim()
       this.selectionText = selectionText
       return selectionText
     },
-    $_ocAutocomplete_optionId(i) {
+    optionId(i) {
       const activeDescendantId = `oc-autocomplete-option-${i}`
       this.activeDescendant = activeDescendantId
       return this.ariaExpanded ? activeDescendantId : ""
     },
     focus() {
-      this.$refs.$_ocAutocompleteInput.focus()
+      this.$refs[this.inputId].focus()
     },
-    $_ocAutocomplete_resetSelectionText() {
+    resetSelectionText() {
       this.selectionText = ""
     },
-    $_ocAutocomplete_focus() {
+    onFocus() {
       if (this.input.length === 0) {
-        this.$_ocAutocomplete_dropdown.hide()
+        this.dropdown.hide()
       } else {
-        this.$_ocAutocomplete_dropdown.show()
+        this.dropdown.show()
       }
 
       // The real update not depending on onblur
-      this.$_ocAutocomplete_userInput(this.input)
+      this.userInput(this.input)
       this.expanded = false
     },
   },
@@ -347,7 +349,7 @@ export default {
       Autocomplete
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
-      <oc-autocomplete ariaLabel="Simple selection autocomplete" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
+      <oc-autocomplete label="Simple selection autocomplete" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
       <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected simple item:</p>
         <code>{{ simpleSelection }}</code>
@@ -357,7 +359,7 @@ export default {
       </div>
     </div>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete ariaLabel="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" placeholder="type 'er' for example results">
+      <oc-autocomplete label="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" placeholder="type 'er' for example results">
         <template v-slot:item="{item}">
           <span class="oc-text-bold">{{ item.forename }} {{ item.surname }}</span>
           <div class="uk-text-meta">(Age: {{ item.age }})</div>
@@ -372,7 +374,7 @@ export default {
       Autocomplete with delayed fetch
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete ariaLabel="Delayed selection autocomplete" v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" placeholder="type 'le' and wait a little" @update:input="onInput"/>
+      <oc-autocomplete label="Delayed selection autocomplete" v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" placeholder="type 'le' and wait a little" @update:input="onInput"/>
       <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected complex item:</p>
         <code>{{ delayedItem }}</code>
@@ -382,13 +384,13 @@ export default {
       Autocomplete overflow with "more results" button
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete ariaLabel="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
+      <oc-autocomplete label="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
     </div>
     <h3 class="uk-heading-divider">
       Autocomplete with :fillOnSelection=false
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete ariaLabel="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
+      <oc-autocomplete label="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
     </div>
   </section>
 </template>
