@@ -6,7 +6,7 @@
           v-if="home && index === 0"
           :to="item.to"
           class="uk-flex uk-float-left"
-          :aria-label="homeAccessibilityLabelValue"
+          :aria-label="homeAccessibleLabelValue"
         >
           <oc-icon name="home" />
         </router-link>
@@ -49,7 +49,7 @@ import OcIcon from "./OcIcon.vue"
  *
  * ## Accessibility
  *
- * You can provide an accessibility label to the home icon via `homeAccessibilityLabel`. If not set, it will default to "Go to Home".
+ * You can provide an accessibility label to the home icon via `homeAccessibleLabel`. If not set, it will default to "Go to Home".
  */
 export default {
   name: "OcBreadcrumb",
@@ -80,7 +80,7 @@ export default {
     /**
      * Aria-label for the home icon
      */
-    homeAccessibilityLabel: {
+    homeAccessibleLabel: {
       type: String,
       required: false,
       default: "",
@@ -107,8 +107,8 @@ export default {
 
       return [...this.items].reverse()[0]
     },
-    homeAccessibilityLabelValue() {
-      return this.homeAccessibilityLabel || this.$gettext("Go to Home")
+    homeAccessibleLabelValue() {
+      return this.homeAccessibleLabel || this.$gettext("Go to root directory")
     },
   },
 }
