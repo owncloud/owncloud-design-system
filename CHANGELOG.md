@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Add label to the autocomplete component: [#1156](https://github.com/owncloud/owncloud-design-system/pull/1156)
 * Enhancement - Add label and messages to datepicker: [#1149](https://github.com/owncloud/owncloud-design-system/pull/1149)
 * Enhancement - Add label and messages to textarea: [#1144](https://github.com/owncloud/owncloud-design-system/pull/1144)
+* Enhancement - Add aria label to the home icon within the breadcrumb: [#1152](https://github.com/owncloud/owncloud-design-system/pull/1152)
 * Enhancement - Add aria properties to checkbox: [#1145](https://github.com/owncloud/owncloud-design-system/pull/1145)
 * Enhancement - Add aria properties to radio input: [#1148](https://github.com/owncloud/owncloud-design-system/pull/1148)
 * Enhancement - Remove the OcTextInput component from the OcSearchBar component: [#1151](https://github.com/owncloud/owncloud-design-system/pull/1151)
@@ -48,6 +49,12 @@ The following sections list the changes in ownCloud Design System unreleased.
    This also implies all the necessary accessibility changes.
 
    https://github.com/owncloud/owncloud-design-system/pull/1144
+
+
+* Enhancement - Add aria label to the home icon within the breadcrumb: [#1152](https://github.com/owncloud/owncloud-design-system/pull/1152)
+
+   https://github.com/owncloud/web/issues/4329
+   https://github.com/owncloud/owncloud-design-system/pull/1152
 
 
 * Enhancement - Add aria properties to checkbox: [#1145](https://github.com/owncloud/owncloud-design-system/pull/1145)
