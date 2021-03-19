@@ -2,7 +2,7 @@
   <div class="oc-modal-background">
     <div ref="$_ocModal" :class="classes" tabindex="0">
       <div class="oc-modal-title">
-        <oc-icon v-if="icon" :name="icon" :variation="this.variation" />
+        <oc-icon v-if="icon" :name="icon" :variation="variation" />
         <span v-text="title" />
       </div>
       <div class="oc-modal-body">
@@ -20,21 +20,22 @@
           :placeholder="inputPlaceholder"
           :disabled="inputDisabled"
           :fix-message-line="true"
-          @input="input_onInput"
+          @input="inputOnInput"
           @keydown.enter="confirm"
         />
         <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
         <div class="oc-modal-body-actions uk-flex uk-flex-right">
           <oc-button
             class="oc-modal-body-actions-cancel"
-            :variation="this.variation"
-            :appearance="this.appearance"
-            @click="buttonCancel_click"
+            :variation="buttonCancelVariation"
+            :appearance="buttonCancelAppearance"
+            @click="buttonCancelOnClick"
             v-text="buttonCancelText"
           />
           <oc-button
             class="oc-modal-body-actions-confirm oc-ml-s"
-            :variation="this.variation"
+            :variation="buttonConfirmVariation"
+            :appearance="buttonConfirmAppearance"
             :disabled="buttonConfirmDisabled || !!inputError"
             @click="confirm"
             v-text="buttonConfirmText"
@@ -57,8 +58,12 @@ import OcTextInput from "./OcTextInput.vue"
  * Every modal gets automatically added a background which spans the whole width and height.
  * The modal itself is aligned to center both vertically and horizontally.
  *
- * ## Danger variation
- * Use only if the action cannot be undone.
+ * ## Variations
+ * Only use the `danger` variation if the action cannot be undone.
+ *
+ * The overall variation defines the modal's top border and heading (plus optional item) text color,
+ * while both buttons default to the `passive` variation and can be targeted individually (see examples and API docs below).
+ *
  */
 export default {
   name: "OcModal",
@@ -109,7 +114,7 @@ export default {
       default: null,
     },
     /**
-     * Text of cancel button
+     * Text of the cancel button
      */
     buttonCancelText: {
       type: String,
@@ -117,12 +122,44 @@ export default {
       default: "Cancel",
     },
     /**
-     * Text of confirm button
+     * Variation type of the cancel button
+     */
+    buttonCancelVariation: {
+      type: String,
+      required: false,
+      default: "passive",
+    },
+    /**
+     * Appearance of the cancel button
+     */
+    buttonCancelAppearance: {
+      type: String,
+      required: false,
+      default: "outline",
+    },
+    /**
+     * Text of the confirm button
      */
     buttonConfirmText: {
       type: String,
       required: false,
       default: "Confirm",
+    },
+    /**
+     * Variation type of the confirm button
+     */
+    buttonConfirmVariation: {
+      type: String,
+      required: false,
+      default: "passive",
+    },
+    /**
+     * Appearance of the confirm button
+     */
+    buttonConfirmAppearance: {
+      type: String,
+      required: false,
+      default: "filled",
     },
     /**
      * Asserts whether the confirm action is disabled
@@ -194,7 +231,7 @@ export default {
   },
   watch: {
     inputValue: {
-      handler: "input_assignPropAsValue",
+      handler: "inputAssignPropAsValue",
       immediate: true,
     },
   },
@@ -204,7 +241,7 @@ export default {
     })
   },
   methods: {
-    buttonCancel_click() {
+    buttonCancelOnClick() {
       /**
        * The user clicked on the cancel button
        */
@@ -221,7 +258,7 @@ export default {
        */
       this.$emit("confirm", this.input_value)
     },
-    input_onInput(value) {
+    inputOnInput(value) {
       /**
        * The user typed into the input
        *
@@ -229,7 +266,7 @@ export default {
        */
       this.$emit("input", value)
     },
-    input_assignPropAsValue(value) {
+    inputAssignPropAsValue(value) {
       this.input_value = value
     },
   },
@@ -253,6 +290,8 @@ export default {
     message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
     buttonCancelText="Cancel"
     buttonConfirmText="Delete"
+    buttonConfirmAppearance="filled"
+    buttonConfirmVariation="danger"
     class="oc-mb-l uk-position-relative"
   />
   <oc-modal
@@ -269,6 +308,7 @@ export default {
   <oc-modal
     title="Rename file lorem.txt"
     buttonCancelText="Cancel"
+    buttonCancelVariation="warning"
     buttonConfirmText="Rename"
     class="uk-position-relative"
   >

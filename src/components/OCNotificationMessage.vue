@@ -41,16 +41,16 @@ export default {
   props: {
     /**
      * Notification messages are sub components of the oc-notifications component.
-     * Messages can have one of the four states: `primary, success, warning and danger`
+     * Messages can have one of the five states: `passive, primary, success, warning and danger`
      *
      * The status defines the color of the notification.
      */
     status: {
       type: String,
       required: false,
-      default: "primary",
+      default: "passive",
       validator: value => {
-        return value.match(/(primary|success|warning|danger)/)
+        return value.match(/(passive|primary|success|warning|danger)/)
       },
     },
     /**
@@ -89,19 +89,23 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+// TODO: Refactor after removal of uikit
 .uk-notification-message {
+  &-passive {
+    color: var(--oc-variation-passive) !important;
+  }
   &-primary {
-    color: var(--oc-variation-primary);
+    color: var(--oc-variation-primary) !important;
   }
   &-success {
-    color: var(--oc-variation-success);
+    color: var(--oc-variation-success) !important;
   }
   &-warning {
-    color: var(--oc-variation-warning);
+    color: var(--oc-variation-warning) !important;
   }
   &-danger {
-    color: var(--oc-variation-danger);
+    color: var(--oc-variation-danger) !important;
   }
 }
 </style>

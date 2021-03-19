@@ -40,6 +40,7 @@
         class="oc-search-button"
         :class="{ 'uk-button-small': small }"
         variation="primary"
+        appearance="filled"
         :disabled="loading || searchQuery.length < 1"
         @click="onSearch"
         >{{ buttonLabel }}</oc-button

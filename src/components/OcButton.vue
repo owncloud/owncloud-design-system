@@ -89,11 +89,16 @@ export default {
      */
     variation: {
       type: String,
-      default: "primary",
+      default: "passive",
       validator: value => {
         return value.match(/(passive|primary|success|danger|warning)/)
       },
     },
+    /**
+     * Style variation to give additional meaning.
+     * Defaults to `outline`.
+     * Can be `outline, filled, raw`.
+     */
     appearance: {
       type: String,
       default: "outline",
@@ -142,15 +147,15 @@ export default {
         `oc-button-gap-${getSizeClass(this.gapSize)}`,
       ]
 
-      if (this.variation) {
-        classes.push(`oc-button-${this.variation}`)
-      }
+      classes.push(`oc-button-${this.variation}`)
 
-      if (this.appearance === "raw") {
-        classes.push(`oc-button-${this.variation}-raw`)
-      }
-      if (this.appearance === "outline") {
-        classes.push(`oc-button-${this.variation}-outline`)
+      switch (this.appearance) {
+        case "raw":
+          classes.push(`oc-button-${this.variation}-raw`)
+          break
+        case "outline":
+          classes.push(`oc-button-${this.variation}-outline`)
+          break
       }
 
       return classes

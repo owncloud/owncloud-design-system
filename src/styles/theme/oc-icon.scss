@@ -69,8 +69,6 @@
     }
   }
 
-  // Variations
-
   &-primary > svg {
     fill: var(--oc-variation-primary);
   }
@@ -89,5 +87,9 @@
 
   &-danger > svg {
     fill: var(--oc-variation-danger);
+  }
+
+  &-inverse > svg {
+    fill: var(--oc-color-inverse);
   }
 }

@@ -6,6 +6,71 @@
   line-height: $icons-size-default * $factor;
 }
 
+@mixin oc-button-variation($color, $hover-color, $muted-color) {
+  background-color: $color;
+  border-color: $color;
+
+  &:disabled {
+    background-color: $muted-color;
+    border-color: $muted-color;
+    color: var(--oc-color-inverse);
+  }
+
+  &:focus:not([disabled]),
+  &:hover:not([disabled]) {
+    background-color: $hover-color;
+    border-color: $hover-color;
+  }
+
+  &-raw {
+    background-color: transparent;
+    border-style: none;
+    color: $color;
+    font-size: 1rem;
+    font-weight: normal;
+    min-height: 0;
+    padding: 0;
+
+    .oc-icon > svg {
+      fill: $color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $muted-color;
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    color: $color;
+
+    .oc-icon > svg {
+      fill: $color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $muted-color;
+    }
+  }
+
+  &-outline:hover:not([disabled]),
+  &-outline:focus:not([disabled]) {
+    color: $muted-color;
+
+    .oc-icon > svg {
+      fill: $muted-color;
+    }
+  }
+}
+
 .oc-button {
   @include oc-button-line-height(1);
 
@@ -103,318 +168,43 @@
   }
 
   &-passive {
-    background-color: var(--oc-variation-passive);
-    border-color: var(--oc-variation-passive);
-
-    &:disabled {
-      background-color: var(--oc-variation-passive-muted);
-      border-color: var(--oc-variation-passive-muted);
-      color: var(--oc-color-inverse);
-    }
-
-    &:focus:not([disabled]),
-    &:hover:not([disabled]) {
-      background-color: var(--oc-variation-passive-hover);
-      border-color: var(--oc-variation-passive-hover);
-    }
-
-    &-raw {
-      background-color: transparent;
-      border-style: none;
-      color: var(--oc-variation-passive);
-      min-height: 0;
-      padding: 0;
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-passive);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-passive-muted);
-      }
-
-      &:focus:not([disabled]),
-      &:hover:not([disabled]) {
-        background-color: transparent;
-        text-decoration: underline;
-      }
-    }
-
-    &-outline {
-      background-color: transparent;
-      color: var(--oc-variation-passive);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-passive);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-passive-muted);
-      }
-    }
-
-    &-outline:hover:not([disabled]),
-    &-outline:focus:not([disabled]) {
-      color: var(--oc-variation-passive-muted);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-passive-muted);
-      }
-    }
+    @include oc-button-variation(
+      var(--oc-variation-passive),
+      var(--oc-variation-passive-hover),
+      var(--oc-variation-passive-muted)
+    );
   }
 
   &-primary {
-    background-color: var(--oc-variation-primary);
-    border-color: var(--oc-variation-primary);
-
-    &:disabled {
-      background-color: var(--oc-variation-primary-muted);
-      border-color: var(--oc-variation-primary-muted);
-      color: var(--oc-color-inverse);
-    }
-
-    &:focus:not([disabled]),
-    &:hover:not([disabled]) {
-      background-color: var(--oc-variation-primary-hover);
-      border-color: var(--oc-variation-primary-hover);
-    }
-
-    &-raw {
-      background-color: transparent;
-      border-style: none;
-      color: var(--oc-variation-primary);
-      min-height: 0;
-      padding: 0;
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-primary);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-primary-muted);
-      }
-
-      &:focus:not([disabled]),
-      &:hover:not([disabled]) {
-        background-color: transparent;
-        text-decoration: underline;
-      }
-    }
-
-    &-outline {
-      background-color: transparent;
-      color: var(--oc-variation-primary);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-primary);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-primary-muted);
-      }
-    }
-
-    &-outline:hover:not([disabled]),
-    &-outline:focus:not([disabled]) {
-      color: var(--oc-variation-primary-muted);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-primary-muted);
-      }
-    }
+    @include oc-button-variation(
+      var(--oc-variation-primary),
+      var(--oc-variation-primary-hover),
+      var(--oc-variation-primary-muted)
+    );
   }
 
   &-success {
-    background-color: var(--oc-variation-success);
-    border-color: var(--oc-variation-success);
-
-    &:disabled {
-      background-color: var(--oc-variation-success-muted);
-      border-color: var(--oc-variation-success-muted);
-      color: var(--oc-color-inverse);
-    }
-
-    &:focus:not([disabled]),
-    &:hover:not([disabled]) {
-      background-color: var(--oc-variation-success-hover);
-      border-color: var(--oc-variation-success-hover);
-    }
-
-    &-raw {
-      background-color: transparent;
-      border-style: none;
-      color: var(--oc-variation-success);
-      min-height: 0;
-      padding: 0;
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-success);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-success-muted);
-      }
-
-      &:focus:not([disabled]),
-      &:hover:not([disabled]) {
-        background-color: transparent;
-        text-decoration: underline;
-      }
-    }
-
-    &-outline {
-      background-color: transparent;
-      color: var(--oc-variation-success);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-success);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-success-muted);
-      }
-    }
-
-    &-outline:hover:not([disabled]),
-    &-outline:focus:not([disabled]) {
-      color: var(--oc-variation-success-muted);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-success-muted);
-      }
-    }
+    @include oc-button-variation(
+      var(--oc-variation-success),
+      var(--oc-variation-success-hover),
+      var(--oc-variation-success-muted)
+    );
   }
 
   &-warning {
-    background-color: var(--oc-variation-warning);
-    border-color: var(--oc-variation-warning);
-
-    &:disabled {
-      background-color: var(--oc-variation-warning-muted);
-      border-color: var(--oc-variation-warning-muted);
-      color: var(--oc-color-inverse);
-    }
-
-    &:focus:not([disabled]),
-    &:hover:not([disabled]) {
-      background-color: var(--oc-variation-warning-hover);
-      border-color: var(--oc-variation-warning-hover);
-    }
-
-    &-raw {
-      background-color: transparent;
-      border-style: none;
-      color: var(--oc-variation-warning);
-      min-height: 0;
-      padding: 0;
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-warning);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-warning-muted);
-      }
-
-      &:focus:not([disabled]),
-      &:hover:not([disabled]) {
-        background-color: transparent;
-        text-decoration: underline;
-      }
-    }
-
-    &-outline {
-      background-color: transparent;
-      color: var(--oc-variation-warning);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-warning);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-warning-muted);
-      }
-    }
-
-    &-outline:hover:not([disabled]),
-    &-outline:focus:not([disabled]) {
-      color: var(--oc-variation-warning-muted);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-warning-muted);
-      }
-    }
+    @include oc-button-variation(
+      var(--oc-variation-warning),
+      var(--oc-variation-warning-hover),
+      var(--oc-variation-warning-muted)
+    );
   }
 
   &-danger {
-    background-color: var(--oc-variation-danger);
-    border-color: var(--oc-variation-danger);
-
-    &:disabled {
-      background-color: var(--oc-variation-danger-muted);
-      border-color: var(--oc-variation-danger-muted);
-      color: var(--oc-color-inverse);
-    }
-
-    &:focus:not([disabled]),
-    &:hover:not([disabled]) {
-      background-color: var(--oc-variation-danger-hover);
-      border-color: var(--oc-variation-danger-hover);
-    }
-
-    &-raw {
-      background-color: transparent;
-      border-style: none;
-      color: var(--oc-variation-danger);
-      min-height: 0;
-      padding: 0;
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-danger);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-danger-muted);
-      }
-
-      &:focus:not([disabled]),
-      &:hover:not([disabled]) {
-        background-color: transparent;
-        text-decoration: underline;
-      }
-    }
-
-    &-outline {
-      background-color: transparent;
-      color: var(--oc-variation-danger);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-danger);
-      }
-
-      &:disabled {
-        background-color: transparent;
-        color: var(--oc-variation-danger-muted);
-      }
-    }
-
-    &-outline:hover:not([disabled]),
-    &-outline:focus:not([disabled]) {
-      color: var(--oc-variation-danger-muted);
-
-      .oc-icon > svg {
-        fill: var(--oc-variation-danger-muted);
-      }
-    }
+    @include oc-button-variation(
+      var(--oc-variation-danger),
+      var(--oc-variation-danger-hover),
+      var(--oc-variation-danger-muted)
+    );
   }
 
   &:disabled {

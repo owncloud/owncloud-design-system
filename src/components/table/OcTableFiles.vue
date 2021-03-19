@@ -598,16 +598,18 @@ export default {
 <template>
   <oc-table-files :resources="resources" :arePathsDisplayed="true" v-model="selected">
     <template v-slot:status="props">
-      <div class="uk-flex uk-flex-middle uk-flex-right">
+      <div class="uk-flex uk-flex-right" style="align-items: baseline;">
         <oc-button
           v-if="props.resource.status === 1 || props.resource.status === 2"
-          variation="raw"
+          appearance="raw"
+          variation="primary"
           class="oc-mr-xs"
           v-text="'Accept'"
         />
         <oc-button
           v-if="props.resource.status === 1 || props.resource.status === 0"
-          variation="raw"
+          appearance="raw"
+          variation="primary"
           class="oc-mr-xs"
           v-text="'Decline'"
         />

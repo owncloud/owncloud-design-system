@@ -2,15 +2,15 @@
 
 exports[`OcModal displays input 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
       <!----> <span>Create new folder</span>
     </div>
     <div class="oc-modal-body">
       <oc-text-input-stub id="oc-textinput-1" type="text" value="New folder" label="Folder name" fixmessageline="true" class="oc-modal-body-input"></oc-text-input-stub>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
-        <oc-button-stub type="button" size="medium" variation="default" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
-        <oc-button-stub type="button" size="medium" variation="primary" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
       </div>
     </div>
   </div>
@@ -19,15 +19,15 @@ exports[`OcModal displays input 1`] = `
 
 exports[`OcModal hides icon if not specified 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
       <!----> <span>Example title</span>
     </div>
     <div class="oc-modal-body">
       <p class="oc-modal-body-message">Example message</p>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
-        <oc-button-stub type="button" size="medium" variation="default" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
-        <oc-button-stub type="button" size="medium" variation="primary" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
       </div>
     </div>
   </div>
@@ -36,15 +36,15 @@ exports[`OcModal hides icon if not specified 1`] = `
 
 exports[`OcModal matches snapshot 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
-      <oc-icon-stub name="info" arialabel="icon" type="span" size="medium" variation="system"></oc-icon-stub> <span>Example title</span>
+      <oc-icon-stub name="info" arialabel="icon" type="span" size="medium" variation="passive"></oc-icon-stub> <span>Example title</span>
     </div>
     <div class="oc-modal-body">
       <p class="oc-modal-body-message">Example message</p>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
-        <oc-button-stub type="button" size="medium" variation="default" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
-        <oc-button-stub type="button" size="medium" variation="primary" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@ exports[`OcModal matches snapshot 1`] = `
 
 exports[`OcModal overrides props message with slot 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-info">
+  <div tabindex="0" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
       <!----> <span>Example title</span>
     </div>
@@ -62,8 +62,8 @@ exports[`OcModal overrides props message with slot 1`] = `
         <p>Slot message</p>
       </div>
       <div class="oc-modal-body-actions uk-flex uk-flex-right">
-        <oc-button-stub type="button" size="medium" variation="default" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
-        <oc-button-stub type="button" size="medium" variation="primary" justifycontent="center" gapsize="medium" color="default" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+        <oc-button-stub type="button" size="medium" variation="passive" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
       </div>
     </div>
   </div>

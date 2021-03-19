@@ -54,8 +54,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-// ugly hack to overwrite uikit
+<style lang="scss">
+// TODO: Ugly hack to overwrite uikit, refactor when we remove uikit
 .oc-nav-item > a {
   color: var(--oc-color-muted) !important;
   &:hover {

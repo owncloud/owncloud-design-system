@@ -8,10 +8,6 @@
   display: none !important;
 }
 
-.oc-visually-hidden {
-  visibility: hidden;
-}
-
 /* Phone landscape and bigger */
 @media (min-width: $breakpoint-small) {
   .oc-hidden\@s {

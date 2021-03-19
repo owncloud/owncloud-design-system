@@ -1,47 +1,41 @@
+@mixin oc-alert-variation ($color) {
+  background-color: $color;
+
+  svg,
+  p {
+    color: var(--oc-color-inverse) !important;
+  }
+}
+
 .oc-alert {
   &-passive {
-    background-color: var(--oc-variation-passive-hover);
-
-    svg,
-    p {
-      color: var(--oc-variation-passive);
-    }
+    @include oc-alert-variation(
+      var(--oc-variation-passive)
+    );
   }
 
   &-primary {
-    background-color: var(--oc-variation-primary-hover);
-
-    svg,
-    p {
-      color: var(--oc-variation-primary);
-    }
+    @include oc-alert-variation(
+      var(--oc-variation-primary)
+    );
   }
 
   &-success {
-    background-color: var(--oc-variation-success-hover);
-
-    svg,
-    p {
-      color: var(--oc-variation-success-muted);
-    }
+    @include oc-alert-variation(
+      var(--oc-variation-success)
+    );
   }
 
   &-warning {
-    background-color: var(--oc-variation-warning-hover);
-
-    svg,
-    p {
-      color: var(--oc-variation-warning-muted);
-    }
+    @include oc-alert-variation(
+      var(--oc-variation-warning)
+    );
   }
 
   &-danger {
-    background-color: var(--oc-variation-danger-hover);
-
-    svg,
-    p {
-      color: var(--oc-variation-danger-muted);
-    }
+    @include oc-alert-variation(
+      var(--oc-variation-danger)
+    );
   }
 }
 

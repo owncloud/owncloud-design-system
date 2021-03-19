@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .oc-app-side-bar {
   height: 100vh;
 }

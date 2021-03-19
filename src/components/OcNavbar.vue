@@ -31,8 +31,8 @@ export default {
       default: 60,
     },
     /**
-     * TODO: Specify what happens here
-     * The offset position from the top (if sticky is enabled)
+     * Specifies as which HTML tag this component gets rendered.
+     * Default is "nav" for a `<nav>` element.
      */
     tag: {
       type: String,

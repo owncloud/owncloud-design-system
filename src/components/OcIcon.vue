@@ -86,13 +86,14 @@ export default {
     /**
      * Style variation to give additional meaning.
      * Defaults to `passive`.
-     * Can be `passive, primary, danger, success, warning`.
+     * Can be `passive, primary, danger, success, warning or inverse`.
+     * Inverse is meant to be used for icons on a colorful background.
      */
     variation: {
       type: String,
       default: "passive",
       validator: value => {
-        return value.match(/(passive|primary|danger|success|warning)/)
+        return value.match(/(passive|primary|danger|success|warning|inverse)/)
       },
     },
   },

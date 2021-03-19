@@ -13,6 +13,7 @@
     <slot />
   </div>
 </template>
+
 <script>
 /**
  * Display success, warning and error messages.
@@ -65,8 +66,9 @@ export default {
   },
 }
 </script>
+
 <docs>
-```jsx
+```vue
 <div>
   <oc-alert>
     <p>
@@ -75,7 +77,7 @@ export default {
   </oc-alert>
   <oc-alert variation="primary">
     <p>
-      <oc-icon name="info" variation="primary" class="uk-float-left oc-mr-s" />
+      <oc-icon name="info" variation="inverse" class="uk-float-left oc-mr-s" />
       I am nice and blue and have an icon
     </p>
   </oc-alert>
