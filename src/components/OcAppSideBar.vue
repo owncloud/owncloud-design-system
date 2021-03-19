@@ -9,7 +9,7 @@
               :aria-label="closeButtonLabel"
               @click="$emit('close')"
             >
-              <oc-icon name="close" />
+              <oc-icon name="close" :accessible-label="closeButtonLabel" />
             </oc-button>
           </slot>
         </div>

@@ -1,45 +1,70 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <component
-    :is="$_ocIcon_type"
+    :is="type"
     v-if="iconNotLoaded"
-    :aria-label="ariaLabel"
     :class="[
       { 'oc-button-reset': type === 'button' },
       'oc-icon',
       sizeClass(size),
       variationClass(variation),
     ]"
-    @click="$_ocIcon_click"
-    v-html="$_ocIcon_svg"
-  />
+    @click="onClick"
+  >
+    <inline-svg
+      :src="svgPath"
+      :transform-source="transformSvgElement"
+      :aria-hidden="accessibleLabel === ''"
+      :aria-labelledby="accessibleLabel === '' ? null : imgTitleId"
+      :focusable="accessibleLabel === '' ? 'false' : null"
+      :role="accessibleLabel === '' ? 'presentation' : 'img'"
+    ></inline-svg>
+  </component>
   <!-- eslint-enable vue/no-v-html -->
   <img
     v-else
     :src="iconUrl"
-    :aria-label="ariaLabel"
+    :aria-hidden="accessibleLabel === ''"
+    :alt="accessibleLabel === '' ? '' : accessibleLabel"
+    :focusable="accessibleLabel === '' ? 'false' : null"
+    :role="accessibleLabel === '' ? null : 'img'"
     :class="[
       { 'oc-button-reset': type === 'button' },
       'oc-icon',
       sizeClass(size),
       variationClass(variation),
     ]"
-    @click="$_ocIcon_click"
+    @click="onClick"
   />
 </template>
 
 <script>
-const req = require.context("../assets/icons/", true, /^\.\/.*\.svg$/)
+import uniqueId from "../utils/uniqueId"
+import InlineSvg from "vue-inline-svg"
 import { getSizeClass } from "../utils/sizeClasses"
 /**
  * Icons are used to visually communicate core parts of the product and
  * available actions. They can act as wayfinding tools to help users more
  * easily understand where they are in the product.
+ *
+ * ## Accessibility
+ * You can pass a label to the icon via the `accessibleLabel` property. The component will handle the rest automatically:
+ *  1. set `alt` to the value of the provided label (for `img`-tags) or add a `title` element which is also referenced by its ID via `aria-labelledby` (for `svg`-tags).
+ *  2. set `role` to `img`.
+ *
+ * Omit `accessibleLabel` if your icon has a decorative purpose only. In this case the component will:
+ *  1. set `aria-hidden` to `true`.
+ *  2. omit `role` (for `img`-tags) or set it to `presentation` (for `svg`-tags).
+ *  3. set `focusable` to `false`.
+ *  4. remove or empty all aria-related properties such as labels or titles.
  */
 export default {
   name: "OcIcon",
   status: "review",
   release: "1.0.0",
+  components: {
+    InlineSvg,
+  },
   props: {
     /**
      * The name of the icon to display.
@@ -61,9 +86,9 @@ export default {
     /**
      * Descriptive text to be read to screenreaders.
      */
-    ariaLabel: {
+    accessibleLabel: {
       type: String,
-      default: "icon",
+      default: "",
     },
     /**
      * The html element name used for the icon.
@@ -104,11 +129,11 @@ export default {
     }
   },
   computed: {
-    $_ocIcon_type() {
-      return this.type
+    svgPath() {
+      return require("../assets/icons/" + this.name + ".svg")
     },
-    $_ocIcon_svg() {
-      return req("./" + this.name + ".svg")
+    imgTitleId() {
+      return uniqueId("oc-icon-title-")
     },
   },
   watch: {
@@ -129,7 +154,7 @@ export default {
     prefix(string) {
       if (string !== null) return `oc-icon-${string}`
     },
-    $_ocIcon_click() {
+    onClick() {
       this.$emit("click")
     },
     loadImage() {
@@ -146,6 +171,16 @@ export default {
         img.src = this.iconUrl
       }
     },
+    transformSvgElement(svg) {
+      if (this.accessibleLabel !== "") {
+        let title = document.createElement("title")
+        title.setAttribute("id", this.imgTitleId)
+        title.appendChild(document.createTextNode(this.accessibleLabel))
+        svg.insertBefore(title, svg.firstChild)
+      }
+
+      return svg
+    },
   },
 }
 </script>
@@ -157,10 +192,10 @@ export default {
     <h3 class="uk-heading-divider">
       Default icons
     </h3>
-    <oc-icon name="close" aria-label="Close"/>
-    <oc-icon name="delete" aria-label="Delete"/>
-    <oc-icon name="info" aria-label="Information"/>
-    <oc-icon name="account_circle" aria-label="My Account"/>
+    <oc-icon name="close" accessible-label="Close"/>
+    <oc-icon name="delete" accessible-label="Delete"/>
+    <oc-icon name="info" accessible-label="Information"/>
+    <oc-icon name="account_circle" aria-hidden="true"/>
 
     <h3 class="uk-heading-divider">
       Icon color variations
@@ -212,10 +247,10 @@ export default {
       Icons loaded via URL
     </h3>
     <div class="oc-m">
-      <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
-      <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
+      <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" accessible-label="Firefox logo"/>
+      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" aria-hidden="true"/>
+      <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv" accessible-label="Account"/>
+      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s" aria-hidden="true"/>
     </div>
   </section>
 </template>

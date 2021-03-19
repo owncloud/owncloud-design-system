@@ -4,8 +4,10 @@
     :username="userName"
     :size="width"
     :src="src"
-    :alt="accessibleLabel"
+    :aria-label="accessibleLabel === '' ? null : accessibleLabel"
     :aria-hidden="accessibleLabel === ''"
+    :focusable="accessibleLabel === '' ? 'false' : null"
+    :role="accessibleLabel === '' ? null : 'img'"
   />
 </template>
 <script>

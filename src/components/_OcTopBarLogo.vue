@@ -1,6 +1,8 @@
 <template>
   <div class="uk-navbar-item uk-logo">
-    <oc-button @click="$_ocTopBarLogo_click"><oc-icon :name="icon" /></oc-button>
+    <oc-button @click="$_ocTopBarLogo_click"
+      ><oc-icon :name="icon" :accessible-label="accessibleLabel"
+    /></oc-button>
     <span v-if="title" class="uk-navbar-item">{{ title }}</span>
   </div>
 </template>
@@ -16,6 +18,10 @@ export default {
       default: "menu",
     },
     title: {
+      type: String,
+      default: "",
+    },
+    accessibleLabel: {
       type: String,
       default: "",
     },
