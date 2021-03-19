@@ -161,11 +161,16 @@ export default {
     display: block;
     font-size: $medium-font-size;
 
+    &-arrow-icon {
+      position: absolute;
+      right: 0;
+    }
+
     > .oc-button.oc-button-raw,
     > .oc-button.oc-button-raw:hover,
     > .oc-button.oc-button-raw:focus {
       color: $color;
-      outline: none;
+      position: relative;
       text-decoration: none;
 
       .oc-icon {
