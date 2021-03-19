@@ -38,7 +38,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
-          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default"><span resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">forest.jpg</span>
+          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw"><span resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">forest.jpg</span>
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
@@ -103,7 +103,7 @@ exports[`OcTableFiles displays all fields 1`] = `
     Object.assign({}, props, {'data-file-name': SvgText.name})
   );
 }</span>
-          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default"><span resource-path="/Documents/notes.txt" resource-name="notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">notes.txt</span>
+          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw"><span resource-path="/Documents/notes.txt" resource-name="notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">notes.txt</span>
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
