@@ -15,7 +15,7 @@
       :src="svgPath"
       :transform-source="transformSvgElement"
       :aria-hidden="accessibleLabel === ''"
-      :aria-labelledby="accessibleLabel === '' ? null : imgTitleId"
+      :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
       :role="accessibleLabel === '' ? 'presentation' : 'img'"
     ></inline-svg>
@@ -132,7 +132,7 @@ export default {
     svgPath() {
       return require("../assets/icons/" + this.name + ".svg")
     },
-    imgTitleId() {
+    svgTitleId() {
       return uniqueId("oc-icon-title-")
     },
   },
@@ -174,7 +174,7 @@ export default {
     transformSvgElement(svg) {
       if (this.accessibleLabel !== "") {
         let title = document.createElement("title")
-        title.setAttribute("id", this.imgTitleId)
+        title.setAttribute("id", this.svgTitleId)
         title.appendChild(document.createTextNode(this.accessibleLabel))
         svg.insertBefore(title, svg.firstChild)
       }
@@ -195,7 +195,7 @@ export default {
     <oc-icon name="close" accessible-label="Close"/>
     <oc-icon name="delete" accessible-label="Delete"/>
     <oc-icon name="info" accessible-label="Information"/>
-    <oc-icon name="account_circle" aria-hidden="true"/>
+    <oc-icon name="account_circle"/>
 
     <h3 class="uk-heading-divider">
       Icon color variations
@@ -248,9 +248,9 @@ export default {
     </h3>
     <div class="oc-m">
       <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" accessible-label="Firefox logo"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" aria-hidden="true"/>
+      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
       <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv" accessible-label="Account"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s" aria-hidden="true"/>
+      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
     </div>
   </section>
 </template>
