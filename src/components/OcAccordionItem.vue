@@ -15,12 +15,14 @@
           <oc-grid flex>
             <oc-icon v-if="icon" :name="icon" class="oc-mr-s" aria-hidden="true" />
             <div class="uk-width-expand" v-text="title" />
-            <oc-icon
-              name="expand_more"
-              class="oc-ml-xs"
-              :class="{ rotate: expanded }"
-              size="large"
-            />
+            <span class="oc-ml-xs oc-icon-l">
+              <oc-icon
+                name="expand_more"
+                class="oc-accordion-title-arrow-icon"
+                :class="{ rotate: expanded }"
+                size="large"
+              />
+            </span>
           </oc-grid>
           <oc-grid v-if="description">
             <div v-if="icon" class="oc-icon-m oc-mr-s" />
