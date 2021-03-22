@@ -1,6 +1,15 @@
 <template>
   <div class="oc-alert" :class="_class" uk-alert>
-    <a v-if="!noClose" class="uk-alert-close" uk-close @click="$_ocAlert_onClose" />
+    <oc-button
+      v-if="!noClose"
+      class="uk-alert-close"
+      variation="raw"
+      color="text"
+      :aria-label="$gettext('Close alert')"
+      @click="onClose"
+    >
+      <oc-icon name="close" size="small"></oc-icon>
+    </oc-button>
     <slot />
   </div>
 </template>
@@ -44,7 +53,7 @@ export default {
     },
   },
   methods: {
-    $_ocAlert_onClose(val) {
+    onClose(val) {
       /**
        * The user closed / hid the alert
        * @event close
