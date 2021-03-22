@@ -13,7 +13,7 @@
           v-else-if="hasInput"
           key="modal-input"
           ref="ocModalInput"
-          v-model="inputValue"
+          v-model="userInputValue"
           class="oc-modal-body-input"
           :error-message="inputError"
           :label="inputLabel"
@@ -220,8 +220,7 @@ export default {
   },
   data() {
     return {
-      inputValue: null,
-      appearance: "outline",
+      userInputValue: null,
     }
   },
   computed: {
@@ -256,7 +255,7 @@ export default {
        *
        * @property {String} value Value of the input
        */
-      this.$emit("confirm", this.inputValue)
+      this.$emit("confirm", this.userInputValue)
     },
     inputOnInput(value) {
       /**
@@ -267,7 +266,7 @@ export default {
       this.$emit("input", value)
     },
     inputAssignPropAsValue(value) {
-      this.inputValue = value
+      this.userInputValue = value
     },
   },
 }
