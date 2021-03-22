@@ -2,7 +2,7 @@
 
 The following sections list the changes in ownCloud Design System unreleased.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v3.2.1...master
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v3.2.2...master
 
 ## Summary
 
@@ -90,6 +90,25 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/pull/1141
 
+# Changelog for [3.2.2] (2021-03-22)
+
+The following sections list the changes in ownCloud Design System 3.2.2.
+
+[3.2.2]: https://github.com/owncloud/owncloud-design-system/compare/v3.2.1...v3.2.2
+
+## Summary
+
+* Bugfix - Remove leading comma from link avatar group tooltip: [#1165](https://github.com/owncloud/owncloud-design-system/pull/1165)
+
+## Details
+
+* Bugfix - Remove leading comma from link avatar group tooltip: [#1165](https://github.com/owncloud/owncloud-design-system/pull/1165)
+
+   We fixed a bug in the oc-avatar-group component, which showed a leading ", " in its tooltip in
+   case it was only about links.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1165
+
 # Changelog for [3.2.1] (2021-03-17)
 
 The following sections list the changes in ownCloud Design System 3.2.1.
@@ -115,7 +134,7 @@ The following sections list the changes in ownCloud Design System 3.2.1.
 
 The following sections list the changes in ownCloud Design System 3.2.0.
 
-[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.2.0
+[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.2.0
 
 ## Summary
 
@@ -188,30 +207,11 @@ The following sections list the changes in ownCloud Design System 3.2.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1139
 
-# Changelog for [3.1.0] (2021-02-24)
-
-The following sections list the changes in ownCloud Design System 3.1.0.
-
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
-
-## Summary
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-## Details
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1119
-
 # Changelog for [3.0.0] (2021-02-24)
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
 
 ## Summary
 
@@ -371,11 +371,48 @@ The following sections list the changes in ownCloud Design System 3.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
 
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
+
+# Changelog for [2.1.1] (2021-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.1.
+
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
+
+## Summary
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+## Details
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+   The uniqueId helper function returned a callback instead of a string.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1060
+
 # Changelog for [2.1.2] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.2.
 
-[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v2.1.2
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
 
 ## Summary
 
@@ -391,24 +428,6 @@ The following sections list the changes in ownCloud Design System 2.1.2.
    anymore.
 
    https://github.com/owncloud/owncloud-design-system/pull/1064
-
-# Changelog for [2.1.1] (2021-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.1.
-
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
-
-## Summary
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-## Details
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-   The uniqueId helper function returned a callback instead of a string.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.0] (2021-01-19)
 
