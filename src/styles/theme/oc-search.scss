@@ -41,10 +41,6 @@
     border-top-right-radius: 0;
   }
 
-  &-clear {
-    cursor: pointer;
-  }
-
   &-small {
     .oc-search-input {
       @extend .uk-form-small;

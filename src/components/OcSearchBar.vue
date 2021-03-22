@@ -15,6 +15,7 @@
         />
       </span>
       <input
+        ref="searchInput"
         :class="inputClass"
         :aria-label="label"
         :value="searchQuery"
@@ -23,12 +24,16 @@
         @input="onType($event.target.value)"
         @keydown.enter="onSearch"
       />
-      <div
+      <oc-button
         v-if="query.length > 0"
-        uk-close
+        :aria-label="$gettext('Clear search query')"
         class="oc-search-clear uk-position-small uk-position-center-right"
+        color="text"
+        variation="raw"
         @click="onClear"
-      />
+      >
+        <oc-icon name="close" size="small" />
+      </oc-button>
     </div>
     <div :class="{ 'oc-invisible-sr': buttonHidden }">
       <oc-button
@@ -207,6 +212,7 @@ export default {
       this.query = ""
       this.onType("")
       this.onSearch()
+      this.$refs.searchInput.focus()
 
       /**
        * Clear event triggered after the clear of the search query
