@@ -1,6 +1,6 @@
 <template>
   <div class="uk-navbar-item uk-logo">
-    <oc-button @click="$_ocTopBarLogo_click"
+    <oc-button @click="onClick"
       ><oc-icon :name="icon" :accessible-label="accessibleLabel"
     /></oc-button>
     <span v-if="title" class="uk-navbar-item">{{ title }}</span>
@@ -27,7 +27,7 @@ export default {
     },
   },
   methods: {
-    $_ocTopBarLogo_click() {
+    onClick() {
       /**
        * The onChange event
        * @event click

@@ -8,7 +8,7 @@
           class="uk-flex uk-float-left"
           :aria-label="homeAccessibleLabelValue"
         >
-          <oc-icon name="home" />
+          <oc-icon name="home" :accessible-label="homeAccessibleLabelValue" />
         </router-link>
         <router-link v-else-if="item.to" :to="item.to">{{ item.text }}</router-link>
         <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
@@ -22,7 +22,11 @@
           class="oc-breadcrumb-drop-label-text"
           v-text="currentFolder.text"
         />
-        <oc-icon class="oc-breadcrumb-drop-label-icon" name="expand_more" />
+        <oc-icon
+          class="oc-breadcrumb-drop-label-icon"
+          name="expand_more"
+          :aria-label="$gettext('Expand more')"
+        />
       </label>
       <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
         <ul class="uk-nav uk-nav-default">

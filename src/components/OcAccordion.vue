@@ -81,7 +81,7 @@ export default {
     },
     expandedIdsInternal(ids) {
       this.$children.forEach(child => {
-        child.$data.expanded = ids.includes(child.$_ocAccordionItem_id)
+        child.$data.expanded = ids.includes(child.id)
       })
     },
   },
@@ -102,7 +102,7 @@ export default {
           this.expandFirst &&
           this.$children.length > 0
         ) {
-          this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
+          this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].id)
         } else {
           this.$_ocAccordion_updateExpandedIdsInternal(this.expandedIds)
         }
@@ -112,7 +112,7 @@ export default {
           this.expandFirst &&
           this.$children.length > 0
         ) {
-          this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].$_ocAccordionItem_id)
+          this.$_ocAccordion_updateExpandedIdsInternal(this.$children[0].id)
         } else {
           this.$_ocAccordion_updateExpandedIdsInternal(this.expandedId)
         }
