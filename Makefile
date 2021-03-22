@@ -11,7 +11,7 @@ l10n-push:
 
 .PHONY: l10n-pull
 l10n-pull:
-	cd l10n && tx -d pull -a --skip --minimum-perc=75
+	cd l10n && tx -d pull -a
 
 .PHONY: l10n-clean
 l10n-clean:
