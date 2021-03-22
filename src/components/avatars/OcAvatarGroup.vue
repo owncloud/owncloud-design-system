@@ -43,7 +43,7 @@ export default {
 
   props: {
     /**
-     * Users to be displayed with avatars
+     * Users and public links to be displayed with avatars
      */
     users: {
       type: Array,
@@ -82,11 +82,13 @@ export default {
 
     tooltip() {
       if (this.isTooltipDisplayed) {
-        let tooltip = this.avatars.map(user => user.displayName).join(", ")
+        const names = this.avatars.map(user => user.displayName)
 
         if (this.links.length > 0) {
-          tooltip += ", " + this.links.map(link => link.name).join(", ")
+          names.push(...this.links.map(link => link.name))
         }
+
+        let tooltip = names.join(", ")
 
         if (this.isOverlapping) {
           tooltip += ` +${this.users.length - this.maxDisplayed}`
