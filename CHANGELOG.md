@@ -16,6 +16,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add aria properties to checkbox: [#1145](https://github.com/owncloud/owncloud-design-system/pull/1145)
 * Enhancement - Add aria properties to radio input: [#1148](https://github.com/owncloud/owncloud-design-system/pull/1148)
 * Enhancement - Remove the OcTextInput component from the OcSearchBar component: [#1151](https://github.com/owncloud/owncloud-design-system/pull/1151)
+* Enhancement - Make searchbar component a11y-compliant: [#1164](https://github.com/owncloud/owncloud-design-system/pull/1164)
 * Enhancement - Implement labels and descriptions for text input fields: [#1141](https://github.com/owncloud/owncloud-design-system/pull/1141)
 
 ## Details
@@ -91,6 +92,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    Also replace the loading spinner with the OcSpinner component in the course of this.
 
    https://github.com/owncloud/owncloud-design-system/pull/1151
+
+
+* Enhancement - Make searchbar component a11y-compliant: [#1164](https://github.com/owncloud/owncloud-design-system/pull/1164)
+
+   It is now possible to reach and submit the "clear"-button within the search bar via keyboard.
+   After a search query has been cleared, the input will be focused again. This change also removes
+   the "uk-close" icon as it is not a11y-compliant.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1160
+   https://github.com/owncloud/owncloud-design-system/pull/1164
 
 
 * Enhancement - Implement labels and descriptions for text input fields: [#1141](https://github.com/owncloud/owncloud-design-system/pull/1141)
