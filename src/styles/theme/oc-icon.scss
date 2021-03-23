@@ -90,6 +90,6 @@
   }
 
   &-inverse > svg {
-    fill: var(--oc-color-inverse);
+    fill: var(--oc-color-inverse) !important;
   }
 }

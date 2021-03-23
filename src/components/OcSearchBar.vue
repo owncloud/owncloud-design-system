@@ -28,11 +28,10 @@
         v-if="query.length > 0"
         :aria-label="$gettext('Clear search query')"
         class="oc-search-clear uk-position-small uk-position-center-right"
-        color="text"
-        variation="raw"
+        appearance="raw"
         @click="onClear"
       >
-        <oc-icon name="close" size="small" />
+        <oc-icon name="close" size="small" variation="passive" />
       </oc-button>
     </div>
     <div :class="{ 'oc-invisible-sr': buttonHidden }">

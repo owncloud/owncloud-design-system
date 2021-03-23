@@ -4,7 +4,7 @@
       <oc-button
         v-if="fixed"
         class="oc-sidebar-button-close"
-        variation="raw"
+        appearance="raw"
         :aria-label="closeButtonLabel"
         @click="$_ocSidebar_buttonClose_click"
       >

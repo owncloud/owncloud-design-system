@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount, mount } from "@vue/test-utils"
 import Alert from "./OCAlert.vue"
 
 const testSlots = { default: '<p class="slot-message">Test message</p>' }
@@ -40,7 +40,7 @@ describe("OCAlert", () => {
   })
 
   it("emits a close event", () => {
-    const wrapper = shallowMount(Alert, {
+    const wrapper = mount(Alert, {
       slots: testSlots
     })
 
