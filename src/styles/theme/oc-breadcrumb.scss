@@ -34,6 +34,18 @@
   &-drop {
     @extend .uk-hidden\@s;
 
+    .uk-drop > .uk-card > .uk-nav-default {
+      > li a,
+      > li span {
+        color: var(--oc-color-muted);
+      }
+
+      > li a:hover,
+      > li span:hover {
+        color: var(--oc-brand-primary);
+      }
+    }
+
     &-label {
       @extend .uk-flex;
       @extend .uk-flex-middle;
@@ -46,7 +58,6 @@
       padding: $space-small;
 
       &-text {
-        @extend .uk-text-muted;
         @extend .uk-text-truncate;
       }
     }

@@ -34,7 +34,7 @@
           />
           <oc-button
             class="oc-modal-body-actions-confirm oc-ml-s"
-            :variation="buttonConfirmVariation"
+            :variation="buttonConfirmVariation != null ? buttonConfirmVariation : variation"
             :appearance="buttonConfirmAppearance"
             :disabled="buttonConfirmDisabled || !!inputError"
             @click="confirm"
@@ -61,8 +61,9 @@ import OcTextInput from "./OcTextInput.vue"
  * ## Variations
  * Only use the `danger` variation if the action cannot be undone.
  *
- * The overall variation defines the modal's top border and heading (plus optional item) text color,
- * while both buttons default to the `passive` variation and can be targeted individually (see examples and API docs below).
+ * The overall variation defines the modal's top border, heading (including an optional item) text color and the 
+ * variation of the confirm button, while the cancel buttons defaults to the `passive` variation. Both button's 
+ * variations and appearances can be targeted individually (see examples and API docs below).
  *
  */
 export default {
@@ -128,6 +129,9 @@ export default {
       type: String,
       required: false,
       default: "passive",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning)/)
+      },
     },
     /**
      * Appearance of the cancel button
@@ -136,6 +140,9 @@ export default {
       type: String,
       required: false,
       default: "outline",
+      validator: value => {
+        return value.match(/(outline|filled|raw)/)
+      },
     },
     /**
      * Text of the confirm button
@@ -151,7 +158,10 @@ export default {
     buttonConfirmVariation: {
       type: String,
       required: false,
-      default: "passive",
+      default: null,
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning)/) || value === null
+      },
     },
     /**
      * Appearance of the confirm button
@@ -160,6 +170,9 @@ export default {
       type: String,
       required: false,
       default: "filled",
+      validator: value => {
+        return value.match(/(outline|filled|raw)/)
+      },
     },
     /**
      * Asserts whether the confirm action is disabled

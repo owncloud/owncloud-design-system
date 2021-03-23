@@ -170,7 +170,6 @@ export default {
     > .oc-button.oc-button-passive-raw:hover,
     > .oc-button.oc-button-passive-raw:focus {
       color: var(--oc-color);
-      outline: none;
       position: relative;
       text-decoration: none;
 

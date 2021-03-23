@@ -13,7 +13,6 @@
   &:disabled {
     background-color: $muted-color;
     border-color: $muted-color;
-    color: var(--oc-color-inverse);
   }
 
   &:focus:not([disabled]),
@@ -232,10 +231,12 @@
         border-right: 0;
 
         &:first-of-type {
+          // TODO: Implement color variations if button group should be used again
           border-left: 1px solid var(--oc-variation-primary);
         }
 
         &:last-of-type {
+          // TODO: Implement color variations if button group should be used again
           border-right: 1px solid var(--oc-variation-primary);
         }
       }

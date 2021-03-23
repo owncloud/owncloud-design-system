@@ -150,7 +150,6 @@ export default {
       return this.resource.preview
     },
 
-    // broken due to recent button change (displays grey background around ressource name if button)
     componentType() {
       return this.isFolder ? "router-link" : "oc-button"
     },
