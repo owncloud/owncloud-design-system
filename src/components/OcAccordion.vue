@@ -166,9 +166,9 @@ export default {
       right: 0;
     }
 
-    > .oc-button.oc-button-raw,
-    > .oc-button.oc-button-raw:hover,
-    > .oc-button.oc-button-raw:focus {
+    > .oc-button.oc-button-passive-raw,
+    > .oc-button.oc-button-passive-raw:hover,
+    > .oc-button.oc-button-passive-raw:focus {
       color: var(--oc-color);
       outline: none;
       position: relative;
