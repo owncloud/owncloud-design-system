@@ -9,4 +9,4 @@ Icons, buttons, modals and notifications (and perhaps others) can now have the v
 While doing that, we also replaced the SASS variables in `src/` with custom CSS properties which are overwrite-able at runtime, 
 so theming the ODS is possible now (at least from a colors perspective, font sizes and spacing will eventually follow).
 
-https://github.com/owncloud/owncloud-design-system/pull/1XXX
+https://github.com/owncloud/owncloud-design-system/pull/1140
