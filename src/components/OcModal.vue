@@ -61,8 +61,8 @@ import OcTextInput from "./OcTextInput.vue"
  * ## Variations
  * Only use the `danger` variation if the action cannot be undone.
  *
- * The overall variation defines the modal's top border, heading (including an optional item) text color and the 
- * variation of the confirm button, while the cancel buttons defaults to the `passive` variation. Both button's 
+ * The overall variation defines the modal's top border, heading (including an optional item) text color and the
+ * variation of the confirm button, while the cancel buttons defaults to the `passive` variation. Both button's
  * variations and appearances can be targeted individually (see examples and API docs below).
  *
  */
