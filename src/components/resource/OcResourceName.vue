@@ -1,5 +1,5 @@
 <template>
-  <div
+  <span
     class="oc-resource-name oc-text-truncate"
     v-bind="tooltip"
     :resource-path="fullPath"
@@ -10,7 +10,7 @@
       class="oc-resource-basename"
       v-text="displayName"
     /><span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
-  </div>
+  </span>
 </template>
 
 <script>

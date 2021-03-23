@@ -38,11 +38,8 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
-          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
-              <div resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate">
-                <!----><span class="oc-resource-basename">forest.jpg</span>
-                <!---->
-              </div>
+          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default"><span resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">forest.jpg</span>
+              <!----></span>
             </button>
             <div class="oc-resource-indicators">
               <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-raw oc-button-raw-color-default" id="files-sharing" uk-tooltip="Shared with other people"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgGroup(props) {
@@ -106,11 +103,8 @@ exports[`OcTableFiles displays all fields 1`] = `
     Object.assign({}, props, {'data-file-name': SvgText.name})
   );
 }</span>
-          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default">
-              <div resource-path="/Documents/notes.txt" resource-name="notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate">
-                <!----><span class="oc-resource-basename">notes.txt</span>
-                <!---->
-              </div>
+          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-raw oc-button-raw-color-default"><span resource-path="/Documents/notes.txt" resource-name="notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">notes.txt</span>
+              <!----></span>
             </button>
             <div class="oc-resource-indicators">
               <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-raw oc-button-raw-color-default" id="files-sharing" uk-tooltip="Shared with other people"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgGroup(props) {
@@ -174,11 +168,8 @@ exports[`OcTableFiles displays all fields 1`] = `
     Object.assign({}, props, {'data-file-name': SvgFolder.name})
   );
 }</span>
-          <div class="oc-resource-details oc-text-overflow"><a class="oc-text-overflow">
-              <div resource-path="/Documents" resource-name="Documents" resource-type="folder" class="oc-resource-name oc-text-truncate">
-                <!----><span class="oc-resource-basename">Documents</span>
-                <!---->
-              </div>
+          <div class="oc-resource-details oc-text-overflow"><a class="oc-text-overflow"><span resource-path="/Documents" resource-name="Documents" resource-type="folder" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">Documents</span>
+              <!----></span>
             </a>
             <div class="oc-resource-indicators">
               <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-raw oc-button-raw-color-default" id="files-sharing" uk-tooltip="Shared with other people"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgGroup(props) {
