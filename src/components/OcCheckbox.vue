@@ -13,6 +13,7 @@
     <label :for="id" :class="labelClasses" v-text="label" />
   </span>
 </template>
+
 <script>
 import { getSizeClass } from "../utils/sizeClasses"
 import uniqueId from "../utils/uniqueId"
@@ -129,6 +130,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss">
 @mixin oc-form-check-size($factor) {
   height: $form-check-size-default * $factor;
@@ -204,55 +206,52 @@ label > .oc-checkbox + span {
   margin-left: $space-xsmall;
 }
 </style>
+
 <docs>
-  ```
-    <template>
-        <div>
-            <section>
-                <h3 class="uk-heading-divider oc-mt-s">
-                    Checkboxes Types
-                </h3>
-                <div class="oc-mb-s">
-                  <oc-checkbox size="small" label="Small checkbox" aria-label="Small checkbox"/>
-                </div>
-                <div class="oc-mb-s">
-                  <oc-checkbox :value="true" label="Medium checkbox (default)"/>
-                </div>
-                <div>
-                    <oc-checkbox size="large" label="Large checkbox" />
-                </div>
-            </section>
-        </div>
-    </template>
-  ```
-  ```
-  <template>
-    <div>
-      <section>
-        <h3 class="uk-heading-divider oc-mt-s">
-          Checkbox group with array model
-        </h3>
-        <div class="oc-mb-s">
-          <oc-checkbox
-              v-for="o in availableOptions"
-              :key="'option-' + o"
-              v-model="selectedOptions"
-              :option="o"
-              :label="o"
-              class="oc-mr-s"
-          />
-        </div>
-        Selected option: {{ selectedOptions || "None" }}
-      </section>
+```js
+<template>
+  <section>
+    <h3 class="uk-heading-divider oc-mt-s">
+      Checkboxes Types
+    </h3>
+    <div class="oc-mb-s">
+      <oc-checkbox size="small" label="Small checkbox" aria-label="Small checkbox"/>
     </div>
-  </template>
-  <script>
-    export default {
-      data: () => ({
-        availableOptions: ["Water", "Wine", "Beer"],
-        selectedOptions: []
-      })
-    }
-  </script>
-  ```
+    <div class="oc-mb-s">
+      <oc-checkbox :value="true" label="Medium checkbox (default)"/>
+    </div>
+    <div>
+      <oc-checkbox size="large" label="Large checkbox" />
+    </div>
+  </section>
+</template>
+```
+```js
+<template>
+  <section>
+    <h3 class="uk-heading-divider oc-mt-s">
+      Checkbox group with array model
+    </h3>
+    <div class="oc-mb-s">
+      <oc-checkbox
+        v-for="o in availableOptions"
+        :key="'option-' + o"
+        v-model="selectedOptions"
+        :option="o"
+        :label="o"
+        class="oc-mr-s"
+      />
+    </div>
+    Selected option: {{ selectedOptions || "None" }}
+  </section>
+</template>
+<script>
+  export default {
+    data: () => ({
+      availableOptions: ["Water", "Wine", "Beer"],
+      selectedOptions: []
+    })
+  }
+</script>
+```
 </docs>

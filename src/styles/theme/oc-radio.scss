@@ -3,16 +3,11 @@
   width: $form-check-size-default * $factor;
 }
 
-// TODO: Move to .oc-radio when we get rid of UIKit
-@mixin hook-form-radio {
-  @include oc-form-check-size(1);
+.oc-radio {
+  @extend .uk-radio;
 
   background-color: var(--oc-input-background);
   border: 1px solid var(--oc-input-border);
-}
-
-.oc-radio {
-  @extend .uk-radio;
 
   &:checked {
     background-color: var(--oc-brand-primary);

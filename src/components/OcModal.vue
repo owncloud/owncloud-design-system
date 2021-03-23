@@ -34,7 +34,7 @@
           />
           <oc-button
             class="oc-modal-body-actions-confirm oc-ml-s"
-            :variation="buttonConfirmVariation != null ? buttonConfirmVariation : variation"
+            :variation="buttonConfirmVariation || variation"
             :appearance="buttonConfirmAppearance"
             :disabled="buttonConfirmDisabled || !!inputError"
             @click="confirm"
