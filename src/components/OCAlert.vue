@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-alert" :class="_class" uk-alert>
+  <div :class="_class" uk-alert>
     <oc-button
       v-if="!noClose"
       class="uk-alert-close"
