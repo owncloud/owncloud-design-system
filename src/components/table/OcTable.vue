@@ -374,13 +374,13 @@ export default {
     <oc-table :fields="fields" :data="data">
       <template v-slot:resourceHeader>
         <div class="uk-flex uk-flex-middle">
-          <oc-icon name="folder" aria-hidden="true" class="oc-mr-s" />
+          <oc-icon name="folder" class="oc-mr-s" />
           Resource
         </div>
       </template>
       <template v-slot:resource="rowData">
         <oc-tag>
-          <oc-icon :name="rowData.item.icon" aria-hidden="true"/>
+          <oc-icon :name="rowData.item.icon" />
           {{ rowData.item.resource }}
         </oc-tag>
       </template>

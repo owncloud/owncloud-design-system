@@ -22,7 +22,7 @@
       name="close"
       appearance="raw"
       :variation="$_ocNotificationMessage_iconVariation"
-      aria-label="Close"
+      :aria-label="$gettext('Close notification')"
       class="uk-position-top-right oc-mt-s oc-mr-s"
       @click="$_ocNotificationMessage_close"
     >

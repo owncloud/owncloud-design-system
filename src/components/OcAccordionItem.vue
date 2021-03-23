@@ -13,7 +13,7 @@
       >
         <span class="uk-width-1-1">
           <span class="uk-flex uk-flex-middle">
-            <oc-icon v-if="icon" :name="icon" class="oc-mr-s" aria-hidden="true" />
+            <oc-icon v-if="icon" :name="icon" class="oc-mr-s" />
             <span class="uk-width-expand" v-text="title" />
             <span class="oc-ml-xs oc-icon-l">
               <oc-icon

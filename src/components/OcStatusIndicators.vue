@@ -12,7 +12,7 @@
         appearance="raw"
         @click.stop="indicator.handler(resource, indicator.id)"
       >
-        <oc-icon :name="indicator.icon" aria-hidden="true" variation="passive" />
+        <oc-icon :name="indicator.icon" variation="passive" />
       </oc-button>
       <oc-icon
         v-else
@@ -21,7 +21,7 @@
         tabindex="-1"
         class="oc-status-indicators-indicator"
         :name="indicator.icon"
-        :aria-label="indicator.label"
+        :accessible-label="indicator.label"
         :uk-tooltip="indicator.label"
         variation="passive"
       />

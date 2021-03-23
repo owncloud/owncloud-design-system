@@ -225,12 +225,12 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   </h3>
   <div class="uk-flex">
     <oc-button class="oc-mr-s">
-      <oc-icon name="home" aria-hidden="true" />
+      <oc-icon name="home" />
       Home
     </oc-button>
     <oc-button variation="primary" class="oc-mr-s">
       Select
-      <oc-icon name="expand_more" aria-hidden="true" />
+      <oc-icon name="expand_more" />
     </oc-button>
     <oc-button variation="primary" aria-label="Upload a file">
       <oc-icon name="cloud_upload" />

@@ -9,7 +9,7 @@
               :aria-label="closeButtonLabel"
               @click="$emit('close')"
             >
-              <oc-icon name="close" :accessible-label="closeButtonLabel" />
+              <oc-icon name="close" />
             </oc-button>
           </slot>
         </div>
@@ -70,9 +70,6 @@ export default {
 ```vue
   <template>
     <oc-app-side-bar>
-        <template slot="action">
-          <oc-button class="uk-float-right oc-mr-s"><oc-icon name="close" /></oc-button>
-        </template>
         <template slot="title">
           <span class="uk-text-lead">Title</span>
         </template>

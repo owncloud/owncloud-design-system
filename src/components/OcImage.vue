@@ -1,12 +1,5 @@
 <template>
-  <img
-    :src="src"
-    :alt="alt || ''"
-    :title="title"
-    :focusable="!alt ? 'false' : null"
-    :role="!alt ? null : 'img'"
-    :aria-hidden="!alt"
-  />
+  <img :src="src" :alt="alt || ''" :title="title" />
 </template>
 <script>
 /**
