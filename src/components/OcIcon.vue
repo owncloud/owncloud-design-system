@@ -138,7 +138,13 @@ export default {
     <oc-icon name="close" accessible-label="Close"/>
     <oc-icon name="delete" accessible-label="Delete"/>
     <oc-icon name="info" accessible-label="Information"/>
-    <oc-icon name="account_circle"/>
+    <oc-icon name="account_circle" accessible-label="Account"/>
+
+    <h3 class="uk-heading-divider">
+      Hover over the icons to see the effect of accessible labels
+    </h3>
+    <oc-icon size="large" name="account_circle" accessible-label="Account"/>
+    <oc-icon size="large" name="account_circle"/>
 
     <h3 class="uk-heading-divider">
       Icon color variations
