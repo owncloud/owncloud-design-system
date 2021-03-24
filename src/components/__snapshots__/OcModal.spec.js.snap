@@ -38,7 +38,7 @@ exports[`OcModal matches snapshot 1`] = `
 <div class="oc-modal-background">
   <div tabindex="0" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
-      <oc-icon-stub name="info" arialabel="icon" type="span" size="medium" variation="passive"></oc-icon-stub> <span>Example title</span>
+      <oc-icon-stub name="info" accessiblelabel="" type="span" size="medium" variation="passive"></oc-icon-stub> <span>Example title</span>
     </div>
     <div class="oc-modal-body">
       <p class="oc-modal-body-message">Example message</p>
