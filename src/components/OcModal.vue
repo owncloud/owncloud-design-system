@@ -160,7 +160,7 @@ export default {
       required: false,
       default: null,
       validator: value => {
-        return value.match(/(passive|primary|danger|success|warning)/) || value === null
+        return value === null || value.match(/(passive|primary|danger|success|warning)/)
       },
     },
     /**
