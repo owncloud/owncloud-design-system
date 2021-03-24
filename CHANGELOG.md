@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Increase the datepicker z-index: [#1147](https://github.com/owncloud/owncloud-design-system/pull/1147)
 * Change - Add label to the autocomplete component: [#1156](https://github.com/owncloud/owncloud-design-system/pull/1156)
+* Change - Add properties to make icons and images a11y-compliant: [#1161](https://github.com/owncloud/owncloud-design-system/pull/1161)
 * Change - Refactor variations & color palette: [#1140](https://github.com/owncloud/owncloud-design-system/pull/1140)
 * Enhancement - Add focus border to accordion items: [#1158](https://github.com/owncloud/owncloud-design-system/pull/1158)
 * Enhancement - Add label and messages to datepicker: [#1149](https://github.com/owncloud/owncloud-design-system/pull/1149)
@@ -41,6 +42,11 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/4329
    https://github.com/owncloud/owncloud-design-system/pull/1156
+
+
+* Change - Add properties to make icons and images a11y-compliant: [#1161](https://github.com/owncloud/owncloud-design-system/pull/1161)
+
+   https://github.com/owncloud/owncloud-design-system/pull/1161
 
 
 * Change - Refactor variations & color palette: [#1140](https://github.com/owncloud/owncloud-design-system/pull/1140)
