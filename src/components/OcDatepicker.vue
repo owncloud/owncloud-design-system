@@ -1,19 +1,28 @@
 <template>
   <div>
     <label class="oc-label" :for="id" v-text="label" />
-    <datetime
+    <date-picker
       v-model="update"
-      :input-id="id"
-      v-bind="additionalAttributes"
       class="oc-datepicker"
-      :title="title"
-      :type="type"
-      :phrases="phrases"
-      :min-datetime="minDatetime"
-      :max-datetime="maxDatetime"
-      @cancel="cancel()"
+      :mode="type"
+      :min-date="minDatetime"
+      :max-date="maxDatetime"
+      :is24hr="is24hr"
+      color="gray"
       @input="input()"
-    ></datetime>
+      @popoverWillHide="cancel()"
+    >
+      <template #default="{ inputValue, togglePopover }">
+        <input
+          :id="id"
+          v-bind="additionalAttributes"
+          class="oc-datepicker-input"
+          :value="inputValue"
+          readonly
+          @focus="togglePopover()"
+        />
+      </template>
+    </date-picker>
     <div v-if="!!descriptionMessage" class="oc-datepicker-message">
       <span
         :id="descriptionId"
@@ -25,7 +34,7 @@
 </template>
 
 <script>
-import { Datetime } from "vue-datetime"
+import DatePicker from "v-calendar/lib/components/date-picker.umd"
 import uniqueId from "../utils/uniqueId"
 
 /**
@@ -59,7 +68,7 @@ export default {
    */
   release: "1.0.0",
   components: {
-    Datetime,
+    DatePicker,
   },
   /**
    * Prop definitions should be as detailed as possible, specifying at least
@@ -79,13 +88,6 @@ export default {
       default: new Date().toISOString(),
     },
     /**
-     * Popup title.
-     */
-    title: {
-      type: String,
-      default: "",
-    },
-    /**
      * Picker type.
      * `date, datetime, time`
      */
@@ -94,15 +96,6 @@ export default {
       default: "date",
       validator: date => {
         return date.match(/(date|datetime|time)/)
-      },
-    },
-    phrases: {
-      type: Object,
-      default: () => {
-        return { ok: "Ok", cancel: "Cancel" }
-      },
-      validator: value => {
-        return typeof value.ok === "string" || typeof value.cancel === "string"
       },
     },
     /**
@@ -136,6 +129,13 @@ export default {
       type: String,
       default: null,
     },
+    /**
+     * Use 24h mode on datetime and time pickers.
+     */
+    is24hr: {
+      type: Boolean,
+      default: null,
+    },
   },
   data() {
     return {
@@ -165,6 +165,39 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.oc-datepicker {
+  &-input {
+    @extend .uk-input;
+
+    background-color: var(--oc-color-input-bg);
+    border: 1px solid var(--oc-color-input-border);
+    border-radius: 3px;
+    color: var(--oc-color-text-default);
+
+    &:focus {
+      background-color: var(--oc-color-input-bg);
+      border-color: var(--oc-color-swatch-brand-default);
+      color: var(--oc-color-text-default);
+    }
+  }
+
+  &-description,
+  &-description:focus {
+    border-color: var(--oc-color-text-muted);
+    color: var(--oc-color-text-muted);
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
+}
+</style>
 
 <docs>
 ```vue
