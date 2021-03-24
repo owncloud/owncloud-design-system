@@ -20,7 +20,9 @@ const System = {
     const themeOptions = options.tokens
 
     for (const colorVar in themeOptions?.colorPalette) {
-      document.querySelector(':root').style.setProperty("--oc-" + colorVar, themeOptions.colorPalette[colorVar])
+      document
+        .querySelector(":root")
+        .style.setProperty("--oc-" + colorVar, themeOptions.colorPalette[colorVar])
     }
     components.forEach(component => Vue.component(component.name, component))
   },

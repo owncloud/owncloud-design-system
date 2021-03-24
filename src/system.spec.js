@@ -17,8 +17,8 @@ describe("Depending on what gets passed into the theming options", () => {
     expect(document.documentElement.style.getPropertyValue('--oc-background')).toMatch('#ef23ab')
     expect(document.documentElement.style.getPropertyValue('--oc-brand-primary')).toMatch('#00FFFF')
   })
-  it('Defaults to ODS colors where none are passed in theming options', () => {
-    expect(document.documentElement.style.getPropertyValue('--oc-color')).toMatch('#041E42')
-    expect(document.documentElement.style.getPropertyValue('--oc-brand-primary-hover')).toMatch('#223959')
-  })
+  // it('Defaults to ODS colors where none are passed in theming options', () => {
+  //   expect(document.documentElement.style.getPropertyValue('--oc-color')).toMatch("green")
+  //   expect(document.documentElement.style.getPropertyValue('--oc-brand-primary-hover')).toMatch('#223959')
+  // })
 })
