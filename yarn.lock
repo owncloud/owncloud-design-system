@@ -13645,9 +13645,9 @@ vue@^2.6.11:
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
 
 vuex@^3.1.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.1.tgz#d11863811bef93102f1f6625240b27f4ea0f1254"
-  integrity sha512-fsVwP9akzE2TYxZcFm3SHQgbyOI5c13IZJ9GH1ivrCeTaXk8JiEm9szJvIxO5+evu2+REk2E9smjce+9vgVGLg==
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
+  integrity sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
