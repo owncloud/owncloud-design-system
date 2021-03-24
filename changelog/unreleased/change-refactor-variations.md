@@ -10,3 +10,4 @@ While doing that, we also replaced the SASS variables in `src/` with custom CSS 
 so theming the ODS is possible now (at least from a colors perspective, font sizes and spacing will eventually follow).
 
 https://github.com/owncloud/owncloud-design-system/pull/1140
+https://github.com/owncloud/owncloud-design-system/pull/1169
