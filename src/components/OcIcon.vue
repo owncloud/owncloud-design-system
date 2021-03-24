@@ -14,7 +14,7 @@
     <inline-svg
       :src="svgPath"
       :transform-source="transformSvgElement"
-      :aria-hidden="accessibleLabel === '' ? 'true' : 'false'"
+      :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
       :role="accessibleLabel === '' ? 'presentation' : 'img'"
@@ -24,7 +24,7 @@
   <img
     v-else
     :src="iconUrl"
-    :alt="accessibleLabel === '' ? '' : accessibleLabel"
+    :alt="accessibleLabel"
     :class="[
       { 'oc-button-reset': type === 'button' },
       'oc-icon',

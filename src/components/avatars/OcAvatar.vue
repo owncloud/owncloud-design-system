@@ -5,7 +5,7 @@
     :size="width"
     :src="src"
     :aria-label="accessibleLabel === '' ? null : accessibleLabel"
-    :aria-hidden="accessibleLabel === '' ? 'true' : 'false'"
+    :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
   />

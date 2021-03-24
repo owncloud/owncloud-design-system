@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt || ''" :title="title" />
+  <img :src="src" :alt="alt" :title="title" />
 </template>
 <script>
 /**
@@ -26,7 +26,7 @@ export default {
     alt: {
       type: String,
       required: false,
-      default: null,
+      default: "",
     },
     /**
      * The title of the image. Displayed when hover.
