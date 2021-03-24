@@ -16,7 +16,7 @@
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
-      :role="accessibleLabel === '' ? 'presentation' : 'img'"
+      :role="accessibleLabel === '' ? 'presentation' : null"
     ></inline-svg>
   </component>
 </template>
@@ -31,13 +31,13 @@ import { getSizeClass } from "../utils/sizeClasses"
  * easily understand where they are in the product.
  *
  * ## Accessibility
- * You can pass a label to the icon via the `accessibleLabel` property. The component will automatically set the `alt` attribute to the value of the provided label (for `img`-tags) or add a `title` element which is also referenced by its ID via `aria-labelledby` (for `svg`-tags).
+ * You can pass a label to the icon via the `accessibleLabel` property. The component will automatically add a `title` element which is also referenced by its ID via `aria-labelledby`.
  *
  * Omit `accessibleLabel` if your icon has a decorative purpose only. In this case the component will:
  *  1. set `aria-hidden` to `true`.
- *  2. set `role` to `presentation` (for `svg`-tags).
- *  3. set `focusable` to `false` (for `svg`-tags).
- *  4. remove or empty all aria-related properties such as labels or alts.
+ *  2. set `role` to `presentation`.
+ *  3. set `focusable` to `false`.
+ *  4. remove or empty all aria-related properties such as labels.
  */
 export default {
   name: "OcIcon",
