@@ -45,15 +45,13 @@ import { getSizeClass } from "../utils/sizeClasses"
  * easily understand where they are in the product.
  *
  * ## Accessibility
- * You can pass a label to the icon via the `accessibleLabel` property. The component will handle the rest automatically:
- *  1. set `alt` to the value of the provided label (for `img`-tags) or add a `title` element which is also referenced by its ID via `aria-labelledby` (for `svg`-tags).
- *  2. set `role` to `img`.
+ * You can pass a label to the icon via the `accessibleLabel` property. The component will automatically set the `alt` attribute to the value of the provided label (for `img`-tags) or add a `title` element which is also referenced by its ID via `aria-labelledby` (for `svg`-tags).
  *
  * Omit `accessibleLabel` if your icon has a decorative purpose only. In this case the component will:
  *  1. set `aria-hidden` to `true`.
- *  2. omit `role` (for `img`-tags) or set it to `presentation` (for `svg`-tags).
- *  3. set `focusable` to `false`.
- *  4. remove or empty all aria-related properties such as labels or titles.
+ *  2. set `role` to `presentation` (for `svg`-tags).
+ *  3. set `focusable` to `false` (for `svg`-tags).
+ *  4. remove or empty all aria-related properties such as labels or alts.
  */
 export default {
   name: "OcIcon",
