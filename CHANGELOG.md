@@ -20,6 +20,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Remove the OcTextInput component from the OcSearchBar component: [#1151](https://github.com/owncloud/owncloud-design-system/pull/1151)
 * Enhancement - Make searchbar component a11y-compliant: [#1164](https://github.com/owncloud/owncloud-design-system/pull/1164)
 * Enhancement - Implement labels and descriptions for text input fields: [#1141](https://github.com/owncloud/owncloud-design-system/pull/1141)
+* Enhancement - Initialize the design system with themable colors: [#1168](https://github.com/owncloud/owncloud-design-system/pull/1168)
 
 ## Details
 
@@ -135,6 +136,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    This also implies all the required accessibility changes.
 
    https://github.com/owncloud/owncloud-design-system/pull/1141
+
+
+* Enhancement - Initialize the design system with themable colors: [#1168](https://github.com/owncloud/owncloud-design-system/pull/1168)
+
+   By passing suitable plugin options, you can overwrite the CSS color variables within the ODS to
+   adjust it to your likings. The default color values are generated from within the design system
+   and act as a fallback if no (or not all) options are passed when initializing the design system
+   plugin.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1168
 
 # Changelog for [3.2.2] (2021-03-22)
 
