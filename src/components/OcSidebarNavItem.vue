@@ -1,7 +1,7 @@
 <template>
   <li :class="$_ocSidebarNavItem_class">
     <router-link :to="target">
-      <oc-icon :name="icon" aria-hidden="true" />
+      <oc-icon :name="icon" />
       <slot name="default" />
     </router-link>
     <ul v-if="$slots.subnav" class="uk-nav-sub">

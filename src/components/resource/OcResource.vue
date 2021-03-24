@@ -5,18 +5,10 @@
       :key="preview"
       :src="preview"
       class="oc-resource-preview"
-      aria-hidden="true"
       width="40"
       height="40"
     />
-    <oc-icon
-      v-else
-      key="resource-icon"
-      :name="resource.icon"
-      variation="passive"
-      size="large"
-      aria-hidden="true"
-    />
+    <oc-icon v-else key="resource-icon" :name="resource.icon" size="large" />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"

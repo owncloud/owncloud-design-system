@@ -60,7 +60,7 @@ Component to display various information.
 ```js
 <oc-grid>
   <oc-tag>
-    <oc-icon name="link" aria-hidden="true" />
+    <oc-icon name="link" />
     Shared via link
   </oc-tag>
 </oc-grid>
@@ -72,13 +72,13 @@ The tag component can be rendered as a different element if desired. You can spe
 <oc-grid gutter="small" flex>
   <div>
     <oc-tag>
-      <oc-icon name="group" aria-hidden="true" />
+      <oc-icon name="group" />
       Shared with other people
     </oc-tag>
   </div>
   <div>
     <oc-tag type="a">
-      <oc-icon name="link" aria-hidden="true" />
+      <oc-icon name="link" />
       Shared via link
     </oc-tag>
   </div>

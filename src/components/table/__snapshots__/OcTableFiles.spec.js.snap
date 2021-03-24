@@ -37,22 +37,12 @@ exports[`OcTableFiles displays all fields 1`] = `
     <tr class="oc-tbody-tr oc-tbody-tr-forest" style="height: 64px;">
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
-        <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
+        <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" alt="" width="40" height="40" class="oc-resource-preview">
           <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw"><span resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">forest.jpg</span>
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgGroup(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgGroup.name})
-  );
-}</span></button><span aria-label="Shared via link" class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link">function SvgLink(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgLink.name})
-  );
-}</span></div>
+              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><!----></span></button><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><!----></span></div>
             </div>
           </div>
         </div>
@@ -60,9 +50,9 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">105.9 MB</span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
         <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Bob"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Marie"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" alt="John Richards Emperor of long names">
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Marie" role="img"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" aria-label="John Richards Emperor of long names" role="img">
             <!----> <span>J</span>
           </div>
           <!---->
@@ -71,7 +61,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Bob"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
         </div>
@@ -86,38 +76,18 @@ exports[`OcTableFiles displays all fields 1`] = `
         1 day ago
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
-        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgMore_vert(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgMore_vert.name})
-  );
-}</span></button></div>
+        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><!----></span></button></div>
       </td>
     </tr>
     <tr class="oc-tbody-tr oc-tbody-tr-notes" style="height: 64px;">
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-notes" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
-        <div class="oc-resource oc-text-overflow"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-passive" aria-hidden="true">function SvgText(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgText.name})
-  );
-}</span>
+        <div class="oc-resource oc-text-overflow"><span class="oc-icon oc-icon-l oc-icon-passive"><!----></span>
           <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw"><span resource-path="/Documents/notes.txt" resource-name="notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">notes.txt</span>
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgGroup(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgGroup.name})
-  );
-}</span></button><span aria-label="Shared via link" class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link">function SvgLink(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgLink.name})
-  );
-}</span></div>
+              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><!----></span></button><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><!----></span></div>
             </div>
           </div>
         </div>
@@ -125,9 +95,9 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">?</span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
         <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Bob"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Marie"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" alt="John Richards Emperor of long names">
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Marie" role="img"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" aria-label="John Richards Emperor of long names" role="img">
             <!----> <span>J</span>
           </div>
           <!---->
@@ -136,7 +106,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Bob"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
         </div>
@@ -151,38 +121,18 @@ exports[`OcTableFiles displays all fields 1`] = `
         1 day ago
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
-        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgMore_vert(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgMore_vert.name})
-  );
-}</span></button></div>
+        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><!----></span></button></div>
       </td>
     </tr>
     <tr class="oc-tbody-tr oc-tbody-tr-documents" style="height: 64px;">
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" aria-checked="false" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-documents" class="oc-invisible-sr oc-cursor-pointer">Select</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
-        <div class="oc-resource oc-text-overflow"><span aria-label="icon" class="oc-icon oc-icon-l oc-icon-passive" aria-hidden="true">function SvgFolder(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgFolder.name})
-  );
-}</span>
+        <div class="oc-resource oc-text-overflow"><span class="oc-icon oc-icon-l oc-icon-passive"><!----></span>
           <div class="oc-resource-details oc-text-overflow"><a class="oc-text-overflow"><span resource-path="/Documents" resource-name="Documents" resource-type="folder" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">Documents</span>
               <!----></span>
             </a>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgGroup(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgGroup.name})
-  );
-}</span></button><span aria-label="Shared via link" class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link">function SvgLink(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgLink.name})
-  );
-}</span></div>
+              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><!----></span></button><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><!----></span></div>
             </div>
           </div>
         </div>
@@ -190,9 +140,9 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size"></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
         <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Bob"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Marie"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" alt="John Richards Emperor of long names">
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Marie" role="img"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" aria-label="John Richards Emperor of long names" role="img">
             <!----> <span>J</span>
           </div>
           <!---->
@@ -201,7 +151,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
         <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
-          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" alt="Bob"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+          <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
         </div>
@@ -216,12 +166,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         1 day ago
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
-        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span aria-label="icon" class="oc-icon oc-icon-m oc-icon-passive" aria-hidden="true">function SvgMore_vert(props) {
-  return React.createElement(
-    'svg', 
-    Object.assign({}, props, {'data-file-name': SvgMore_vert.name})
-  );
-}</span></button></div>
+        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><!----></span></button></div>
       </td>
     </tr>
   </tbody>

@@ -13,7 +13,7 @@ exports[`OcBreadcrumb displays all items 1`] = `
     <li class="oc-breadcrumb-list-item"><span>Deeper ellipsize in responsive mode</span></li>
   </ul>
   <div class="oc-breadcrumb-drop"><label class="oc-breadcrumb-drop-label"><span class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
-      <oc-icon-stub name="expand_more" arialabel="icon" type="span" size="medium" variation="passive" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
+      <oc-icon-stub name="expand_more" accessiblelabel="Expand more" type="span" size="medium" variation="passive" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
     </label>
     <oc-drop-stub dropid="oc-drop-2" toggle="- *" position="bottom-left" mode="click" options="[object Object]">
       <ul class="uk-nav uk-nav-default">
@@ -43,7 +43,7 @@ exports[`OcBreadcrumb sets correct variation 1`] = `
     <li class="oc-breadcrumb-list-item"><span>Deeper ellipsize in responsive mode</span></li>
   </ul>
   <div class="oc-breadcrumb-drop"><label class="oc-breadcrumb-drop-label"><span class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
-      <oc-icon-stub name="expand_more" arialabel="icon" type="span" size="medium" variation="passive" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
+      <oc-icon-stub name="expand_more" accessiblelabel="Expand more" type="span" size="medium" variation="passive" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
     </label>
     <oc-drop-stub dropid="oc-drop-1" toggle="- *" position="bottom-left" mode="click" options="[object Object]">
       <ul class="uk-nav uk-nav-default">

@@ -2,8 +2,10 @@
   <div
     class="oc-avatar-link"
     :style="{ backgroundColor: color }"
-    :alt="accessibleLabel"
-    :aria-hidden="accessibleLabel === ''"
+    :aria-label="accessibleLabel === '' ? null : accessibleLabel"
+    :aria-hidden="accessibleLabel === '' ? 'true' : null"
+    :focusable="accessibleLabel === '' ? 'false' : null"
+    :role="accessibleLabel === '' ? null : 'img'"
   />
 </template>
 
@@ -62,6 +64,6 @@ export default {
 
 <docs>
 ```vue
-<oc-avatar-link name="Public link" />
+<oc-avatar-link name="Public link" accessible-label="Public link" />
 ```
 </docs>

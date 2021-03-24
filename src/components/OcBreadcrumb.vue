@@ -22,7 +22,11 @@
           class="oc-breadcrumb-drop-label-text"
           v-text="currentFolder.text"
         />
-        <oc-icon class="oc-breadcrumb-drop-label-icon" name="expand_more" />
+        <oc-icon
+          class="oc-breadcrumb-drop-label-icon"
+          name="expand_more"
+          :accessible-label="$gettext('Expand more')"
+        />
       </label>
       <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
         <ul class="uk-nav uk-nav-default">

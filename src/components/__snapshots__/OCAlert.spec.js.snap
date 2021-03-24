@@ -3,7 +3,7 @@
 exports[`OCAlert displays correct message 1`] = `
 <div uk-alert="" class="oc-alert oc-alert-passive">
   <oc-button-stub type="button" size="medium" arialabel="Close alert" variation="passive" appearance="raw" justifycontent="center" gapsize="medium" class="uk-alert-close">
-    <oc-icon-stub name="close" arialabel="icon" type="span" size="small" variation="inverse"></oc-icon-stub>
+    <oc-icon-stub name="close" accessiblelabel="" type="span" size="small" variation="inverse"></oc-icon-stub>
   </oc-button-stub>
   <p class="slot-message">Test message</p>
 </div>
@@ -19,7 +19,7 @@ exports[`OCAlert hides the close button if disabled 1`] = `
 exports[`OCAlert sets correct variation 1`] = `
 <div uk-alert="" class="oc-alert oc-alert-primary">
   <oc-button-stub type="button" size="medium" arialabel="Close alert" variation="passive" appearance="raw" justifycontent="center" gapsize="medium" class="uk-alert-close">
-    <oc-icon-stub name="close" arialabel="icon" type="span" size="small" variation="inverse"></oc-icon-stub>
+    <oc-icon-stub name="close" accessiblelabel="" type="span" size="small" variation="inverse"></oc-icon-stub>
   </oc-button-stub>
   <p class="slot-message">Test message</p>
 </div>

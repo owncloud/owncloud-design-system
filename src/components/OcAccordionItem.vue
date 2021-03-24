@@ -1,19 +1,19 @@
 <template>
-  <li :id="$_ocAccordionItem_id" class="oc-accordion-item">
-    <component :is="'h' + headingLevel" :id="$_ocAccordionItem_titleId" class="oc-accordion-title">
+  <li :id="id" class="oc-accordion-item">
+    <component :is="'h' + headingLevel" :id="titleId" class="oc-accordion-title">
       <oc-button
         appearance="raw"
         justify-content="space-between"
         class="uk-text-left uk-width-1-1"
         :aria-expanded="expanded"
-        :aria-controls="$_ocAccordionItem_contentId"
-        @click="$_ocAccordionItem_toggleExpanded"
-        @keydown.space="$_ocAccordionItem_toggleExpanded"
-        @keydown.enter="$_ocAccordionItem_toggleExpanded"
+        :aria-controls="contentId"
+        @click="toggleExpanded"
+        @keydown.space="toggleExpanded"
+        @keydown.enter="toggleExpanded"
       >
         <span class="uk-width-1-1">
           <span class="uk-flex uk-flex-middle">
-            <oc-icon v-if="icon" :name="icon" class="oc-mr-s" aria-hidden="true" />
+            <oc-icon v-if="icon" :name="icon" class="oc-mr-s" />
             <span class="uk-width-expand" v-text="title" />
             <span class="oc-ml-xs oc-icon-l">
               <oc-icon
@@ -21,6 +21,7 @@
                 class="oc-accordion-title-arrow-icon"
                 :class="{ rotate: expanded }"
                 size="large"
+                :accessible-label="expandIconLabel"
               />
             </span>
           </span>
@@ -31,12 +32,7 @@
         </span>
       </oc-button>
     </component>
-    <div
-      :id="$_ocAccordionItem_contentId"
-      class="oc-accordion-content"
-      :aria-labelledby="$_ocAccordionItem_titleId"
-      role="region"
-    >
+    <div :id="contentId" class="oc-accordion-content" :aria-labelledby="titleId" role="region">
       <!-- @slot Content of the accordion item -->
       <slot v-if="expanded" />
     </div>
@@ -80,7 +76,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: null,
+      default: () => uniqueId("oc-accordion-id-"),
     },
     /**
      * Id of the accordion title. If not specified, a unique id will be generated.
@@ -88,7 +84,7 @@ export default {
     titleId: {
       type: String,
       required: false,
-      default: null,
+      default: () => uniqueId("oc-accordion-title-"),
     },
     /**
      * Id of the content of the accordion item. If not specified, a unique id will be generated.
@@ -96,7 +92,7 @@ export default {
     contentId: {
       type: String,
       required: false,
-      default: null,
+      default: () => uniqueId("oc-accordion-content-"),
     },
     /**
      * Heading level of the accordion title. Defaults to 3 (i.e. `h3`).
@@ -111,22 +107,19 @@ export default {
     expanded: false,
   }),
   computed: {
-    $_ocAccordionItem_id() {
-      return this.id || uniqueId("oc-accordion-id-")
-    },
-    $_ocAccordionItem_titleId() {
-      return this.titleId || uniqueId("oc-accordion-title-")
-    },
-    $_ocAccordionItem_contentId() {
-      return this.contentId || uniqueId("oc-accordion-content-")
+    expandIconLabel() {
+      if (this.expanded) {
+        return this.$gettext("Click to collapse content")
+      }
+      return this.$gettext("Click to expand content")
     },
   },
   methods: {
-    $_ocAccordionItem_toggleExpanded() {
+    toggleExpanded() {
       if (this.expanded) {
-        this.$parent.$emit("collapse", this.$_ocAccordionItem_id)
+        this.$parent.$emit("collapse", this.id)
       } else {
-        this.$parent.$emit("expand", this.$_ocAccordionItem_id)
+        this.$parent.$emit("expand", this.id)
       }
     },
   },

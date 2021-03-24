@@ -8,7 +8,7 @@
         :aria-label="closeButtonLabel"
         @click="$_ocSidebar_buttonClose_click"
       >
-        <oc-icon name="close" aria-hidden="true" />
+        <oc-icon name="close" />
       </oc-button>
       <router-link to="/" class="oc-sidebar-logo">
         <oc-img
