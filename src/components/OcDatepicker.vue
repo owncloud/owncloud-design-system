@@ -10,11 +10,12 @@
       :is24hr="is24hr"
       color="gray"
       @input="input()"
-      @popoverWillHide="cancel()"
+      @popoverWillHide="removeInputFocus()"
     >
       <template #default="{ inputValue, togglePopover }">
         <input
           :id="id"
+          :ref="id"
           v-bind="additionalAttributes"
           class="oc-datepicker-input"
           :value="inputValue"
@@ -159,8 +160,8 @@ export default {
     input() {
       this.$emit("input", this.update)
     },
-    cancel() {
-      this.$emit("cancel")
+    removeInputFocus() {
+      this.$refs[this.id].blur()
     },
   },
 }
