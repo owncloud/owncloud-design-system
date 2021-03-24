@@ -42,11 +42,11 @@ export default {
   }
 
   tr + tr {
-    border-top: 1px solid $border-primary;
+    border-top: 1px solid var(--oc-border-primary);
   }
 
   &-hover tr:hover {
-    background-color: lighten($selected-background, 0.2);
+    background-color: var(--oc-input-border);
   }
 }
 </style>

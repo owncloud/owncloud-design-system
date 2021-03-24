@@ -13,6 +13,7 @@
     <label :for="id" :class="labelClasses" v-text="label" />
   </span>
 </template>
+
 <script>
 import { getSizeClass } from "../utils/sizeClasses"
 import uniqueId from "../utils/uniqueId"
@@ -112,35 +113,36 @@ export default {
   },
 }
 </script>
+
 <docs>
-  ```
-  <template>
-    <div>
-      <section>
-        <h3 class="uk-heading-divider oc-mt-s">
-          Radio button group
-        </h3>
-        <div class="oc-mb-s">
-          <oc-radio
-              v-for="o in availableOptions"
-              :key="'option-' + o"
-              v-model="selectedOption"
-              :option="o"
-              :label="o"
-              class="oc-mr-s"
-          />
-        </div>
-        Selected option: {{ selectedOption || "None" }}
-      </section>
-    </div>
-  </template>
-  <script>
-    export default {
-      data: () => ({
-        availableOptions: ["Water", "Wine", "Beer"],
-        selectedOption: null
-      })
-    }
-  </script>
-  ```
+```vue
+<template>
+  <div>
+    <section>
+      <h3 class="uk-heading-divider oc-mt-s">
+        Radio button group
+      </h3>
+      <div class="oc-mb-s">
+        <oc-radio
+            v-for="o in availableOptions"
+            :key="'option-' + o"
+            v-model="selectedOption"
+            :option="o"
+            :label="o"
+            class="oc-mr-s"
+        />
+      </div>
+      Selected option: {{ selectedOption || "None" }}
+    </section>
+  </div>
+</template>
+<script>
+  export default {
+    data: () => ({
+      availableOptions: ["Water", "Wine", "Beer"],
+      selectedOption: null
+    })
+  }
+</script>
+```
 </docs>

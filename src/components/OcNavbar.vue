@@ -9,6 +9,7 @@
   /></component>
   <component :is="tag" v-else class="uk-navbar-container" uk-navbar><slot /></component>
 </template>
+
 <script>
 export default {
   name: "OcNavbar",
@@ -16,7 +17,7 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * The offset position from the top (Phoenix Topbar height)
+     * Configures whether the navbar remains attached to the view when scrolling
      */
     sticky: {
       type: Boolean,
@@ -30,7 +31,8 @@ export default {
       default: 60,
     },
     /**
-     * The offset position from the top (if sticky is enabled)
+     * Specifies as which HTML tag this component gets rendered.
+     * Default is "nav" for a `<nav>` element.
      */
     tag: {
       type: String,
@@ -39,8 +41,9 @@ export default {
   },
 }
 </script>
+
 <docs>
-```jsx
+```vue
   <oc-navbar tag="header" class="oc-topbar">
     <oc-navbar-item position="left">
       <button class="oc-topbar-menu-burger" aria-label="Files">

@@ -85,13 +85,15 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `inverted, danger, success, warning`
+     * Defaults to `passive`.
+     * Can be `passive, primary, danger, success, warning or inverse`.
+     * Inverse is meant to be used for icons on a colorful background.
      */
     variation: {
       type: String,
-      default: "system",
+      default: "passive",
       validator: value => {
-        return value.match(/(system|active|passive|inverted|danger|success|warning)/)
+        return value.match(/(passive|primary|danger|success|warning|inverse)/)
       },
     },
   },
@@ -149,7 +151,7 @@ export default {
 </script>
 
 <docs>
-```
+```vue
 <template>
   <section>
     <h3 class="uk-heading-divider">
@@ -223,16 +225,10 @@ export default {
     variations() {
       return [{
         id: "9828-4946-1277-7396",
-        name: "system",
-      }, {
-        id: "7828-3285-4787-2127",
-        name: "active",
-      }, {
-        id: "2971-4568-2460-9940",
         name: "passive",
       }, {
-        id: "6649-3907-5985-2695",
-        name: "inverted",
+        id: "7828-3285-4787-2127",
+        name: "primary",
       }, {
         id: "8376-8902-1172-2699",
         name: "danger",
@@ -271,5 +267,5 @@ export default {
   },
 }
 </script>
-  ```
+```
 </docs>

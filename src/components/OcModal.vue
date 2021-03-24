@@ -1,8 +1,8 @@
 <template>
   <div class="oc-modal-background">
-    <div ref="$_ocModal" :class="$_ocModal_classes" tabindex="0">
+    <div ref="$_ocModal" :class="classes" tabindex="0">
       <div class="oc-modal-title">
-        <oc-icon v-if="icon" :name="icon" :variation="$_ocModal_titleIcon_variation" />
+        <oc-icon v-if="icon" :name="icon" :variation="variation" />
         <span v-text="title" />
       </div>
       <div class="oc-modal-body">
@@ -13,28 +13,31 @@
           v-else-if="hasInput"
           key="modal-input"
           ref="ocModalInput"
-          v-model="$_ocModal_input_value"
+          v-model="userInputValue"
           class="oc-modal-body-input"
           :error-message="inputError"
           :label="inputLabel"
           :placeholder="inputPlaceholder"
           :disabled="inputDisabled"
           :fix-message-line="true"
-          @input="$_ocModal_input_onInput"
-          @keydown.enter="$_ocModal_confirm"
+          @input="inputOnInput"
+          @keydown.enter="confirm"
         />
         <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
         <div class="oc-modal-body-actions uk-flex uk-flex-right">
           <oc-button
             class="oc-modal-body-actions-cancel"
-            @click="$_ocModal_buttonCancel_click"
+            :variation="buttonCancelVariation"
+            :appearance="buttonCancelAppearance"
+            @click="buttonCancelOnClick"
             v-text="buttonCancelText"
           />
           <oc-button
             class="oc-modal-body-actions-confirm oc-ml-s"
-            :variation="$_ocModal_buttonConfirm_variation"
+            :variation="buttonConfirmVariation || variation"
+            :appearance="buttonConfirmAppearance"
             :disabled="buttonConfirmDisabled || !!inputError"
-            @click="$_ocModal_confirm"
+            @click="confirm"
             v-text="buttonConfirmText"
           />
         </div>
@@ -55,8 +58,13 @@ import OcTextInput from "./OcTextInput.vue"
  * Every modal gets automatically added a background which spans the whole width and height.
  * The modal itself is aligned to center both vertically and horizontally.
  *
- * ## Danger variation
- * Use only if the action cannot be undone.
+ * ## Variations
+ * Only use the `danger` variation if the action cannot be undone.
+ *
+ * The overall variation defines the modal's top border, heading (including an optional item) text color and the
+ * variation of the confirm button, while the cancel buttons defaults to the `passive` variation. Both button's
+ * variations and appearances can be targeted individually (see examples and API docs below).
+ *
  */
 export default {
   name: "OcModal",
@@ -72,14 +80,15 @@ export default {
   props: {
     /**
      * Modal variation
-     * Can be: `info`, `danger`
+     * Defaults to `passive`.
+     * Can be `passive, primary, danger, success, warning`.
      */
     variation: {
       type: String,
       required: false,
-      default: "info",
-      validator: variation => {
-        return variation === "info" || variation === "danger"
+      default: "passive",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning)/)
       },
     },
     /**
@@ -106,7 +115,7 @@ export default {
       default: null,
     },
     /**
-     * Text of cancel button
+     * Text of the cancel button
      */
     buttonCancelText: {
       type: String,
@@ -114,12 +123,56 @@ export default {
       default: "Cancel",
     },
     /**
-     * Text of confirm button
+     * Variation type of the cancel button
+     */
+    buttonCancelVariation: {
+      type: String,
+      required: false,
+      default: "passive",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning)/)
+      },
+    },
+    /**
+     * Appearance of the cancel button
+     */
+    buttonCancelAppearance: {
+      type: String,
+      required: false,
+      default: "outline",
+      validator: value => {
+        return value.match(/(outline|filled|raw)/)
+      },
+    },
+    /**
+     * Text of the confirm button
      */
     buttonConfirmText: {
       type: String,
       required: false,
       default: "Confirm",
+    },
+    /**
+     * Variation type of the confirm button
+     */
+    buttonConfirmVariation: {
+      type: String,
+      required: false,
+      default: null,
+      validator: value => {
+        return value === null || value.match(/(passive|primary|danger|success|warning)/)
+      },
+    },
+    /**
+     * Appearance of the confirm button
+     */
+    buttonConfirmAppearance: {
+      type: String,
+      required: false,
+      default: "filled",
+      validator: value => {
+        return value.match(/(outline|filled|raw)/)
+      },
     },
     /**
      * Asserts whether the confirm action is disabled
@@ -178,62 +231,46 @@ export default {
       default: false,
     },
   },
-
   data() {
     return {
-      $_ocModal_input_value: null,
+      userInputValue: null,
     }
   },
-
   computed: {
-    $_ocModal_classes() {
+    classes() {
       return ["oc-modal", `oc-modal-${this.variation}`]
     },
-
-    $_ocModal_titleIcon_variation() {
-      return this.variation === "info" ? "system" : this.variation
-    },
-
-    $_ocModal_buttonConfirm_variation() {
-      return this.variation === "danger" ? "danger" : "primary"
-    },
   },
-
   watch: {
     inputValue: {
-      handler: "$_ocModal_input_assignPropAsValue",
+      handler: "inputAssignPropAsValue",
       immediate: true,
     },
   },
-
   mounted() {
     this.$nextTick(() => {
       this.$refs.$_ocModal.focus()
     })
   },
-
   methods: {
-    $_ocModal_buttonCancel_click() {
+    buttonCancelOnClick() {
       /**
        * The user clicked on the cancel button
        */
       this.$emit("cancel")
     },
-
-    $_ocModal_confirm() {
+    confirm() {
       if (this.buttonConfirmDisabled || this.inputError) {
         return
       }
-
       /**
        * The user clicked on the confirm button. If input exists, emits it's value
        *
        * @property {String} value Value of the input
        */
-      this.$emit("confirm", this.$_ocModal_input_value)
+      this.$emit("confirm", this.userInputValue)
     },
-
-    $_ocModal_input_onInput(value) {
+    inputOnInput(value) {
       /**
        * The user typed into the input
        *
@@ -241,56 +278,58 @@ export default {
        */
       this.$emit("input", value)
     },
-
-    $_ocModal_input_assignPropAsValue(value) {
-      this.$_ocModal_input_value = value
+    inputAssignPropAsValue(value) {
+      this.userInputValue = value
     },
   },
 }
 </script>
 
 <docs>
-  ```vue
-    <oc-modal
-      icon="info"
-      title="Accept terms of use"
-      message="Do you accept our terms of use?"
-      buttonCancelText="Decline"
-      buttonConfirmText="Accept"
-      class="oc-mb-l uk-position-relative"
-    />
-    <oc-modal
-      variation="danger"
-      icon="warning"
-      title="Delete file lorem.txt"
-      message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
-      buttonCancelText="Cancel"
-      buttonConfirmText="Delete"
-      class="oc-mb-l uk-position-relative"
-    />
-    <oc-modal
-      title="Create new folder"
-      buttonCancelText="Cancel"
-      buttonConfirmText="Create"
-      :hasInput="true"
-      inputValue="New folder"
-      inputLabel="Folder name"
-      inputPlaceholder="Enter a folder name"
-      inputError="This name is already taken"
-      class="oc-mb-l uk-position-relative"
-    />
-    <oc-modal
-      title="Rename file lorem.txt"
-      buttonCancelText="Cancel"
-      buttonConfirmText="Rename"
-      class="uk-position-relative"
-    >
-      <template v-slot:content>
-        <oc-text-input
-          value="lorem.txt"
-          label="File name"
-        />
-      </template>
-    </oc-modal>
-  ```
+```vue
+  <oc-modal
+    icon="info"
+    title="Accept terms of use"
+    message="Do you accept our terms of use?"
+    buttonCancelText="Decline"
+    buttonConfirmText="Accept"
+    class="oc-mb-l uk-position-relative"
+  />
+  <oc-modal
+    variation="danger"
+    icon="warning"
+    title="Delete file lorem.txt"
+    message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
+    buttonCancelText="Cancel"
+    buttonConfirmText="Delete"
+    buttonConfirmAppearance="filled"
+    buttonConfirmVariation="danger"
+    class="oc-mb-l uk-position-relative"
+  />
+  <oc-modal
+    title="Create new folder"
+    buttonCancelText="Cancel"
+    buttonConfirmText="Create"
+    :hasInput="true"
+    inputValue="New folder"
+    inputLabel="Folder name"
+    inputPlaceholder="Enter a folder name"
+    inputError="This name is already taken"
+    class="oc-mb-l uk-position-relative"
+  />
+  <oc-modal
+    title="Rename file lorem.txt"
+    buttonCancelText="Cancel"
+    buttonCancelVariation="warning"
+    buttonConfirmText="Rename"
+    class="uk-position-relative"
+  >
+    <template v-slot:content>
+      <oc-text-input
+        value="lorem.txt"
+        label="File name"
+      />
+    </template>
+  </oc-modal>
+```
 </docs>

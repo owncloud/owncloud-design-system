@@ -8,105 +8,89 @@
 #
 
 props:
-  color:
-    value: "#1b223d"
-    category: "Font-colors"
-  emphasis-color:
-    value: "#002966"
-    category: "Font-colors"
-  muted-color:
-    value: "rgba(4,30,66,.7)"
-    category: "Font-colors"
-  link-color:
-    value: "#4e85c8"
-    category: "Font-colors"
-  link-hover-color:
-    value: "#306db5"
-    category: "Font-colors"
-  inverse-color:
-    value: "#fff"
-    category: "Font-colors"
-
-  active-icon-color:
-    value: "#002966"
-    category: "icon-colors"
-
-  passive-icon-color:
-    value: "rgba(4,30,66,.7)"
-    category: "icon-colors"
-
-  system-icon-color:
-    value: "rgba(4, 30, 66, 0.75)"
-    category: "icon-colors"
-
-  background:
-    value: "#fff"
-    category: "Background-colors"
-  muted-background:
-    value: "#f8f8f8"
-    category: "Background-colors"
-  primary-background:
-    value: "#002966"
-    category: "Background-colors"
-  secondary-background:
-    value: "#6780a2"
-    category: "Background-colors"
-  selected-background:
-    value: "rgba(78,133,200,.1)"
-    category: "Background-colors"
-
-  success-background:
-    value: "#68d60e"
-    category: "Background-colors"
-  warning-background:
-    value: "#ff8800"
-    category: "Background-colors"
-  danger-background:
-    value: "#e00000"
-    category: "Background-colors"
-  danger-background-hover:
-    value: "#b50000"
-    category: "Background-colors"
-
   brand-primary:
-    value: "#1b223d"
+    value: "rgb(4, 30, 66)"
+    category: "Brand-colors"
+  brand-primary-hover:
+    value: "rgb(34, 57, 89)"
     category: "Brand-colors"
 
-  action-primary:
-    value: "#4e85c8"
-    category: "Action-colors"
+  background:
+    value: "rgb(255, 255, 255)"
+    category: "Background-colors"
+  background-muted:
+    value: "rgb(248, 248, 248)"
+    category: "Background-colors"
+  background-highlight:
+    value: "rgb(237, 243, 250)"
+    category: "Background-colors"
 
-  action-primary-hover:
-    value: "#306db5"
-    category: "Action-colors"
-
-  action-disabled:
-    value: "#bfc9d9"
-    category: "Action-colors"
-
-  shadow-global:
-    value: "#000000"
-    category: "Shadow-colors"
-
-  shadow-action-primary:
-    value: "#32325d"
-    category: "Shadow-colors"
-
-  border-primary:
-    value: '#ecebee'
-    category: "Border-colors"
-
-  input-background:
-    value: 'rgba(78,133,200,.05)'
-    category: 'Input-colors'
-
-  input-background-checked:
-    value: '#1b223d'
-    category: 'Input-colors'
+  color:
+    value: "rgb(4, 30, 66)"
+    category: "Font-colors"
+  color-muted:
+    value: "rgb(76, 95, 121)"
+    category: "Font-colors"
+  color-inverse:
+    value: "rgb(255, 255, 255)"
+    category: "Font-colors"
 
   input-border:
-    value: "rgba(78,133,200,.25)"
+    value: "rgb(206, 221, 238)"
     category: "Input-colors"
+  input-background:
+    value: "rgb(240, 244, 248)"
+    category: "Input-colors"
+
+  variation-primary:
+    value: "rgb(78, 133, 200)"
+    category: "Variation-colors"
+  variation-primary-hover:
+    value: "rgb(128, 167, 215)"
+    category: "Variation-colors"
+  variation-primary-muted:
+    value: "rgb(44, 88, 142)"
+    category: "Variation-colors"
+  variation-passive:
+    value: "rgb(76, 95, 121)"
+    category: "Variation-colors"
+  variation-passive-hover:
+    value: "rgb(151, 162, 177)"
+    category: "Variation-colors"
+  variation-passive-muted:
+    value: "rgb(40, 62, 93)"
+    category: "Variation-colors"
+  variation-success:
+    value: "rgb(104, 214, 14)"
+    category: "Variation-colors"
+  variation-success-hover:
+    value: "rgb(147, 224, 84)"
+    category: "Variation-colors"
+  variation-success-muted:
+    value: "rgb(83, 150, 10)"
+    category: "Variation-colors"
+  variation-warning:
+    value: "rgb(255, 136, 0)"
+    category: "Variation-colors"
+  variation-warning-hover:
+    value: "rgb(253, 169, 75)"
+    category: "Variation-colors"
+  variation-warning-muted:
+    value: "rgb(179, 81, 0)"
+    category: "Variation-colors"
+  variation-danger:
+    value: "rgb(224, 0, 0)"
+    category: "Variation-colors"
+  variation-danger-hover:
+    value: "rgb(233, 100, 100)"
+    category: "Variation-colors"
+  variation-danger-muted:
+    value: "rgb(181, 0, 0)"
+    category: "Variation-colors"
+
+  border-primary:
+    value: "rgb(236, 235, 238)"
+    category: "Border-colors"
 
 global:
   type: color

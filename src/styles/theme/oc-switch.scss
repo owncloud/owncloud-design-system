@@ -1,8 +1,3 @@
-//
-// Component: OC Switch
-//
-// ========================================================================
-
 .oc-switch {
   display: block;
   height: $form-radio-size;
@@ -20,7 +15,7 @@
   }
 
   &::before {
-    background-color: $global-inverse-color;
+    background-color: var(--oc-color-inverse);
     content: '';
     height: $form-radio-size - 2;
     position: absolute;
@@ -30,7 +25,7 @@
   }
 
   &[data-state='off'] {
-    background-color: lighten($global-muted-color, 10%);
+    background-color: var(--oc-color-muted);
 
     &::before {
       transform: translate(1px, 1px);
@@ -38,7 +33,7 @@
   }
 
   &[data-state='on'] {
-    background-color: $global-primary-background;
+    background-color: var(--oc-brand-primary);
 
     &::before {
       transform: translate(calc(100% - 1px), 1px);

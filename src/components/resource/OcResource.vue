@@ -13,7 +13,7 @@
       v-else
       key="resource-icon"
       :name="resource.icon"
-      variation="system"
+      variation="passive"
       size="large"
       aria-hidden="true"
     />
@@ -178,7 +178,7 @@ export default {
     componentProps() {
       if (!this.isRouterLink) {
         return {
-          variation: "raw",
+          appearance: "raw",
           gapSize: "none",
         }
       }

@@ -44,7 +44,7 @@ export default {
 </script>
 <style lang="scss">
 .oc-th {
-  color: $muted-color;
+  color: var(--oc-color-muted);
   font-weight: inherit;
 }
 </style>

@@ -32,13 +32,13 @@
     }
 
     span {
-      color: $global-inverse-color;
+      color: var(--oc-color-inverse);
     }
 
     .material-icons {
       @extend .oc-mr-s;
 
-      color: $global-inverse-color;
+      color: var(--oc-color-inverse);
     }
   }
 }

@@ -1,5 +1,6 @@
 .oc-modal {
   border-radius: 8px;
+  border-top: 10px solid var(--oc-variation-passive);
   box-shadow: 0 2px 4px rgba(14, 30, 37, 0.25);
   max-width: 500px;
   overflow: hidden;
@@ -11,7 +12,7 @@
 
   &-background {
     align-items: center;
-    background-color: transparentize($primary-background, 0.8);
+    background-color: rgba(100, 100, 100, 0.3);
     display: flex;
     flex-flow: row wrap;
     height: 100%;
@@ -23,17 +24,25 @@
     z-index: 4;
   }
 
-  &-info {
-    border-top: 10px solid $color;
+  &-primary {
+    border-top-color: var(--oc-variation-primary);
+  }
+
+  &-success {
+    border-top-color: var(--oc-variation-success);
+  }
+
+  &-warning {
+    border-top-color: var(--oc-variation-warning);
   }
 
   &-danger {
-    border-top: 10px solid $danger-background;
+    border-top-color: var(--oc-variation-danger);
   }
 
   &-title {
     align-items: center;
-    background-color: $inverse-color;
+    background-color: var(--oc-color-inverse);
     display: flex;
     flex-flow: row wrap;
     font-weight: bold;
@@ -45,12 +54,12 @@
   }
 
   &-danger > &-title {
-    color: $danger-background;
+    color: var(--oc-variation-danger);
   }
 
   &-body {
-    background-color: $muted-background;
-    color: $color;
+    background-color: var(--oc-background-muted);
+    color: var(--oc-color);
     padding: $space-medium;
 
     &-message {
@@ -70,8 +79,8 @@
         border-radius: 4px;
 
         &.uk-button-default {
-          background-color: $inverse-color;
-          color: $color;
+          background-color: var(--oc-color-inverse);
+          color: var(--oc-color);
         }
       }
     }

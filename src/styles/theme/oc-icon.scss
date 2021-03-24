@@ -1,8 +1,3 @@
-//
-// Component: OcIcon
-//
-// ========================================================================
-
 @mixin oc-icon-size($factor) {
   height: $icons-size-default * $factor;
   max-height: $icons-size-default * $factor;
@@ -17,7 +12,7 @@
 
   svg {
     display: block;
-    fill: $global-color;
+    fill: var(--oc-variation-passive);
   }
 
   &,
@@ -74,43 +69,27 @@
     }
   }
 
-  // Variations
-
-  &-active > svg {
-    fill: $active-icon-color;
+  &-primary > svg {
+    fill: var(--oc-variation-primary);
   }
 
   &-passive > svg {
-    fill: $passive-icon-color;
-  }
-
-  &-system > svg {
-    fill: $system-icon-color;
-  }
-
-  &-muted > svg {
-    fill: $global-muted-background;
-  }
-
-  &-inverted > svg {
-    fill: $global-inverse-color;
+    fill: var(--oc-variation-passive);
   }
 
   &-warning > svg {
-    fill: $global-warning-background;
+    fill: var(--oc-variation-warning);
   }
 
   &-success > svg {
-    fill: $global-success-background;
+    fill: var(--oc-variation-success);
   }
 
   &-danger > svg {
-    fill: $global-danger-background;
+    fill: var(--oc-variation-danger);
   }
-}
 
-@mixin hook-inverse() {
-  .oc-icon > svg {
-    fill: $global-inverse-color;
+  &-inverse > svg {
+    fill: var(--oc-color-inverse) !important;
   }
 }

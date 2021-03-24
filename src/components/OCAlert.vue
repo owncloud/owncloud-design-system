@@ -1,19 +1,22 @@
 <template>
-  <div class="oc-alert" :class="_class" uk-alert>
+  <div :class="_class" uk-alert>
     <oc-button
       v-if="!noClose"
       class="uk-alert-close"
-      variation="raw"
-      color="text"
+      appearance="raw"
       :aria-label="$gettext('Close alert')"
       @click="onClose"
     >
-      <oc-icon name="close" size="small"></oc-icon>
+      <oc-icon variation="inverse" name="close" size="small"></oc-icon>
     </oc-button>
     <slot />
   </div>
 </template>
+
 <script>
+import OcButton from "./OcButton.vue"
+import OcIcon from "./OcIcon.vue"
+
 /**
  * Display success, warning and error messages.
  */
@@ -21,6 +24,10 @@ export default {
   name: "OcAlert",
   status: "review",
   release: "1.0.0",
+  components: {
+    OcButton,
+    OcIcon,
+  },
   props: {
     /**
      * Defines if a close button is present
@@ -32,14 +39,15 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `primary, success, warning, danger`
+     * Defaults to `passive`.
+     * Can be `passive, primary, danger, success, warning`.
      */
     variation: {
       type: String,
       required: false,
-      default: null,
+      default: "passive",
       validator: value => {
-        return value.match(/(primary|success|warning|danger)/)
+        return value.match(/(passive|primary|success|warning|danger)/)
       },
     },
   },
@@ -47,7 +55,7 @@ export default {
     _class() {
       let classes = ["oc-alert"]
 
-      if (this.variation) classes.push(`uk-alert-${this.variation}`)
+      if (this.variation) classes.push(`oc-alert-${this.variation}`)
 
       return classes
     },
@@ -64,17 +72,18 @@ export default {
   },
 }
 </script>
+
 <docs>
-```jsx
+```vue
 <div>
   <oc-alert>
     <p>
-      This is an plain alert-box.
+      This is a plain alert-box.
     </p>
   </oc-alert>
   <oc-alert variation="primary">
     <p>
-      <oc-icon name="info" class="uk-float-left oc-mr-s" />
+      <oc-icon name="info" variation="inverse" class="uk-float-left oc-mr-s" />
       I am nice and blue and have an icon
     </p>
   </oc-alert>

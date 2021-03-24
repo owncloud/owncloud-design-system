@@ -1,10 +1,10 @@
 .oc-tag {
   align-items: center;
-  background-color: $background;
-  border: 1px solid $border-primary;
+  background-color: var(--oc-background);
+  border: 1px solid var(--oc-border-primary);
   border-radius: 7px;
   box-sizing: border-box;
-  color: $muted-color;
+  color: var(--oc-color-muted);
   display: flex;
   font-size: 0.875rem;
   gap: $space-xsmall;
@@ -13,7 +13,7 @@
   text-decoration: none;
 
   .oc-icon > svg {
-    fill: $muted-color;
+    fill: var(--oc-color-muted);
   }
 
   &-link,
@@ -26,12 +26,12 @@
 
     &:hover,
     &:focus {
-      color: $action-primary-hover;
+      color: var(--oc-variation-primary-hover);
       cursor: pointer;
       text-decoration: none;
 
       .oc-icon > svg {
-        fill: $action-primary-hover;
+        fill: var(--oc-variation-primary-hover);
       }
     }
   }

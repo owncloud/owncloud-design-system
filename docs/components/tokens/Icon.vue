@@ -1,12 +1,17 @@
 <template>
   <div>
     <div v-for="(filename, index) in icons" :key="index">
-      <oc-icon :name="filename" size="large"></oc-icon>
-      <oc-icon :name="filename" size="large" variation="active"></oc-icon>
-      <oc-icon :name="filename" size="large" variation="system"></oc-icon>
+      <oc-icon :name="filename" size="large" variation="passive"></oc-icon>
+      <oc-icon :name="filename" size="large" variation="primary"></oc-icon>
       <oc-icon :name="filename" size="large" variation="success"></oc-icon>
       <oc-icon :name="filename" size="large" variation="warning"></oc-icon>
       <oc-icon :name="filename" size="large" variation="danger"></oc-icon>
+      <span
+        style="background-color: var(--oc-brand-primary); display: inline-block"
+        class="oc-icon-l"
+      >
+        <oc-icon :name="filename" size="large" variation="inverse"></oc-icon>
+      </span>
       <span>{{ filename }}</span>
     </div>
   </div>

@@ -15,7 +15,7 @@
     }
 
     > svg {
-      fill: $global-color !important;
+      fill: var(--oc-color) !important;
     }
   }
 }

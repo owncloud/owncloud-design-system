@@ -3,6 +3,7 @@
     <slot></slot>
   </div>
 </template>
+
 <script>
 /**
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
@@ -39,6 +40,7 @@ export default {
   },
 }
 </script>
+
 <docs>
 ```vue
   <template>
@@ -97,11 +99,16 @@ export default {
         show(position) {
           this.messages[position] = [
             {
-              title: 'I do not have any message',
+              title: 'Default without a message',
+              status: 'passive'
+            },
+            {
+              title: 'This is a primary notification with a long title that spans more than just one line',
+              message: 'And I have a message, too.',
               status: 'primary'
             },
             {
-              title: 'This is a very long title that spans more than just one line',
+              title: 'This action could have consequences',
               message: 'Are you sure?',
               status: 'warning'
             },

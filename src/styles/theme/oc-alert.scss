@@ -1,44 +1,45 @@
-//
-// Component: Alert
-//
-// ========================================================================
+@mixin oc-alert-variation ($color) {
+  background-color: $color;
 
-@mixin hook-alert-primary() {
-  svg {
-    fill: $alert-primary-color;
+  svg,
+  p {
+    color: var(--oc-color-inverse) !important;
   }
 }
-
-@mixin hook-alert-success() {
-  svg {
-    fill: $alert-success-color;
-  }
-}
-
-@mixin hook-alert-warning() {
-  svg {
-    fill: $alert-warning-color;
-  }
-}
-
-@mixin hook-alert-danger() {
-  svg {
-    fill: $alert-danger-color;
-  }
-}
-
-//
-// Component: OC-Alert
-//
-// ========================================================================
 
 .oc-alert {
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out, margin-top 0.5s ease-out;
+  &-passive {
+    @include oc-alert-variation(
+      var(--oc-variation-passive)
+    );
+  }
+
+  &-primary {
+    @include oc-alert-variation(
+      var(--oc-variation-primary)
+    );
+  }
+
+  &-success {
+    @include oc-alert-variation(
+      var(--oc-variation-success)
+    );
+  }
+
+  &-warning {
+    @include oc-alert-variation(
+      var(--oc-variation-warning)
+    );
+  }
+
+  &-danger {
+    @include oc-alert-variation(
+      var(--oc-variation-danger)
+    );
+  }
 }
 
-//
 // Transition: OC-Alerts-Transition
-//
 
 .oc-alerts-transition-enter,
 .oc-alerts-transition-leave-to {

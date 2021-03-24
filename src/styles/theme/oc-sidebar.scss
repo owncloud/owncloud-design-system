@@ -1,5 +1,5 @@
 .oc-sidebar {
-  background-color: $brand-primary;
+  background-color: var(--oc-brand-primary);
   box-sizing: border-box;
   height: 100vh;
   max-height: 100vh;
@@ -16,12 +16,14 @@
   }
 
   &-logo {
+    color: var(--oc-color-inverse);
     margin-bottom: $space-xxlarge;
     padding: 0 $space-small;
     text-align: center;
 
     &:hover,
     &:focus {
+      color: var(--oc-color-inverse);
       text-decoration: none;
     }
 
@@ -53,7 +55,7 @@
 
     &:hover,
     &:focus {
-      background-color: lighten($brand-primary, 5);
+      background-color: var(--oc-brand-primary-hover);
     }
 
     > a,
@@ -80,7 +82,7 @@
     }
 
     &.uk-active {
-      background-color: lighten($brand-primary, 5);
+      background-color: var(--oc-brand-primary-hover);
 
       // Vue doesn't allow navigating to active route so we do not use pointer as it might mislead users
       > a:hover {
@@ -90,7 +92,7 @@
   }
 
   &-main-content {
-    color: $global-inverse-color;
+    color: var(--oc-color-inverse);
     padding: 0 $space-small $space-medium;
   }
 

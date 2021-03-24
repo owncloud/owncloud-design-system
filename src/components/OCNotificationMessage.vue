@@ -20,7 +20,8 @@
     </div>
     <oc-button
       name="close"
-      variation="raw"
+      appearance="raw"
+      :variation="$_ocNotificationMessage_iconVariation"
       aria-label="Close"
       class="uk-position-top-right oc-mt-s oc-mr-s"
       @click="$_ocNotificationMessage_close"
@@ -40,16 +41,16 @@ export default {
   props: {
     /**
      * Notification messages are sub components of the oc-notifications component.
-     * Messages can have one of the four states: `primary, success, warning and danger`
+     * Messages can have one of the five states: `passive, primary, success, warning and danger`
      *
      * The status defines the color of the notification.
      */
     status: {
       type: String,
       required: false,
-      default: "primary",
+      default: "passive",
       validator: value => {
-        return value.match(/(primary|success|warning|danger)/)
+        return value.match(/(passive|primary|success|warning|danger)/)
       },
     },
     /**
@@ -73,9 +74,6 @@ export default {
       return `uk-flex uk-flex-wrap uk-notification-message uk-notification-message-${this.status}`
     },
     $_ocNotificationMessage_iconVariation() {
-      if (this.status === "primary") {
-        return "system"
-      }
       return this.status
     },
   },
@@ -90,6 +88,28 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+// TODO: Refactor after removal of uikit
+.uk-notification-message {
+  &-passive {
+    color: var(--oc-variation-passive) !important;
+  }
+  &-primary {
+    color: var(--oc-variation-primary) !important;
+  }
+  &-success {
+    color: var(--oc-variation-success) !important;
+  }
+  &-warning {
+    color: var(--oc-variation-warning) !important;
+  }
+  &-danger {
+    color: var(--oc-variation-danger) !important;
+  }
+}
+</style>
+
 <docs>
   Please have a look at the component [oc-notifications](#/oC%20Components/oc-notifications) for example code.
 </docs>

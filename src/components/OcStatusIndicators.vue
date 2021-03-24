@@ -8,7 +8,8 @@
         class="oc-status-indicators-indicator"
         :aria-label="indicator.label"
         :uk-tooltip="indicator.label"
-        variation="raw"
+        variation="passive"
+        appearance="raw"
         @click.stop="indicator.handler(resource, indicator.id)"
       >
         <oc-icon :name="indicator.icon" aria-hidden="true" variation="passive" />

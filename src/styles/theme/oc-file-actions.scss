@@ -7,13 +7,13 @@
   }
 
   > .uk-offcanvas-bar {
-    background: $global-muted-background;
+    background: var(--oc-background);
     top: auto;
     transform: translateX(0) translateY(100%);
     width: 100vw;
 
     .oc-icon > svg {
-      fill: $system-icon-color;
+      fill: var(--oc-variation-passive);
     }
   }
 

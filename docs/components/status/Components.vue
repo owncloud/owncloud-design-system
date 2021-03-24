@@ -46,7 +46,11 @@
               variation="warning"
             />
             <oc-icon v-if="component.status === 'prototype'" name="prototype" variation="danger" />
-            <oc-icon v-if="component.status === 'deprecated'" name="deprecated" variation="muted" />
+            <oc-icon
+              v-if="component.status === 'deprecated'"
+              name="deprecated"
+              variation="passive"
+            />
           </td>
           <td v-else>—</td>
         </tr>

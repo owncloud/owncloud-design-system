@@ -1,8 +1,51 @@
-/* GLOBAL: INCLUDES
- *
- * It is recommended to only include variables,
- * mixins, etc. in this file, to prevent duplicated
- * CSS in your final, compiled files.
- */
+// Import UIkit default theme (or uikit.scss with only core styles)
 
-@import '../styles/owncloud';
+// 1. Your custom variables and variable overwrites.
+@import 'theme/variables';
+
+// 2. Import default variables and available mixins.
+@import '../../node_modules/uikit/src/scss/variables-theme';
+@import '../../node_modules/uikit/src/scss/mixins-theme';
+
+// 3. Import UIkit.
+@import '../../node_modules/uikit/src/scss/uikit-theme';
+
+// 4. Your custom mixin overwrites.
+@import 'theme/animations';
+@import 'theme/background';
+@import 'theme/helper';
+@import 'theme/login';
+@import 'theme/main';
+@import 'theme/menu-secondary';
+@import 'theme/oc-alert';
+@import 'theme/oc-app-bar';
+@import 'theme/oc-app-menu';
+@import 'theme/oc-autocomplete';
+@import 'theme/oc-breadcrumb';
+@import 'theme/oc-button';
+@import 'theme/oc-card';
+@import 'theme/oc-datepicker';
+@import 'theme/oc-dropdown';
+@import 'theme/oc-file-actions';
+@import 'theme/oc-icon';
+@import 'theme/oc-loader';
+@import 'theme/oc-modal';
+@import 'theme/oc-page-title';
+@import 'theme/oc-progress';
+@import 'theme/oc-progress-pie';
+@import 'theme/oc-public-share-icon';
+@import 'theme/oc-radio';
+@import 'theme/oc-scroll';
+@import 'theme/oc-search';
+@import 'theme/oc-sidebar';
+@import 'theme/oc-spacing';
+@import 'theme/oc-spinner';
+@import 'theme/oc-switch';
+@import 'theme/oc-tabbed';
+@import 'theme/oc-tag';
+@import 'theme/oc-text';
+@import 'theme/oc-text-input';
+@import 'theme/oc-topbar';
+@import 'theme/oc-transitions';
+@import 'theme/oc-user-menu';
+@import 'theme/oc-visibility';

@@ -116,14 +116,14 @@ export default {
   }
 
   &-basename {
-    color: $global-color;
+    color: var(--oc-color);
     font-weight: bold;
     white-space: pre;
   }
 
   &-extension,
   &-path {
-    color: $muted-color;
+    color: var(--oc-color-muted);
     white-space: pre;
   }
 }

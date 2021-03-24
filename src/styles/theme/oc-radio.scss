@@ -1,23 +1,17 @@
-//
-// Component: OC Radio
-//
-// ========================================================================
-
 @mixin oc-form-check-size($factor) {
   height: $form-check-size-default * $factor;
   width: $form-check-size-default * $factor;
 }
 
-// TODO: Move to .oc-radio when we get rid of UIKit
-@mixin hook-form-radio {
-  @include oc-form-check-size(1);
-
-  background-color: $input-background;
-  border: 1px solid $input-border;
-}
-
 .oc-radio {
   @extend .uk-radio;
+
+  background-color: var(--oc-input-background);
+  border: 1px solid var(--oc-input-border);
+
+  &:checked {
+    background-color: var(--oc-brand-primary);
+  }
 
   // FIXME: Do not use such specific selectors after we get rid of UIkit
   &.oc-radio-s {

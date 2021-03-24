@@ -6,6 +6,70 @@
   line-height: $icons-size-default * $factor;
 }
 
+@mixin oc-button-variation($color, $hover-color, $muted-color) {
+  background-color: $color;
+  border-color: $color;
+
+  &:disabled {
+    background-color: $muted-color;
+    border-color: $muted-color;
+  }
+
+  &:focus:not([disabled]),
+  &:hover:not([disabled]) {
+    background-color: $hover-color;
+    border-color: $hover-color;
+  }
+
+  &-raw {
+    background-color: transparent;
+    border-style: none;
+    color: $color;
+    font-size: 1rem;
+    font-weight: normal;
+    min-height: 0;
+    padding: 0;
+
+    .oc-icon > svg {
+      fill: $color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $muted-color;
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    color: $color;
+
+    .oc-icon > svg {
+      fill: $color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $muted-color;
+    }
+  }
+
+  &-outline:hover:not([disabled]),
+  &-outline:focus:not([disabled]) {
+    color: $muted-color;
+
+    .oc-icon > svg {
+      fill: $muted-color;
+    }
+  }
+}
+
 .oc-button {
   @include oc-button-line-height(1);
 
@@ -14,6 +78,7 @@
   border-color: transparent;
   border-radius: 3px;
   box-sizing: border-box;
+  color: var(--oc-color-inverse);
   display: flex;
   font-weight: 600;
   padding: 0.5rem 0.75rem;
@@ -75,10 +140,6 @@
     cursor: pointer;
   }
 
-  .oc-icon > svg {
-    transition: fill $transition-duration-short ease-in-out;
-  }
-
   &-s {
     @include oc-button-line-height(0.7);
 
@@ -100,65 +161,54 @@
     min-height: $global-control-large-height;
   }
 
-  &-primary,
-  &-danger {
-    .oc-icon > svg {
-      fill: $global-inverse-color;
-    }
+  .oc-icon > svg {
+    fill: var(--oc-color-inverse);
+    transition: fill $transition-duration-short ease-in-out;
   }
 
-  &-default {
-    background-color: transparent;
-    border-color: $action-primary;
-    color: $action-primary;
-
-    .oc-icon > svg {
-      fill: $action-primary;
-    }
-
-    &:hover,
-    &:focus {
-      border-color: $action-primary-hover;
-      color: $action-primary-hover;
-
-      .oc-icon > svg {
-        fill: $action-primary-hover;
-      }
-    }
+  &-passive {
+    @include oc-button-variation(
+      var(--oc-variation-passive),
+      var(--oc-variation-passive-hover),
+      var(--oc-variation-passive-muted)
+    );
   }
 
   &-primary {
-    background-color: $action-primary;
-    box-shadow: 0 4px 6px rgba($shadow-action-primary, 0.11), 0 1px 3px rgba($shadow-global, 0.08);
-    color: $global-inverse-color;
+    @include oc-button-variation(
+      var(--oc-variation-primary),
+      var(--oc-variation-primary-hover),
+      var(--oc-variation-primary-muted)
+    );
+  }
 
-    &:hover,
-    &:focus {
-      background-color: $action-primary-hover;
-      color: $global-inverse-color;
-      text-decoration: none;
-    }
+  &-success {
+    @include oc-button-variation(
+      var(--oc-variation-success),
+      var(--oc-variation-success-hover),
+      var(--oc-variation-success-muted)
+    );
+  }
+
+  &-warning {
+    @include oc-button-variation(
+      var(--oc-variation-warning),
+      var(--oc-variation-warning-hover),
+      var(--oc-variation-warning-muted)
+    );
   }
 
   &-danger {
-    background-color: $danger-background;
-    color: $global-inverse-color;
-
-    &:hover,
-    &:focus {
-      background-color: $danger-background-hover;
-    }
+    @include oc-button-variation(
+      var(--oc-variation-danger),
+      var(--oc-variation-danger-hover),
+      var(--oc-variation-danger-muted)
+    );
   }
 
   &:disabled {
-    background-color: $action-disabled;
-    border-color: transparent;
-    color: $global-inverse-color;
     cursor: default;
-
-    .oc-icon > svg {
-      fill: $global-inverse-color;
-    }
+    opacity: 0.6;
   }
 
   &-group {
@@ -181,58 +231,15 @@
         border-right: 0;
 
         &:first-of-type {
-          border-left: 1px solid $action-primary;
+          // TODO: Implement color variations if button group should be used again
+          border-left: 1px solid var(--oc-variation-primary);
         }
 
         &:last-of-type {
-          border-right: 1px solid $action-primary;
+          // TODO: Implement color variations if button group should be used again
+          border-right: 1px solid var(--oc-variation-primary);
         }
       }
-
-      &-primary {
-        box-shadow: none;
-      }
-    }
-  }
-
-  &.oc-button-raw {
-    @extend .oc-button-reset;
-
-    color: $action-primary;
-
-    &:hover,
-    &:focus {
-      color: $action-primary-hover;
-    }
-
-    &-color {
-      &-text {
-        color: $color;
-
-        .oc-icon > svg {
-          fill: $color;
-        }
-
-        &:hover,
-        &:focus {
-          color: $color;
-        }
-      }
-
-      &-primary .oc-icon > svg {
-        fill: $action-primary;
-
-        &:hover,
-        &:focus {
-          color: $action-primary-hover;
-        }
-      }
-    }
-
-    &:disabled {
-      background-color: transparent;
-      color: $action-disabled;
-      fill: $action-disabled;
     }
   }
 }

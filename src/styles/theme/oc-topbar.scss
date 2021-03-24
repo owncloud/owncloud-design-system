@@ -3,12 +3,13 @@
   @extend .uk-navbar-transparent;
   @extend .uk-background-primary;
 
+  background-color: var(--oc-brand-primary);
   height: $navbar-nav-item-height;
 
   // Force inverse color,
   // without forcing it too hard
   .uk-navbar-item.uk-navbar-item {
-    color: $global-inverse-color;
+    color: var(--oc-color-inverse);
   }
 
   &-menu {
@@ -18,7 +19,7 @@
       cursor: pointer;
 
       &-icon svg {
-        fill: $global-inverse-color !important;
+        fill: var(--oc-color-inverse) !important;
       }
 
       &-label {
@@ -53,6 +54,8 @@
     &-label {
       @extend .uk-visible\@m;
       @extend .oc-ml-s;
+
+      color: var(--oc-variation-primary);
     }
   }
 }

@@ -2,7 +2,7 @@
   <li :id="$_ocAccordionItem_id" class="oc-accordion-item">
     <component :is="'h' + headingLevel" :id="$_ocAccordionItem_titleId" class="oc-accordion-title">
       <oc-button
-        variation="raw"
+        appearance="raw"
         justify-content="space-between"
         class="uk-text-left uk-width-1-1"
         :aria-expanded="expanded"
