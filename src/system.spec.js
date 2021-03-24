@@ -2,7 +2,7 @@ import Vue from "vue"
 import DesignSystem from "./system"
 
 let options = {
-  designTokens: {
+  tokens: {
     colorPalette: {
       "background": "#ef23ab",
       "brand-primary": "#00FFFF",    
