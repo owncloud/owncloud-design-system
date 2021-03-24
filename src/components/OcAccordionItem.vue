@@ -32,12 +32,7 @@
         </span>
       </oc-button>
     </component>
-    <div
-      :id="contentId"
-      class="oc-accordion-content"
-      :aria-labelledby="titleId"
-      role="region"
-    >
+    <div :id="contentId" class="oc-accordion-content" :aria-labelledby="titleId" role="region">
       <!-- @slot Content of the accordion item -->
       <slot v-if="expanded" />
     </div>
