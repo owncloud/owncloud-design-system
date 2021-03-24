@@ -6,7 +6,7 @@
  */
 
 // Define contexts to require
-const contexts = [require.context("@/components/", true, /\.vue$/)]
+const contexts = [require.context("./components/", true, /\.vue$/)]
 
 // Define components
 const components = []
@@ -16,7 +16,14 @@ contexts.forEach(context => {
 
 // Install the above defined components
 const System = {
-  install(Vue) {
+  install(Vue, options = {}) {
+    const themeOptions = options.tokens
+
+    for (const colorVar in themeOptions?.colorPalette) {
+      document
+        .querySelector(":root")
+        .style.setProperty("--oc-" + colorVar, themeOptions.colorPalette[colorVar])
+    }
     components.forEach(component => Vue.component(component.name, component))
   },
 }

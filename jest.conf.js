@@ -6,6 +6,7 @@ module.exports = {
   moduleFileExtensions: ["js", "json", "vue"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
+    "^.+\\.(css|less|scss)$": "babel-jest",
   },
   modulePathIgnorePatterns: ["<rootDir>/docs/utils/statusLabels.spec.js"],
   transform: {
