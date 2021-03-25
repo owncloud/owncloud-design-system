@@ -3,12 +3,14 @@
     <label class="oc-label" :for="id" v-text="label" />
     <date-picker
       v-model="update"
-      class="oc-datepicker"
+      :masks="masks"
+      class="oc-datepicker uk-position-relative"
       :mode="type"
+      :locale="lang"
       :min-date="minDatetime"
       :max-date="maxDatetime"
-      :is24hr="is24hr"
       color="gray"
+      :is24hr="is24hr"
       @input="input()"
       @popoverWillHide="removeInputFocus()"
     >
@@ -22,6 +24,15 @@
           readonly
           @focus="togglePopover()"
         />
+        <oc-button
+          v-if="update"
+          :aria-label="$gettext('Clear date')"
+          class="oc-datepicker-clear uk-position-small uk-position-center-right"
+          appearance="raw"
+          @click="update = null"
+        >
+          <oc-icon name="close" size="small" variation="passive" />
+        </oc-button>
       </template>
     </date-picker>
     <div v-if="!!descriptionMessage" class="oc-datepicker-message">
@@ -100,6 +111,29 @@ export default {
       },
     },
     /**
+     * Provide a locale.
+     * `ISO-3166` or `ISO-639` string
+     */
+    lang: {
+      type: String,
+      default: "en",
+    },
+    /**
+     * Provide a format to display dates within the input.
+     * Currently only supports dates as time will be automatically formatted based on `is24hr`.
+     */
+    dateFormat: {
+      type: String,
+      default: "DD. MMMM YYYY",
+    },
+    /**
+     * Use this property to use 24hr mode.
+     */
+    is24hr: {
+      type: Boolean,
+      default: null,
+    },
+    /**
      * Minimum datetime.
      * `ISO 8601 String`
      */
@@ -130,18 +164,20 @@ export default {
       type: String,
       default: null,
     },
-    /**
-     * Use 24h mode on datetime and time pickers.
-     */
-    is24hr: {
-      type: Boolean,
-      default: null,
-    },
   },
   data() {
     return {
       party: true,
       update: this.date,
+      masks: {
+        input: this.dateFormat,
+        inputDateTime: `${this.dateFormat}, h:mm A`,
+        inputDateTime24hr: `${this.dateFormat}, HH:mm`,
+      },
+      modelConfig: {
+        type: "string",
+        mask: "YYYY-MM-DD", // Uses 'iso' if missing
+      },
     }
   },
   computed: {
