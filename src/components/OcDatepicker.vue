@@ -1,40 +1,41 @@
 <template>
   <div>
     <label class="oc-label" :for="id" v-text="label" />
-    <date-picker
-      v-model="update"
-      :masks="masks"
-      class="oc-datepicker uk-position-relative"
-      :mode="type"
-      :locale="lang"
-      :min-date="minDatetime"
-      :max-date="maxDatetime"
-      color="gray"
-      :is24hr="is24hr"
-      @input="input()"
-      @popoverWillHide="removeInputFocus()"
-    >
-      <template #default="{ inputValue, togglePopover }">
-        <input
-          :id="id"
-          :ref="id"
-          v-bind="additionalAttributes"
-          class="oc-datepicker-input"
-          :value="inputValue"
-          readonly
-          @focus="togglePopover()"
-        />
-        <oc-button
-          v-if="update"
-          :aria-label="$gettext('Clear date')"
-          class="oc-datepicker-clear uk-position-small uk-position-center-right"
-          appearance="raw"
-          @click="update = null"
-        >
-          <oc-icon name="close" size="small" variation="passive" />
-        </oc-button>
-      </template>
-    </date-picker>
+    <div class="uk-position-relative">
+      <date-picker
+        v-model="update"
+        :masks="masks"
+        class="oc-datepicker"
+        :mode="type"
+        :locale="lang"
+        :min-date="minDatetime"
+        :max-date="maxDatetime"
+        color="gray"
+        :is24hr="is24hr"
+        @input="input()"
+      >
+        <template #default="{ inputValue, togglePopover }">
+          <input
+            :id="id"
+            :ref="id"
+            v-bind="additionalAttributes"
+            class="oc-datepicker-input"
+            :value="inputValue"
+            readonly
+            @focus="togglePopover()"
+          />
+        </template>
+      </date-picker>
+      <oc-button
+        v-if="update"
+        :aria-label="$gettext('Clear date')"
+        class="oc-datepicker-clear uk-position-small uk-position-center-right"
+        appearance="raw"
+        @click="update = null"
+      >
+        <oc-icon name="close" size="small" />
+      </oc-button>
+    </div>
     <div v-if="!!descriptionMessage" class="oc-datepicker-message">
       <span
         :id="descriptionId"
@@ -174,10 +175,6 @@ export default {
         inputDateTime: `${this.dateFormat}, h:mm A`,
         inputDateTime24hr: `${this.dateFormat}, HH:mm`,
       },
-      modelConfig: {
-        type: "string",
-        mask: "YYYY-MM-DD", // Uses 'iso' if missing
-      },
     }
   },
   computed: {
@@ -195,9 +192,6 @@ export default {
   methods: {
     input() {
       this.$emit("input", this.update)
-    },
-    removeInputFocus() {
-      this.$refs[this.id].blur()
     },
   },
 }
@@ -238,15 +232,25 @@ export default {
 
 <docs>
 ```vue
-<template>
-  <div>
-    <div class="oc-m">
-      <h3 class="uk-heading-divider">
-        Datepicker inputs
-      </h3>
-      <oc-datepicker label="Default datepicker"></oc-datepicker>
-      <oc-datepicker label="Datepicker with a minimum date" title="I have a minimum date" type="datetime"
-                     :minDatetime="minDatetime"></oc-datepicker>
+  <template>
+    <div>
+      <div class="oc-m">
+        <h3 class="uk-heading-divider">
+          Datepicker inputs
+        </h3>
+        <oc-datepicker class="oc-mb-s" label="Default datepicker"></oc-datepicker>
+        <oc-datepicker class="oc-mb-s" label="Datepicker with a minimum date" title="I have a minimum date" type="datetime" :minDatetime="minDatetime"></oc-datepicker>
+      </div>
+      <div class="oc-m">
+        <h3 class="uk-heading-divider">
+          Messages
+        </h3>
+        <oc-datepicker
+            label="Datepicker with description message below"
+            class="oc-mb-s"
+            description-message="This is a description message."
+        ></oc-datepicker>
+      </div>
     </div>
     <div class="oc-m">
       <h3 class="uk-heading-divider">
