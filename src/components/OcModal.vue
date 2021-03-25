@@ -17,7 +17,7 @@
           class="oc-modal-body-input"
           :error-message="inputError"
           :label="inputLabel"
-          :placeholder="inputPlaceholder"
+          :description-message="inputDescription"
           :disabled="inputDisabled"
           :fix-message-line="true"
           @input="inputOnInput"
@@ -207,9 +207,9 @@ export default {
       default: null,
     },
     /**
-     * Placeholder of the input
+     * Additional description message for the input field
      */
-    inputPlaceholder: {
+    inputDescription: {
       type: String,
       required: false,
       default: null,
@@ -313,7 +313,7 @@ export default {
     :hasInput="true"
     inputValue="New folder"
     inputLabel="Folder name"
-    inputPlaceholder="Enter a folder name"
+    inputDescription="Enter a folder name"
     inputError="This name is already taken"
     class="oc-mb-l uk-position-relative"
   />
