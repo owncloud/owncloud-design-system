@@ -1,3 +1,24 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.0.0...master
+
+## Summary
+
+* Enhancement - Turn placeholders in OcModal into descriptionMessages: [#1172](https://github.com/owncloud/owncloud-design-system/pull/1172)
+
+## Details
+
+* Enhancement - Turn placeholders in OcModal into descriptionMessages: [#1172](https://github.com/owncloud/owncloud-design-system/pull/1172)
+
+   We have dropped the support for placeholders in the `<oc-text-input>` component. As this
+   component is used inside OcModal, this change also drops placeholder support and adds the
+   possibilty to instead make use of a descriptionMessage (which is only being display if no
+   inputError is present).
+
+   https://github.com/owncloud/owncloud-design-system/pull/1172
+
 # Changelog for [4.0.0] (2021-03-25)
 
 The following sections list the changes in ownCloud Design System 4.0.0.
