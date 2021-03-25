@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Add label to the autocomplete component: [#1156](https://github.com/owncloud/owncloud-design-system/pull/1156)
 * Change - Add properties to make icons and images a11y-compliant: [#1161](https://github.com/owncloud/owncloud-design-system/pull/1161)
 * Change - Refactor variations & color palette: [#1140](https://github.com/owncloud/owncloud-design-system/pull/1140)
+* Change - Remove URL prop from icons: [#1082](https://github.com/owncloud/owncloud-design-system/pull/1082)
 * Enhancement - Add focus border to accordion items: [#1158](https://github.com/owncloud/owncloud-design-system/pull/1158)
 * Enhancement - Add label and messages to datepicker: [#1149](https://github.com/owncloud/owncloud-design-system/pull/1149)
 * Enhancement - Add label and messages to textarea: [#1144](https://github.com/owncloud/owncloud-design-system/pull/1144)
@@ -64,6 +65,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/pull/1140
    https://github.com/owncloud/owncloud-design-system/pull/1169
+
+
+* Change - Remove URL prop from icons: [#1082](https://github.com/owncloud/owncloud-design-system/pull/1082)
+
+   We've removed the URL prop from icons which was replacing the internal icons with an image
+   loading the icon from arbitrary URLs. As of now, only internal icons can be used in the `oc-icon`
+   component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1082
 
 
 * Enhancement - Add focus border to accordion items: [#1158](https://github.com/owncloud/owncloud-design-system/pull/1158)
