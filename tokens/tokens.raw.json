@@ -1,201 +1,187 @@
 {
   "aliases": {},
   "props": {
-    "selected-background": {
+    "variation-warning-muted": {
       "type": "color",
-      "category": "Background-colors",
-      "value": "rgba(78, 133, 200, 0.1)",
-      "originalValue": "rgba(78,133,200,.1)",
-      "name": "selected-background"
-    },
-    "muted-color": {
-      "type": "color",
-      "category": "Font-colors",
-      "value": "rgba(4, 30, 66, 0.7)",
-      "originalValue": "rgba(4,30,66,.7)",
-      "name": "muted-color"
+      "category": "Variation-colors",
+      "value": "rgb(179, 81, 0)",
+      "originalValue": "rgb(179, 81, 0)",
+      "name": "variation-warning-muted"
     },
     "border-primary": {
       "type": "color",
       "category": "Border-colors",
       "value": "rgb(236, 235, 238)",
-      "originalValue": "#ecebee",
+      "originalValue": "rgb(236, 235, 238)",
       "name": "border-primary"
+    },
+    "color-muted": {
+      "type": "color",
+      "category": "Font-colors",
+      "value": "rgb(76, 95, 121)",
+      "originalValue": "rgb(76, 95, 121)",
+      "name": "color-muted"
+    },
+    "variation-warning": {
+      "type": "color",
+      "category": "Variation-colors",
+      "value": "rgb(255, 136, 0)",
+      "originalValue": "rgb(255, 136, 0)",
+      "name": "variation-warning"
     },
     "color": {
       "type": "color",
       "category": "Font-colors",
-      "value": "rgb(27, 34, 61)",
-      "originalValue": "#1b223d",
+      "value": "rgb(4, 30, 66)",
+      "originalValue": "rgb(4, 30, 66)",
       "name": "color"
     },
-    "inverse-color": {
+    "color-inverse": {
       "type": "color",
       "category": "Font-colors",
       "value": "rgb(255, 255, 255)",
-      "originalValue": "#fff",
-      "name": "inverse-color"
+      "originalValue": "rgb(255, 255, 255)",
+      "name": "color-inverse"
     },
-    "danger-background-hover": {
+    "variation-primary-muted": {
       "type": "color",
-      "category": "Background-colors",
-      "value": "rgb(181, 0, 0)",
-      "originalValue": "#b50000",
-      "name": "danger-background-hover"
+      "category": "Variation-colors",
+      "value": "rgb(44, 88, 142)",
+      "originalValue": "rgb(44, 88, 142)",
+      "name": "variation-primary-muted"
     },
-    "secondary-background": {
+    "variation-success-muted": {
       "type": "color",
-      "category": "Background-colors",
-      "value": "rgb(103, 128, 162)",
-      "originalValue": "#6780a2",
-      "name": "secondary-background"
+      "category": "Variation-colors",
+      "value": "rgb(83, 150, 10)",
+      "originalValue": "rgb(83, 150, 10)",
+      "name": "variation-success-muted"
     },
-    "input-background-checked": {
+    "variation-primary": {
       "type": "color",
-      "category": "Input-colors",
-      "value": "rgb(27, 34, 61)",
-      "originalValue": "#1b223d",
-      "name": "input-background-checked"
-    },
-    "action-primary": {
-      "type": "color",
-      "category": "Action-colors",
+      "category": "Variation-colors",
       "value": "rgb(78, 133, 200)",
-      "originalValue": "#4e85c8",
-      "name": "action-primary"
+      "originalValue": "rgb(78, 133, 200)",
+      "name": "variation-primary"
     },
-    "system-icon-color": {
+    "variation-success": {
       "type": "color",
-      "category": "icon-colors",
-      "value": "rgba(4, 30, 66, 0.75)",
-      "originalValue": "rgba(4, 30, 66, 0.75)",
-      "name": "system-icon-color"
+      "category": "Variation-colors",
+      "value": "rgb(104, 214, 14)",
+      "originalValue": "rgb(104, 214, 14)",
+      "name": "variation-success"
+    },
+    "variation-passive-muted": {
+      "type": "color",
+      "category": "Variation-colors",
+      "value": "rgb(40, 62, 93)",
+      "originalValue": "rgb(40, 62, 93)",
+      "name": "variation-passive-muted"
+    },
+    "brand-primary-hover": {
+      "type": "color",
+      "category": "Brand-colors",
+      "value": "rgb(34, 57, 89)",
+      "originalValue": "rgb(34, 57, 89)",
+      "name": "brand-primary-hover"
+    },
+    "background-muted": {
+      "type": "color",
+      "category": "Background-colors",
+      "value": "rgb(248, 248, 248)",
+      "originalValue": "rgb(248, 248, 248)",
+      "name": "background-muted"
+    },
+    "variation-danger-hover": {
+      "type": "color",
+      "category": "Variation-colors",
+      "value": "rgb(233, 100, 100)",
+      "originalValue": "rgb(233, 100, 100)",
+      "name": "variation-danger-hover"
+    },
+    "variation-passive": {
+      "type": "color",
+      "category": "Variation-colors",
+      "value": "rgb(76, 95, 121)",
+      "originalValue": "rgb(76, 95, 121)",
+      "name": "variation-passive"
     },
     "background": {
       "type": "color",
       "category": "Background-colors",
       "value": "rgb(255, 255, 255)",
-      "originalValue": "#fff",
+      "originalValue": "rgb(255, 255, 255)",
       "name": "background"
     },
     "input-border": {
       "type": "color",
       "category": "Input-colors",
-      "value": "rgba(78, 133, 200, 0.25)",
-      "originalValue": "rgba(78,133,200,.25)",
+      "value": "rgb(206, 221, 238)",
+      "originalValue": "rgb(206, 221, 238)",
       "name": "input-border"
     },
-    "shadow-global": {
+    "variation-warning-hover": {
       "type": "color",
-      "category": "Shadow-colors",
-      "value": "rgb(0, 0, 0)",
-      "originalValue": "#000000",
-      "name": "shadow-global"
-    },
-    "muted-background": {
-      "type": "color",
-      "category": "Background-colors",
-      "value": "rgb(248, 248, 248)",
-      "originalValue": "#f8f8f8",
-      "name": "muted-background"
-    },
-    "link-color": {
-      "type": "color",
-      "category": "Font-colors",
-      "value": "rgb(78, 133, 200)",
-      "originalValue": "#4e85c8",
-      "name": "link-color"
+      "category": "Variation-colors",
+      "value": "rgb(253, 169, 75)",
+      "originalValue": "rgb(253, 169, 75)",
+      "name": "variation-warning-hover"
     },
     "input-background": {
       "type": "color",
       "category": "Input-colors",
-      "value": "rgba(78, 133, 200, 0.05)",
-      "originalValue": "rgba(78,133,200,.05)",
+      "value": "rgb(240, 244, 248)",
+      "originalValue": "rgb(240, 244, 248)",
       "name": "input-background"
     },
-    "emphasis-color": {
-      "type": "color",
-      "category": "Font-colors",
-      "value": "rgb(0, 41, 102)",
-      "originalValue": "#002966",
-      "name": "emphasis-color"
-    },
-    "action-disabled": {
-      "type": "color",
-      "category": "Action-colors",
-      "value": "rgb(191, 201, 217)",
-      "originalValue": "#bfc9d9",
-      "name": "action-disabled"
-    },
-    "passive-icon-color": {
-      "type": "color",
-      "category": "icon-colors",
-      "value": "rgba(4, 30, 66, 0.7)",
-      "originalValue": "rgba(4,30,66,.7)",
-      "name": "passive-icon-color"
-    },
-    "active-icon-color": {
-      "type": "color",
-      "category": "icon-colors",
-      "value": "rgb(0, 41, 102)",
-      "originalValue": "#002966",
-      "name": "active-icon-color"
-    },
-    "success-background": {
+    "background-highlight": {
       "type": "color",
       "category": "Background-colors",
-      "value": "rgb(104, 214, 14)",
-      "originalValue": "#68d60e",
-      "name": "success-background"
+      "value": "rgb(237, 243, 250)",
+      "originalValue": "rgb(237, 243, 250)",
+      "name": "background-highlight"
     },
-    "shadow-action-primary": {
+    "variation-primary-hover": {
       "type": "color",
-      "category": "Shadow-colors",
-      "value": "rgb(50, 50, 93)",
-      "originalValue": "#32325d",
-      "name": "shadow-action-primary"
+      "category": "Variation-colors",
+      "value": "rgb(128, 167, 215)",
+      "originalValue": "rgb(128, 167, 215)",
+      "name": "variation-primary-hover"
     },
-    "danger-background": {
+    "variation-success-hover": {
       "type": "color",
-      "category": "Background-colors",
-      "value": "rgb(224, 0, 0)",
-      "originalValue": "#e00000",
-      "name": "danger-background"
+      "category": "Variation-colors",
+      "value": "rgb(147, 224, 84)",
+      "originalValue": "rgb(147, 224, 84)",
+      "name": "variation-success-hover"
     },
-    "primary-background": {
+    "variation-danger-muted": {
       "type": "color",
-      "category": "Background-colors",
-      "value": "rgb(0, 41, 102)",
-      "originalValue": "#002966",
-      "name": "primary-background"
+      "category": "Variation-colors",
+      "value": "rgb(181, 0, 0)",
+      "originalValue": "rgb(181, 0, 0)",
+      "name": "variation-danger-muted"
     },
-    "action-primary-hover": {
+    "variation-passive-hover": {
       "type": "color",
-      "category": "Action-colors",
-      "value": "rgb(48, 109, 181)",
-      "originalValue": "#306db5",
-      "name": "action-primary-hover"
+      "category": "Variation-colors",
+      "value": "rgb(151, 162, 177)",
+      "originalValue": "rgb(151, 162, 177)",
+      "name": "variation-passive-hover"
     },
     "brand-primary": {
       "type": "color",
       "category": "Brand-colors",
-      "value": "rgb(27, 34, 61)",
-      "originalValue": "#1b223d",
+      "value": "rgb(4, 30, 66)",
+      "originalValue": "rgb(4, 30, 66)",
       "name": "brand-primary"
     },
-    "link-hover-color": {
+    "variation-danger": {
       "type": "color",
-      "category": "Font-colors",
-      "value": "rgb(48, 109, 181)",
-      "originalValue": "#306db5",
-      "name": "link-hover-color"
-    },
-    "warning-background": {
-      "type": "color",
-      "category": "Background-colors",
-      "value": "rgb(255, 136, 0)",
-      "originalValue": "#ff8800",
-      "name": "warning-background"
+      "category": "Variation-colors",
+      "value": "rgb(224, 0, 0)",
+      "originalValue": "rgb(224, 0, 0)",
+      "name": "variation-danger"
     },
     "small-font-size": {
       "type": "number",
