@@ -2,7 +2,6 @@
   <!-- eslint-disable vue/no-v-html -->
   <component
     :is="type"
-    v-if="iconNotLoaded"
     :class="[
       { 'oc-button-reset': type === 'button' },
       'oc-icon',
@@ -17,22 +16,9 @@
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
-      :role="accessibleLabel === '' ? 'presentation' : 'img'"
+      :role="accessibleLabel === '' ? 'presentation' : null"
     ></inline-svg>
   </component>
-  <!-- eslint-enable vue/no-v-html -->
-  <img
-    v-else
-    :src="iconUrl"
-    :alt="accessibleLabel"
-    :class="[
-      { 'oc-button-reset': type === 'button' },
-      'oc-icon',
-      sizeClass(size),
-      variationClass(variation),
-    ]"
-    @click="onClick"
-  />
 </template>
 
 <script>
@@ -45,13 +31,13 @@ import { getSizeClass } from "../utils/sizeClasses"
  * easily understand where they are in the product.
  *
  * ## Accessibility
- * You can pass a label to the icon via the `accessibleLabel` property. The component will automatically set the `alt` attribute to the value of the provided label (for `img`-tags) or add a `title` element which is also referenced by its ID via `aria-labelledby` (for `svg`-tags).
+ * You can pass a label to the icon via the `accessibleLabel` property. The component will automatically add a `title` element which is also referenced by its ID via `aria-labelledby`.
  *
  * Omit `accessibleLabel` if your icon has a decorative purpose only. In this case the component will:
  *  1. set `aria-hidden` to `true`.
- *  2. set `role` to `presentation` (for `svg`-tags).
- *  3. set `focusable` to `false` (for `svg`-tags).
- *  4. remove or empty all aria-related properties such as labels or alts.
+ *  2. set `role` to `presentation`.
+ *  3. set `focusable` to `false`.
+ *  4. remove or empty all aria-related properties such as labels.
  */
 export default {
   name: "OcIcon",
@@ -67,16 +53,6 @@ export default {
     name: {
       type: String,
       default: "info",
-    },
-    /**
-     * Alternative way to specify the svg icon via an url.
-     * In case no image can be loaded from ths give url the icon
-     * as defined by the name property will be displayed.
-     */
-    url: {
-      type: String,
-      required: false,
-      default: null,
     },
     /**
      * Descriptive text to be read to screenreaders.
@@ -117,12 +93,6 @@ export default {
       },
     },
   },
-  data() {
-    return {
-      iconUrl: undefined,
-      iconNotLoaded: true,
-    }
-  },
   computed: {
     svgPath() {
       return require("../assets/icons/" + this.name + ".svg")
@@ -130,14 +100,6 @@ export default {
     svgTitleId() {
       return uniqueId("oc-icon-title-")
     },
-  },
-  watch: {
-    url() {
-      this.loadImage()
-    },
-  },
-  mounted() {
-    this.loadImage()
   },
   methods: {
     sizeClass(c) {
@@ -151,20 +113,6 @@ export default {
     },
     onClick() {
       this.$emit("click")
-    },
-    loadImage() {
-      this.iconUrl = this.url
-      if (this.url !== "") {
-        const img = new Image()
-        img.addEventListener("load", () => {
-          this.iconNotLoaded = false
-        })
-        img.addEventListener("error", () => {
-          this.$emit("error")
-          this.iconUrl = ""
-        })
-        img.src = this.iconUrl
-      }
     },
     transformSvgElement(svg) {
       if (this.accessibleLabel !== "") {
@@ -190,7 +138,13 @@ export default {
     <oc-icon name="close" accessible-label="Close"/>
     <oc-icon name="delete" accessible-label="Delete"/>
     <oc-icon name="info" accessible-label="Information"/>
-    <oc-icon name="account_circle"/>
+    <oc-icon name="account_circle" accessible-label="Account"/>
+
+    <h3 class="uk-heading-divider">
+      Hover over the icons to see the effect of accessible labels
+    </h3>
+    <oc-icon size="large" name="account_circle" accessible-label="Account"/>
+    <oc-icon size="large" name="account_circle"/>
 
     <h3 class="uk-heading-divider">
       Icon color variations
@@ -205,7 +159,7 @@ export default {
       <oc-tbody>
         <oc-tr v-for="variation in variations" :key="'variation-' + variation.id">
           <oc-td>{{ variation.name }}</oc-td>
-          <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverted'}">
+          <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverse'}">
             <oc-icon :variation="variation.name" name="close"/>
             <oc-icon :variation="variation.name" name="delete"/>
             <oc-icon :variation="variation.name" name="info"/>
@@ -238,15 +192,6 @@ export default {
       </oc-tbody>
     </oc-table-simple>
 
-    <h3 class="uk-heading-divider">
-      Icons loaded via URL
-    </h3>
-    <div class="oc-m">
-      <oc-icon size="medium" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg" accessible-label="Firefox logo"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg"/>
-      <oc-icon size="large" name="account_circle" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.sv" accessible-label="Account"/>
-      <oc-icon size="large" url="https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.s"/>
-    </div>
   </section>
 </template>
 <script>
@@ -268,6 +213,9 @@ export default {
       }, {
         id: "2769-7633-8478-1257",
         name: "warning",
+      }, {
+        id: "2324-8956-9042",
+        name: "inverse",
       }]
     },
     sizes() {
