@@ -1,4 +1,4 @@
-Enhancement: Turn placeholders in OcModal into descriptionMessages (accessbility gain)
+Enhancement: Turn placeholders in OcModal into descriptionMessages
 
 We have dropped the support for placeholders in the `<oc-text-input>` component.
 As this component is used inside OcModal, this change also drops placeholder support 
