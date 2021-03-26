@@ -3,6 +3,7 @@
     <label class="oc-label" :for="id" v-text="label" />
     <div class="uk-position-relative">
       <date-picker
+        ref="datePicker"
         v-model="update"
         :masks="masks"
         class="oc-datepicker"
@@ -12,7 +13,11 @@
         :max-date="maxDatetime"
         color="gray"
         :is24hr="is24hr"
+        role="dialog"
+        :aria-label="popoverLabel"
         @input="input()"
+        @popoverDidShow="popoverDidShow()"
+        @popoverDidHide="popoverDidHide()"
       >
         <template #default="{ inputValue, togglePopover }">
           <input
@@ -151,12 +156,19 @@ export default {
       default: null,
     },
     /**
-     * Label of the datepicker.
+     * Label of the input field.
      **/
     label: {
       type: String,
       required: true,
       default: null,
+    },
+    /**
+     * Label of the datepicker modal.
+     **/
+    popoverLabel: {
+      type: String,
+      default: "Pick a date",
     },
     /**
      * A description text which is shown below the datepicker.
@@ -192,6 +204,15 @@ export default {
   methods: {
     input() {
       this.$emit("input", this.update)
+    },
+    popoverDidShow() {
+      console.log(this.$refs.datePicker)
+      const overlay = this.$refs.datePicker.$children[0].$el
+      overlay.setAttribute("aria-hidden", "false")
+    },
+    popoverDidHide() {
+      const overlay = this.$refs.datePicker.$children[0].$el
+      overlay.setAttribute("aria-hidden", "true")
     },
   },
 }
