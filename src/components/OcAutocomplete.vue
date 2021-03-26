@@ -456,7 +456,7 @@ export default {
           placeholder="type 'le' for example results"
           class="oc-mb-s"/>
       <oc-autocomplete
-          label="Autocomplete with an error message"
+          label="Autocomplete with an warning message"
           v-model="selectionWarningMsg"
           :items="simpleItems"
           :warning-message="warningMessage"
