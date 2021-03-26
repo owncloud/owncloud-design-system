@@ -446,6 +446,7 @@ export default {
     <h3 class="uk-heading-divider">
       Errors and warnings
     </h3>
+    <p>Please note that both fields below have set the `fixMessageLine` set to `true` so the spacing below the input stays the same even after the warning/error disappears.</p>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete
           label="Autocomplete with an error message"
@@ -454,13 +455,15 @@ export default {
           :error-message="errorMessage"
           dropdownClass="uk-width-1-1"
           placeholder="type 'le' for example results"
+          fix-message-line="true"
           class="oc-mb-s"/>
       <oc-autocomplete
-          label="Autocomplete with an warning message"
+          label="Autocomplete with a warning message"
           v-model="selectionWarningMsg"
           :items="simpleItems"
           :warning-message="warningMessage"
           placeholder="type 'le' for example results"
+          fix-message-line="true"
           dropdownClass="uk-width-1-1" />
     </div>
   </section>
