@@ -63,7 +63,7 @@
         </li>
       </ul>
     </div>
-    <div v-if="showMessageLine" class="oc-datepicker-message">
+    <div v-if="showMessageLine" class="oc-autocomplete-message">
       <span
         :id="descriptionId"
         class="oc-autocomplete-description"
