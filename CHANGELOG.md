@@ -6,9 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Add messages to autocomplete component: [#1174](https://github.com/owncloud/owncloud-design-system/pull/1174)
 * Enhancement - Turn placeholders in OcModal into descriptionMessages: [#1172](https://github.com/owncloud/owncloud-design-system/pull/1172)
 
 ## Details
+
+* Enhancement - Add messages to autocomplete component: [#1174](https://github.com/owncloud/owncloud-design-system/pull/1174)
+
+   The component supports 3 kinds of messages: description, warning and error. The description
+   message will basically replace the informative text which was displayed via placeholder.
+   While it's still possible to use a placeholder if you need it, we encourage you to not use it
+   anymore. A label is always required, a description message can be added if more context is
+   needed.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1174
+
 
 * Enhancement - Turn placeholders in OcModal into descriptionMessages: [#1172](https://github.com/owncloud/owncloud-design-system/pull/1172)
 
