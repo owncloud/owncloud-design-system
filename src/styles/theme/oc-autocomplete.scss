@@ -78,4 +78,18 @@
       fill: var(--oc-color-inverse);
     }
   }
+
+  &-description,
+  &-description:focus {
+    border-color: var(--oc-color-muted);
+    color: var(--oc-color-muted);
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
 }

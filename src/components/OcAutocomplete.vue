@@ -5,6 +5,7 @@
       :id="inputId"
       :ref="inputId"
       v-model="input"
+      v-bind="additionalAttributes"
       class="oc-autocomplete-input"
       autocomplete="off"
       role="combobox"
@@ -12,8 +13,6 @@
       :aria-expanded="ariaExpanded.toString()"
       :aria-owns="listboxId"
       :aria-activedescendant="optionId(highlighted)"
-      :aria-describedby="descriptionId"
-      :placeholder="placeholder"
       :disabled="disabled"
       @keydown.up.prevent="highlighted--"
       @keydown.down.prevent="highlighted++"
@@ -64,7 +63,13 @@
         </li>
       </ul>
     </div>
-    <div :id="descriptionId" hidden v-text="ariaDescription" />
+    <div v-if="showMessageLine" class="oc-datepicker-message">
+      <span
+        :id="descriptionId"
+        class="oc-autocomplete-description"
+        v-text="descriptionMessage"
+      ></span>
+    </div>
   </div>
 </template>
 <script>
@@ -99,28 +104,11 @@ export default {
       default: () => uniqueId("oc-autocomplete-"),
     },
     /**
-     * Informative placeholder about the data to be entered
-     */
-    placeholder: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    /**
      * Label (accessible name) of the input
      */
     label: {
       type: String,
       required: true,
-    },
-    /**
-     * Add a description of how to use this (complex) widget for screen reader users
-     */
-    ariaDescription: {
-      type: String,
-      required: false,
-      default:
-        "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
     },
     /**
      * Informative text displayed right next to the spinner while loading data
@@ -193,6 +181,21 @@ export default {
       type: Boolean,
       default: true,
     },
+    /**
+     * Whether or not vertical space below the input should be reserved for a one line message,
+     * so that content actually appearing there doesn't shift the layout.
+     */
+    fixMessageLine: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * A description text which is shown below the input field.
+     */
+    descriptionMessage: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
@@ -232,7 +235,7 @@ export default {
       return uniqueId("oc-autocomplete-listbox-")
     },
     descriptionId() {
-      return uniqueId("oc-autocomplete-description-")
+      return `${this.inputId}-description`
     },
     boundryId() {
       return uniqueId("oc-autocomplete-boundry-")
@@ -247,6 +250,16 @@ export default {
       }
 
       return Object.assign(text, this.text)
+    },
+    showMessageLine() {
+      return this.fixMessageLine || !!this.descriptionMessage
+    },
+    additionalAttributes() {
+      const additionalAttrs = {}
+      if (this.descriptionMessage) {
+        additionalAttrs["aria-describedby"] = this.descriptionId
+      }
+      return { ...this.$attrs, ...additionalAttrs }
     },
   },
   watch: {
@@ -349,7 +362,7 @@ export default {
       Autocomplete
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
-      <oc-autocomplete label="Simple selection autocomplete" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" placeholder="type 'le' for example results" dropdownClass="uk-width-1-1" />
+      <oc-autocomplete label="Simple selection autocomplete" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" description-message="type 'le' for example results" dropdownClass="uk-width-1-1" />
       <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected simple item:</p>
         <code>{{ simpleSelection }}</code>
@@ -359,7 +372,7 @@ export default {
       </div>
     </div>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete label="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" placeholder="type 'er' for example results">
+      <oc-autocomplete label="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" description-message="type 'er' for example results">
         <template v-slot:item="{item}">
           <span class="oc-text-bold">{{ item.forename }} {{ item.surname }}</span>
           <div class="uk-text-meta">(Age: {{ item.age }})</div>
@@ -374,7 +387,7 @@ export default {
       Autocomplete with delayed fetch
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete label="Delayed selection autocomplete" v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" placeholder="type 'le' and wait a little" @update:input="onInput"/>
+      <oc-autocomplete label="Delayed selection autocomplete" v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" description-message="type 'le' and wait a little" @update:input="onInput"/>
       <div class="uk-background-muted uk-padding-small oc-mt-s">
         <p class="uk-text-meta">Selected complex item:</p>
         <code>{{ delayedItem }}</code>
@@ -384,13 +397,13 @@ export default {
       Autocomplete overflow with "more results" button
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete label="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
+      <oc-autocomplete label="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" description-message="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
     </div>
     <h3 class="uk-heading-divider">
       Autocomplete with :fillOnSelection=false
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete label="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" placeholder="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
+      <oc-autocomplete label="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" description-message="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
     </div>
   </section>
 </template>
