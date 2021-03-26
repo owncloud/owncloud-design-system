@@ -2,7 +2,16 @@
   &-input {
     @extend .uk-input;
 
+    background-color: var(--oc-input-background);
+    border: 1px solid var(--oc-input-border);
     border-radius: 3px;
+    color: var(--oc-color);
+
+    &:focus {
+      background-color: var(--oc-input-background);
+      border-color: var(--oc-brand-primary);
+      color: var(--oc-color);
+    }
   }
 
   &-overlay {
