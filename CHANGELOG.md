@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Enhancement - Add messages to autocomplete component: [#1174](https://github.com/owncloud/owncloud-design-system/pull/1174)
+* Enhancement - Datepicker input style: [#1176](https://github.com/owncloud/owncloud-design-system/pull/1176)
 * Enhancement - Turn placeholders in OcModal into descriptionMessages: [#1172](https://github.com/owncloud/owncloud-design-system/pull/1172)
 
 ## Details
@@ -20,6 +21,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    needed.
 
    https://github.com/owncloud/owncloud-design-system/pull/1174
+
+
+* Enhancement - Datepicker input style: [#1176](https://github.com/owncloud/owncloud-design-system/pull/1176)
+
+   The input style of the datepicker now matches with the ones we use in other components (like text
+   input e.g.).
+
+   https://github.com/owncloud/owncloud-design-system/pull/1176
 
 
 * Enhancement - Turn placeholders in OcModal into descriptionMessages: [#1172](https://github.com/owncloud/owncloud-design-system/pull/1172)
