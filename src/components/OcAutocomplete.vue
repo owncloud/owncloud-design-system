@@ -6,7 +6,11 @@
       :ref="inputId"
       v-model="input"
       v-bind="additionalAttributes"
-      class="oc-autocomplete-input"
+      :class="{
+        'oc-autocomplete-input': true,
+        'oc-autocomplete-warning': !!warningMessage,
+        'oc-autocomplete-danger': !!errorMessage,
+      }"
       autocomplete="off"
       role="combobox"
       aria-autocomplete="list"
@@ -65,9 +69,13 @@
     </div>
     <div v-if="showMessageLine" class="oc-autocomplete-message">
       <span
-        :id="descriptionId"
-        class="oc-autocomplete-description"
-        v-text="descriptionMessage"
+        :id="messageId"
+        :class="{
+          'oc-autocomplete-description': !!descriptionMessage,
+          'oc-autocomplete-warning': !!warningMessage,
+          'oc-autocomplete-danger': !!errorMessage,
+        }"
+        v-text="messageText"
       ></span>
     </div>
   </div>
@@ -196,6 +204,20 @@ export default {
       type: String,
       default: null,
     },
+    /**
+     * A warning message which is shown below the input field.
+     */
+    warningMessage: {
+      type: String,
+      default: null,
+    },
+    /**
+     * An error message which is shown below the input field.
+     */
+    errorMessage: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
@@ -234,7 +256,7 @@ export default {
     listboxId() {
       return uniqueId("oc-autocomplete-listbox-")
     },
-    descriptionId() {
+    messageId() {
       return `${this.inputId}-description`
     },
     boundryId() {
@@ -252,14 +274,30 @@ export default {
       return Object.assign(text, this.text)
     },
     showMessageLine() {
-      return this.fixMessageLine || !!this.descriptionMessage
+      return (
+        this.fixMessageLine ||
+        !!this.warningMessage ||
+        !!this.errorMessage ||
+        !!this.descriptionMessage
+      )
     },
     additionalAttributes() {
       const additionalAttrs = {}
-      if (this.descriptionMessage) {
-        additionalAttrs["aria-describedby"] = this.descriptionId
+      if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
+        additionalAttrs["aria-describedby"] = this.messageId
       }
       return { ...this.$attrs, ...additionalAttrs }
+    },
+    messageText() {
+      if (this.errorMessage) {
+        return this.errorMessage
+      }
+
+      if (this.warningMessage) {
+        return this.warningMessage
+      }
+
+      return this.descriptionMessage
     },
   },
   watch: {
@@ -405,6 +443,26 @@ export default {
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete label="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" description-message="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
     </div>
+    <h3 class="uk-heading-divider">
+      Errors and warnings
+    </h3>
+    <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
+      <oc-autocomplete
+          label="Autocomplete with an error message"
+          v-model="selectionErrorMsg"
+          :items="simpleItems"
+          :error-message="errorMessage"
+          dropdownClass="uk-width-1-1"
+          placeholder="type 'le' for example results"
+          class="oc-mb-s"/>
+      <oc-autocomplete
+          label="Autocomplete with an error message"
+          v-model="selectionWarningMsg"
+          :items="simpleItems"
+          :warning-message="warningMessage"
+          placeholder="type 'le' for example results"
+          dropdownClass="uk-width-1-1" />
+    </div>
   </section>
 </template>
 <script>
@@ -458,6 +516,8 @@ export default {
         'Daphene'
       ],
       simpleSelection : null,
+      selectionErrorMsg : null,
+      selectionWarningMsg : null,
 
       // Complex example
 
@@ -489,6 +549,14 @@ export default {
       delayedResult: [],
       delayedItem: null,
       delayedSearchInProgress: false
+    }
+  },
+  computed: {
+    errorMessage() {
+      return !this.selectionErrorMsg ? 'Value is required.' : ''
+    },
+    warningMessage() {
+      return !this.selectionWarningMsg ? 'Please keep in mind that we do not recommend to leave this field empty.' : ''
     }
   },
   methods: {

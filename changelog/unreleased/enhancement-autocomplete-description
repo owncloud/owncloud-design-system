@@ -1,5 +1,0 @@
-Enhancement: Add description message to autocomplete component
-
-The description message will basically replace the informative text which was displayed via placeholder. It is still possible to use a placeholder though.
-
-https://github.com/owncloud/owncloud-design-system/pull/1174
