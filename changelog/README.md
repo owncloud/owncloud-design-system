@@ -11,7 +11,7 @@ changelog in the [unreleased](./unreleased) folder. The following change types a
 - After each merge to master, the CHANGELOG.md file is automatically updated and the new version will be committed to master while skipping CI.
 
 ## Create a new Release
-- Please follow the [release guide in the Design System documentation](https://owncloud.design/#/Versioning %26 Release)
+- Please follow the [release guide in the Design System documentation](https://owncloud.design/#/Versioning%20%26%20Release)
 
 ## Test the Changelog generator manually
 - execute `docker run --rm -v $(pwd):$(pwd) -w $(pwd) toolhippie/calens:latest` 
