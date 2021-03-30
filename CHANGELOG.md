@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.1...master
+
+## Summary
+
+* Bugfix - Links in oc-avatar-group: [#1184](https://github.com/owncloud/owncloud-design-system/pull/1184)
+
+## Details
+
+* Bugfix - Links in oc-avatar-group: [#1184](https://github.com/owncloud/owncloud-design-system/pull/1184)
+
+   The oc-avatar-group was showing all link, ignoring the `maxDisplayed` property. We fixed
+   that by properly cutting off the items used for rendering avatars.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1184
+
 # Changelog for [4.1.1] (2021-03-30)
 
 The following sections list the changes in ownCloud Design System 4.1.1.
