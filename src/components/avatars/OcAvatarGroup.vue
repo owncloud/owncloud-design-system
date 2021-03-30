@@ -101,19 +101,22 @@ export default {
     },
 
     avatars() {
-      if (this.maxDisplayed) {
-        return this.users.slice(0, this.maxDisplayed).filter(user => !user.link)
+      const a = this.users.filter(u => !u.link)
+      if (!this.isOverlapping) {
+        return a
       }
-
-      return this.users.filter(user => !user.link)
+      return a.slice(0, this.maxDisplayed)
     },
 
     links() {
-      if (this.maxDisplayed && this.avatars.length === this.maxDisplayed) {
+      const a = this.users.filter(u => !!u.link)
+      if (!this.isOverlapping) {
+        return a
+      }
+      if (this.maxDisplayed <= this.avatars.length) {
         return []
       }
-
-      return this.users.filter(user => user.link)
+      return a.slice(0, this.maxDisplayed - this.avatars.length)
     },
   },
 }
