@@ -155,6 +155,13 @@ module.exports = {
       sectionDepth: 1,
     },
     {
+      name: "Versioning & Release",
+      content: "../docs/versioning-and-release.md",
+      exampleMode: "hide",
+      usageMode: "hide",
+      sectionDepth: 1,
+    },
+    {
       /**
        * Private components have to be loaded into the documentation as well,
        * otherwise anything using them will be broken. We’re loading them in
