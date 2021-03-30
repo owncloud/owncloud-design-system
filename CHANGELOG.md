@@ -1,3 +1,23 @@
+# Changelog for [4.1.1] (2021-03-30)
+
+The following sections list the changes in ownCloud Design System 4.1.1.
+
+[4.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.0...v4.1.1
+
+## Summary
+
+* Bugfix - OcTextInput Coloring: [#1182](https://github.com/owncloud/owncloud-design-system/pull/1182)
+
+## Details
+
+* Bugfix - OcTextInput Coloring: [#1182](https://github.com/owncloud/owncloud-design-system/pull/1182)
+
+   The OcTextInput input validation didn't correctly change to the `danger` or `warning` color
+   variations (discovered this when checking the modals in `web`). This change fixes it,
+   correctly changing colors when the validation gets triggered.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1182
+
 # Changelog for [4.1.0] (2021-03-26)
 
 The following sections list the changes in ownCloud Design System 4.1.0.
@@ -721,7 +741,7 @@ The following sections list the changes in ownCloud Design System 2.0.0.
 
 The following sections list the changes in ownCloud Design System 1.15.0.
 
-[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.15.0
+[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.15.0
 
 ## Summary
 
@@ -756,11 +776,31 @@ The following sections list the changes in ownCloud Design System 1.15.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/924
 
+# Changelog for [1.13.0] (2020-10-28)
+
+The following sections list the changes in ownCloud Design System 1.13.0.
+
+[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.13.0
+
+## Summary
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+## Details
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
+   accessibility aspects are already implement, for example expanding and collapsing
+   accordion items by pressing space or enter already works. More will come later on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/911
+
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
 
-[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.14.0
+[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.14.0
 
 ## Summary
 
@@ -782,26 +822,6 @@ The following sections list the changes in ownCloud Design System 1.14.0.
    We added an icon for `file version`
 
    https://github.com/owncloud/owncloud-design-system/pull/917
-
-# Changelog for [1.13.0] (2020-10-28)
-
-The following sections list the changes in ownCloud Design System 1.13.0.
-
-[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.13.0
-
-## Summary
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-## Details
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
-   accessibility aspects are already implement, for example expanding and collapsing
-   accordion items by pressing space or enter already works. More will come later on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/911
 
 # Changelog for [1.12.2] (2020-10-26)
 
