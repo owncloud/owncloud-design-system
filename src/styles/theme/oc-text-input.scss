@@ -16,22 +16,22 @@
     color: var(--oc-color-muted);
   }
 
-  &-warning,
-  &-warning:focus {
-    border-color: var(--oc-variation-warning);
-    color: var(--oc-variation-warning);
-  }
-
-  &-danger,
-  &-danger:focus {
-    border-color: var(--oc-variation-danger);
-    color: var(--oc-variation-danger);
-  }
-
   &-description,
   &-description:focus {
     border-color: var(--oc-color-muted);
     color: var(--oc-color-muted);
+  }
+
+  &-warning,
+  &-warning:focus {
+    border-color: var(--oc-variation-warning) !important;
+    color: var(--oc-variation-warning) !important;
+  }
+
+  &-danger,
+  &-danger:focus {
+    border-color: var(--oc-variation-danger) !important;
+    color: var(--oc-variation-danger) !important;
   }
 
   &-message {

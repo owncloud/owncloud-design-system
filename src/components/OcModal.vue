@@ -291,8 +291,8 @@ export default {
     icon="info"
     title="Accept terms of use"
     message="Do you accept our terms of use?"
-    buttonCancelText="Decline"
-    buttonConfirmText="Accept"
+    button-cancel-text="Decline"
+    button-confirm-text="Accept"
     class="oc-mb-l uk-position-relative"
   />
   <oc-modal
@@ -300,28 +300,28 @@ export default {
     icon="warning"
     title="Delete file lorem.txt"
     message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
-    buttonCancelText="Cancel"
-    buttonConfirmText="Delete"
-    buttonConfirmAppearance="filled"
-    buttonConfirmVariation="danger"
+    button-cancel-text="Cancel"
+    button-confirm-text="Delete"
+    button-confirm-appearance="filled"
+    button-confirm-variation="danger"
     class="oc-mb-l uk-position-relative"
   />
   <oc-modal
     title="Create new folder"
-    buttonCancelText="Cancel"
-    buttonConfirmText="Create"
-    :hasInput="true"
-    inputValue="New folder"
-    inputLabel="Folder name"
-    inputDescription="Enter a folder name"
-    inputError="This name is already taken"
+    button-cancel-text="Cancel"
+    button-confirm-text="Create"
+    :has-input="true"
+    input-value="New folder"
+    input-label="Folder name"
+    input-description="Enter a folder name"
+    input-error="This name is already taken"
     class="oc-mb-l uk-position-relative"
   />
   <oc-modal
     title="Rename file lorem.txt"
-    buttonCancelText="Cancel"
-    buttonCancelVariation="warning"
-    buttonConfirmText="Rename"
+    button-cancel-text="Cancel"
+    button-cancel-variation="warning"
+    button-confirm-text="Rename"
     class="uk-position-relative"
   >
     <template v-slot:content>
