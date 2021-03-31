@@ -8,6 +8,13 @@
       "originalValue": "rgb(179, 81, 0)",
       "name": "variation-warning-muted"
     },
+    "input-color": {
+      "type": "color",
+      "category": "Input-colors",
+      "value": "rgb(4, 30, 66)",
+      "originalValue": "rgb(4, 30, 66)",
+      "name": "input-color"
+    },
     "border-primary": {
       "type": "color",
       "category": "Border-colors",
@@ -182,6 +189,13 @@
       "value": "rgb(224, 0, 0)",
       "originalValue": "rgb(224, 0, 0)",
       "name": "variation-danger"
+    },
+    "input-color-muted": {
+      "type": "color",
+      "category": "Input-colors",
+      "value": "rgb(76, 95, 121)",
+      "originalValue": "rgb(76, 95, 121)",
+      "name": "input-color-muted"
     },
     "small-font-size": {
       "type": "number",
