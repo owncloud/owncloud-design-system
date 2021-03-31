@@ -12,15 +12,6 @@
       color: var(--oc-color-muted);
     }
 
-    &-lead &-list-item {
-      &::before,
-      a,
-      span {
-        // FIXME: Remove important after we get rid of UIKit
-        font-size: $large-font-size !important;
-      }
-    }
-
     > :last-child > span {
       color: var(--oc-brand-primary);
     }
@@ -30,6 +21,17 @@
       color: var(--oc-brand-primary);
     }
   }
+
+  /* stylelint-disable */
+  &-lead &-list-item {
+    &::before,
+    a,
+    span {
+      // FIXME: Remove important after we get rid of UIKit
+      font-size: $large-font-size !important;
+    }
+  }
+  /* stylelint-enable */
 
   &-drop {
     @extend .uk-hidden\@s;
