@@ -7,6 +7,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
+* Change - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+* Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
 
 ## Details
 
@@ -16,6 +18,21 @@ The following sections list the changes in ownCloud Design System unreleased.
    rendered correctly.
 
    https://github.com/owncloud/owncloud-design-system/pull/1187
+
+
+* Change - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+
+   We've changed the colour of breadcrumbs to use the `oc-color` instead of the brand color.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1189
+
+
+* Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+
+   We've added a utility class called `oc-text-lead` which is increasing the font size of the
+   text.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1189
 
 # Changelog for [4.1.2] (2021-03-31)
 
