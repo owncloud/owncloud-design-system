@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
 * Change - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+* Enhancement - Unify input colors: [#1190](https://github.com/owncloud/owncloud-design-system/pull/1190)
 * Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
 
 ## Details
@@ -25,6 +26,17 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've changed the colour of breadcrumbs to use the `oc-color` instead of the brand color.
 
    https://github.com/owncloud/owncloud-design-system/pull/1189
+
+
+* Enhancement - Unify input colors: [#1190](https://github.com/owncloud/owncloud-design-system/pull/1190)
+
+   `OcAutocomplete`, `OcTextInput`, `OcTextarea` and `OcSearchBar` had all slightly
+   different ways of using variables to defined border- and text-colors. This change introduces
+   two dedicated color varaibles for text inside input fields (for theme-ability) and unifies
+   their usage. It also moves the styles for these components from a stylesheet each into a
+   `<style>` tag in each Vue component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1190
 
 
 * Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
