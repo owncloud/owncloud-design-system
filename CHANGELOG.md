@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [4.1.2] (2021-03-31)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 4.1.2.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.1...master
+[4.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.1...v4.1.2
 
 ## Summary
 
