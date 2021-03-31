@@ -9,7 +9,6 @@ Use one of the following classes to enforce a certain wrapping behaviour.
 | .oc-text-truncate | Doesn't break to new lines. Text will be truncated, showing an ellipsis instead if necessary. |
 | .oc-text-break    | Text will break to new lines at word ends if it exceeds one line.                             |
 
-
 ## Text size
 
 | Class         | Description                                                     |
