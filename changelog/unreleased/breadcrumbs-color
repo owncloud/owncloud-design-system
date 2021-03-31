@@ -1,5 +1,0 @@
-Change: Use oc-color for breadcrumbs
-
-We've changed the colour of breadcrumbs to use the `oc-color` instead of the brand color.
-
-https://github.com/owncloud/owncloud-design-system/pull/1189
