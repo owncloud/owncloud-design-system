@@ -80,6 +80,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import OcSpinner from "../components/OcSpinner"
 
@@ -392,6 +393,118 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.oc-autocomplete {
+  @extend .uk-position-relative;
+
+  &-dropdown {
+    @extend .uk-box-shadow-medium;
+
+    background: var(--oc-background);
+  }
+
+  &-input {
+    @extend .uk-input;
+
+    background-color: var(--oc-input-background);
+    border: 1px solid var(--oc-input-border);
+    border-radius: 3px;
+    color: var(--oc-input-color-muted);
+
+    &:focus {
+      background: var(--oc-input-background);
+      border-color: var(--oc-input-color);
+      color: var(--oc-input-color);
+    }
+  }
+
+  &-spinner {
+    @extend .uk-position-absolute;
+
+    left: $space-medium;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-suggestion {
+    @extend .oc-m-rm;
+
+    color: var(--oc-color-muted);
+    padding: $space-small;
+
+    &-list {
+      @extend .uk-list;
+      @extend .oc-m-rm;
+
+      &-loader {
+        @extend .uk-position-relative;
+        @extend .uk-text-meta;
+        @extend .oc-m-rm;
+
+        background-color: var(--oc-background);
+        padding: $space-small;
+        padding-left: $spinner-size + $space-medium;
+      }
+    }
+
+    &-selected,
+    &:hover,
+    &:focus {
+      background-color: var(--oc-brand-primary);
+      color: var(--oc-color-inverse);
+    }
+
+    &-overflow {
+      @extend .uk-text-meta;
+      @extend .oc-m-rm;
+
+      background-color: var(--oc-background);
+      cursor: pointer;
+      padding: $space-small;
+    }
+
+    &-selected .uk-text-meta,
+    &:hover .uk-text-meta,
+    &:focus .uk-text-meta {
+      color: var(--oc-color-inverse);
+    }
+
+    &-selected .oc-icon > svg,
+    &:hover .oc-icon > svg,
+    &:focus .oc-icon > svg {
+      fill: var(--oc-color-inverse);
+    }
+  }
+
+  &-warning,
+  &-warning:focus {
+    border-color: var(--oc-variation-warning);
+    color: var(--oc-variation-warning);
+  }
+
+  &-danger,
+  &-danger:focus {
+    border-color: var(--oc-variation-danger);
+    color: var(--oc-variation-danger);
+  }
+
+  &-description,
+  &-description:focus {
+    border-color: var(--oc-color-muted);
+    color: var(--oc-color-muted);
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
+}
+</style>
+
 <docs>
 ```jsx
 <template>

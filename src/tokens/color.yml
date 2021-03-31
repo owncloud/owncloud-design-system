@@ -41,6 +41,12 @@ props:
   input-background:
     value: "rgb(240, 244, 248)"
     category: "Input-colors"
+  input-color:
+    value: "rgb(4, 30, 66)"
+    category: "Input-colors"
+  input-color-muted:
+    value: "rgb(76, 95, 121)"
+    category: "Input-colors"
 
   variation-primary:
     value: "rgb(78, 133, 200)"

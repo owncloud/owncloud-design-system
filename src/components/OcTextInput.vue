@@ -196,6 +196,51 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.oc-text-input {
+  @extend .uk-input;
+
+  background-color: var(--oc-input-background);
+  border: 1px solid var(--oc-input-border);
+  border-radius: 3px;
+  color: var(--oc-input-color-muted);
+
+  &:focus {
+    background-color: var(--oc-input-background);
+    border-color: var(--oc-input-color);
+    color: var(--oc-input-color);
+  }
+
+  &:disabled {
+    color: var(--oc-input-color-muted);
+  }
+
+  &-description {
+    color: var(--oc-color-muted);
+  }
+
+  &-warning,
+  &-warning:focus {
+    border-color: var(--oc-variation-warning) !important;
+    color: var(--oc-variation-warning) !important;
+  }
+
+  &-danger,
+  &-danger:focus {
+    border-color: var(--oc-variation-danger) !important;
+    color: var(--oc-variation-danger) !important;
+  }
+
+  &-message {
+    @extend .uk-flex;
+    @extend .uk-flex-middle;
+    @extend .oc-mt-xs;
+
+    min-height: $global-font-size * 1.5;
+  }
+}
+</style>
+
 <docs>
 ```vue
   <template>

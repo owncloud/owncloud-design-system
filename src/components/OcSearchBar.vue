@@ -47,6 +47,7 @@
     </div>
   </oc-grid>
 </template>
+
 <script>
 /**
  * The search bar is an input element used for searching server side resources or to filter local results.
@@ -225,8 +226,83 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.oc-search {
+  @extend .uk-grid-collapse;
+  @extend .uk-flex-middle;
+
+  min-width: $form-width-medium;
+
+  &-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    // Prevend double borders
+    // from input and button
+    transform: translateX(-1px);
+    z-index: 0;
+  }
+
+  &-input {
+    @extend .uk-input;
+
+    background-color: var(--oc-input-background);
+    border: 1px solid var(--oc-input-border);
+    border-radius: 3px;
+    color: var(--oc-input-color-muted);
+    padding-right: $space-medium;
+
+    &:focus {
+      background-color: var(--oc-input-background);
+      border-color: var(--oc-input-color);
+      color: var(--oc-input-color);
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+    }
+  }
+
+  &-input-icon {
+    padding-left: $space-large + $space-small;
+  }
+
+  &-input-button {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &-small {
+    .oc-search-input {
+      @extend .uk-form-small;
+
+      // Overrride default padding of small from
+      // TODO: Remove `!important` after we get rid of UIkit
+      padding-right: $space-medium !important;
+    }
+
+    .oc-search-input-icon {
+      // TODO: Remove `!important` after we get rid of UIkit
+      padding-left: $space-large !important;
+    }
+
+    .oc-button {
+      @extend .oc-button-s;
+    }
+
+    .oc-icon {
+      &,
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+}
+</style>
+
 <docs>
-```
+```js
 <template>
   <div>
     <section>
