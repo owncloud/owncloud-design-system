@@ -124,6 +124,11 @@ module.exports = {
           content: "../docs/visibility.md",
           description: "Utility classes to hide/display from a certain screen width",
         },
+        {
+          name: "Text",
+          content: "../docs/text.md",
+          description: "Utility classes to change the way text is displayed",
+        },
       ],
     },
     {
