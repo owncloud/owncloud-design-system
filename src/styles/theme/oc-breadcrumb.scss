@@ -22,6 +22,7 @@
     }
   }
 
+  /* stylelint-disable */
   &-lead &-list-item {
     &::before,
     a,
@@ -30,6 +31,7 @@
       font-size: $large-font-size !important;
     }
   }
+  /* stylelint-enable */
 
   &-drop {
     @extend .uk-hidden\@s;
