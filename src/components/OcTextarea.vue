@@ -180,6 +180,17 @@ export default {
 .oc-textarea {
   @extend .uk-textarea;
 
+  background-color: var(--oc-input-background);
+  border-color: var(--oc-input-border);
+  border-radius: 3px;
+  color: var(--oc-input-color-muted);
+
+  &:focus {
+    background-color: var(--oc-input-background);
+    border-color: var(--oc-input-color);
+    color: var(--oc-input-color);
+  }
+
   &-warning,
   &-warning:focus {
     border-color: var(--oc-variation-warning);
@@ -192,9 +203,7 @@ export default {
     color: var(--oc-variation-danger);
   }
 
-  &-description,
-  &-description:focus {
-    border-color: var(--oc-color-muted);
+  &-description {
     color: var(--oc-color-muted);
   }
 
