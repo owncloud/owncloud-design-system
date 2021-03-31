@@ -12,15 +12,6 @@
       color: var(--oc-color-muted);
     }
 
-    &-lead &-list-item {
-      &::before,
-      a,
-      span {
-        // FIXME: Remove important after we get rid of UIKit
-        font-size: $large-font-size !important;
-      }
-    }
-
     > :last-child > span {
       color: var(--oc-brand-primary);
     }
@@ -28,6 +19,15 @@
     > li a:hover,
     > li span:hover {
       color: var(--oc-brand-primary);
+    }
+  }
+
+  &-lead &-list-item {
+    &::before,
+    a,
+    span {
+      // FIXME: Remove important after we get rid of UIKit
+      font-size: $large-font-size !important;
     }
   }
 
