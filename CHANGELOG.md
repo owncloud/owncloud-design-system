@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.2...master
+
+## Summary
+
+* Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
+
+## Details
+
+* Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
+
+   The custom CSS prop for `input-border` had a duplicate and wrong dash and was therefore not
+   rendered correctly.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1187
+
 # Changelog for [4.1.2] (2021-03-31)
 
 The following sections list the changes in ownCloud Design System 4.1.2.
