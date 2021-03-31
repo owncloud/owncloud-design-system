@@ -6,9 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Breadcrumb font size: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
 * Bugfix - Links in oc-avatar-group: [#1184](https://github.com/owncloud/owncloud-design-system/pull/1184)
+* Bugfix - Modal title variation: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
+* Bugfix - Muted text uikit class: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
+* Bugfix - No underline on button hover: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
 
 ## Details
+
+* Bugfix - Breadcrumb font size: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
+
+   The `lead` class in breadcrumbs didn't resize the font to match `<h1>` tags. This fix brings
+   back the old behavior.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1185
+
 
 * Bugfix - Links in oc-avatar-group: [#1184](https://github.com/owncloud/owncloud-design-system/pull/1184)
 
@@ -16,6 +28,29 @@ The following sections list the changes in ownCloud Design System unreleased.
    that by properly cutting off the items used for rendering avatars.
 
    https://github.com/owncloud/owncloud-design-system/pull/1184
+
+
+* Bugfix - Modal title variation: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
+
+   The modal variation was only reflected in the title color in the `danger` variation. Now, the
+   title colors gets correctly adapted to any of the 5 possible variations
+
+   https://github.com/owncloud/owncloud-design-system/pull/1185
+
+
+* Bugfix - Muted text uikit class: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
+
+   The `uk-text-muted` was overwritten to correctly use CI colors.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1185
+
+
+* Bugfix - No underline on button hover: [#1185](https://github.com/owncloud/owncloud-design-system/pull/1185)
+
+   When hovering `<button>`s we don't want to display an underline to differentiate them
+   properly from `<a>`s and `<router-link>`s.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1185
 
 # Changelog for [4.1.1] (2021-03-30)
 
