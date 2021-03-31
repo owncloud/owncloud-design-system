@@ -3,6 +3,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 .oc-page-title {
   color: var(--oc-color);
@@ -62,4 +64,11 @@ td.oc-text-truncate {
 th.oc-text-break,
 td.oc-text-break {
   word-break: break-all;
+}
+
+.oc-text-lead {
+  color: var(--oc-color);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 0;
 }

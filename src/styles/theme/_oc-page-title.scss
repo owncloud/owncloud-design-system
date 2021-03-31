@@ -1,5 +1,6 @@
 .oc-page-title {
-  @extend .uk-text-lead;
-
+  color: var(--oc-color);
+  font-size: 1.5rem;
+  line-height: 1.5;
   margin: 0;
 }

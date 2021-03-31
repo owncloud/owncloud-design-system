@@ -118,6 +118,75 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.oc-breadcrumb {
+  overflow: hidden;
+
+  &-list {
+    @extend .uk-visible\@s;
+    @extend .uk-breadcrumb;
+    @extend .oc-m-rm;
+
+    > li a,
+    > li span,
+    > :nth-child(n + 2):not(.uk-first-column)::before {
+      color: var(--oc-color-muted);
+    }
+
+    > :last-child > span {
+      color: var(--oc-color);
+    }
+
+    > li a:hover {
+      color: var(--oc-variation-primary);
+    }
+  }
+
+  /* stylelint-disable */
+  &-lead &-list-item {
+    &::before,
+    a,
+    span {
+      // FIXME: Remove important after we get rid of UIKit
+      font-size: $large-font-size;
+    }
+  }
+  /* stylelint-enable */
+
+  &-drop {
+    @extend .uk-hidden\@s;
+
+    .uk-drop > .uk-card > .uk-nav-default {
+      > li a,
+      > li span {
+        color: var(--oc-color-muted);
+      }
+
+      > li a:hover,
+      > li span:hover {
+        color: var(--oc-brand-primary);
+      }
+    }
+
+    &-label {
+      @extend .uk-flex;
+      @extend .uk-flex-middle;
+      @extend .uk-flex-between;
+      @extend .uk-background-default;
+
+      border: $global-border-width solid var(--oc-variation-primary-muted);
+      cursor: pointer;
+      height: $global-control-height;
+      padding: $space-small;
+
+      &-text {
+        @extend .uk-text-truncate;
+      }
+    }
+  }
+}
+</style>
+
 <docs>
 ```js
 <template>
