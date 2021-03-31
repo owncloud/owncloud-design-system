@@ -300,7 +300,7 @@ export default {
     position: relative;
 
     .oc-table-header-cell {
-      background-color: var(--oc-color-inverse);
+      background-color: var(--oc-background);
       position: sticky;
       z-index: 1;
     }
