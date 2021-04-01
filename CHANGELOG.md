@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.2...master
+
+## Summary
+
+* Change - Use primary text color for the dropzone: [#1192](https://github.com/owncloud/owncloud-design-system/pull/1192)
+
+## Details
+
+* Change - Use primary text color for the dropzone: [#1192](https://github.com/owncloud/owncloud-design-system/pull/1192)
+
+   We've changed the color of the dropzone hint message to the `oc-color` so that the text is
+   visible even when brand and background colors are both dark.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1192
+
 # Changelog for [4.1.2] (2021-03-31)
 
 The following sections list the changes in ownCloud Design System 4.1.2.
