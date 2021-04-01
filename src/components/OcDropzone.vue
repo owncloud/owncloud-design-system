@@ -17,11 +17,12 @@ export default {
   align-items: center;
   background-color: var(--oc-background);
   border: 1px dashed var(--oc-variation-primary-muted);
-  color: var(--oc-brand-primary);
+  color: var(--oc-color);
   display: flex;
   font-size: 1.5rem;
   justify-content: center;
   line-height: 1.5;
+  opacity: 0.9;
   padding: $space-medium;
   text-align: center;
 
