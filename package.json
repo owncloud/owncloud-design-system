@@ -147,6 +147,7 @@
     "not OperaMobile > 0"
   ],
   "peerDependencies": {
-    "filesize": "^6.1.0"
+    "filesize": "^6.1.0",
+    "vue-select": "^3.11.2"
   }
 }
