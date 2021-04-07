@@ -1,3 +1,24 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.2.1...master
+
+## Summary
+
+* Bugfix - Embed svg images: [#1198](https://github.com/owncloud/owncloud-design-system/pull/1198)
+
+## Details
+
+* Bugfix - Embed svg images: [#1198](https://github.com/owncloud/owncloud-design-system/pull/1198)
+
+   We've changed the way how svg images get loaded in oc-icon. Before this, svg images where
+   transformed to data urls by webpack. Now, we use require to inline them, which prevents the
+   browser from doing a XMLHttpRequest that can lead to problems with the
+   content-security-police.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1198
+
 # Changelog for [4.2.1] (2021-04-01)
 
 The following sections list the changes in ownCloud Design System 4.2.1.
