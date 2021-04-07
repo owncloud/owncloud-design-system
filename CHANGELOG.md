@@ -7,7 +7,7 @@ The following sections list the changes in ownCloud Design System 4.3.0.
 ## Summary
 
 * Bugfix - Embed svg images: [#1198](https://github.com/owncloud/owncloud-design-system/pull/1198)
-* Enhancement - Create `oc-select` component: [#1197](https://github.com/owncloud/owncloud-design-system/pull/1197)
+* Enhancement - Create `oc-select` component: [#1198](https://github.com/owncloud/owncloud-design-system/pull/1198)
 
 ## Details
 
@@ -21,12 +21,12 @@ The following sections list the changes in ownCloud Design System 4.3.0.
    https://github.com/owncloud/owncloud-design-system/pull/1198
 
 
-* Enhancement - Create `oc-select` component: [#1197](https://github.com/owncloud/owncloud-design-system/pull/1197)
+* Enhancement - Create `oc-select` component: [#1198](https://github.com/owncloud/owncloud-design-system/pull/1198)
 
    We've created a new component called `oc-select`. This component is based on
    [vue-select](https://vue-select.org/) and can be used to selecting values in a dropdown.
 
-   https://github.com/owncloud/owncloud-design-system/pull/1197
+   https://github.com/owncloud/owncloud-design-system/pull/1198
 
 # Changelog for [4.2.1] (2021-04-01)
 
