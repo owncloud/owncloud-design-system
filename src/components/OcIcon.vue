@@ -11,7 +11,7 @@
     @click="onClick"
   >
     <inline-svg
-      :src="svgPath"
+      :src="name"
       :transform-source="transformSvgElement"
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
@@ -39,6 +39,23 @@ import { getSizeClass } from "../utils/sizeClasses"
  *  3. set `focusable` to `false`.
  *  4. remove or empty all aria-related properties such as labels.
  */
+
+/**
+ * InlineSvg by default expects the src to be a url, because we inline the SVG's this won't work.
+ * the download patch takes care of this by overwriting the native functionality and makes it compatible
+ */
+InlineSvg.methods.download = name => {
+  return new Promise((resolve, reject) => {
+    let svg
+    try {
+      svg = require("../assets/icons/" + name + ".svg")
+    } catch (e) {
+      return reject(e)
+    }
+    resolve(new DOMParser().parseFromString(svg, "image/svg+xml").documentElement)
+  })
+}
+
 export default {
   name: "OcIcon",
   status: "review",
@@ -94,9 +111,6 @@ export default {
     },
   },
   computed: {
-    svgPath() {
-      return require("../assets/icons/" + this.name + ".svg")
-    },
     svgTitleId() {
       return uniqueId("oc-icon-title-")
     },
@@ -195,55 +209,55 @@ export default {
   </section>
 </template>
 <script>
-export default {
-  computed: {
-    variations() {
-      return [{
-        id: "9828-4946-1277-7396",
-        name: "passive",
-      }, {
-        id: "7828-3285-4787-2127",
-        name: "primary",
-      }, {
-        id: "8376-8902-1172-2699",
-        name: "danger",
-      }, {
-        id: "4935-2899-4697-2615",
-        name: "success",
-      }, {
-        id: "2769-7633-8478-1257",
-        name: "warning",
-      }, {
-        id: "2324-8956-9042",
-        name: "inverse",
-      }]
+  export default {
+    computed: {
+      variations() {
+        return [{
+          id: "9828-4946-1277-7396",
+          name: "passive",
+        }, {
+          id: "7828-3285-4787-2127",
+          name: "primary",
+        }, {
+          id: "8376-8902-1172-2699",
+          name: "danger",
+        }, {
+          id: "4935-2899-4697-2615",
+          name: "success",
+        }, {
+          id: "2769-7633-8478-1257",
+          name: "warning",
+        }, {
+          id: "2324-8956-9042",
+          name: "inverse",
+        }]
+      },
+      sizes() {
+        return [{
+          id: "6343-1519-1328-9822",
+          name: "xsmall",
+        }, {
+          id: "9041-7650-9126-4291",
+          name: "small",
+        }, {
+          id: "9665-6662-8676-4866",
+          name: "medium",
+        }, {
+          id: "9130-7140-3870-5438",
+          name: "large",
+        }, {
+          id: "5022-6406-9625-7093",
+          name: "xlarge",
+        }, {
+          id: "9337-2657-4486-1014",
+          name: "xxlarge",
+        }, {
+          id: "8234-4209-7553-9253",
+          name: "xxxlarge",
+        }]
+      },
     },
-    sizes() {
-      return [{
-        id: "6343-1519-1328-9822",
-        name: "xsmall",
-      }, {
-        id: "9041-7650-9126-4291",
-        name: "small",
-      }, {
-        id: "9665-6662-8676-4866",
-        name: "medium",
-      }, {
-        id: "9130-7140-3870-5438",
-        name: "large",
-      }, {
-        id: "5022-6406-9625-7093",
-        name: "xlarge",
-      }, {
-        id: "9337-2657-4486-1014",
-        name: "xxlarge",
-      }, {
-        id: "8234-4209-7553-9253",
-        name: "xxxlarge",
-      }]
-    },
-  },
-}
+  }
 </script>
 ```
 </docs>

@@ -84,10 +84,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: "url-loader",
-        options: {
-          esModule: false,
-        },
+        loader: "html-loader",
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
