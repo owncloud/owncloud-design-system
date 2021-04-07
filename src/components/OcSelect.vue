@@ -51,8 +51,12 @@ export default {
       fill: var(--oc-input-color);
     }
 
-    &__dropdown-option--highlight {
-      background: var(--oc-input-color);
+    &__dropdown-option {
+      white-space: normal;
+
+      &--highlight {
+        background: var(--oc-input-color);
+      }
     }
 
     &__actions svg {
@@ -61,6 +65,10 @@ export default {
 
     &__clear svg {
       max-width: 10px;
+    }
+
+    &__open-indicator {
+      margin-top: 2px;
     }
   }
 
@@ -79,7 +87,7 @@ For detailed documentation (props, slots, events, etc.), please visit https://vu
 ```vue
 <template>
   <div class="uk-width-medium">
-    <oc-select v-model="selected" :options="['Apple', 'Bannana', 'Orange', 'Pear']" />
+    <oc-select v-model="selected" :options="['If we want to disable the clear button from the `oc-select`, we can set prop `clearable` to false. This will also prevent clearing the selected value by hitting `delete`.', 'Bannana', 'Orange', 'Pear']" />
   </div>
 </template>
 <script>
@@ -92,7 +100,7 @@ export default {
 ```
 
 ### Prevent user from clearing the selection
-If we want to disable the clear button from the `oc-select`, we can set prop `clearbable` to false. This will also prevent clearing the selected value by hitting `delete`.
+If we want to disable the clear button from the `oc-select`, we can set prop `clearable` to false. This will also prevent clearing the selected value by hitting `delete`.
 
 ```vue
 <template>
