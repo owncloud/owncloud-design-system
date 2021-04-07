@@ -87,7 +87,7 @@ For detailed documentation (props, slots, events, etc.), please visit https://vu
 ```vue
 <template>
   <div class="uk-width-medium">
-    <oc-select v-model="selected" :options="['If we want to disable the clear button from the `oc-select`, we can set prop `clearable` to false. This will also prevent clearing the selected value by hitting `delete`.', 'Bannana', 'Orange', 'Pear']" />
+    <oc-select v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
   </div>
 </template>
 <script>
