@@ -1,6 +1,6 @@
 {
   "name": "owncloud-design-system",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "ownCloud Design System is based on VueDesign Systems and is used to design ownCloud UI components",
   "keywords": [
     "vue design system",
@@ -142,6 +142,7 @@
     "vue": "^2.6.11",
     "vue-avatar": "^2.2.0",
     "vue-datetime": "^1.0.0-beta.10",
+    "vue-inline-svg": "^2.0.0",
     "vue-select": "^3.11.2",
     "webfontloader": "^1.6.28",
     "weekstart": "^1.0.0"
