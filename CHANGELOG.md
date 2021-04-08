@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Enhancement - Export translations: [#1201](https://github.com/owncloud/owncloud-design-system/pull/1201)
+* Enhancement - Use peerDependencies instead of dependencies: [#1202](https://github.com/owncloud/owncloud-design-system/pull/1202)
 
 ## Details
 
@@ -17,6 +18,18 @@ The following sections list the changes in ownCloud Design System unreleased.
    copied into the `dist` folder and can be imported and used alongside the styles and components.
 
    https://github.com/owncloud/owncloud-design-system/pull/1201
+
+
+* Enhancement - Use peerDependencies instead of dependencies: [#1202](https://github.com/owncloud/owncloud-design-system/pull/1202)
+
+   In the past we used dependencies in package.json which can blow up the bundle size a lot. Expect
+   this, it is also possible that the same package with 2 versions is part of the bundle.
+
+   From now on dependencies that are required to use ODS are added to the peerDependencies section
+   in package.json. Then the consuming application has to add the dependency on it's own and can
+   decide which minor or bugfix version to use.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1202
 
 # Changelog for [4.3.0] (2021-04-07)
 
