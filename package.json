@@ -2,13 +2,25 @@
   "name": "owncloud-design-system",
   "version": "4.3.0",
   "description": "ownCloud Design System is based on VueDesign Systems and is used to design ownCloud UI components",
+  "keywords": [
+    "vue design system",
+    "design system",
+    "vue.js",
+    "vue",
+    "design",
+    "system"
+  ],
+  "homepage": "https://owncloud.design/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owncloud/owncloud-design-system.git"
+  },
+  "license": "AGPL-3.0",
   "author": "ownClouders",
   "main": "dist/system/system.js",
   "files": [
     "dist/system"
   ],
-  "homepage": "https://owncloud.github.io/owncloud-design-system/",
-  "license": "AGPL-3.0",
   "scripts": {
     "dev": "webpack serve --inline --config ./build/webpack.dev.conf.js",
     "start": "npm-run-all --parallel styleguide theo:onchange theo dev",
@@ -22,39 +34,19 @@
     "styleguide:build": "vue-styleguidist build --config ./config/docs.config.js",
     "theo": "theo ./src/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/assets/tokens",
     "theo:onchange": "onchange \"./src/tokens/*.yml\" -- npm run theo",
-    "test": "jest --config ./jest.conf.js --coverage"
+    "test": "jest --config ./jest.conf.js --coverage",
+    "depcheck": "depcheck"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/owncloud/owncloud-design-system.git"
-  },
-  "keywords": [
-    "vue design system",
-    "design system",
-    "vue.js",
-    "vue",
-    "design",
-    "system"
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not Explorer > 0",
+    "IE 11",
+    "not ExplorerMobile > 0",
+    "not BlackBerry > 0",
+    "not OperaMini all",
+    "not OperaMobile > 0"
   ],
-  "dependencies": {
-    "luxon": "^1.22.0",
-    "mini-css-extract-plugin": "^1.3.1",
-    "postcss-import": "^12.0.1",
-    "postcss-loader": "^3.0.0",
-    "postcss-safe-parser": "^5.0.2",
-    "postcss-url": "^9.0.0",
-    "tinycolor2": "^1.4.1",
-    "uikit": "3.5.16",
-    "vue": "^2.6.11",
-    "vue-avatar": "^2.2.0",
-    "vue-datetime": "^1.0.0-beta.10",
-    "vue-inline-svg": "^2.0.0",
-    "vue-meta": "^2.3.2",
-    "vue-router": "^3.1.5",
-    "vuex": "^3.1.1",
-    "webfontloader": "^1.6.28",
-    "weekstart": "^1.0.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
@@ -76,20 +68,18 @@
     "compression-webpack-plugin": "^6.1.1",
     "copy-webpack-plugin": "^6.3.2",
     "css-loader": "^5.0.1",
+    "depcheck": "^1.3.1",
     "easygettext": "^2.16.1",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-compat": "^3.5.1",
-    "eslint-plugin-es5": "^1.5.0",
-    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^24.1.3",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.2.0",
     "file-loader": "^6.2.0",
+    "filesize": "^6.1.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
-    "http-proxy-middleware": "^1.0.0",
     "jest": "^26.6.3",
     "jest-axe": "^4.1.0",
     "jest-haste-map": "^26.6.2",
@@ -97,6 +87,8 @@
     "jest-serializer-vue": "^2.0.2",
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^10.0.7",
+    "luxon": "^1.22.0",
+    "mini-css-extract-plugin": "^1.3.1",
     "node-notifier": "^9.0.0",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
@@ -105,6 +97,10 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^5.1.0",
     "portfinder": "^1.0.20",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-safe-parser": "^5.0.2",
+    "postcss-url": "^9.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "sass-loader": "^10.1.0",
@@ -115,40 +111,43 @@
     "stylelint": "^13.6.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-config-standard": "^20.0.0",
-    "terser-webpack-plugin": "^4.2.3",
     "theo": "^8.1.5",
+    "uikit": "3.5.16",
     "url-loader": "^4.1.1",
+    "vue": "^2.6.11",
+    "vue-avatar": "^2.2.0",
+    "vue-datetime": "^1.0.0-beta.10",
     "vue-gettext": "^2.1.12",
+    "vue-inline-svg": "^2.0.0",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.9.0",
     "vue-select": "^3.11.2",
     "vue-style-loader": "^4.1.2",
     "vue-styleguidist": "^4.34.1",
     "vue-template-compiler": "^2.6.12",
+    "webfontloader": "^1.6.28",
     "webpack": "^4.41.6",
     "webpack-bundle-analyzer": "^4.2.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^5.4.0",
     "webpack-merge-and-include-globally": "^2.1.24",
-    "webpack-node-externals": "^2.5.2"
+    "webpack-node-externals": "^2.5.2",
+    "weekstart": "^1.0.0"
+  },
+  "peerDependencies": {
+    "filesize": "^6.1.0",
+    "luxon": "^1.22.0",
+    "uikit": "3.5.16",
+    "vue": "^2.6.11",
+    "vue-avatar": "^2.2.0",
+    "vue-datetime": "^1.0.0-beta.10",
+    "vue-select": "^3.11.2",
+    "webfontloader": "^1.6.28",
+    "weekstart": "^1.0.0"
   },
   "engines": {
     "node": ">= 8.6.0",
     "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not Explorer > 0",
-    "IE 11",
-    "not ExplorerMobile > 0",
-    "not BlackBerry > 0",
-    "not OperaMini all",
-    "not OperaMobile > 0"
-  ],
-  "peerDependencies": {
-    "filesize": "^6.1.0",
-    "vue-select": "^3.11.2"
   }
 }
