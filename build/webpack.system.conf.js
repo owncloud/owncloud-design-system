@@ -76,6 +76,10 @@ const webpackConfig = merge(baseWebpackConfig, {
             ignore: [".*"],
           },
         },
+        {
+          from: path.resolve(__dirname, "../l10n/translations.json"),
+          to: config.system.assetsSubDirectory,
+        },
       ],
     }),
   ],
