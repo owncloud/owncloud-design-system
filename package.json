@@ -10,7 +10,7 @@
     "design",
     "system"
   ],
-  "homepage": "https://owncloud.github.io/owncloud-design-system/",
+  "homepage": "https://owncloud.design/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/owncloud/owncloud-design-system.git"
