@@ -1,4 +1,4 @@
-Enhancement: Use peerDependencies instead of dependencies
+Change: Use peerDependencies instead of dependencies
 
 In the past we used dependencies in package.json which can blow up the bundle size a lot.
 Expect this, it is also possible that the same package with 2 versions is part of the bundle.
