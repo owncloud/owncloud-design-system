@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...master
+
+## Summary
+
+* Enhancement - Export translations: [#1201](https://github.com/owncloud/owncloud-design-system/pull/1201)
+
+## Details
+
+* Enhancement - Export translations: [#1201](https://github.com/owncloud/owncloud-design-system/pull/1201)
+
+   Some ODS components depend on translations and they correctly get pulled from Transifex into
+   `l10n/translations.json`, yet we never exported them for other projects to use. Now, they get
+   copied into the `dist` folder and can be imported and used alongside the styles and components.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1201
+
 # Changelog for [4.3.0] (2021-04-07)
 
 The following sections list the changes in ownCloud Design System 4.3.0.
