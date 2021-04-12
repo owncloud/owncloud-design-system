@@ -1,3 +1,24 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...master
+
+## Summary
+
+* Bugfix - Remove fixed login logo width: [#1207](https://github.com/owncloud/owncloud-design-system/pull/1207)
+
+## Details
+
+* Bugfix - Remove fixed login logo width: [#1207](https://github.com/owncloud/owncloud-design-system/pull/1207)
+
+   The logo displayed on login/error pages had a fixed width and height, wich was fine for the
+   provided ownCloud logo but produced suboptimal results when using files with other
+   width/height ratios. By changing this to max-width & max-height we allow for other files while
+   keeping their proper aspect ratio.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1207
+
 # Changelog for [5.0.0] (2021-04-08)
 
 The following sections list the changes in ownCloud Design System 5.0.0.
