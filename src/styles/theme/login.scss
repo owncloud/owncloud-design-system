@@ -6,12 +6,12 @@
   &-logo {
     @extend .uk-background-cover;
 
-    height: 80px;
     left: 50%;
+    max-height: 200px;
+    max-width: 200px;
     position: absolute;
     text-indent: -9999px;
     transform: translate(-50%, -150%);
-    width: 200px;
   }
 
   &-authorize-button {
