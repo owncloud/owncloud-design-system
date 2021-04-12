@@ -4,31 +4,31 @@ exports[`OcTableFiles displays all fields 1`] = `
 <table class="oc-table oc-table-sticky" slots="[object Object]">
   <thead class="oc-thead">
     <tr>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-text-nowrap oc-table-header-cell oc-table-header-cell-select" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-text-nowrap oc-table-header-cell oc-table-header-cell-select">
         <div class="oc-table-files-select-all"><span><input id="oc-table-files-select-all" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-m" value=""> <label for="oc-table-files-select-all" class="oc-invisible-sr oc-cursor-pointer">Select all resources</label></span></div>
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-text-nowrap oc-table-header-cell oc-table-header-cell-name" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-text-nowrap oc-table-header-cell oc-table-header-cell-name" aria-sort="none" tabindex="0">
         Name
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-size" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-size" aria-sort="none" tabindex="0">
         Size
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" aria-sort="none" tabindex="0">
         Shared with
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" aria-sort="none" tabindex="0">
         Owner
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-mdate" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-mdate" aria-sort="none" tabindex="0">
         Modified
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sdate" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sdate" aria-sort="none" tabindex="0">
         Shared
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-ddate" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-ddate" aria-sort="none" tabindex="0">
         Deleted
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-actions" style="top: 0px;">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-actions">
         Actions
       </th>
     </tr>

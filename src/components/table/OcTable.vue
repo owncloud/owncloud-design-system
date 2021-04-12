@@ -1,12 +1,13 @@
 <template>
-  <table :class="tableClasses">
+  <table v-bind="extractTableProps()">
     <oc-thead v-if="hasHeader">
       <oc-tr>
         <oc-th
-          v-for="field in fields"
+          v-for="(field, index) in fields"
           :key="`oc-thead-${field.name}`"
-          v-bind="extractThProps(field)"
-          :style="{ top: sticky ? headerPosition + 'px' : null }"
+          v-bind="extractThProps(field, index)"
+          @click.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
+          @keydown.enter.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
         >
           <slot v-if="field.headerType === 'slot'" :name="field.name + 'Header'" />
           <template v-else>
@@ -17,21 +18,15 @@
     </oc-thead>
     <oc-tbody>
       <oc-tr
-        v-for="(item, index) in data"
-        :key="`oc-tbody-tr-${item[idKey] || index}`"
-        :class="[
-          'oc-tbody-tr',
-          `oc-tbody-tr-${item[idKey] || index}`,
-          { 'oc-table-highlighted': isHighlighted(item) },
-          { 'oc-table-disabled': isDisabled(item) },
-        ]"
-        :style="{ height: rowHeight + 'px' }"
-        @click.native="$emit('highlight', item)"
+        v-for="(item, trIndex) in tableData"
+        :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
+        v-bind="extractTbodyTrProps(item, trIndex)"
+        @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
       >
         <oc-td
-          v-for="field in fields"
-          :key="'oc-tbody-tr-' + cellKey(field, index, item)"
-          v-bind="extractTdProps(field)"
+          v-for="(field, tdIndex) in fields"
+          :key="'oc-tbody-td-' + cellKey(field, tdIndex, item)"
+          v-bind="extractTdProps(field, tdIndex)"
         >
           <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
           <template v-else-if="isFieldTypeCallback(field)">
@@ -57,6 +52,9 @@ import OcTbody from "./_OcTableBody"
 import OcTr from "./_OcTableRow"
 import OcTh from "./_OcTableCellHead"
 import OcTd from "./_OcTableCellData"
+import SortMixin from "./mixins/sort"
+
+import { EVENT_THEAD_CLICKED, EVENT_TROW_CLICKED } from "./helpers/constants"
 
 /**
  * A table component with dynamic layout and data.
@@ -72,6 +70,7 @@ export default {
     OcTh,
     OcTd,
   },
+  mixins: [SortMixin],
   props: {
     /**
      * The data for the table. Each array item will be rendered as one table row. Each array item needs to have a
@@ -104,7 +103,8 @@ export default {
      * - **width**: horizontal size of a cell, can be `auto`, `shrink` or `expand`. Defaults to `auto`.<br />
      * - **wrap**: text behaviour of a data cell, can be `truncate`, `overflow`, `nowrap`, `break`. Omitted if not set. Header cells are always fixed to `nowrap`.<br />
      * - **thClass**:additional classes on header cells, provided as a string, classes separated by spaces. Optional, falls back to an empty string.<br />
-     * - **tdClass**: additional classes on data cells, provided as a string, classes separated by spaces. Optional, falls back to an empty string.
+     * - **tdClass**: additional classes on data cells, provided as a string, classes separated by spaces. Optional, falls back to an empty string.<br />
+     * - **sortable**: defines if the column is sortable, can be `true` or `false`.
      */
     fields: {
       type: Array,
@@ -163,7 +163,18 @@ export default {
       default: 0,
     },
   },
+  data() {
+    return {
+      constants: {
+        EVENT_THEAD_CLICKED,
+        EVENT_TROW_CLICKED,
+      },
+    }
+  },
   computed: {
+    tableData() {
+      return this.sortedData || this.data
+    },
     tableClasses() {
       const result = ["oc-table"]
 
@@ -195,16 +206,38 @@ export default {
       }
       return field.name
     },
-    extractThProps(field) {
+    extractTableProps() {
+      return {
+        class: this.tableClasses,
+      }
+    },
+    extractThProps(field, index) {
       const props = this.extractCellProps(field)
       props.class = `oc-table-header-cell oc-table-header-cell-${field.name}`
       if (Object.prototype.hasOwnProperty.call(field, "thClass")) {
         props.class += ` ${field.thClass}`
       }
+      if (this.sticky) {
+        props.style = `${this.headerPosition}px`
+      }
+
+      this.extractSortThProps(props, field, index)
+
       return props
     },
-    extractTdProps(field) {
-      const props = this.extractCellProps(field)
+    extractTbodyTrProps(item, index) {
+      return {
+        class: [
+          "oc-tbody-tr",
+          `oc-tbody-tr-${item[this.idKey] || index}`,
+          this.isHighlighted(item) ? "oc-table-highlighted" : undefined,
+          this.isDisabled(item) ? "oc-table-disabled" : undefined,
+        ].filter(Boolean),
+        style: { height: `${this.rowHeight}px` },
+      }
+    },
+    extractTdProps(field, index) {
+      const props = this.extractCellProps(field, index)
       props.class = `oc-table-data-cell oc-table-data-cell-${field.name}`
       if (Object.prototype.hasOwnProperty.call(field, "tdClass")) {
         props.class += ` ${field.tdClass}`
@@ -225,6 +258,7 @@ export default {
       if (Object.prototype.hasOwnProperty.call(field, "width")) {
         result.width = field.width
       }
+
       return result
     },
     isHighlighted(item) {
@@ -252,17 +286,17 @@ export default {
     },
 
     cellKey(field, index, item) {
-      const prefix = (item[this.idKey] || index) + "-"
+      const prefix = [item[this.idKey], index + 1].filter(Boolean)
 
       if (this.isFieldTypeSlot(field)) {
-        return prefix + field.name
+        return [...prefix, field.name].join("-")
       }
 
       if (this.isFieldTypeCallback(field)) {
-        return prefix + field.callback(item[field.name])
+        return [...prefix, field.callback(item[field.name])].join("-")
       }
 
-      return prefix + item[field.name]
+      return [...prefix, item[field.name]].join("-")
     },
   },
 }
@@ -325,7 +359,8 @@ export default {
     <h3 class="uk-heading-divider">
       A simple table with plain field types
     </h3>
-    <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003" disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true">
+    <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003"
+              disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true">
       <template #footer>
         3 resources
       </template>
@@ -339,29 +374,29 @@ export default {
         return [{
           name: "resource",
           title: "Resource",
-          alignH: "left",
+          alignH: "left"
         }, {
           name: "last_modified",
           title: "Last modified",
-          alignH: "right",
+          alignH: "right"
         }]
       },
       data() {
         return [{
           id: "4b136c0a-5057-11eb-ac70-eba264112003",
           resource: "hello-world.txt",
-          last_modified: 1609962211,
+          last_modified: 1609962211
         }, {
           id: "8468c9f0-5057-11eb-924b-934c6fd827a2",
           resource: "I am a folder",
-          last_modified: 1608887766,
+          last_modified: 1608887766
         }, {
           id: "9c4cf97e-5057-11eb-8044-b3d5df9caa21",
           resource: "this is fine.png",
-          last_modified: 1599999999,
+          last_modified: 1599999999
         }]
-      },
-    },
+      }
+    }
   }
 </script>
 ```
@@ -395,7 +430,7 @@ export default {
           name: "resource",
           title: "Resource",
           headerType: "slot",
-          type: "slot",
+          type: "slot"
         }, {
           name: "last_modified",
           title: "Last modified",
@@ -406,7 +441,7 @@ export default {
             const minutes = "0" + date.getMinutes()
             const seconds = "0" + date.getSeconds()
             return hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2)
-          },
+          }
         }]
       },
       data() {
@@ -414,20 +449,20 @@ export default {
           id: "4b136c0a-5057-11eb-ac70-eba264112003",
           resource: "hello-world.txt",
           icon: "text",
-          last_modified: 1609962211,
+          last_modified: 1609962211
         }, {
           id: "8468c9f0-5057-11eb-924b-934c6fd827a2",
           resource: "I am a folder",
           icon: "folder",
-          last_modified: 1608887766,
+          last_modified: 1608887766
         }, {
           id: "9c4cf97e-5057-11eb-8044-b3d5df9caa21",
           resource: "this is fine.png",
           icon: "image",
-          last_modified: 1599999999,
+          last_modified: 1599999999
         }]
-      },
-    },
+      }
+    }
   }
 </script>
 ```
@@ -494,7 +529,7 @@ export default {
       return {
         hasHeader: true,
         stickyHeader: false,
-        hover: true,
+        hover: true
       }
     },
     computed: {
@@ -503,23 +538,26 @@ export default {
           {
             name: "property",
             title: "Property",
+            sortable: true
           },
           {
             name: "description",
             title: "Description",
             width: "expand",
+            sortable: true
           },
           {
             name: "state",
             title: "State",
             width: "shrink",
+            sortable: true
           },
           {
             name: "action",
             title: "",
             type: "slot",
-            width: "shrink",
-          },
+            width: "shrink"
+          }
         ]
       },
       data() {
@@ -528,27 +566,27 @@ export default {
             property: "has-header",
             description: "Whether or not the table header is visible",
             state: this.hasHeader,
-            variable: "hasHeader",
+            variable: "hasHeader"
           },
           {
             property: "sticky",
             description: "Whether or not the table header is sticky, causing it to float above the table content when scrolling",
             state: this.stickyHeader,
-            variable: "stickyHeader",
+            variable: "stickyHeader"
           },
           {
             property: "hover",
             description: "Highlight table rows on mouseover",
             state: this.hover,
-            variable: "hover",
-          },
+            variable: "hover"
+          }
         ]
-      },
+      }
     },
     methods: {
       toggle(rowData) {
         this[rowData.item.variable] = !this[rowData.item.variable]
-      },
+      }
     },
   }
 </script>
