@@ -27,7 +27,7 @@
           </span>
           <span v-if="description">
             <span v-if="icon" class="oc-icon-m oc-mr-s" />
-            <span class="uk-text-meta">{{ description }}</span>
+            <span class="oc-text-muted">{{ description }}</span>
           </span>
         </span>
       </oc-button>
