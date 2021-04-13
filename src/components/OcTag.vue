@@ -55,6 +55,47 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.oc-tag {
+  align-items: center;
+  background-color: var(--oc-background);
+  border: 1px solid var(--oc-color-muted);
+  border-radius: 7px;
+  box-sizing: border-box;
+  color: var(--oc-color-muted);
+  display: flex;
+  font-size: 0.875rem;
+  gap: $space-xsmall;
+  min-height: $icons-size-default + (2 * $space-xsmall) + 2px;
+  padding: $space-xsmall $space-small;
+  text-decoration: none;
+
+  .oc-icon > svg {
+    fill: var(--oc-color-muted);
+  }
+
+  &-link,
+  &-button {
+    transition: color $transition-duration-short ease-in-out;
+
+    .oc-icon > svg {
+      transition: fill $transition-duration-short ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--oc-variation-primary-hover);
+      cursor: pointer;
+      text-decoration: none;
+
+      .oc-icon > svg {
+        fill: var(--oc-variation-primary-hover);
+      }
+    }
+  }
+}
+</style>
+
 <docs>
 Component to display various information.
 ```js
