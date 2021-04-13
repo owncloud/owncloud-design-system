@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Remove fixed login logo width: [#1207](https://github.com/owncloud/owncloud-design-system/pull/1207)
 * Enhancement - Text-inital helper class: [#1211](https://github.com/owncloud/owncloud-design-system/pull/1211)
+* Enhancement - Update tag border color: [#1213](https://github.com/owncloud/owncloud-design-system/pull/1213)
 
 ## Details
 
@@ -26,6 +27,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    Introducing a `oc-text-inital` class to set font-size, e.g. in headings, back to `1rem`.
 
    https://github.com/owncloud/owncloud-design-system/pull/1211
+
+
+* Enhancement - Update tag border color: [#1213](https://github.com/owncloud/owncloud-design-system/pull/1213)
+
+   The OcTag border color didn't offer enough contrast, so it's been updated to match the font
+   color. Also, the OcTag styles have been moved to the component level.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1213
 
 # Changelog for [5.0.0] (2021-04-08)
 
