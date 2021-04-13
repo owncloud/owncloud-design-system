@@ -40,6 +40,6 @@
   fill: var(--oc-color-inverse) !important;
 }
 
-.oc-text-bold {
-  font-weight: 600 !important;
+.oc-disabled {
+  opacity: 0.4;
 }
