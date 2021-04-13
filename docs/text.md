@@ -13,4 +13,5 @@ Use one of the following classes to enforce a certain wrapping behaviour.
 
 | Class         | Description                                                     |
 | ------------- | --------------------------------------------------------------- |
+| .oc-text-initial | Sets the font size to 1rem, the document default. Allows for the combination of correct HTML tags (e.g. headings) without relying on huge font sizes. |
 | .oc-text-lead | Sets a large font size to symbolise that the text is important. |
