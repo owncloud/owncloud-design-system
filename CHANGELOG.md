@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Remove fixed login logo width: [#1207](https://github.com/owncloud/owncloud-design-system/pull/1207)
+* Enhancement - Text-inital helper class: [#1211](https://github.com/owncloud/owncloud-design-system/pull/1211)
 
 ## Details
 
@@ -18,6 +19,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    keeping their proper aspect ratio.
 
    https://github.com/owncloud/owncloud-design-system/pull/1207
+
+
+* Enhancement - Text-inital helper class: [#1211](https://github.com/owncloud/owncloud-design-system/pull/1211)
+
+   Introducing a `oc-text-inital` class to set font-size, e.g. in headings, back to `1rem`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1211
 
 # Changelog for [5.0.0] (2021-04-08)
 
