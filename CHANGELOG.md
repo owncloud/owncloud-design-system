@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Remove fixed login logo width: [#1207](https://github.com/owncloud/owncloud-design-system/pull/1207)
+* Bugfix - Muted color class: [#1210](https://github.com/owncloud/owncloud-design-system/pull/1210)
 * Enhancement - OcCheckbox remove aria checked: [#1212](https://github.com/owncloud/owncloud-design-system/pull/1212)
 * Enhancement - Text-inital helper class: [#1211](https://github.com/owncloud/owncloud-design-system/pull/1211)
 * Enhancement - Update tag border color: [#1213](https://github.com/owncloud/owncloud-design-system/pull/1213)
@@ -21,6 +22,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    keeping their proper aspect ratio.
 
    https://github.com/owncloud/owncloud-design-system/pull/1207
+
+
+* Bugfix - Muted color class: [#1210](https://github.com/owncloud/owncloud-design-system/pull/1210)
+
+   The `uk-text-muted` class caused some inconsistancy in ownCloud-web, sometimes being
+   overwritten by default uikit styles. Changing it to `oc-text-muted` and updating the
+   references in ownCloud-web should prevent this.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1210
 
 
 * Enhancement - OcCheckbox remove aria checked: [#1212](https://github.com/owncloud/owncloud-design-system/pull/1212)
