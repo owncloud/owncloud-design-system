@@ -5,7 +5,6 @@
       v-model="model"
       type="checkbox"
       name="checkbox"
-      :aria-checked="checked.toString()"
       :class="classes"
       :value="option"
       :disabled="disabled"
@@ -90,11 +89,6 @@ export default {
       default: "medium",
       validator: size => /(small|medium|large)/.test(size),
     },
-  },
-  data: function () {
-    return {
-      checked: false,
-    }
   },
   computed: {
     model: {
