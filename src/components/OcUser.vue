@@ -8,7 +8,7 @@
     </div>
     <div class="uk-inline">
       <div class="uk-text-lead" v-text="displayName"></div>
-      <div class="uk-text-meta" v-text="email"></div>
+      <div class="oc-text-muted" v-text="email"></div>
       <slot name="properties"></slot>
     </div>
   </div>

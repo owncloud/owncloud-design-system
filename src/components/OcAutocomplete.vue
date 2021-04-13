@@ -439,7 +439,7 @@ export default {
 
       &-loader {
         @extend .uk-position-relative;
-        @extend .uk-text-meta;
+        @extend .oc-text-muted;
         @extend .oc-m-rm;
 
         background-color: var(--oc-background);
@@ -456,7 +456,7 @@ export default {
     }
 
     &-overflow {
-      @extend .uk-text-meta;
+      @extend .oc-text-muted;
       @extend .oc-m-rm;
 
       background-color: var(--oc-background);
@@ -464,9 +464,9 @@ export default {
       padding: $space-small;
     }
 
-    &-selected .uk-text-meta,
-    &:hover .uk-text-meta,
-    &:focus .uk-text-meta {
+    &-selected .oc-text-muted,
+    &:hover .oc-text-muted,
+    &:focus .oc-text-muted {
       color: var(--oc-color-inverse);
     }
 
@@ -515,7 +515,7 @@ export default {
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
       <oc-autocomplete label="Simple selection autocomplete" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" description-message="type 'le' for example results" dropdownClass="uk-width-1-1" />
       <div class="uk-background-muted uk-padding-small oc-mt-s">
-        <p class="uk-text-meta">Selected simple item:</p>
+        <p class="oc-text-muted">Selected simple item:</p>
         <code>{{ simpleSelection }}</code>
       </div>
       <div class="oc-mt">
@@ -526,11 +526,11 @@ export default {
       <oc-autocomplete label="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" description-message="type 'er' for example results">
         <template v-slot:item="{item}">
           <span class="oc-text-bold">{{ item.forename }} {{ item.surname }}</span>
-          <div class="uk-text-meta">(Age: {{ item.age }})</div>
+          <div class="oc-text-muted">(Age: {{ item.age }})</div>
         </template>
       </oc-autocomplete>
       <div class="uk-background-muted uk-padding-small oc-mt-s">
-        <p class="uk-text-meta">Selected complex item:</p>
+        <p class="oc-text-muted">Selected complex item:</p>
         <code>{{ complexSelection }}</code>
       </div>
     </div>
@@ -540,7 +540,7 @@ export default {
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete label="Delayed selection autocomplete" v-model="delayedItem" :items="delayedResult" :itemsLoading="delayedSearchInProgress" description-message="type 'le' and wait a little" @update:input="onInput"/>
       <div class="uk-background-muted uk-padding-small oc-mt-s">
-        <p class="uk-text-meta">Selected complex item:</p>
+        <p class="oc-text-muted">Selected complex item:</p>
         <code>{{ delayedItem }}</code>
       </div>
     </div>

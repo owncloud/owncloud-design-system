@@ -14,7 +14,7 @@
       <div class="oc-notification-message-title">
         {{ title }}
       </div>
-      <div v-if="message" class="uk-text-meta uk-width-1-1">
+      <div v-if="message" class="oc-text-muted uk-width-1-1">
         {{ message }}
       </div>
     </div>
