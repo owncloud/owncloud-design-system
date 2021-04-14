@@ -6,14 +6,14 @@ h4,
 h5,
 h6,
 p {
-  color: var(--oc-color);
+  color: var(--oc-color-text-default);
 }
 
 a {
-  color: var(--oc-variation-primary);
+  color: var(--oc-color-swatch-primary-default);
 
   &:hover {
-    color: var(--oc-variation-primary-hover);
+    color: var(--oc-color-swatch-primary-hover);
   }
 }
 
@@ -22,11 +22,11 @@ a {
 }
 
 .oc-text-muted {
-  color: var(--oc-color-muted);
+  color: var(--oc-color-text-muted);
 }
 
 .uk-heading-divider {
-  border-bottom-color: var(--oc-border-primary);
+  border-bottom-color: var(--oc-color-border);
 }
 
 /*
@@ -73,7 +73,7 @@ td.oc-text-break {
 }
 
 .oc-text-lead {
-  color: var(--oc-color);
+  color: var(--oc-color-text-default);
   font-size: 1.5rem;
   line-height: 1.5;
   margin: 0;

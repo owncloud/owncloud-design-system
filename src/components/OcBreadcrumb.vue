@@ -130,15 +130,15 @@ export default {
     > li a,
     > li span,
     > :nth-child(n + 2):not(.uk-first-column)::before {
-      color: var(--oc-color-muted);
+      color: var(--oc-color-text-muted);
     }
 
     > :last-child > span {
-      color: var(--oc-color);
+      color: var(--oc-color-text-default);
     }
 
     > li a:hover {
-      color: var(--oc-variation-primary);
+      color: var(--oc-color-swatch-primary-default);
     }
   }
 
@@ -148,7 +148,7 @@ export default {
     a,
     span {
       // FIXME: Remove important after we get rid of UIKit
-      font-size: $large-font-size;
+      font-size: var(--oc-font-size-large);
     }
   }
   /* stylelint-enable */
@@ -159,12 +159,12 @@ export default {
     .uk-drop > .uk-card > .uk-nav-default {
       > li a,
       > li span {
-        color: var(--oc-color-muted);
+        color: var(--oc-color-text-muted);
       }
 
       > li a:hover,
       > li span:hover {
-        color: var(--oc-brand-primary);
+        color: var(--oc-color-swatch-brand-default);
       }
     }
 
@@ -174,10 +174,10 @@ export default {
       @extend .uk-flex-between;
       @extend .uk-background-default;
 
-      border: $global-border-width solid var(--oc-variation-primary-muted);
+      border: $global-border-width solid var(--oc-color-swatch-primary-muted);
       cursor: pointer;
       height: $global-control-height;
-      padding: $space-small;
+      padding: var(--oc-space-small);
 
       &-text {
         @extend .uk-text-truncate;

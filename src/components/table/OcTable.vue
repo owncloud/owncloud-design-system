@@ -269,7 +269,7 @@ export default {
 </script>
 <style lang="scss">
 .oc-table {
-  color: var(--oc-color);
+  color: var(--oc-color-text-default);
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -279,19 +279,19 @@ export default {
   }
 
   tr + tr {
-    border-top: 1px solid var(--oc-border-primary);
+    border-top: 1px solid var(--oc-color-border);
   }
 
   &-hover tr:hover {
-    background-color: var(--oc-input-border);
+    background-color: var(--oc-color-input-border);
   }
 
   &-highlighted {
-    background-color: var(--oc-background-highlight);
+    background-color: var(--oc-color-swatch-light-highlight);
   }
 
   &-disabled {
-    background-color: var(--oc-background-muted);
+    background-color: var(--oc-color-swatch-light-muted);
     opacity: 0.8;
     pointer-events: none;
   }
@@ -300,20 +300,20 @@ export default {
     position: relative;
 
     .oc-table-header-cell {
-      background-color: var(--oc-background);
+      background-color: var(--oc-color-swatch-light-default);
       position: sticky;
       z-index: 1;
     }
   }
 
   &-footer {
-    border-top: 1px solid var(--oc-border-primary);
+    border-top: 1px solid var(--oc-color-border);
 
     &-cell {
-      color: var(--oc-color-muted);
+      color: var(--oc-color-text-muted);
       font-size: 0.875rem;
       line-height: 1.4;
-      padding: $space-xsmall;
+      padding: var(--oc-space-xsmall);
     }
   }
 }

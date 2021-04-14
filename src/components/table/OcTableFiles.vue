@@ -369,7 +369,7 @@ export default {
 .oc-table-files {
   &-people {
     position: absolute;
-    right: $space-xsmall;
+    right: var(--oc-space-xsmall);
     top: 50%;
     transform: translateY(-50%);
   }
@@ -378,7 +378,7 @@ export default {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    gap: $space-xsmall;
+    gap: var(--oc-space-xsmall);
     justify-content: flex-end;
   }
 

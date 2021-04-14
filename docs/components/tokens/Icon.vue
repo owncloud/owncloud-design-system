@@ -7,7 +7,7 @@
       <oc-icon :name="filename" size="large" variation="warning"></oc-icon>
       <oc-icon :name="filename" size="large" variation="danger"></oc-icon>
       <span
-        style="background-color: var(--oc-brand-primary); display: inline-block"
+        style="background-color: var(--oc-color-swatch-brand-default); display: inline-block"
         class="oc-icon-l"
       >
         <oc-icon :name="filename" size="large" variation="inverse"></oc-icon>

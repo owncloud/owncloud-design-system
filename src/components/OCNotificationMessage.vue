@@ -93,19 +93,19 @@ export default {
 // TODO: Refactor after removal of uikit
 .uk-notification-message {
   &-passive {
-    color: var(--oc-variation-passive) !important;
+    color: var(--oc-color-swatch-passive-default) !important;
   }
   &-primary {
-    color: var(--oc-variation-primary) !important;
+    color: var(--oc-color-swatch-primary-default) !important;
   }
   &-success {
-    color: var(--oc-variation-success) !important;
+    color: var(--oc-color-swatch-success-default) !important;
   }
   &-warning {
-    color: var(--oc-variation-warning) !important;
+    color: var(--oc-color-swatch-warning-default) !important;
   }
   &-danger {
-    color: var(--oc-variation-danger) !important;
+    color: var(--oc-color-swatch-danger-default) !important;
   }
 }
 </style>

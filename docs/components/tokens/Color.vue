@@ -2,22 +2,25 @@
   <div class="colors">
     <div v-for="(prop, index) in tokens" :key="index" class="color" :class="prop.category">
       <div class="swatch" :style="{ backgroundColor: prop.value }" />
-      <h3>{{ prop.name.replace(/_/g, " ") }}</h3>
-      <span>
-        <em>RGB:</em>
-        {{ prop.value }}
+      <h4>{{ prop.name }}</h4>
+      <span v-for="(v, k) in prop.info" :key="k">
+        <em>{{ k }}:</em>
+        {{ v }}
       </span>
       <span>
-        <em>SCSS:</em>
-        ${{ prop.name.replace(/_/g, "-") }}
+        <em>scss:</em>
+        ${{ prop.name }}
+      </span>
+      <span>
+        <em>css:</em>
+        var(--{{ prop.name }})
       </span>
     </div>
   </div>
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/tokens.raw.json"
-import orderBy from "../../utils/orderBy"
+import designTokens from "../../../src/assets/tokens/ods.json"
 
 /**
  * The color palette comes with 5 different weights for each hue. These hues
@@ -31,22 +34,16 @@ export default {
 
   computed: {
     tokens() {
-      return this.orderData(designTokens.props).filter(token => token.type === "color")
-    },
-  },
-  methods: {
-    orderData: function (data) {
-      // let byValue = orderBy(data, "value", "asc")
-      let byName = orderBy(data, "name", "asc")
-      let byCategoryAndName = orderBy(byName, "category")
-      return byCategoryAndName
+      return Object.keys(designTokens)
+        .map(name => designTokens[name])
+        .filter(token => token.name.startsWith("oc-color-"))
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens.scss";
+@import "../../docs.tokens";
 
 /* STYLES
 --------------------------------------------- */
@@ -90,6 +87,7 @@ export default {
     }
   }
 }
+
 .swatch {
   @include stack-space($space-s);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -99,6 +97,7 @@ export default {
   width: calc(100% + #{$space-l});
   float: left;
 }
+
 h3 {
   @include reset;
   @include stack-space($space-xs);
@@ -107,6 +106,7 @@ h3 {
   width: 100%;
   float: left;
 }
+
 .color {
   @include reset;
   @include inset-space($space-s);
@@ -127,14 +127,17 @@ h3 {
   @media (max-width: 400px) {
     margin-bottom: $space-m;
   }
+
   &:hover {
     span {
       color: $color-rich-black;
+
       em {
         color: $color-silver;
       }
     }
   }
+
   span {
     margin-bottom: $space-xs;
     line-height: 1.3;
@@ -142,6 +145,7 @@ h3 {
     font-size: $size-s;
     width: 100%;
     float: left;
+
     em {
       user-select: none;
       font-style: normal;
@@ -151,7 +155,7 @@ h3 {
 </style>
 
 <docs>
-  ```jsx
-  <color/>
-  ```
+```jsx
+<color />
+```
 </docs>

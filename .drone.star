@@ -23,7 +23,7 @@ def testing(ctx):
         'steps': [
             {
                 'name': 'dependencies',
-                'image': 'owncloudci/nodejs:12',
+                'image': 'owncloudci/nodejs:15',
                 'pull': 'always',
                 'commands': [
                     'yarn install'
@@ -31,7 +31,7 @@ def testing(ctx):
             },
             {
                 'name': 'eslint',
-                'image': 'owncloudci/nodejs:12',
+                'image': 'owncloudci/nodejs:15',
                 'pull': 'always',
                 'commands': [
                     'yarn lint:eslint',
@@ -40,7 +40,7 @@ def testing(ctx):
             },
             {
                 'name': 'stylelint',
-                'image': 'owncloudci/nodejs:12',
+                'image': 'owncloudci/nodejs:15',
                 'pull': 'always',
                 'commands': [
                     'yarn lint:stylelint',
@@ -49,7 +49,7 @@ def testing(ctx):
             },
             {
                 'name': 'build docs',
-                'image': 'owncloudci/nodejs:12',
+                'image': 'owncloudci/nodejs:15',
                 'pull': 'always',
                 'commands': [
                     'yarn install',
@@ -59,7 +59,7 @@ def testing(ctx):
             },
             {
                 'name': 'build system',
-                'image': 'owncloudci/nodejs:12',
+                'image': 'owncloudci/nodejs:15',
                 'pull': 'always',
                 'commands': [
                     'yarn install',
@@ -69,7 +69,7 @@ def testing(ctx):
             },
             {
                 'name': 'unit tests',
-                'image': 'owncloudci/nodejs:12',
+                'image': 'owncloudci/nodejs:15',
                 'pull': 'always',
                 'commands': [
                     'yarn install',

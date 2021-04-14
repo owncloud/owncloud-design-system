@@ -1,12 +1,12 @@
 @mixin oc-spinner-size($factor) {
-  height: round($icons-size-default * $factor / 2) * 2;
-  width: round($icons-size-default * $factor / 2) * 2;
+  height: round($oc-size-icon-default * $factor / 2) * 2;
+  width: round($oc-size-icon-default * $factor / 2) * 2;
 }
 
 .oc-spinner {
   @include oc-spinner-size(1);
 
-  color: var(--oc-color);
+  color: var(--oc-color-text-default);
   display: inline-block;
 
   &::after {

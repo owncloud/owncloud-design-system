@@ -3,38 +3,38 @@
 
   svg,
   p {
-    color: var(--oc-color-inverse) !important;
+    color: var(--oc-color-text-inverse) !important;
   }
 }
 
 .oc-alert {
   &-passive {
     @include oc-alert-variation(
-      var(--oc-variation-passive)
+      var(--oc-color-swatch-passive-default)
     );
   }
 
   &-primary {
     @include oc-alert-variation(
-      var(--oc-variation-primary)
+      var(--oc-color-swatch-primary-default)
     );
   }
 
   &-success {
     @include oc-alert-variation(
-      var(--oc-variation-success)
+      var(--oc-color-swatch-success-default)
     );
   }
 
   &-warning {
     @include oc-alert-variation(
-      var(--oc-variation-warning)
+      var(--oc-color-swatch-warning-default)
     );
   }
 
   &-danger {
     @include oc-alert-variation(
-      var(--oc-variation-danger)
+      var(--oc-color-swatch-danger-default)
     );
   }
 }
@@ -47,7 +47,7 @@
 }
 
 .oc-alerts-transition-leave-to {
-  transform: translateY(-$space-medium);
+  transform: translateY(-$oc-space-medium);
 }
 
 .oc-alert.oc-alerts-transition-leave-active {

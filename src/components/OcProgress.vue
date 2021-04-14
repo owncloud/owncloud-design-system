@@ -77,7 +77,7 @@ $progress-height-small: 5px !default;
   -webkit-appearance: none;
   -moz-appearance: none;
   // Set background color for progress container in Firefox, IE11 and Edge
-  background-color: var(--oc-input-border);
+  background-color: var(--oc-color-input-border);
   // Remove default style
   border: 0;
   display: block;
@@ -95,11 +95,11 @@ $progress-height-small: 5px !default;
   }
 
   &::-webkit-progress-bar {
-    background-color: var(--oc-input-border);
+    background-color: var(--oc-color-input-border);
   }
 
   &::-moz-progress-bar {
-    background-color: var(--oc-input-border);
+    background-color: var(--oc-color-input-border);
   }
 
   // Remove progress bar for indeterminate state in Firefox
@@ -108,12 +108,12 @@ $progress-height-small: 5px !default;
   }
 
   &::-webkit-progress-value {
-    background-color: var(--oc-variation-passive);
+    background-color: var(--oc-color-swatch-passive-default);
     transition: width $transition-duration-short ease;
   }
 
   &::-ms-fill {
-    background-color: var(--oc-variation-passive);
+    background-color: var(--oc-color-swatch-passive-default);
     // Remove right border in IE11 and Edge
     border: 0;
     transition: width $transition-duration-short ease;
@@ -125,57 +125,57 @@ $progress-height-small: 5px !default;
 
   &-primary {
     &::-webkit-progress-value {
-      background-color: var(--oc-variation-primary);
+      background-color: var(--oc-color-swatch-primary-default);
     }
 
     &::-moz-progress-bar {
-      background-color: var(--oc-variation-primary);
+      background-color: var(--oc-color-swatch-primary-default);
     }
 
     &::-ms-fill {
-      background-color: var(--oc-variation-primary);
+      background-color: var(--oc-color-swatch-primary-default);
     }
   }
 
   &-success {
     &::-webkit-progress-value {
-      background-color: var(--oc-variation-success);
+      background-color: var(--oc-color-swatch-success-default);
     }
 
     &::-moz-progress-bar {
-      background-color: var(--oc-variation-success);
+      background-color: var(--oc-color-swatch-success-default);
     }
 
     &::-ms-fill {
-      background-color: var(--oc-variation-success);
+      background-color: var(--oc-color-swatch-success-default);
     }
   }
 
   &-warning {
     &::-webkit-progress-value {
-      background-color: var(--oc-variation-warning);
+      background-color: var(--oc-color-swatch-warning-default);
     }
 
     &::-moz-progress-bar {
-      background-color: var(--oc-variation-warning);
+      background-color: var(--oc-color-swatch-warning-default);
     }
 
     &::-ms-fill {
-      background-color: var(--oc-variation-warning);
+      background-color: var(--oc-color-swatch-warning-default);
     }
   }
 
   &-danger {
     &::-webkit-progress-value {
-      background-color: var(--oc-variation-danger);
+      background-color: var(--oc-color-swatch-danger-default);
     }
 
     &::-moz-progress-bar {
-      background-color: var(--oc-variation-danger);
+      background-color: var(--oc-color-swatch-danger-default);
     }
 
     &::-ms-fill {
-      background-color: var(--oc-variation-danger);
+      background-color: var(--oc-color-swatch-danger-default);
     }
   }
 }

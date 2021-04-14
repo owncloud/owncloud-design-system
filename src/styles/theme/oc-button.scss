@@ -1,9 +1,9 @@
 @mixin oc-button-gap($factor) {
-  gap: round($space-small * $factor / 2) * 2;
+  gap: round($oc-space-small * $factor / 2) * 2;
 }
 
 @mixin oc-button-line-height($factor) {
-  line-height: $icons-size-default * $factor;
+  line-height: $oc-size-icon-default * $factor;
 }
 
 @mixin oc-button-variation($color, $hover-color, $muted-color) {
@@ -82,7 +82,7 @@
   border-color: transparent;
   border-radius: 3px;
   box-sizing: border-box;
-  color: var(--oc-color-inverse);
+  color: var(--oc-color-text-inverse);
   display: flex;
   font-weight: 600;
   padding: 0.5rem 0.75rem;
@@ -166,47 +166,47 @@
   }
 
   .oc-icon > svg {
-    fill: var(--oc-color-inverse);
+    fill: var(--oc-color-text-inverse);
     transition: fill $transition-duration-short ease-in-out;
   }
 
   &-passive {
     @include oc-button-variation(
-      var(--oc-variation-passive),
-      var(--oc-variation-passive-hover),
-      var(--oc-variation-passive-muted)
+      var(--oc-color-swatch-passive-default),
+      var(--oc-color-swatch-passive-hover),
+      var(--oc-color-swatch-passive-muted)
     );
   }
 
   &-primary {
     @include oc-button-variation(
-      var(--oc-variation-primary),
-      var(--oc-variation-primary-hover),
-      var(--oc-variation-primary-muted)
+      var(--oc-color-swatch-primary-default),
+      var(--oc-color-swatch-primary-hover),
+      var(--oc-color-swatch-primary-muted)
     );
   }
 
   &-success {
     @include oc-button-variation(
-      var(--oc-variation-success),
-      var(--oc-variation-success-hover),
-      var(--oc-variation-success-muted)
+      var(--oc-color-swatch-success-default),
+      var(--oc-color-swatch-success-hover),
+      var(--oc-color-swatch-success-muted)
     );
   }
 
   &-warning {
     @include oc-button-variation(
-      var(--oc-variation-warning),
-      var(--oc-variation-warning-hover),
-      var(--oc-variation-warning-muted)
+      var(--oc-color-swatch-warning-default),
+      var(--oc-color-swatch-warning-hover),
+      var(--oc-color-swatch-warning-muted)
     );
   }
 
   &-danger {
     @include oc-button-variation(
-      var(--oc-variation-danger),
-      var(--oc-variation-danger-hover),
-      var(--oc-variation-danger-muted)
+      var(--oc-color-swatch-danger-default),
+      var(--oc-color-swatch-danger-hover),
+      var(--oc-color-swatch-danger-muted)
     );
   }
 
@@ -236,12 +236,12 @@
 
         &:first-of-type {
           // TODO: Implement color variations if button group should be used again
-          border-left: 1px solid var(--oc-variation-primary);
+          border-left: 1px solid var(--oc-color-swatch-primary-default);
         }
 
         &:last-of-type {
           // TODO: Implement color variations if button group should be used again
-          border-right: 1px solid var(--oc-variation-primary);
+          border-right: 1px solid var(--oc-color-swatch-primary-default);
         }
       }
     }

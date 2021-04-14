@@ -127,8 +127,8 @@ export default {
 
 <style lang="scss">
 @mixin oc-form-check-size($factor) {
-  height: $form-check-size-default * $factor;
-  width: $form-check-size-default * $factor;
+  height: $oc-size-form-check-default * $factor;
+  width: $oc-size-form-check-default * $factor;
 }
 
 .oc-checkbox {
@@ -136,11 +136,11 @@ export default {
 
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: var(--oc-input-background);
+  background-color: var(--oc-color-input-bg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 80%;
-  border: 1px solid var(--oc-input-border);
+  border: 1px solid var(--oc-color-input-border);
   border-radius: 3px;
   display: inline-block;
   overflow: hidden;
@@ -164,7 +164,7 @@ export default {
 
   &:checked,
   &:indeterminate {
-    background-color: var(--oc-brand-primary);
+    background-color: var(--oc-color-swatch-brand-default);
   }
 
   &:checked {
@@ -197,7 +197,7 @@ export default {
 }
 
 label > .oc-checkbox + span {
-  margin-left: $space-xsmall;
+  margin-left: var(--oc-space-xsmall);
 }
 </style>
 

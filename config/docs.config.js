@@ -223,8 +223,8 @@ module.exports = {
               loader: "sass-resources-loader",
               options: {
                 resources: [
-                  path.join(__dirname, "../src/assets/tokens/tokens.scss"),
-                  path.join(__dirname, "../src/assets/tokens/tokens.map.scss"),
+                  path.join(__dirname, "../src/assets/tokens/docs.scss"),
+                  path.join(__dirname, "../src/assets/tokens/ods.scss"),
                   path.join(__dirname, "../docs/docs.mixins.scss"),
                   path.join(__dirname, "../docs/docs.functions.scss"),
                   path.join(__dirname, "../docs/docs.spacing.scss"),

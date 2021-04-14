@@ -1,0 +1,33 @@
+{
+  "space": {
+    "xsmall": {
+      "old": "space-xsmall",
+      "value": "5px"
+    },
+    "small": {
+      "old": "space-small",
+      "value": "10px",
+      "attributes": {}
+    },
+    "medium": {
+      "old": "space-medium",
+      "value": "20px",
+      "attributes": {}
+    },
+    "large": {
+      "old": "space-large",
+      "value": "30px",
+      "attributes": {}
+    },
+    "xlarge": {
+      "old": "space-xlarge",
+      "value": "50px",
+      "attributes": {}
+    },
+    "xxlarge": {
+      "old": "space-xxlarge",
+      "value": "100px",
+      "attributes": {}
+    }
+  }
+}

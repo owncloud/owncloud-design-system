@@ -200,35 +200,35 @@ export default {
 .oc-text-input {
   @extend .uk-input;
 
-  background-color: var(--oc-input-background);
-  border: 1px solid var(--oc-input-border);
+  background-color: var(--oc-color-input-bg);
+  border: 1px solid var(--oc-color-input-border);
   border-radius: 3px;
-  color: var(--oc-input-color-muted);
+  color: var(--oc-color-input-text-muted);
 
   &:focus {
-    background-color: var(--oc-input-background);
-    border-color: var(--oc-input-color);
-    color: var(--oc-input-color);
+    background-color: var(--oc-color-input-bg);
+    border-color: var(--oc-color-input-text-default);
+    color: var(--oc-color-input-text-default);
   }
 
   &:disabled {
-    color: var(--oc-input-color-muted);
+    color: var(--oc-color-input-text-muted);
   }
 
   &-description {
-    color: var(--oc-color-muted);
+    color: var(--oc-color-text-muted);
   }
 
   &-warning,
   &-warning:focus {
-    border-color: var(--oc-variation-warning) !important;
-    color: var(--oc-variation-warning) !important;
+    border-color: var(--oc-color-swatch-warning-default) !important;
+    color: var(--oc-color-swatch-warning-default) !important;
   }
 
   &-danger,
   &-danger:focus {
-    border-color: var(--oc-variation-danger) !important;
-    color: var(--oc-variation-danger) !important;
+    border-color: var(--oc-color-swatch-danger-default) !important;
+    color: var(--oc-color-swatch-danger-default) !important;
   }
 
   &-message {
@@ -236,7 +236,7 @@ export default {
     @extend .uk-flex-middle;
     @extend .oc-mt-xs;
 
-    min-height: $global-font-size * 1.5;
+    min-height: $oc-font-size-default * 1.5;
   }
 }
 </style>
