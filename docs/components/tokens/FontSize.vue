@@ -6,15 +6,14 @@
       class="font"
       :style="{ fontSize: prop.value }"
     >
-      ${{ prop.name.replace(/_/g, "-") }}
+      ${{ prop.name }}, var(--{{ prop.name }})
       <span>({{ prop.value }})</span>
     </div>
   </div>
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/tokens.raw.json"
-import orderBy from "../../utils/orderBy"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * This typographic scale makes it easier to achieve visual harmony in the
@@ -27,20 +26,14 @@ export default {
 
   computed: {
     tokens() {
-      return this.orderData(designTokens.props).filter(token => token.category === "font-size")
-    },
-  },
-  methods: {
-    orderData: function (data) {
-      let order = orderBy(data, "value", "desc")
-      return order
+      return Object.values(designTokens).filter(token => token.name.startsWith("oc-font-size-"))
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens.scss";
+@import "../../docs.tokens";
 
 /* STYLES
 --------------------------------------------- */

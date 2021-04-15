@@ -1,34 +1,34 @@
 .oc-sidebar {
-  background-color: var(--oc-brand-primary);
+  background-color: var(--oc-color-swatch-brand-default);
   box-sizing: border-box;
   height: 100vh;
   max-height: 100vh;
   overflow: hidden auto;
-  padding: $space-large 0 $space-medium;
-  width: $width-medium;
+  padding: var(--oc-space-large) 0 var(--oc-space-medium);
+  width: var(--oc-size-width-medium);
 
   &-content-wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-width: $width-medium;
-    width: $width-medium;
+    max-width: var(--oc-size-width-medium);
+    width: var(--oc-size-width-medium);
   }
 
   &-logo {
-    color: var(--oc-color-inverse);
-    margin-bottom: $space-xxlarge;
-    padding: 0 $space-small;
+    color: var(--oc-color-text-inverse);
+    margin-bottom: var(--oc-space-xxlarge);
+    padding: 0 var(--oc-space-small);
     text-align: center;
 
     &:hover,
     &:focus {
-      color: var(--oc-color-inverse);
+      color: var(--oc-color-text-inverse);
       text-decoration: none;
     }
 
     &-img {
-      height: $height-small;
+      height: var(--oc-size-height-small);
     }
 
     &-text {
@@ -38,7 +38,7 @@
   }
 
   &-upper-content {
-    padding: 0 $space-small $space-medium;
+    padding: 0 var(--oc-space-small) var(--oc-space-medium);
   }
 
   &-nav {
@@ -55,7 +55,7 @@
 
     &:hover,
     &:focus {
-      background-color: var(--oc-brand-primary-hover);
+      background-color: var(--oc-color-swatch-brand-hover);
     }
 
     > a,
@@ -69,7 +69,7 @@
       flex-flow: row wrap;
       font-size: 1.125rem;
       font-weight: 600;
-      padding: $space-small;
+      padding: var(--oc-space-small);
 
       &:hover,
       &:focus {
@@ -78,11 +78,11 @@
     }
 
     .oc-icon {
-      margin-right: $space-medium;
+      margin-right: var(--oc-space-medium);
     }
 
     &.uk-active {
-      background-color: var(--oc-brand-primary-hover);
+      background-color: var(--oc-color-swatch-brand-hover);
 
       // Vue doesn't allow navigating to active route so we do not use pointer as it might mislead users
       > a:hover {
@@ -92,12 +92,12 @@
   }
 
   &-main-content {
-    color: var(--oc-color-inverse);
-    padding: 0 $space-small $space-medium;
+    color: var(--oc-color-text-inverse);
+    padding: 0 var(--oc-space-small) var(--oc-space-medium);
   }
 
   &-footer {
-    padding: 0 $space-small;
+    padding: 0 var(--oc-space-small);
   }
 
   &-fixed {
@@ -110,8 +110,8 @@
 
   &-fixed &-button-close {
     position: absolute;
-    right: $space-small;
-    top: $space-small;
+    right: var(--oc-space-small);
+    top: var(--oc-space-small);
 
     .oc-icon > svg {
       @extend .oc-light;
@@ -124,6 +124,6 @@
   }
 
   &-fixed &-logo {
-    margin-top: $space-medium;
+    margin-top: var(--oc-space-medium);
   }
 }

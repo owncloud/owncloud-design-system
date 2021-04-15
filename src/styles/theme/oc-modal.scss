@@ -8,7 +8,7 @@
 
 .oc-modal {
   border-radius: 8px;
-  border-top: 10px solid var(--oc-variation-passive);
+  border-top: 10px solid var(--oc-color-swatch-passive-default);
   box-shadow: 0 2px 4px rgba(14, 30, 37, 0.25);
   max-width: 500px;
   overflow: hidden;
@@ -33,47 +33,47 @@
   }
 
   &-primary {
-    @include oc-modal-variation(var(--oc-variation-primary));
+    @include oc-modal-variation(var(--oc-color-swatch-primary-default));
   }
 
   &-success {
-    @include oc-modal-variation(var(--oc-variation-success));
+    @include oc-modal-variation(var(--oc-color-swatch-success-default));
   }
 
   &-warning {
-    @include oc-modal-variation(var(--oc-variation-warning));
+    @include oc-modal-variation(var(--oc-color-swatch-warning-default));
   }
 
   &-danger {
-    @include oc-modal-variation(var(--oc-variation-danger));
+    @include oc-modal-variation(var(--oc-color-swatch-danger-default));
   }
 
   &-title {
     align-items: center;
-    background-color: var(--oc-color-inverse);
+    background-color: var(--oc-color-text-inverse);
     display: flex;
     flex-flow: row wrap;
     font-weight: bold;
-    padding: $space-small $space-medium;
+    padding: var(--oc-space-small) var(--oc-space-medium);
 
     > .oc-icon {
-      margin-right: $space-small;
+      margin-right: var(--oc-space-small);
     }
   }
 
   &-body {
-    background-color: var(--oc-background-muted);
-    color: var(--oc-color);
-    padding: $space-medium;
+    background-color: var(--oc-color-swatch-light-muted);
+    color: var(--oc-color-text-default);
+    padding: var(--oc-space-medium);
 
     &-message {
-      margin-bottom: $space-medium;
+      margin-bottom: var(--oc-space-medium);
     }
 
     &-input {
       /* FIXME: this is ugly, but required so that the bottom padding doesn't look off when reserving vertical space for error messages below the input. */
       margin-bottom: -20px;
-      padding-bottom: $space-medium;
+      padding-bottom: var(--oc-space-medium);
     }
 
     &-actions {
@@ -83,8 +83,8 @@
         border-radius: 4px;
 
         &.uk-button-default {
-          background-color: var(--oc-color-inverse);
-          color: var(--oc-color);
+          background-color: var(--oc-color-text-inverse);
+          color: var(--oc-color-text-default);
         }
       }
     }

@@ -205,15 +205,15 @@ export default {
   &-preview {
     border-radius: 2px;
     object-fit: cover;
-    height: $icons-size-default * 1.5;
-    max-height: $icons-size-default * 1.5;
-    width: $icons-size-default * 1.5;
-    max-width: $icons-size-default * 1.5;
+    height: $oc-size-icon-default * 1.5;
+    max-height: $oc-size-icon-default * 1.5;
+    width: $oc-size-icon-default * 1.5;
+    max-width: $oc-size-icon-default * 1.5;
   }
 
   &-details {
     display: block;
-    padding-left: $space-small;
+    padding-left: var(--oc-space-small);
 
     a:hover,
     a:focus {

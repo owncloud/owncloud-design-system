@@ -16,19 +16,9 @@
           <td v-else>N/A</td>
           <td v-if="token.value">
             <div
-              v-if="token.type === 'color'"
+              v-if="token.name.startsWith('oc-color')"
               class="example color"
               :style="{ backgroundColor: token.value }"
-            />
-            <div
-              v-if="token.category === 'border-radius'"
-              class="example border-radius"
-              :style="{ borderRadius: token.value }"
-            />
-            <div
-              v-if="token.category === 'box-shadow'"
-              class="example box-shadow"
-              :style="{ boxShadow: token.value }"
             />
             <code class="type">{{ token.value }} </code>
           </td>
@@ -42,8 +32,7 @@
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/tokens.raw.json"
-import orderBy from "../../utils/orderBy"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * A list of available tokens in ownCloud Design System. Use these tokens in place
@@ -55,21 +44,14 @@ export default {
   name: "All",
   data() {
     return {
-      tokens: this.orderData(designTokens.props),
+      tokens: Object.values(designTokens),
     }
-  },
-  methods: {
-    orderData: function (data) {
-      let byName = orderBy(data, "name", "asc")
-      let byCategoryAndName = orderBy(byName, "category")
-      return byCategoryAndName
-    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens.scss";
+@import "../../docs.tokens";
 
 /* STYLES
 --------------------------------------------- */

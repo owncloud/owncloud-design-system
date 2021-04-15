@@ -126,7 +126,7 @@ export default {
 .oc-avatar-group {
   display: flex;
   flex-flow: row wrap;
-  gap: $space-xsmall;
+  gap: var(--oc-space-xsmall);
   width: fit-content;
 
   &-stacked {
@@ -134,7 +134,7 @@ export default {
     .oc-avatar-count,
     .oc-avatar + .oc-avatar-link,
     .oc-avatar-link + .oc-avatar-link {
-      border: 1px solid var(--oc-color-inverse);
+      border: 1px solid var(--oc-color-text-inverse);
       margin-left: -25px;
       transition: margin-left $transition-duration-short ease-in-out;
     }

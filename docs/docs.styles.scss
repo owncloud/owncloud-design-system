@@ -3,12 +3,13 @@
  * (the odd formatting hence most of the classes are dynamic)
  */
 
-@import "../src/assets/tokens/tokens.scss";
-@import "./docs.tokens.scss";
-@import "./docs.mixins.scss";
-@import "./docs.functions.scss";
-@import "./docs.spacing.scss";
-@import "../src/styles/styles.scss";
+@import '../src/assets/tokens/docs';
+@import '../src/assets/tokens/ods';
+@import './docs.tokens';
+@import './docs.mixins';
+@import './docs.functions';
+@import './docs.spacing';
+@import '../src/styles/styles';
 
 /* LOCAL DESIGN TOKENS
 --------------------------------------------- */
@@ -75,7 +76,7 @@ div[class^="rsg--wrapper"] > h1[class^="rsg--heading"],
 div[class^="rsg--wrapper"] > h2[class^="rsg--heading"] {
   display: block;
   border: 0;
-  line-height: $line-height-s;
+  line-height: $oc-docs-line-height-small;
   padding: $space-xl $space-xl;
   width: calc(100% + #{$space-xl * 2});
   margin: -#{$space-s} -#{$space-xl} $space-l -#{$space-xl};
@@ -103,7 +104,7 @@ header[class^="rsg--header"] {
 
 // Links inside h1
 div[class^="rsg--wrapper"] > h1[class^="rsg--heading"] a {
-  font-weight: $weight-normal;
+  font-weight: $oc-docs-font-weight-normal;
   color: $color-oxford-blue;
   letter-spacing: -1px;
   &:hover {
@@ -118,8 +119,8 @@ h2[class^="rsg--heading"] {
   padding-bottom: $space-s;
   margin: $space-l 0 $space-m;
   font-size: $size-xl;
-  line-height: $line-height-s;
-  font-weight: $weight-normal;
+  line-height: $oc-docs-line-height-small;
+  font-weight: $oc-docs-font-weight-normal;
   letter-spacing: -0.5px;
   width: 100%;
   @media (max-width: #{$docs-breakpoint}) {
@@ -138,8 +139,8 @@ h3[class^="rsg--heading"],
 h3[class^="rsg--heading"] a {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
-  font-weight: $weight-light;
-  line-height: $line-height-m;
+  font-weight: $oc-docs-font-weight-light;
+  line-height: $oc-docs-line-height-medium;
   margin: 0 0 $space-l;
   font-size: $size-l;
   color: $docs-color-text;
@@ -152,11 +153,11 @@ h3[class^="rsg--heading"] a {
 // Heading, level 4
 h4[class^="rsg--heading"],
 h4[class^="rsg--heading"] a {
-  font-weight: $weight-semi-bold;
+  font-weight: $oc-docs-font-weight-semi-bold;
   letter-spacing: 0;
   margin: $space-l 0 $space-m;
   font-size: $size-l;
-  line-height: $line-height-s;
+  line-height: $oc-docs-line-height-small;
   color: $docs-color-heading;
 }
 
@@ -166,9 +167,9 @@ p[class^="rsg--para"] {
   -moz-osx-font-smoothing: grayscale;
   color: $docs-color-text;
   margin-bottom: $space-s;
-  line-height: $line-height-m;
+  line-height: $oc-docs-line-height-medium;
   strong a[class^="rsg--link"] {
-    font-weight: $weight-semi-bold;
+    font-weight: $oc-docs-font-weight-semi-bold;
   }
   code {
     -webkit-font-smoothing: subpixel-antialiased;
@@ -176,7 +177,7 @@ p[class^="rsg--para"] {
     background: tint($docs-grey, 75%);
     color: shade($color-silver, 20%);
     padding: $space-xx-small;
-    border-radius: $radius-default;
+    border-radius: $oc-docs-border-radius-default;
     font-size: 87.5%;
   }
   a {
@@ -221,7 +222,7 @@ div[class^="rsg--logo"] {
   border-bottom: 1px solid rgba($color-white, 0.1);
   h1 {
     color: tint($color-bleu-de-france, 90%);
-    font-weight: $weight-normal;
+    font-weight: $oc-docs-font-weight-normal;
   }
 }
 
@@ -231,14 +232,14 @@ p[class^="rsg--version"] {
   margin: $space-xs 0 0;
   color: $color-bleu-de-france;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-weight: $weight-normal;
+  font-weight: $oc-docs-font-weight-normal;
   display: inline-block;
-  line-height: $line-height-xs;
+  line-height: $oc-docs-line-height-xsmall;
   border: 1px solid $color-bleu-de-france;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: $size-xs;
-  border-radius: $radius-default;
+  border-radius: $oc-docs-border-radius-default;
 }
 
 // Sidebar search
@@ -295,7 +296,7 @@ div[class^="rsg--sidebar"] {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding: $space-xx-small $space-m;
-    font-weight: $weight-semi-bold;
+    font-weight: $oc-docs-font-weight-semi-bold;
     color: $color-bleu-de-france;
     display: block;
     white-space: nowrap;
@@ -327,7 +328,7 @@ div[class^="rsg--sidebar"] {
     // Sidebar sub-list
     ul {
       padding-left: $space-s;
-      line-height: $line-height-s;
+      line-height: $oc-docs-line-height-small;
       @media (max-width: #{$docs-breakpoint-small}) {
         padding: 0 0 0 $space-l;
         width: 90%;
@@ -335,14 +336,14 @@ div[class^="rsg--sidebar"] {
         // Sidebar sub-list item
         li {
           display: inline;
-          line-height: $line-height-m;
+          line-height: $oc-docs-line-height-medium;
         }
       }
 
       // Sidebar second level link
       a[class*="rsg--link"] {
         font-size: $size-s;
-        font-weight: $weight-normal;
+        font-weight: $oc-docs-font-weight-normal;
         -webkit-font-smoothing: subpixel-antialiased;
         -moz-osx-font-smoothing: auto;
         @media (max-width: #{$docs-breakpoint-small}) {
@@ -367,8 +368,8 @@ div[class^="rsg--preview"] {
   border-radius: 0;
   display: block;
   width: 100%;
-  border-top-left-radius: $radius-default;
-  border-top-right-radius: $radius-default;
+  border-top-left-radius: $oc-docs-border-radius-default;
+  border-top-right-radius: $oc-docs-border-radius-default;
 }
 
 // If you edit the component categories, you have to edit
@@ -407,8 +408,8 @@ pre[class^="rsg--pre"],
 .vueds-html.cm-s-night.CodeMirror,
 .react-codemirror2 .CodeMirror.CodeMirror {
   background: mix($color-bleu-de-france, $color-rich-black, 10%);
-  border-bottom-left-radius: $radius-default;
-  border-bottom-right-radius: $radius-default;
+  border-bottom-left-radius: $oc-docs-border-radius-default;
+  border-bottom-right-radius: $oc-docs-border-radius-default;
   box-sizing: border-box;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
@@ -443,7 +444,7 @@ div[class^="rsg--tab"] {
   position: relative;
   .vueds-tabs {
     z-index: 5;
-    border-radius: $radius-default;
+    border-radius: $oc-docs-border-radius-default;
     box-shadow: 0 2px 8px rgba($color-rich-black, 0.8);
     overflow: hidden;
     position: absolute;
@@ -452,11 +453,11 @@ div[class^="rsg--tab"] {
     .vueds-tab {
       border: 0;
       margin: 0;
-      letter-spacing: $spacing-l;
+      letter-spacing: 1px;
       font-size: $size-s;
-      font-weight: $weight-normal;
-      font-family: $font-text;
-      line-height: $line-height-s;
+      font-weight: $oc-docs-font-weight-normal;
+      font-family: $oc-docs-font-text;
+      line-height: $oc-docs-line-height-small;
       @include inset-squish-space($space-s);
       cursor: pointer;
       background: mix($color-bleu-de-france, $color-rich-black, 50%);
@@ -521,7 +522,7 @@ code[class^="rsg--code"] {
 }
 span[class^="rsg--name"] code[class^="rsg--code"],
 code.name {
-  font-weight: $weight-bold;
+  font-weight: $oc-docs-font-weight-bold;
   color: shade($color-silver, 50%);
 }
 span[class^="rsg--type"] code[class^="rsg--code"],
@@ -529,7 +530,7 @@ code.type {
   background: tint($docs-grey, 75%);
   color: shade($color-silver, 20%);
   padding: $space-xx-small;
-  border-radius: $radius-default;
+  border-radius: $oc-docs-border-radius-default;
 }
 
 /* COMPONENT STATUS LABELS
@@ -551,17 +552,17 @@ div[class^="rsg--root"] div[class^="rsg--tabs"] {
 // Status label is shown in top right corner for each component
 .status {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-weight: $weight-normal;
+  font-weight: $oc-docs-font-weight-normal;
   order: 1;
   align-self: flex-end;
   cursor: help;
-  line-height: $line-height-xs;
+  line-height: $oc-docs-line-height-xsmall;
   background: tint($docs-grey, 50%);
   padding: $space-xs $space-s $space-xs/1.2;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: $size-xs;
-  border-radius: $radius-default;
+  border-radius: $oc-docs-border-radius-default;
   color: $color-rich-black;
   position: absolute;
   right: $space-xl;
@@ -611,7 +612,7 @@ table[class^="rsg--table"] {
   th {
     padding: $space-s $space-l $space-s $space-s;
     font-size: $size-s;
-    font-weight: $weight-semi-bold;
+    font-weight: $oc-docs-font-weight-semi-bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 0;
@@ -628,7 +629,7 @@ table[class^="rsg--table"] {
     font-size: $size-s;
     padding: $space-s $space-l $space-s $space-s;
     &:first-child {
-      font-weight: $weight-bold;
+      font-weight: $oc-docs-font-weight-bold;
       white-space: nowrap;
     }
   }
@@ -642,12 +643,12 @@ table[class^="rsg--table"] {
 
 thead[class^="rsg--thead"] {
   th:first-child {
-    border-top-left-radius: $radius-default;
-    border-bottom-left-radius: $radius-default;
+    border-top-left-radius: $oc-docs-border-radius-default;
+    border-bottom-left-radius: $oc-docs-border-radius-default;
   }
   th:last-child {
-    border-top-right-radius: $radius-default;
-    border-bottom-right-radius: $radius-default;
+    border-top-right-radius: $oc-docs-border-radius-default;
+    border-bottom-right-radius: $oc-docs-border-radius-default;
   }
 }
 

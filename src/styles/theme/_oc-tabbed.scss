@@ -3,7 +3,7 @@
   position: relative;
 
   &::before {
-    border-bottom: 1px solid var(--oc-variation-primary-muted);
+    border-bottom: 1px solid var(--oc-color-swatch-primary-muted);
     bottom: 0;
     content: '';
     left: 0;
@@ -15,7 +15,7 @@
     @extend .oc-button-reset;
 
     border-bottom: 1px solid transparent;
-    color: var(--oc-color-muted);
+    color: var(--oc-color-text-muted);
     display: inline-block;
     font-size: 0.875rem;
     padding: 5px 10px;
@@ -24,12 +24,12 @@
     transition: color 0.1s ease-in-out;
 
     &:focus {
-      background-color: var(--oc-variation-primary-muted);
+      background-color: var(--oc-color-swatch-primary-muted);
     }
 
     &[aria-selected='true'] {
-      border-color: var(--oc-brand-primary);
-      color: var(--oc-brand-primary);
+      border-color: var(--oc-color-swatch-brand-default);
+      color: var(--oc-color-swatch-brand-default);
       position: relative;
     }
   }

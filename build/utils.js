@@ -67,8 +67,7 @@ exports.cssLoaders = function (options) {
     loader: "sass-resources-loader",
     options: {
       resources: [
-        path.resolve(__dirname, "../src/assets/tokens/tokens.scss"),
-        path.resolve(__dirname, "../src/assets/tokens/tokens.map.scss"),
+        path.resolve(__dirname, "../src/assets/tokens/ods.scss"),
         path.resolve(__dirname, "../src/styles/styles.scss"),
       ],
     },

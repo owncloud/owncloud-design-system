@@ -180,31 +180,31 @@ export default {
 .oc-textarea {
   @extend .uk-textarea;
 
-  background-color: var(--oc-input-background);
-  border-color: var(--oc-input-border);
+  background-color: var(--oc-color-input-bg);
+  border-color: var(--oc-color-input-border);
   border-radius: 3px;
-  color: var(--oc-input-color-muted);
+  color: var(--oc-color-input-text-muted);
 
   &:focus {
-    background-color: var(--oc-input-background);
-    border-color: var(--oc-input-color);
-    color: var(--oc-input-color);
+    background-color: var(--oc-color-input-bg);
+    border-color: var(--oc-color-input-text-default);
+    color: var(--oc-color-input-text-default);
   }
 
   &-warning,
   &-warning:focus {
-    border-color: var(--oc-variation-warning);
-    color: var(--oc-variation-warning);
+    border-color: var(--oc-color-swatch-warning-default);
+    color: var(--oc-color-swatch-warning-default);
   }
 
   &-danger,
   &-danger:focus {
-    border-color: var(--oc-variation-danger);
-    color: var(--oc-variation-danger);
+    border-color: var(--oc-color-swatch-danger-default);
+    color: var(--oc-color-swatch-danger-default);
   }
 
   &-description {
-    color: var(--oc-color-muted);
+    color: var(--oc-color-text-muted);
   }
 
   &-message {
@@ -212,7 +212,7 @@ export default {
     @extend .uk-flex-middle;
     @extend .oc-mt-xs;
 
-    min-height: $global-font-size * 1.5;
+    min-height: $oc-font-size-default * 1.5;
   }
 }
 </style>

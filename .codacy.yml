@@ -1,2 +1,6 @@
 exclude_paths:
+  - CHANGELOG.md
+  - changelog/**
+  - docs/**
+  - config/**
   - '**/*.spec.js'

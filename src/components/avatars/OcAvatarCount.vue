@@ -41,9 +41,9 @@ export default {
 <style lang="scss">
 .oc-avatar-count {
   align-items: center;
-  background-color: var(--oc-brand-primary);
+  background-color: var(--oc-color-swatch-brand-default);
   border-radius: 50%;
-  color: var(--oc-color-inverse);
+  color: var(--oc-color-text-inverse);
   display: flex;
   justify-content: center;
 }

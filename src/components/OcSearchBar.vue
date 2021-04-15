@@ -245,16 +245,16 @@ export default {
   &-input {
     @extend .uk-input;
 
-    background-color: var(--oc-input-background);
-    border: 1px solid var(--oc-input-border);
+    background-color: var(--oc-color-input-bg);
+    border: 1px solid var(--oc-color-input-border);
     border-radius: 3px;
-    color: var(--oc-input-color-muted);
-    padding-right: $space-medium;
+    color: var(--oc-color-input-text-muted);
+    padding-right: var(--oc-space-medium);
 
     &:focus {
-      background-color: var(--oc-input-background);
-      border-color: var(--oc-input-color);
-      color: var(--oc-input-color);
+      background-color: var(--oc-color-input-bg);
+      border-color: var(--oc-color-input-text-default);
+      color: var(--oc-color-input-text-default);
     }
 
     &::-ms-clear,
@@ -264,7 +264,7 @@ export default {
   }
 
   &-input-icon {
-    padding-left: $space-large + $space-small;
+    padding-left: $oc-space-large + $oc-space-small;
   }
 
   &-input-button {
@@ -278,12 +278,12 @@ export default {
 
       // Overrride default padding of small from
       // TODO: Remove `!important` after we get rid of UIkit
-      padding-right: $space-medium !important;
+      padding-right: var(--oc-space-medium) !important;
     }
 
     .oc-search-input-icon {
       // TODO: Remove `!important` after we get rid of UIkit
-      padding-left: $space-large !important;
+      padding-left: var(--oc-space-large) !important;
     }
 
     .oc-button {

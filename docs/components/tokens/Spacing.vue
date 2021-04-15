@@ -13,8 +13,7 @@
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/tokens.raw.json"
-import orderBy from "../../utils/orderBy"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * A framework for creating a predictable and harmonious spacing system. These
@@ -27,20 +26,14 @@ export default {
   name: "Spacing",
   computed: {
     tokens() {
-      return this.orderData(designTokens.props).filter(token => token.category === "space")
-    },
-  },
-  methods: {
-    orderData: function (data) {
-      let order = orderBy(data, "category", "asc")
-      return order
+      return Object.values(designTokens).filter(token => token.name.startsWith("oc-space"))
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens.scss";
+@import "../../docs.tokens";
 
 /* STYLES
 --------------------------------------------- */

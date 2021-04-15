@@ -15,7 +15,7 @@
   }
 
   &::before {
-    background-color: var(--oc-color-inverse);
+    background-color: var(--oc-color-text-inverse);
     content: '';
     height: $form-radio-size - 2;
     position: absolute;
@@ -25,7 +25,7 @@
   }
 
   &[data-state='off'] {
-    background-color: var(--oc-color-muted);
+    background-color: var(--oc-color-text-muted);
 
     &::before {
       transform: translate(1px, 1px);
@@ -33,7 +33,7 @@
   }
 
   &[data-state='on'] {
-    background-color: var(--oc-brand-primary);
+    background-color: var(--oc-color-swatch-brand-default);
 
     &::before {
       transform: translate(calc(100% - 1px), 1px);

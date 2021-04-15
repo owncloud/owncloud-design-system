@@ -1,8 +1,8 @@
 @mixin oc-icon-size($factor) {
-  height: $icons-size-default * $factor;
-  max-height: $icons-size-default * $factor;
-  max-width: $icons-size-default * $factor;
-  width: $icons-size-default * $factor;
+  height: $oc-size-icon-default * $factor;
+  max-height: $oc-size-icon-default * $factor;
+  max-width: $oc-size-icon-default * $factor;
+  width: $oc-size-icon-default * $factor;
 }
 
 .oc-icon {
@@ -12,7 +12,7 @@
 
   svg {
     display: block;
-    fill: var(--oc-variation-passive);
+    fill: var(--oc-color-swatch-passive-default);
   }
 
   &,
@@ -70,26 +70,26 @@
   }
 
   &-primary > svg {
-    fill: var(--oc-variation-primary);
+    fill: var(--oc-color-swatch-primary-default);
   }
 
   &-passive > svg {
-    fill: var(--oc-variation-passive);
+    fill: var(--oc-color-swatch-passive-default);
   }
 
   &-warning > svg {
-    fill: var(--oc-variation-warning);
+    fill: var(--oc-color-swatch-warning-default);
   }
 
   &-success > svg {
-    fill: var(--oc-variation-success);
+    fill: var(--oc-color-swatch-success-default);
   }
 
   &-danger > svg {
-    fill: var(--oc-variation-danger);
+    fill: var(--oc-color-swatch-danger-default);
   }
 
   &-inverse > svg {
-    fill: var(--oc-color-inverse) !important;
+    fill: var(--oc-color-text-inverse) !important;
   }
 }

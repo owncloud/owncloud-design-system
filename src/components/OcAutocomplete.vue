@@ -401,28 +401,28 @@ export default {
   &-dropdown {
     @extend .uk-box-shadow-medium;
 
-    background: var(--oc-background);
+    background: var(--oc-color-swatch-light-default);
   }
 
   &-input {
     @extend .uk-input;
 
-    background-color: var(--oc-input-background);
-    border: 1px solid var(--oc-input-border);
+    background-color: var(--oc-color-input-bg);
+    border: 1px solid var(--oc-color-input-border);
     border-radius: 3px;
-    color: var(--oc-input-color-muted);
+    color: var(--oc-color-input-text-muted);
 
     &:focus {
-      background: var(--oc-input-background);
-      border-color: var(--oc-input-color);
-      color: var(--oc-input-color);
+      background: var(--oc-color-input-bg);
+      border-color: var(--oc-color-input-text-default);
+      color: var(--oc-color-input-text-default);
     }
   }
 
   &-spinner {
     @extend .uk-position-absolute;
 
-    left: $space-medium;
+    left: var(--oc-space-medium);
     top: 50%;
     transform: translate(-50%, -50%);
   }
@@ -430,8 +430,8 @@ export default {
   &-suggestion {
     @extend .oc-m-rm;
 
-    color: var(--oc-color-muted);
-    padding: $space-small;
+    color: var(--oc-color-text-muted);
+    padding: var(--oc-space-small);
 
     &-list {
       @extend .uk-list;
@@ -442,57 +442,57 @@ export default {
         @extend .oc-text-muted;
         @extend .oc-m-rm;
 
-        background-color: var(--oc-background);
-        padding: $space-small;
-        padding-left: $spinner-size + $space-medium;
+        background-color: var(--oc-color-swatch-light-default);
+        padding: var(--oc-space-small);
+        padding-left: $spinner-size + $oc-space-medium;
       }
     }
 
     &-selected,
     &:hover,
     &:focus {
-      background-color: var(--oc-brand-primary);
-      color: var(--oc-color-inverse);
+      background-color: var(--oc-color-swatch-brand-default);
+      color: var(--oc-color-text-inverse);
     }
 
     &-overflow {
       @extend .oc-text-muted;
       @extend .oc-m-rm;
 
-      background-color: var(--oc-background);
+      background-color: var(--oc-color-swatch-light-default);
       cursor: pointer;
-      padding: $space-small;
+      padding: var(--oc-space-small);
     }
 
     &-selected .oc-text-muted,
     &:hover .oc-text-muted,
     &:focus .oc-text-muted {
-      color: var(--oc-color-inverse);
+      color: var(--oc-color-text-inverse);
     }
 
     &-selected .oc-icon > svg,
     &:hover .oc-icon > svg,
     &:focus .oc-icon > svg {
-      fill: var(--oc-color-inverse);
+      fill: var(--oc-color-text-inverse);
     }
   }
 
   &-warning,
   &-warning:focus {
-    border-color: var(--oc-variation-warning);
-    color: var(--oc-variation-warning);
+    border-color: var(--oc-color-swatch-warning-default);
+    color: var(--oc-color-swatch-warning-default);
   }
 
   &-danger,
   &-danger:focus {
-    border-color: var(--oc-variation-danger);
-    color: var(--oc-variation-danger);
+    border-color: var(--oc-color-swatch-danger-default);
+    color: var(--oc-color-swatch-danger-default);
   }
 
   &-description,
   &-description:focus {
-    border-color: var(--oc-color-muted);
-    color: var(--oc-color-muted);
+    border-color: var(--oc-color-text-muted);
+    color: var(--oc-color-text-muted);
   }
 
   &-message {
@@ -500,7 +500,7 @@ export default {
     @extend .uk-flex-middle;
     @extend .oc-mt-xs;
 
-    min-height: $global-font-size * 1.5;
+    min-height: $oc-font-size-default * 1.5;
   }
 }
 </style>

@@ -152,14 +152,14 @@ export default {
   padding: 0;
 
   &-item + &-item {
-    margin-top: $space-medium;
+    margin-top: var(--oc-space-medium);
   }
 
   &-title {
     @extend .oc-mb-rm;
 
     display: block;
-    font-size: $medium-font-size;
+    font-size: var(--oc-font-size-medium);
 
     &-arrow-icon {
       position: absolute;
@@ -169,7 +169,7 @@ export default {
     > .oc-button.oc-button-passive-raw,
     > .oc-button.oc-button-passive-raw:hover,
     > .oc-button.oc-button-passive-raw:focus {
-      color: var(--oc-color);
+      color: var(--oc-color-text-default);
       position: relative;
       text-decoration: none;
 
@@ -181,14 +181,14 @@ export default {
         }
 
         > svg {
-          fill: var(--oc-color);
+          fill: var(--oc-color-text-default);
         }
       }
     }
   }
 
   &-content {
-    margin-top: $space-small;
+    margin-top: var(--oc-space-small);
   }
 }
 </style>

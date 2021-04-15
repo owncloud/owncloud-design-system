@@ -14,6 +14,6 @@ export default {
 
 <style lang="scss">
 .oc-thead {
-  border-bottom: 1px solid var(--oc-border-primary);
+  border-bottom: 1px solid var(--oc-color-border);
 }
 </style>

@@ -168,36 +168,39 @@ export default {
 
 <docs>
 ```vue
-  <template>
-    <div>
-      <div class="oc-m">
-        <h3 class="uk-heading-divider">
-          Datepicker inputs
-        </h3>
-        <oc-datepicker label="Default datepicker"></oc-datepicker>
-        <oc-datepicker label="Datepicker with a minimum date" title="I have a minimum date" type="datetime" :minDatetime="minDatetime"></oc-datepicker>
-      </div>
-      <div class="oc-m">
-        <h3 class="uk-heading-divider">
-          Messages
-        </h3>
-        <oc-datepicker
-            label="Datepicker with description message below"
-            class="oc-mb-s"
-            description-message="This is a description message."
-        ></oc-datepicker>
-      </div>
+<template>
+  <div>
+    <div class="oc-m">
+      <h3 class="uk-heading-divider">
+        Datepicker inputs
+      </h3>
+      <oc-datepicker label="Default datepicker"></oc-datepicker>
+      <oc-datepicker label="Datepicker with a minimum date" title="I have a minimum date" type="datetime"
+                     :minDatetime="minDatetime"></oc-datepicker>
     </div>
-  </template>
-  <script>
-    import moment from 'moment';
-    export default {
-      data: () => {
-        return {
-          minDatetime : moment().day(-3).format()
-        }
-      },
+    <div class="oc-m">
+      <h3 class="uk-heading-divider">
+        Messages
+      </h3>
+      <oc-datepicker
+        label="Datepicker with description message below"
+        class="oc-mb-s"
+        description-message="This is a description message."
+      ></oc-datepicker>
+    </div>
+  </div>
+</template>
+<script>
+  import { DateTime } from "luxon";
+
+  export default {
+    data: () => {
+      window.DateTime = DateTime;
+      return {
+        minDatetime: DateTime.local().toISO()
+      };
     }
-  </script>
+  };
+</script>
 ```
 </docs>

@@ -41,21 +41,21 @@ export default {
     &__search::placeholder,
     &__dropdown-toggle,
     &__dropdown-menu {
-      background: var(--oc-input-background);
-      border: 1px solid var(--oc-input-border);
-      color: var(--oc-input-color);
+      background: var(--oc-color-input-bg);
+      border: 1px solid var(--oc-color-input-border);
+      color: var(--oc-color-input-text-default);
     }
 
     &__clear,
     &__open-indicator {
-      fill: var(--oc-input-color);
+      fill: var(--oc-color-input-text-default);
     }
 
     &__dropdown-option {
       white-space: normal;
 
       &--highlight {
-        background: var(--oc-input-color);
+        background: var(--oc-color-input-text-default);
       }
     }
 
@@ -75,7 +75,7 @@ export default {
   &:focus-within {
     .vs__dropdown-menu,
     .vs__dropdown-toggle {
-      border: 1px solid var(--oc-input-color);
+      border: 1px solid var(--oc-color-input-text-default);
     }
   }
 }

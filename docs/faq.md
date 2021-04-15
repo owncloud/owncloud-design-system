@@ -40,9 +40,9 @@ Organizations that have more than just Vue.js based applications can benefit fro
 
 ownCloud Design System is not a front-end component library and never will be. Instead it tries to provide you and your team a set of organized tools, patterns & practices to build upon, so that you can get started with the actual design system faster.
 
-## Can I convert YAML tokens to more than just SCSS and JSON?
+## Can I convert JSON tokens to more than just SCSS and JSON?
 
-Definitely. See [Theo’s docs](https://github.com/salesforce-ux/theo). It allows you to convert the tokens to almost any format you can think of. The formats used are being configured in [package.json](https://github.com/owncloud/owncloud-design-system/blob/master/package.json#L25).
+Definitely. See [style-dictionary’s docs](https://github.com/amzn/style-dictionary). It allows you to convert the tokens to almost any format you can think of. The formats used are being configured in [build/build-tokens.js](https://github.com/owncloud/owncloud-design-system/blob/master/build/build-tokens.js).
 
 ## Does ownCloud Design System work on Windows?
 
@@ -67,7 +67,7 @@ If you want to bundle your fonts into the project itself, that’s possible as w
 First, import tokens inside the component you want to use them in:
 
 ```javascript
-import designTokens from "@/assets/tokens/tokens.raw.json"
+import designTokens from "@/assets/tokens/ods.json"
 ```
 
 Then, pass the data:
@@ -76,7 +76,7 @@ Then, pass the data:
 export default {
   data() {
     return {
-      tokens: designTokens.props,
+      tokens: designTokens,
     }
   },
 }
@@ -86,7 +86,7 @@ Once done, you can utilize tokens inside `<template>` like this:
 
 ```html
 <template>
-  <Thing :style="{color: tokens.color_vermilion.value}" />
+  <Thing :style="{color: tokens.oc-color-swatch-brand-hover.value}" />
 </template>
 ```
 
@@ -94,9 +94,9 @@ Once done, you can utilize tokens inside `<template>` like this:
 
 ```scss
 .wrapper {
-  padding: $space-l;
+  padding: var(--oc-space-large);
   @media #{$media-query-l} {
-    padding: $space-xl;
+    padding: $oc-space-large;
   }
 }
 ```

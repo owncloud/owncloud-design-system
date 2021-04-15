@@ -57,9 +57,9 @@ export default {
 <style lang="scss">
 // TODO: Ugly hack to overwrite uikit, refactor when we remove uikit
 .oc-nav-item > a {
-  color: var(--oc-color-muted) !important;
+  color: var(--oc-color-text-muted) !important;
   &:hover {
-    color: var(--oc-color) !important;
+    color: var(--oc-color-text-default) !important;
   }
 }
 </style>

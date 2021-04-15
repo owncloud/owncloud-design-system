@@ -58,20 +58,20 @@ export default {
 <style lang="scss">
 .oc-tag {
   align-items: center;
-  background-color: var(--oc-background);
-  border: 1px solid var(--oc-color-muted);
+  background-color: var(--oc-color-swatch-light-default);
+  border: 1px solid var(--oc-color-text-muted);
   border-radius: 7px;
   box-sizing: border-box;
-  color: var(--oc-color-muted);
+  color: var(--oc-color-text-muted);
   display: flex;
   font-size: 0.875rem;
-  gap: $space-xsmall;
-  min-height: $icons-size-default + (2 * $space-xsmall) + 2px;
-  padding: $space-xsmall $space-small;
+  gap: var(--oc-space-xsmall);
+  min-height: $oc-size-icon-default + (2 * $oc-space-xsmall) + 2px;
+  padding: var(--oc-space-xsmall) var(--oc-space-small);
   text-decoration: none;
 
   .oc-icon > svg {
-    fill: var(--oc-color-muted);
+    fill: var(--oc-color-text-muted);
   }
 
   &-link,
@@ -84,12 +84,12 @@ export default {
 
     &:hover,
     &:focus {
-      color: var(--oc-variation-primary-hover);
+      color: var(--oc-color-swatch-primary-hover);
       cursor: pointer;
       text-decoration: none;
 
       .oc-icon > svg {
-        fill: var(--oc-variation-primary-hover);
+        fill: var(--oc-color-swatch-primary-hover);
       }
     }
   }

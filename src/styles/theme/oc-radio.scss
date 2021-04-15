@@ -1,16 +1,16 @@
 @mixin oc-form-check-size($factor) {
-  height: $form-check-size-default * $factor;
-  width: $form-check-size-default * $factor;
+  height: $oc-size-form-check-default * $factor;
+  width: $oc-size-form-check-default * $factor;
 }
 
 .oc-radio {
   @extend .uk-radio;
 
-  background-color: var(--oc-input-background);
-  border: 1px solid var(--oc-input-border);
+  background-color: var(--oc-color-input-bg);
+  border: 1px solid var(--oc-color-input-border);
 
   &:checked {
-    background-color: var(--oc-brand-primary);
+    background-color: var(--oc-color-swatch-brand-default);
   }
 
   // FIXME: Do not use such specific selectors after we get rid of UIkit
@@ -28,5 +28,5 @@
 }
 
 label > .oc-radio + span {
-  margin-left: $space-xsmall;
+  margin-left: var(--oc-space-xsmall);
 }

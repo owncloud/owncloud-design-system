@@ -3,13 +3,13 @@
   @extend .uk-navbar-transparent;
   @extend .uk-background-primary;
 
-  background-color: var(--oc-brand-primary);
+  background-color: var(--oc-color-swatch-brand-default);
   height: $navbar-nav-item-height;
 
   // Force inverse color,
   // without forcing it too hard
   .uk-navbar-item.uk-navbar-item {
-    color: var(--oc-color-inverse);
+    color: var(--oc-color-text-inverse);
   }
 
   &-menu {
@@ -19,7 +19,7 @@
       cursor: pointer;
 
       &-icon svg {
-        fill: var(--oc-color-inverse) !important;
+        fill: var(--oc-color-text-inverse) !important;
       }
 
       &-label {
@@ -37,7 +37,7 @@
     background: {
       position: center center;
       repeat: no-repeat;
-      size: calc(100% - #{$space-medium}) auto;
+      size: calc(100% - #{$oc-space-medium}) auto;
     }
   }
 
@@ -46,8 +46,8 @@
     min-height: 100% !important;
 
     &-avatar {
-      height: $navbar-nav-item-height - $space-medium;
-      width: $navbar-nav-item-height - $space-medium;
+      height: $navbar-nav-item-height - $oc-space-medium;
+      width: $navbar-nav-item-height - $oc-space-medium;
     }
 
     &-label {

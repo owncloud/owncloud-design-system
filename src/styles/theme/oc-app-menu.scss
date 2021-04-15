@@ -10,12 +10,12 @@
 
     &,
     > svg {
-      height: $global-font-size + 1 !important;
-      width: $global-font-size + 1 !important;
+      height: $oc-font-size-default + 1 !important;
+      width: $oc-font-size-default + 1 !important;
     }
 
     > svg {
-      fill: var(--oc-color) !important;
+      fill: var(--oc-color-text-default) !important;
     }
   }
 }

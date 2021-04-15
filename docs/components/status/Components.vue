@@ -62,7 +62,6 @@
 <script>
 // If you want to use your own tokens here, change the following line to:
 // import designTokens from "@/assets/tokens/tokens.raw.json"
-import designTokens from "../../docs.tokens.json"
 import orderBy from "../../utils/orderBy"
 
 export default {
@@ -70,7 +69,6 @@ export default {
   data() {
     return {
       components: this.orderData(this.getComponents()),
-      tokens: designTokens.props,
     }
   },
   methods: {
@@ -94,7 +92,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens.scss";
+@import "../../docs.tokens";
 
 /* STYLES
 --------------------------------------------- */

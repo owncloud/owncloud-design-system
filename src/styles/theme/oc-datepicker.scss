@@ -2,15 +2,15 @@
   &-input {
     @extend .uk-input;
 
-    background-color: var(--oc-input-background);
-    border: 1px solid var(--oc-input-border);
+    background-color: var(--oc-color-input-bg);
+    border: 1px solid var(--oc-color-input-border);
     border-radius: 3px;
-    color: var(--oc-color);
+    color: var(--oc-color-text-default);
 
     &:focus {
-      background-color: var(--oc-input-background);
-      border-color: var(--oc-brand-primary);
-      color: var(--oc-color);
+      background-color: var(--oc-color-input-bg);
+      border-color: var(--oc-color-swatch-brand-default);
+      color: var(--oc-color-text-default);
     }
   }
 
@@ -58,7 +58,7 @@
       &--selected {
         @extend .uk-background-primary;
 
-        color: var(--oc-color-inverse);
+        color: var(--oc-color-text-inverse);
       }
     }
   }
@@ -100,7 +100,7 @@
       &--selected {
         @extend .uk-background-primary;
 
-        color: var(--oc-color-inverse);
+        color: var(--oc-color-text-inverse);
       }
     }
   }
@@ -111,7 +111,7 @@
     @extend .uk-box-shadow-large;
     @extend .uk-background-default;
 
-    z-index: $z-index-modal;
+    z-index: var(--oc-z-index-modal);
 
     * {
       box-sizing: border-box;
@@ -129,12 +129,12 @@
     &__year {
       @extend .uk-text-small;
 
-      color: var(--oc-color-inverse);
+      color: var(--oc-color-text-inverse);
       cursor: pointer;
       transition: color $animation-duration;
 
       &:hover {
-        color: var(--oc-color-inverse) !important;
+        color: var(--oc-color-text-inverse) !important;
         opacity: 1;
       }
     }
@@ -144,13 +144,13 @@
       @extend .uk-heading-divider;
       @extend .oc-mb-s;
 
-      color: var(--oc-color-inverse) !important;
+      color: var(--oc-color-text-inverse) !important;
     }
 
     &__date {
       @extend .uk-text-lead;
 
-      color: var(--oc-color-inverse) !important;
+      color: var(--oc-color-text-inverse) !important;
       cursor: pointer;
       line-height: 1;
     }
@@ -237,7 +237,7 @@
         &--selected:hover > span > span {
           @extend .uk-background-primary;
 
-          color: var(--oc-color-inverse);
+          color: var(--oc-color-text-inverse);
         }
 
         &:hover > span > span {
@@ -256,8 +256,8 @@
 
     &,
     * {
-      background-color: var(--oc-background) !important;
-      color: var(--oc-color-muted) !important;
+      background-color: var(--oc-color-swatch-light-default) !important;
+      color: var(--oc-color-text-muted) !important;
     }
   }
 }
@@ -265,12 +265,12 @@
 .oc-datepicker {
   &-description input,
   &-description:focus input {
-    border-color: var(--oc-color-muted);
+    border-color: var(--oc-color-text-muted);
   }
 
   &-description,
   &-description:focus {
-    color: var(--oc-color-muted);
+    color: var(--oc-color-text-muted);
   }
 
   &-message {
@@ -278,7 +278,7 @@
     @extend .uk-flex-middle;
     @extend .oc-mt-xs;
 
-    min-height: $global-font-size * 1.5;
+    min-height: $oc-font-size-default * 1.5;
   }
 }
 

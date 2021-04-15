@@ -1,0 +1,31 @@
+{
+  "font": {
+    "text": {
+      "old": "font_text",
+      "value": "'Fira Sans', Helvetica, Arial, sans-serif",
+      "attributes": {}
+    },
+    "weight": {
+      "bold": {
+        "old": "weight_bold",
+        "value": "700",
+        "attributes": {}
+      },
+      "semi-bold": {
+        "old": "weight_semi_bold",
+        "value": "600",
+        "attributes": {}
+      },
+      "normal": {
+        "old": "weight_normal",
+        "value": "400",
+        "attributes": {}
+      },
+      "light": {
+        "old": "weight_light",
+        "value": "300",
+        "attributes": {}
+      }
+    }
+  }
+}

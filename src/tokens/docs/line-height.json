@@ -1,0 +1,19 @@
+{
+  "line-height": {
+    "medium": {
+      "old": "line_height_m",
+      "value": "1.6",
+      "attributes": {}
+    },
+    "small": {
+      "old": "line_height_s",
+      "value": "1.3",
+      "attributes": {}
+    },
+    "xsmall": {
+      "old": "line_height_xs",
+      "value": "1",
+      "attributes": {}
+    }
+  }
+}
