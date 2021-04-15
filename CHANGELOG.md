@@ -1,3 +1,26 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...master
+
+## Summary
+
+* Change - Use style-dictionary instead of theo: [#1217](https://github.com/owncloud/owncloud-design-system/pull/1217)
+
+## Details
+
+* Change - Use style-dictionary instead of theo: [#1217](https://github.com/owncloud/owncloud-design-system/pull/1217)
+
+   We've used theo to generate tokens, it was a bit cumbersome to manage global aliases and hard to
+   define property based filters.
+
+   From now on we use amazon style-dictionary to generate the tokens which is more flexible. In the
+   same process we renamed the tokens to get a more meaningful naming convention for css // scss
+   variables.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1217
+
 # Changelog for [5.1.0] (2021-04-15)
 
 The following sections list the changes in ownCloud Design System 5.1.0.
