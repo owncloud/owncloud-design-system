@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import designTokens from "../../../src/assets/tokens/ods.json"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * The color palette comes with 5 different weights for each hue. These hues
@@ -34,9 +34,7 @@ export default {
 
   computed: {
     tokens() {
-      return Object.keys(designTokens)
-        .map(name => designTokens[name])
-        .filter(token => token.name.startsWith("oc-color-"))
+      return Object.values(designTokens).filter(token => token.name.startsWith("oc-color-"))
     },
   },
 }

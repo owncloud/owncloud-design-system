@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import designTokens from "../../../src/assets/tokens/ods.json"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * This typographic scale makes it easier to achieve visual harmony in the
@@ -26,9 +26,7 @@ export default {
 
   computed: {
     tokens() {
-      return Object.keys(designTokens)
-        .map(name => designTokens[name])
-        .filter(token => token.name.startsWith("oc-font-size-"))
+      return Object.values(designTokens).filter(token => token.name.startsWith("oc-font-size-"))
     },
   },
 }

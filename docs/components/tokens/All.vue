@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import designTokens from "../../../src/assets/tokens/ods.json"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * A list of available tokens in ownCloud Design System. Use these tokens in place
@@ -44,7 +44,7 @@ export default {
   name: "All",
   data() {
     return {
-      tokens: Object.keys(designTokens).map(name => designTokens[name]),
+      tokens: Object.values(designTokens),
     }
   },
 }

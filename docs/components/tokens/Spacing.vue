@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import designTokens from "../../../src/assets/tokens/ods.json"
+import designTokens from "@/assets/tokens/ods.json"
 
 /**
  * A framework for creating a predictable and harmonious spacing system. These
@@ -26,9 +26,7 @@ export default {
   name: "Spacing",
   computed: {
     tokens() {
-      return Object.keys(designTokens)
-        .map(name => designTokens[name])
-        .filter(token => token.name.startsWith("oc-space"))
+      return Object.values(designTokens).filter(token => token.name.startsWith("oc-space"))
     },
   },
 }
