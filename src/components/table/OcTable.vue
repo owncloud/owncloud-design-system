@@ -321,11 +321,11 @@ export default {
   }
 
   &-highlighted {
-    background-color: var(--oc-color-swatch-light-highlight);
+    background-color: var(--oc-color-background-highlight);
   }
 
   &-disabled {
-    background-color: var(--oc-color-swatch-light-muted);
+    background-color: var(--oc-color-background-muted);
     opacity: 0.8;
     pointer-events: none;
   }
@@ -334,7 +334,7 @@ export default {
     position: relative;
 
     .oc-table-header-cell {
-      background-color: var(--oc-color-swatch-light-default);
+      background-color: var(--oc-color-background-default);
       position: sticky;
       z-index: 1;
     }

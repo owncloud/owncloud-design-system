@@ -401,7 +401,7 @@ export default {
   &-dropdown {
     @extend .uk-box-shadow-medium;
 
-    background: var(--oc-color-swatch-light-default);
+    background: var(--oc-color-background-default);
   }
 
   &-input {
@@ -442,7 +442,7 @@ export default {
         @extend .oc-text-muted;
         @extend .oc-m-rm;
 
-        background-color: var(--oc-color-swatch-light-default);
+        background-color: var(--oc-color-background-default);
         padding: var(--oc-space-small);
         padding-left: $spinner-size + $oc-space-medium;
       }
@@ -459,7 +459,7 @@ export default {
       @extend .oc-text-muted;
       @extend .oc-m-rm;
 
-      background-color: var(--oc-color-swatch-light-default);
+      background-color: var(--oc-color-background-default);
       cursor: pointer;
       padding: var(--oc-space-small);
     }
