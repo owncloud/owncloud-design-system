@@ -58,7 +58,7 @@ export default {
 <style lang="scss">
 .oc-tag {
   align-items: center;
-  background-color: var(--oc-color-swatch-light-default);
+  background-color: var(--oc-color-background-default);
   border: 1px solid var(--oc-color-text-muted);
   border-radius: 7px;
   box-sizing: border-box;
