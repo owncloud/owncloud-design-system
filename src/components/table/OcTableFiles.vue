@@ -242,6 +242,7 @@ export default {
             type: "slot",
             width: "expand",
             wrap: "truncate",
+            sortable: true,
           },
           {
             name: "size",
@@ -249,6 +250,7 @@ export default {
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
+            sortable: true,
           },
           {
             name: "sharedWith",
@@ -256,6 +258,7 @@ export default {
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
+            sortable: true,
           },
           {
             name: "status",
@@ -263,6 +266,7 @@ export default {
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
+            sortable: true,
           },
           {
             name: "owner",
@@ -270,6 +274,7 @@ export default {
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
+            sortable: true,
           },
           {
             name: "mdate",
@@ -278,6 +283,7 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             callback: date => this.formatDate(date),
+            sortable: true,
           },
           {
             name: "sdate",
@@ -286,6 +292,7 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             callback: date => this.formatDate(date),
+            sortable: true,
           },
           {
             name: "ddate",
@@ -294,6 +301,7 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             callback: date => this.formatDate(date),
+            sortable: true,
           },
         ].filter(field => Object.prototype.hasOwnProperty.call(firstResource, field.name))
       )
@@ -429,7 +437,7 @@ export default {
           indicators: [],
           type: "file",
           size: "111000234",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          mdate: "Mon, 11 Jan 2021 14:34:04 GMT",
         },
         {
           id: "notes",
