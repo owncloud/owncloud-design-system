@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Use style-dictionary instead of theo: [#1217](https://github.com/owncloud/owncloud-design-system/pull/1217)
+* Enhancement - Table sorting: [#1219](https://github.com/owncloud/owncloud-design-system/pull/1219)
 
 ## Details
 
@@ -20,6 +21,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    variables.
 
    https://github.com/owncloud/owncloud-design-system/pull/1217
+
+
+* Enhancement - Table sorting: [#1219](https://github.com/owncloud/owncloud-design-system/pull/1219)
+
+   The latest version of OcTable and OcTableFiles had no more sorting. We brought it back. It can be
+   enabled by simply adding a `sortable: true` to table fields.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1219
 
 # Changelog for [5.1.0] (2021-04-15)
 
