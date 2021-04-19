@@ -1,24 +1,4 @@
-# Changelog for [unreleased] (UNRELEASED)
-
-The following sections list the changes in ownCloud Design System unreleased.
-
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...master
-
-## Summary
-
-* Enhancement - More themable variables: [#1224](https://github.com/owncloud/owncloud-design-system/pull/1224)
-
-## Details
-
-* Enhancement - More themable variables: [#1224](https://github.com/owncloud/owncloud-design-system/pull/1224)
-
-   Due to recent changes, more variables other than colors have been moved from SASS to CSS
-   variables and are therefore customizable through theming. This change loads them correctly
-   when providing a `theme.json` as a Vue plugin option.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1224
-
-# Changelog for [6.0.0] (2021-04-16)
+# Changelog for [6.0.0] (2021-04-19)
 
 The following sections list the changes in ownCloud Design System 6.0.0.
 
@@ -27,6 +7,7 @@ The following sections list the changes in ownCloud Design System 6.0.0.
 ## Summary
 
 * Change - Use style-dictionary instead of theo: [#1217](https://github.com/owncloud/owncloud-design-system/pull/1217)
+* Enhancement - More themable variables: [#1224](https://github.com/owncloud/owncloud-design-system/pull/1224)
 * Enhancement - Table sorting: [#1219](https://github.com/owncloud/owncloud-design-system/pull/1219)
 
 ## Details
@@ -41,6 +22,15 @@ The following sections list the changes in ownCloud Design System 6.0.0.
    variables.
 
    https://github.com/owncloud/owncloud-design-system/pull/1217
+
+
+* Enhancement - More themable variables: [#1224](https://github.com/owncloud/owncloud-design-system/pull/1224)
+
+   Due to recent changes, more variables other than colors have been moved from SASS to CSS
+   variables and are therefore customizable through theming. This change loads them correctly
+   when providing a `theme.json` as a Vue plugin option.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1224
 
 
 * Enhancement - Table sorting: [#1219](https://github.com/owncloud/owncloud-design-system/pull/1219)
