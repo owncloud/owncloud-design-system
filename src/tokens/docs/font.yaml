@@ -1,0 +1,13 @@
+---
+font:
+  text:
+    value: "'Fira Sans', Helvetica, Arial, sans-serif"
+  weight:
+    bold:
+      value: '700'
+    semi-bold:
+      value: '600'
+    normal:
+      value: '400'
+    light:
+      value: '300'

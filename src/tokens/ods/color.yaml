@@ -1,0 +1,69 @@
+---
+color:
+  swatch:
+    brand:
+      default:
+        value: rgb(4, 30, 66)
+      hover:
+        value: rgb(34, 57, 89)
+    primary:
+      default:
+        value: rgb(78, 133, 200)
+      hover:
+        value: rgb(128, 167, 215)
+      muted:
+        value: rgb(44, 88, 142)
+    success:
+      default:
+        value: rgb(104, 214, 14)
+      hover:
+        value: rgb(147, 224, 84)
+      muted:
+        value: rgb(83, 150, 10)
+    warning:
+      default:
+        value: rgb(255, 136, 0)
+      hover:
+        value: rgb(253, 169, 75)
+      muted:
+        value: rgb(179, 81, 0)
+    danger:
+      default:
+        value: rgb(224, 0, 0)
+      hover:
+        value: rgb(233, 100, 100)
+      muted:
+        value: rgb(181, 0, 0)
+    passive:
+      default:
+        value: rgb(76, 95, 121)
+      hover:
+        value: rgb(151, 162, 177)
+      muted:
+        value: rgb(40, 62, 93)
+  background:
+    default:
+      value: rgb(255, 255, 255)
+    muted:
+      value: rgb(237, 243, 250)
+    highlight:
+      value: rgb(248, 248, 248)
+  border:
+    value: rgb(236, 235, 238)
+  text:
+    default:
+      value: rgb(4, 30, 66)
+    muted:
+      value: rgb(76, 95, 121)
+    inverse:
+      value: rgb(255, 255, 255)
+  input:
+    text:
+      default:
+        value: rgb(4, 30, 66)
+      muted:
+        value: rgb(76, 95, 121)
+    border:
+      value: rgb(206, 221, 238)
+    bg:
+      value: rgb(240, 244, 248)
