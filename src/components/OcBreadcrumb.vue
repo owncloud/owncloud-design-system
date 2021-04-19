@@ -1,25 +1,32 @@
 <template>
-  <div :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
-    <ul class="oc-breadcrumb-list">
+  <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
+    <ol class="oc-breadcrumb-list">
       <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
-        <router-link
-          v-if="home && index === 0"
-          :to="item.to"
-          class="uk-flex uk-float-left"
-          :aria-label="homeAccessibleLabelValue"
+        <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">{{
+          item.text
+        }}</router-link>
+        <oc-button
+          v-else-if="item.onClick"
+          :aria-current="getAriaCurrent(index)"
+          appearance="raw"
+          @click="item.onClick"
         >
-          <oc-icon name="home" />
-        </router-link>
-        <router-link v-else-if="item.to" :to="item.to">{{ item.text }}</router-link>
-        <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
-        <span v-else v-text="item.text" />
+          {{ item.text }}
+        </oc-button>
+        <span v-else :aria-current="getAriaCurrent(index)" v-text="item.text" />
       </li>
-    </ul>
+    </ol>
     <div class="oc-breadcrumb-drop">
-      <label class="oc-breadcrumb-drop-label">
+      <label
+        ref="mobileDropdown"
+        tabindex="0"
+        class="oc-breadcrumb-drop-label"
+        @keydown.enter="$refs.mobileDropdown.click()"
+      >
         <span
           v-if="currentFolder"
           class="oc-breadcrumb-drop-label-text"
+          aria-current="page"
           v-text="currentFolder.text"
         />
         <oc-icon
@@ -29,19 +36,29 @@
         />
       </label>
       <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
-        <ul class="uk-nav uk-nav-default">
+        <ol class="uk-nav uk-nav-default">
           <li v-for="(item, index) in dropdownItems" :key="index">
-            <router-link v-if="item.to" :to="item.to">{{ item.text }}</router-link>
-            <a v-else-if="item.onClick" @click="item.onClick">{{ item.text }}</a>
-            <span v-else v-text="item.text" />
+            <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">{{
+              item.text
+            }}</router-link>
+            <oc-button
+              v-else-if="item.onClick"
+              justify-content="left"
+              appearance="raw"
+              :aria-current="getAriaCurrent(index)"
+              @click="item.onClick"
+              >{{ item.text }}</oc-button
+            >
+            <span v-else :aria-current="getAriaCurrent(index)" v-text="item.text" />
           </li>
-        </ul>
+        </ol>
       </oc-drop>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
+import OcButton from "./OcButton.vue"
 import OcDrop from "./OCDrop.vue"
 import OcIcon from "./OcIcon.vue"
 
@@ -50,10 +67,6 @@ import OcIcon from "./OcIcon.vue"
  *
  *  - text: mandatory element, holds the text which is to be displayed in the breadcrumb
  *  - to: optional element, the vue router link
- *
- * ## Accessibility
- *
- * You can provide an accessibility label to the home icon via `homeAccessibleLabel`. If not set, it will default to "Go to Home".
  */
 export default {
   name: "OcBreadcrumb",
@@ -63,31 +76,16 @@ export default {
   components: {
     OcDrop,
     OcIcon,
+    OcButton,
   },
 
   props: {
     /**
-     * Array of breadcrub items
+     * Array of breadcrumb items
      */
     items: {
       type: Array,
       required: true,
-    },
-    /**
-     * First item will be
-     * displayed as a home icon
-     */
-    home: {
-      type: [Boolean],
-      default: false,
-    },
-    /**
-     * Aria-label for the home icon
-     */
-    homeAccessibleLabel: {
-      type: String,
-      required: false,
-      default: "",
     },
     /**
      * Variation of breadcrumbs
@@ -111,8 +109,10 @@ export default {
 
       return [...this.items].reverse()[0]
     },
-    homeAccessibleLabelValue() {
-      return this.homeAccessibleLabel || this.$gettext("Go to root directory")
+  },
+  methods: {
+    getAriaCurrent(index) {
+      return this.items.length - 1 === index ? "page" : null
     },
   },
 }
@@ -127,7 +127,12 @@ export default {
     @extend .uk-breadcrumb;
     @extend .oc-m-rm;
 
+    > li button {
+      display: inline;
+    }
+
     > li a,
+    > li button,
     > li span,
     > :nth-child(n + 2):not(.uk-first-column)::before {
       color: var(--oc-color-text-muted);
@@ -137,8 +142,20 @@ export default {
       color: var(--oc-color-text-default);
     }
 
-    > li a:hover {
+    > li a:hover,
+    > li span:hover,
+    > li button:hover {
       color: var(--oc-color-swatch-primary-default);
+    }
+  }
+
+  /* stylelint-disable */
+  &-list-item {
+    &::before,
+    a,
+    button,
+    span {
+      font-size: 0.875rem;
     }
   }
 
@@ -146,8 +163,8 @@ export default {
   &-lead &-list-item {
     &::before,
     a,
+    button,
     span {
-      // FIXME: Remove important after we get rid of UIKit
       font-size: var(--oc-font-size-large);
     }
   }
@@ -158,13 +175,22 @@ export default {
 
     .uk-drop > .uk-card > .uk-nav-default {
       > li a,
+      > li button,
       > li span {
         color: var(--oc-color-text-muted);
+        font-size: 0.875rem;
       }
 
       > li a:hover,
-      > li span:hover {
+      > li span:hover,
+      > li button:hover {
         color: var(--oc-color-swatch-brand-default);
+      }
+
+      li button {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
       }
     }
 
@@ -191,7 +217,7 @@ export default {
 ```js
 <template>
   <div>
-    <oc-breadcrumb :items="items" home class="oc-mb" />
+    <oc-breadcrumb :items="items" class="oc-mb" />
     <oc-breadcrumb :items="items" variation="lead" />
   </div>
 </template>
