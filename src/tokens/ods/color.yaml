@@ -45,9 +45,9 @@ color:
     default:
       value: rgb(255, 255, 255)
     muted:
-      value: rgb(237, 243, 250)
-    highlight:
       value: rgb(248, 248, 248)
+    highlight:
+      value: rgb(237, 243, 250)
   border:
     value: rgb(236, 235, 238)
   text:
