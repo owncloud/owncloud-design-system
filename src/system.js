@@ -15,10 +15,12 @@ contexts.forEach(context => {
 })
 
 function initializeCustomProps(tokens, prefix) {
+  if (!tokens) {
+    return
+  }
+
   for (const param in tokens) {
-    document
-      .querySelector(":root")
-      .style.setProperty("--oc-" + prefix + param, tokens[param])
+    document.querySelector(":root").style.setProperty("--oc-" + prefix + param, tokens[param])
   }
 }
 
