@@ -48,6 +48,7 @@
     "not OperaMobile > 0"
   ],
   "devDependencies": {
+    "@adobe/leonardo-contrast-colors": "^1.0.0-alpha.8",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -135,7 +136,8 @@
     "webpack-merge": "^5.4.0",
     "webpack-merge-and-include-globally": "^2.1.24",
     "webpack-node-externals": "^2.5.2",
-    "weekstart": "^1.0.0"
+    "weekstart": "^1.0.0",
+    "yaml": "^1.10.2"
   },
   "peerDependencies": {
     "filesize": "^6.1.0",

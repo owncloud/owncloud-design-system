@@ -1,0 +1,9 @@
+---
+font:
+  size:
+    default:
+      value: 1rem
+    medium:
+      value: 1.25rem
+    large:
+      value: 1.5rem
