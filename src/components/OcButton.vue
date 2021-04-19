@@ -261,7 +261,9 @@ export default {
 
   &-outline:hover:not([disabled]),
   &-outline:focus:not([disabled]) {
-    color: $muted-color;
+    color: var(--oc-color-text-inverse);
+    background-color: $color;
+    border-color: $color;
 
     .oc-icon > svg {
       fill: $muted-color;
@@ -282,9 +284,6 @@ export default {
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   text-align: center;
-  transition: background-color $transition-duration-short ease-in-out,
-    color $transition-duration-short ease-in-out,
-    border-color $transition-duration-short ease-in-out;
 
   &-justify-content {
     &-left {
@@ -412,6 +411,11 @@ export default {
     );
 
     color: var(--oc-color-swatch-brand-default);
+
+    &-outline:hover:not([disabled]),
+    &-outline:focus:not([disabled]) {
+      color: var(--oc-color-text-default);
+    }
   }
 
   &:disabled {
