@@ -14,16 +14,23 @@ contexts.forEach(context => {
   context.keys().forEach(key => components.push(context(key).default))
 })
 
+function initializeCustomProps(tokens, prefix) {
+  for (const param in tokens) {
+    document
+      .querySelector(":root")
+      .style.setProperty("--oc-" + prefix + param, tokens[param])
+  }
+}
+
 // Install the above defined components
 const System = {
   install(Vue, options = {}) {
     const themeOptions = options.tokens
+    initializeCustomProps(themeOptions?.colorPalette, "color-")
+    initializeCustomProps(themeOptions?.fontSizes, "font-size-")
+    initializeCustomProps(themeOptions?.sizes, "size-")
+    initializeCustomProps(themeOptions?.spacing, "space-")
 
-    for (const colorVar in themeOptions?.colorPalette) {
-      document
-        .querySelector(":root")
-        .style.setProperty("--oc-" + colorVar, themeOptions.colorPalette[colorVar])
-    }
     components.forEach(component => Vue.component(component.name, component))
   },
 }
