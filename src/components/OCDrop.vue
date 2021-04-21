@@ -1,5 +1,5 @@
 <template>
-  <div :id="dropId" :uk-drop="$_ocDrop_props" @click="$_ocDrop_close">
+  <div :id="dropId" class="oc-drop" :uk-drop="$_ocDrop_props" @click="$_ocDrop_close">
     <div v-if="$slots.default" class="uk-card uk-card-default uk-card-small uk-card-body">
       <slot />
     </div>
@@ -104,54 +104,60 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.oc-drop {
+  li a:focus {
+    outline: auto 1px !important;
+  }
+}
+</style>
 <docs>
 ```jsx
 <div>
   <div class="uk-button-group oc-mt-s">
     <oc-button id="my_menu" class="oc-mr-s">Menu</oc-button>
+    <oc-drop toggle="#my_menu" mode="click">
+      <oc-nav>
+        <oc-nav-item icon="create_new_folder" autofocus>Item with icon</oc-nav-item>
+        <oc-nav-item>Item without icon</oc-nav-item>
+        <oc-nav-item>Active item</oc-nav-item>
+      </oc-nav>
+    </oc-drop>
+
     <oc-button id="my_filter" class="oc-mr-s">Filter</oc-button>
+    <oc-drop toggle="#my_filter" mode="hover">
+      <p>
+        Lets filter:
+      </p>
+      <ul class="uk-list">
+        <li>
+          <oc-checkbox /> <span class="oc-text-muted">Show Files</span>
+        </li>
+        <li>
+          <oc-checkbox /> <span class="oc-text-muted">Show Folders</span>
+        </li>
+        <li>
+          <oc-search-bar small placeholder="Filter by name" :button="false" />
+        </li>
+      </ul>
+    </oc-drop>
+
     <oc-button id="my_advanced">Advanced</oc-button>
+    <oc-drop dropId="oc-drop" toggle="#my_advanced" mode="click" closeOnClick :options="{ 'delay-hide': '0' }">
+      <div slot="special" class="uk-card uk-card-default">
+        <div class="uk-card-header">
+          <h3 class="uk-card-title">
+            Advanced
+          </h3>
+        </div>
+        <div class="uk-card-body">
+          <p>
+            I'm a slightly more advanced drop down and I'll be closed as soon as you click on me.
+          </p>
+        </div>
+      </div>
+    </oc-drop>
   </div>
-
-  <oc-drop toggle="#my_menu" mode="click">
-    <oc-nav>
-      <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>
-      <oc-nav-item>Item without icon</oc-nav-item>
-      <oc-nav-item>Active item</oc-nav-item>
-    </oc-nav>
-  </oc-drop>
-
-  <oc-drop toggle="#my_filter" mode="hover">
-    <p>
-      Lets filter:
-    </p>
-    <ul class="uk-list">
-      <li>
-        <oc-checkbox /> <span class="oc-text-muted">Show Files</span>
-      </li>
-      <li>
-        <oc-checkbox /> <span class="oc-text-muted">Show Folders</span>
-      </li>
-      <li>
-        <oc-search-bar small placeholder="Filter by name" :button="false" />
-      </li>
-    </ul>
-  </oc-drop>
-
-  <oc-drop dropId="oc-drop" toggle="#my_advanced" mode="click" closeOnClick :options="{ 'delay-hide': '0' }">
-    <div slot="special" class="uk-card uk-card-default">
-      <div class="uk-card-header">
-        <h3 class="uk-card-title">
-          Advanced
-        </h3>
-      </div>
-      <div class="uk-card-body">
-        <p>
-          I'm a slightly more advanced drop down and I'll be closed as soon as you click on me.
-        </p>
-      </div>
-    </div>
-  </oc-drop>
 </div>
 ```
 </docs>
