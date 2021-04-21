@@ -7,6 +7,7 @@
         :key="indicator.id"
         class="oc-status-indicators-indicator"
         :aria-label="indicator.label"
+        :aria-describedby="getIndicatorDescriptionId(indicator)"
         :uk-tooltip="indicator.label"
         variation="passive"
         appearance="raw"
@@ -22,8 +23,16 @@
         class="oc-status-indicators-indicator"
         :name="indicator.icon"
         :accessible-label="indicator.label"
+        :aria-describedby="getIndicatorDescriptionId(indicator)"
         :uk-tooltip="indicator.label"
         variation="passive"
+      />
+      <span
+        v-if="getIndicatorDescriptionId(indicator)"
+        :id="getIndicatorDescriptionId(indicator)"
+        :key="indicator.id"
+        class="oc-invisible-sr"
+        v-text="indicator.accessibleDescription"
       />
     </template>
   </div>
@@ -32,6 +41,7 @@
 <script>
 import OcIcon from "./OcIcon.vue"
 import OcButton from "./OcButton.vue"
+import uniqueId from "../utils/uniqueId"
 
 /**
  * Status indicators which can be attatched to a resource
@@ -71,6 +81,17 @@ export default {
   methods: {
     hasHandler(indicator) {
       return Object.prototype.hasOwnProperty.call(indicator, "handler")
+    },
+    getIndicatorDescriptionId(indicator) {
+      if (!indicator.accessibleDescription) {
+        return null
+      }
+
+      if (!indicator.accessibleDescriptionId) {
+        indicator.accessibleDescriptionId = uniqueId("oc-indicator-description-")
+      }
+
+      return indicator.accessibleDescriptionId
     },
   },
 }

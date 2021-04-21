@@ -14,10 +14,19 @@
         :is="componentType"
         v-bind="componentProps"
         v-if="isResourceClickable"
+        :target="linkTargetBlank"
+        :aria-describedby="opensInNewWindowDescriptionId"
         class="oc-text-overflow"
         @click.stop="emitClick"
         @click.native.stop
       >
+        <span
+          v-if="opensInNewWindowDescriptionId"
+          :id="opensInNewWindowDescriptionId"
+          class="oc-invisible-sr"
+          v-text="$gettext('Opens in a new window')"
+        >
+        </span>
         <oc-resource-name
           :key="resource.name"
           :name="resource.name"
@@ -47,6 +56,7 @@ import OcImg from "../OcImage.vue"
 import OcStatusIndicators from "../OcStatusIndicators.vue"
 import OcIcon from "../OcIcon.vue"
 import OcResourceName from "./OcResourceName.vue"
+import uniqueId from "../../utils/uniqueId"
 
 /**
  * Displays a resource together with the resource type icon or preview
@@ -179,6 +189,22 @@ export default {
         to: this.folderLink,
       }
     },
+
+    opensInNewWindowDescriptionId() {
+      if (this.resource.opensInNewWindow) {
+        return uniqueId("oc-link-description-")
+      }
+
+      return null
+    },
+
+    linkTargetBlank() {
+      if (this.isRouterLink && this.resource.opensInNewWindow) {
+        return "_blank"
+      }
+
+      return null
+    },
   },
 
   methods: {
@@ -217,6 +243,7 @@ export default {
 
     a:hover,
     a:focus {
+      outline-offset: 0;
       text-decoration: none;
     }
   }
@@ -266,7 +293,8 @@ export default {
             path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
             preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
-            type: "file"
+            type: "file",
+            opensInNewWindow: true,
           }
         },
         indicators() {
