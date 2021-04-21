@@ -23,7 +23,7 @@
     <template #select="{ item }">
       <oc-checkbox
         :id="`oc-table-files-select-${item.id}`"
-        :label="$gettext('Select resource')"
+        :label="getResourceCheckboxLabel(item)"
         :hide-label="true"
         size="large"
         :value="selection"
@@ -369,6 +369,14 @@ export default {
       return Array.isArray(this.disabled)
         ? !this.disabled.includes(resourceId)
         : this.disabled !== resourceId
+    },
+
+    getResourceCheckboxLabel(resource) {
+      if (resource.type === "folder") {
+        return this.$gettext("Select folder")
+      }
+
+      return this.$gettext("Select file")
     },
   },
 }
