@@ -6,10 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Improve accessibility of oc-breadcrumb component: [#1228](https://github.com/owncloud/owncloud-design-system/pull/1228)
 * Enhancement - Files table accessibility: [#1229](https://github.com/owncloud/owncloud-design-system/pull/1229)
 * Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
 
 ## Details
+
+* Change - Improve accessibility of oc-breadcrumb component: [#1228](https://github.com/owncloud/owncloud-design-system/pull/1228)
+
+   In order to enhance accessibility oc breadcrumb has been wrapped into a <nav> tag. The <ul>
+   element changed to <ol> element, furthermore aria-current=page applies to the last item and
+   the default home breadcrumb has been removed. Keyboard navigation has been fixed.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1228
+
 
 * Enhancement - Files table accessibility: [#1229](https://github.com/owncloud/owncloud-design-system/pull/1229)
 
