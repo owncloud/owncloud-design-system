@@ -87,7 +87,8 @@ export default {
      */
     productName: {
       type: String,
-      required: true,
+      required: false,
+      default: "",
     },
     /**
      * Navigation items of the product
