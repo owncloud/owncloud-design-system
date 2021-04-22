@@ -6,9 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Files table accessibility: [#1229](https://github.com/owncloud/owncloud-design-system/pull/1229)
 * Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
 
 ## Details
+
+* Enhancement - Files table accessibility: [#1229](https://github.com/owncloud/owncloud-design-system/pull/1229)
+
+   * Add accessible description in case a resource link opens in a new window * Add accessible
+   description for status indicators * Adjust some of the labels to make them more descriptive *
+   Fix broken outline on directories
+
+   https://github.com/owncloud/owncloud-design-system/pull/1229
+
 
 * Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
 
