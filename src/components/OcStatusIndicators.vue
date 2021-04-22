@@ -78,6 +78,12 @@ export default {
     },
   },
 
+  data() {
+    return {
+      accessibleDescriptionIds: {},
+    }
+  },
+
   methods: {
     hasHandler(indicator) {
       return Object.prototype.hasOwnProperty.call(indicator, "handler")
@@ -87,11 +93,11 @@ export default {
         return null
       }
 
-      if (!indicator.accessibleDescriptionId) {
-        indicator.accessibleDescriptionId = uniqueId("oc-indicator-description-")
+      if (!this.accessibleDescriptionIds[indicator.id]) {
+        this.accessibleDescriptionIds[indicator.id] = uniqueId("oc-indicator-description-")
       }
 
-      return indicator.accessibleDescriptionId
+      return this.accessibleDescriptionIds[indicator.id]
     },
   },
 }
