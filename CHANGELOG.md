@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Improve accessibility of oc-breadcrumb component: [#1228](https://github.com/owncloud/owncloud-design-system/pull/1228)
 * Change - Accessibility improvements on the sidebar component: [#1231](https://github.com/owncloud/owncloud-design-system/pull/1231)
 * Enhancement - Files table accessibility: [#1229](https://github.com/owncloud/owncloud-design-system/pull/1229)
+* Enhancement - Improve modal component: [#1214](https://github.com/owncloud/owncloud-design-system/pull/1214)
 * Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
 
 ## Details
@@ -38,6 +39,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    Fix broken outline on directories
 
    https://github.com/owncloud/owncloud-design-system/pull/1229
+
+
+* Enhancement - Improve modal component: [#1214](https://github.com/owncloud/owncloud-design-system/pull/1214)
+
+   We've made the OcModal component more accessible: - It now features `role="dialog"` and
+   `aria-modal="true"` - The modal title is now a `<h2>` - Component styles have been moved from an
+   individual stylesheet to the component file
+
+   https://github.com/owncloud/owncloud-design-system/pull/1214
 
 
 * Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
