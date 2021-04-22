@@ -2,9 +2,10 @@
 
 exports[`OcModal displays input 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-passive">
+  <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
-      <!----> <span>Create new folder</span>
+      <!---->
+      <h2>Create new folder</h2>
     </div>
     <div class="oc-modal-body">
       <oc-text-input-stub id="oc-textinput-1" type="text" value="New folder" label="Folder name" fixmessageline="true" class="oc-modal-body-input"></oc-text-input-stub>
@@ -19,9 +20,10 @@ exports[`OcModal displays input 1`] = `
 
 exports[`OcModal hides icon if not specified 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-passive">
+  <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
-      <!----> <span>Example title</span>
+      <!---->
+      <h2>Example title</h2>
     </div>
     <div class="oc-modal-body">
       <p class="oc-modal-body-message">Example message</p>
@@ -36,9 +38,10 @@ exports[`OcModal hides icon if not specified 1`] = `
 
 exports[`OcModal matches snapshot 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-passive">
+  <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
-      <oc-icon-stub name="info" accessiblelabel="" type="span" size="medium" variation="passive"></oc-icon-stub> <span>Example title</span>
+      <oc-icon-stub name="info" accessiblelabel="" type="span" size="medium" variation="passive"></oc-icon-stub>
+      <h2>Example title</h2>
     </div>
     <div class="oc-modal-body">
       <p class="oc-modal-body-message">Example message</p>
@@ -53,9 +56,10 @@ exports[`OcModal matches snapshot 1`] = `
 
 exports[`OcModal overrides props message with slot 1`] = `
 <div class="oc-modal-background">
-  <div tabindex="0" class="oc-modal oc-modal-passive">
+  <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
     <div class="oc-modal-title">
-      <!----> <span>Example title</span>
+      <!---->
+      <h2>Example title</h2>
     </div>
     <div class="oc-modal-body">
       <div class="oc-modal-body-message">
