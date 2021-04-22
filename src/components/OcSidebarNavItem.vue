@@ -1,5 +1,5 @@
 <template>
-  <li :class="$_ocSidebarNavItem_class">
+  <li :class="itemClass" :aria-current="ariaCurrent">
     <router-link :to="target">
       <oc-icon :name="icon" />
       <slot name="default" />
@@ -42,7 +42,7 @@ export default {
     },
   },
   computed: {
-    $_ocSidebarNavItem_class() {
+    itemClass() {
       let classes = []
       if (this.$slots.subnav) {
         classes.push("uk-parent")
@@ -54,6 +54,13 @@ export default {
         classes.push("oc-mt")
       }
       return classes
+    },
+    ariaCurrent() {
+      if (this.active) {
+        return "page"
+      }
+
+      return null
     },
   },
 }

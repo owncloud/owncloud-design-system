@@ -1,12 +1,12 @@
 <template>
-  <div :class="$_ocSidebar_classes">
+  <div :class="classes" :aria-label="accessibleLabel">
     <div class="oc-sidebar-content-wrapper">
       <oc-button
         v-if="fixed"
         class="oc-sidebar-button-close"
         appearance="raw"
         :aria-label="closeButtonLabel"
-        @click="$_ocSidebar_buttonClose_click"
+        @click="buttonClose_click"
       >
         <oc-icon name="close" />
       </oc-button>
@@ -15,7 +15,7 @@
           v-if="logoImg"
           key="logo-image"
           :src="logoImg"
-          :alt="productName"
+          :alt="logoAltTag"
           class="oc-sidebar-logo-img"
         />
         <span v-else key="product-name" class="oc-sidebar-logo-text" v-text="productName" />
@@ -24,7 +24,7 @@
         <!-- @slot Content above the navigation block -->
         <slot name="upperContent" />
       </div>
-      <nav v-if="$_ocSidebar_isNavigationVisible" key="sidebar-navigation" class="oc-sidebar-nav">
+      <nav v-if="isNavigationVisible" key="sidebar-navigation" class="oc-sidebar-nav">
         <ul>
           <oc-sidebar-nav-item
             v-for="item in navItems"
@@ -42,7 +42,7 @@
         v-if="$slots.mainContent"
         key="sidebar-main-content"
         class="oc-sidebar-main-content"
-        :class="{ 'oc-mt': $slots.upperContent || $_ocSidebar_isNavigationVisible }"
+        :class="{ 'oc-mt': $slots.upperContent || isNavigationVisible }"
       >
         <!-- @slot Content below the navigation block and above the footer -->
         <slot name="mainContent" />
@@ -121,10 +121,25 @@ export default {
       required: false,
       default: "Close navigation menu",
     },
+    /**
+     * Alt tag for the logo
+     */
+    logoAlt: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * Accessible label for the entire sidebar
+     */
+    accessibleLabel: {
+      type: String,
+      required: true,
+    },
   },
 
   computed: {
-    $_ocSidebar_classes() {
+    classes() {
       const classes = ["oc-sidebar"]
 
       if (this.fixed) {
@@ -133,13 +148,19 @@ export default {
 
       return classes
     },
-    $_ocSidebar_isNavigationVisible() {
+    isNavigationVisible() {
       return !this.hideNav && this.navItems.length > 0
+    },
+    logoAltTag() {
+      if (this.logoAlt) {
+        return this.logoAlt
+      }
+      return this.productName
     },
   },
 
   methods: {
-    $_ocSidebar_buttonClose_click() {
+    buttonClose_click() {
       /**
        * The user clicked on the close button
        */
