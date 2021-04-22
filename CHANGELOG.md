@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...master
+
+## Summary
+
+* Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
+
+## Details
+
+* Enhancement - OCDrop accessibility: [#1230](https://github.com/owncloud/owncloud-design-system/pull/1230)
+
+   Changed DOM order of example data to allow proper tab interactions, added focus border to a
+   elements in list.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1230
+
 # Changelog for [6.0.1] (2021-04-19)
 
 The following sections list the changes in ownCloud Design System 6.0.1.
