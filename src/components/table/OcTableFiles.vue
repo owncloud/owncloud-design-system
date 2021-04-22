@@ -23,7 +23,7 @@
     <template #select="{ item }">
       <oc-checkbox
         :id="`oc-table-files-select-${item.id}`"
-        :label="$gettext('Select')"
+        :label="getResourceCheckboxLabel(item)"
         :hide-label="true"
         size="large"
         :value="selection"
@@ -122,6 +122,7 @@ export default {
      * - shareDate: The date when the share was created
      * - deletionDate: The date when the resource has been deleted
      * - status: The status of the share. Contains also actions to accept/decline the share
+     * - opensInNewWindow: Open the link in a new window
      */
     resources: {
       type: Array,
@@ -369,6 +370,14 @@ export default {
         ? !this.disabled.includes(resourceId)
         : this.disabled !== resourceId
     },
+
+    getResourceCheckboxLabel(resource) {
+      if (resource.type === "folder") {
+        return this.$gettext("Select folder")
+      }
+
+      return this.$gettext("Select file")
+    },
   },
 }
 </script>
@@ -404,7 +413,7 @@ export default {
   <div>
     <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction">
       <template v-slot:quickActions="props">
-        <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share">
+        <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
           <oc-icon name="group-add" />
         </oc-button>
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Create a public link">
@@ -438,6 +447,7 @@ export default {
           type: "file",
           size: "111000234",
           mdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+          opensInNewWindow: true
         },
         {
           id: "notes",
@@ -468,6 +478,7 @@ export default {
           label: "Shared with other people",
           visible: true,
           icon: 'group',
+          accessibleDescription: 'This resource is shared via link',
           handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
         },
         {
