@@ -42,7 +42,7 @@ describe("OcTable.sort", () => {
       },
     })
     expect(wrapper.findAll("[aria-sort]").length).toBeFalsy()
-    expect(wrapper.findAll("[tabindex]").length).toBeFalsy()
+    expect(wrapper.findAll("[tabindex]").length).toBe(4)
   })
 
   it("has all required sort attributes", async () => {
@@ -54,7 +54,7 @@ describe("OcTable.sort", () => {
     })
 
     expect(wrapper.findAll("[aria-sort]").length).toBe(2)
-    expect(wrapper.findAll("[tabindex]").length).toBe(2)
+    expect(wrapper.findAll("[tabindex]").length).toBe(6)
   })
 
   it("can sort", async () => {

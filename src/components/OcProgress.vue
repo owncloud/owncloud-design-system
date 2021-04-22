@@ -8,7 +8,6 @@
     aria-valuemin="0"
     :class="$_ocProgress_classes"
     tabindex="-1"
-    role="progressbar"
   />
 </template>
 

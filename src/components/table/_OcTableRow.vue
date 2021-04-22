@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr tabindex="-1">
     <slot />
   </tr>
 </template>
