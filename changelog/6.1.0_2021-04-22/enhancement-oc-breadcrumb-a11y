@@ -1,4 +1,4 @@
-Change: Improve accessibility of oc-breadcrumb component
+Enhancement: Improve accessibility of oc-breadcrumb component
 
 In order to enhance accessibility oc breadcrumb has been wrapped into a <nav> tag.
 The <ul> element changed to <ol> element, furthermore aria-current=page applies to the last item and
