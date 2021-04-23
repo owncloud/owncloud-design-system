@@ -1,48 +1,50 @@
 <template>
   <div class="oc-modal-background">
-    <div ref="$_ocModal" :class="classes" tabindex="0" role="dialog" aria-modal="true">
-      <div class="oc-modal-title">
-        <oc-icon v-if="icon" :name="icon" :variation="variation" />
-        <h2 v-text="title" />
-      </div>
-      <div class="oc-modal-body">
-        <div v-if="$slots.content" key="modal-slot-content" class="oc-modal-body-message">
-          <slot name="content" />
+    <focus-trap :active="focusTrapActive">
+      <div ref="$_ocModal" :class="classes" tabindex="0" role="dialog" aria-modal="true">
+        <div class="oc-modal-title">
+          <oc-icon v-if="icon" :name="icon" :variation="variation" />
+          <h2 v-text="title" />
         </div>
-        <oc-text-input
-          v-else-if="hasInput"
-          key="modal-input"
-          ref="ocModalInput"
-          v-model="userInputValue"
-          class="oc-modal-body-input"
-          :error-message="inputError"
-          :label="inputLabel"
-          :description-message="inputDescription"
-          :disabled="inputDisabled"
-          :fix-message-line="true"
-          @input="inputOnInput"
-          @keydown.enter="confirm"
-        />
-        <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
-        <div class="oc-modal-body-actions uk-flex uk-flex-right">
-          <oc-button
-            class="oc-modal-body-actions-cancel"
-            :variation="buttonCancelVariation"
-            :appearance="buttonCancelAppearance"
-            @click="buttonCancelOnClick"
-            v-text="buttonCancelText"
+        <div class="oc-modal-body">
+          <div v-if="$slots.content" key="modal-slot-content" class="oc-modal-body-message">
+            <slot name="content" />
+          </div>
+          <oc-text-input
+            v-else-if="hasInput"
+            key="modal-input"
+            ref="ocModalInput"
+            v-model="userInputValue"
+            class="oc-modal-body-input"
+            :error-message="inputError"
+            :label="inputLabel"
+            :description-message="inputDescription"
+            :disabled="inputDisabled"
+            :fix-message-line="true"
+            @input="inputOnInput"
+            @keydown.enter="confirm"
           />
-          <oc-button
-            class="oc-modal-body-actions-confirm oc-ml-s"
-            :variation="buttonConfirmVariation || variation"
-            :appearance="buttonConfirmAppearance"
-            :disabled="buttonConfirmDisabled || !!inputError"
-            @click="confirm"
-            v-text="buttonConfirmText"
-          />
+          <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
+          <div class="oc-modal-body-actions uk-flex uk-flex-right">
+            <oc-button
+              class="oc-modal-body-actions-cancel"
+              :variation="buttonCancelVariation"
+              :appearance="buttonCancelAppearance"
+              @click="buttonCancelOnClick"
+              v-text="buttonCancelText"
+            />
+            <oc-button
+              class="oc-modal-body-actions-confirm oc-ml-s"
+              :variation="buttonConfirmVariation || variation"
+              :appearance="buttonConfirmAppearance"
+              :disabled="buttonConfirmDisabled || !!inputError"
+              @click="confirm"
+              v-text="buttonConfirmText"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </focus-trap>
   </div>
 </template>
 
@@ -50,6 +52,7 @@
 import OcButton from "./OcButton.vue"
 import OcIcon from "./OcIcon.vue"
 import OcTextInput from "./OcTextInput.vue"
+import { FocusTrap } from "focus-trap-vue"
 
 /**
  * Modals are generally used to force the user to focus on confirming or completing a single action.
@@ -75,6 +78,7 @@ export default {
     OcButton,
     OcIcon,
     OcTextInput,
+    FocusTrap,
   },
 
   props: {
@@ -226,6 +230,14 @@ export default {
      * Asserts whether the input is disabled or not
      */
     inputDisabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * Asserts whether the modal should be protected with focus trap
+     */
+    focusTrapActive: {
       type: Boolean,
       required: false,
       default: false,
@@ -431,5 +443,34 @@ export default {
       />
     </template>
   </oc-modal>
+```
+
+## Focus trap
+When the modal is displayed, it should not be possible to reach any element outside of the modal. To protect this also for keyboard navigation, focus trap should be activate via prop `focusTrapActive`.
+If activated, only focusable elements within the modal are reachable via keyboard navigation.
+
+```vue
+<template>
+  <div>
+    <oc-button @click="active = !active">Toggle focus trap</oc-button>
+    <p>Focus trap active: {{ active }}</p>
+    <oc-modal
+      icon="info"
+      title="Accept terms of use"
+      message="Do you accept our terms of use?"
+      button-cancel-text="Decline"
+      button-confirm-text="Accept"
+      class="oc-mb-l uk-position-relative"
+      :focus-trap-active="active"
+    />
+  </div>
+</template>
+<script>
+export default {
+  data: () => ({
+    active: false
+  })
+}
+</script>
 ```
 </docs>
