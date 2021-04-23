@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...master
+
+## Summary
+
+* Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
+
+## Details
+
+* Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
+
+   We've added [Vue focus trap library](https://github.com/posva/focus-trap-vue) to trap
+   the keyboard navigation inside of the modal. To enable the focus trap, use prop
+   `focusTrapActive`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1237
+
 # Changelog for [6.1.0] (2021-04-22)
 
 The following sections list the changes in ownCloud Design System 6.1.0.
