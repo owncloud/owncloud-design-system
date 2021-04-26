@@ -6,9 +6,17 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
 * Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
 
 ## Details
+
+* Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
+
+   We've increased the font size of breadcrumbs to match the one from `oc-table` items.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1239
+
 
 * Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
 
