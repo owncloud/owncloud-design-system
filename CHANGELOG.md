@@ -6,11 +6,33 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Remove unnecessary role attribute from oc-icon: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
+* Enhancement - Improved accessibility for oc-accordion: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
 * Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
 * Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
 * Enhancement - Add prop to define table padding: [#1240](https://github.com/owncloud/owncloud-design-system/pull/1240)
 
 ## Details
+
+* Bugfix - Remove unnecessary role attribute from oc-icon: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
+
+   The oc-icon component had `role="presentation"` on the svg if there is no accessible label.
+   Since we already have `aria-hidden="true"` the role is not needed. Removing it for less code
+   complexity.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1241
+
+
+* Enhancement - Improved accessibility for oc-accordion: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
+
+   We improved the accessibility of the oc-accordion component: - Switch from ul+li to just using
+   divs. A list of accordions is not useful. - Make sure that collapsed accordions have
+   aria-expanded="false" (attribute vanished from the html before, needs to be a string). -
+   Remove aria-label from the button as the button already contains all the accessibility hints
+   it needs.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1241
+
 
 * Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
 
