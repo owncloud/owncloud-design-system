@@ -5,7 +5,7 @@
         appearance="raw"
         justify-content="space-between"
         class="uk-text-left uk-width-1-1"
-        :aria-expanded="expanded"
+        :aria-expanded="expanded.toString()"
         :aria-controls="contentId"
         @click="toggleExpanded"
         @keydown.space="toggleExpanded"
