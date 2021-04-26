@@ -229,7 +229,7 @@ export default {
         props.class += ` ${field.thClass}`
       }
       if (this.sticky) {
-        props.style = `${this.headerPosition}px`
+        props.style = `top: ${this.headerPosition}px;`
       }
 
       if (index === 0) {
@@ -237,7 +237,11 @@ export default {
       }
 
       if (index === this.fields.length - 1) {
-        props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
+        if (field.sortable) {
+          props.style += `padding-right: calc(var(--oc-space-${this.paddingX}) + 0.65em)`
+        } else {
+          props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
+        }
       }
 
       this.extractSortThProps(props, field, index)
