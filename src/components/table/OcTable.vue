@@ -53,6 +53,7 @@ import OcTr from "./_OcTableRow"
 import OcTh from "./_OcTableCellHead"
 import OcTd from "./_OcTableCellData"
 import SortMixin from "./mixins/sort"
+import { getSizeClass } from "../../utils/sizeClasses"
 
 import { EVENT_THEAD_CLICKED, EVENT_TROW_CLICKED } from "./helpers/constants"
 
@@ -162,6 +163,16 @@ export default {
       required: false,
       default: 0,
     },
+    /**
+     * Sets the padding size for x axis
+     * @values xsmall, small, medium, large, xlarge
+     */
+    paddingX: {
+      type: String,
+      required: false,
+      default: "small",
+      validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
+    },
   },
   data() {
     return {
@@ -218,7 +229,19 @@ export default {
         props.class += ` ${field.thClass}`
       }
       if (this.sticky) {
-        props.style = `${this.headerPosition}px`
+        props.style = `top: ${this.headerPosition}px;`
+      }
+
+      if (index === 0) {
+        props.class += ` oc-pl-${getSizeClass(this.paddingX)} `
+      }
+
+      if (index === this.fields.length - 1) {
+        if (field.sortable) {
+          props.style += `padding-right: calc(var(--oc-space-${this.paddingX}) + 0.65em)`
+        } else {
+          props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
+        }
       }
 
       this.extractSortThProps(props, field, index)
@@ -245,6 +268,15 @@ export default {
       if (Object.prototype.hasOwnProperty.call(field, "wrap")) {
         props.wrap = field.wrap
       }
+
+      if (index === 0) {
+        props.class += ` oc-pl-${getSizeClass(this.paddingX)} `
+      }
+
+      if (index === this.fields.length - 1) {
+        props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
+      }
+
       return props
     },
     extractCellProps(field) {

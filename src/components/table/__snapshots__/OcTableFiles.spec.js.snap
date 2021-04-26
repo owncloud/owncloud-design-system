@@ -4,38 +4,38 @@ exports[`OcTableFiles displays all fields 1`] = `
 <table class="oc-table oc-table-sticky" slots="[object Object]">
   <thead class="oc-thead">
     <tr tabindex="-1">
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-text-nowrap oc-table-header-cell oc-table-header-cell-select">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-shrink oc-text-nowrap oc-table-header-cell oc-table-header-cell-select oc-pl-s " style="top: 0px;">
         <div class="oc-table-files-select-all"><span><input id="oc-table-files-select-all" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-m" value=""> <label for="oc-table-files-select-all" class="oc-invisible-sr oc-cursor-pointer">Select all resources</label></span></div>
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-text-nowrap oc-table-header-cell oc-table-header-cell-name" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-left oc-table-cell-align-bottom oc-table-cell-width-expand oc-text-nowrap oc-table-header-cell oc-table-header-cell-name" aria-sort="none" tabindex="0" style="top: 0px;">
         Name
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-size" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-size" aria-sort="none" tabindex="0" style="top: 0px;">
         Size
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" aria-sort="none" tabindex="0" style="top: 0px;">
         Shared with
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" aria-sort="none" tabindex="0" style="top: 0px;">
         Owner
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-mdate" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-mdate" aria-sort="none" tabindex="0" style="top: 0px;">
         Modified
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sdate" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sdate" aria-sort="none" tabindex="0" style="top: 0px;">
         Shared
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-ddate" aria-sort="none" tabindex="0">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-ddate" aria-sort="none" tabindex="0" style="top: 0px;">
         Deleted
       </th>
-      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-actions">
+      <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-actions oc-pr-s" style="top: 0px;">
         Actions
       </th>
     </tr>
   </thead>
   <tbody>
     <tr tabindex="-1" class="oc-tbody-tr oc-tbody-tr-forest" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select file</label></span></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select oc-pl-s "><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select file</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" alt="" width="40" height="40" class="oc-resource-preview">
           <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw">
@@ -79,12 +79,12 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-ddate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions oc-pr-s">
         <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false" role="presentation">6:1: text data outside of root node.</svg></span></button></div>
       </td>
     </tr>
     <tr tabindex="-1" class="oc-tbody-tr oc-tbody-tr-notes" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-notes" class="oc-invisible-sr oc-cursor-pointer">Select file</label></span></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select oc-pl-s "><span><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-notes" class="oc-invisible-sr oc-cursor-pointer">Select file</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><span class="oc-icon oc-icon-l oc-icon-passive"><svg aria-hidden="true" focusable="false" role="presentation">6:1: text data outside of root node.</svg></span>
           <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw">
@@ -128,12 +128,12 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-ddate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions oc-pr-s">
         <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false" role="presentation">6:1: text data outside of root node.</svg></span></button></div>
       </td>
     </tr>
     <tr tabindex="-1" class="oc-tbody-tr oc-tbody-tr-documents" style="height: 64px;">
-      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select"><span><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-documents" class="oc-invisible-sr oc-cursor-pointer">Select folder</label></span></td>
+      <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select oc-pl-s "><span><input id="oc-table-files-select-documents" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-documents" class="oc-invisible-sr oc-cursor-pointer">Select folder</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><span class="oc-icon oc-icon-l oc-icon-passive"><svg aria-hidden="true" focusable="false" role="presentation">6:1: text data outside of root node.</svg></span>
           <div class="oc-resource-details oc-text-overflow"><a class="oc-text-overflow">
@@ -177,7 +177,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-ddate">
         1 day ago
       </td>
-      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions">
+      <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions oc-pr-s">
         <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false" role="presentation">6:1: text data outside of root node.</svg></span></button></div>
       </td>
     </tr>

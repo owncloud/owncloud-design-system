@@ -215,6 +215,16 @@ export default {
       required: false,
       default: null,
     },
+    /**
+     * Sets the padding size for x axis
+     * @values xsmall, small, medium, large, xlarge
+     */
+    paddingX: {
+      type: String,
+      required: false,
+      default: "small",
+      validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
+    },
   },
   computed: {
     fields() {
