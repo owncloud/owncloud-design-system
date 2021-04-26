@@ -16,7 +16,6 @@
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
-      :role="accessibleLabel === '' ? 'presentation' : null"
     ></inline-svg>
   </component>
 </template>
@@ -35,9 +34,8 @@ import { getSizeClass } from "../utils/sizeClasses"
  *
  * Omit `accessibleLabel` if your icon has a decorative purpose only. In this case the component will:
  *  1. set `aria-hidden` to `true`.
- *  2. set `role` to `presentation`.
- *  3. set `focusable` to `false`.
- *  4. remove or empty all aria-related properties such as labels.
+ *  2. set `focusable` to `false`.
+ *  3. remove or empty all aria-related properties such as labels.
  */
 
 /**

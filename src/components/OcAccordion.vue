@@ -1,8 +1,8 @@
 <template>
-  <ul class="oc-accordion">
+  <div class="oc-accordion">
     <!-- @slot Many oc-accordion-item elements  -->
     <slot />
-  </ul>
+  </div>
 </template>
 <script>
 import OcAccordionItem from "./OcAccordionItem"
@@ -148,7 +148,6 @@ export default {
 
 <style lang="scss">
 .oc-accordion {
-  list-style: none;
   padding: 0;
 
   &-item + &-item {

@@ -1,11 +1,11 @@
 <template>
-  <li :id="id" class="oc-accordion-item">
+  <div :id="id" class="oc-accordion-item">
     <component :is="'h' + headingLevel" :id="titleId" class="oc-accordion-title">
       <oc-button
         appearance="raw"
         justify-content="space-between"
         class="uk-text-left uk-width-1-1"
-        :aria-expanded="expanded"
+        :aria-expanded="expanded.toString()"
         :aria-controls="contentId"
         @click="toggleExpanded"
         @keydown.space="toggleExpanded"
@@ -21,7 +21,6 @@
                 class="oc-accordion-title-arrow-icon"
                 :class="{ rotate: expanded }"
                 size="large"
-                :accessible-label="expandIconLabel"
               />
             </span>
           </span>
@@ -36,7 +35,7 @@
       <!-- @slot Content of the accordion item -->
       <slot v-if="expanded" />
     </div>
-  </li>
+  </div>
 </template>
 <script>
 import uniqueId from "../utils/uniqueId"
@@ -106,14 +105,6 @@ export default {
   data: () => ({
     expanded: false,
   }),
-  computed: {
-    expandIconLabel() {
-      if (this.expanded) {
-        return this.$gettext("Click to collapse content")
-      }
-      return this.$gettext("Click to expand content")
-    },
-  },
   methods: {
     toggleExpanded() {
       if (this.expanded) {
