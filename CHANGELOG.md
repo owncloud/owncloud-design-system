@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
 * Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
+* Enhancement - Add prop to define table padding: [#1240](https://github.com/owncloud/owncloud-design-system/pull/1240)
 
 ## Details
 
@@ -25,6 +26,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    `focusTrapActive`.
 
    https://github.com/owncloud/owncloud-design-system/pull/1237
+
+
+* Enhancement - Add prop to define table padding: [#1240](https://github.com/owncloud/owncloud-design-system/pull/1240)
+
+   We've added new prop called `paddingX` which can be used to set the padding along x axis of the
+   `oc-table` or `oc-table-files`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1240
 
 # Changelog for [6.1.0] (2021-04-22)
 
