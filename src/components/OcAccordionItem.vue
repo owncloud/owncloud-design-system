@@ -1,5 +1,5 @@
 <template>
-  <li :id="id" class="oc-accordion-item">
+  <div :id="id" class="oc-accordion-item">
     <component :is="'h' + headingLevel" :id="titleId" class="oc-accordion-title">
       <oc-button
         appearance="raw"
@@ -36,7 +36,7 @@
       <!-- @slot Content of the accordion item -->
       <slot v-if="expanded" />
     </div>
-  </li>
+  </div>
 </template>
 <script>
 import uniqueId from "../utils/uniqueId"

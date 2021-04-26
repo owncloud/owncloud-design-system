@@ -1,0 +1,6 @@
+Enhancement: Improved accessibility for oc-accordion
+
+We improved the accessibility of the oc-accordion component:
+- Switch from ul+li to just using divs. A list of accordions is not useful.
+
+https://github.com/owncloud/owncloud-design-system/pull/1240
