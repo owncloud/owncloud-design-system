@@ -21,7 +21,6 @@
                 class="oc-accordion-title-arrow-icon"
                 :class="{ rotate: expanded }"
                 size="large"
-                :accessible-label="expandIconLabel"
               />
             </span>
           </span>
@@ -106,14 +105,6 @@ export default {
   data: () => ({
     expanded: false,
   }),
-  computed: {
-    expandIconLabel() {
-      if (this.expanded) {
-        return this.$gettext("Click to collapse content")
-      }
-      return this.$gettext("Click to expand content")
-    },
-  },
   methods: {
     toggleExpanded() {
       if (this.expanded) {
