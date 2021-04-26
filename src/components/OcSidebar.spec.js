@@ -7,7 +7,8 @@ const defaultProps = {
     { name: 'Home', route: { path: '/' }, icon: 'home' },
     { name: 'All files', route: { path: '/files' }, icon: 'folder' },
     { name: 'Shared files', route: { path: '/shared' }, icon: 'share', active: true }
-  ]
+  ],
+  accessibleLabel: "sidebar"
 }
 
 describe("OcSidebar", () => {
