@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" :title="title" />
+  <img :src="src" :alt="alt" :aria-hidden="ariaHidden" :title="title" />
 </template>
 <script>
 /**
@@ -35,6 +35,11 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+  },
+  computed: {
+    ariaHidden() {
+      return this.alt.length === 0
     },
   },
 }
