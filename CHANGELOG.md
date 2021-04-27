@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Translateable default close button label in OcSidebar: [#1243](https://github.com/owncloud/owncloud-design-system/pull/1243)
 * Bugfix - Remove unnecessary role attribute from oc-icon: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
 * Enhancement - Improved accessibility for oc-accordion: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
+* Enhancement - Aria-hide images if needed: [#1244](https://github.com/owncloud/owncloud-design-system/pull/1244)
 * Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
 * Enhancement - Modal focus trap: [#1237](https://github.com/owncloud/owncloud-design-system/pull/1237)
 * Enhancement - Add prop to define table padding: [#1240](https://github.com/owncloud/owncloud-design-system/pull/1240)
@@ -41,6 +42,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    it needs.
 
    https://github.com/owncloud/owncloud-design-system/pull/1241
+
+
+* Enhancement - Aria-hide images if needed: [#1244](https://github.com/owncloud/owncloud-design-system/pull/1244)
+
+   When the `alt` property of the oc-image is empty we now set `aria-hidden="true"`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1244
 
 
 * Enhancement - Use bigger font size for breadcrumbs: [#1239](https://github.com/owncloud/owncloud-design-system/pull/1239)
