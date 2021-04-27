@@ -26,9 +26,9 @@ exports[`OcSidebar Has navigation and main content 1`] = `
 `;
 
 exports[`OcSidebar Sets fixed position 1`] = `
-<div aria-label="sidebar" class="oc-sidebar oc-sidebar-fixed">
+<div aria-label="sidebar" class="oc-sidebar oc-sidebar-fixed" closebuttonlabel="Close sidebar">
   <div class="oc-sidebar-content-wrapper">
-    <oc-button-stub type="button" size="medium" arialabel="Close sidebar" variation="passive" appearance="raw" justifycontent="center" gapsize="medium" class="oc-sidebar-button-close">
+    <oc-button-stub type="button" size="medium" arialabel="Close sidebar navigation" variation="passive" appearance="raw" justifycontent="center" gapsize="medium" class="oc-sidebar-button-close">
       <oc-icon-stub name="close" accessiblelabel="" type="span" size="medium" variation="passive"></oc-icon-stub>
     </oc-button-stub>
     <router-link-stub tag="a" to="/" class="oc-sidebar-logo"><span class="oc-sidebar-logo-text">ownCloud</span></router-link-stub>

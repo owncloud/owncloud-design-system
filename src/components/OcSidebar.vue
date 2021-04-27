@@ -5,7 +5,7 @@
         v-if="fixed"
         class="oc-sidebar-button-close"
         appearance="raw"
-        :aria-label="closeButtonLabel"
+        :aria-label="$gettext('Close sidebar navigation')"
         @click="buttonClose_click"
       >
         <oc-icon name="close" />
@@ -113,14 +113,6 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    },
-    /**
-     * Accessibility label of the close button
-     */
-    closeButtonLabel: {
-      type: String,
-      required: false,
-      default: "Close navigation menu",
     },
     /**
      * Alt tag for the logo
