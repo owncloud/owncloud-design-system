@@ -1,7 +1,7 @@
 <template>
   <component
     :is="type"
-    :v-bind="properties"
+    v-bind="properties"
     :type="submit"
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
