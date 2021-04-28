@@ -60,7 +60,6 @@ export default {
                   :status="item.status"
                   :title="item.title"
                   :message="item.message"
-                  :timeout="item.timeout"
                   @close="removeNotification('center', item)"
               />
             </transition-group>
@@ -75,7 +74,6 @@ export default {
                 :status="item.status"
                 :title="item.title"
                 :message="item.message"
-                :timeout="item.timeout"
                 @close="removeNotification('right', item)"
             />
           </oc-notifications>
