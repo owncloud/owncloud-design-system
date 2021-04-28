@@ -38,12 +38,12 @@ exports[`OcTableFiles displays all fields 1`] = `
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select oc-pl-s "><span><input id="oc-table-files-select-forest" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-forest" class="oc-invisible-sr oc-cursor-pointer">Select file</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg" alt="" aria-hidden="true" width="40" height="40" class="oc-resource-preview">
-          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw">
+          <div class="oc-resource-details oc-text-overflow"><button v-bind="[object Object]" v-on:click="function () { [native code] }" class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw">
               <!----> <span resource-path="images/nature/forest.jpg" resource-name="forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">forest.jpg</span>
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
+              <div class="oc-status-indicators"><button v-bind="[object Object]" aria-label="Shared with other people" v-on:click="function () { [native code] }" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
                 <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><svg aria-labelledby="oc-icon-title-1"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-1">Shared via link</title>6:1: text data outside of root node.</svg></span>
                 <!---->
               </div>
@@ -80,19 +80,19 @@ exports[`OcTableFiles displays all fields 1`] = `
         1 day ago
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions oc-pr-s">
-        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button></div>
+        <div class="oc-table-files-actions"> <button v-bind="[object Object]" aria-label="Show details" v-on:click="function () { [native code] }" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button></div>
       </td>
     </tr>
     <tr tabindex="-1" class="oc-tbody-tr oc-tbody-tr-notes" style="height: 64px;">
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-shrink oc-table-data-cell oc-table-data-cell-select oc-pl-s "><span><input id="oc-table-files-select-notes" type="checkbox" name="checkbox" class="oc-checkbox oc-checkbox-l" value="[object Object]"> <label for="oc-table-files-select-notes" class="oc-invisible-sr oc-cursor-pointer">Select file</label></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-left oc-table-cell-align-middle oc-table-cell-width-expand oc-text-truncate oc-table-data-cell oc-table-data-cell-name">
         <div class="oc-resource oc-text-overflow"><span class="oc-icon oc-icon-l oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span>
-          <div class="oc-resource-details oc-text-overflow"><button class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw">
+          <div class="oc-resource-details oc-text-overflow"><button v-bind="[object Object]" v-on:click="function () { [native code] }" class="oc-text-overflow oc-button oc-button-m oc-button-justify-content-center oc-button-gap-undefined oc-button-passive oc-button-passive-raw">
               <!----> <span resource-path="/Documents/notes.txt" resource-name="notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">notes.txt</span>
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
+              <div class="oc-status-indicators"><button v-bind="[object Object]" aria-label="Shared with other people" v-on:click="function () { [native code] }" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
                 <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><svg aria-labelledby="oc-icon-title-2"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-2">Shared via link</title>6:1: text data outside of root node.</svg></span>
                 <!---->
               </div>
@@ -129,7 +129,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         1 day ago
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions oc-pr-s">
-        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button></div>
+        <div class="oc-table-files-actions"> <button v-bind="[object Object]" aria-label="Show details" v-on:click="function () { [native code] }" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button></div>
       </td>
     </tr>
     <tr tabindex="-1" class="oc-tbody-tr oc-tbody-tr-documents" style="height: 64px;">
@@ -141,7 +141,7 @@ exports[`OcTableFiles displays all fields 1`] = `
               <!----></span>
             </a>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
+              <div class="oc-status-indicators"><button v-bind="[object Object]" aria-label="Shared with other people" v-on:click="function () { [native code] }" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
                 <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><svg aria-labelledby="oc-icon-title-3"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-3">Shared via link</title>6:1: text data outside of root node.</svg></span>
                 <!---->
               </div>
@@ -178,7 +178,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         1 day ago
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-actions oc-pr-s">
-        <div class="oc-table-files-actions"> <button aria-label="Show details" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button></div>
+        <div class="oc-table-files-actions"> <button v-bind="[object Object]" aria-label="Show details" v-on:click="function () { [native code] }" class="oc-table-files-btn-show-details oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button></div>
       </td>
     </tr>
   </tbody>

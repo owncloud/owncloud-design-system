@@ -1,13 +1,12 @@
 <template>
   <component
     :is="type"
-    :href="href"
-    :to="to"
+    :v-bind="properties"
     :type="submit"
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
     :disabled="disabled"
-    @click="$_ocButton_onClick"
+    v-on="handlers"
   >
     <!-- @slot Content of the button -->
     <slot />
@@ -159,6 +158,30 @@ export default {
       }
 
       return classes
+    },
+
+    properties: function () {
+      const props = {}
+
+      if (this.href) {
+        props.href = this.href
+      }
+
+      if (this.to) {
+        props.to = this.to
+      }
+
+      return props
+    },
+
+    handlers: function () {
+      const handlers = {}
+
+      if (this.type === "button") {
+        handlers.click = this.$_ocButton_onClick
+      }
+
+      return handlers
     },
   },
   methods: {
