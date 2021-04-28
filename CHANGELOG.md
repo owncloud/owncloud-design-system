@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Remove login paragraph meta styling: [#1246](https://github.com/owncloud/owncloud-design-system/pull/1246)
 * Bugfix - Set correct href to oc-button if type is router-link: [#1245](https://github.com/owncloud/owncloud-design-system/pull/1245)
 * Bugfix - Translateable default close button label in OcSidebar: [#1243](https://github.com/owncloud/owncloud-design-system/pull/1243)
 * Bugfix - Remove unnecessary role attribute from oc-icon: [#1241](https://github.com/owncloud/owncloud-design-system/pull/1241)
@@ -16,6 +17,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add prop to define table padding: [#1240](https://github.com/owncloud/owncloud-design-system/pull/1240)
 
 ## Details
+
+* Bugfix - Remove login paragraph meta styling: [#1246](https://github.com/owncloud/owncloud-design-system/pull/1246)
+
+   The login screen styling paragraph tag was expanding uikit's text-meta which doesn't have
+   enough contrast for accessibility. By removing it we fall back to the themed text color on the
+   login/redirect pages.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1246
+
 
 * Bugfix - Set correct href to oc-button if type is router-link: [#1245](https://github.com/owncloud/owncloud-design-system/pull/1245)
 
