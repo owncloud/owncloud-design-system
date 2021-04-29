@@ -90,8 +90,15 @@ export default {
     },
   },
   mounted() {
+    /**
+     * Notification will be destroyed if timeout is set
+     */
+    if (!this.timeout && this.dismissible) {
+      return
+    }
+
     setTimeout(() => {
-      this.$emit("close")
+      this.close()
     }, this.timeout * 1000)
   },
   methods: {
