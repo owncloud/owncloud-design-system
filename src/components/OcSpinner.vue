@@ -24,11 +24,11 @@ export default {
   release: "1.0.0",
   props: {
     /**
-     * Descriptive text to be read to screen-readers, required.
+     * Descriptive text to be read to screen-readers, strongly recommended unless the component is used inside a DOM node that is already `aria-hidden="true"`.
      */
     ariaLabel: {
       type: String,
-      required: true,
+      required: false,
     },
     /**
      * The size of the spinner. Defaults to medium.
