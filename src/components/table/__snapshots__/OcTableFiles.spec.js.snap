@@ -14,16 +14,16 @@ exports[`OcTableFiles displays all fields 1`] = `
         Size
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" aria-sort="none" tabindex="0" style="top: 0px;">
-        Shared with
+        Users or links with access
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" aria-sort="none" tabindex="0" style="top: 0px;">
-        Owner
+        Share owner
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-mdate" aria-sort="none" tabindex="0" style="top: 0px;">
         Modified
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sdate" aria-sort="none" tabindex="0" style="top: 0px;">
-        Shared
+        Shared on
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-ddate" aria-sort="none" tabindex="0" style="top: 0px;">
         Deleted
