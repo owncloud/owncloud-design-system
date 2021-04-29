@@ -397,11 +397,11 @@ export default {
       let userList
       let linkList
 
-      if (users.length > 0) {
+      if (users.length) {
         userList = users.map(user => user.displayName).join(", ")
       }
 
-      if (links.length > 0) {
+      if (links.length) {
         linkList = links.map(link => link.name).join(", ")
       }
 
@@ -410,7 +410,7 @@ export default {
           return `${this.$gettext(
             "This folder is shared with the users"
           )} ${userList}. ${this.$gettext("and via the links")} ${linkList}.`
-        } else if (users.length > 0) {
+        } else if (users) {
           return `${this.$gettext("This folder is shared with the users")} ${userList}.`
         } else {
           return `${this.$gettext("This folder is shared via the links")} ${linkList}.`
@@ -421,7 +421,7 @@ export default {
         return `${this.$gettext("This file is shared with the users")} ${userList}. ${this.$gettext(
           "and via the links"
         )} ${linkList}.`
-      } else if (users.length > 0) {
+      } else if (users) {
         return `${this.$gettext("This file is shared with the users")} ${userList}.`
       } else {
         return `${this.$gettext("This file is shared via the links")} ${linkList}.`
