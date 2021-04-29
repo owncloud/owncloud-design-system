@@ -136,23 +136,20 @@ export default {
   width: fit-content;
 
   &-stacked {
-    .oc-avatar-wrapper + .oc-avatar-wrapper,
+    .oc-avatar + .oc-avatar,
     .oc-avatar-count,
-    .oc-avatar-wrapper + .oc-avatar-link,
+    .oc-avatar + .oc-avatar-link,
     .oc-avatar-link + .oc-avatar-link {
+      border: 1px solid var(--oc-color-text-inverse);
       margin-left: -25px;
       transition: margin-left $transition-duration-short ease-in-out;
     }
 
-    .oc-avatar {
-      border: 1px solid var(--oc-color-text-inverse);
-    }
-
     &:hover,
     &:focus {
-      .oc-avatar-wrapper + .oc-avatar-wrapper,
+      .oc-avatar + .oc-avatar,
       .oc-avatar-count,
-      .oc-avatar-wrapper + .oc-avatar-link,
+      .oc-avatar + .oc-avatar-link,
       .oc-avatar-link + .oc-avatar-link {
         margin-left: 0;
       }

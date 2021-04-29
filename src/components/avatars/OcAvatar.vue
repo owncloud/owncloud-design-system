@@ -75,17 +75,6 @@ export default {
       required: false,
       default: 50,
     },
-
-    /**
-     * A description of the avatar for screen readers. Normally you want to use this while NOT providing
-     * `accessibleLabel`. This way, screen readers get all information from the description and wont know
-     * about the avatar element.
-     */
-    accessibleDescription: {
-      type: String,
-      required: false,
-      default: null,
-    },
   },
   data() {
     return {
