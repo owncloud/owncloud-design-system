@@ -60,6 +60,7 @@ export default {
                   :status="item.status"
                   :title="item.title"
                   :message="item.message"
+                  :dismissible="item.dismissible"
                   @close="removeNotification('center', item)"
               />
             </transition-group>
@@ -74,6 +75,7 @@ export default {
                 :status="item.status"
                 :title="item.title"
                 :message="item.message"
+                :dismissible="item.dismissible"
                 @close="removeNotification('right', item)"
             />
           </oc-notifications>
@@ -101,6 +103,11 @@ export default {
             {
               title: 'Default without a message',
               status: 'passive'
+            },
+            {
+              title: 'This is a dismissible notification',
+              status: 'passive',
+              dismissible: true,
             },
             {
               title: 'This is a primary notification with a long title that spans more than just one line',

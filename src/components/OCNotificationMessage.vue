@@ -13,6 +13,17 @@
         {{ message }}
       </div>
     </div>
+    <oc-button
+      v-if="dismissible"
+      name="close"
+      appearance="raw"
+      :variation="iconVariation"
+      :aria-label="$gettext('Close notification')"
+      class="uk-position-top-right oc-mt-s oc-mr-s"
+      @click="close"
+    >
+      <oc-icon name="close" :variation="iconVariation" />
+    </oc-button>
   </div>
 </template>
 <script>
@@ -61,6 +72,14 @@ export default {
       required: false,
       default: 5,
     },
+    /**
+     * Property weather a close button will be shown or not
+     */
+    dismissible: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     classes() {
@@ -74,6 +93,15 @@ export default {
     setTimeout(() => {
       this.$emit("close")
     }, this.timeout * 1000)
+  },
+  methods: {
+    close() {
+      /**
+       * The close event is emitted when the user clicks the close icon.
+       * @type {void}
+       */
+      this.$emit("close")
+    },
   },
 }
 </script>
