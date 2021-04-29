@@ -71,7 +71,7 @@ export default {
           <oc-notifications position="top-right">
             <oc-notification-message
                 v-for="(item, index) in messages.right"
-                :key="index"
+                :key="item.title"
                 :status="item.status"
                 :title="item.title"
                 :message="item.message"
