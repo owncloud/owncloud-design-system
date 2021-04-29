@@ -65,7 +65,8 @@ export default {
       default: null,
     },
     /**
-     * Number of seconds the message shows. It will disappear after this time.
+     * Number of seconds the message shows. It will disappear after this time. Setting the timeout to 0 while the
+     * notification is dismissible will bypass the timeout.
      */
     timeout: {
       type: Number,
