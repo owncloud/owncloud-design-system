@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [6.3.0] (2021-04-29)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 6.3.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...master
+[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.3.0
 
 ## Summary
 
@@ -125,7 +125,7 @@ The following sections list the changes in ownCloud Design System 6.2.0.
 
 The following sections list the changes in ownCloud Design System 6.1.0.
 
-[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.1.0
+[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.1.0
 
 ## Summary
 
@@ -180,11 +180,31 @@ The following sections list the changes in ownCloud Design System 6.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1231
 
+# Changelog for [6.0.1] (2021-04-19)
+
+The following sections list the changes in ownCloud Design System 6.0.1.
+
+[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.0.1
+
+## Summary
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+## Details
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+   In the `v6.0.0` release, the color values for `background-muted` and
+   `background-hightlighted` got swapped by accident. This produced unwanted results in the
+   results and gets reverted to the original and working version with this change.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1227
+
 # Changelog for [6.0.0] (2021-04-19)
 
 The following sections list the changes in ownCloud Design System 6.0.0.
 
-[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.0.0
+[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.0
 
 ## Summary
 
@@ -222,31 +242,11 @@ The following sections list the changes in ownCloud Design System 6.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1219
 
-# Changelog for [6.0.1] (2021-04-19)
-
-The following sections list the changes in ownCloud Design System 6.0.1.
-
-[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.1
-
-## Summary
-
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
-
-## Details
-
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
-
-   In the `v6.0.0` release, the color values for `background-muted` and
-   `background-hightlighted` got swapped by accident. This produced unwanted results in the
-   results and gets reverted to the original and working version with this change.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1227
-
 # Changelog for [5.1.0] (2021-04-15)
 
 The following sections list the changes in ownCloud Design System 5.1.0.
 
-[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.1.0
+[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.1.0
 
 ## Summary
 
@@ -299,30 +299,11 @@ The following sections list the changes in ownCloud Design System 5.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1213
 
-# Changelog for [5.0.1] (2021-04-08)
-
-The following sections list the changes in ownCloud Design System 5.0.1.
-
-[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.0.1
-
-## Summary
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-## Details
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
-   peerDependencies.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1205
-
 # Changelog for [5.0.0] (2021-04-08)
 
 The following sections list the changes in ownCloud Design System 5.0.0.
 
-[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.0
+[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.0.0
 
 ## Summary
 
@@ -350,6 +331,25 @@ The following sections list the changes in ownCloud Design System 5.0.0.
    copied into the `dist` folder and can be imported and used alongside the styles and components.
 
    https://github.com/owncloud/owncloud-design-system/pull/1201
+
+# Changelog for [5.0.1] (2021-04-08)
+
+The following sections list the changes in ownCloud Design System 5.0.1.
+
+[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.1
+
+## Summary
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+## Details
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
+   peerDependencies.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1205
 
 # Changelog for [4.3.0] (2021-04-07)
 
