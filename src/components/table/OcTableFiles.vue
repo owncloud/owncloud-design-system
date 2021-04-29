@@ -54,6 +54,7 @@
         :stacked="true"
         :max-displayed="3"
         :is-tooltip-displayed="true"
+        :accessible-description="getSharedWithAvatarDescription(item)"
       />
     </template>
     <template #size="{ item }">
@@ -64,6 +65,7 @@
         class="oc-table-files-people"
         :users="item.owner"
         :is-tooltip-displayed="true"
+        :accessible-description="getOwnerAvatarDescription(item)"
       />
     </template>
     <template #actions="{ item }">
@@ -387,6 +389,54 @@ export default {
       }
 
       return this.$gettext("Select file")
+    },
+
+    getSharedWithAvatarDescription(resource) {
+      const users = resource.sharedWith.filter(u => !u.link)
+      const links = resource.sharedWith.filter(u => !!u.link)
+      let userList
+      let linkList
+
+      if (users.length > 0) {
+        userList = users.map(user => user.displayName).join(", ")
+      }
+
+      if (links.length > 0) {
+        linkList = links.map(link => link.name).join(", ")
+      }
+
+      if (resource.type === "folder") {
+        if (userList && linkList) {
+          return `${this.$gettext(
+            "This folder is shared with the users"
+          )} ${userList}. ${this.$gettext("and via the links")} ${linkList}.`
+        } else if (users.length > 0) {
+          return `${this.$gettext("This folder is shared with the users")} ${userList}.`
+        } else {
+          return `${this.$gettext("This folder is shared via the links")} ${linkList}.`
+        }
+      }
+
+      if (userList && linkList) {
+        return `${this.$gettext("This file is shared with the users")} ${userList}. ${this.$gettext(
+          "and via the links"
+        )} ${linkList}.`
+      } else if (users.length > 0) {
+        return `${this.$gettext("This file is shared with the users")} ${userList}.`
+      } else {
+        return `${this.$gettext("This file is shared via the links")} ${linkList}.`
+      }
+    },
+
+    getOwnerAvatarDescription(resource) {
+      let description
+      if (resource.type === "folder") {
+        description = this.$gettext("This folder is owned by")
+      } else {
+        description = this.$gettext("This file is owned by")
+      }
+
+      return `${description} ${resource.owner[0].displayName}`
     },
   },
 }
