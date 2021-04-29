@@ -1,28 +1,26 @@
 <template>
-  <div
-    v-oc-tooltip="tooltip"
-    class="oc-avatar-group"
-    :class="{ 'oc-avatar-group-stacked': stacked }"
-  >
-    <template v-if="avatars.length > 0">
-      <oc-avatar
-        v-for="avatar in avatars"
-        :key="avatar.username"
-        :src="avatar.avatar"
-        :user-name="avatar.username"
-        :accessible-label="avatar.displayName"
-        :width="30"
-      />
-    </template>
-    <template v-if="links.length > 0">
-      <oc-avatar-link
-        v-for="(link, index) in links"
-        :key="link.name + index"
-        :name="link.name"
-        :accessible-label="link.name"
-      />
-    </template>
-    <oc-avatar-count v-if="isOverlapping" :count="users.length - maxDisplayed" />
+  <div>
+    <div
+      v-oc-tooltip="tooltip"
+      class="oc-avatar-group"
+      :class="{ 'oc-avatar-group-stacked': stacked }"
+      aria-hidden="true"
+    >
+      <template v-if="avatars.length > 0">
+        <oc-avatar
+          v-for="avatar in avatars"
+          :key="avatar.username"
+          :src="avatar.avatar"
+          :user-name="avatar.username"
+          :width="30"
+        />
+      </template>
+      <template v-if="links.length > 0">
+        <oc-avatar-link v-for="(link, index) in links" :key="link.name + index" :name="link.name" />
+      </template>
+      <oc-avatar-count v-if="isOverlapping" :count="users.length - maxDisplayed" />
+    </div>
+    <span class="oc-invisible-sr" v-text="accessibleDescription"></span>
   </div>
 </template>
 
@@ -72,6 +70,14 @@ export default {
       type: Number,
       required: false,
       default: null,
+    },
+    /**
+     * A description of the avatar group for screen readers. This is required as the avatar group element
+     * is hidden for screen readers.
+     */
+    accessibleDescription: {
+      type: String,
+      required: true,
     },
   },
 
@@ -130,20 +136,23 @@ export default {
   width: fit-content;
 
   &-stacked {
-    .oc-avatar + .oc-avatar,
+    .oc-avatar-wrapper + .oc-avatar-wrapper,
     .oc-avatar-count,
-    .oc-avatar + .oc-avatar-link,
+    .oc-avatar-wrapper + .oc-avatar-link,
     .oc-avatar-link + .oc-avatar-link {
-      border: 1px solid var(--oc-color-text-inverse);
       margin-left: -25px;
       transition: margin-left $transition-duration-short ease-in-out;
     }
 
+    .oc-avatar {
+      border: 1px solid var(--oc-color-text-inverse);
+    }
+
     &:hover,
     &:focus {
-      .oc-avatar + .oc-avatar,
+      .oc-avatar-wrapper + .oc-avatar-wrapper,
       .oc-avatar-count,
-      .oc-avatar + .oc-avatar-link,
+      .oc-avatar-wrapper + .oc-avatar-link,
       .oc-avatar-link + .oc-avatar-link {
         margin-left: 0;
       }
@@ -156,9 +165,9 @@ export default {
 ```vue
 <template>
   <div>
-    <oc-avatar-group :users="users" class="oc-mb" />
-    <oc-avatar-group :users="users" :stacked="true" :isTooltipDisplayed="true" class="oc-mb" />
-    <oc-avatar-group :users="users" :maxDisplayed="2" :isTooltipDisplayed="true" />
+    <oc-avatar-group :users="users" accessible-description="This resource is shared with many users." class="oc-mb" />
+    <oc-avatar-group :users="users" accessible-description="This resource is shared with many users." :stacked="true" :isTooltipDisplayed="true" class="oc-mb" />
+    <oc-avatar-group :users="users" accessible-description="This resource is shared with many users." :maxDisplayed="2" :isTooltipDisplayed="true" />
   </div>
 </template>
 <script>

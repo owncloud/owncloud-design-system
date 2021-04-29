@@ -75,6 +75,17 @@ export default {
       required: false,
       default: 50,
     },
+
+    /**
+     * A description of the avatar for screen readers. Normally you want to use this while NOT providing
+     * `accessibleLabel`. This way, screen readers get all information from the description and wont know
+     * about the avatar element.
+     */
+    accessibleDescription: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
   data() {
     return {
@@ -172,7 +183,8 @@ export default {
 
 <docs>
 ```js
-  <oc-avatar src="https://picsum.photos/50/50?image=1074" accessible-label="Lion" />
-  <oc-avatar user-name="Bruce Lee" accessible-label="Lion" />
+  <oc-avatar class="oc-mb-s" src="https://picsum.photos/50/50?image=1074" accessibleLabel="Lion" />
+  <oc-avatar class="oc-mb-s" userName="Bruce Lee" accessibleLabel="Lion" />
+  <oc-avatar class="oc-mb-s" userName="Bruce Lee" accessibleDescription="This avatar is only described to screen readers through text." />
 ```
 </docs>
