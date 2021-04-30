@@ -1,0 +1,7 @@
+Bugfix: Resource component type can't be button
+
+The `<oc-resource>` component used in the files table rendered links for folders and 
+buttons for files until now. Since clicking on a file navigates to a new route (e.g. mediaviewer) 
+or downloads the file (which should be a `<a>` tag), files also need to be rendered as links.
+
+https://github.com/owncloud/owncloud-design-system/pull/1264

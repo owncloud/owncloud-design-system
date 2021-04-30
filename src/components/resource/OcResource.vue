@@ -153,7 +153,7 @@ export default {
     },
 
     componentType() {
-      return this.isFolder ? "router-link" : "oc-button"
+      return "router-link"
     },
 
     isRouterLink() {
