@@ -14,7 +14,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         Size
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-sharedWith" aria-sort="none" tabindex="0" style="top: 0px;">
-        Users or links with access
+        Shared with
       </th>
       <th class="oc-th oc-table-cell oc-table-cell-align-right oc-table-cell-align-bottom oc-table-cell-width-auto oc-text-nowrap oc-table-header-cell oc-table-header-cell-owner" aria-sort="none" tabindex="0" style="top: 0px;">
         Share owner

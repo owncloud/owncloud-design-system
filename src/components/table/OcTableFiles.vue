@@ -265,7 +265,7 @@ export default {
           },
           {
             name: "sharedWith",
-            title: this.$gettext("Users or links with access"),
+            title: this.$gettext("Shared with"),
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
