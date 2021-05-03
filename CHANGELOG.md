@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - OcSpinner make ariaLabel prop optional: [#1251](https://github.com/owncloud/owncloud-design-system/pull/1251)
+* Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
 
 ## Details
 
@@ -18,6 +19,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    attribute.
 
    https://github.com/owncloud/owncloud-design-system/pull/1251
+
+
+* Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
+
+   We've used uikit to display tooltips before, now we added a own `v-oc-tooltip` directive and
+   use this instead. This improves accessibility and possibilities for later re-use.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1263
 
 # Changelog for [6.3.0] (2021-04-29)
 
