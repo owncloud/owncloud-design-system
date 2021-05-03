@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OcAvatarGroup displays tooltip 1`] = `
-<div uk-tooltip="Bob, Marie +3" class="oc-avatar-group">
+<div class="oc-avatar-group">
   <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="Bob" width="30"></oc-avatar-stub>
   <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="Marie" width="30"></oc-avatar-stub>
   <!---->
@@ -10,7 +10,7 @@ exports[`OcAvatarGroup displays tooltip 1`] = `
 `;
 
 exports[`OcAvatarGroup prefers avatars over links when maxDisplayed is exceeded 1`] = `
-<div uk-tooltip="Bob, Marie, John Richards Emperor of long names +2" class="oc-avatar-group">
+<div class="oc-avatar-group">
   <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="Bob" width="30"></oc-avatar-stub>
   <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="Marie" width="30"></oc-avatar-stub>
   <oc-avatar-stub src="" username="john" accessiblelabel="John Richards Emperor of long names" width="30"></oc-avatar-stub>
@@ -20,7 +20,7 @@ exports[`OcAvatarGroup prefers avatars over links when maxDisplayed is exceeded 
 `;
 
 exports[`OcAvatarGroup shows avatars first and links last 1`] = `
-<div uk-tooltip="Bob, Marie, John Richards Emperor of long names, link 0, link 1" class="oc-avatar-group">
+<div class="oc-avatar-group">
   <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="Bob" width="30"></oc-avatar-stub>
   <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="Marie" width="30"></oc-avatar-stub>
   <oc-avatar-stub src="" username="john" accessiblelabel="John Richards Emperor of long names" width="30"></oc-avatar-stub>

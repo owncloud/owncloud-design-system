@@ -59,7 +59,7 @@
 
 <script>
 import OcButton from "./OcButton.vue"
-import OcDrop from "./OCDrop.vue"
+import OcDrop from "./OcDrop.vue"
 import OcIcon from "./OcIcon.vue"
 
 /**

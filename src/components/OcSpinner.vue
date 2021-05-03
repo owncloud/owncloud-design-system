@@ -29,6 +29,7 @@ export default {
     ariaLabel: {
       type: String,
       required: false,
+      default: "",
     },
     /**
      * The size of the spinner. Defaults to medium.

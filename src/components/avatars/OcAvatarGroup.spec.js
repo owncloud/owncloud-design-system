@@ -31,55 +31,61 @@ const users = [
     id: "link1",
     link: "fake url content",
     name: "link 1",
-  }
+  },
 ]
 
 describe("OcAvatarGroup", () => {
   it("displays tooltip", async () => {
+    const OcTooltip = jest.fn()
     const wrapper = shallowMount(Group, {
       propsData: {
         users,
         maxDisplayed: 2,
         isTooltipDisplayed: true,
       },
-    })
-
-    expect(wrapper.attributes()["uk-tooltip"]).toMatch("Bob, Marie +3")
-    expect(wrapper).toMatchSnapshot()
-  })
-
-  it("hides tooltip if not enabled", () => {
-    const wrapper = shallowMount(Group, {
-      propsData: {
-        users,
+      directives: {
+        OcTooltip,
       },
     })
 
-    expect(wrapper.attributes()["uk-tooltip"]).toBeFalsy()
+    expect(OcTooltip.mock.calls[0][1].value).toMatch("Bob, Marie +3")
+    expect(wrapper).toMatchSnapshot()
   })
 
   it("prefers avatars over links when maxDisplayed is exceeded", () => {
+    const OcTooltip = jest.fn()
     const wrapper = shallowMount(Group, {
       propsData: {
         users,
         maxDisplayed: 3,
         isTooltipDisplayed: true,
-      }
+      },
+      directives: {
+        OcTooltip,
+      },
     })
 
-    expect(wrapper.attributes()["uk-tooltip"]).toMatch("Bob, Marie, John Richards Emperor of long names +2")
+    expect(OcTooltip.mock.calls[0][1].value).toMatch(
+      "Bob, Marie, John Richards Emperor of long names +2"
+    )
     expect(wrapper).toMatchSnapshot()
   })
 
   it("shows avatars first and links last", () => {
+    const OcTooltip = jest.fn()
     const wrapper = shallowMount(Group, {
       propsData: {
         users,
         isTooltipDisplayed: true,
-      }
+      },
+      directives: {
+        OcTooltip,
+      },
     })
 
-    expect(wrapper.attributes()["uk-tooltip"]).toMatch("Bob, Marie, John Richards Emperor of long names, link 0, link 1")
+    expect(OcTooltip.mock.calls[0][1].value).toMatch(
+      "Bob, Marie, John Richards Emperor of long names, link 0, link 1"
+    )
     expect(wrapper).toMatchSnapshot()
   })
 })
