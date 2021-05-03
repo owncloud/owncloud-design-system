@@ -5,10 +5,10 @@
         v-if="hasHandler(indicator)"
         :id="indicator.id"
         :key="indicator.id"
+        v-oc-tooltip="indicator.label"
         class="oc-status-indicators-indicator"
         :aria-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
-        :uk-tooltip="indicator.label"
         variation="passive"
         appearance="raw"
         @click.stop="indicator.handler(resource, indicator.id)"
@@ -19,12 +19,12 @@
         v-else
         :id="indicator.id"
         :key="indicator.id"
+        v-oc-tooltip="indicator.label"
         tabindex="-1"
         class="oc-status-indicators-indicator"
         :name="indicator.icon"
         :accessible-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
-        :uk-tooltip="indicator.label"
         variation="passive"
       />
       <span

@@ -1,12 +1,12 @@
 import { shallowMount, mount } from "@vue/test-utils"
-import Alert from "./OCAlert.vue"
+import Alert from "./OcAlert.vue"
 
 const testSlots = { default: '<p class="slot-message">Test message</p>' }
 
-describe("OCAlert", () => {
+describe("OcAlert", () => {
   it("displays correct message", () => {
     const wrapper = shallowMount(Alert, {
-      slots: testSlots
+      slots: testSlots,
     })
 
     expect(wrapper.find(".slot-message").text()).toMatch("Test message")
@@ -16,11 +16,11 @@ describe("OCAlert", () => {
   it("hides the close button if disabled", () => {
     const wrapper = shallowMount(Alert, {
       propsData: {
-        noClose: true
+        noClose: true,
       },
-      slots: testSlots
+      slots: testSlots,
     })
-    
+
     expect(wrapper.props().noClose).toBe(true)
     expect(wrapper.findAll(".uk-alert-close").length).toBe(0)
     expect(wrapper).toMatchSnapshot()
@@ -29,9 +29,9 @@ describe("OCAlert", () => {
   it("sets correct variation", () => {
     const wrapper = shallowMount(Alert, {
       propsData: {
-        variation: "primary"
+        variation: "primary",
       },
-      slots: testSlots
+      slots: testSlots,
     })
 
     expect(wrapper.props().variation).toMatch("primary")
@@ -41,7 +41,7 @@ describe("OCAlert", () => {
 
   it("emits a close event", () => {
     const wrapper = mount(Alert, {
-      slots: testSlots
+      slots: testSlots,
     })
 
     wrapper.find(".uk-alert-close").trigger("click")

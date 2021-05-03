@@ -1,8 +1,8 @@
 <template>
   <div
+    v-oc-tooltip="tooltip"
     class="oc-avatar-group"
     :class="{ 'oc-avatar-group-stacked': stacked }"
-    :uk-tooltip="tooltip"
   >
     <template v-if="avatars.length > 0">
       <oc-avatar

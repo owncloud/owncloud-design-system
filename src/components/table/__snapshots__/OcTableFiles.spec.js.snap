@@ -43,8 +43,8 @@ exports[`OcTableFiles displays all fields 1`] = `
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
-                <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><svg aria-labelledby="oc-icon-title-1"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-1">Shared via link</title>6:1: text data outside of root node.</svg></span>
+              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" aria-expanded="false"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
+                <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" aria-expanded="false"><svg aria-labelledby="oc-icon-title-1"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-1">Shared via link</title>6:1: text data outside of root node.</svg></span>
                 <!---->
               </div>
             </div>
@@ -53,7 +53,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">105.9 MB</span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
-        <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
+        <div class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked" aria-expanded="false">
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Marie" role="img"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" aria-label="John Richards Emperor of long names" role="img">
@@ -64,7 +64,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
-        <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
+        <div class="oc-avatar-group oc-table-files-people" aria-expanded="false">
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
@@ -92,8 +92,8 @@ exports[`OcTableFiles displays all fields 1`] = `
               <!----></span>
             </button>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
-                <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><svg aria-labelledby="oc-icon-title-2"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-2">Shared via link</title>6:1: text data outside of root node.</svg></span>
+              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" aria-expanded="false"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
+                <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" aria-expanded="false"><svg aria-labelledby="oc-icon-title-2"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-2">Shared via link</title>6:1: text data outside of root node.</svg></span>
                 <!---->
               </div>
             </div>
@@ -102,7 +102,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">?</span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
-        <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
+        <div class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked" aria-expanded="false">
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Marie" role="img"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" aria-label="John Richards Emperor of long names" role="img">
@@ -113,7 +113,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
-        <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
+        <div class="oc-avatar-group oc-table-files-people" aria-expanded="false">
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->
@@ -141,8 +141,8 @@ exports[`OcTableFiles displays all fields 1`] = `
               <!----></span>
             </a>
             <div class="oc-resource-indicators">
-              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" uk-tooltip="Shared with other people"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
-                <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" uk-tooltip="Shared via link"><svg aria-labelledby="oc-icon-title-3"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-3">Shared via link</title>6:1: text data outside of root node.</svg></span>
+              <div class="oc-status-indicators"><button aria-label="Shared with other people" class="oc-status-indicators-indicator oc-button oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw" id="files-sharing" aria-expanded="false"><span class="oc-icon oc-icon-m oc-icon-passive"><svg aria-hidden="true" focusable="false">6:1: text data outside of root node.</svg></span></button>
+                <!----><span class="oc-status-indicators-indicator oc-icon oc-icon-m oc-icon-passive" id="file-link" tabindex="-1" aria-expanded="false"><svg aria-labelledby="oc-icon-title-3"><title xmlns="http://www.w3.org/1999/xhtml" id="oc-icon-title-3">Shared via link</title>6:1: text data outside of root node.</svg></span>
                 <!---->
               </div>
             </div>
@@ -151,7 +151,7 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size"></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
-        <div uk-tooltip="Bob, Marie, John Richards Emperor of long names" class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked">
+        <div class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked" aria-expanded="false">
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Marie" role="img"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" aria-label="John Richards Emperor of long names" role="img">
@@ -162,7 +162,7 @@ exports[`OcTableFiles displays all fields 1`] = `
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
-        <div uk-tooltip="Bob" class="oc-avatar-group oc-table-files-people">
+        <div class="oc-avatar-group oc-table-files-people" aria-expanded="false">
           <div class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" aria-label="Bob" role="img"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
           <!---->
           <!---->

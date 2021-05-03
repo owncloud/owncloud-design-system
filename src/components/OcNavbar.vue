@@ -61,7 +61,7 @@ export default {
         tag="div"
         to="/personal"
         class="oc-topbar-personal"
-        uk-tooltip="title: Personal setting; pos: bottom-right;"
+        v-oc-tooltip="'Personal setting'"
       >
         <oc-avatar
           class="oc-topbar-personal-avatar"

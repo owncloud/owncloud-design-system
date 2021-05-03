@@ -7,8 +7,9 @@
 @import '../../node_modules/uikit/src/scss/variables-theme';
 @import '../../node_modules/uikit/src/scss/mixins-theme';
 
-// 3. Import UIkit.
+// 3. Import Vendor.
 @import '../../node_modules/uikit/src/scss/uikit-theme';
+@import '../../node_modules/tippy.js/dist/tippy';
 
 // 4. Your custom mixin overwrites.
 @import 'theme/animations';

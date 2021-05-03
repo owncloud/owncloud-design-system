@@ -17,3 +17,8 @@ Vue.component("RouterLink", {
     return createElement(this.tag, {}, this.$slots.default)
   },
 })
+
+const directivesContext = require.context("./src/directives/", true, /\.js$/)
+directivesContext.keys().forEach(key => {
+  Vue.directive(directivesContext(key).default.name, directivesContext(key).default)
+})

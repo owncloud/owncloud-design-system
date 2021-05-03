@@ -5,20 +5,13 @@
  * You should & can add your own dependencies here if needed.
  */
 
+import "./styles/styles.scss"
+
 // Define contexts to require
-const contexts = [require.context("./components/", true, /\.vue$/)]
+const componentsContext = require.context("./components/", true, /\.vue$/)
+const directivesContext = require.context("./directives/", true, /\.js$/)
 
-// Define components
-const components = []
-contexts.forEach(context => {
-  context.keys().forEach(key => components.push(context(key).default))
-})
-
-function initializeCustomProps(tokens, prefix) {
-  if (!tokens) {
-    return
-  }
-
+const initializeCustomProps = (tokens = [], prefix) => {
   for (const param in tokens) {
     document.querySelector(":root").style.setProperty("--oc-" + prefix + param, tokens[param])
   }
@@ -33,12 +26,18 @@ const System = {
     initializeCustomProps(themeOptions?.sizes, "size-")
     initializeCustomProps(themeOptions?.spacing, "space-")
 
-    components.forEach(component => Vue.component(component.name, component))
+    componentsContext
+      .keys()
+      .forEach(key =>
+        Vue.component(componentsContext(key).default.name, componentsContext(key).default)
+      )
+    directivesContext
+      .keys()
+      .forEach(key =>
+        Vue.directive(directivesContext(key).default.name, directivesContext(key).default)
+      )
   },
 }
-
-// eslint-disable-next-line no-unused-vars
-import Styles from "./styles/styles.scss"
 
 // Automatic installation if Vue has been added to the global scope
 if (typeof window !== "undefined" && window.Vue) {

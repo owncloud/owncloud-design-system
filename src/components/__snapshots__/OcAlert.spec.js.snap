@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OCAlert displays correct message 1`] = `
+exports[`OcAlert displays correct message 1`] = `
 <div uk-alert="" class="oc-alert oc-alert-passive">
   <oc-button-stub type="button" size="medium" arialabel="Close alert" variation="passive" appearance="raw" justifycontent="center" gapsize="medium" class="uk-alert-close">
     <oc-icon-stub name="close" accessiblelabel="" type="span" size="small" variation="inverse"></oc-icon-stub>
@@ -9,14 +9,14 @@ exports[`OCAlert displays correct message 1`] = `
 </div>
 `;
 
-exports[`OCAlert hides the close button if disabled 1`] = `
+exports[`OcAlert hides the close button if disabled 1`] = `
 <div uk-alert="" class="oc-alert oc-alert-passive">
   <!---->
   <p class="slot-message">Test message</p>
 </div>
 `;
 
-exports[`OCAlert sets correct variation 1`] = `
+exports[`OcAlert sets correct variation 1`] = `
 <div uk-alert="" class="oc-alert oc-alert-primary">
   <oc-button-stub type="button" size="medium" arialabel="Close alert" variation="passive" appearance="raw" justifycontent="center" gapsize="medium" class="uk-alert-close">
     <oc-icon-stub name="close" accessiblelabel="" type="span" size="small" variation="inverse"></oc-icon-stub>
