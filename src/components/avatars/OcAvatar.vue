@@ -1,9 +1,24 @@
 <template>
+  <img
+    v-if="src.length > 0"
+    loading="lazy"
+    class="oc-avatar"
+    :width="width"
+    style="
+      display: flex;
+      height: auto;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    "
+    :src="src"
+  />
   <avatar
+    v-else
     class="oc-avatar"
     :username="userName"
     :size="width"
-    :src="src"
     :aria-label="accessibleLabel === '' ? null : accessibleLabel"
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"

@@ -1,0 +1,8 @@
+Enhancement: Lazy loading avatar
+
+The formerly used `vue-avatar` library used a wrapping div (which led to invalid HTML when used inside e.g. a button tag) 
+and rendered the avatar image as an background image (which can not easily be lazy-loaded and blocked the page rendering).
+
+By switching to an enhanced fork of the official library, we could solve both of those issues.
+
+https://github.com/owncloud/owncloud-design-system/pull/1242
