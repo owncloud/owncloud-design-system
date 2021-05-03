@@ -1,8 +1,9 @@
 <template>
-  <vue-select :value="model" class="oc-select" v-bind="$attrs" v-on="$listeners">
+  <vue-select ref="select" :value="model" class="oc-select" v-bind="$attrs" v-on="$listeners">
     <template v-for="(index, name) in $scopedSlots" #[name]="data">
       <slot :name="name" v-bind="data"></slot>
     </template>
+    <div slot="no-options" v-translate>No options available.</div>
   </vue-select>
 </template>
 
@@ -30,6 +31,16 @@ export default {
       type: [Array, String, Object],
       required: false,
       default: null,
+    },
+  },
+
+  mounted() {
+    this.setComboBoxAriaLabel()
+  },
+  methods: {
+    setComboBoxAriaLabel() {
+      const comboBoxElement = this.$refs.select.$el.querySelector("div:first-child")
+      comboBoxElement.setAttribute("aria-label", this.$gettext("Search for option"))
     },
   },
 }
@@ -148,9 +159,6 @@ We can then retrieve all the values that we want to display from the slots param
           <strong v-text="title" />
         </span>
         <span class="option" v-text="desc" />
-      </template>
-      <template #no-options>
-        Your search query haven't returned any results.
       </template>
     </oc-select>
     <p>
