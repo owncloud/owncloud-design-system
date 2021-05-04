@@ -9,6 +9,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - OcSpinner make ariaLabel prop optional: [#1251](https://github.com/owncloud/owncloud-design-system/pull/1251)
 * Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
 * Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
+* Enhancement - Remove the notification close button: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
+* Enhancement - Show the notification close button via property: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
 * Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
 
 ## Details
@@ -36,6 +38,23 @@ The following sections list the changes in ownCloud Design System unreleased.
    stays the same.
 
    https://github.com/owncloud/owncloud-design-system/pull/1269
+
+
+* Enhancement - Remove the notification close button: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
+
+   The notification will now automatically close after a certain amount of time which can be
+   defined via property. Also fixed some links in the docs in addition to that.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1247
+
+
+* Enhancement - Show the notification close button via property: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
+
+   Close button can now be enabled via property dismissible, additionally the notification will
+   now automatically close after a certain amount of time. The duration a notification shows can
+   be defined via a newly added property. Also fixed some links in the docs in addition to that.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1247
 
 
 * Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
