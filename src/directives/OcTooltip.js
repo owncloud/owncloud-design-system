@@ -1,35 +1,34 @@
 import tippy from "tippy.js"
-
-const __logger = v => v
+import __logger from "../utils/logger"
 
 export const hideOnEsc = {
   name: "hideOnEsc",
   defaultValue: true,
   fn({ hide }) {
-    function onKeyDown(event) {
-      if (event.keyCode === 27) {
+    const onKeyDown = e => {
+      if (e.keyCode === 27) {
         hide()
       }
     }
 
     return {
-      onShow() {
+      onShow: () => {
         document.addEventListener("keydown", onKeyDown)
       },
-      onHide() {
+      onHide: () => {
         document.removeEventListener("keydown", onKeyDown)
       },
     }
   },
 }
 
-const destroy = el => {
-  if (!el._tippy) {
+export const destroy = _tippy => {
+  if (!_tippy) {
     return
   }
 
   try {
-    el._tippy.destroy()
+    _tippy.destroy()
   } catch (e) {
     __logger(e)
   }
@@ -42,17 +41,20 @@ export default {
       return
     }
 
-    destroy(el)
+    destroy(el._tippy)
 
     tippy(el, {
       content: value,
       interactive: true,
       ignoreAttributes: true,
       ...(Object.prototype.toString.call(value) === "[object Object]" && value),
+      aria: {
+        content: "describedby",
+      },
       plugins: [hideOnEsc],
     })
   },
   unbind: function (el) {
-    destroy(el)
+    destroy(el._tippy)
   },
 }
