@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - OcSpinner make ariaLabel prop optional: [#1251](https://github.com/owncloud/owncloud-design-system/pull/1251)
+* Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
 * Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
 * Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
 
@@ -20,6 +21,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    attribute.
 
    https://github.com/owncloud/owncloud-design-system/pull/1251
+
+
+* Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
+
+   This makes it easier to understand for people using a screen reader.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1252
 
 
 * Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
