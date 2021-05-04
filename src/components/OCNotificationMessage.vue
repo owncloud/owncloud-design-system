@@ -60,6 +60,7 @@ export default {
       type: Number,
       required: false,
       default: 5,
+      validator: value => value > 0,
     },
   },
   computed: {
