@@ -34,6 +34,18 @@ export const destroy = _tippy => {
   }
 }
 
+export const ariaHidden = {
+  name: "ariaHidden",
+  defaultValue: true,
+  fn(instance) {
+    return {
+      onCreate() {
+        instance.popper.setAttribute("aria-hidden", true)
+      },
+    }
+  },
+}
+
 export default {
   name: "OcTooltip",
   bind: function (el, { value }) {
@@ -49,9 +61,11 @@ export default {
       ignoreAttributes: true,
       ...(Object.prototype.toString.call(value) === "[object Object]" && value),
       aria: {
-        content: "describedby",
+        content: null,
+        expanded: false,
+        hidden: true,
       },
-      plugins: [hideOnEsc],
+      plugins: [hideOnEsc, ariaHidden],
     })
   },
   unbind: function (el) {
