@@ -1,7 +1,0 @@
-Enhancement: Show the notification close button via property
-
-The close-button can now be enabled via the property "dismissible". Additionally the notification will
-automatically close after a certain amount of time, which also can be defined via property. When a notification is
-dismissible, the timeout can be bypassed with the value 0. Also fixed some links in the docs in addition to that.
-
-https://github.com/owncloud/owncloud-design-system/pull/1247

@@ -13,17 +13,6 @@
         {{ message }}
       </div>
     </div>
-    <oc-button
-      v-if="dismissible"
-      name="close"
-      appearance="raw"
-      :variation="iconVariation"
-      :aria-label="$gettext('Close notification')"
-      class="uk-position-top-right oc-mt-s oc-mr-s"
-      @click="close"
-    >
-      <oc-icon name="close" :variation="iconVariation" />
-    </oc-button>
   </div>
 </template>
 <script>
@@ -65,21 +54,12 @@ export default {
       default: null,
     },
     /**
-     * Number of seconds the message shows. It will disappear after this time. Setting the timeout to 0 while the
-     * notification is dismissible will bypass the timeout.
+     * Number of seconds the message shows. It will disappear after this time.
      */
     timeout: {
       type: Number,
       required: false,
       default: 5,
-    },
-    /**
-     * Property weather a close button will be shown or not
-     */
-    dismissible: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
   },
   computed: {
@@ -94,10 +74,6 @@ export default {
     /**
      * Notification will be destroyed if timeout is set
      */
-    if (!this.timeout && this.dismissible) {
-      return
-    }
-
     setTimeout(() => {
       this.close()
     }, this.timeout * 1000)

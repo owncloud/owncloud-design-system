@@ -60,7 +60,6 @@ export default {
                   :status="item.status"
                   :title="item.title"
                   :message="item.message"
-                  :dismissible="item.dismissible"
                   :timeout="item.timeout"
                   @close="removeNotification('center', item)"
               />
@@ -76,7 +75,6 @@ export default {
                 :status="item.status"
                 :title="item.title"
                 :message="item.message"
-                :dismissible="item.dismissible"
                 :timeout="item.timeout"
                 @close="removeNotification('right', item)"
             />
@@ -105,17 +103,6 @@ export default {
             {
               title: 'Default without a message',
               status: 'passive'
-            },
-            {
-              title: 'This is a dismissible notification',
-              status: 'passive',
-              dismissible: true,
-            },
-            {
-              title: 'This is a dismissible notification which will not automatically disappear',
-              status: 'passive',
-              dismissible: true,
-              timeout: 0,
             },
             {
               title: 'This is a primary notification with a long title that spans more than just one line',
