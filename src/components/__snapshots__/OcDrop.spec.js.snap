@@ -3,6 +3,7 @@
 exports[`OcDrop renders tippy 1`] = `
 <div>
   <p
+    aria-describedby="tippy-3"
     aria-expanded="true"
     id="trigger"
   >
@@ -95,6 +96,7 @@ exports[`OcDrop renders tippy 2`] = `
 exports[`OcDrop renders tippy 3`] = `
 <div>
   <p
+    aria-describedby="tippy-3"
     aria-expanded="true"
     id="trigger"
   >

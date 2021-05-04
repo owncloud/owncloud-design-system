@@ -92,29 +92,30 @@ describe("OcDrop", () => {
 
   it("renders tippy", async () => {
     const { wrapper } = dom()
+    const trigger = wrapper.find("#trigger")
     const wait = async () => {
       await wrapper.vm.$nextTick()
       return new Promise(resolve => setTimeout(resolve, 100))
     }
 
-    await wrapper.find("#trigger").trigger("click") // show
+    await trigger.trigger("click") // show
     await wait()
     expect(wrapper.findComponent(Drop).exists()).toBeTruthy()
-    expect(wrapper.find("#trigger").attributes()["aria-expanded"]).toBe("true")
+    expect(trigger.attributes()["aria-expanded"]).toBe("true")
     expect(wrapper.element).toMatchSnapshot()
 
-    await wrapper.find("#trigger").trigger("click") // hide
+    await trigger.trigger("click") // hide
     await wait()
-    expect(wrapper.find("#trigger").attributes()["aria-expanded"]).toBe("false")
+    expect(trigger.attributes()["aria-expanded"]).toBe("false")
     expect(wrapper.element).toMatchSnapshot()
 
     await wrapper.setData({
       mode: "hover",
     })
 
-    await wrapper.find("#trigger").trigger("mouseenter") // show
+    await trigger.trigger("mouseenter") // show
     await wait()
-    expect(wrapper.find("#trigger").attributes()["aria-expanded"]).toBe("true")
+    expect(trigger.attributes()["aria-expanded"]).toBe("true")
     expect(wrapper.element).toMatchSnapshot()
   })
 })

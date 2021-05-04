@@ -48,6 +48,9 @@ export default {
       interactive: true,
       ignoreAttributes: true,
       ...(Object.prototype.toString.call(value) === "[object Object]" && value),
+      aria: {
+        content: "describedby",
+      },
       plugins: [hideOnEsc],
     })
   },
