@@ -22,9 +22,6 @@ describe("OcResourceName", () => {
     expect(wrapper.find(".oc-resource-path").text()).toMatch("…/nature/")
     expect(wrapper.find(".oc-resource-basename").text()).toMatch("forest")
     expect(wrapper.find(".oc-resource-extension").text()).toMatch(".jpg")
-    expect(wrapper.find(".oc-resource-name").attributes("uk-tooltip")).toMatch(
-      "images/nature/forest.jpg"
-    )
     expect(wrapper).toMatchSnapshot()
   })
 
