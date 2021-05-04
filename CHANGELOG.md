@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - OcSpinner make ariaLabel prop optional: [#1251](https://github.com/owncloud/owncloud-design-system/pull/1251)
+* Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
 * Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
 
 ## Details
@@ -19,6 +20,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    attribute.
 
    https://github.com/owncloud/owncloud-design-system/pull/1251
+
+
+* Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
+
+   We've used uikit to manage oc-drop before, now tippy.js acts as a drop in replacement. The api
+   stays the same.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1269
 
 
 * Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
