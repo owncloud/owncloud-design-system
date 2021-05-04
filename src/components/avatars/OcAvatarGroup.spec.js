@@ -42,6 +42,7 @@ describe("OcAvatarGroup", () => {
         users,
         maxDisplayed: 2,
         isTooltipDisplayed: true,
+        accessibleDescription: "List of users",
       },
       directives: {
         OcTooltip,
@@ -59,6 +60,7 @@ describe("OcAvatarGroup", () => {
         users,
         maxDisplayed: 3,
         isTooltipDisplayed: true,
+        accessibleDescription: "List of users",
       },
       directives: {
         OcTooltip,
@@ -77,6 +79,7 @@ describe("OcAvatarGroup", () => {
       propsData: {
         users,
         isTooltipDisplayed: true,
+        accessibleDescription: "List of users",
       },
       directives: {
         OcTooltip,

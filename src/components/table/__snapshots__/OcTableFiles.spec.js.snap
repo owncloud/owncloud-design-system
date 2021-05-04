@@ -53,15 +53,25 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">105.9 MB</span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
-        <div class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked"><span width="30" aria-label="Bob" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span><span width="30" aria-label="Marie" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span><span width="30" aria-label="John Richards Emperor of long names" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; background-color: rgb(63, 81, 181); font: sans-serif; color: white;"><!----> <span class="avatarInitials">J</span></span>
-          <!---->
-          <!---->
+        <div class="oc-table-files-people">
+          <div aria-hidden="true" class="oc-avatar-group oc-avatar-group-stacked" aria-expanded="false">
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" focusable="false">
+              <!----> <span>J</span>
+            </div>
+            <!---->
+            <!---->
+          </div> <span class="oc-invisible-sr">This file is shared with the users Bob, Marie, John Richards Emperor of long names.</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
-        <div class="oc-avatar-group oc-table-files-people"><span width="30" aria-label="Bob" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span>
-          <!---->
-          <!---->
+        <div class="oc-table-files-people">
+          <div aria-hidden="true" class="oc-avatar-group" aria-expanded="false">
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <!---->
+            <!---->
+          </div> <span class="oc-invisible-sr">This file is owned by Bob</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
@@ -96,15 +106,25 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size">?</span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
-        <div class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked"><span width="30" aria-label="Bob" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span><span width="30" aria-label="Marie" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span><span width="30" aria-label="John Richards Emperor of long names" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; background-color: rgb(63, 81, 181); font: sans-serif; color: white;"><!----> <span class="avatarInitials">J</span></span>
-          <!---->
-          <!---->
+        <div class="oc-table-files-people">
+          <div aria-hidden="true" class="oc-avatar-group oc-avatar-group-stacked" aria-expanded="false">
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" focusable="false">
+              <!----> <span>J</span>
+            </div>
+            <!---->
+            <!---->
+          </div> <span class="oc-invisible-sr">This file is shared with the users Bob, Marie, John Richards Emperor of long names.</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
-        <div class="oc-avatar-group oc-table-files-people"><span width="30" aria-label="Bob" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span>
-          <!---->
-          <!---->
+        <div class="oc-table-files-people">
+          <div aria-hidden="true" class="oc-avatar-group" aria-expanded="false">
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <!---->
+            <!---->
+          </div> <span class="oc-invisible-sr">This file is owned by Bob</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
@@ -139,15 +159,25 @@ exports[`OcTableFiles displays all fields 1`] = `
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-size"><span class="oc-resource-size"></span></td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-sharedWith">
-        <div class="oc-avatar-group oc-table-files-people oc-avatar-group-stacked"><span width="30" aria-label="Bob" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span><span width="30" aria-label="Marie" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span><span width="30" aria-label="John Richards Emperor of long names" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; background-color: rgb(63, 81, 181); font: sans-serif; color: white;"><!----> <span class="avatarInitials">J</span></span>
-          <!---->
-          <!---->
+        <div class="oc-table-files-people">
+          <div aria-hidden="true" class="oc-avatar-group oc-avatar-group-stacked" aria-expanded="false">
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; align-items: center; justify-content: center; text-align: center; user-select: none; background-color: rgb(63, 81, 181); font: sans-serif; color: rgb(143, 161, 255);" focusable="false">
+              <!----> <span>J</span>
+            </div>
+            <!---->
+            <!---->
+          </div> <span class="oc-invisible-sr">This folder is shared with the users Bob, Marie, John Richards Emperor of long names.</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
-        <div class="oc-avatar-group oc-table-files-people"><span width="30" aria-label="Bob" role="img" class="vue-avatar--wrapper oc-avatar" style="width: 30px; height: 30px; font: sans-serif; color: white;"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="" aria-hidden="true" loading="lazy" class="avatarImg"> <span class="avatarInitials" style="display: none;"></span></span>
-          <!---->
-          <!---->
+        <div class="oc-table-files-people">
+          <div aria-hidden="true" class="oc-avatar-group" aria-expanded="false">
+            <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
+            <!---->
+            <!---->
+          </div> <span class="oc-invisible-sr">This folder is owned by Bob</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
