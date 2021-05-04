@@ -1,14 +1,14 @@
 <template>
-  <div class="oc-alerts" :class="$_ocNotifications_classes">
+  <div class="oc-alerts" :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <script>
 /**
- * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
+ * Notifications are used to inform users about errors, warnings and as confirmations for their actions. They will automatically disappear after a certain amount of time.
  *
- * The default slot can be filled with [oc-notification-message](#/oC%20Components/oc-notification-message) elements.
+ * The default slot can be filled with [OcNotificationMessage](#/oC%20Components/OcNotificationMessage) elements.
  *
  * ## Accessibility
  *
@@ -34,7 +34,7 @@ export default {
     },
   },
   computed: {
-    $_ocNotifications_classes() {
+    classes() {
       return `uk-notification uk-notification-${this.position}`
     },
   },
@@ -60,6 +60,7 @@ export default {
                   :status="item.status"
                   :title="item.title"
                   :message="item.message"
+                  :timeout="item.timeout"
                   @close="removeNotification('center', item)"
               />
             </transition-group>
@@ -70,10 +71,11 @@ export default {
           <oc-notifications position="top-right">
             <oc-notification-message
                 v-for="(item, index) in messages.right"
-                :key="index"
+                :key="item.title"
                 :status="item.status"
                 :title="item.title"
                 :message="item.message"
+                :timeout="item.timeout"
                 @close="removeNotification('right', item)"
             />
           </oc-notifications>

@@ -1,11 +1,6 @@
 <template>
-  <div class="oc-alert" :class="$_ocNotificationMessage_classes">
-    <oc-icon
-      :variation="$_ocNotificationMessage_iconVariation"
-      size="large"
-      name="info"
-      class="oc-mr-s"
-    />
+  <div class="oc-alert" :class="classes">
+    <oc-icon :variation="iconVariation" size="large" name="info" class="oc-mr-s" />
     <div
       class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
       :role="status === 'danger' ? 'alert' : 'status'"
@@ -18,16 +13,6 @@
         {{ message }}
       </div>
     </div>
-    <oc-button
-      name="close"
-      appearance="raw"
-      :variation="$_ocNotificationMessage_iconVariation"
-      :aria-label="$gettext('Close notification')"
-      class="uk-position-top-right oc-mt-s oc-mr-s"
-      @click="$_ocNotificationMessage_close"
-    >
-      <oc-icon name="close" :variation="$_ocNotificationMessage_iconVariation" />
-    </oc-button>
   </div>
 </template>
 <script>
@@ -68,17 +53,34 @@ export default {
       required: false,
       default: null,
     },
+    /**
+     * Number of seconds the message shows. It will disappear after this time.
+     */
+    timeout: {
+      type: Number,
+      required: false,
+      default: 5,
+      validator: value => value > 0,
+    },
   },
   computed: {
-    $_ocNotificationMessage_classes() {
+    classes() {
       return `uk-flex uk-flex-wrap uk-notification-message uk-notification-message-${this.status}`
     },
-    $_ocNotificationMessage_iconVariation() {
+    iconVariation() {
       return this.status
     },
   },
+  mounted() {
+    /**
+     * Notification will be destroyed if timeout is set
+     */
+    setTimeout(() => {
+      this.close()
+    }, this.timeout * 1000)
+  },
   methods: {
-    $_ocNotificationMessage_close() {
+    close() {
       /**
        * The close event is emitted when the user clicks the close icon.
        * @type {void}
@@ -111,5 +113,5 @@ export default {
 </style>
 
 <docs>
-  Please have a look at the component [oc-notifications](#/oC%20Components/oc-notifications) for example code.
+  Please have a look at the component [OcNotifications](#/oC%20Components/OcNotifications) for example code.
 </docs>
