@@ -281,7 +281,7 @@ export default {
           },
           {
             name: "owner",
-            title: this.$gettext("Owner"),
+            title: this.$gettext("Share owner"),
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
@@ -298,7 +298,7 @@ export default {
           },
           {
             name: "sdate",
-            title: this.$gettext("Shared"),
+            title: this.$gettext("Shared on"),
             type: "callback",
             alignH: "right",
             wrap: "nowrap",
