@@ -429,15 +429,15 @@ export default {
     },
 
     getOwnerAvatarDescription(resource) {
-      let description
-      if (resource.type === "folder") {
-        description = this.$gettext("This folder is owned by")
-      } else {
-        description = this.$gettext("This file is owned by")
-      }
+      const translated = this.$gettext('This %{ resourceType } is owned by %{ ownerName }')
+      const resourceType = resource.type === 'folder' ? this.$gettext('folder') : this.$gettext('file')
+      const description = this.$gettextInterpolate(translated, {
+        resourceType,
+        ownerName: resource.owner[0].displayName
+      })
 
-      return `${description} ${resource.owner[0].displayName}`
-    },
+      return description
+    }
   },
 }
 </script>

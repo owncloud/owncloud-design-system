@@ -71,7 +71,7 @@ exports[`OcTableFiles displays all fields 1`] = `
             <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
             <!---->
             <!---->
-          </div> <span class="oc-invisible-sr">This file is owned by Bob</span>
+          </div> <span class="oc-invisible-sr">This %{ resourceType } is owned by %{ ownerName }</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
@@ -124,7 +124,7 @@ exports[`OcTableFiles displays all fields 1`] = `
             <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
             <!---->
             <!---->
-          </div> <span class="oc-invisible-sr">This file is owned by Bob</span>
+          </div> <span class="oc-invisible-sr">This %{ resourceType } is owned by %{ ownerName }</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
@@ -177,7 +177,7 @@ exports[`OcTableFiles displays all fields 1`] = `
             <div aria-hidden="true" class="vue-avatar--wrapper oc-avatar" style="display: flex; width: 30px; height: 30px; border-radius: 50%; line-height: 31px; font-weight: bold; align-items: center; justify-content: center; text-align: center; user-select: none;" focusable="false"><img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" style="display: none;"> <span style="display: none;"></span></div>
             <!---->
             <!---->
-          </div> <span class="oc-invisible-sr">This folder is owned by Bob</span>
+          </div> <span class="oc-invisible-sr">This %{ resourceType } is owned by %{ ownerName }</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-mdate">
