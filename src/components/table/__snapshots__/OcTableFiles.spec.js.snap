@@ -62,7 +62,7 @@ exports[`OcTableFiles displays all fields 1`] = `
             </div>
             <!---->
             <!---->
-          </div> <span class="oc-invisible-sr">This %{ resourceType } is shared via one invite</span>
+          </div> <span class="oc-invisible-sr">This %{ resourceType } is shared via %{ shareCount } invites</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
@@ -115,7 +115,7 @@ exports[`OcTableFiles displays all fields 1`] = `
             </div>
             <!---->
             <!---->
-          </div> <span class="oc-invisible-sr">This %{ resourceType } is shared via one invite</span>
+          </div> <span class="oc-invisible-sr">This %{ resourceType } is shared via %{ shareCount } invites</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">
@@ -168,7 +168,7 @@ exports[`OcTableFiles displays all fields 1`] = `
             </div>
             <!---->
             <!---->
-          </div> <span class="oc-invisible-sr">This %{ resourceType } is shared via one invite</span>
+          </div> <span class="oc-invisible-sr">This %{ resourceType } is shared via %{ shareCount } invites</span>
         </div>
       </td>
       <td class="oc-td oc-table-cell oc-table-cell-align-right oc-table-cell-align-middle oc-table-cell-width-auto oc-text-nowrap oc-table-data-cell oc-table-data-cell-owner">

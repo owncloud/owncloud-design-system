@@ -1,4 +1,4 @@
-Change: Add description for avatar groups
+Enhancement: Add description for avatar groups
 
 The description is mandatory for avatar groups because the avatar group element is hidden for screen readers.
 
