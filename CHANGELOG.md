@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - OcSpinner make ariaLabel prop optional: [#1251](https://github.com/owncloud/owncloud-design-system/pull/1251)
+* Enhancement - Lazy img loading & accessibility for OcAvatar: [#1282](https://github.com/owncloud/owncloud-design-system/pull/1282)
 * Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
 * Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
 * Enhancement - Remove the notification close button: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
@@ -23,6 +24,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    attribute.
 
    https://github.com/owncloud/owncloud-design-system/pull/1251
+
+
+* Enhancement - Lazy img loading & accessibility for OcAvatar: [#1282](https://github.com/owncloud/owncloud-design-system/pull/1282)
+
+   - Add lazy loading to OcImg component - Internalize former dependency vue-avatar into
+   OcAvatar - Make OcAvatar use OcImg component, using lazy loading - Change OcAvatar to be a11y
+   compliant (color contrasts, DOM structure)
+
+   https://github.com/owncloud/owncloud-design-system/pull/1282
 
 
 * Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
