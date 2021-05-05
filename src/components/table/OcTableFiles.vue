@@ -392,52 +392,48 @@ export default {
     },
 
     getSharedWithAvatarDescription(resource) {
-      const users = resource.sharedWith.filter(u => !u.link)
-      const links = resource.sharedWith.filter(u => !!u.link)
-      let userList
-      let linkList
+      const resourceType =
+        resource.type === "folder" ? this.$gettext("folder") : this.$gettext("file")
 
-      if (users.length) {
-        userList = users.map(user => user.displayName).join(", ")
-      }
+      const userCount = resource.sharedWith.filter(u => !u.link).length
+      const linkCount = resource.sharedWith.filter(u => !!u.link).length
 
-      if (links.length) {
-        linkList = links.map(link => link.name).join(", ")
-      }
+      const baseText = this.$gettext("This %{ resourceType } is shared ")
+      const userText =
+        userCount > 0
+          ? this.$ngettext("with %{ userCount } user", "with %{ userCount } users", userCount)
+          : ""
+      const linkText =
+        linkCount > 0
+          ? this.$ngettext("via %{ linkCount } link", "via %{ linkCount } links", linkCount)
+          : ""
 
-      if (resource.type === "folder") {
-        if (userList && linkList) {
-          return `${this.$gettext(
-            "This folder is shared with the users"
-          )} ${userList}. ${this.$gettext("and via the links")} ${linkList}.`
-        } else if (users) {
-          return `${this.$gettext("This folder is shared with the users")} ${userList}.`
-        } else {
-          return `${this.$gettext("This folder is shared via the links")} ${linkList}.`
-        }
-      }
+      const description =
+        baseText +
+        userText +
+        (userCount > 0 && linkCount > 0 ? this.$gettext(" and ") : "") +
+        linkText
 
-      if (userList && linkList) {
-        return `${this.$gettext("This file is shared with the users")} ${userList}. ${this.$gettext(
-          "and via the links"
-        )} ${linkList}.`
-      } else if (users) {
-        return `${this.$gettext("This file is shared with the users")} ${userList}.`
-      } else {
-        return `${this.$gettext("This file is shared via the links")} ${linkList}.`
-      }
+      const translated = this.$gettextInterpolate(description, {
+        resourceType,
+        userCount,
+        linkCount,
+      })
+
+      return translated
     },
 
     getOwnerAvatarDescription(resource) {
-      const translated = this.$gettext('This %{ resourceType } is owned by %{ ownerName }')
-      const resourceType = resource.type === 'folder' ? this.$gettext('folder') : this.$gettext('file')
+      const translated = this.$gettext("This %{ resourceType } is owned by %{ ownerName }")
+      const resourceType =
+        resource.type === "folder" ? this.$gettext("folder") : this.$gettext("file")
       const description = this.$gettextInterpolate(translated, {
         resourceType,
-        ownerName: resource.owner[0].displayName
+        ownerName: resource.owner[0].displayName,
       })
 
       return description
-    }
+    },
   },
 }
 </script>
