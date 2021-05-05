@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" :aria-hidden="ariaHidden" :title="title" />
+  <img :src="src" :alt="alt" :aria-hidden="!alt" :title="title" />
 </template>
 <script>
 /**
@@ -35,6 +35,14 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    loadingType: {
+      type: String,
+      required: false,
+      default: "eager",
+      validator: value => {
+        return value.match(/(eager|lazy)/)
+      },
     },
   },
   computed: {
