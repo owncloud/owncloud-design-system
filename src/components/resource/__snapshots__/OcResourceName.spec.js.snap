@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OcResourceName displays full path 1`] = `<span resource-path="images/nature/forest.jpg" resource-name="…/nature/forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate" aria-expanded="false"><span class="oc-resource-path">…/nature/</span><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span></span>`;
+exports[`OcResourceName displays full path 1`] = `<span resource-path="images/nature/forest.jpg" resource-name="…/nature/forest.jpg" resource-type="file" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">…/nature/</span><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span></span>`;
 
-exports[`OcResourceName displays only direct parent 1`] = `<span resource-path="Documents/notes.txt" resource-name="Documents/notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate" aria-expanded="false"><span class="oc-resource-path">Documents/</span><span class="oc-resource-basename">notes</span><span class="oc-resource-extension">.txt</span></span>`;
+exports[`OcResourceName displays only direct parent 1`] = `<span resource-path="Documents/notes.txt" resource-name="Documents/notes.txt" resource-type="file" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">Documents/</span><span class="oc-resource-basename">notes</span><span class="oc-resource-extension">.txt</span></span>`;
 
 exports[`OcResourceName doesn't add extension to hidden folder 1`] = `
 <span resource-path=".hidden" resource-name=".hidden" resource-type="folder" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">.hidden</span>
