@@ -64,6 +64,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/pull/1263
    https://github.com/owncloud/owncloud-design-system/pull/1271
+   https://github.com/owncloud/owncloud-design-system/pull/1272
 
 # Changelog for [6.3.0] (2021-04-29)
 
