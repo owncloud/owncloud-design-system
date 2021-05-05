@@ -14539,9 +14539,9 @@ webpack-log@^2.0.0:
     uuid "^3.3.2"
 
 webpack-merge-and-include-globally@^2.1.24:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/webpack-merge-and-include-globally/-/webpack-merge-and-include-globally-2.3.3.tgz#d91307a6f9a429c3e3d219af85307ceecb05ae62"
-  integrity sha512-se3dHRVJn5N9CvUD5lOYQ3RThCGHrMLmjR35u/IwArcgZNi68lP/osAx9/zfIAWeSA5UMHvbyPo3Be+PCNQhqw==
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/webpack-merge-and-include-globally/-/webpack-merge-and-include-globally-2.3.4.tgz#e4e74f251f7fa82a656a06d181267a206ae00157"
+  integrity sha512-s5dd7m3ycVBlC7C6GAx91JQzbjhxC/NJRuT2sCkg8WCcF8CE1x/7xwVXqgmt0Fr/H/0sX5C5HE2RdU6+vCY5yg==
   dependencies:
     es6-promisify "^6.1.1"
     glob "^7.1.6"
