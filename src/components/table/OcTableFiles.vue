@@ -395,28 +395,24 @@ export default {
       const resourceType =
         resource.type === "folder" ? this.$gettext("folder") : this.$gettext("file")
 
-      const userCount = resource.sharedWith.filter(u => !u.link).length
+      const shareCount = resource.sharedWith.filter(u => !u.link).length
       const linkCount = resource.sharedWith.filter(u => !!u.link).length
 
-      const baseText = this.$gettext("This %{ resourceType } is shared ")
-      const userText =
-        userCount > 0
-          ? this.$ngettext("with %{ userCount } user", "with %{ userCount } users", userCount)
-          : ""
+      const baseText = this.$gettext("This %{ resourceType } is shared via ")
+      const shareText =
+        shareCount > 0 ? this.$ngettext("one invite", "%{ shareCount } invites", shareCount) : ""
       const linkText =
-        linkCount > 0
-          ? this.$ngettext("via %{ linkCount } link", "via %{ linkCount } links", linkCount)
-          : ""
+        linkCount > 0 ? this.$ngettext("one link", "%{ linkCount } links", linkCount) : ""
 
       const description =
         baseText +
-        userText +
-        (userCount > 0 && linkCount > 0 ? this.$gettext(" and ") : "") +
+        shareText +
+        (shareCount > 0 && linkCount > 0 ? this.$gettext(" and ") : "") +
         linkText
 
       const translated = this.$gettextInterpolate(description, {
         resourceType,
-        userCount,
+        shareCount,
         linkCount,
       })
 
