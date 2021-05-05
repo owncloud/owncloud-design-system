@@ -1,14 +1,14 @@
 <template>
   <span
     class="vue-avatar--wrapper oc-avatar"
-    :style="[style]"
+    :style="style"
     :width="width"
     :aria-label="accessibleLabel === '' ? null : accessibleLabel"
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
   >
-    <oc-img v-if="isImage" loading="lazy" class="avatarImg" :src="src" @error="onImgError" />
+    <oc-img v-if="isImage" loading-type="lazy" class="avatarImg" :src="src" @error="onImgError" />
     <span v-show="!isImage" class="avatarInitials">{{ userInitial }}</span>
   </span>
 </template>
