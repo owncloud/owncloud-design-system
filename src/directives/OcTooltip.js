@@ -63,7 +63,6 @@ export default {
       aria: {
         content: null,
         expanded: false,
-        hidden: true,
       },
       plugins: [hideOnEsc, ariaHidden],
     })
