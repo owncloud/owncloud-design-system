@@ -54,6 +54,7 @@
         :stacked="true"
         :max-displayed="3"
         :is-tooltip-displayed="true"
+        :accessible-description="getSharedWithAvatarDescription(item)"
       />
     </template>
     <template #size="{ item }">
@@ -64,6 +65,7 @@
         class="oc-table-files-people"
         :users="item.owner"
         :is-tooltip-displayed="true"
+        :accessible-description="getOwnerAvatarDescription(item)"
       />
     </template>
     <template #actions="{ item }">
@@ -387,6 +389,53 @@ export default {
       }
 
       return this.$gettext("Select file")
+    },
+
+    getSharedWithAvatarDescription(resource) {
+      const resourceType =
+        resource.type === "folder" ? this.$gettext("folder") : this.$gettext("file")
+
+      const shareCount = resource.sharedWith.filter(u => !u.link).length
+      const linkCount = resource.sharedWith.filter(u => !!u.link).length
+
+      const shareText =
+        shareCount > 0
+          ? this.$ngettext(
+              "This %{ resourceType } is shared via %{ shareCount } invite",
+              "This %{ resourceType } is shared via %{ shareCount } invites",
+              shareCount
+            )
+          : ""
+      const linkText =
+        linkCount > 0
+          ? this.$ngettext(
+              "This %{ resourceType } is shared via %{ linkCount } link",
+              "This %{ resourceType } is shared via %{ linkCount } links",
+              linkCount
+            )
+          : ""
+
+      const description = [shareText, linkText].join(" ")
+
+      const translated = this.$gettextInterpolate(description, {
+        resourceType,
+        shareCount,
+        linkCount,
+      })
+
+      return translated
+    },
+
+    getOwnerAvatarDescription(resource) {
+      const translated = this.$gettext("This %{ resourceType } is owned by %{ ownerName }")
+      const resourceType =
+        resource.type === "folder" ? this.$gettext("folder") : this.$gettext("file")
+      const description = this.$gettextInterpolate(translated, {
+        resourceType,
+        ownerName: resource.owner[0].displayName,
+      })
+
+      return description
     },
   },
 }

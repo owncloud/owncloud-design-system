@@ -5,6 +5,8 @@ import Vue from "vue"
 import { config } from "@vue/test-utils"
 
 config.mocks["$gettext"] = str => str
+config.mocks["$ngettext"] = str => str
+config.mocks["$gettextInterpolate"] = str => str
 config.mocks["$language"] = {
   current: "en_US",
 }

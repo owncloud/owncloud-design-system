@@ -1,31 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OcAvatarGroup displays tooltip 1`] = `
-<div class="oc-avatar-group">
-  <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="Bob" width="30"></oc-avatar-stub>
-  <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="Marie" width="30"></oc-avatar-stub>
-  <!---->
-  <oc-avatar-count-stub count="3" size="30"></oc-avatar-count-stub>
+<div>
+  <div aria-hidden="true" class="oc-avatar-group">
+    <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="" width="30"></oc-avatar-stub>
+    <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="" width="30"></oc-avatar-stub>
+    <!---->
+    <oc-avatar-count-stub count="3" size="30"></oc-avatar-count-stub>
+  </div> <span class="oc-invisible-sr">List of users</span>
 </div>
 `;
 
 exports[`OcAvatarGroup prefers avatars over links when maxDisplayed is exceeded 1`] = `
-<div class="oc-avatar-group">
-  <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="Bob" width="30"></oc-avatar-stub>
-  <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="Marie" width="30"></oc-avatar-stub>
-  <oc-avatar-stub src="" username="john" accessiblelabel="John Richards Emperor of long names" width="30"></oc-avatar-stub>
-  <!---->
-  <oc-avatar-count-stub count="2" size="30"></oc-avatar-count-stub>
+<div>
+  <div aria-hidden="true" class="oc-avatar-group">
+    <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="" width="30"></oc-avatar-stub>
+    <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="" width="30"></oc-avatar-stub>
+    <oc-avatar-stub src="" username="john" accessiblelabel="" width="30"></oc-avatar-stub>
+    <!---->
+    <oc-avatar-count-stub count="2" size="30"></oc-avatar-count-stub>
+  </div> <span class="oc-invisible-sr">List of users</span>
 </div>
 `;
 
 exports[`OcAvatarGroup shows avatars first and links last 1`] = `
-<div class="oc-avatar-group">
-  <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="Bob" width="30"></oc-avatar-stub>
-  <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="Marie" width="30"></oc-avatar-stub>
-  <oc-avatar-stub src="" username="john" accessiblelabel="John Richards Emperor of long names" width="30"></oc-avatar-stub>
-  <oc-avatar-link-stub name="link 0" accessiblelabel="link 0"></oc-avatar-link-stub>
-  <oc-avatar-link-stub name="link 1" accessiblelabel="link 1"></oc-avatar-link-stub>
-  <!---->
+<div>
+  <div aria-hidden="true" class="oc-avatar-group">
+    <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="bob" accessiblelabel="" width="30"></oc-avatar-stub>
+    <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="marie" accessiblelabel="" width="30"></oc-avatar-stub>
+    <oc-avatar-stub src="" username="john" accessiblelabel="" width="30"></oc-avatar-stub>
+    <oc-avatar-link-stub name="link 0" accessiblelabel=""></oc-avatar-link-stub>
+    <oc-avatar-link-stub name="link 1" accessiblelabel=""></oc-avatar-link-stub>
+    <!---->
+  </div> <span class="oc-invisible-sr">List of users</span>
 </div>
 `;
