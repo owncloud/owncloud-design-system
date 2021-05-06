@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - OcSpinner make ariaLabel prop optional: [#1251](https://github.com/owncloud/owncloud-design-system/pull/1251)
 * Enhancement - Lazy img loading & accessibility for OcAvatar: [#1282](https://github.com/owncloud/owncloud-design-system/pull/1282)
+* Enhancement - Add description for avatar groups: [#1250](https://github.com/owncloud/owncloud-design-system/pull/1250)
 * Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
 * Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
 * Enhancement - Accessibility for OcSelect: [#1268](https://github.com/owncloud/owncloud-design-system/pull/1268)
@@ -34,6 +35,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    compliant (color contrasts, DOM structure)
 
    https://github.com/owncloud/owncloud-design-system/pull/1282
+
+
+* Enhancement - Add description for avatar groups: [#1250](https://github.com/owncloud/owncloud-design-system/pull/1250)
+
+   The description is mandatory for avatar groups because the avatar group element is hidden for
+   screen readers.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1250
 
 
 * Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
