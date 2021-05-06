@@ -172,8 +172,7 @@ export default {
 
 <docs>
 ```js
-  <oc-avatar class="oc-mb-s" src="https://picsum.photos/50/50?image=1074" accessibleLabel="Lion" />
-  <oc-avatar class="oc-mb-s" userName="Bruce Lee" accessibleLabel="Lion" />
-  <oc-avatar class="oc-mb-s" userName="Bruce Lee" accessibleDescription="This avatar is only described to screen readers through text." />
+  <oc-avatar class="oc-mb-s" src="https://picsum.photos/50/50?image=1074" accessible-label="Lion" />
+  <oc-avatar class="oc-mb-s" user-name="Bruce Lee" accessible-label="Lion" />
 ```
 </docs>

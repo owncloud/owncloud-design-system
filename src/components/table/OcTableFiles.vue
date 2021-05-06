@@ -398,43 +398,24 @@ export default {
       const shareCount = resource.sharedWith.filter(u => !u.link).length
       const linkCount = resource.sharedWith.filter(u => !!u.link).length
 
-      let description = ""
-      switch (true) {
-        case shareCount == 1 && linkCount == 0:
-          description = this.$gettext("This %{ resourceType } is shared via one invite")
-          break
-        case shareCount == 0 && linkCount == 1:
-          description = this.$gettext("This %{ resourceType } is shared via one link")
-          break
-        case shareCount == 1 && linkCount == 1:
-          description = this.$gettext(
-            "This %{ resourceType } is shared via one invite and one link"
-          )
-          break
-        case shareCount == 0 && linkCount > 1:
-          description = this.$gettext("This %{ resourceType } is shared via %{ linkCount } link")
-          break
-        case shareCount == 1 && linkCount > 1:
-          description = this.$gettext(
-            "This %{ resourceType } is shared via one invite and %{ linkCount } links"
-          )
-          break
-        case shareCount > 1 && linkCount == 0:
-          description = this.$gettext(
-            "This %{ resourceType } is shared via %{ shareCount } invites"
-          )
-          break
-        case shareCount > 1 && linkCount == 1:
-          description = this.$gettext(
-            "This %{ resourceType } is shared via %{ shareCount } invites and one link"
-          )
-          break
-        case shareCount > 1 && linkCount > 1:
-          description = this.$gettext(
-            "This %{ resourceType } is shared via %{ shareCount } invites and %{ linkCount } links"
-          )
-          break
-      }
+      const shareText =
+        shareCount > 0
+          ? this.$ngettext(
+              "This %{ resourceType } is shared via %{ shareCount } invite",
+              "This %{ resourceType } is shared via %{ shareCount } invites",
+              shareCount
+            )
+          : ""
+      const linkText =
+        linkCount > 0
+          ? this.$ngettext(
+              "This %{ resourceType } is shared via %{ linkCount } link",
+              "This %{ resourceType } is shared via %{ linkCount } links",
+              linkCount
+            )
+          : ""
+
+      const description = [shareText, linkText].join(" ")
 
       const translated = this.$gettextInterpolate(description, {
         resourceType,
