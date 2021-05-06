@@ -3,7 +3,7 @@
     <template v-for="(index, name) in $scopedSlots" #[name]="data">
       <slot :name="name" v-bind="data"></slot>
     </template>
-    <div slot="no-options" v-translate>No options available.</div>
+    <template #no-options v-translate>No options available.</template>
   </vue-select>
 </template>
 
@@ -155,6 +155,9 @@ We can then retrieve all the values that we want to display from the slots param
   <div class="uk-width-medium">
     <oc-select v-model="selected" :options="options" label="title" class="oc-mb-m">
       <template v-slot:option="{ title, desc }">
+        <template #no-options>
+         Your search query haven't returned any results.
+        </template>
         <span class="option">
           <strong v-text="title" />
         </span>
