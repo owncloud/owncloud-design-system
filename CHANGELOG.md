@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Lazy img loading & accessibility for OcAvatar: [#1282](https://github.com/owncloud/owncloud-design-system/pull/1282)
 * Enhancement - Make files table headings more descriptive: [#1252](https://github.com/owncloud/owncloud-design-system/pull/1252)
 * Enhancement - Remove uk-drop from OcDrop: [#1269](https://github.com/owncloud/owncloud-design-system/pull/1269)
+* Enhancement - Accessibility for OcSelect: [#1268](https://github.com/owncloud/owncloud-design-system/pull/1268)
 * Enhancement - Remove the notification close button: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
 * Enhancement - Show the notification close button via property: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
 * Enhancement - Tooltips: [#1263](https://github.com/owncloud/owncloud-design-system/pull/1263)
@@ -48,6 +49,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    stays the same.
 
    https://github.com/owncloud/owncloud-design-system/pull/1269
+
+
+* Enhancement - Accessibility for OcSelect: [#1268](https://github.com/owncloud/owncloud-design-system/pull/1268)
+
+   - Add l10n for default no options text - Add l10n for vue-select combobox aria-label
+
+   https://github.com/owncloud/owncloud-design-system/pull/1268
 
 
 * Enhancement - Remove the notification close button: [#1247](https://github.com/owncloud/owncloud-design-system/pull/1247)
