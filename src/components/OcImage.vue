@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" :title="title" />
+  <img :src="src" :alt="alt" :aria-hidden="!alt" :title="title" :loading="loadingType" />
 </template>
 <script>
 /**
@@ -35,6 +35,22 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    /**
+     * Defines whether the image gets loaded immediately or once it comes near the user's viewport
+     */
+    loadingType: {
+      type: String,
+      required: false,
+      default: "eager",
+      validator: value => {
+        return value.match(/(eager|lazy)/)
+      },
+    },
+  },
+  computed: {
+    ariaHidden() {
+      return this.alt.length === 0
     },
   },
 }
