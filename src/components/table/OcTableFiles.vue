@@ -4,7 +4,6 @@
     :fields="fields"
     :highlighted="highlighted"
     :disabled="disabled"
-    :row-height="rowHeight"
     :sticky="true"
     :header-position="headerPosition"
     @highlight="showDetails"
@@ -165,14 +164,6 @@ export default {
       type: [String, Array],
       required: false,
       default: null,
-    },
-    /**
-     * Height of the row in pixels
-     */
-    rowHeight: {
-      type: Number,
-      required: false,
-      default: 64,
     },
     /**
      * Target route path used to build the link when navigating into a resource
