@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v6.4.0...master
+
+## Summary
+
+* Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
+
+## Details
+
+* Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
+
+   By moving the table row height from a component property to a themable variable, we give users of
+   the web frontend a way to customize the appearance of their UI (instead of only giving the
+   freedom to users of the ODS).
+
+   https://github.com/owncloud/owncloud-design-system/pull/1291
+
 # Changelog for [6.4.0] (2021-05-06)
 
 The following sections list the changes in ownCloud Design System 6.4.0.
