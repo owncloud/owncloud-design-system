@@ -3,6 +3,8 @@ size:
   height:
     small:
       value: 50px
+    table-row:
+      value: 64px
   width:
     medium:
       value: 300px

@@ -148,14 +148,6 @@ export default {
       default: null,
     },
     /**
-     * Height of the row in pixels
-     */
-    rowHeight: {
-      type: Number,
-      required: false,
-      default: 64,
-    },
-    /**
      * Top position of header used when the header is sticky in pixels
      */
     headerPosition: {
@@ -256,7 +248,6 @@ export default {
           this.isHighlighted(item) ? "oc-table-highlighted" : undefined,
           this.isDisabled(item) ? "oc-table-disabled" : undefined,
         ].filter(Boolean),
-        style: { height: `${this.rowHeight}px` },
       }
     },
     extractTdProps(field, index) {
@@ -342,6 +333,10 @@ export default {
 
   &-hover tr {
     transition: background-color $transition-duration-short ease-in-out;
+  }
+
+  tr {
+    height: var(--oc-size-height-table-row);
   }
 
   tr + tr {
