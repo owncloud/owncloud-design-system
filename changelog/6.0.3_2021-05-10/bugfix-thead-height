@@ -1,0 +1,6 @@
+Bugfix: Thead height was affected by themable row height
+
+The recent changes in v6.0.2 affected the table header and made it higher than it should be.
+Now the themable row height only affects rows below inside the `<tbody>` tag.
+
+https://github.com/owncloud/owncloud-design-system/pull/1296
