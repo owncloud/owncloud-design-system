@@ -6,9 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 
 ## Details
+
+* Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
+
+   - wrappend OcAvatarLink in span (was div) - wrappend OcAvatarCount in span (was div) - changed
+   the way the OcAvatarLink background color was picked, which improves the color contrast to
+   >4.5 (a11y requirement)
+
+   https://github.com/owncloud/owncloud-design-system/pull/1298
+
 
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 
