@@ -1,7 +1,7 @@
 <template>
-  <div
+  <span
     class="oc-avatar-link"
-    :style="{ backgroundColor: color }"
+    :style="{ backgroundColor: pickBackgroundColor }"
     :aria-label="accessibleLabel === '' ? null : accessibleLabel"
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
@@ -36,15 +36,26 @@ export default {
   },
 
   computed: {
-    color() {
-      const letters = "0123456789ABCDEF"
-      let color = "#"
+    pickBackgroundColor() {
+      const backgroundColors = [
+        "#b82015",
+        "#c21c53",
+        "#9C27B0",
+        "#673AB7",
+        "#3F51B5",
+        "#106892",
+        "#055c68",
+        "#009688",
+        "#1a761d",
+        "#476e1a",
+        "#636d0b",
+        "#8e5c11",
+        "#795548",
+        "#465a64",
+      ]
+      let bgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
 
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)]
-      }
-
-      return color
+      return bgColor
     },
   },
 }
@@ -57,13 +68,14 @@ export default {
   background-repeat: no-repeat;
   background-size: 18px;
   border-radius: 50%;
+  display: block;
   height: 30px;
   width: 30px;
 }
 </style>
 
 <docs>
-```vue
+```js
 <oc-avatar-link name="Public link" accessible-label="Public link" />
 ```
 </docs>
