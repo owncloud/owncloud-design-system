@@ -1,5 +1,5 @@
 <template>
-  <div
+  <span
     class="oc-avatar-count"
     :style="{ width: size + 'px', height: size + 'px', fontSize: fontSize }"
     v-text="`+${count}`"
@@ -49,7 +49,7 @@ export default {
 }
 </style>
 <docs>
-```
-  <oc-avatar-count :count="21" />
+```js
+<oc-avatar-count :count="21" />
 ```
 </docs>
