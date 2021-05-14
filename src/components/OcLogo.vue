@@ -1,7 +1,11 @@
 <template functional>
-  <span :ref="data.ref" class="oc-logo" :class="data.class || ''">
-    <oc-img :src="props.src" :alt="props.alt" class="oc-logo-img" />
-  </span>
+  <oc-img
+    :ref="data.ref"
+    class="oc-logo"
+    :class="[data.staticClass, data.class]"
+    :src="props.src"
+    :alt="props.alt"
+  />
 </template>
 
 <script>
@@ -34,11 +38,8 @@ export default {
 
 <style lang="scss">
 .oc-logo {
-  padding: var(--oc-space-small);
-
-  &-img {
-    height: var(--oc-size-height-small);
-  }
+  height: var(--oc-size-height-small);
+  margin: var(--oc-space-small);
 }
 </style>
 

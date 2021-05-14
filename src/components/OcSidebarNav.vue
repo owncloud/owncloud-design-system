@@ -1,7 +1,7 @@
 <template functional>
   <div
     :ref="data.ref"
-    :aria-label="accessibleLabel"
+    :aria-label="props.accessibleLabel"
     class="oc-sidebar"
     :class="[data.staticClass, data.class]"
     v-bind="data.attrs"
