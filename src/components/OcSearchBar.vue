@@ -28,7 +28,6 @@
         v-if="query.length > 0"
         :aria-label="$gettext('Clear search query')"
         class="oc-search-clear uk-position-small uk-position-center-right"
-        size="small"
         appearance="raw"
         @click="onClear"
       >
@@ -38,9 +37,9 @@
     <div :class="{ 'oc-invisible-sr': buttonHidden }">
       <oc-button
         class="oc-search-button"
-        :class="{ 'uk-button-small': small }"
         variation="primary"
         appearance="filled"
+        :size="small ? 'small' : 'medium'"
         :disabled="loading || searchQuery.length < 1"
         @click="onSearch"
         >{{ buttonLabel }}</oc-button
