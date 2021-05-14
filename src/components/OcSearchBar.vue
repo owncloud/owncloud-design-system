@@ -28,6 +28,7 @@
         v-if="query.length > 0"
         :aria-label="$gettext('Clear search query')"
         class="oc-search-clear uk-position-small uk-position-center-right"
+        size="small"
         appearance="raw"
         @click="onClear"
       >
@@ -284,10 +285,6 @@ export default {
     .oc-search-input-icon {
       // TODO: Remove `!important` after we get rid of UIkit
       padding-left: var(--oc-space-large) !important;
-    }
-
-    .oc-button {
-      @extend .oc-button-s;
     }
 
     .oc-icon {

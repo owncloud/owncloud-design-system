@@ -90,7 +90,7 @@ export default {
       type: String,
       default: "passive",
       validator: value => {
-        return value.match(/(passive|primary|success|danger|warning)/)
+        return value.match(/(passive|primary|success|danger|warning|inverse)/)
       },
     },
     /**
@@ -192,6 +192,267 @@ export default {
 }
 </script>
 
+<style lang="scss">
+@mixin oc-button-gap($factor) {
+  gap: round($oc-space-small * $factor / 2) * 2;
+}
+
+@mixin oc-button-line-height($factor) {
+  line-height: $oc-size-icon-default * $factor;
+}
+
+@mixin oc-button-variation($color, $hover-color, $muted-color) {
+  background-color: $color;
+  border-color: $color;
+
+  &:disabled {
+    background-color: $muted-color;
+    border-color: $muted-color;
+  }
+
+  &:focus:not([disabled]),
+  &:hover:not([disabled]) {
+    background-color: $hover-color;
+    border-color: $hover-color;
+  }
+
+  &-raw {
+    background-color: transparent;
+    border-style: none;
+    color: $color;
+    font-size: 1rem;
+    font-weight: normal;
+    min-height: 0;
+    padding: 0;
+
+    .oc-icon > svg {
+      fill: $color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $muted-color;
+    }
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: transparent;
+    }
+
+    &:focus:not([disabled]):not(button),
+    &:hover:not([disabled]):not(button) {
+      text-decoration: underline;
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    color: $color;
+
+    .oc-icon > svg {
+      fill: $color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $muted-color;
+    }
+  }
+
+  &-outline:hover:not([disabled]),
+  &-outline:focus:not([disabled]) {
+    color: $muted-color;
+
+    .oc-icon > svg {
+      fill: $muted-color;
+    }
+  }
+}
+
+.oc-button {
+  @include oc-button-line-height(1);
+
+  align-items: center;
+  border: 1px solid;
+  border-color: transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: var(--oc-color-text-inverse);
+  display: flex;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  transition: background-color $transition-duration-short ease-in-out,
+    color $transition-duration-short ease-in-out,
+    border-color $transition-duration-short ease-in-out;
+
+  &-justify-content {
+    &-left {
+      justify-content: left;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+
+    &-right {
+      justify-content: right;
+    }
+
+    &-space-between {
+      justify-content: space-between;
+    }
+
+    &-space-around {
+      justify-content: space-around;
+    }
+
+    &-space-evenly {
+      justify-content: space-evenly;
+    }
+  }
+
+  &-gap {
+    &-xs {
+      @include oc-button-gap(0.5);
+    }
+
+    &-s {
+      @include oc-button-gap(0.7);
+    }
+
+    &-m {
+      @include oc-button-gap(1);
+    }
+
+    &-l {
+      @include oc-button-gap(1.5);
+    }
+
+    &-xl {
+      @include oc-button-gap(2);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-s {
+    @include oc-button-line-height(0.7);
+
+    font-size: 0.9rem;
+    min-height: $global-control-small-height;
+  }
+
+  &-m {
+    @include oc-button-line-height(1);
+
+    font-size: 1.125rem;
+    min-height: $global-control-height;
+  }
+
+  &-l {
+    @include oc-button-line-height(1.5);
+
+    font-size: 1.5rem;
+    min-height: $global-control-large-height;
+  }
+
+  .oc-icon > svg {
+    fill: var(--oc-color-text-inverse);
+    transition: fill $transition-duration-short ease-in-out;
+  }
+
+  &-passive {
+    @include oc-button-variation(
+      var(--oc-color-swatch-passive-default),
+      var(--oc-color-swatch-passive-hover),
+      var(--oc-color-swatch-passive-muted)
+    );
+  }
+
+  &-primary {
+    @include oc-button-variation(
+      var(--oc-color-swatch-primary-default),
+      var(--oc-color-swatch-primary-hover),
+      var(--oc-color-swatch-primary-muted)
+    );
+  }
+
+  &-success {
+    @include oc-button-variation(
+      var(--oc-color-swatch-success-default),
+      var(--oc-color-swatch-success-hover),
+      var(--oc-color-swatch-success-muted)
+    );
+  }
+
+  &-warning {
+    @include oc-button-variation(
+      var(--oc-color-swatch-warning-default),
+      var(--oc-color-swatch-warning-hover),
+      var(--oc-color-swatch-warning-muted)
+    );
+  }
+
+  &-danger {
+    @include oc-button-variation(
+      var(--oc-color-swatch-danger-default),
+      var(--oc-color-swatch-danger-hover),
+      var(--oc-color-swatch-danger-muted)
+    );
+  }
+
+  &-inverse {
+    @include oc-button-variation(
+      var(--oc-color-swatch-inverse-default),
+      var(--oc-color-swatch-inverse-hover),
+      var(--oc-color-swatch-inverse-muted)
+    );
+
+    color: var(--oc-color-swatch-brand-default);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  &-group {
+    display: flex;
+    flex-flow: row wrap;
+
+    .oc-button {
+      border-radius: 0;
+
+      &:first-of-type {
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:last-of-type {
+        border-radius: 0 3px 3px 0;
+      }
+
+      &-default {
+        border-left: 0;
+        border-right: 0;
+
+        &:first-of-type {
+          // TODO: Implement color variations if button group should be used again
+          border-left: 1px solid var(--oc-color-swatch-primary-default);
+        }
+
+        &:last-of-type {
+          // TODO: Implement color variations if button group should be used again
+          border-right: 1px solid var(--oc-color-swatch-primary-default);
+        }
+      }
+    }
+  }
+}
+</style>
+
 <docs>
 Buttons are generally used for interface actions. Suitable for all-purpose use.
 
@@ -289,7 +550,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
       <oc-td>
         {{ variation.description }}
       </oc-td>
-        <oc-td v-for="appearance in appearances">
+        <oc-td v-for="appearance in appearances" :class="{ 'oc-background-brand': variation.title === 'inverse' }">
           <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
             {{ variation.title }}
           </oc-button>
@@ -327,6 +588,10 @@ export default {
         {
           title: "danger",
           description: "Use for triggering possible destructive and non-reversible actions, like permanently deleting a file"
+        },
+        {
+          title: "inverse",
+          description: "Use on a dark background"
         }
       ]
     },
