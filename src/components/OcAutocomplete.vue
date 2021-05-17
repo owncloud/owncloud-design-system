@@ -1,72 +1,26 @@
 <template>
   <div class="oc-autocomplete">
     <label class="oc-label" :for="inputId" v-text="label" />
-    <input
+    <oc-select
       :id="inputId"
       :ref="inputId"
-      v-model="input"
+      :options="items"
+      :filter="filter"
+      :disabled="disabled"
+      v-model="selected"
       v-bind="additionalAttributes"
       :class="{
-        'oc-autocomplete-input': true,
-        'oc-autocomplete-warning': !!warningMessage,
-        'oc-autocomplete-danger': !!errorMessage,
+          'oc-autocomplete-input': true,
+          'oc-autocomplete-warning': !!warningMessage,
+          'oc-autocomplete-danger': !!errorMessage,
       }"
-      autocomplete="off"
       role="combobox"
       aria-autocomplete="list"
-      :aria-expanded="ariaExpanded.toString()"
-      :aria-owns="listboxId"
-      :aria-activedescendant="optionId(highlighted)"
-      :disabled="disabled"
-      @keydown.up.prevent="highlighted--"
-      @keydown.down.prevent="highlighted++"
-      @keydown.enter="selectSuggestion"
-      @keydown.esc="dropdown.hide"
-      @focus="onFocus"
-    />
-    <div :id="boundryId" hidden />
-    <div
-      :id="dropdownId"
-      :ref="dropdownId"
-      class="oc-autocomplete-dropdown uk-overflow-auto"
-      :class="dropdownClass"
-      :uk-drop="'mode:click;delay-hide:0;toggle:#' + boundryId"
-    >
-      <ul :id="listboxId" ref="listbox" class="oc-autocomplete-suggestion-list" role="listbox">
-        <template v-for="(item, i) in matchesShown">
-          <li
-            :id="optionId(i)"
-            :key="i"
-            role="option"
-            :aria-posinset="i + 1"
-            :aria-setsize="matchesShown.length"
-            :aria-selected="i === highlighted"
-            :class="[
-              'oc-autocomplete-suggestion',
-              { 'oc-autocomplete-suggestion-selected': i === highlighted },
-            ]"
-            @mouseenter="highlighted = i"
-            @click="selectSuggestion"
-          >
-            <slot name="item" :item="item">
-              <!-- Fallback content -->
-              {{ item }}
-            </slot>
-          </li>
-        </template>
-        <li
-          v-if="matchesOverflowing > 0 && !itemsLoading && !expanded"
-          class="oc-autocomplete-suggestion-overflow"
-          @click.stop="expanded = true"
-        >
-          <span>{{ matchesOverflowing }} {{ textInformation.moreResults }}</span>
-        </li>
-        <li v-if="itemsLoading" class="oc-autocomplete-suggestion-list-loader">
-          <oc-spinner :aria-label="textInformation.spinner" class="oc-autocomplete-spinner" />
-          <span :aria-hidden="true">{{ textInformation.spinner }}</span>
-        </li>
-      </ul>
-    </div>
+      @update:input="userInput">
+      <template v-for="(_, name) in $scopedSlots" :slot="name" slot-scope="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
+    </oc-select>
     <div v-if="showMessageLine" class="oc-autocomplete-message">
       <span
         :id="messageId"
@@ -82,10 +36,11 @@
 </template>
 
 <script>
+import Fuse from "fuse.js"
 import OcSpinner from "../components/OcSpinner"
 
-import UiKit from "uikit"
 import uniqueId from "../utils/uniqueId"
+import OcSelect from './OcSelect.vue'
 
 /**
  * The autocomplete component is used for searching in bigger list of data (usually involves remote calls over the network)
@@ -100,7 +55,7 @@ import uniqueId from "../utils/uniqueId"
  */
 export default {
   name: "OcAutocomplete",
-  components: { OcSpinner },
+  components: { OcSpinner, OcSelect },
   status: "review",
   release: "1.0.0",
   props: {
@@ -132,10 +87,6 @@ export default {
       type: String,
       default: "Loading...",
     },
-    moreResultsText: {
-      type: String,
-      default: "more results",
-    },
     /**
      * Input can be entered or not
      */
@@ -159,20 +110,24 @@ export default {
         return []
       },
     },
+
     /**
-     * Maxlength of the dropdown
-     */
-    maxListLength: {
-      type: Number,
-      default: 5,
-    },
-    /**
-     * Select what values an object is to be found by
+     * Select what values an object is to be found by (uses fuse.js)
      */
     filter: {
       type: Function,
-      default: (item, queryText) => {
-        return item.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+      default: (items, search) => {
+        const fuse = new Fuse(items, {
+          shouldSort: true,
+          threshold: 0.2,
+          location: 0,
+          distance: 100,
+          maxPatternLength: 32,
+          minMatchCharLength: 1
+        })
+        return search.length
+          ? fuse.search(search).map(({ item }) => item)
+          : fuse.list
       },
     },
     /**
@@ -222,49 +177,14 @@ export default {
   },
   data() {
     return {
+      selected: "",
       input: "",
-      highlighted: 0,
-      expanded: false,
-      ariaExpanded: false,
-      activeDescendant: "",
-      selectionText: "",
       overflowingMatches: this.matchesOverflowing,
     }
   },
   computed: {
-    matchesShown() {
-      if (this.expanded) return this.matches
-
-      return this.matches.slice(0, this.maxListLength)
-    },
-    matchesOverflowing() {
-      return this.matches.length - this.matchesShown.length
-    },
-    matches() {
-      if (this.input.length === 0 || this.selectionText !== "") {
-        this.resetSelectionText()
-        return []
-      }
-
-      return this.items.filter(item => {
-        let searchString = this.input // What's to be found
-        return this.filter(item, searchString)
-      })
-    },
-    dropdownId() {
-      return uniqueId("oc-autocomplete-dropdown-")
-    },
-    listboxId() {
-      return uniqueId("oc-autocomplete-listbox-")
-    },
     messageId() {
       return `${this.inputId}-description`
-    },
-    boundryId() {
-      return uniqueId("oc-autocomplete-boundry-")
-    },
-    dropdown() {
-      return UiKit.drop(`#${this.dropdownId}`)
     },
     textInformation() {
       let text = {
@@ -302,43 +222,10 @@ export default {
     },
   },
   watch: {
-    input(input, before) {
-      if (input === before) return
-
-      if (input.length === 0) {
-        this.dropdown.hide()
-      } else {
-        this.dropdown.show()
-      }
-
-      // The real update not depending on onblur
-      this.userInput(input)
-      this.expanded = false
-    },
-    highlighted(next, current) {
-      if (next === current) return
-
-      // come around
-      if (next < 0) {
-        this.highlighted = this.matchesShown.length - 1
-      } else if (next > this.matchesShown.length - 1) {
-        this.highlighted = 0
-      }
-    },
-  },
-  mounted() {
-    UiKit.util.on(`#${this.dropdownId}`, "show", () => {
-      let dd = this.$refs[this.dropdownId],
-        ddOffsetTop = Math.floor(dd.getBoundingClientRect().top) - 20,
-        maxHeight = `calc(100vh - ${ddOffsetTop}px )`
-
-      dd.style.maxHeight = maxHeight
-      this.ariaExpanded = true
-    })
-
-    UiKit.util.on(`#${this.dropdownId}`, "hide", () => {
-      this.ariaExpanded = false
-    })
+    selected(selected, before) {
+      if(selected == before) return
+      this.$emit('input', selected)
+    }
   },
   methods: {
     userInput(value) {
@@ -348,48 +235,9 @@ export default {
        */
       this.$emit("update:input", value)
     },
-    selectSuggestion: function () {
-      if (this.matchesShown[this.highlighted]) {
-        this.$emit("input", this.matchesShown[this.highlighted])
-        this.expanded = false
-
-        if (this.fillOnSelection) {
-          this.input = this.getSelectionText(this.highlighted)
-        } else {
-          this.dropdown.hide()
-          this.input = ""
-        }
-      }
-    },
-    getSelectionText(index) {
-      const selectionText = this.$refs.listbox
-        .querySelectorAll("[role='option']")
-        [index].textContent.trim()
-      this.selectionText = selectionText
-      return selectionText
-    },
-    optionId(i) {
-      const activeDescendantId = `oc-autocomplete-option-${i}`
-      this.activeDescendant = activeDescendantId
-      return this.ariaExpanded ? activeDescendantId : ""
-    },
     focus() {
-      this.$refs[this.inputId].focus()
-    },
-    resetSelectionText() {
-      this.selectionText = ""
-    },
-    onFocus() {
-      if (this.input.length === 0) {
-        this.dropdown.hide()
-      } else {
-        this.dropdown.show()
-      }
-
-      // The real update not depending on onblur
-      this.userInput(this.input)
-      this.expanded = false
-    },
+      this.$refs[this.inputId].$el.querySelector('input').focus()
+    }
   },
 }
 </script>
@@ -404,9 +252,7 @@ export default {
     background: var(--oc-color-background-default);
   }
 
-  &-input {
-    @extend .uk-input;
-
+  &-input .vs__dropdown-toggle {
     background-color: var(--oc-color-input-bg);
     border: 1px solid var(--oc-color-input-border);
     border-radius: 3px;
@@ -477,20 +323,17 @@ export default {
     }
   }
 
-  &-warning,
-  &-warning:focus {
+  &-warning .vs__dropdown-toggle {
     border-color: var(--oc-color-swatch-warning-default);
     color: var(--oc-color-swatch-warning-default);
   }
 
-  &-danger,
-  &-danger:focus {
+  &-danger .vs__dropdown-toggle {
     border-color: var(--oc-color-swatch-danger-default);
     color: var(--oc-color-swatch-danger-default);
   }
 
-  &-description,
-  &-description:focus {
+  &-description .vs__dropdown-toggle {
     border-color: var(--oc-color-text-muted);
     color: var(--oc-color-text-muted);
   }
@@ -522,11 +365,23 @@ export default {
         <button @click="focusTest1()">Focus the field by calling .focus()</button>
       </div>
     </div>
+    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+      <oc-autocomplete label="Simple selection autocomplete input change event" ref="autocomplete1" v-model="simpleSelection" :items="simpleItems" description-message="type 'le' for example results" dropdownClass="uk-width-1-1" @update:input="onInput"/>
+      <div class="uk-background-muted uk-padding-small oc-mt-s">
+        <p class="oc-text-muted">Selected simple item:</p>
+        <code>{{ simpleSelection }}</code>
+      </div>
+      <div class="oc-mt">
+        <button @click="focusTest1()">Focus the field by calling .focus()</button>
+      </div>
+    </div>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete label="Complex selection autocomplete" v-model="complexSelection" :items="complexItems" :filter="filterComplexItems" description-message="type 'er' for example results">
-        <template v-slot:item="{item}">
-          <span class="oc-text-bold">{{ item.forename }} {{ item.surname }}</span>
-          <div class="oc-text-muted">(Age: {{ item.age }})</div>
+        <template v-slot:option="{ forename, age }">
+          <span class="option">
+            <strong v-text="forename" />
+          </span>
+          <div class="option">Age {{ age }}</div>
         </template>
       </oc-autocomplete>
       <div class="uk-background-muted uk-padding-small oc-mt-s">
@@ -543,12 +398,6 @@ export default {
         <p class="oc-text-muted">Selected complex item:</p>
         <code>{{ delayedItem }}</code>
       </div>
-    </div>
-    <h3 class="uk-heading-divider">
-      Autocomplete overflow with "more results" button
-    </h3>
-    <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
-      <oc-autocomplete label="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" description-message="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
     </div>
     <h3 class="uk-heading-divider">
       Autocomplete with :fillOnSelection=false
@@ -582,6 +431,8 @@ export default {
   </section>
 </template>
 <script>
+import Fuse from 'fuse.js'
+
 export default {
   data () {
     return {
@@ -639,21 +490,25 @@ export default {
 
       complexItems : [{
         id : 8312,
+        label: 'Scott Mortensen',
         forename : 'Scott',
         surname : 'Mortensen',
-        age : 31,
+        age : 31
       }, {
         id : 7388,
+        label: 'Lecia Scheerer',
         forename : 'Lecia',
         surname : 'Scheerer',
         age : 21,
       }, {
         id : 992,
+        label: 'Verona Mounts',
         forename : 'Verona',
         surname : 'Mounts',
         age : 33,
       }, {
         id : 1211,
+        label: 'Arlena Bolster',
         forename : 'Arlena',
         surname : 'Bolster',
         age : 66,
@@ -683,9 +538,14 @@ export default {
         this.delayedResult = this.simpleItems
       }, 2000)
     },
-    filterComplexItems(item, queryText) {
-      return item.forename.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1 ||
-              item.surname.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1;
+    filterComplexItems(options, search) {
+      const fuse = new Fuse(options, {
+        keys: ["forename", "surname", "age"],
+        shouldSort: true
+      })
+      return search.length
+        ? fuse.search(search).map(({ item }) => item)
+        : fuse.list
     },
     focusTest1() {
       this.$refs.autocomplete1.focus()
