@@ -159,5 +159,8 @@
   "engines": {
     "node": ">= 8.6.0",
     "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "fuse.js": "^6.4.6"
   }
 }

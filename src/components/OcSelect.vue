@@ -1,13 +1,25 @@
 <template>
-  <vue-select ref="select" class="oc-select" v-bind="$attrs" v-on="$listeners">
+  <vue-select
+    ref="select"
+    :disabled="disabled"
+    :filter="filter"
+    :value="model"
+    class="oc-select"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
+    <template #search="{ attributes, events }">
+      <input class="vs__search" v-bind="attributes" @input="userInput" v-on="events" />
+    </template>
     <template v-for="(index, name) in $scopedSlots" #[name]="data">
-      <slot :name="name" v-bind="data"></slot>
+      <slot v-if="name !== 'search'" :name="name" v-bind="data"></slot>
     </template>
     <div slot="no-options" v-translate>No options available.</div>
   </vue-select>
 </template>
 
 <script>
+import Fuse from "fuse.js"
 import VueSelect from "vue-select"
 import "vue-select/dist/vue-select.css"
 
@@ -23,6 +35,29 @@ export default {
 
   inheritAttrs: true,
 
+  props: {
+    filter: {
+      type: Function,
+      required: false,
+      default: (items, search) => {
+        const fuse = new Fuse(items, {
+          shouldSort: true,
+          threshold: 0.2,
+          location: 0,
+          distance: 100,
+          maxPatternLength: 32,
+          minMatchCharLength: 1,
+        })
+        return search.length ? fuse.search(search).map(({ item }) => item) : fuse.list
+      },
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+
   mounted() {
     this.setComboBoxAriaLabel()
   },
@@ -30,6 +65,9 @@ export default {
     setComboBoxAriaLabel() {
       const comboBoxElement = this.$refs.select.$el.querySelector("div:first-child")
       comboBoxElement.setAttribute("aria-label", this.$gettext("Search for option"))
+    },
+    userInput(value) {
+      this.$emit("update:input", value)
     },
   },
 }
