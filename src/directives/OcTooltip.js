@@ -1,4 +1,5 @@
 import tippy from "tippy.js"
+import merge from "deepmerge"
 import __logger from "../utils/logger"
 
 export const hideOnEsc = {
@@ -22,18 +23,6 @@ export const hideOnEsc = {
   },
 }
 
-export const destroy = _tippy => {
-  if (!_tippy) {
-    return
-  }
-
-  try {
-    _tippy.destroy()
-  } catch (e) {
-    __logger(e)
-  }
-}
-
 export const ariaHidden = {
   name: "ariaHidden",
   defaultValue: true,
@@ -46,28 +35,54 @@ export const ariaHidden = {
   },
 }
 
-export default {
-  name: "OcTooltip",
-  bind: function (el, { value }) {
-    if (!value) {
-      return
-    }
+export const destroy = _tippy => {
+  if (!_tippy) {
+    return
+  }
 
+  try {
+    _tippy.destroy()
+  } catch (e) {
+    __logger(e)
+  }
+}
+
+const initOrUpdate = (el, { value = {} }) => {
+  if (Object.prototype.toString.call(value) !== "[object Object]") {
+    value = { content: value }
+  }
+
+  if (value.content !== 0 && !value.content) {
     destroy(el._tippy)
+    return
+  }
 
-    tippy(el, {
-      content: value,
+  const props = merge.all([
+    {
       interactive: true,
       ignoreAttributes: true,
-      ...(Object.prototype.toString.call(value) === "[object Object]" && value),
       aria: {
         content: null,
         expanded: false,
       },
+    },
+    value,
+  ])
+
+  if (!el._tippy) {
+    tippy(el, {
+      ...props,
       plugins: [hideOnEsc, ariaHidden],
     })
-  },
-  unbind: function (el) {
-    destroy(el._tippy)
-  },
+    return
+  }
+
+  el._tippy.setProps(props)
+}
+
+export default {
+  name: "OcTooltip",
+  bind: initOrUpdate,
+  componentUpdated: initOrUpdate,
+  unbind: el => destroy(el._tippy),
 }
