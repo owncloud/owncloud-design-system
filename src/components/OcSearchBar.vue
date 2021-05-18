@@ -37,9 +37,9 @@
     <div :class="{ 'oc-invisible-sr': buttonHidden }">
       <oc-button
         class="oc-search-button"
-        :class="{ 'uk-button-small': small }"
         variation="primary"
         appearance="filled"
+        :size="small ? 'small' : 'medium'"
         :disabled="loading || searchQuery.length < 1"
         @click="onSearch"
         >{{ buttonLabel }}</oc-button
@@ -284,10 +284,6 @@ export default {
     .oc-search-input-icon {
       // TODO: Remove `!important` after we get rid of UIkit
       padding-left: var(--oc-space-large) !important;
-    }
-
-    .oc-button {
-      @extend .oc-button-s;
     }
 
     .oc-icon {

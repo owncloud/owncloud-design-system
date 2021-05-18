@@ -41,6 +41,13 @@ color:
         value: rgb(151, 162, 177)
       muted:
         value: rgb(40, 62, 93)
+    inverse:
+      default:
+        value: rgb(255, 255, 255)
+      hover:
+        value: rgb(255, 255, 255)
+      muted:
+        value: rgb(191, 191, 191)
   background:
     default:
       value: rgb(255, 255, 255)
