@@ -6,10 +6,29 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+* Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
+* Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 
 ## Details
+
+* Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+
+   We've changed the name of the `OcSidebar` component to `OcSidebarNav` to better reflect that
+   it shouldn't be used for anything else than the navigation.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1300
+
+
+* Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+
+   We've moved away from defining the nav items in the `OcSidebarNav` via props to including them
+   through slots. The component now contains 3 slots - `header`, `nav` and `footer`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1300
+
 
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 
@@ -18,6 +37,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    >4.5 (a11y requirement)
 
    https://github.com/owncloud/owncloud-design-system/pull/1298
+
+
+* Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+
+   We've added inverse button variant which should be used on a dark background.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1300
 
 
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
