@@ -76,7 +76,7 @@ Sidebar navigation component containing branding
 
 ## Examples
 ```vue
-<oc-sidebar class="uk-height-large">
+<oc-sidebar-nav class="uk-height-large">
   <template #header>
     <div class="uk-text-center">
       <a href="#">
@@ -94,6 +94,6 @@ Sidebar navigation component containing branding
   <template #footer>
     <p class="oc-px-s">Made by ownClouders</p>
   </template>
-</oc-sidebar>
+</oc-sidebar-nav>
 ```
 </docs>
