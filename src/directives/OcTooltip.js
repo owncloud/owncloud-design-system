@@ -47,13 +47,13 @@ export const destroy = _tippy => {
   }
 }
 
-const initOrUpdate = (el, { value = {} }) => {
+const initOrUpdate = (el, { value = {} }, { elm }) => {
   if (Object.prototype.toString.call(value) !== "[object Object]") {
     value = { content: value }
   }
 
   if (value.content !== 0 && !value.content) {
-    destroy(el._tippy)
+    destroy(elm.tolltip)
     return
   }
 
@@ -69,20 +69,20 @@ const initOrUpdate = (el, { value = {} }) => {
     value,
   ])
 
-  if (!el._tippy) {
-    tippy(el, {
+  if (!elm.tolltip) {
+    elm.tolltip = tippy(el, {
       ...props,
       plugins: [hideOnEsc, ariaHidden],
     })
     return
   }
 
-  el._tippy.setProps(props)
+  elm.tolltip.setProps(props)
 }
 
 export default {
   name: "OcTooltip",
   bind: initOrUpdate,
   componentUpdated: initOrUpdate,
-  unbind: el => destroy(el._tippy),
+  unbind: (el, binding, { elm }) => destroy(elm.tolltip),
 }
