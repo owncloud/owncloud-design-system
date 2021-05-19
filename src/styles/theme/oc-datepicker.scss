@@ -56,8 +56,7 @@
       }
 
       &--selected {
-        @extend .uk-background-primary;
-
+        background-color: var(--oc-color-swatch-brand-default);
         color: var(--oc-color-text-inverse);
       }
     }
@@ -119,7 +118,8 @@
 
     &__header {
       @extend .uk-modal-header;
-      @extend .uk-background-primary;
+
+      background-color: var(--oc-color-swatch-brand-default);
 
       // @TODO: uk-light not working
       // @extend .uk-light;
@@ -164,6 +164,8 @@
 
         &--confirm {
           @extend .uk-button-primary;
+
+          background-color: var(--oc-color-swatch-brand-default);
         }
 
         &--cancel {
@@ -235,8 +237,7 @@
       &__day {
         &--selected > span > span,
         &--selected:hover > span > span {
-          @extend .uk-background-primary;
-
+          background-color: var(--oc-color-swatch-brand-default);
           color: var(--oc-color-text-inverse);
         }
 

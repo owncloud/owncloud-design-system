@@ -94,20 +94,28 @@ export default {
 <style lang="scss">
 // TODO: Refactor after removal of uikit
 .uk-notification-message {
+  background-color: var(--oc-color-background-default) !important;
+  border: 1px solid transparent;
+
   &-passive {
     color: var(--oc-color-swatch-passive-default) !important;
+    border-color: var(--oc-color-swatch-passive-default);
   }
   &-primary {
     color: var(--oc-color-swatch-primary-default) !important;
+    border-color: var(--oc-color-swatch-primary-default);
   }
   &-success {
     color: var(--oc-color-swatch-success-default) !important;
+    border-color: var(--oc-color-swatch-success-default);
   }
   &-warning {
     color: var(--oc-color-swatch-warning-default) !important;
+    border-color: var(--oc-color-swatch-warning-default);
   }
   &-danger {
     color: var(--oc-color-swatch-danger-default) !important;
+    border-color: var(--oc-color-swatch-danger-default);
   }
 }
 </style>
