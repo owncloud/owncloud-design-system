@@ -66,6 +66,7 @@ export default {
     align-items: center;
     color: var(--oc-color-text-inverse);
     display: flex;
+    font-weight: 600;
     padding: var(--oc-space-small) var(--oc-space-medium);
     transition: background-color $transition-duration-short ease-in-out;
 
