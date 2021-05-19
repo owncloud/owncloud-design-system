@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Make OcSidebarNavitem text bold: [#1308](https://github.com/owncloud/owncloud-design-system/pull/1308)
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+* Enhancement - A11y color contrasts: [#1302](https://github.com/owncloud/owncloud-design-system/pull/1302)
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
@@ -36,6 +37,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    through slots. The component now contains 3 slots - `header`, `nav` and `footer`.
 
    https://github.com/owncloud/owncloud-design-system/pull/1300
+
+
+* Enhancement - A11y color contrasts: [#1302](https://github.com/owncloud/owncloud-design-system/pull/1302)
+
+   The color contrast checker now runs when generating tokens via the yarn token command and
+   reports if any colors don't match the minimum color contrast
+
+   https://github.com/owncloud/owncloud-design-system/pull/1302
 
 
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
