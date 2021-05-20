@@ -69,6 +69,7 @@ import OcTbody from "./_OcTableBody"
 import OcTr from "./_OcTableRow"
 import OcTh from "./_OcTableCellHead"
 import OcTd from "./_OcTableCellData"
+import OcButton from "../OcButton"
 import SortMixin from "./mixins/sort"
 import { getSizeClass } from "../../utils/sizeClasses"
 
@@ -87,6 +88,7 @@ export default {
     OcTr,
     OcTh,
     OcTd,
+    OcButton,
   },
   mixins: [SortMixin],
   props: {
