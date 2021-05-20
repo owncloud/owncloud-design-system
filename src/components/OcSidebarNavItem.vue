@@ -64,6 +64,8 @@ export default {
 .oc-sidebar-nav-item {
   &-link {
     align-items: center;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
     color: var(--oc-color-text-inverse);
     display: flex;
     font-weight: 600;
@@ -71,14 +73,25 @@ export default {
     transition: background-color $transition-duration-short ease-in-out;
 
     &:hover {
-      background-color: var(--oc-color-swatch-brand-hover);
-      color: var(--oc-color-text-inverse);
+      background-color: var(--oc-color-swatch-inverse-default);
+      border-left: 1px solid var(--oc-color-swatch-brand-default);
+      border-right: 1px solid var(--oc-color-swatch-brand-default);
+      color: var(--oc-color-text-default);
       text-decoration: none;
+    }
+    &:hover > .oc-icon > svg {
+      fill: var(--oc-color-text-default) !important;
     }
 
     &.active {
-      background-color: var(--oc-color-swatch-brand-hover);
+      background-color: var(--oc-color-swatch-inverse-default);
+      border-left: 1px solid var(--oc-color-swatch-brand-default);
+      border-right: 1px solid var(--oc-color-swatch-brand-default);
+      color: var(--oc-color-text-default);
       cursor: default;
+    }
+    &.active > .oc-icon > svg {
+      fill: var(--oc-color-text-default) !important;
     }
   }
 
