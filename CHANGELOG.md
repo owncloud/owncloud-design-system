@@ -8,12 +8,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Interactive texts in OcTooltips: [#1288](https://github.com/owncloud/owncloud-design-system/pull/1288)
 * Bugfix - Make OcSidebarNavitem text bold: [#1308](https://github.com/owncloud/owncloud-design-system/pull/1308)
+* Bugfix - Do not define table header height via row height var: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - A11y color contrasts: [#1302](https://github.com/owncloud/owncloud-design-system/pull/1302)
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
+* Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
 
 ## Details
 
@@ -30,6 +32,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've made the text of `OcSidebarNavItem` component bold again.
 
    https://github.com/owncloud/owncloud-design-system/pull/1308
+
+
+* Bugfix - Do not define table header height via row height var: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
+
+   We've separated the height styles of table header and table row so that the row height variable
+   is not affecting both of them.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1309
 
 
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
@@ -79,6 +89,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    freedom to users of the ODS).
 
    https://github.com/owncloud/owncloud-design-system/pull/1291
+
+
+* Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
+
+   We've added a button to the table head cell which can trigger sort for its column so that it is
+   keyboard accessible and is aligned directly next to the cell text.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1309
 
 # Changelog for [6.4.0] (2021-05-06)
 
