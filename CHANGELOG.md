@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Interactive texts in OcTooltips: [#1288](https://github.com/owncloud/owncloud-design-system/pull/1288)
 * Bugfix - Make OcSidebarNavitem text bold: [#1308](https://github.com/owncloud/owncloud-design-system/pull/1308)
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
@@ -15,6 +16,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 
 ## Details
+
+* Bugfix - Interactive texts in OcTooltips: [#1288](https://github.com/owncloud/owncloud-design-system/pull/1288)
+
+   The new tooltip texts would only be initialized once and then didn't offer the possibility of
+   chaging reactively. By updating the directive, we've changed that.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1288
+
 
 * Bugfix - Make OcSidebarNavitem text bold: [#1308](https://github.com/owncloud/owncloud-design-system/pull/1308)
 
