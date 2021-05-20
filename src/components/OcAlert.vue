@@ -77,30 +77,20 @@ export default {
 ```vue
 <div>
   <oc-alert>
-    <p>
-      This is a plain alert-box.
-    </p>
+    This is a plain alert-box.
   </oc-alert>
   <oc-alert variation="primary">
-    <p>
-      <oc-icon name="info" variation="inverse" class="uk-float-left oc-mr-s" />
-      I am nice and blue and have an icon
-    </p>
+    <oc-icon name="info" variation="inverse" class="uk-float-left oc-mr-s" />
+    I am nice and blue and have an icon
   </oc-alert>
   <oc-alert variation="success">
-    <p>
-      Yes! It worked
-    </p>
+    Yes! It worked
   </oc-alert>
   <oc-alert variation="warning">
-    <p>
-      Be carefull!
-    </p>
+    Be carefull!
   </oc-alert>
   <oc-alert variation="danger">
-    <p>
-      I'm in danger!!
-    </p>
+    I'm in danger!
   </oc-alert>
 </div>
 ```

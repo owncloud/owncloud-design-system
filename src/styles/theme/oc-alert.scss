@@ -1,10 +1,6 @@
 @mixin oc-alert-variation ($color) {
   background-color: $color;
-
-  svg,
-  p {
-    color: var(--oc-color-text-inverse) !important;
-  }
+  color: var(--oc-color-text-inverse)
 }
 
 .oc-alert {
