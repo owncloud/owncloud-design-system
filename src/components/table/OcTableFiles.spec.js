@@ -123,8 +123,6 @@ describe("OcTableFiles", () => {
         resourcesWithAllFields.length
       )
     }
-
-    expect(wrapper).toMatchSnapshot()
   })
 
   it("emits showDetails event when clicking on the button in actions column", () => {

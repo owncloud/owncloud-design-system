@@ -1,18 +1,34 @@
 <template>
   <table v-bind="extractTableProps()">
     <oc-thead v-if="hasHeader">
-      <oc-tr>
+      <oc-tr class="oc-table-header-row">
         <oc-th
           v-for="(field, index) in fields"
           :key="`oc-thead-${field.name}`"
           v-bind="extractThProps(field, index)"
           @click.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
-          @keydown.enter.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
         >
-          <slot v-if="field.headerType === 'slot'" :name="field.name + 'Header'" />
-          <template v-else>
-            {{ extractFieldTitle(field) }}
-          </template>
+          <span
+            v-if="field.headerType === 'slot'"
+            :key="field.name + 'Header'"
+            class="oc-table-thead-content"
+          >
+            <slot :name="field.name + 'Header'" />
+          </span>
+          <span
+            v-else
+            :key="field.name + 'Header'"
+            class="oc-table-thead-content"
+            v-text="extractFieldTitle(field)"
+          />
+          <oc-button
+            v-if="field.sortable"
+            :aria-label="getSortLabel(field.name)"
+            class="oc-button-sort"
+            variant="passive"
+            appearance="raw"
+            @click.stop="$emit(constants.EVENT_THEAD_CLICKED, field)"
+          />
         </oc-th>
       </oc-tr>
     </oc-thead>
@@ -52,6 +68,7 @@ import OcTbody from "./_OcTableBody"
 import OcTr from "./_OcTableRow"
 import OcTh from "./_OcTableCellHead"
 import OcTd from "./_OcTableCellData"
+import OcButton from "../OcButton"
 import SortMixin from "./mixins/sort"
 import { getSizeClass } from "../../utils/sizeClasses"
 
@@ -70,6 +87,7 @@ export default {
     OcTr,
     OcTh,
     OcTd,
+    OcButton,
   },
   mixins: [SortMixin],
   props: {
@@ -229,11 +247,7 @@ export default {
       }
 
       if (index === this.fields.length - 1) {
-        if (field.sortable) {
-          props.style += `padding-right: calc(var(--oc-space-${this.paddingX}) + 0.65em)`
-        } else {
-          props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
-        }
+        props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
       }
 
       this.extractSortThProps(props, field, index)
@@ -321,21 +335,27 @@ export default {
 
       return [...prefix, item[field.name]].join("-")
     },
+
+    getSortLabel(name) {
+      const label = this.$gettext("Sort by %{ name }")
+
+      return this.$gettextInterpolate(label, { name })
+    },
   },
 }
 </script>
 <style lang="scss">
 .oc-table {
-  color: var(--oc-color-text-default);
   border-collapse: collapse;
   border-spacing: 0;
+  color: var(--oc-color-text-default);
   width: 100%;
 
   &-hover tr {
     transition: background-color $transition-duration-short ease-in-out;
   }
 
-  tr {
+  tr:not(&-header-row) {
     height: var(--oc-size-height-table-row);
   }
 
@@ -365,6 +385,10 @@ export default {
       position: sticky;
       z-index: 1;
     }
+  }
+
+  &-thead-content {
+    vertical-align: middle;
   }
 
   &-footer {

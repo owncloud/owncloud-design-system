@@ -70,7 +70,6 @@ describe("OcTable", () => {
     expect(wrapper.html().indexOf("Double of 2 is 4")).toBeGreaterThan(-1)
     expect(wrapper.findAll(".slot").length).toBe(data.length)
     expect(wrapper.findAll(".slot-header").length).toBe(1)
-    expect(wrapper).toMatchSnapshot()
 
     // A11y tests
     expect(
@@ -92,7 +91,6 @@ describe("OcTable", () => {
     })
 
     expect(wrapper.findAll("oc-thead-stub").length).toBe(0)
-    expect(wrapper).toMatchSnapshot()
   })
 
   it("enables hover effect", () => {
