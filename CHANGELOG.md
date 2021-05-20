@@ -12,6 +12,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - A11y color contrasts: [#1302](https://github.com/owncloud/owncloud-design-system/pull/1302)
+* Enhancement - Color contrast for OcSidebarNav: [#1310](https://github.com/owncloud/owncloud-design-system/pull/1310)
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
@@ -64,6 +65,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    reports if any colors don't match the minimum color contrast
 
    https://github.com/owncloud/owncloud-design-system/pull/1302
+
+
+* Enhancement - Color contrast for OcSidebarNav: [#1310](https://github.com/owncloud/owncloud-design-system/pull/1310)
+
+   We've set different colors for the active and hover state of nav items in the OcSidebarNav
+   component. Those colors now fulfill required color contrast ratios.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1310
 
 
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
