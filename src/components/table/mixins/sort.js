@@ -66,7 +66,6 @@ export default {
         sort = this.sortDir === SORT_DIRECTION_ASC ? "descending" : "ascending"
       }
       props["aria-sort"] = sort
-      props.tabindex = "0"
     },
   },
 }

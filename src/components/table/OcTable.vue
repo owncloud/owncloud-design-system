@@ -7,7 +7,6 @@
           :key="`oc-thead-${field.name}`"
           v-bind="extractThProps(field, index)"
           @click.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
-          @keydown.enter.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
         >
           <span
             v-if="field.headerType === 'slot'"
