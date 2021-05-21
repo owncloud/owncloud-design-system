@@ -70,7 +70,6 @@ export default {
     display: flex;
     font-weight: 600;
     padding: var(--oc-space-small) var(--oc-space-medium);
-    transition: background-color $transition-duration-short ease-in-out;
 
     &:hover {
       background-color: var(--oc-color-swatch-inverse-default);
