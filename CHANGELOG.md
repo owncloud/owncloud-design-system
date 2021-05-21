@@ -73,6 +73,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    component. Those colors now fulfill required color contrast ratios.
 
    https://github.com/owncloud/owncloud-design-system/pull/1310
+   https://github.com/owncloud/owncloud-design-system/pull/1315
 
 
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
