@@ -65,6 +65,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    reports if any colors don't match the minimum color contrast
 
    https://github.com/owncloud/owncloud-design-system/pull/1302
+   https://github.com/owncloud/owncloud-design-system/pull/1316
 
 
 * Enhancement - Color contrast for OcSidebarNav: [#1310](https://github.com/owncloud/owncloud-design-system/pull/1310)
