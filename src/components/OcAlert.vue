@@ -73,6 +73,43 @@ export default {
 }
 </script>
 
+<style lang="scss">
+@mixin oc-alert-variation($color) {
+  background-color: $color;
+
+  &,
+  * {
+    color: var(--oc-color-text-inverse);
+  }
+
+  svg {
+    fill: var(--oc-color-text-inverse);
+  }
+}
+
+.uk-alert.oc-alert {
+  &-passive {
+    @include oc-alert-variation(var(--oc-color-swatch-passive-default));
+  }
+
+  &-primary {
+    @include oc-alert-variation(var(--oc-color-swatch-primary-default));
+  }
+
+  &-success {
+    @include oc-alert-variation(var(--oc-color-swatch-success-default));
+  }
+
+  &-warning {
+    @include oc-alert-variation(var(--oc-color-swatch-warning-default));
+  }
+
+  &-danger {
+    @include oc-alert-variation(var(--oc-color-swatch-danger-default));
+  }
+}
+</style>
+
 <docs>
 ```vue
 <div>
