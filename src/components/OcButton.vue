@@ -266,7 +266,7 @@ export default {
     border-color: $color;
 
     .oc-icon > svg {
-      fill: $muted-color;
+      fill: var(--oc-color-text-inverse);
     }
   }
 }
@@ -360,7 +360,6 @@ export default {
 
   .oc-icon > svg {
     fill: var(--oc-color-text-inverse);
-    transition: fill $transition-duration-short ease-in-out;
   }
 
   &-passive {
