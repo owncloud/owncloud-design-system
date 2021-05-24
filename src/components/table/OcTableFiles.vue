@@ -1,6 +1,6 @@
 <template>
   <oc-table
-    :data="resources"
+    :data="displayedResources"
     :fields="fields"
     :highlighted="highlighted"
     :disabled="disabled"
@@ -83,8 +83,16 @@
       </div>
     </template>
     <template v-if="$slots.footer" #footer>
-      <!-- @slot Footer of the files table -->
-      <slot name="footer" />
+      <div class="uk-flex uk-flex-between uk-flex-middle">
+        <oc-pagination
+          v-if="rowsLimit"
+          :pages="pages"
+          :current-page="currentPage"
+          current-route="files"
+        />
+        <!-- @slot Footer of the files table -->
+        <slot name="footer" />
+      </div>
     </template>
   </oc-table>
 </template>
@@ -218,6 +226,16 @@ export default {
       default: "small",
       validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
     },
+    rowsLimit: {
+      type: Number,
+      required: false,
+      default: null,
+    },
+    currentPage: {
+      type: Number,
+      required: false,
+      default: null,
+    },
   },
   computed: {
     fields() {
@@ -325,6 +343,21 @@ export default {
 
     areAllResourcesSelected() {
       return this.selection.length === this.resources.length
+    },
+
+    displayedResources() {
+      if (this.rowsLimit) {
+        return this.resources.slice(
+          Math.max(this.rowsLimit * this.currentPage - this.rowsLimit - 1),
+          this.rowsLimit
+        )
+      }
+
+      return this.resources
+    },
+
+    pages() {
+      return Math.ceil(this.resources.length / this.rowsLimit)
     },
   },
   methods: {
@@ -860,6 +893,97 @@ export default {
           mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
         }
       ]
+    }
+  }
+}
+</script>
+```
+
+## Limit visible resources with pagination
+```vue
+<template>
+  <div>
+    <oc-table-files :resources="resources" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction" :rows-limit="2" :current-page="2">
+      <template v-slot:quickActions="props">
+        <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
+          <oc-icon name="group-add" />
+        </oc-button>
+        <oc-button @click.stop variation="passive" appearance="raw" aria-label="Create a public link">
+          <oc-icon name="link-add" />
+        </oc-button>
+      </template>
+      <template #footer>
+        {{ resources.length }} resources
+      </template>
+    </oc-table-files>
+  </div>
+</template>
+<script>
+export default {
+  data: () => ({
+    selected: []
+  }),
+  computed: {
+    resources() {
+      return [
+        {
+          id: "forest",
+          name: "forest.jpg",
+          path: "images/nature/forest.jpg",
+          preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+          indicators: [],
+          type: "file",
+          size: "111000234",
+          mdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+          opensInNewWindow: true
+        },
+        {
+          id: "notes",
+          name: "notes.txt",
+          path: "/Documents/notes.txt",
+          icon: "text",
+          indicators: this.indicators,
+          type: "file",
+          size: "1245",
+          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+        },
+        {
+          id: "documents",
+          name: "Documents",
+          path: "/Documents",
+          icon: "folder",
+          indicators: [],
+          type: "folder",
+          size: "5324435",
+          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+        }
+      ]
+    },
+    indicators() {
+      return [
+        {
+          id: 'files-sharing',
+          label: "Shared with other people",
+          visible: true,
+          icon: 'group',
+          accessibleDescription: 'This resource is shared via link',
+          handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
+        },
+        {
+          id: 'file-link',
+          label: "Shared via link",
+          visible: true,
+          icon: 'link',
+        }
+      ]
+    },
+  },
+  methods: {
+    highlightResource(resource) {
+      this.highlighted = resource.id
+    },
+    handleAction(resource) {
+      alert(`Clicked ${resource.name}`)
     }
   }
 }

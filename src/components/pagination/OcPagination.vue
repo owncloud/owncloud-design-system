@@ -1,6 +1,6 @@
 <template>
   <nav class="oc-pagination" :aria-label="$gettext('Pagination')">
-    <ul class="oc-pagination-list">
+    <oc-list class="oc-pagination-list">
       <li v-if="isPrevPageAvailable" class="oc-pagination-list-item">
         <router-link
           class="oc-pagination-list-item-prev"
@@ -27,7 +27,7 @@
           <oc-icon name="chevron_right" />
         </router-link>
       </li>
-    </ul>
+    </oc-list>
   </nav>
 </template>
 
