@@ -13198,9 +13198,9 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
 style-dictionary@^3.0.0-rc.8:
-  version "3.0.0-rc.8"
-  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-3.0.0-rc.8.tgz#82b50949eae60702700cb960ae1ca3fc9857055e"
-  integrity sha512-UpdP1VddbyDHOZk6W6xtzLoRlVClfs6blkHQ81auRrrBaHUgKMjI4JArA5Sq6Ts7GIpgteqr8bGs4+q8pbBH3Q==
+  version "3.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-3.0.0-rc.10.tgz#cfe6d1a2879bed4449f9c0566a1b687953ca70c8"
+  integrity sha512-1P/Fua3hH5RINDipvPxp9ofZKBl4p7VPDud3OS3+HBjHYBNXPUYk6mDdIqMaFrQzpzulYarsv2FfNr7rK+32jA==
   dependencies:
     chalk "^4.0.0"
     change-case "^4.1.2"
