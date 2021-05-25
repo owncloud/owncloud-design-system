@@ -15,6 +15,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Color contrast for OcSidebarNav: [#1310](https://github.com/owncloud/owncloud-design-system/pull/1310)
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+* Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 * Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
 
@@ -91,6 +92,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've added inverse button variant which should be used on a dark background.
 
    https://github.com/owncloud/owncloud-design-system/pull/1300
+
+
+* Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
+
+   We've reduced the height of the filelist rows to the possible minimum to provide a more
+   condensed view especially for desktop users. The possible minimum of the filelist row is
+   currently determined by the height of the filename and the sharing-indicators below the
+   filename.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1319
 
 
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
