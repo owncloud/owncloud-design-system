@@ -55,7 +55,7 @@ export default {
 <style lang="scss">
 .oc-table-cell {
   /* padding is not configurable until we need it */
-  padding: var(--oc-space-xsmall);
+  padding: 0 var(--oc-space-xsmall);
   position: relative;
 
   &-align {

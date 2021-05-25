@@ -4,7 +4,7 @@ size:
     small:
       value: 50px
     table-row:
-      value: 64px
+      value: 49px
   width:
     medium:
       value: 300px
