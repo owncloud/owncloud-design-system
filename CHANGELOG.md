@@ -15,6 +15,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Color contrast for OcSidebarNav: [#1310](https://github.com/owncloud/owncloud-design-system/pull/1310)
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
+* Enhancement - Modals listen to escape key: [#1324](https://github.com/owncloud/owncloud-design-system/pull/1324)
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 * Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
@@ -92,6 +93,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've added inverse button variant which should be used on a dark background.
 
    https://github.com/owncloud/owncloud-design-system/pull/1300
+
+
+* Enhancement - Modals listen to escape key: [#1324](https://github.com/owncloud/owncloud-design-system/pull/1324)
+
+   The modal component now also emits its "cancel" event when the user presses the escape key. This
+   can for example be used to close the modal via keyboard.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1324
 
 
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
