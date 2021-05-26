@@ -29,6 +29,6 @@ describe("OcSidebarNav", () => {
       slots
     })
 
-    expect(wrapper.attributes()['aria-label']).toMatch('sidebar')
+    expect(wrapper.find('nav').attributes()['aria-label']).toMatch('sidebar')
   })
 })

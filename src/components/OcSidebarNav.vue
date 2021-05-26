@@ -1,7 +1,6 @@
 <template functional>
   <div
     :ref="data.ref"
-    :aria-label="props.accessibleLabel"
     class="oc-sidebar"
     :class="[data.staticClass, data.class]"
     v-bind="data.attrs"
@@ -10,7 +9,7 @@
       <!-- @slot Header of the sidebar -->
       <slot name="header" />
     </header>
-    <nav v-if="slots().nav" class="oc-sidebar-nav">
+    <nav v-if="slots().nav" class="oc-sidebar-nav" :aria-label="props.accessibleLabel">
       <!-- @slot Main content of the sidebar -->
       <slot name="nav" />
     </nav>
@@ -29,7 +28,7 @@ export default {
 
   props: {
     /**
-     * Accessible label for the entire sidebar
+     * Accessible label for the navigation inside the sidebar
      */
     accessibleLabel: {
       type: String,
