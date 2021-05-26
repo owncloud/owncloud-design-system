@@ -1,7 +1,14 @@
 <template>
   <div class="oc-modal-background">
     <focus-trap :active="focusTrapActive">
-      <div ref="$_ocModal" :class="classes" tabindex="0" role="dialog" aria-modal="true">
+      <div
+        ref="$_ocModal"
+        :class="classes"
+        tabindex="0"
+        role="dialog"
+        aria-modal="true"
+        @keydown.esc="cancelModalAction"
+      >
         <div class="oc-modal-title">
           <oc-icon v-if="icon" :name="icon" :variation="variation" />
           <h2 v-text="title" />
@@ -30,7 +37,7 @@
               class="oc-modal-body-actions-cancel"
               :variation="buttonCancelVariation"
               :appearance="buttonCancelAppearance"
-              @click="buttonCancelOnClick"
+              @click="cancelModalAction"
               v-text="buttonCancelText"
             />
             <oc-button
@@ -265,9 +272,9 @@ export default {
     })
   },
   methods: {
-    buttonCancelOnClick() {
+    cancelModalAction() {
       /**
-       * The user clicked on the cancel button
+       * The user clicked on the cancel button or hit the escape key
        */
       this.$emit("cancel")
     },
