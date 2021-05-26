@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Interactive texts in OcTooltips: [#1288](https://github.com/owncloud/owncloud-design-system/pull/1288)
 * Bugfix - Make OcSidebarNavitem text bold: [#1308](https://github.com/owncloud/owncloud-design-system/pull/1308)
+* Bugfix - Move arialabel in OcSideBarNav to nav element: [#1325](https://github.com/owncloud/owncloud-design-system/pull/1325)
 * Bugfix - Do not define table header height via row height var: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
@@ -35,6 +36,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've made the text of `OcSidebarNavItem` component bold again.
 
    https://github.com/owncloud/owncloud-design-system/pull/1308
+
+
+* Bugfix - Move arialabel in OcSideBarNav to nav element: [#1325](https://github.com/owncloud/owncloud-design-system/pull/1325)
+
+   The accessibleLabel property describing the navigation inside the OcSideBarNav was set to
+   the whole component, yet was meant to describe the `<nav>` element so we changed its target.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1325
 
 
 * Bugfix - Do not define table header height via row height var: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
