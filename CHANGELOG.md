@@ -17,6 +17,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Modals listen to escape key: [#1324](https://github.com/owncloud/owncloud-design-system/pull/1324)
+* Enhancement - Aria-labelledby through heading for modals: [#1327](https://github.com/owncloud/owncloud-design-system/pull/1327)
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 * Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
@@ -110,6 +111,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    can for example be used to close the modal via keyboard.
 
    https://github.com/owncloud/owncloud-design-system/pull/1324
+
+
+* Enhancement - Aria-labelledby through heading for modals: [#1327](https://github.com/owncloud/owncloud-design-system/pull/1327)
+
+   The modal component now has an `aria-labelledby` attribute linked to the `<h2>` tag inside,
+   for improved accessibility.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1327
 
 
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
