@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-modal-background">
+  <div class="oc-modal-background" aria-labelledby="oc-modal-title">
     <focus-trap :active="focusTrapActive">
       <div
         ref="$_ocModal"
@@ -11,7 +11,7 @@
       >
         <div class="oc-modal-title">
           <oc-icon v-if="icon" :name="icon" :variation="variation" />
-          <h2 v-text="title" />
+          <h2 id="oc-modal-title" v-text="title" />
         </div>
         <div class="oc-modal-body">
           <div v-if="$slots.content" key="modal-slot-content" class="oc-modal-body-message">
