@@ -1,22 +1,33 @@
 <template>
   <div>
     <label class="oc-label" :for="id" v-text="label" />
-    <input
-      :id="id"
-      v-bind="additionalAttributes"
-      ref="input"
-      :aria-invalid="ariaInvalid"
-      :class="{
-        'oc-text-input': !stopClassPropagation,
-        'oc-text-input-warning': !!warningMessage,
-        'oc-text-input-danger': !!errorMessage,
-      }"
-      :type="type"
-      :value="value"
-      v-on="listeners"
-      @input="onInput($event.target.value)"
-      @focus="onFocus($event.target)"
-    />
+    <div class="uk-position-relative">
+      <input
+        :id="id"
+        v-bind="additionalAttributes"
+        ref="input"
+        :aria-invalid="ariaInvalid"
+        :class="{
+          'oc-text-input': !stopClassPropagation,
+          'oc-text-input-warning': !!warningMessage,
+          'oc-text-input-danger': !!errorMessage,
+        }"
+        :type="type"
+        :value="value"
+        v-on="listeners"
+        @input="onInput($event.target.value)"
+        @focus="onFocus($event.target)"
+      />
+      <oc-button
+        v-if="showClearButton"
+        :aria-label="clearButtonAccessibleLabelValue"
+        class="uk-position-small uk-position-center-right oc-text-input-btn-clear"
+        appearance="raw"
+        @click="onClear"
+      >
+        <oc-icon name="close" size="small" variation="passive" />
+      </oc-button>
+    </div>
     <div v-if="showMessageLine" class="oc-text-input-message">
       <span
         :id="messageId"
@@ -33,6 +44,8 @@
 
 <script>
 import uniqueId from "../utils/uniqueId"
+import OcButton from "./OcButton"
+import OcIcon from "./OcIcon"
 
 /**
  * Form Inputs are used to allow users to provide text input when the expected
@@ -49,6 +62,7 @@ import uniqueId from "../utils/uniqueId"
  */
 export default {
   name: "OcTextInput",
+  components: { OcIcon, OcButton },
   status: "review",
   release: "1.0.0",
   inheritAttrs: false,
@@ -80,6 +94,22 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    /**
+     * Whether or not the input element should have a dedicated button for clearing the input content.
+     */
+    clearButtonEnabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * The aria label for the clear button. Only used if it's enabled at all.
+     */
+    clearButtonAccessibleLabel: {
+      type: String,
+      required: false,
+      default: "",
     },
     /**
      * Accessible of the form input field, via aria-label.
@@ -168,6 +198,12 @@ export default {
 
       return this.descriptionMessage
     },
+    showClearButton() {
+      return this.clearButtonEnabled && this.value && this.value.length > 0
+    },
+    clearButtonAccessibleLabelValue() {
+      return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
+    },
   },
   methods: {
     /**
@@ -176,6 +212,11 @@ export default {
      */
     focus() {
       this.$refs.input.focus()
+    },
+    onClear() {
+      this.$refs.input.value = ""
+      this.$refs.input.focus()
+      this.onInput("")
     },
     onInput(value) {
       /**
@@ -265,6 +306,7 @@ export default {
       <oc-text-input label="Focus field" ref="inputForFocus"/>
       <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
       <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
+      <oc-text-input label="Clear input" v-model="inputValueForClearing" :clear-button-enabled="true" />
       <h3 class="uk-heading-divider">
         Messages
       </h3>
@@ -297,6 +339,7 @@ export default {
         return {
           inputValue: 'initial',
           valueForMessages: '',
+          inputValueForClearing: 'clear me',
         }
       },
       computed: {
