@@ -19,6 +19,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Modals listen to escape key: [#1324](https://github.com/owncloud/owncloud-design-system/pull/1324)
 * Enhancement - Aria-labelledby through heading for modals: [#1327](https://github.com/owncloud/owncloud-design-system/pull/1327)
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
+* Enhancement - Clear button for OcTextInput: [#1329](https://github.com/owncloud/owncloud-design-system/pull/1329)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 * Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
 
@@ -129,6 +130,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    filename.
 
    https://github.com/owncloud/owncloud-design-system/pull/1319
+
+
+* Enhancement - Clear button for OcTextInput: [#1329](https://github.com/owncloud/owncloud-design-system/pull/1329)
+
+   The OcTextInput component now has an optional button for clearing the input.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1329
 
 
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
