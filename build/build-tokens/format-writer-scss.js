@@ -11,6 +11,9 @@ module.exports = {
       ":root {",
       ...props.map(p => `  --${p.name}: #{$${p.name}};`),
       "}",
+      ":host {",
+      ...props.map(p => `  --${p.name}: #{$${p.name}};`),
+      "}",
       "",
     ].join("\n")
 
