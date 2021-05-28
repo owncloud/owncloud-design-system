@@ -18,6 +18,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Avatar link & count a11y improvements: [#1298](https://github.com/owncloud/owncloud-design-system/pull/1298)
 * Enhancement - Add inverse button variant: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - Modals listen to escape key: [#1324](https://github.com/owncloud/owncloud-design-system/pull/1324)
+* Enhancement - Apply CSS custom properties to `:host`: [#1333](https://github.com/owncloud/owncloud-design-system/pull/1333)
 * Enhancement - Aria-labelledby through heading for modals: [#1327](https://github.com/owncloud/owncloud-design-system/pull/1327)
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
 * Enhancement - Clear button for OcTextInput: [#1329](https://github.com/owncloud/owncloud-design-system/pull/1329)
@@ -121,6 +122,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    can for example be used to close the modal via keyboard.
 
    https://github.com/owncloud/owncloud-design-system/pull/1324
+
+
+* Enhancement - Apply CSS custom properties to `:host`: [#1333](https://github.com/owncloud/owncloud-design-system/pull/1333)
+
+   We've applied CSS custom properties to `:host` so that we can access them also in web
+   components.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1333
 
 
 * Enhancement - Aria-labelledby through heading for modals: [#1327](https://github.com/owncloud/owncloud-design-system/pull/1327)
