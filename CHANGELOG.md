@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Make OcSidebarNavitem text bold: [#1308](https://github.com/owncloud/owncloud-design-system/pull/1308)
 * Bugfix - Move arialabel in OcSideBarNav to nav element: [#1325](https://github.com/owncloud/owncloud-design-system/pull/1325)
 * Bugfix - Do not define table header height via row height var: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
+* Bugfix - Non-interactive tooltips: [#1330](https://github.com/owncloud/owncloud-design-system/pull/1330)
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Change - Use slots in OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
 * Enhancement - A11y color contrasts: [#1302](https://github.com/owncloud/owncloud-design-system/pull/1302)
@@ -54,6 +55,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    is not affecting both of them.
 
    https://github.com/owncloud/owncloud-design-system/pull/1309
+
+
+* Bugfix - Non-interactive tooltips: [#1330](https://github.com/owncloud/owncloud-design-system/pull/1330)
+
+   Interactive tooltips were breaking correct z-index behaviour so we set them to
+   non-interactive.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1330
 
 
 * Change - Rename OcSidebar to OcSidebarNav: [#1300](https://github.com/owncloud/owncloud-design-system/pull/1300)
