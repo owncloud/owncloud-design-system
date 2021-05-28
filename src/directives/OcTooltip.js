@@ -59,7 +59,6 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
 
   const props = merge.all([
     {
-      interactive: true,
       ignoreAttributes: true,
       aria: {
         content: null,
