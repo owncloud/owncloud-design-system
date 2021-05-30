@@ -13,7 +13,7 @@
         >
           {{ item.text }}
         </oc-button>
-        <span v-else :aria-current="getAriaCurrent(index)" v-text="item.text" />
+        <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
       </li>
     </ol>
     <div class="oc-breadcrumb-drop">
