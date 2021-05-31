@@ -14,7 +14,7 @@ exports[`OcBreadcrumb displays all items 1`] = `
     <li class="oc-breadcrumb-list-item">
       <router-link-stub tag="a" to="[object Object]">Deep</router-link-stub>
     </li>
-    <li class="oc-breadcrumb-list-item"><span aria-current="page">Deeper ellipsize in responsive mode</span></li>
+    <li class="oc-breadcrumb-list-item"><span aria-current="page" tabindex="-1">Deeper ellipsize in responsive mode</span></li>
   </ol>
   <div class="oc-breadcrumb-drop"><label tabindex="0" class="oc-breadcrumb-drop-label"><span aria-current="page" class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
       <oc-icon-stub name="expand_more" accessiblelabel="Expand more" type="span" size="medium" variation="passive" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
@@ -50,7 +50,7 @@ exports[`OcBreadcrumb sets correct variation 1`] = `
     <li class="oc-breadcrumb-list-item">
       <router-link-stub tag="a" to="[object Object]">Deep</router-link-stub>
     </li>
-    <li class="oc-breadcrumb-list-item"><span aria-current="page">Deeper ellipsize in responsive mode</span></li>
+    <li class="oc-breadcrumb-list-item"><span aria-current="page" tabindex="-1">Deeper ellipsize in responsive mode</span></li>
   </ol>
   <div class="oc-breadcrumb-drop"><label tabindex="0" class="oc-breadcrumb-drop-label"><span aria-current="page" class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
       <oc-icon-stub name="expand_more" accessiblelabel="Expand more" type="span" size="medium" variation="passive" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
