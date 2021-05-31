@@ -21,6 +21,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Apply CSS custom properties to `:host`: [#1333](https://github.com/owncloud/owncloud-design-system/pull/1333)
 * Enhancement - Aria-labelledby through heading for modals: [#1327](https://github.com/owncloud/owncloud-design-system/pull/1327)
 * Enhancement - Reduce the height of the filelist rows: [#1319](https://github.com/owncloud/owncloud-design-system/pull/1319)
+* Enhancement - Add tabindex on active breadcrumb element: [#1334](https://github.com/owncloud/owncloud-design-system/pull/1334)
 * Enhancement - Clear button for OcTextInput: [#1329](https://github.com/owncloud/owncloud-design-system/pull/1329)
 * Enhancement - Themable Table Row Height: [#1291](https://github.com/owncloud/owncloud-design-system/pull/1291)
 * Enhancement - Use button to trigger table sort: [#1309](https://github.com/owncloud/owncloud-design-system/pull/1309)
@@ -148,6 +149,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    filename.
 
    https://github.com/owncloud/owncloud-design-system/pull/1319
+
+
+* Enhancement - Add tabindex on active breadcrumb element: [#1334](https://github.com/owncloud/owncloud-design-system/pull/1334)
+
+   We've added a tabindex to the span that can represent the latest breadcrumb to make it possible
+   to set the focus there on page navigation for accessibility reasons.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1334
 
 
 * Enhancement - Clear button for OcTextInput: [#1329](https://github.com/owncloud/owncloud-design-system/pull/1329)
