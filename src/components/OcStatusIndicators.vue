@@ -9,9 +9,8 @@
         class="oc-status-indicators-indicator"
         :aria-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
-        variation="passive"
         appearance="raw"
-        @click.stop="indicator.handler(resource, indicator.id)"
+        @click.stop="indicator.handler(resource, indicator.target)"
       >
         <oc-icon :name="indicator.icon" variation="passive" />
       </oc-button>
@@ -25,12 +24,11 @@
         :name="indicator.icon"
         :accessible-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
-        variation="passive"
       />
-      <span
+      <p
         v-if="getIndicatorDescriptionId(indicator)"
         :id="getIndicatorDescriptionId(indicator)"
-        :key="indicator.id"
+        :key="getIndicatorDescriptionId(indicator)"
         class="oc-invisible-sr"
         v-text="indicator.accessibleDescription"
       />
@@ -70,11 +68,17 @@ export default {
      * label: String to be used as a accessible label and tooltip for the indicator
      *
      * Optional:
-     * handler: An action to be triggered when the indicator is clicked. Receives resource and indicator ID as arguments
+     * handler: An action to be triggered when the indicator is clicked. Receives the resource and a target string
+     * accessibleDescription: A string to be used as a accessible description for the indicator. It renders an element only visible for screenreaders to provide additional context
      */
     indicators: {
       type: Array,
       required: true,
+    },
+    target: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
 
