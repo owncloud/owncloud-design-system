@@ -1,3 +1,27 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.0.0...master
+
+## Summary
+
+* Bugfix - OcStatusIndicator ID fixes: [#1342](https://github.com/owncloud/owncloud-design-system/pull/1342)
+
+## Details
+
+* Bugfix - OcStatusIndicator ID fixes: [#1342](https://github.com/owncloud/owncloud-design-system/pull/1342)
+
+   Inside the OcStatusIndicator, components were rendering the same IDs which resulted in
+   invalid HTML. Since the clickhandler on the OcStatusIndicator also was refering to these IDs
+   and they now are dynamically generated on the frontend, it has now been replaced with a computed
+   property which receives the click target.
+
+   Also, the accessible description (only applicable to screen readers) has been changed from
+   `<span>` to `<p>` which sounds better to the listener.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1342
+
 # Changelog for [7.0.0] (2021-05-31)
 
 The following sections list the changes in ownCloud Design System 7.0.0.
