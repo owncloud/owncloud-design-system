@@ -1,0 +1,5 @@
+Enhancement: Accessible label for header in OcSidebar
+
+The OcSidebarNav component now has a property for providing an accessible label for the header tag of the sidebar.
+
+https://github.com/owncloud/owncloud-design-system/pull/1345
