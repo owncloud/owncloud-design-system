@@ -3,7 +3,9 @@ import CompressionPlugin from "compression-webpack-plugin"
 import Sidebar from "./OcSidebarNav.vue"
 
 const defaultProps = {
-  accessibleLabel: "sidebar"
+  accessibleLabelHeader: "sidebar-header",
+  accessibleLabelNav: "sidebar-nav",
+  accessibleLabelFooter: "sidebar-footer",
 }
 const slots = {
   header: '<span class="header">Logo</span>',
@@ -23,12 +25,14 @@ describe("OcSidebarNav", () => {
     expect(wrapper.findAll('.footer').length).toBe(1)
   })
 
-  it('sets accessible label', () => {
+  it('sets all accessible labels', () => {
     const wrapper = shallowMount(Sidebar, {
       propsData: defaultProps,
       slots
     })
 
-    expect(wrapper.find('nav').attributes()['aria-label']).toMatch('sidebar')
+    expect(wrapper.find('header').attributes()['aria-label']).toMatch('sidebar-header')
+    expect(wrapper.find('nav').attributes()['aria-label']).toMatch('sidebar-nav')
+    expect(wrapper.find('footer').attributes()['aria-label']).toMatch('sidebar-footer')
   })
 })

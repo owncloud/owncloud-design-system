@@ -5,15 +5,23 @@
     :class="[data.staticClass, data.class]"
     v-bind="data.attrs"
   >
-    <header v-if="slots().header" class="oc-sidebar-header">
+    <header
+      v-if="slots().header"
+      class="oc-sidebar-header"
+      :aria-label="props.accessibleLabelHeader"
+    >
       <!-- @slot Header of the sidebar -->
       <slot name="header" />
     </header>
-    <nav v-if="slots().nav" class="oc-sidebar-nav" :aria-label="props.accessibleLabel">
+    <nav v-if="slots().nav" class="oc-sidebar-nav" :aria-label="props.accessibleLabelNav">
       <!-- @slot Main content of the sidebar -->
       <slot name="nav" />
     </nav>
-    <footer v-if="slots().footer" class="oc-sidebar-footer">
+    <footer
+      v-if="slots().footer"
+      class="oc-sidebar-footer"
+      :aria-label="props.accessibleLabelFooter"
+    >
       <!-- @slot Footer of the sidebar -->
       <slot name="footer" />
     </footer>
@@ -28,9 +36,23 @@ export default {
 
   props: {
     /**
+     * Accessible label for the header inside the sidebar
+     */
+    accessibleLabelHeader: {
+      type: String,
+      required: true,
+    },
+    /**
      * Accessible label for the navigation inside the sidebar
      */
-    accessibleLabel: {
+    accessibleLabelNav: {
+      type: String,
+      required: true,
+    },
+    /**
+     * Accessible label for the footer inside the sidebar
+     */
+    accessibleLabelFooter: {
       type: String,
       required: true,
     },
