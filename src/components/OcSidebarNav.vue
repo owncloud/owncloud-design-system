@@ -96,7 +96,7 @@ export default {
 Sidebar navigation component containing branding
 
 ## Examples
-```vue
+```js
 <oc-sidebar-nav class="uk-height-large">
   <template #header>
     <div class="uk-text-center">

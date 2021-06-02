@@ -154,20 +154,20 @@ export default {
 </script>
 
 <docs>
-```jsx
-    <oc-action-drop button-variation="primary" class="oc-ml-s">
-        <template v-slot:button>Action</template>
-        <template v-slot:actions>
-            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 1</div>
-            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 2</div>
-        </template>
-    </oc-action-drop>
-    <oc-action-drop button-variation="default" class="oc-ml-s">
-        <template v-slot:button>Action</template>
-        <template v-slot:actions>
-            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 3</div>
-            <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 4</div>
-        </template>
-    </oc-action-drop>
+```js
+  <oc-action-drop button-variation="primary" class="oc-ml-s">
+    <template v-slot:button>Action</template>
+    <template v-slot:actions>
+      <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 1</div>
+      <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 2</div>
+    </template>
+  </oc-action-drop>
+  <oc-action-drop button-variation="default" class="oc-ml-s">
+    <template v-slot:button>Action</template>
+    <template v-slot:actions>
+      <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 3</div>
+      <div tabindex="0" role="menuitem" class="uk-text-nowrap">Action 4</div>
+    </template>
+  </oc-action-drop>
 ```
 </docs>

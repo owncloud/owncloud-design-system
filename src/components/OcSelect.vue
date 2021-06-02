@@ -95,7 +95,7 @@ export default {
 <docs>
 For detailed documentation (props, slots, events, etc.), please visit https://vue-select.org/
 
-```vue
+```js
 <template>
   <div class="uk-width-medium">
     <oc-select v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
@@ -113,7 +113,7 @@ export default {
 ### Prevent user from clearing the selection
 If we want to disable the clear button from the `oc-select`, we can set prop `clearable` to false. This will also prevent clearing the selected value by hitting `delete`.
 
-```vue
+```js
 <template>
   <div class="uk-width-medium">
     <oc-select v-model="selected" :options="['Apple', 'Bannana', 'Orange', 'Pear']" :clearable="false" />
@@ -131,7 +131,7 @@ export default {
 ### Disable search
 To prevent user from filtering options by typing a serach query into the `oc-select` component, set prop called `searchable` to false.
 
-```vue
+```js
 <template>
   <div class="uk-width-medium">
     <oc-select v-model="selected" :options="['Apple', 'Bannana', 'Orange', 'Pear']" :searchable="false" />
@@ -150,7 +150,7 @@ export default {
 Sometimes we need to display more complex options. This can include e.g. an option with a title and a description. To still display all those values exactly as we want to, we need to use scoped slot called `option`.
 We can then retrieve all the values that we want to display from the slots parametres. It is important to specify the `label` prop on the `oc-select` component which will specify which key should be used as the option label.
 
-```vue
+```js
 <template>
   <div class="uk-width-medium">
     <oc-select v-model="selected" :options="options" label="title" class="oc-mb-m">

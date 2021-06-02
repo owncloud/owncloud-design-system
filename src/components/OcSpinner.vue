@@ -51,7 +51,7 @@ export default {
 }
 </script>
 <docs>
-```jsx
+```js
 <div class="uk-flex uk-flex-middle">
   <oc-spinner aria-label="Loading with extra small spinner" size="xsmall" class="oc-mr-s" />
   <oc-spinner aria-label="Loading with small spinner" size="small" class="oc-mr-s" />

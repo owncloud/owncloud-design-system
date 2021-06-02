@@ -34,34 +34,33 @@ export default {
 </script>
 
 <docs>
-  ```jsx
-  <template>
-    <div>
-      <oc-app-layout :leftHidden="leftHidden" :rightHidden="rightHidden">
-        <template slot="left">
-          <oc-button @click="leftHidden=true">close</oc-button>
-        </template>
-        <template slot="center">
-        Center
-          <oc-button @click="leftHidden=false">show left</oc-button>
-          <oc-button @click="rightHidden=false">show right</oc-button>
-        </template>
-        <template slot="right">
-          <oc-button @click="rightHidden=true">close</oc-button>
-        </template>
-      </oc-app-layout>
-    </div>
-  </template>
-  <script>
-    export default {
-      data () {
-        return {
-          leftHidden:  true,
-          rightHidden: true,
-        }
+```js
+<template>
+  <div>
+    <oc-app-layout :leftHidden="leftHidden" :rightHidden="rightHidden">
+      <template slot="left">
+        <oc-button @click="leftHidden=true">close</oc-button>
+      </template>
+      <template slot="center">
+      Center
+        <oc-button @click="leftHidden=false">show left</oc-button>
+        <oc-button @click="rightHidden=false">show right</oc-button>
+      </template>
+      <template slot="right">
+        <oc-button @click="rightHidden=true">close</oc-button>
+      </template>
+    </oc-app-layout>
+  </div>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        leftHidden:  true,
+        rightHidden: true,
       }
     }
-  </script>
-
-  ```
+  }
+</script>
+```
 </docs>

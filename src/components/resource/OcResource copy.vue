@@ -231,10 +231,10 @@ export default {
   &-preview {
     border-radius: 2px;
     object-fit: cover;
-    height: $oc-size-icon-default * 1.5;
-    max-height: $oc-size-icon-default * 1.5;
-    width: $oc-size-icon-default * 1.5;
-    max-width: $oc-size-icon-default * 1.5;
+    height: calc(var(--oc-size-icon-default) * 1.5);
+    max-height: calc(var(--oc-size-icon-default) * 1.5);
+    width: calc(var(--oc-size-icon-default) * 1.5);
+    max-width: calc(var(--oc-size-icon-default) * 1.5);
   }
 
   &-details {
@@ -255,78 +255,78 @@ export default {
 </style>
 
 <docs>
-  ```js
-    <template>
-      <div>
-        <oc-resource :resource="documents" :targetRoute="targetRoute" class="oc-mb" />
-        <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
-        <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
-        <oc-resource :resource="forest" :isPathDisplayed="true" />
-      </div>
-    </template>
-    <script>
-    export default {
-      computed: {
-        documents() {
-          return {
-            name: "Documents",
-            path: "/Documents",
-            icon: "folder",
-            indicators: [],
-            type: "folder"
-          }
-        },
-        notes() {
-          return {
-            name: "notes.txt",
-            extension: "txt",
-            path: "Documents/notes.txt",
-            icon: "text",
-            indicators: this.indicators,
-            type: "file"
-          }
-        },
-        forest() {
-          return {
-            name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
-            extension: "jpg",
-            path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
-            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
-            indicators: [],
-            type: "file",
-            opensInNewWindow: true,
-          }
-        },
-        indicators() {
-          return [
-            {
-              id: 'files-sharing',
-              label: "Shared with other people",
-              visible: true,
-              icon: 'group',
-              handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
-            },
-            {
-              id: 'file-link',
-              label: "Shared via link",
-              visible: true,
-              icon: 'link',
-            }
-          ]
-        },
-        targetRoute() {
-          return {
-            name: "home",
-            params: {
-              action: "copy"
-            },
-            query: {
-              resource: "notes"
-            }
-          }
+```js
+<template>
+  <div>
+    <oc-resource :resource="documents" :targetRoute="targetRoute" class="oc-mb" />
+    <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
+    <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
+    <oc-resource :resource="forest" :isPathDisplayed="true" />
+  </div>
+</template>
+<script>
+  export default {
+    computed: {
+      documents() {
+        return {
+          name: "Documents",
+          path: "/Documents",
+          icon: "folder",
+          indicators: [],
+          type: "folder"
         }
       },
-    }
-  </script>
-  ```
+      notes() {
+        return {
+          name: "notes.txt",
+          extension: "txt",
+          path: "Documents/notes.txt",
+          icon: "text",
+          indicators: this.indicators,
+          type: "file"
+        }
+      },
+      forest() {
+        return {
+          name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
+          extension: "jpg",
+          path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
+          preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+          indicators: [],
+          type: "file",
+          opensInNewWindow: true,
+        }
+      },
+      indicators() {
+        return [
+          {
+            id: 'files-sharing',
+            label: "Shared with other people",
+            visible: true,
+            icon: 'group',
+            handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
+          },
+          {
+            id: 'file-link',
+            label: "Shared via link",
+            visible: true,
+            icon: 'link',
+          }
+        ]
+      },
+      targetRoute() {
+        return {
+          name: "home",
+          params: {
+            action: "copy"
+          },
+          query: {
+            resource: "notes"
+          }
+        }
+      }
+    },
+  }
+</script>
+```
 </docs>

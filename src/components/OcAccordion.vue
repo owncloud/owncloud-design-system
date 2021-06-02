@@ -200,7 +200,7 @@ Accordions are commonly used to reduce the need to scroll when presenting multip
 The accordion component is using `oc-accordion-item` as its children.
 To see documentation on how to use this component, see [oc-accordion-item](/#/oC%20Components/oc-accordion-item).
 
-```jsx
+```js
 <oc-accordion :expand-first="true" :multiple="false" class="uk-width-1-2">
   <oc-accordion-item title="My accordion item" icon="folder">
     <p>
@@ -219,7 +219,7 @@ oc-accordion. The accordion component watches these properties, so it can be for
 Try the buttons below to show/hide the accordion items. In case you want to react on clicks on the accordion items,
 you need to listen to the `expand` and `collapse` events, which are emitted on the oc-accordion.
 
-```jsx
+```js
 <template>
   <div>
     <oc-grid gutter="small" class="oc-my">

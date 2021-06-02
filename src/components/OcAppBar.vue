@@ -26,10 +26,10 @@ export default {
 </script>
 
 <docs>
-```
+```js
 <oc-app-bar>
   <div class="uk-width-expand">
-      <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
+    <oc-breadcrumb :home="goHome" :items="[{text:'Folder',to:{path:'folder'}},{text:'Subfolder'}]"></oc-breadcrumb>
   </div>
   <div class="uk-width-auto uk-visible@m">
     <oc-search-bar label="Search"></oc-search-bar>

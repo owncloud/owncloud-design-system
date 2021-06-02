@@ -57,7 +57,7 @@ export default {
 </script>
 
 <docs>
-```jsx
+```js
 <h3>Example image, with width set explicitly:</h3>
 <oc-img width="200" height="300" src="https://picsum.photos/200/300/?random" title="I am random" alt="example image" />
 

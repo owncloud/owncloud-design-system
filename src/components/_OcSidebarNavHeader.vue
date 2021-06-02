@@ -11,9 +11,7 @@ export default {
 }
 </script>
 <docs>
-  ```jsx
-  <div>
-    <oc-sidebar-nav-header>Just another header</oc-sidebar-nav-header>
-  </div>
-  ```
+```js
+  <oc-sidebar-nav-header>Just another header</oc-sidebar-nav-header>
+```
 </docs>

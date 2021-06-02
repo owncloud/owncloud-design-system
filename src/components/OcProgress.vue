@@ -183,7 +183,7 @@ $progress-height-small: 5px !default;
 <docs>
 Show progress to the users.
 
-```vue
+```js
 <div>
   <oc-progress :value="4" :max="10" class="oc-mb-s" />
   <oc-progress :value="8" :max="10" size="small" variation="warning" />

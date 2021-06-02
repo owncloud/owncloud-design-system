@@ -67,19 +67,19 @@ export default {
 </style>
 
 <docs>
-```vue
-  <template>
-    <oc-app-side-bar>
-        <template slot="title">
-          <span class="uk-text-lead">Title</span>
-        </template>
-        <template slot="content">
-          Content
-        </template>
-        <template slot="footer">
-          Footer
-        </template>
-    </oc-app-side-bar>
-  </template>
+```js
+<template>
+  <oc-app-side-bar>
+    <template slot="title">
+      <span class="uk-text-lead">Title</span>
+    </template>
+    <template slot="content">
+      Content
+    </template>
+    <template slot="footer">
+      Footer
+    </template>
+  </oc-app-side-bar>
+</template>
 ```
 </docs>

@@ -303,7 +303,7 @@ export default {
   <div>
     <section>
       <h3 class="uk-heading-divider">
-          Search examples
+        Search examples
       </h3>
       <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" />
       <div v-if="searchQuery" class="oc-m">Search query: {{ searchQuery }}</div>
@@ -325,7 +325,7 @@ export default {
     </section>
     <section>
       <h3 class="uk-heading-divider">
-          Filter examples
+        Filter examples
       </h3>
       <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
       <div v-if="filterQuery" class="oc-m">Filter query: {{ filterQuery }}</div>
@@ -333,25 +333,25 @@ export default {
   </div>
 </template>
 <script>
-    export default {
-        data: () => {
-            return {
-                filterQuery: '',
-                searchQuery: ''
-            }
-        },
-        methods: {
-            onFilter(val) {
-                this.filterQuery = val
-            },
-            onSearch(val) {
-                this.searchQuery = val
-            },
-            onClear () {
-              alert('Query has been cleared')
-            }
-        }
+  export default {
+    data: () => {
+      return {
+        filterQuery: '',
+        searchQuery: ''
+      }
+    },
+    methods: {
+      onFilter(val) {
+        this.filterQuery = val
+      },
+      onSearch(val) {
+        this.searchQuery = val
+      },
+      onClear () {
+        alert('Query has been cleared')
+      }
     }
+  }
 </script>
 ```
 </docs>

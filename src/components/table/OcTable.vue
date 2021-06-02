@@ -404,14 +404,14 @@ export default {
 }
 </style>
 <docs>
-```
+```js
 <template>
   <section>
     <h3 class="uk-heading-divider">
       A simple table with plain field types
     </h3>
     <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003"
-              disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true">
+      disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true">
       <template #footer>
         3 resources
       </template>
@@ -451,7 +451,7 @@ export default {
   }
 </script>
 ```
-```
+```js
 <template>
   <section>
     <h3 class="uk-heading-divider">
@@ -517,7 +517,7 @@ export default {
   }
 </script>
 ```
-```
+```js
 <template>
   <section>
     <h3 class="uk-heading-divider">
@@ -561,7 +561,7 @@ export default {
   }
 </script>
 ```
-```
+```js
 <template>
   <section>
     <h3 class="uk-heading-divider">

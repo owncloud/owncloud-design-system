@@ -42,7 +42,7 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
   <template>
     <section>
       <h3 class="uk-heading-divider">

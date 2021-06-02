@@ -25,23 +25,23 @@ export default {
 </script>
 
 <docs>
-```jsx
-  <template>
-    <oc-tabs>
-      <oc-tab-item active title="Left" @click="onClick" />
-      <oc-tab-item title="Item 1"/>
-      <oc-tab-item title="Item 2"/>
-      <oc-tab-item disabled title="Disabled"/>
-    </oc-tabs>
-  </template>
-  <script>
-    export default {
-      methods: {
-        onClick(val) {
-          alert(val)
-        }
+```js
+<template>
+  <oc-tabs>
+    <oc-tab-item active title="Left" @click="onClick" />
+    <oc-tab-item title="Item 1"/>
+    <oc-tab-item title="Item 2"/>
+    <oc-tab-item disabled title="Disabled"/>
+  </oc-tabs>
+</template>
+<script>
+  export default {
+    methods: {
+      onClick(val) {
+        alert(val)
       }
     }
-  </script>
+  }
+</script>
 ```
 </docs>

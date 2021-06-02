@@ -46,7 +46,7 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
 <section>
   <h3 class="uk-heading-divider">
     A resource size passed as a number
@@ -54,7 +54,7 @@ export default {
   <oc-resource-size :size="234897" />
 </section>
 ```
-```vue
+```js
 <section>
   <h3 class="uk-heading-divider">
     A resource size passed as a string

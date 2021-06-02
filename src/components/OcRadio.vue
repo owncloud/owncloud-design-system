@@ -115,7 +115,7 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
 <template>
   <div>
     <section>

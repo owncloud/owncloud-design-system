@@ -48,23 +48,23 @@ export default {
 </script>
 
 <docs>
-```jsx
-  <template>
-    <oc-tabs>
-      <oc-tab-item active @click="onClick">Left</oc-tab-item>
-      <oc-tab-item>Item 1</oc-tab-item>
-      <oc-tab-item>Item 2</oc-tab-item>
-      <oc-tab-item disabled>Disabled</oc-tab-item>
-    </oc-tabs>
-  </template>
-  <script>
-    export default {
-      methods: {
-        onClick(val) {
-          alert(val)
-        }
+```js
+<template>
+  <oc-tabs>
+    <oc-tab-item active @click="onClick">Left</oc-tab-item>
+    <oc-tab-item>Item 1</oc-tab-item>
+    <oc-tab-item>Item 2</oc-tab-item>
+    <oc-tab-item disabled>Disabled</oc-tab-item>
+  </oc-tabs>
+</template>
+<script>
+  export default {
+    methods: {
+      onClick(val) {
+        alert(val)
       }
     }
-  </script>
+  }
+</script>
 ```
 </docs>

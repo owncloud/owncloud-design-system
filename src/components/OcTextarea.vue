@@ -218,7 +218,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <template>
   <div>
     <h3 class="uk-heading-divider">
@@ -230,25 +230,25 @@ export default {
       Messages
     </h3>
     <oc-textarea
-        label="Textarea with description message below"
-        class="oc-mb-s"
-        description-message="This is a description message."
-        :fix-message-line="true"
+      label="Textarea with description message below"
+      class="oc-mb-s"
+      description-message="This is a description message."
+      :fix-message-line="true"
     />
     <oc-textarea
-        label="Textarea with error and warning messages with reserved space below"
-        class="oc-mb-s"
-        v-model="valueForMessages"
-        :error-message="errorMessage"
-        :warning-message="warningMessage"
-        :fix-message-line="true"
+      label="Textarea with error and warning messages with reserved space below"
+      class="oc-mb-s"
+      v-model="valueForMessages"
+      :error-message="errorMessage"
+      :warning-message="warningMessage"
+      :fix-message-line="true"
     />
     <oc-textarea
-        label="Textarea with error and warning messages without reserved space below"
-        class="oc-mb-s"
-        v-model="valueForMessages"
-        :error-message="errorMessage"
-        :warning-message="warningMessage"
+      label="Textarea with error and warning messages without reserved space below"
+      class="oc-mb-s"
+      v-model="valueForMessages"
+      :error-message="errorMessage"
+      :warning-message="warningMessage"
     />
   </div>
 </template>
