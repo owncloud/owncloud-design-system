@@ -144,7 +144,7 @@ export default {
 }
 </style>
 <docs>
-```jsx
+```js
 <template>
   <div class="uk-button-group oc-mt-s">
     <oc-button id="my_menu" class="oc-mr-s">Menu</oc-button>

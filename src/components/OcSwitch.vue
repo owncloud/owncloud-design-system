@@ -65,29 +65,29 @@ export default {
 </script>
 
 <docs>
-  ```vue
-  <template>
-    <section>
-      <h3>Switcher behavior</h3>
-      <oc-switch label="Demo Label" @change="onChange" :model="state" />
-      <p>
-        The switch is turned <strong v-if="state">on</strong><strong v-else="state">off</strong>.
-      </p>
-    </section>
-  </template>
-  <script>
-    export default {
-      data: () => {
-        return {
-          state: true
-        }
-      },
-      methods: {
-        onChange(val) {
-          this.state = !this.state
-        }
+```js
+<template>
+  <section>
+    <h3>Switcher behavior</h3>
+    <oc-switch label="Demo Label" @change="onChange" :model="state" />
+    <p>
+      The switch is turned <strong v-if="state">on</strong><strong v-else="state">off</strong>.
+    </p>
+  </section>
+</template>
+<script>
+  export default {
+    data: () => {
+      return {
+        state: true
+      }
+    },
+    methods: {
+      onChange(val) {
+        this.state = !this.state
       }
     }
-  </script>
-  ```
+  }
+</script>
+```
 </docs>

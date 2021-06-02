@@ -118,21 +118,20 @@ export default {
 </script>
 
 <docs>
-    ```jsx
-    <template>
-        <oc-tabbed initial="foo">
-            <template slot="tabs">
-                <oc-tabbed-tab name="foo">Item 1</oc-tabbed-tab>
-                <oc-tabbed-tab name="bar">Item 2</oc-tabbed-tab>
-                <oc-tabbed-tab name="baz">Item 3</oc-tabbed-tab>
-            </template>
-            <template slot="panels">
-                <oc-tabbed-panel name="foo">Panel 1</oc-tabbed-panel>
-                <oc-tabbed-panel name="bar">Panel 2</oc-tabbed-panel>
-                <oc-tabbed-panel name="baz">Panel 3</oc-tabbed-panel>
-            </template>
-        </oc-tabbed>
+```js
+<template>
+  <oc-tabbed initial="foo">
+    <template slot="tabs">
+      <oc-tabbed-tab name="foo">Item 1</oc-tabbed-tab>
+      <oc-tabbed-tab name="bar">Item 2</oc-tabbed-tab>
+      <oc-tabbed-tab name="baz">Item 3</oc-tabbed-tab>
     </template>
-
-    ```
+    <template slot="panels">
+      <oc-tabbed-panel name="foo">Panel 1</oc-tabbed-panel>
+      <oc-tabbed-panel name="bar">Panel 2</oc-tabbed-panel>
+      <oc-tabbed-panel name="baz">Panel 3</oc-tabbed-panel>
+    </template>
+  </oc-tabbed>
+</template>
+```
 </docs>

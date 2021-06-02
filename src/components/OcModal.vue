@@ -405,7 +405,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
   <oc-modal
     icon="info"
     title="Accept terms of use"
@@ -456,7 +456,7 @@ export default {
 When the modal is displayed, it should not be possible to reach any element outside of the modal. To protect this also for keyboard navigation, focus trap should be activate via prop `focusTrapActive`.
 If activated, only focusable elements within the modal are reachable via keyboard navigation.
 
-```vue
+```js
 <template>
   <div>
     <oc-button @click="active = !active">Toggle focus trap</oc-button>

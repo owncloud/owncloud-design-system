@@ -458,7 +458,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <template>
   <div>
     <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction">
@@ -559,7 +559,7 @@ export default {
 ```
 
 ## Shared with others files table
-```vue
+```js
 <template>
   <oc-table-files :resources="resources" :arePathsDisplayed="true" v-model="selected" />
 </template>
@@ -663,7 +663,7 @@ export default {
 ```
 
 ## Shared with me files table
-```vue
+```js
 <template>
   <oc-table-files :resources="resources" :arePathsDisplayed="true" v-model="selected">
     <template v-slot:status="props">
@@ -763,7 +763,7 @@ export default {
 ```
 
 ## Trashbin files table
-```vue
+```js
 <template>
   <oc-table-files :resources="resources" :arePathsDisplayed="true" :arePreviewsDisplayed="false" v-model="selected" />
 </template>
@@ -807,7 +807,7 @@ export default {
 ```
 
 ## With disabled actions
-```vue
+```js
 <template>
   <oc-table-files :resources="resources" v-model="selected" :hasActions="false" :isResourceClickable="false" />
 </template>

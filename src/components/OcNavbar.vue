@@ -43,7 +43,7 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
   <oc-navbar tag="header" class="oc-topbar">
     <oc-navbar-item position="left">
       <button class="oc-topbar-menu-burger" aria-label="Files">

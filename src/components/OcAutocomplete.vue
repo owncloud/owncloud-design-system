@@ -506,7 +506,7 @@ export default {
 </style>
 
 <docs>
-```jsx
+```js
 <template>
   <section>
     <h3 class="uk-heading-divider">

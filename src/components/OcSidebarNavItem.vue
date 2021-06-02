@@ -111,7 +111,7 @@ export default {
 
 <docs>
 ## Examples
-```vue
+```js
 <nav class="oc-background-brand">
   <oc-list>
     <oc-sidebar-nav-item target="#" icon="folder" active>Files</oc-sidebar-nav-item>
@@ -121,7 +121,7 @@ export default {
 ```
 
 ### Isolate nav items
-```vue
+```js
 <nav class="oc-background-brand">
   <oc-list>
     <oc-sidebar-nav-item target="#" icon="folder" active>Files</oc-sidebar-nav-item>
@@ -132,7 +132,7 @@ export default {
 ```
 
 ### Nested nav items
-```vue
+```js
 <nav class="oc-background-brand">
   <oc-list>
     <oc-sidebar-nav-item target="#" icon="folder" active>

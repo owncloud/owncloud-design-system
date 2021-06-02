@@ -52,30 +52,30 @@ export default {
 }
 </script>
 <docs>
-```jsx
-    <script>
-      export default {
-        data: () => {
-          return {
-            announcement: '',
-            announcementOnComplete: 'Upload has finished'
-          }
-        },
-        methods: {
-          announce() {
-            this.announcement = this.announcementOnComplete
-          }
-        }
+```js
+<template>
+  <div>
+    <h3 class="uk-heading-divider">
+      Hidden announcer (please inspect element)
+    </h3>
+    <button @click="announce">Announce</button>
+    <oc-hidden-announcer level="polite" :announcement="announcement" />
+  </div>
+</template>
+<script>
+  export default {
+    data: () => {
+      return {
+        announcement: '',
+        announcementOnComplete: 'Upload has finished'
       }
-    </script>
-    <template>
-        <div>
-            <h3 class="uk-heading-divider">
-              Hidden announcer (please inspect element)
-            </h3>
-            <button @click="announce">Announce</button>
-            <oc-hidden-announcer level="polite" :announcement="announcement" />
-        </div>
-    </template>
+    },
+    methods: {
+      announce() {
+        this.announcement = this.announcementOnComplete
+      }
+    }
+  }
+</script>
 ```
 </docs>

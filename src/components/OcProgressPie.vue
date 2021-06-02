@@ -51,7 +51,7 @@ export default {
 }
 </script>
 <docs>
-```jsx
+```js
 <div class="uk-flex uk-flex-middle">
   <section>
     <h3 class="uk-heading-divider">

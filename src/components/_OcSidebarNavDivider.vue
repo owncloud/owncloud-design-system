@@ -10,7 +10,7 @@ export default {
 }
 </script>
 <docs>
-  ```jsx
+```js
   <oc-sidebar-nav-divider />
-  ```
+```
 </docs>

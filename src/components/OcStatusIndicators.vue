@@ -115,32 +115,32 @@ export default {
 </style>
 
 <docs>
-```vue
-  <template>
-    <oc-status-indicators :resource="resource" :indicators="indicators" />
-  </template>
-  <script>
-    export default {
-      data: () => ({
-        resource: {
-          name: "Documents",
-          path: "/"
+```js
+<template>
+  <oc-status-indicators :resource="resource" :indicators="indicators" />
+</template>
+<script>
+  export default {
+    data: () => ({
+      resource: {
+        name: "Documents",
+        path: "/"
+      },
+      indicators: [
+        {
+          id: 'files-sharing',
+          label: "Shared with other people",
+          icon: 'group',
+          handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
         },
-        indicators: [
-          {
-            id: 'files-sharing',
-            label: "Shared with other people",
-            icon: 'group',
-            handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
-          },
-          {
-            id: 'file-link',
-            label: "Shared via link",
-            icon: 'link',
-          }
-        ]
-      }),
-    }
-  </script>
+        {
+          id: 'file-link',
+          label: "Shared via link",
+          icon: 'link',
+        }
+      ]
+    }),
+  }
+</script>
 ```
 </docs>

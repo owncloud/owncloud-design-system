@@ -159,7 +159,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <template>
   <div>
     <oc-avatar-group :users="users" accessible-description="This resource is shared with many users." class="oc-mb" />

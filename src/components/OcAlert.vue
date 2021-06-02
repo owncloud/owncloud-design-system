@@ -111,7 +111,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <div>
   <oc-alert>
     This is a plain alert-box.

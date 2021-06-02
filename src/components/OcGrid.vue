@@ -73,7 +73,7 @@ export default {
 }
 </script>
 <docs>
-```jsx
+```js
   <h3 class="uk-heading-divider">
     Simple boxes
   </h3>

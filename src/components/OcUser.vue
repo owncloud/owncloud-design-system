@@ -62,7 +62,7 @@ export default {
 </script>
 
 <docs>
-```jsx
+```js
 <h2>Minimal Version:</h2>
 <oc-user avatar="https://picsum.photos/64/64?image=718"/>
 

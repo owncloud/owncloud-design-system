@@ -51,7 +51,7 @@ export default {
 }
 </style>
 <docs>
-```
+```js
 <template>
   <section>
     <h3 class="uk-heading-divider">

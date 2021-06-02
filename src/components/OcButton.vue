@@ -485,7 +485,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
 
 ## Examples
 
-```vue
+```js
 <template>
 <div>
 

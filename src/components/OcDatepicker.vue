@@ -167,7 +167,7 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
 <template>
   <div>
     <div class="oc-m">

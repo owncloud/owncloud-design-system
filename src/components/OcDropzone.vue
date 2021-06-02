@@ -33,9 +33,9 @@ export default {
 </style>
 
 <docs>
-  ```vue
-    <oc-dropzone>
-      Drag and drop to upload content into current folder
-    </oc-dropzone>
-  ```
+```js
+  <oc-dropzone>
+    Drag and drop to upload content into current folder
+  </oc-dropzone>
+```
 </docs>

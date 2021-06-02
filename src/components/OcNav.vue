@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <docs>
-```jsx
+```js
 <template>
   <oc-nav>
     <oc-nav-item icon="create_new_folder">Item with icon</oc-nav-item>

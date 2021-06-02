@@ -44,7 +44,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <oc-logo src="examples/placeholder_brand_logo.svg" alt="ownCloud" />
 ```
 </docs>

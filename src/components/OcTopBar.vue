@@ -32,7 +32,7 @@ export default {
 </script>
 
 <docs>
-```
+```js
 <template>
   <div>
     <oc-topbar variation="primary">

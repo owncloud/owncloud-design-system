@@ -30,7 +30,7 @@ export default {
 </script>
 
 <docs>
-```vue
+```js
 <h3 class="uk-heading-divider">
   Default style
 </h3>
