@@ -161,7 +161,7 @@ We can then retrieve all the values that we want to display from the slots param
         <span class="option" v-text="desc" />
       </template>
       <template #no-options>
-        Your search query haven't returned any results.
+        Your search query hasn't returned any results.
       </template>
     </oc-select>
     <p>
