@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.0.1...master
+
+## Summary
+
+* Enhancement - Accessible label for all landmarks in OcSidebarNav: [#1345](https://github.com/owncloud/owncloud-design-system/pull/1345)
+
+## Details
+
+* Enhancement - Accessible label for all landmarks in OcSidebarNav: [#1345](https://github.com/owncloud/owncloud-design-system/pull/1345)
+
+   The OcSidebarNav component now has properties for providing accessible labels for all
+   landmarks of the sidebar.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1345
+
 # Changelog for [7.0.1] (2021-06-01)
 
 The following sections list the changes in ownCloud Design System 7.0.1.
