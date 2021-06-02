@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Enhancement - Accessible label for all landmarks in OcSidebarNav: [#1345](https://github.com/owncloud/owncloud-design-system/pull/1345)
+* Enhancement - Add check icon without circle: [#1341](https://github.com/owncloud/owncloud-design-system/issues/1341)
 
 ## Details
 
@@ -16,6 +17,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    landmarks of the sidebar.
 
    https://github.com/owncloud/owncloud-design-system/pull/1345
+
+
+* Enhancement - Add check icon without circle: [#1341](https://github.com/owncloud/owncloud-design-system/issues/1341)
+
+   According to community requests, we've added a check/tick/approve icon without a background
+   shape.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1341
+   https://github.com/owncloud/owncloud-design-system/pull/1346
 
 # Changelog for [7.0.1] (2021-06-01)
 
