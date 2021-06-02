@@ -17,7 +17,7 @@
       <!-- @slot Main content of the sidebar -->
       <slot name="nav" />
     </nav>
-    <footer v-if="slots().footer" class="oc-sidebar-footer">
+    <footer v-if="slots().footer" class="oc-sidebar-footer" :aria-label="props.accessibleLabelFooter">
       <!-- @slot Footer of the sidebar -->
       <slot name="footer" />
     </footer>
@@ -42,6 +42,13 @@ export default {
      * Accessible label for the navigation inside the sidebar
      */
     accessibleLabelNav: {
+      type: String,
+      required: true,
+    },
+    /**
+     * Accessible label for the footer inside the sidebar
+     */
+    accessibleLabelFooter: {
       type: String,
       required: true,
     },
