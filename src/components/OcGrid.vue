@@ -74,7 +74,7 @@ export default {
 </script>
 <docs>
 ```js
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     Simple boxes
   </h3>
   <oc-grid childWidth="expand">
@@ -89,7 +89,7 @@ export default {
     </div>
   </oc-grid>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     Simple boxes
   </h3>
   <oc-grid gutter="large" match>
@@ -105,7 +105,7 @@ export default {
     </div>
   </oc-grid>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     An application bar
   </h3>
 

@@ -97,7 +97,7 @@ For detailed documentation (props, slots, events, etc.), please visit https://vu
 
 ```js
 <template>
-  <div class="uk-width-medium">
+  <div class="oc-docs-width-medium">
     <oc-select v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
   </div>
 </template>
@@ -115,7 +115,7 @@ If we want to disable the clear button from the `oc-select`, we can set prop `cl
 
 ```js
 <template>
-  <div class="uk-width-medium">
+  <div class="oc-docs-width-medium">
     <oc-select v-model="selected" :options="['Apple', 'Bannana', 'Orange', 'Pear']" :clearable="false" />
   </div>
 </template>
@@ -133,7 +133,7 @@ To prevent user from filtering options by typing a serach query into the `oc-sel
 
 ```js
 <template>
-  <div class="uk-width-medium">
+  <div class="oc-docs-width-medium">
     <oc-select v-model="selected" :options="['Apple', 'Bannana', 'Orange', 'Pear']" :searchable="false" />
   </div>
 </template>
@@ -152,7 +152,7 @@ We can then retrieve all the values that we want to display from the slots param
 
 ```js
 <template>
-  <div class="uk-width-medium">
+  <div class="oc-docs-width-medium">
     <oc-select v-model="selected" :options="options" label="title" class="oc-mb-m">
       <template v-slot:option="{ title, desc }">
         <span class="option">

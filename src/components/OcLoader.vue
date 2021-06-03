@@ -31,14 +31,14 @@ export default {
 
 <docs>
 ```js
-<h3 class="uk-heading-divider">
+<h3 class="oc-heading-divider">
   Default style
 </h3>
 <div>
   <oc-loader />
 </div>
 
-<h3 class="uk-heading-divider">
+<h3 class="oc-heading-divider">
   Flat style
 </h3>
 <div>

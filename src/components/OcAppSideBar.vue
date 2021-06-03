@@ -15,7 +15,7 @@
         </div>
         <div class="sidebar-title">
           <slot name="title">
-            <span class="uk-text-lead">{{ headingText }}</span>
+            <span class="oc-text-lead">{{ headingText }}</span>
           </slot>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default {
 <template>
   <oc-app-side-bar>
     <template slot="title">
-      <span class="uk-text-lead">Title</span>
+      <span class="oc-text-lead">Title</span>
     </template>
     <template slot="content">
       Content

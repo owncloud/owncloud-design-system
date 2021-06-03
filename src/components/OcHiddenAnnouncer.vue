@@ -55,7 +55,7 @@ export default {
 ```js
 <template>
   <div>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Hidden announcer (please inspect element)
     </h3>
     <button @click="announce">Announce</button>

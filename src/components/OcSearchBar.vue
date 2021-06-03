@@ -302,7 +302,7 @@ export default {
 <template>
   <div>
     <section>
-      <h3 class="uk-heading-divider">
+      <h3 class="oc-heading-divider">
         Search examples
       </h3>
       <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" />
@@ -316,7 +316,7 @@ export default {
       </div>
     </section>
     <section>
-      <h3 class="uk-heading-divider">
+      <h3 class="oc-heading-divider">
         Search example with visually hidden button
       </h3>
       <div class="oc-mb">
@@ -324,7 +324,7 @@ export default {
       </div>
     </section>
     <section>
-      <h3 class="uk-heading-divider">
+      <h3 class="oc-heading-divider">
         Filter examples
       </h3>
       <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>

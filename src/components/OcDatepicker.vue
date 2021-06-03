@@ -171,7 +171,7 @@ export default {
 <template>
   <div>
     <div class="oc-m">
-      <h3 class="uk-heading-divider">
+      <h3 class="oc-heading-divider">
         Datepicker inputs
       </h3>
       <oc-datepicker label="Default datepicker"></oc-datepicker>
@@ -179,7 +179,7 @@ export default {
                      :minDatetime="minDatetime"></oc-datepicker>
     </div>
     <div class="oc-m">
-      <h3 class="uk-heading-divider">
+      <h3 class="oc-heading-divider">
         Messages
       </h3>
       <oc-datepicker

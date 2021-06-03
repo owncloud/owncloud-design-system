@@ -48,7 +48,7 @@ export default {
 <docs>
 ```js
 <section>
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     A resource size passed as a number
   </h3>
   <oc-resource-size :size="234897" />
@@ -56,7 +56,7 @@ export default {
 ```
 ```js
 <section>
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     A resource size passed as a string
   </h3>
   <oc-resource-size size="96001380" />

@@ -144,7 +144,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Default icons
     </h3>
     <oc-icon name="close" accessible-label="Close"/>
@@ -152,13 +152,13 @@ export default {
     <oc-icon name="info" accessible-label="Information"/>
     <oc-icon name="account_circle" accessible-label="Account"/>
 
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Hover over the icons to see the effect of accessible labels
     </h3>
     <oc-icon size="large" name="account_circle" accessible-label="Account"/>
     <oc-icon size="large" name="account_circle"/>
 
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Icon color variations
     </h3>
     <oc-table-simple :hover="true">
@@ -181,7 +181,7 @@ export default {
       </oc-tbody>
     </oc-table-simple>
 
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Icon sizes
     </h3>
     <oc-table-simple :hover="true">
