@@ -286,7 +286,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Input Types
     </h3>
     <oc-text-input class="oc-mb-s" label="Text"/>
@@ -294,12 +294,12 @@ export default {
     <oc-text-input class="oc-mb-s" type="number" label="Number"/>
     <oc-text-input class="oc-mb-s" type="email" label="Email"/>
     <oc-text-input class="oc-mb-s" type="password" label="Password"/>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Binding
     </h3>
     <oc-text-input label="Text" v-model="inputValue"/>
     <oc-text-input disabled label="Text" v-model="inputValue"/>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Interactions
     </h3>
     <oc-button @click="_focus">Focus input below</oc-button>
@@ -307,7 +307,7 @@ export default {
     <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
     <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
     <oc-text-input label="Clear input" v-model="inputValueForClearing" :clear-button-enabled="true" />
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Messages
     </h3>
     <oc-text-input

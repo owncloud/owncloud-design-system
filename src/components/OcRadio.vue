@@ -119,7 +119,7 @@ export default {
 <template>
   <div>
     <section>
-      <h3 class="uk-heading-divider oc-mt-s">
+      <h3 class="oc-heading-divider oc-mt-s">
         Radio button group
       </h3>
       <div class="oc-mb-s">

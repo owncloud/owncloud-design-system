@@ -25,8 +25,9 @@ a {
   color: var(--oc-color-text-muted);
 }
 
-.uk-heading-divider {
-  border-bottom-color: var(--oc-color-border);
+.oc-heading-divider {
+  border-bottom: calc(0.2px + 0.05em) solid var(--oc-color-border);
+  padding-bottom: calc(5px + 0.1em);
 }
 
 /*

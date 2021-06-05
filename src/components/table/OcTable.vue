@@ -407,7 +407,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       A simple table with plain field types
     </h3>
     <oc-table :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003"
@@ -454,7 +454,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       A simple table with all existing field types
     </h3>
     <oc-table :fields="fields" :data="data">
@@ -520,7 +520,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       A table with long text showing the different text wrapping mechanisms
     </h3>
     <oc-table :fields="fields" :data="data" :has-header="true" :hover="true" />
@@ -564,7 +564,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       An interactive table showcasing different table features/properties
     </h3>
     <oc-table :fields="fields" :data="data" :has-header="hasHeader" :sticky="stickyHeader" :hover="hover">

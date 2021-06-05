@@ -509,7 +509,7 @@ export default {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Autocomplete
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body">
@@ -534,7 +534,7 @@ export default {
         <code>{{ complexSelection }}</code>
       </div>
     </div>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Autocomplete with delayed fetch
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
@@ -544,19 +544,19 @@ export default {
         <code>{{ delayedItem }}</code>
       </div>
     </div>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Autocomplete overflow with "more results" button
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete label="Autocomplete overflow with more results button" v-model="simpleSelection" :items="simpleItems" description-message="type 'da' for overflowing results" dropdownClass="uk-width-1-1" />
     </div>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Autocomplete with :fillOnSelection=false
     </h3>
     <div class="uk-card uk-card-default uk-card-small uk-card-body oc-mt">
       <oc-autocomplete label="Autocomplete with :fillOnSelection=false" v-model="simpleSelection" :items="simpleItems" description-message="type 'da' for overflowing results" dropdownClass="uk-width-1-1" :fillOnSelection="false" />
     </div>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Errors and warnings
     </h3>
     <p>Please note that both fields below have set the `fixMessageLine` set to `true` so the spacing below the input stays the same even after the warning/error disappears.</p>

@@ -45,7 +45,7 @@ export default {
 ```js
   <template>
     <section>
-      <h3 class="uk-heading-divider">
+      <h3 class="oc-heading-divider">
         Notifications examples
       </h3>
 

@@ -205,7 +205,7 @@ label > .oc-checkbox + span {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider oc-mt-s">
+    <h3 class="oc-heading-divider oc-mt-s">
       Checkboxes Types
     </h3>
     <div class="oc-mb-s">
@@ -223,7 +223,7 @@ label > .oc-checkbox + span {
 ```js
 <template>
   <section>
-    <h3 class="uk-heading-divider oc-mt-s">
+    <h3 class="oc-heading-divider oc-mt-s">
       Checkbox group with array model
     </h3>
     <div class="oc-mb-s">

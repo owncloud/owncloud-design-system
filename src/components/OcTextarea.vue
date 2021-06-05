@@ -221,12 +221,12 @@ export default {
 ```js
 <template>
   <div>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Textarea fields
     </h3>
     <oc-textarea class="oc-mb-s" label="A simple textarea" />
     <oc-textarea disabled value="I am disabled" label="Disabled Textarea" />
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Messages
     </h3>
     <oc-textarea

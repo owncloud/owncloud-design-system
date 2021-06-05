@@ -489,7 +489,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
 <template>
 <div>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     Button variations
   </h3>
   <div class="uk-flex">
@@ -498,7 +498,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     </oc-button>
   </div>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     Button sizes
   </h3>
   <div class="uk-flex">
@@ -507,7 +507,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     <oc-button size="small" class="oc-align-self-center">Small</oc-button>
   </div>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     Button with icons
   </h3>
   <div class="uk-flex">
@@ -524,7 +524,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     </oc-button>
   </div>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     Using buttons in a group
   </h3>
   <div class="oc-button-group">
@@ -536,7 +536,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     <oc-button variation="danger" appearance="filled">Delete</oc-button>
   </div>
 
-  <h3 class="uk-heading-divider">
+  <h3 class="oc-heading-divider">
     All available button combinations
   </h3>
   <oc-table-simple>

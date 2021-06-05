@@ -54,7 +54,7 @@ export default {
 ```js
 <div class="uk-flex uk-flex-middle">
   <section>
-    <h3 class="uk-heading-divider">
+    <h3 class="oc-heading-divider">
       Pie shape progress
     </h3>
     <oc-progress-pie :progress="33" />
