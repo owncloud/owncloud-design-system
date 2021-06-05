@@ -1,7 +1,7 @@
 repository:
   name: owncloud-design-system
-  description: :art: A pattern library for ownCloud for vue.js
-  homepage: https://owncloud.github.io/owncloud-design-system/
+  description: :art: A library with guidelines, design tokens and Vue.js components for user interface design & development
+  homepage: https://owncloud.design/
   has_wiki: false
 labels:
   - name: 1 - To develop
