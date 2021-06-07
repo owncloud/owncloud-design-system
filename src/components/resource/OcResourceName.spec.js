@@ -99,8 +99,8 @@ describe("OcResourceName", () => {
     })
 
     const node = wrapper.find(".oc-resource-name")
-    expect(node.attributes("resource-type")).toMatch(type)
-    expect(node.attributes("resource-name")).toMatch(name)
-    expect(node.attributes("resource-path")).toMatch("/" + name)
+    expect(node.attributes("data-test-resource-type")).toMatch(type)
+    expect(node.attributes("data-test-resource-name")).toMatch(name)
+    expect(node.attributes("data-test-resource-path")).toMatch("/" + name)
   })
 })

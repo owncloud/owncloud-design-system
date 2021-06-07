@@ -7,6 +7,7 @@
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
+    :data-test-user-name="userName"
   >
     <oc-img v-if="isImage" loading-type="lazy" class="avatarImg" :src="src" @error="onImgError" />
     <span v-show="!isImage" class="avatarInitials">{{ userInitial }}</span>
