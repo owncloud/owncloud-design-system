@@ -11,7 +11,7 @@
           v-for="avatar in avatars"
           :key="avatar.username"
           :src="avatar.avatar"
-          :user-name="avatar.username"
+          :user-name="avatar.displayName"
           :width="30"
         />
       </template>
