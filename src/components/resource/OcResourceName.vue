@@ -2,9 +2,9 @@
   <span
     v-oc-tooltip="tooltip"
     class="oc-resource-name oc-text-truncate"
-    :resource-path="fullPath"
-    :resource-name="fullName"
-    :resource-type="type"
+    :data-test-resource-path="fullPath"
+    :data-test-resource-name="fullName"
+    :data-test-resource-type="type"
   >
     <span v-if="displayPath" class="oc-resource-path" v-text="displayPath" /><span
       class="oc-resource-basename"

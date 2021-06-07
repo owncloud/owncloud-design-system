@@ -10,6 +10,8 @@
         :aria-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
         appearance="raw"
+        :data-test-id="indicator.id"
+        :data-test-indicator-type="indicator.type"
         @click.stop="indicator.handler(resource, indicator.target)"
       >
         <oc-icon :name="indicator.icon" variation="passive" />
@@ -24,6 +26,8 @@
         :name="indicator.icon"
         :accessible-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
+        :data-test-id="indicator.id"
+        :data-test-indicator-type="indicator.type"
       />
       <p
         v-if="getIndicatorDescriptionId(indicator)"
