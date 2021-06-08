@@ -27,6 +27,20 @@
           <oc-icon name="chevron_right" />
         </router-link>
       </li>
+      <li v-if="isGoToLinkVisible" class="oc-pagination-list-item-goto">
+        <oc-text-input
+          v-model="goToTarget"
+          :label="$gettext('Go to')"
+          class="oc-pagination-list-item-goto-input"
+        />
+        <component
+          :is="goToLinkComponent"
+          v-bind="goToLinkProps"
+          class="oc-pagination-list-item-goto-link"
+        >
+          <oc-icon name="chevron_right" />
+        </component>
+      </li>
     </ul>
   </nav>
 </template>
@@ -83,6 +97,10 @@ export default {
     },
   },
 
+  data: () => ({
+    goToTarget: "",
+  }),
+
   computed: {
     displayedPages() {
       if (this.maxDisplayed && this.maxDisplayed < this.pages) {
@@ -130,6 +148,33 @@ export default {
     nextPageLink() {
       return this._currentRoute + "/" + (this.currentPage + 1)
     },
+
+    isGoToLinkVisible() {
+      if (this.maxDisplayed) {
+        return this.displayedPages.includes("...")
+      }
+
+      return false
+    },
+
+    goToLinkComponent() {
+      if (this.goToTarget === "") {
+        return "span"
+      }
+
+      return "router-link"
+    },
+
+    goToLinkProps() {
+      if (this.goToTarget === "") {
+        return { "aria-hidden": true }
+      }
+
+      return {
+        "aria-label": this.$gettext("Go"),
+        to: this._currentRoute + "/" + this.goToTarget,
+      }
+    },
   },
 
   methods: {
@@ -173,6 +218,10 @@ export default {
 
       return classes
     },
+
+    navigateToPage() {
+      window.navi
+    },
   },
 }
 </script>
@@ -182,6 +231,7 @@ export default {
   &-list {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: var(--oc-space-small);
     list-style: none;
 
@@ -214,6 +264,50 @@ export default {
           fill: var(--oc-color-swatch-brand-default);
         }
       }
+
+      &-prev {
+        margin-right: var(--oc-space-small);
+      }
+
+      &-next {
+        margin-left: var(--oc-space-small);
+      }
+
+      &-goto {
+        margin-left: var(--oc-space-small);
+        position: relative;
+
+        &-input {
+          align-items: center;
+          display: flex;
+          flex-wrap: nowrap;
+          gap: var(--oc-space-small);
+
+          .oc-text-input {
+            padding: 0 var(--oc-size-icon-default) 0 var(--oc-space-small);
+            width: calc(
+              var(--oc-space-small) + var(--oc-space-large) + var(--oc-size-icon-default)
+            );
+          }
+        }
+
+        &-link {
+          align-items: center;
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+
+          > .oc-icon > svg {
+            fill: var(--oc-color-swatch-brand-default);
+          }
+
+          &:not(a) > .oc-icon > svg {
+            fill: var(--oc-color-input-text-muted);
+          }
+        }
+      }
     }
   }
 }
@@ -230,8 +324,11 @@ export default {
 ```
 
 ### Truncate visible pages with ellipsis
+If the current page is close enough to the first or/and last page and ellipsis would hide only 1 page, ellipsis will be omitted and the actual page will be still displayed instead.
+
 ```vue
 <div>
+    <oc-pagination :pages="5" :currentPage="3" :maxDisplayed="2" currentRoute="/files" />
     <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="2" currentRoute="/files" />
     <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="2" currentRoute="/files" />
     <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="4" currentRoute="/files" />
