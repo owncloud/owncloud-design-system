@@ -319,7 +319,7 @@ export default {
 <div>
     <oc-pagination :pages="3" :currentPage="3" currentRoute="/files" />
     <oc-pagination :pages="4" :currentPage="1" currentRoute="/files" />
-    <oc-pagination :pages="5" :currentPage="5" currentRoute="/files" />
+    <oc-pagination :pages="5" :currentPage="3" currentRoute="/files" />
 </div>
 ```
 
