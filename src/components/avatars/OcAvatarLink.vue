@@ -6,6 +6,7 @@
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
+    :data-test-link-name="name"
   />
 </template>
 
