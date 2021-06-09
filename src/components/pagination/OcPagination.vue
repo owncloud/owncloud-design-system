@@ -32,10 +32,12 @@
           v-model="goToTarget"
           :label="$gettext('Go to')"
           class="oc-pagination-list-item-goto-input"
+          @keydown.enter="goToLinkHandler"
         />
         <component
           :is="goToLinkComponent"
           v-bind="goToLinkProps"
+          ref="goToLink"
           class="oc-pagination-list-item-goto-link"
         >
           <oc-icon name="chevron_right" />
@@ -185,6 +187,14 @@ export default {
     },
   },
 
+  watch: {
+    goToTarget(value) {
+      if (value > this.pages) {
+        this.goToTarget = this.pages.toString()
+      }
+    },
+  },
+
   methods: {
     pageLabel(page) {
       const translated = this.$gettext("Go to page %{ page }")
@@ -242,6 +252,14 @@ export default {
           page,
         },
       }
+    },
+
+    goToLinkHandler() {
+      if (this.goToTarget === "") {
+        return
+      }
+
+      this.$refs.goToLink.$el.click()
     },
   },
 }
@@ -339,9 +357,9 @@ export default {
 ## Examples
 ```vue
 <div>
-    <oc-pagination :pages="3" :currentPage="3" currentRoute="/files" />
-    <oc-pagination :pages="4" :currentPage="1" currentRoute="/files" />
-    <oc-pagination :pages="5" :currentPage="3" currentRoute="/files" />
+    <oc-pagination :pages="3" :currentPage="3" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="4" :currentPage="1" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="5" :currentPage="3" :currentRoute="{ name: 'files' }" />
 </div>
 ```
 
@@ -350,10 +368,10 @@ If the current page is close enough to the first or/and last page and ellipsis w
 
 ```vue
 <div>
-    <oc-pagination :pages="5" :currentPage="3" :maxDisplayed="2" currentRoute="/files" />
-    <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="2" currentRoute="/files" />
-    <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="2" currentRoute="/files" />
-    <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="4" currentRoute="/files" />
+    <oc-pagination :pages="5" :currentPage="3" :maxDisplayed="2" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="2" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="2" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="4" :currentRoute="{ name: 'files' }" />
 </div>
 ```
 </docs>
