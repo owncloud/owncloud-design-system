@@ -144,7 +144,7 @@ export default {
     },
 
     isNextPageAvailable() {
-      return this.pages < this.$_currentPage
+      return this.$_currentPage < this.pages
     },
 
     previousPageLink() {
