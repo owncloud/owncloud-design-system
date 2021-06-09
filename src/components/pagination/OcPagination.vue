@@ -14,7 +14,7 @@
         <component
           :is="pageComponent(page)"
           :class="pageClass(page)"
-          v-bind="pageProps(page)"
+          v-bind="bindPageProps(page)"
           v-text="page"
         />
       </li>
@@ -92,7 +92,7 @@ export default {
      * Current route which is used to render pages
      */
     currentRoute: {
-      type: String,
+      type: Object,
       required: true,
     },
   },
@@ -121,11 +121,11 @@ export default {
 
         pages = [...pagesLeft, this.currentPage, ...pagesRight]
 
-        if (this.currentPage > 1) {
+        if (this.currentPage > 2) {
           pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
         }
 
-        if (this.currentPage < this.pages) {
+        if (this.currentPage < this.pages - 1) {
           pages[pages.length - 1] < this.pages - 1
             ? pages.push("...", this.pages)
             : pages.push(this.pages)
@@ -145,16 +145,12 @@ export default {
       return this.pages !== this.currentPage
     },
 
-    _currentRoute() {
-      return JSON.parse(JSON.stringify(this.currentRoute)).replace(/\/$/, "")
-    },
-
     previousPageLink() {
-      return this._currentRoute + "/" + (this.currentPage - 1)
+      return this.bindPageLink(this.currentPage - 1)
     },
 
     nextPageLink() {
-      return this._currentRoute + "/" + (this.currentPage + 1)
+      return this.bindPageLink(this.currentPage + 1)
     },
 
     isGoToLinkVisible() {
@@ -180,7 +176,7 @@ export default {
 
       return {
         "aria-label": this.$gettext("Go"),
-        to: this._currentRoute + "/" + this.goToTarget,
+        to: this.bindPageLink(this.goToTarget),
       }
     },
   },
@@ -200,16 +196,18 @@ export default {
       return page === "..." || this.isCurrentPage(page) ? "span" : "router-link"
     },
 
-    pageProps(page) {
+    bindPageProps(page) {
       if (this.isCurrentPage(page)) {
         return {
           "aria-current": "true",
         }
       }
 
+      const link = this.bindPageLink(page)
+
       return {
         "aria-label": this.pageLabel(page),
-        to: this._currentRoute + "/" + page,
+        to: link,
       }
     },
 
@@ -227,8 +225,15 @@ export default {
       return classes
     },
 
-    navigateToPage() {
-      window.navi
+    bindPageLink(page) {
+      return {
+        name: this.currentRoute.name,
+        query: this.currentRoute.query,
+        params: {
+          ...this.currentRoute.params,
+          page,
+        },
+      }
     },
   },
 }
