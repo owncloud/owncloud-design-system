@@ -1,6 +1,6 @@
 <template>
   <nav class="oc-pagination" :aria-label="$gettext('Pagination')">
-    <ul class="oc-pagination-list">
+    <ol class="oc-pagination-list">
       <li v-if="isPrevPageAvailable" class="oc-pagination-list-item">
         <router-link
           class="oc-pagination-list-item-prev"
@@ -41,7 +41,7 @@
           <oc-icon name="chevron_right" />
         </component>
       </li>
-    </ul>
+    </ol>
   </nav>
 </template>
 
@@ -111,21 +111,21 @@ export default {
         }
 
         const pagesRight =
-          this.currentPage === this.pages
+          this.$_currentPage === this.pages
             ? []
-            : pages.slice(this.currentPage, this.currentPage + this.maxDisplayed / 2)
+            : pages.slice(this.$_currentPage, this.$_currentPage + this.maxDisplayed / 2)
         const pagesLeft =
-          this.currentPage === 1
+          this.$_currentPage === 1
             ? []
-            : pages.slice(this.currentPage - 1 - this.maxDisplayed / 2, this.currentPage - 1)
+            : pages.slice(this.$_currentPage - 1 - this.maxDisplayed / 2, this.$_currentPage - 1)
 
-        pages = [...pagesLeft, this.currentPage, ...pagesRight]
+        pages = [...pagesLeft, this.$_currentPage, ...pagesRight]
 
-        if (this.currentPage > 2) {
+        if (this.$_currentPage > 2) {
           pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
         }
 
-        if (this.currentPage < this.pages - 1) {
+        if (this.$_currentPage < this.pages - 1) {
           pages[pages.length - 1] < this.pages - 1
             ? pages.push("...", this.pages)
             : pages.push(this.pages)
@@ -138,19 +138,19 @@ export default {
     },
 
     isPrevPageAvailable() {
-      return this.currentPage !== 1
+      return this.$_currentPage > 1
     },
 
     isNextPageAvailable() {
-      return this.pages !== this.currentPage
+      return this.pages < this.$_currentPage
     },
 
     previousPageLink() {
-      return this.bindPageLink(this.currentPage - 1)
+      return this.bindPageLink(this.$_currentPage - 1)
     },
 
     nextPageLink() {
-      return this.bindPageLink(this.currentPage + 1)
+      return this.bindPageLink(this.$_currentPage + 1)
     },
 
     isGoToLinkVisible() {
@@ -179,6 +179,10 @@ export default {
         to: this.bindPageLink(this.goToTarget),
       }
     },
+
+    $_currentPage() {
+      return Math.min(this.currentPage, this.pages)
+    },
   },
 
   methods: {
@@ -189,7 +193,7 @@ export default {
     },
 
     isCurrentPage(page) {
-      return this.currentPage === page
+      return this.$_currentPage === page
     },
 
     pageComponent(page) {
@@ -197,9 +201,13 @@ export default {
     },
 
     bindPageProps(page) {
+      if (page === "...") {
+        return
+      }
+
       if (this.isCurrentPage(page)) {
         return {
-          "aria-current": "true",
+          "aria-current": "page",
         }
       }
 
@@ -247,6 +255,7 @@ export default {
     flex-wrap: wrap;
     gap: var(--oc-space-small);
     list-style: none;
+    margin: 0;
 
     &-item {
       &-page {
