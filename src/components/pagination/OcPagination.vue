@@ -110,18 +110,26 @@ export default {
           pages.push(i + 1)
         }
 
-        const pagesRight = pages.slice(this.currentPage, this.currentPage + this.maxDisplayed / 2)
-        const pagesLeft = pages.slice(
-          this.currentPage - 1 - this.maxDisplayed / 2,
-          this.currentPage - 1
-        )
+        const pagesRight =
+          this.currentPage === this.pages
+            ? []
+            : pages.slice(this.currentPage, this.currentPage + this.maxDisplayed / 2)
+        const pagesLeft =
+          this.currentPage === 1
+            ? []
+            : pages.slice(this.currentPage - 1 - this.maxDisplayed / 2, this.currentPage - 1)
 
         pages = [...pagesLeft, this.currentPage, ...pagesRight]
 
-        pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
-        pages[pages.length - 1] < this.pages - 1
-          ? pages.push("...", this.pages)
-          : pages.push(this.pages)
+        if (this.currentPage > 1) {
+          pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
+        }
+
+        if (this.currentPage < this.pages) {
+          pages[pages.length - 1] < this.pages - 1
+            ? pages.push("...", this.pages)
+            : pages.push(this.pages)
+        }
 
         return pages
       }
