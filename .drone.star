@@ -95,7 +95,8 @@ def testing(ctx):
               "name": "sonarcloud",
               "image": "sonarsource/sonar-scanner-cli:latest",
               "pull": "always",
-              "environment": sonar_env
+              "environment": sonar_env,
+              'depends_on': ['unit tests']
             },
         ],
         'trigger': {
