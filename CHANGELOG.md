@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.1.0...master
+
+## Summary
+
+* Bugfix - Use correct selected background colour: [#1368](https://github.com/owncloud/owncloud-design-system/pull/1368)
+
+## Details
+
+* Bugfix - Use correct selected background colour: [#1368](https://github.com/owncloud/owncloud-design-system/pull/1368)
+
+   We've fixed the css custom property in `.oc-background-selected` helper class so that the
+   background highlighted colour is used there instead.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1368
+
 # Changelog for [7.1.0] (2021-06-02)
 
 The following sections list the changes in ownCloud Design System 7.1.0.
