@@ -49,6 +49,7 @@
 
 <script>
 import OcIcon from "../OcIcon.vue"
+import OcTextInput from "../OcTextInput.vue"
 
 /**
  * A list of links used for switching to different pages
@@ -56,7 +57,7 @@ import OcIcon from "../OcIcon.vue"
 export default {
   name: "OcPagination",
 
-  components: { OcIcon },
+  components: { OcIcon, OcTextInput },
 
   props: {
     /**

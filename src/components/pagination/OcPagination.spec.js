@@ -5,7 +5,7 @@ import Pagination from "./OcPagination.vue"
 const defaultProps = {
   pages: 5,
   currentPage: 3,
-  currentRoute: '/files'
+  currentRoute: { name: 'files' },
 }
 
 describe("OcPagination", () => {
@@ -57,7 +57,7 @@ describe("OcPagination", () => {
         pages: 10,
         currentPage: 5,
         maxDisplayed: 2,
-        currentRoute: '/files',
+        currentRoute: { name: 'files' },
       }
     })
 
@@ -72,7 +72,7 @@ describe("OcPagination", () => {
         pages: 5,
         currentPage: 3,
         maxDisplayed: 2,
-        currentRoute: '/files',
+        currentRoute: { name: 'files' },
       }
     })
 
@@ -89,7 +89,7 @@ describe("OcPagination", () => {
         pages: 5,
         currentPage: 3,
         maxDisplayed: 1,
-        currentRoute: '/files',
+        currentRoute: { name: 'files' },
       }
     })
 
@@ -98,20 +98,35 @@ describe("OcPagination", () => {
   })
 
   it("builds correct prev and next links", () => {
+    const localThis = { ...defaultProps, bindPageLink: Pagination.methods.bindPageLink, $_currentPage: 3 }
+
+    expect(Pagination.computed.previousPageLink.call(localThis)).toMatchObject({ name: 'files', params: { page: 2 } })
+    expect(Pagination.computed.nextPageLink.call(localThis)).toMatchObject({ name: 'files', params: { page: 4 }})
+  })
+
+  it("renders go to button as a link if a page is specified", async () => {
+    const wrapper = shallowMount(Pagination, {
+      propsData: {
+        ...defaultProps,
+        pages: 50,
+        currentPage: 13,
+        maxDisplayed: 2
+      }
+    })
+
+    await wrapper.setData({ goToTarget: 30 })
+
+    expect(wrapper.find('router-link-stub.oc-pagination-list-item-goto-link').exists()).toBe(true)
+  })
+
+  it("sets goToTarget to last page if its value is higher", async () => {
     const wrapper = shallowMount(Pagination, {
       propsData: defaultProps
     })
 
-    expect(wrapper.find(".oc-pagination-list-item-prev").attributes().to).toMatch('/files/2')
-    expect(wrapper.find(".oc-pagination-list-item-next").attributes().to).toMatch('/files/4')
-  })
+    await wrapper.setData({ goToTarget: 8 })
+    await wrapper.vm.$nextTick()
 
-  it('removes trailing slash from the current route', () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: defaultProps,
-      currentRoute: '/files/'
-    })
-
-    expect(wrapper.findAll(".oc-pagination-list-item-link").at(0).attributes().to).toMatch('/files/1')
+    expect(wrapper.vm.goToTarget).toBe('5')
   })
 })
