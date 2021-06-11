@@ -338,6 +338,11 @@ export default {
   },
   methods: {
     rowMounted(resource, component) {
+      /**
+       * Triggered whenever a row is mounted
+       * @property {object} resource The resource which was mounted as table row
+       * @property {object} component The table row component
+       */
       this.$emit("rowMounted", resource, component)
     },
     showDetails(resource) {
