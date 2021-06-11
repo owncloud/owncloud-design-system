@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Use correct selected background colour: [#1368](https://github.com/owncloud/owncloud-design-system/pull/1368)
 * Enhancement - Add pagination component: [#1055](https://github.com/owncloud/owncloud-design-system/pull/1055)
+* Enhancement - Table Row Mounted Event: [#1371](https://github.com/owncloud/owncloud-design-system/pull/1371)
 
 ## Details
 
@@ -24,6 +25,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've added `OcPagination` component.
 
    https://github.com/owncloud/owncloud-design-system/pull/1055
+
+
+* Enhancement - Table Row Mounted Event: [#1371](https://github.com/owncloud/owncloud-design-system/pull/1371)
+
+   The OcTable now emits an event if a row is mounted.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1371
 
 # Changelog for [7.1.0] (2021-06-02)
 
