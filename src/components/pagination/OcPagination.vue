@@ -87,13 +87,13 @@ export default {
 
   computed: {
     displayedPages() {
+      let pages = []
+
+      for (let i = 0; i < this.pages; i++) {
+        pages.push(i + 1)
+      }
+
       if (this.maxDisplayed && this.maxDisplayed < this.pages) {
-        let pages = []
-
-        for (let i = 0; i < this.pages; i++) {
-          pages.push(i + 1)
-        }
-
         const currentPageIndex = this.$_currentPage - 1
         const indentation = (this.maxDisplayed - 1) / 2
 
@@ -115,7 +115,7 @@ export default {
         return pages
       }
 
-      return this.pages
+      return pages
     },
 
     isPrevPageAvailable() {
