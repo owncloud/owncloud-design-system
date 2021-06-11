@@ -95,7 +95,7 @@ export default {
 
       if (this.maxDisplayed && this.maxDisplayed < this.pages) {
         const currentPageIndex = this.$_currentPage - 1
-        const indentation = (this.maxDisplayed - 1) / 2
+        const indentation = Math.floor(this.maxDisplayed / 2)
 
         pages = pages.slice(
           Math.max(0, currentPageIndex - indentation),
@@ -135,7 +135,7 @@ export default {
     },
 
     $_currentPage() {
-      return Math.min(this.currentPage, this.pages)
+      return Math.max(1, Math.min(this.currentPage, this.pages))
     },
   },
 
