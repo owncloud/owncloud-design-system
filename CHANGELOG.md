@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Use correct selected background colour: [#1368](https://github.com/owncloud/owncloud-design-system/pull/1368)
+* Enhancement - Add pagination component: [#1055](https://github.com/owncloud/owncloud-design-system/pull/1055)
 
 ## Details
 
@@ -16,6 +17,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    background highlighted colour is used there instead.
 
    https://github.com/owncloud/owncloud-design-system/pull/1368
+
+
+* Enhancement - Add pagination component: [#1055](https://github.com/owncloud/owncloud-design-system/pull/1055)
+
+   We've added `OcPagination` component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1055
 
 # Changelog for [7.1.0] (2021-06-02)
 
