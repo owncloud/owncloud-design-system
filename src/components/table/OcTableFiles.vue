@@ -7,6 +7,7 @@
     :sticky="true"
     :header-position="headerPosition"
     @highlight="showDetails"
+    @rowMounted="rowMounted"
   >
     <template #selectHeader>
       <div class="oc-table-files-select-all">
@@ -99,6 +100,7 @@ import OcAvatarGroup from "../avatars/OcAvatarGroup.vue"
 import OcCheckbox from "../OcCheckbox.vue"
 import OcButton from "../OcButton.vue"
 import OcResourceSize from "../resource/OcResourceSize.vue"
+import { EVENT_TROW_MOUNTED } from "./helpers/constants"
 
 export default {
   name: "OcTableFiles",
@@ -219,6 +221,13 @@ export default {
       validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
     },
   },
+  data() {
+    return {
+      constants: {
+        EVENT_TROW_MOUNTED,
+      },
+    }
+  },
   computed: {
     fields() {
       if (this.resources.length === 0) {
@@ -328,6 +337,14 @@ export default {
     },
   },
   methods: {
+    rowMounted(resource, component) {
+      /**
+       * Triggered whenever a row is mounted
+       * @property {object} resource The resource which was mounted as table row
+       * @property {object} component The table row component
+       */
+      this.$emit("rowMounted", resource, component)
+    },
     showDetails(resource) {
       /**
        * Triggered when the showDetails button in the actions column is clicked
@@ -461,7 +478,8 @@ export default {
 ```js
 <template>
   <div>
-    <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb" @showDetails="highlightResource" @action="handleAction">
+    <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb"
+                    @showDetails="highlightResource" @action="handleAction">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
           <oc-icon name="group-add" />
@@ -480,81 +498,79 @@ export default {
   </div>
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: [],
-    highlighted: 'forest'
-  }),
-  computed: {
-    resources() {
-      return [
-        {
-          id: "forest",
-          name: "forest.jpg",
-          path: "images/nature/forest.jpg",
-          preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
-          indicators: [],
-          type: "file",
-          size: "111000234",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          opensInNewWindow: true
-        },
-        {
-          id: "notes",
-          name: "notes.txt",
-          path: "/Documents/notes.txt",
-          icon: "text",
-          indicators: this.indicators,
-          type: "file",
-          size: "1245",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        },
-        {
-          id: "documents",
-          name: "Documents",
-          path: "/Documents",
-          icon: "folder",
-          indicators: [],
-          type: "folder",
-          size: "5324435",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        }
-      ]
+  export default {
+    data: () => ({
+      selected: [],
+      highlighted: "forest"
+    }),
+    computed: {
+      resources() {
+        return [
+          {
+            id: "forest",
+            name: "forest.jpg",
+            path: "images/nature/forest.jpg",
+            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            indicators: [],
+            type: "file",
+            size: "111000234",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "notes",
+            name: "notes.txt",
+            path: "/Documents/notes.txt",
+            icon: "text",
+            indicators: this.indicators,
+            type: "file",
+            size: "1245",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "documents",
+            name: "Documents",
+            path: "/Documents",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            size: "5324435",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          }
+        ]
+      },
+      indicators() {
+        return [
+          {
+            id: "files-sharing",
+            label: "Shared with other people",
+            visible: true,
+            icon: "group",
+            handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
+          },
+          {
+            id: "file-link",
+            label: "Shared via link",
+            visible: true,
+            icon: "link"
+          }
+        ]
+      },
+      selectedIds() {
+        return this.selected.map(resource => resource.id)
+      }
     },
-    indicators() {
-      return [
-        {
-          id: 'files-sharing',
-          label: "Shared with other people",
-          visible: true,
-          icon: 'group',
-          accessibleDescription: 'This resource is shared via link',
-          handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
-        },
-        {
-          id: 'file-link',
-          label: "Shared via link",
-          visible: true,
-          icon: 'link',
-        }
-      ]
+    methods: {
+      highlightResource(resource) {
+        this.highlighted = resource.id
+      },
+      handleAction(resource) {
+        alert(`Clicked ${resource.name}`)
+      }
     },
-    selectedIds() {
-      return this.selected.map(resource => resource.id)
+    mounted() {
+      this.selected = [this.resources[1]]
     }
-  },
-  methods: {
-    highlightResource(resource) {
-      this.highlighted = resource.id
-    },
-    handleAction(resource) {
-      alert(`Clicked ${resource.name}`)
-    }
-  },
-  mounted() {
-    this.selected = [this.resources[1]]
   }
-}
 </script>
 ```
 
@@ -564,101 +580,101 @@ export default {
   <oc-table-files :resources="resources" :arePathsDisplayed="true" v-model="selected" />
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: []
-  }),
-  computed: {
-    resources() {
-      return [
-        {
-          name: "forest.jpg",
-          path: "images/nature/forest.jpg",
-          preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
-          indicators: [],
-          type: "file",
-          sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          sharedWith: this.sharedWith
-        },
-        {
-          name: "notes.txt",
-          path: "/Documents/notes.txt",
-          icon: "text",
-          indicators: [],
-          type: "file",
-          sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          sharedWith: this.sharedWithOverlapping
-        },
-        {
-          name: "Documents",
-          path: "/Documents",
-          icon: "folder",
-          indicators: [],
-          type: "folder",
-          sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          sharedWith: this.sharedWithSingle
-        }
-      ]
-    },
-    sharedWith() {
-      return [
-        {
-          id: "bob",
-          username: "bob",
-          displayName: "Bob",
-          avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        },
-        {
-          id: "marie",
-          username: "marie",
-          displayName: "Marie",
-          avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        },
-        {
-          id: "john",
-          username: "john",
-          displayName: "John Richards Emperor of long names"
-        }
-      ]
-    },
-    sharedWithOverlapping() {
-      return [
-        {
-          id: "bob",
-          username: "bob",
-          displayName: "Bob",
-          avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        },
-        {
-          id: "marie",
-          username: "marie",
-          displayName: "Marie",
-          avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        },
-        {
-          id: "john",
-          username: "john",
-          displayName: "John Richards Emperor of long names"
-        },
-        {
-          id: "einstein",
-          username: "einstein",
-          displayName: "Einstein"
-        }
-      ]
-    },
-    sharedWithSingle() {
-      return [
-        {
-          id: "bob",
-          username: "bob",
-          displayName: "Bob",
-          avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        }
-      ]
+  export default {
+    data: () => ({
+      selected: []
+    }),
+    computed: {
+      resources() {
+        return [
+          {
+            name: "forest.jpg",
+            path: "images/nature/forest.jpg",
+            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            indicators: [],
+            type: "file",
+            sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+            sharedWith: this.sharedWith
+          },
+          {
+            name: "notes.txt",
+            path: "/Documents/notes.txt",
+            icon: "text",
+            indicators: [],
+            type: "file",
+            sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+            sharedWith: this.sharedWithOverlapping
+          },
+          {
+            name: "Documents",
+            path: "/Documents",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+            sharedWith: this.sharedWithSingle
+          }
+        ]
+      },
+      sharedWith() {
+        return [
+          {
+            id: "bob",
+            username: "bob",
+            displayName: "Bob",
+            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          },
+          {
+            id: "marie",
+            username: "marie",
+            displayName: "Marie",
+            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          },
+          {
+            id: "john",
+            username: "john",
+            displayName: "John Richards Emperor of long names"
+          }
+        ]
+      },
+      sharedWithOverlapping() {
+        return [
+          {
+            id: "bob",
+            username: "bob",
+            displayName: "Bob",
+            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          },
+          {
+            id: "marie",
+            username: "marie",
+            displayName: "Marie",
+            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          },
+          {
+            id: "john",
+            username: "john",
+            displayName: "John Richards Emperor of long names"
+          },
+          {
+            id: "einstein",
+            username: "einstein",
+            displayName: "Einstein"
+          }
+        ]
+      },
+      sharedWithSingle() {
+        return [
+          {
+            id: "bob",
+            username: "bob",
+            displayName: "Bob",
+            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          }
+        ]
+      }
     }
   }
-}
 </script>
 ```
 
@@ -690,75 +706,75 @@ export default {
   </oc-table-files>
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: []
-  }),
-  computed: {
-    resources() {
-      return [
-        {
-          name: "forest.jpg",
-          path: "images/nature/forest.jpg",
-          preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
-          indicators: [],
-          type: "file",
-          sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          owner: [{
-            id: "bob",
-            username: "bob",
-            displayName: "Bob",
-            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-          }],
-          status: 1
-        },
-        {
-          name: "notes.txt",
-          path: "/Documents/notes.txt",
-          icon: "text",
-          indicators: [],
-          type: "file",
-          sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          owner: [{
-            id: "einstein",
-            username: "einstein",
-            displayName: "Einstein"
-          }],
-          status: 0
-        },
-        {
-          name: "Documents",
-          path: "/Documents",
-          icon: "folder",
-          indicators: [],
-          type: "folder",
-          sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
-          owner: [{
-            id: "marie",
-            username: "marie",
-            displayName: "Marie",
-            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-          }],
-          status: 2
+  export default {
+    data: () => ({
+      selected: []
+    }),
+    computed: {
+      resources() {
+        return [
+          {
+            name: "forest.jpg",
+            path: "images/nature/forest.jpg",
+            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            indicators: [],
+            type: "file",
+            sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+            owner: [{
+              id: "bob",
+              username: "bob",
+              displayName: "Bob",
+              avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            }],
+            status: 1
+          },
+          {
+            name: "notes.txt",
+            path: "/Documents/notes.txt",
+            icon: "text",
+            indicators: [],
+            type: "file",
+            sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+            owner: [{
+              id: "einstein",
+              username: "einstein",
+              displayName: "Einstein"
+            }],
+            status: 0
+          },
+          {
+            name: "Documents",
+            path: "/Documents",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
+            owner: [{
+              id: "marie",
+              username: "marie",
+              displayName: "Marie",
+              avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            }],
+            status: 2
+          }
+        ]
+      }
+    },
+    methods: {
+      shareStatus(status) {
+        switch (status) {
+          case 0:
+            return "Accepted"
+
+          case 1:
+            return "Pending"
+
+          case 2:
+            return "Declined"
         }
-      ]
-    }
-  },
-  methods: {
-    shareStatus(status) {
-      switch (status) {
-        case 0:
-          return 'Accepted'
-
-        case 1:
-          return 'Pending'
-
-        case 2:
-          return 'Declined'
       }
     }
   }
-}
 </script>
 ```
 
@@ -768,41 +784,41 @@ export default {
   <oc-table-files :resources="resources" :arePathsDisplayed="true" :arePreviewsDisplayed="false" v-model="selected" />
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: []
-  }),
-  computed: {
-    resources() {
-      return [
-        {
-          name: "forest.jpg",
-          path: "images/nature/forest.jpg",
-          icon: "image",
-          indicators: [],
-          type: "file",
-          ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        },
-        {
-          name: "notes.txt",
-          path: "/Documents/notes.txt",
-          icon: "text",
-          indicators: [],
-          type: "file",
-          ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        },
-        {
-          name: "Documents",
-          path: "/Documents",
-          icon: "folder",
-          indicators: [],
-          type: "folder",
-          ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        }
-      ]
-    },
+  export default {
+    data: () => ({
+      selected: []
+    }),
+    computed: {
+      resources() {
+        return [
+          {
+            name: "forest.jpg",
+            path: "images/nature/forest.jpg",
+            icon: "image",
+            indicators: [],
+            type: "file",
+            ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            name: "notes.txt",
+            path: "/Documents/notes.txt",
+            icon: "text",
+            indicators: [],
+            type: "file",
+            ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            name: "Documents",
+            path: "/Documents",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          }
+        ]
+      }
+    }
   }
-}
 </script>
 ```
 
@@ -813,56 +829,56 @@ export default {
 </template>
 <script>
 export default {
-  data: () => ({
-    selected: []
-  }),
-  computed: {
-    resources() {
-      return [
-        {
-          id: "forest",
-          name: "forest.jpg",
-          path: "images/nature/forest.jpg",
-          preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
-          indicators: [],
-          type: "file",
-          size: "111000234",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        },
-        {
-          id: "notes",
-          name: "notes.txt",
-          path: "/Documents/notes.txt",
-          icon: "text",
-          indicators: [],
-          type: "file",
-          size: "1245",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        },
-        {
-          id: "documents",
-          name: "Documents",
-          path: "/Documents",
-          icon: "folder",
-          indicators: [],
-          type: "folder",
-          size: "5324435",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        },
-        {
-          id: "pictures",
-          name: "Pictures and Movies as well as other resources",
-          path: "/Pictures and Movies as well as other resources",
-          icon: "folder",
-          indicators: [],
-          type: "folder",
-          size: "4323556",
-          mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
-        }
-      ]
+    data: () => ({
+      selected: []
+    }),
+    computed: {
+      resources() {
+        return [
+          {
+            id: "forest",
+            name: "forest.jpg",
+            path: "images/nature/forest.jpg",
+            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            indicators: [],
+            type: "file",
+            size: "111000234",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "notes",
+            name: "notes.txt",
+            path: "/Documents/notes.txt",
+            icon: "text",
+            indicators: [],
+            type: "file",
+            size: "1245",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "documents",
+            name: "Documents",
+            path: "/Documents",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            size: "5324435",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "pictures",
+            name: "Pictures and Movies as well as other resources",
+            path: "/Pictures and Movies as well as other resources",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            size: "4323556",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          }
+        ]
+      }
     }
   }
-}
 </script>
 ```
 </docs>
