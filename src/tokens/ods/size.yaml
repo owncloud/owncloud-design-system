@@ -1,5 +1,11 @@
 ---
 size:
+  max-width:
+    logo:
+      value: 150px
+  max-height:
+    logo:
+      value: 65px
   height:
     small:
       value: 50px
