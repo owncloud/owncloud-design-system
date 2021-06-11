@@ -34,14 +34,29 @@ def testing(ctx):
             'os': 'linux',
             'arch': 'amd64',
         },
+        "clone": {
+            # The default drone clone step "internally auto-merges" the PR branch to master.
+            # That confuses SonarCloud. The analysis report does not come from the actual
+            # real commit at the tip of the branch.
+            "disable": True,
+        },
         'steps': [
+            {
+                 'name': 'clone',
+                 'image': 'owncloudci/alpine:latest',
+                 'commands': [
+                     'git clone https://github.com/%s.git .' % (repo_slug),
+                     'git checkout $DRONE_COMMIT',
+                 ]
+            },
             {
                 'name': 'dependencies',
                 'image': 'owncloudci/nodejs:14',
                 'pull': 'always',
                 'commands': [
                     'yarn install'
-                ]
+                ],
+                'depends_on': ['clone']
             },
             {
                 'name': 'eslint',
