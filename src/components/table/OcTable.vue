@@ -36,8 +36,10 @@
       <oc-tr
         v-for="(item, trIndex) in tableData"
         :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
+        :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
         @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
+        @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
       >
         <oc-td
           v-for="(field, tdIndex) in fields"
@@ -72,7 +74,7 @@ import OcButton from "../OcButton"
 import SortMixin from "./mixins/sort"
 import { getSizeClass } from "../../utils/sizeClasses"
 
-import { EVENT_THEAD_CLICKED, EVENT_TROW_CLICKED } from "./helpers/constants"
+import { EVENT_THEAD_CLICKED, EVENT_TROW_CLICKED, EVENT_TROW_MOUNTED } from "./helpers/constants"
 
 /**
  * A table component with dynamic layout and data.
@@ -189,6 +191,7 @@ export default {
       constants: {
         EVENT_THEAD_CLICKED,
         EVENT_TROW_CLICKED,
+        EVENT_TROW_MOUNTED,
       },
     }
   },
@@ -636,7 +639,7 @@ export default {
     },
     methods: {
       toggle(rowData) {
-        this[rowData.item.variable] = !this[rowData.item.variable]
+        this[rowData.item.variable] = !this[rowData.item.variable];
       }
     },
   }
