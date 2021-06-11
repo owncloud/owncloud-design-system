@@ -21,9 +21,29 @@ export default {
       }
 
       return [...this.data].sort((a, b) => {
-        const aValue = a[this.sortBy]
-        const bValue = b[this.sortBy]
+        let aValue = a[this.sortBy]
+        let bValue = b[this.sortBy]
         const modifier = this.sortDir === SORT_DIRECTION_ASC ? 1 : -1
+
+        const { sortable } = this.fields.find(f => f.name === this.sortBy)
+
+        if (sortable) {
+          if (
+            typeof sortable === "string" &&
+            Array.isArray.call(aValue) &&
+            Array.isArray.call(bValue)
+          ) {
+            const genArrComp = vals => {
+              return vals.map(val => val[sortable]).join("")
+            }
+
+            aValue = genArrComp(aValue)
+            bValue = genArrComp(bValue)
+          } else if (typeof sortable === "function") {
+            aValue = sortable(aValue)
+            bValue = sortable(bValue)
+          }
+        }
 
         if (!isNaN(aValue) && !isNaN(bValue)) {
           return (aValue - bValue) * modifier
