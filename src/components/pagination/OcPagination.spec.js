@@ -54,10 +54,10 @@ describe("OcPagination", () => {
   it("truncates pages if maxDisplayed prop is set", () => {
     const wrapper = shallowMount(Pagination, {
       propsData: {
+        ...defaultProps,
         pages: 10,
         currentPage: 5,
-        maxDisplayed: 2,
-        currentRoute: { name: 'files' },
+        maxDisplayed: 3,
       }
     })
 
@@ -69,10 +69,8 @@ describe("OcPagination", () => {
   it("doesn't show ellipsis if maxDisplayed prop is set but no pages are removed", () => {
     const wrapper = shallowMount(Pagination, {
       propsData: {
-        pages: 5,
-        currentPage: 3,
-        maxDisplayed: 2,
-        currentRoute: { name: 'files' },
+        ...defaultProps,
+        maxDisplayed: 3,
       }
     })
 
@@ -86,10 +84,8 @@ describe("OcPagination", () => {
 
     shallowMount(Pagination, {
       propsData: {
-        pages: 5,
-        currentPage: 3,
-        maxDisplayed: 1,
-        currentRoute: { name: 'files' },
+        ...defaultProps,
+        maxDisplayed: 2,
       }
     })
 
@@ -102,31 +98,5 @@ describe("OcPagination", () => {
 
     expect(Pagination.computed.previousPageLink.call(localThis)).toMatchObject({ name: 'files', params: { page: 2 } })
     expect(Pagination.computed.nextPageLink.call(localThis)).toMatchObject({ name: 'files', params: { page: 4 }})
-  })
-
-  it("renders go to button as a link if a page is specified", async () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        pages: 50,
-        currentPage: 13,
-        maxDisplayed: 2
-      }
-    })
-
-    await wrapper.setData({ goToTarget: 30 })
-
-    expect(wrapper.find('router-link-stub.oc-pagination-list-item-goto-link').exists()).toBe(true)
-  })
-
-  it("sets goToTarget to last page if its value is higher", async () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: defaultProps
-    })
-
-    await wrapper.setData({ goToTarget: 8 })
-    await wrapper.vm.$nextTick()
-
-    expect(wrapper.vm.goToTarget).toBe('5')
   })
 })

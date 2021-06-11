@@ -27,29 +27,12 @@
           <oc-icon name="chevron_right" />
         </router-link>
       </li>
-      <li v-if="isGoToLinkVisible" class="oc-pagination-list-item-goto">
-        <oc-text-input
-          v-model="goToTarget"
-          :label="$gettext('Go to')"
-          class="oc-pagination-list-item-goto-input"
-          @keydown.enter="goToLinkHandler"
-        />
-        <component
-          :is="goToLinkComponent"
-          v-bind="goToLinkProps"
-          ref="goToLink"
-          class="oc-pagination-list-item-goto-link"
-        >
-          <oc-icon name="chevron_right" />
-        </component>
-      </li>
     </ol>
   </nav>
 </template>
 
 <script>
 import OcIcon from "../OcIcon.vue"
-import OcTextInput from "../OcTextInput.vue"
 
 /**
  * A list of links used for switching to different pages
@@ -57,7 +40,7 @@ import OcTextInput from "../OcTextInput.vue"
 export default {
   name: "OcPagination",
 
-  components: { OcIcon, OcTextInput },
+  components: { OcIcon },
 
   props: {
     /**
@@ -75,8 +58,8 @@ export default {
       required: true,
     },
     /**
-     * Number of pages to be displayed. Needs to be an even number.
-     * Pages will be equaly split into two parts and remaining pages will be displayed as ellipsis
+     * Number of pages to be displayed. It is required to use an odd number.
+     * Pages will be equaly split into two parts around the current page and remaining pages will be displayed as ellipsis
      */
     maxDisplayed: {
       type: Number,
@@ -84,11 +67,13 @@ export default {
       default: null,
       validator: value => {
         if (value % 2 === 0) {
-          return true
+          // Since Vue doens't support custom validator error message, log the error manually
+          console.error("maxDisplayed needs to be an odd number")
+
+          return false
         }
 
-        // Since Vue doens't support custom validator error message, log the error manually
-        console.error("maxDisplayed needs to be an even number")
+        return true
       },
     },
     /**
@@ -100,10 +85,6 @@ export default {
     },
   },
 
-  data: () => ({
-    goToTarget: "",
-  }),
-
   computed: {
     displayedPages() {
       if (this.maxDisplayed && this.maxDisplayed < this.pages) {
@@ -113,16 +94,13 @@ export default {
           pages.push(i + 1)
         }
 
-        const pagesRight =
-          this.$_currentPage === this.pages
-            ? []
-            : pages.slice(this.$_currentPage, this.$_currentPage + this.maxDisplayed / 2)
-        const pagesLeft =
-          this.$_currentPage === 1
-            ? []
-            : pages.slice(this.$_currentPage - 1 - this.maxDisplayed / 2, this.$_currentPage - 1)
+        const currentPageIndex = this.$_currentPage - 1
+        const indentation = (this.maxDisplayed - 1) / 2
 
-        pages = [...pagesLeft, this.$_currentPage, ...pagesRight]
+        pages = pages.slice(
+          Math.max(0, currentPageIndex - indentation),
+          currentPageIndex + indentation + 1
+        )
 
         if (this.$_currentPage > 2) {
           pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
@@ -156,43 +134,8 @@ export default {
       return this.bindPageLink(this.$_currentPage + 1)
     },
 
-    isGoToLinkVisible() {
-      if (this.maxDisplayed) {
-        return this.displayedPages.includes("...")
-      }
-
-      return false
-    },
-
-    goToLinkComponent() {
-      if (this.goToTarget === "") {
-        return "span"
-      }
-
-      return "router-link"
-    },
-
-    goToLinkProps() {
-      if (this.goToTarget === "") {
-        return { "aria-hidden": true }
-      }
-
-      return {
-        "aria-label": this.$gettext("Go"),
-        to: this.bindPageLink(this.goToTarget),
-      }
-    },
-
     $_currentPage() {
       return Math.min(this.currentPage, this.pages)
-    },
-  },
-
-  watch: {
-    goToTarget(value) {
-      if (value > this.pages) {
-        this.goToTarget = this.pages.toString()
-      }
     },
   },
 
@@ -254,14 +197,6 @@ export default {
         },
       }
     },
-
-    goToLinkHandler() {
-      if (this.goToTarget === "") {
-        return
-      }
-
-      this.$refs.goToLink.$el.click()
-    },
   },
 }
 </script>
@@ -313,42 +248,6 @@ export default {
       &-next {
         margin-left: var(--oc-space-small);
       }
-
-      &-goto {
-        margin-left: var(--oc-space-small);
-        position: relative;
-
-        &-input {
-          align-items: center;
-          display: flex;
-          flex-wrap: nowrap;
-          gap: var(--oc-space-small);
-
-          .oc-text-input {
-            padding: 0 var(--oc-size-icon-default) 0 var(--oc-space-small);
-            width: calc(
-              var(--oc-space-small) + var(--oc-space-large) + var(--oc-size-icon-default)
-            );
-          }
-        }
-
-        &-link {
-          align-items: center;
-          display: flex;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-
-          > .oc-icon > svg {
-            fill: var(--oc-color-swatch-brand-default);
-          }
-
-          &:not(a) > .oc-icon > svg {
-            fill: var(--oc-color-input-text-muted);
-          }
-        }
-      }
     }
   }
 }
@@ -357,7 +256,7 @@ export default {
 <docs>
 ## Examples
 ```vue
-<div>
+<div class="uk-flex uk-flex-column" style="gap: 20px;">
     <oc-pagination :pages="3" :currentPage="3" :currentRoute="{ name: 'files' }" />
     <oc-pagination :pages="4" :currentPage="1" :currentRoute="{ name: 'files' }" />
     <oc-pagination :pages="5" :currentPage="3" :currentRoute="{ name: 'files' }" />
@@ -368,11 +267,11 @@ export default {
 If the current page is close enough to the first or/and last page and ellipsis would hide only 1 page, ellipsis will be omitted and the actual page will be still displayed instead.
 
 ```vue
-<div>
-    <oc-pagination :pages="5" :currentPage="3" :maxDisplayed="2" :currentRoute="{ name: 'files' }" />
-    <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="2" :currentRoute="{ name: 'files' }" />
-    <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="2" :currentRoute="{ name: 'files' }" />
-    <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="4" :currentRoute="{ name: 'files' }" />
+<div class="uk-flex uk-flex-column" style="gap: 20px;">
+    <oc-pagination :pages="5" :currentPage="3" :maxDisplayed="3" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="3" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="3" :currentRoute="{ name: 'files' }" />
+    <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="5" :currentRoute="{ name: 'files' }" />
 </div>
 ```
 </docs>

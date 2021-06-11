@@ -17,7 +17,6 @@ Vue.component("RouterLink", {
     to: { type: [String, Object], default: "" },
   },
   render(createElement) {
-    console.log("Render")
     let path = this.$props.to
 
     if (!!path && typeof path !== "string") {
@@ -31,8 +30,6 @@ Vue.component("RouterLink", {
         path += "?" + Object.values(this.$props.to.query).join("&")
       }
     }
-
-    console.log(path)
 
     return createElement(this.tag, { attrs: { href: path } }, this.$slots.default)
   },
