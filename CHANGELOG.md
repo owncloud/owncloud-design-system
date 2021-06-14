@@ -1,3 +1,24 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.2.0...master
+
+## Summary
+
+* Enhancement - Logo sizing: [#795](https://github.com/owncloud/owncloud-design-system/issues/795)
+
+## Details
+
+* Enhancement - Logo sizing: [#795](https://github.com/owncloud/owncloud-design-system/issues/795)
+
+   We've added theming variables for the max-width and max-height of the OcLogo component and
+   increased the default (max-)height.
+
+   https://github.com/owncloud/owncloud-design-system/issues/795
+   https://github.com/owncloud/web/issues/5128
+   https://github.com/owncloud/owncloud-design-system/pull/1380
+
 # Changelog for [7.2.0] (2021-06-11)
 
 The following sections list the changes in ownCloud Design System 7.2.0.
