@@ -38,7 +38,8 @@ export default {
 
 <style lang="scss">
 .oc-logo {
-  height: var(--oc-size-height-small);
+  max-width: var(--oc-size-max-width-logo);
+  max-height: var(--oc-size-max-height-logo);
   margin: var(--oc-space-small);
 }
 </style>
