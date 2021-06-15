@@ -45,6 +45,8 @@
   "oc-size-height-small": {"value":"50px","name":"oc-size-height-small","type":"number","category":"size","info":{}},
   "oc-size-height-table-row": {"value":"49px","name":"oc-size-height-table-row","type":"number","category":"size","info":{}},
   "oc-size-icon-default": {"value":"24px","name":"oc-size-icon-default","type":"number","category":"size","info":{}},
+  "oc-size-max-height-logo": {"value":"65px","name":"oc-size-max-height-logo","type":"number","category":"size","info":{}},
+  "oc-size-max-width-logo": {"value":"150px","name":"oc-size-max-width-logo","type":"number","category":"size","info":{}},
   "oc-size-width-medium": {"value":"300px","name":"oc-size-width-medium","type":"number","category":"size","info":{}},
   "oc-space-large": {"value":"30px","name":"oc-space-large","type":"number","category":"space","info":{}},
   "oc-space-medium": {"value":"20px","name":"oc-space-medium","type":"number","category":"space","info":{}},
