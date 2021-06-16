@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...master
+
+## Summary
+
+* Bugfix - Sticky OcAppSideBar Header: [#1384](https://github.com/owncloud/owncloud-design-system/pull/1384)
+
+## Details
+
+* Bugfix - Sticky OcAppSideBar Header: [#1384](https://github.com/owncloud/owncloud-design-system/pull/1384)
+
+   The OcAppSideBar Header is now sticky so the user always sees the filename and most important
+   info. UX is also improved since he now can always close the appsidebar on mobile without having
+   to scroll back to the top.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1384
+
 # Changelog for [7.3.0] (2021-06-14)
 
 The following sections list the changes in ownCloud Design System 7.3.0.
