@@ -1,30 +1,24 @@
 <template>
   <div class="oc-app-side-bar">
-    <div class="sidebar-container">
-      <div class="header primary">
-        <div v-if="!disableAction" class="action">
-          <slot name="action">
-            <oc-button
-              class="uk-float-right"
-              :aria-label="closeButtonLabel"
-              @click="$emit('close')"
-            >
-              <oc-icon name="close" />
-            </oc-button>
-          </slot>
-        </div>
-        <div class="sidebar-title">
-          <slot name="title">
-            <span class="oc-text-lead">{{ headingText }}</span>
-          </slot>
-        </div>
+    <div class="oc-app-side-bar-header oc-py-s">
+      <div v-if="!disableAction" class="action">
+        <slot name="action">
+          <oc-button class="uk-float-right" :aria-label="closeButtonLabel" @click="$emit('close')">
+            <oc-icon name="close" />
+          </oc-button>
+        </slot>
       </div>
-      <div class="content">
-        <slot name="content"></slot>
+      <div class="sidebar-title">
+        <slot name="title">
+          <span class="oc-text-lead">{{ headingText }}</span>
+        </slot>
       </div>
-      <div class="footer">
-        <slot name="footer"></slot>
-      </div>
+    </div>
+    <div class="content">
+      <slot name="content" />
+    </div>
+    <div class="footer">
+      <slot name="footer" />
     </div>
   </div>
 </template>
@@ -36,7 +30,7 @@
  */
 export default {
   name: "OcAppSideBar",
-  status: "prototype",
+  status: "ready",
   release: "1.0.0",
   props: {
     disableAction: {
@@ -63,6 +57,13 @@ export default {
 <style>
 .oc-app-side-bar {
   height: 100vh;
+}
+
+.oc-app-side-bar-header {
+  background-color: var(--oc-color-background-default);
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 </style>
 
