@@ -21,6 +21,7 @@ const initializeCustomProps = (tokens = [], prefix) => {
 const System = {
   install(Vue, options = {}) {
     const themeOptions = options.tokens
+    initializeCustomProps(themeOptions?.breakpoints, "breakpoint-")
     initializeCustomProps(themeOptions?.colorPalette, "color-")
     initializeCustomProps(themeOptions?.fontSizes, "font-size-")
     initializeCustomProps(themeOptions?.sizes, "size-")
