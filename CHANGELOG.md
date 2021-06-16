@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Sticky OcAppSideBar Header: [#1384](https://github.com/owncloud/owncloud-design-system/pull/1384)
+* Enhancement - Theme-able breakpoint variables: [#5281](https://github.com/owncloud/web/pull/5281)
 
 ## Details
 
@@ -17,6 +18,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    to scroll back to the top.
 
    https://github.com/owncloud/owncloud-design-system/pull/1384
+
+
+* Enhancement - Theme-able breakpoint variables: [#5281](https://github.com/owncloud/web/pull/5281)
+
+   We've added custom CSS props for breakpoints a while ago but missed adding them to the theming
+   initialization, so they weren't theme-able until now.
+
+   https://github.com/owncloud/web/pull/5281
+   https://github.com/owncloud/owncloud-design-system/pull/1388
 
 # Changelog for [7.3.0] (2021-06-14)
 
