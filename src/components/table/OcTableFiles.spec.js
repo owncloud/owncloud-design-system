@@ -145,7 +145,7 @@ describe("OcTableFiles", () => {
     expect(wrapper.find(".oc-tbody-tr-notes .oc-table-data-cell-size").text()).toEqual("?")
   })
 
-  it("selects resources", async () => {
+  it("selects resources", () => {
     wrapper.find(".oc-table-files-select-all .oc-checkbox").trigger("click")
     wrapper.find(".oc-tbody-tr-documents .oc-checkbox").trigger("click")
     expect(wrapper.emitted().select.length).toBe(2)

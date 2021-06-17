@@ -5,11 +5,11 @@ import Pagination from "./OcPagination.vue"
 const defaultProps = {
   pages: 5,
   currentPage: 3,
-  currentRoute: { name: 'files' },
+  currentRoute: { name: "files" },
 }
 
 describe("OcPagination", () => {
-  it("displays all pages", async () => {
+  it("displays all pages", () => {
     const wrapper = shallowMount(Pagination, {
       propsData: defaultProps,
     })
@@ -20,7 +20,7 @@ describe("OcPagination", () => {
 
   it("displays prev and next links", () => {
     const wrapper = shallowMount(Pagination, {
-      propsData: defaultProps
+      propsData: defaultProps,
     })
 
     expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
@@ -31,8 +31,8 @@ describe("OcPagination", () => {
     const wrapper = shallowMount(Pagination, {
       propsData: {
         ...defaultProps,
-        currentPage: 1
-      }
+        currentPage: 1,
+      },
     })
 
     expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeFalsy()
@@ -43,8 +43,8 @@ describe("OcPagination", () => {
     const wrapper = shallowMount(Pagination, {
       propsData: {
         ...defaultProps,
-        currentPage: 5
-      }
+        currentPage: 5,
+      },
     })
 
     expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
@@ -58,7 +58,7 @@ describe("OcPagination", () => {
         pages: 10,
         currentPage: 5,
         maxDisplayed: 3,
-      }
+      },
     })
 
     expect(wrapper.findAll(".oc-pagination-list-item-ellipsis").length).toBe(2)
@@ -71,7 +71,7 @@ describe("OcPagination", () => {
       propsData: {
         ...defaultProps,
         maxDisplayed: 3,
-      }
+      },
     })
 
     expect(wrapper.findAll(".oc-pagination-list-item-ellipsis").length).toBe(0)
@@ -79,14 +79,14 @@ describe("OcPagination", () => {
     expect(wrapper.findAll(".oc-pagination-list-item-current").length).toBe(1)
   })
 
-  it('logs error if maxDisplayed prop is not an even number', () => {
+  it("logs error if maxDisplayed prop is not an even number", () => {
     console.error = jest.fn()
 
     shallowMount(Pagination, {
       propsData: {
         ...defaultProps,
         maxDisplayed: 2,
-      }
+      },
     })
 
     // Error is called twice because of a default Vue validator error and our custom message
@@ -94,9 +94,19 @@ describe("OcPagination", () => {
   })
 
   it("builds correct prev and next links", () => {
-    const localThis = { ...defaultProps, bindPageLink: Pagination.methods.bindPageLink, $_currentPage: 3 }
+    const localThis = {
+      ...defaultProps,
+      bindPageLink: Pagination.methods.bindPageLink,
+      $_currentPage: 3,
+    }
 
-    expect(Pagination.computed.previousPageLink.call(localThis)).toMatchObject({ name: 'files', params: { page: 2 } })
-    expect(Pagination.computed.nextPageLink.call(localThis)).toMatchObject({ name: 'files', params: { page: 4 }})
+    expect(Pagination.computed.previousPageLink.call(localThis)).toMatchObject({
+      name: "files",
+      params: { page: 2 },
+    })
+    expect(Pagination.computed.nextPageLink.call(localThis)).toMatchObject({
+      name: "files",
+      params: { page: 4 },
+    })
   })
 })
