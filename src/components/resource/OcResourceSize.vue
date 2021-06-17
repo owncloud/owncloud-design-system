@@ -38,7 +38,7 @@ export default {
 
       return filesize(this.size, {
         round: this.size < mb ? 0 : 1,
-        locale: (this.$language.current || "").split("_")[0],
+        locale: (this.$language?.current || "").split("_")[0],
       })
     },
   },
