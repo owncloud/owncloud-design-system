@@ -36,6 +36,9 @@ export default {
 
       const mb = 1048576
 
+      console.log(this)
+      console.log(this.$language)
+
       return filesize(this.size, {
         round: this.size < mb ? 0 : 1,
         locale: (this.$language.current || "").split("_")[0],
