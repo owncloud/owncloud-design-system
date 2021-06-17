@@ -14,7 +14,7 @@ const MockComponent = {
     "<div class='container'><div class='rsg--search-11'><input type='text' value='' /></div><div class='rsg--sidebar-23'><ul><ul class='rsg--list-23 test'></ul></ul></div></div>",
 }
 
-const div = document.createElement('div')
+const div = document.createElement("div")
 document.body.appendChild(div)
 
 const wrapper = mount(MockComponent, {

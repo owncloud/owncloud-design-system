@@ -70,7 +70,7 @@ describe("OcDrop", () => {
     expect(Drop.props.mode.validator("unknown")).toBeFalsy()
   })
 
-  it("inits tippy", async () => {
+  it("inits tippy", () => {
     const { wrapper, drop, tippy } = dom()
 
     expect(tippy).toBeTruthy()

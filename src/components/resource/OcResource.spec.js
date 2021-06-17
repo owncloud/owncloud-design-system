@@ -22,8 +22,8 @@ describe("OcResource", () => {
       propsData: {
         resource: folderResource,
         targetRoute: {
-          name: "tests-route"
-        }
+          name: "tests-route",
+        },
       },
     })
 

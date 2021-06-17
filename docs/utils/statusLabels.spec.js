@@ -14,17 +14,17 @@ const MockComponent = {
   template: "<div id='Example-container'><label class='status original'>undefined</label></div>",
 }
 
-const div = document.createElement('div')
+const div = document.createElement("div")
 document.body.appendChild(div)
 
 const wrapper = mount(ExampleComponent, {
   attachTo: div,
-  localVue
+  localVue,
 })
 
 describe("statusLabels.js", () => {
   it("should render status labels", () => {
-    expect(wrapper.get("label"))
+    expect(wrapper.get("label")).toBeTruthy()
   })
 
   it("should render correct text value inside label", () => {

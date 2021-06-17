@@ -33,7 +33,7 @@ const data = [
 ]
 
 describe("OcTable.sort", () => {
-  it("does not sort without enabling it", async () => {
+  it("does not sort without enabling it", () => {
     const fields = [...sortedFields].map(f => ({ name: f.name, title: f.title }))
     const wrapper = mount(Table, {
       propsData: {
@@ -44,7 +44,7 @@ describe("OcTable.sort", () => {
     expect(wrapper.findAll("[aria-sort]").length).toBeFalsy()
   })
 
-  it("has all required sort attributes", async () => {
+  it("has all required sort attributes", () => {
     const wrapper = mount(Table, {
       propsData: {
         fields: sortedFields,

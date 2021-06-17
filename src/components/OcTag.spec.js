@@ -1,26 +1,26 @@
-import { shallowMount, } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import Tag from "./OcTag.vue"
 
 describe("OcTag", () => {
-  it('uses correct component when type is specified', () => {
+  it("uses correct component when type is specified", () => {
     const wrapper = shallowMount(Tag, {
       propsData: {
-        type: 'button'
-      }
+        type: "button",
+      },
     })
 
-    expect(wrapper.element.tagName.toLowerCase()).toMatch('button')
+    expect(wrapper.element.tagName.toLowerCase()).toMatch("button")
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('emits a click event', async () => {
+  it("emits a click event", async () => {
     const wrapper = shallowMount(Tag, {
       propsData: {
-        type: 'a'
-      }
+        type: "a",
+      },
     })
 
-    wrapper.trigger('click')
+    wrapper.trigger("click")
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted().click).toBeTruthy()
   })

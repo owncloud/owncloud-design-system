@@ -6,8 +6,8 @@ describe("OcResourceSize", () => {
   it("shows a question mark for non-numeric values", () => {
     const wrapper = shallowMount(Size, {
       propsData: {
-        size: "asdf"
-      }
+        size: "asdf",
+      },
     })
 
     expect(wrapper.find(".oc-resource-size").text()).toMatch("?")
@@ -16,8 +16,8 @@ describe("OcResourceSize", () => {
   it("shows an empty string for values smaller than 0", () => {
     const wrapper = shallowMount(Size, {
       propsData: {
-        size: -42
-      }
+        size: -42,
+      },
     })
 
     expect(wrapper.find(".oc-resource-size").text()).toMatch("")
@@ -27,7 +27,7 @@ describe("OcResourceSize", () => {
     const wrapper = shallowMount(Size, {
       propsData: {
         size: 24064,
-      }
+      },
     })
     expect(wrapper.find(".oc-resource-size").text()).toMatch("24 KB")
 
@@ -42,7 +42,7 @@ describe("OcResourceSize", () => {
     const wrapper = shallowMount(Size, {
       propsData: {
         size: "24064",
-      }
+      },
     })
     expect(wrapper.find(".oc-resource-size").text()).toMatch("24 KB")
   })

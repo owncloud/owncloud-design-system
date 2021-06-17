@@ -35,7 +35,7 @@ const users = [
 ]
 
 describe("OcAvatarGroup", () => {
-  it("displays tooltip", async () => {
+  it("displays tooltip", () => {
     const OcTooltip = jest.fn()
     const wrapper = shallowMount(Group, {
       propsData: {
