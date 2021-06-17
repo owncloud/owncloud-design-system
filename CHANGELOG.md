@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...master
+
+## Summary
+
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+## Details
+
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
+   visually make them better differentiable.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1387
+   https://github.com/owncloud/owncloud-design-system/pull/1390
+
 # Changelog for [7.4.0] (2021-06-17)
 
 The following sections list the changes in ownCloud Design System 7.4.0.
