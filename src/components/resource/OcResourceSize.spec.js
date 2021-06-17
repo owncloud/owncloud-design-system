@@ -13,14 +13,14 @@ describe("OcResourceSize", () => {
     expect(wrapper.find(".oc-resource-size").text()).toEqual("?")
   })
 
-  it("shows an empty string for values smaller than 0", () => {
+  it("shows '--' for values smaller than 0", () => {
     const wrapper = shallowMount(Size, {
       propsData: {
         size: -42,
       },
     })
 
-    expect(wrapper.find(".oc-resource-size").text()).toEqual("")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("--")
   })
 
   it("shows reasonable decimal places", async () => {
