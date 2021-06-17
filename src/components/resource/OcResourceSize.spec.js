@@ -10,7 +10,7 @@ describe("OcResourceSize", () => {
       },
     })
 
-    expect(wrapper.find(".oc-resource-size").text()).toMatch("?")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("?")
   })
 
   it("shows an empty string for values smaller than 0", () => {
@@ -20,7 +20,7 @@ describe("OcResourceSize", () => {
       },
     })
 
-    expect(wrapper.find(".oc-resource-size").text()).toMatch("")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("")
   })
 
   it("shows reasonable decimal places", async () => {
@@ -29,13 +29,13 @@ describe("OcResourceSize", () => {
         size: 24064,
       },
     })
-    expect(wrapper.find(".oc-resource-size").text()).toMatch("24 KB")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("24 KB")
 
     wrapper.setProps({
       size: 44145049,
     })
     await wrapper.vm.$nextTick()
-    expect(wrapper.find(".oc-resource-size").text()).toMatch("42.1 MB")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("42.1 MB")
   })
 
   it("converts strings to numbers", () => {
@@ -44,7 +44,7 @@ describe("OcResourceSize", () => {
         size: "24064",
       },
     })
-    expect(wrapper.find(".oc-resource-size").text()).toMatch("24 KB")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("24 KB")
   })
 
   describe("language is not defined", () => {
