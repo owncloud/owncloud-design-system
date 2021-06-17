@@ -66,16 +66,21 @@ export default {
     align-items: center;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
+    border-top: 0.5px solid transparent;
+    border-bottom: 0.5px solid transparent;
     color: var(--oc-color-text-inverse);
     display: flex;
     font-weight: 600;
     padding: var(--oc-space-small) var(--oc-space-medium);
 
-    &:hover {
+    &:hover,
+    &.active {
       background-color: var(--oc-color-swatch-inverse-default);
-      border-left: 1px solid var(--oc-color-swatch-brand-default);
-      border-right: 1px solid var(--oc-color-swatch-brand-default);
+      border-color: var(--oc-color-swatch-brand-default);
       color: var(--oc-color-text-default);
+    }
+
+    &:hover {
       text-decoration: none;
     }
     &:hover > .oc-icon > svg {
@@ -83,10 +88,6 @@ export default {
     }
 
     &.active {
-      background-color: var(--oc-color-swatch-inverse-default);
-      border-left: 1px solid var(--oc-color-swatch-brand-default);
-      border-right: 1px solid var(--oc-color-swatch-brand-default);
-      color: var(--oc-color-text-default);
       cursor: default;
     }
     &.active > .oc-icon > svg {
