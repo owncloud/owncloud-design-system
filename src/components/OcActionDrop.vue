@@ -60,10 +60,15 @@
  * While the authoring practices linked above advises to use `aria-controls` to create a programmatic relation between button and dropdown in reality screen reader support is close to non-existent. As of Fall 2019, only JAWS supports it, but has it disabled by default. The relation between trigger and dropdown should be communicated with the proximity of both in the DOM (see above).
  *
  * */
+import OcButton from "./OcButton.vue"
+
 export default {
   name: "OcActionDrop",
   status: "review",
   release: "1.0.0",
+  components: {
+    OcButton,
+  },
   props: {
     /**
      * Supplies button variation to give additional meaning.
@@ -71,9 +76,9 @@ export default {
      */
     buttonVariation: {
       type: String,
-      default: "default",
+      default: "passive",
       validator: value => {
-        return value.match(/(default|primary|danger)/)
+        return value.match(/(passive|primary|success|danger|warning|inverse)/)
       },
     },
   },
