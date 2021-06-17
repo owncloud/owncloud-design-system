@@ -1,5 +1,6 @@
 # ownCloud Design System
 [![Build Status](https://drone.owncloud.com/api/badges/owncloud/owncloud-design-system/status.svg)](https://drone.owncloud.com/owncloud/owncloud-design-system)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=owncloud_owncloud-design-system&metric=coverage)](https://sonarcloud.io/dashboard?id=owncloud_owncloud-design-system)
 
 **ownCloud Design System** is based on [Vue Design System](https://vueds.com/) - **Thanks a lot to [@viljamis](https://twitter.com/viljamis)**
 
