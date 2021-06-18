@@ -66,8 +66,7 @@ export default {
     align-items: center;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
-    border-top: 0.5px solid transparent;
-    border-bottom: 0.5px solid transparent;
+    border-bottom: 1px solid transparent;
     color: var(--oc-color-text-inverse);
     display: flex;
     font-weight: 600;
