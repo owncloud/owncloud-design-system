@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...master
+
+## Summary
+
+* Bugfix - 0.5px separator line between OcSidebarNav items: [#1402](https://github.com/owncloud/owncloud-design-system/pull/1402)
+
+## Details
+
+* Bugfix - 0.5px separator line between OcSidebarNav items: [#1402](https://github.com/owncloud/owncloud-design-system/pull/1402)
+
+   The small line between OcSidebarNav items was displayed with different widths depending on
+   the used browser, since some can't handle half-pixel values. We've changed that to create the
+   same look across browsers.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1402
+
 # Changelog for [7.4.1] (2021-06-17)
 
 The following sections list the changes in ownCloud Design System 7.4.1.
