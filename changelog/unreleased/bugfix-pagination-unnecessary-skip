@@ -5,4 +5,4 @@ and 4 are available, it rendered a skip label `< 1 2 ... 4 >` even if it's not r
 
 Now this is fixed and it renders `< 1 2 3 4 >` instead.
 
-https://github.com/owncloud/owncloud-design-system/pull/1404
+https://github.com/owncloud/owncloud-design-system/pull/1406
