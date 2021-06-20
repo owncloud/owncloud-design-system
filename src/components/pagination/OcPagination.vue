@@ -93,7 +93,7 @@ export default {
         pages.push(i + 1)
       }
 
-      if (this.maxDisplayed && this.maxDisplayed < this.pages) {
+      if (this.maxDisplayed && this.maxDisplayed + 1 < this.pages) {
         const currentPageIndex = this.$_currentPage - 1
         const indentation = Math.floor(this.maxDisplayed / 2)
 

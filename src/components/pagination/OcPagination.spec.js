@@ -66,6 +66,39 @@ describe("OcPagination", () => {
     expect(wrapper.findAll(".oc-pagination-list-item-current").length).toBe(1)
   })
 
+  it("does not truncates pages if length of pages is the same as with ...", async () => {
+    const wrapper = shallowMount(Pagination, {
+      propsData: {
+        ...defaultProps,
+        pages: 4,
+        currentPage: 1,
+        maxDisplayed: 3,
+      },
+    })
+
+    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeFalsy()
+    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeFalsy()
+    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeTruthy()
+
+    wrapper.setProps({ currentPage: 2 })
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeFalsy()
+    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
+    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeTruthy()
+
+    wrapper.setProps({ currentPage: 4 })
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeFalsy()
+    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
+    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeFalsy()
+
+    wrapper.setProps({ pages: 10 })
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeTruthy()
+  })
+
   it("doesn't show ellipsis if maxDisplayed prop is set but no pages are removed", () => {
     const wrapper = shallowMount(Pagination, {
       propsData: {
