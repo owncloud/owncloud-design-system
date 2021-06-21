@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - 0.5px separator line between OcSidebarNav items: [#1402](https://github.com/owncloud/owncloud-design-system/pull/1402)
+* Bugfix - OcIcon crashes if icon gets updated: [#1407](https://github.com/owncloud/owncloud-design-system/pull/1407)
 * Bugfix - Pagination renders unnecessary ... skip label: [#1406](https://github.com/owncloud/owncloud-design-system/pull/1406)
 
 ## Details
@@ -18,6 +19,17 @@ The following sections list the changes in ownCloud Design System unreleased.
    same look across browsers.
 
    https://github.com/owncloud/owncloud-design-system/pull/1402
+
+
+* Bugfix - OcIcon crashes if icon gets updated: [#1407](https://github.com/owncloud/owncloud-design-system/pull/1407)
+
+   Before this bugfix, updating `oc-icon` name prop crashed `vue-inline-svg`. We had to
+   overwrite `vue-inline-svg` download method and forgot to implement its `isPending`
+   property on the returned promise.
+
+   This is fixed now and tested
+
+   https://github.com/owncloud/owncloud-design-system/pull/1407
 
 
 * Bugfix - Pagination renders unnecessary ... skip label: [#1406](https://github.com/owncloud/owncloud-design-system/pull/1406)
