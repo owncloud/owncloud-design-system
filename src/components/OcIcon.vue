@@ -42,16 +42,37 @@ import { getSizeClass } from "../utils/sizeClasses"
  * InlineSvg by default expects the src to be a url, because we inline the SVG's this won't work.
  * the download patch takes care of this by overwriting the native functionality and makes it compatible
  */
+InlineSvg.name = "inline-svg"
 InlineSvg.methods.download = name => {
-  return new Promise((resolve, reject) => {
-    let svg
-    try {
-      svg = require("../assets/icons/" + name + ".svg")
-    } catch (e) {
-      return reject(e)
+  return (promise => {
+    if (promise.isPending) return promise
+    let isPending = true
+    let result = promise.then(
+      v => {
+        isPending = false
+        return v
+      },
+      e => {
+        isPending = false
+        throw e
+      }
+    )
+
+    result.isPending = function getIsPending() {
+      return isPending
     }
-    resolve(new DOMParser().parseFromString(svg, "image/svg+xml").documentElement)
-  })
+    return result
+  })(
+    new Promise((resolve, reject) => {
+      let svg
+      try {
+        svg = require("../assets/icons/" + name + ".svg")
+      } catch (e) {
+        return reject(e)
+      }
+      resolve(new DOMParser().parseFromString(svg, "image/svg+xml").documentElement)
+    })
+  )
 }
 
 export default {
