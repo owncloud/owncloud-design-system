@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - 0.5px separator line between OcSidebarNav items: [#1402](https://github.com/owncloud/owncloud-design-system/pull/1402)
+* Bugfix - Pagination renders unnecessary ... skip label: [#1406](https://github.com/owncloud/owncloud-design-system/pull/1406)
 
 ## Details
 
@@ -17,6 +18,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    same look across browsers.
 
    https://github.com/owncloud/owncloud-design-system/pull/1402
+
+
+* Bugfix - Pagination renders unnecessary ... skip label: [#1406](https://github.com/owncloud/owncloud-design-system/pull/1406)
+
+   In cases where the pagination should only render 4 pages at once and 4 are available, it rendered
+   a skip label `< 1 2 ... 4 >` even if it's not required.
+
+   Now this is fixed and it renders `< 1 2 3 4 >` instead.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1406
 
 # Changelog for [7.4.1] (2021-06-17)
 
