@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.2...master
+
+## Summary
+
+* Bugfix - Show `--` as file-size when the folder size is not yet computed: [#1402](https://github.com/owncloud/owncloud-design-system/issues/1402)
+
+## Details
+
+* Bugfix - Show `--` as file-size when the folder size is not yet computed: [#1402](https://github.com/owncloud/owncloud-design-system/issues/1402)
+
+   When the folder size is unknown (not yet calculated or cannot be calculated) the server returns
+   `-1` as the size. In this case we now show `--` and not only an empty string
+
+   https://github.com/owncloud/owncloud-design-system/issues/1402
+   https://github.com/owncloud/owncloud-design-system/pull/1393
+
 # Changelog for [7.4.2] (2021-06-21)
 
 The following sections list the changes in ownCloud Design System 7.4.2.
