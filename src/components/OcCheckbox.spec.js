@@ -59,7 +59,6 @@ describe("OcCheckbox", () => {
       const checkbox = wrapper.find(checkboxSelector)
       expect(checkbox.element.checked).toBeFalsy()
       await checkbox.setChecked()
-      await wrapper.vm.$nextTick()
       expect(wrapper.emitted("input")).toBeTruthy()
       expect(checkbox.element.checked).toBeTruthy()
     })
