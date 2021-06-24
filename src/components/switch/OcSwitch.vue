@@ -1,6 +1,7 @@
 <template>
   <span class="oc-switch">
     <button
+      data-testid="oc-switch-btn"
       class="oc-switch-btn"
       role="switch"
       :aria-checked="state.toString()"
