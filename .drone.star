@@ -77,11 +77,27 @@ def testing(ctx):
                 'depends_on': ['dependencies']
             },
             {
+                'name': 'unit tests',
+                'image': 'owncloudci/nodejs:14',
+                'pull': 'always',
+                'commands': [
+                    'yarn run tokens',
+                    'yarn test',
+                ],
+                'depends_on': ['eslint', 'stylelint']
+            },
+            {
+              'name': 'sonarcloud',
+              'image': 'sonarsource/sonar-scanner-cli:latest',
+              'pull': 'always',
+              'environment': sonar_env,
+              'depends_on': ['unit tests']
+            },
+            {
                 'name': 'build docs',
                 'image': 'owncloudci/nodejs:14',
                 'pull': 'always',
                 'commands': [
-                    'yarn install',
                     'yarn build:docs',
                 ],
                 'depends_on': ['eslint', 'stylelint']
@@ -91,27 +107,9 @@ def testing(ctx):
                 'image': 'owncloudci/nodejs:14',
                 'pull': 'always',
                 'commands': [
-                    'yarn install',
                     'yarn build:system',
                 ],
                 'depends_on': ['eslint', 'stylelint']
-            },
-            {
-                'name': 'unit tests',
-                'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
-                'commands': [
-                    'yarn install',
-                    'yarn test',
-                ],
-                'depends_on': ['build system']
-            },
-            {
-              "name": "sonarcloud",
-              "image": "sonarsource/sonar-scanner-cli:latest",
-              "pull": "always",
-              "environment": sonar_env,
-              'depends_on': ['unit tests']
             },
         ],
         'trigger': {
