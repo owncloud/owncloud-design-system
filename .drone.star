@@ -1,15 +1,62 @@
 def main(ctx):
     before = [
+        build(ctx),
         testing(ctx),
     ]
 
     stages = [
         changelog(ctx),
-        build(ctx),
+        buildAndPublish(ctx),
     ]
 
     return before + stages
 
+
+def build(ctx):
+    return {
+        'kind': 'pipeline',
+        'type': 'docker',
+        'name': 'build',
+        'platform': {
+            'os': 'linux',
+            'arch': 'amd64',
+        },
+        'steps': [
+            {
+                'name': 'dependencies',
+                'image': 'owncloudci/nodejs:14',
+                'pull': 'always',
+                'commands': [
+                    'yarn install'
+                ],
+            },
+            {
+                'name': 'build docs',
+                'image': 'owncloudci/nodejs:14',
+                'pull': 'always',
+                'commands': [
+                    'yarn install',
+                    'yarn build:docs',
+                ],
+            },
+            {
+                'name': 'build system',
+                'image': 'owncloudci/nodejs:14',
+                'pull': 'always',
+                'commands': [
+                    'yarn install',
+                    'yarn build:system',
+                ],
+            },
+        ],
+        'trigger': {
+            'ref': [
+                'refs/heads/master',
+                'refs/tags/**',
+                'refs/pull/**',
+            ],
+        },
+    }
 
 def testing(ctx):
     sonar_env = {
@@ -45,6 +92,7 @@ def testing(ctx):
                  'name': 'clone',
                  'image': 'owncloudci/alpine:latest',
                  'commands': [
+                     'rm -rf *',
                      'git clone https://github.com/%s.git .' % (repo_slug),
                      'git checkout $DRONE_COMMIT',
                  ]
@@ -77,41 +125,22 @@ def testing(ctx):
                 'depends_on': ['dependencies']
             },
             {
-                'name': 'build docs',
-                'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
-                'commands': [
-                    'yarn install',
-                    'yarn build:docs',
-                ],
-                'depends_on': ['eslint', 'stylelint']
-            },
-            {
-                'name': 'build system',
-                'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
-                'commands': [
-                    'yarn install',
-                    'yarn build:system',
-                ],
-                'depends_on': ['eslint', 'stylelint']
-            },
-            {
                 'name': 'unit tests',
                 'image': 'owncloudci/nodejs:14',
                 'pull': 'always',
                 'commands': [
+                    'yarn run tokens',
                     'yarn install',
                     'yarn test',
                 ],
-                'depends_on': ['build system']
+                'depends_on': ['dependencies']
             },
             {
               "name": "sonarcloud",
               "image": "sonarsource/sonar-scanner-cli:latest",
               "pull": "always",
               "environment": sonar_env,
-              'depends_on': ['unit tests']
+              'depends_on': ['unit tests', 'eslint', 'stylelint']
             },
         ],
         'trigger': {
@@ -124,7 +153,7 @@ def testing(ctx):
     }
 
 
-def build(ctx):
+def buildAndPublish(ctx):
     return {
         'kind': 'pipeline',
         'type': 'docker',
