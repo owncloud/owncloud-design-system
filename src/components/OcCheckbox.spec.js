@@ -22,7 +22,7 @@ describe("OcCheckbox", () => {
   })
   describe("input label", () => {
     it("should set the provided label for the input", () => {
-      const wrapper = getWrapperWithProps({ id: "test-id", label: "test label" })
+      const wrapper = getWrapperWithProps({ id: "test-id" })
       const checkBoxLabelElement = wrapper.find("label")
       expect(checkBoxLabelElement.exists()).toBeTruthy()
       expect(checkBoxLabelElement.attributes("for")).toBe("test-id")
