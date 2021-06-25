@@ -1,14 +1,14 @@
 <template>
-  <span class="oc-switch">
+  <span :key="`oc-switch-${checked.toString()}`" class="oc-switch">
+    <span :id="labelId" v-text="label" />
     <button
       data-test-id="oc-switch-btn"
       class="oc-switch-btn"
       role="switch"
-      :aria-checked="state.toString()"
+      :aria-checked="checked.toString()"
       :aria-labelledby="labelId"
       @click="toggle"
     />
-    <span :id="labelId" v-text="label" />
   </span>
 </template>
 
@@ -56,26 +56,14 @@ export default {
     },
   },
 
-  computed: {
-    state: {
-      get() {
-        return this.checked
-      },
-
-      set(val) {
-        /**
-         * Change event
-         * @event change
-         * @type {boolean}
-         */
-        this.$emit("change", val)
-      },
-    },
-  },
-
   methods: {
     toggle() {
-      this.state = !this.state
+      /**
+       * Change event
+       * @event change
+       * @type {boolean}
+       */
+      this.$emit("change", !this.checked)
     },
   },
 }
