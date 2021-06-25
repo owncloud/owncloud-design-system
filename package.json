@@ -22,8 +22,7 @@
     "dist/system"
   ],
   "scripts": {
-    "dev": "webpack serve --inline --config ./build/webpack.dev.conf.js",
-    "start": "npm-run-all --parallel styleguide tokens:w dev",
+    "start": "npm-run-all --parallel styleguide tokens:w",
     "build:system": "npm-run-all tokens node:build:system",
     "build:docs": "npm-run-all tokens styleguide:build",
     "lint": "npm-run-all --parallel lint:eslint lint:stylelint",
@@ -135,7 +134,6 @@
     "webpack": "^4.41.6",
     "webpack-bundle-analyzer": "^4.2.0",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^5.4.0",
     "webpack-merge-and-include-globally": "^2.1.24",
     "webpack-node-externals": "^3.0.0",
