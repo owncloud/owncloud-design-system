@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Show `--` as file-size when the folder size is not yet computed: [#1402](https://github.com/owncloud/owncloud-design-system/issues/1402)
+* Enhancement - Improve `OcSwitch` UI and accessibility: [#1421](https://github.com/owncloud/owncloud-design-system/pull/1421)
 
 ## Details
 
@@ -17,6 +18,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1402
    https://github.com/owncloud/owncloud-design-system/pull/1393
+
+
+* Enhancement - Improve `OcSwitch` UI and accessibility: [#1421](https://github.com/owncloud/owncloud-design-system/pull/1421)
+
+   We've added round corners to the `OcSwitch` component so that it is more consistent with other
+   elements in our UI. We've also made the component accessible, added visible label and enabled
+   toggling its state with the spacebar.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1421
 
 # Changelog for [7.4.2] (2021-06-21)
 
