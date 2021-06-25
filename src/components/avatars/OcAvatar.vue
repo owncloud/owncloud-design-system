@@ -10,7 +10,7 @@
     :data-test-user-name="userName"
   >
     <oc-img v-if="isImage" loading-type="lazy" class="avatarImg" :src="src" @error="onImgError" />
-    <span v-show="!isImage" class="avatarInitials">{{ userInitial }}</span>
+    <span v-else class="avatarInitials">{{ userInitial }}</span>
   </span>
 </template>
 
@@ -119,7 +119,8 @@ export default {
 
       const initialBackgroundAndFontStyle = {
         backgroundColor: this.background,
-        font: `${Math.floor(this.width / 2.5)}px/${this.width}px Helvetica, Arial, sans-serif`,
+        fontSize: `${Math.floor(this.width / 2.5)}px`,
+        fontFamily: "Helvetica, Arial, sans-serif",
         color: "white",
       }
 
