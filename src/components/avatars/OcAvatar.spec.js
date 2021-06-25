@@ -35,6 +35,12 @@ describe("OcAvatar", () => {
     describe("when username is set", () => {
       it.each`
         username                   | expected_initial
+        ${"."}                     | ${"."}
+        ${"१२३ ४५६"}               | ${"१४"}
+        ${"अंशु वर्मा"}            | ${"अव"}
+        ${"किरण पराजुली"}          | ${"कप"}
+        ${"Kiran पराजुली"}         | ${"Kप"}
+        ${"किरण Parajuli"}         | ${"कP"}
         ${"test"}                  | ${"T"}
         ${"Test"}                  | ${"T"}
         ${"1Test"}                 | ${"1"}
@@ -50,7 +56,7 @@ describe("OcAvatar", () => {
         ${"test user one primary"} | ${"TUO"}
         ${"test User One Primary"} | ${"UOP"}
         ${"testUser One Primary"}  | ${"TOP"}
-      `("should render user initials", ({ username, expected_initial }) => {
+      `("should render user initials for username $username", ({ username, expected_initial }) => {
         const wrapper = getWrapperWithProps({
           userName: username,
         })
@@ -59,7 +65,7 @@ describe("OcAvatar", () => {
         expect(userInitialElement.text()).toBe(expected_initial)
       })
     })
-    describe("width", () => {
+    describe("when width is set", () => {
       let wrapper
       beforeEach(() => {
         wrapper = getWrapperWithProps({
@@ -69,7 +75,7 @@ describe("OcAvatar", () => {
       it("should set width and height of the avatar wrapper", () => {
         expect(wrapper.attributes("style")).toContain("width: 100px; height: 100px;")
       })
-      it("should determine font style", async () => {
+      it("should determine font style", () => {
         expect(wrapper.attributes("style")).toContain("line-height: 105px;")
         expect(wrapper.attributes("style")).toContain(
           "font-size: 40px; font-family: Helvetica, Arial, sans-serif;"
@@ -86,7 +92,7 @@ describe("OcAvatar", () => {
         expect(wrapper.attributes("aria-hidden")).toBe("true")
         expect(wrapper.attributes("focusable")).toBe("false")
       })
-      it("should be set when vale is not empty string", () => {
+      it("should be set when value is not empty string", () => {
         const wrapper = getWrapperWithProps({
           accessibleLabel: "test label",
         })
