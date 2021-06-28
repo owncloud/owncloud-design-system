@@ -1,3 +1,24 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v7.5.0...master
+
+## Summary
+
+* Change - Rename previews to thumbnails: [#1429](https://github.com/owncloud/owncloud-design-system/pull/1429)
+
+## Details
+
+* Change - Rename previews to thumbnails: [#1429](https://github.com/owncloud/owncloud-design-system/pull/1429)
+
+   Until now, we have been referring to preview images in OcFilesTable and OcResource as
+   `preview`. The technically more correct term for our use case would be `thumbnail` and since
+   we're introducing proper previews in the web repo now this change renames `previews` in ODS to
+   `thumbnails` to avoid naming conflicts down the road.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1429
+
 # Changelog for [7.5.0] (2021-06-25)
 
 The following sections list the changes in ownCloud Design System 7.5.0.
