@@ -75,11 +75,9 @@ describe("OcAvatar", () => {
       it("should set width and height of the avatar wrapper", () => {
         expect(wrapper.attributes("style")).toContain("width: 100px; height: 100px;")
       })
-      it("should determine font style", () => {
+      it("should determine font size and line height", () => {
         expect(wrapper.attributes("style")).toContain("line-height: 105px;")
-        expect(wrapper.attributes("style")).toContain(
-          "font-size: 40px; font-family: Helvetica, Arial, sans-serif;"
-        )
+        expect(wrapper.attributes("style")).toContain("font-size: 40px;")
       })
     })
     describe("accessibleLabel", () => {
