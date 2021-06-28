@@ -2,28 +2,6 @@ import OcButton from "./OcButton.vue"
 import { createLocalVue, shallowMount } from "@vue/test-utils"
 const localVue = createLocalVue()
 
-/**
- * There are some errors that should be caught but sneaked by vue.
- * Vue Warn errors is one of them
- *
- * Global console contains these error from where we can assert if they are expected errors
- */
-beforeEach(() => {
-  const { error } = global.console
-  global.console.error = (...args) => {
-    for (let i = 0; i < args.length; i += 1) {
-      const arg = args[i]
-      if (typeof arg === "string" && arg.includes("Vue warn")) {
-        // Vue warn contains messages with warning initiator element
-        // Only vue warn message is thrown
-        const errorSplit = arg.split("\n")
-        throw errorSplit[0]
-      }
-    }
-    error(...args)
-  }
-})
-
 describe("OcButton", () => {
   const testSlots = { default: '<p class="text">Test button</p>' }
   function getWrapperWithProps(props) {
