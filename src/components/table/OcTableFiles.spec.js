@@ -63,7 +63,7 @@ const resourcesWithAllFields = [
     id: "forest",
     name: "forest.jpg",
     path: "images/nature/forest.jpg",
-    preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+    thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
     indicators,
     type: "file",
     size: "111000234",
