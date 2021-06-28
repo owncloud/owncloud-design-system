@@ -34,10 +34,10 @@
     </template>
     <template #name="{ item }">
       <oc-resource
-        :key="`${item.path}-${item.id}-${item.preview}`"
+        :key="`${item.path}-${item.id}-${item.thumbnail}`"
         :resource="item"
         :is-path-displayed="arePathsDisplayed"
-        :is-preview-displayed="arePreviewsDisplayed"
+        :is-thumbnail-displayed="areThumbnailsDisplayed"
         :target-route="targetRoute"
         :is-resource-clickable="isResourceClickable(item.id)"
         @click="emitFileClick(item)"
@@ -119,7 +119,7 @@ export default {
      * - path: The full path of the resource
      * - type: The type of the resource. Can be `file` or `folder`
      * Optional fields:
-     * - preview
+     * - thumbnail
      * - size: The size of the resource
      * - modificationDate: The date of the last modification of the resource
      * - shareDate: The date when the share was created
@@ -140,9 +140,9 @@ export default {
       default: false,
     },
     /**
-     * Asserts whether icons should be replaced with previews for resources which provide them
+     * Asserts whether icons should be replaced with thumbnails for resources which provide them
      */
-    arePreviewsDisplayed: {
+    areThumbnailsDisplayed: {
       type: Boolean,
       required: false,
       default: true,
@@ -510,7 +510,7 @@ export default {
             id: "forest",
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
-            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file",
             size: "111000234",
@@ -590,7 +590,7 @@ export default {
           {
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
-            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file",
             sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
@@ -716,7 +716,7 @@ export default {
           {
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
-            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file",
             sdate: "Mon, 11 Jan 2021 14:34:04 GMT",
@@ -781,7 +781,7 @@ export default {
 ## Trashbin files table
 ```js
 <template>
-  <oc-table-files :resources="resources" :arePathsDisplayed="true" :arePreviewsDisplayed="false" v-model="selected" />
+  <oc-table-files :resources="resources" :arePathsDisplayed="true" :areThumbnailsDisplayed="false" v-model="selected" />
 </template>
 <script>
   export default {
@@ -839,7 +839,7 @@ export default {
             id: "forest",
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
-            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file",
             size: "111000234",

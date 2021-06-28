@@ -1,10 +1,10 @@
 <template>
   <div class="oc-resource oc-text-overflow">
     <oc-img
-      v-if="hasPreview"
-      :key="preview"
-      :src="preview"
-      class="oc-resource-preview"
+      v-if="hasThumbnail"
+      :key="thumbnail"
+      :src="thumbnail"
+      class="oc-resource-thumbnail"
       width="40"
       height="40"
     />
@@ -59,7 +59,7 @@ import OcResourceName from "./OcResourceName.vue"
 import uniqueId from "../../utils/uniqueId"
 
 /**
- * Displays a resource together with the resource type icon or preview
+ * Displays a resource together with the resource type icon or thumbnail
  */
 export default {
   name: "OcResource",
@@ -83,9 +83,9 @@ export default {
       default: false,
     },
     /**
-     * Asserts whether the resource preview should be displayed
+     * Asserts whether the resource thumbnail should be displayed
      */
-    isPreviewDisplayed: {
+    isThumbnailDisplayed: {
       type: Boolean,
       required: false,
       default: true,
@@ -142,14 +142,15 @@ export default {
       return this.resource.type === "folder"
     },
 
-    hasPreview() {
+    hasThumbnail() {
       return (
-        this.isPreviewDisplayed && Object.prototype.hasOwnProperty.call(this.resource, "preview")
+        this.isThumbnailDisplayed &&
+        Object.prototype.hasOwnProperty.call(this.resource, "thumbnail")
       )
     },
 
-    preview() {
-      return this.resource.preview
+    thumbnail() {
+      return this.resource.thumbnail
     },
 
     componentType() {
@@ -228,7 +229,7 @@ export default {
   display: flex;
   justify-content: flex-start;
 
-  &-preview {
+  &-thumbnail {
     border-radius: 2px;
     object-fit: cover;
     height: $oc-size-icon-default * 1.5;
@@ -291,7 +292,7 @@ export default {
             name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
             extension: "jpg",
             path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
-            preview: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],
             type: "file",
             opensInNewWindow: true,
