@@ -14,7 +14,7 @@ module.exports = {
     ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
     "^.+\\.svg$": "jest-svg-transformer",
   },
-  setupFiles: ["./jest.setup.js"],
+  setupFiles: ["./jest.setup.js", "./jest.overrides.js"],
   snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
   coverageDirectory: "<rootDir>/coverage",
   collectCoverageFrom: [
