@@ -28,11 +28,7 @@ export default {
         const { sortable } = this.fields.find(f => f.name === this.sortBy)
 
         if (sortable) {
-          if (
-            typeof sortable === "string" &&
-            Array.isArray.call(aValue) &&
-            Array.isArray.call(bValue)
-          ) {
+          if (typeof sortable === "string") {
             const genArrComp = vals => {
               return vals.map(val => val[sortable]).join("")
             }
