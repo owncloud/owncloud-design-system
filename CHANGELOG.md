@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Rename previews to thumbnails: [#1429](https://github.com/owncloud/owncloud-design-system/pull/1429)
+* Enhancement - Table Sorting by String or Function: [#1377](https://github.com/owncloud/owncloud-design-system/pull/1377)
 
 ## Details
 
@@ -18,6 +19,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    `thumbnails` to avoid naming conflicts down the road.
 
    https://github.com/owncloud/owncloud-design-system/pull/1429
+
+
+* Enhancement - Table Sorting by String or Function: [#1377](https://github.com/owncloud/owncloud-design-system/pull/1377)
+
+   Sorting inside the OcTable now can be done by passing a string or a function, so you can e.g. sort
+   objects inside Array by their properties.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1377
 
 # Changelog for [7.5.0] (2021-06-25)
 
