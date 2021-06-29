@@ -287,7 +287,7 @@ export default {
             type: "slot",
             alignH: "right",
             wrap: "nowrap",
-            sortable: true,
+            sortable: "displayName",
           },
           {
             name: "mdate",
