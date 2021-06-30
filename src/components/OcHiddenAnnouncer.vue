@@ -33,6 +33,9 @@ export default {
       type: String,
       required: false,
       default: "polite",
+      validator: value => {
+        return value.match(/(polite|assertive|off)/)
+      },
     },
     /**
      * The announcement text itself.
@@ -40,7 +43,6 @@ export default {
     announcement: {
       type: String,
       required: true,
-      default: "",
     },
   },
   data() {
