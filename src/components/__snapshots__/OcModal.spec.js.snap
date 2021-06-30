@@ -2,7 +2,7 @@
 
 exports[`OcModal displays input 1`] = `
 <div aria-labelledby="oc-modal-title" class="oc-modal-background">
-  <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
+  <focus-trap-stub active="true" escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true" initialfocus="[Function]">
     <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <!---->
@@ -22,7 +22,7 @@ exports[`OcModal displays input 1`] = `
 
 exports[`OcModal hides icon if not specified 1`] = `
 <div aria-labelledby="oc-modal-title" class="oc-modal-background">
-  <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
+  <focus-trap-stub active="true" escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true" initialfocus="[Function]">
     <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <!---->
@@ -42,7 +42,7 @@ exports[`OcModal hides icon if not specified 1`] = `
 
 exports[`OcModal matches snapshot 1`] = `
 <div aria-labelledby="oc-modal-title" class="oc-modal-background">
-  <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
+  <focus-trap-stub active="true" escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true" initialfocus="[Function]">
     <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <oc-icon-stub name="info" accessiblelabel="" type="span" size="medium" variation="passive"></oc-icon-stub>
@@ -62,7 +62,7 @@ exports[`OcModal matches snapshot 1`] = `
 
 exports[`OcModal overrides props message with slot 1`] = `
 <div aria-labelledby="oc-modal-title" class="oc-modal-background">
-  <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
+  <focus-trap-stub active="true" escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true" initialfocus="[Function]">
     <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <!---->

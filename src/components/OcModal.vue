@@ -1,8 +1,8 @@
 <template>
   <div class="oc-modal-background" aria-labelledby="oc-modal-title">
-    <focus-trap :active="focusTrapActive">
+    <focus-trap :active="true" :initial-focus="getInitialFocusRef">
       <div
-        ref="$_ocModal"
+        ref="ocModal"
         :class="classes"
         tabindex="0"
         role="dialog"
@@ -241,14 +241,6 @@ export default {
       required: false,
       default: false,
     },
-    /**
-     * Asserts whether the modal should be protected with focus trap
-     */
-    focusTrapActive: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
   },
   data() {
     return {
@@ -265,11 +257,6 @@ export default {
       handler: "inputAssignPropAsValue",
       immediate: true,
     },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$refs.$_ocModal.focus()
-    })
   },
   methods: {
     cancelModalAction() {
@@ -299,6 +286,12 @@ export default {
     },
     inputAssignPropAsValue(value) {
       this.userInputValue = value
+    },
+    getInitialFocusRef() {
+      if (this.hasInput) {
+        return this.$refs.ocModalInput
+      }
+      return this.$refs.ocModal
     },
   },
 }
