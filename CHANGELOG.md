@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Rename previews to thumbnails: [#1429](https://github.com/owncloud/owncloud-design-system/pull/1429)
+* Enhancement - Initial focus in OcModal: [#1453](https://github.com/owncloud/owncloud-design-system/pull/1453)
 * Enhancement - Table Sorting by String or Function: [#1377](https://github.com/owncloud/owncloud-design-system/pull/1377)
 
 ## Details
@@ -19,6 +20,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    `thumbnails` to avoid naming conflicts down the road.
 
    https://github.com/owncloud/owncloud-design-system/pull/1429
+
+
+* Enhancement - Initial focus in OcModal: [#1453](https://github.com/owncloud/owncloud-design-system/pull/1453)
+
+   The OcModal component sets the initial focus to the input element now, if one exists. If the
+   input element doesn't exist the focus remains on the modal itself, like we had it before.
+
+   https://github.com/owncloud/web/issues/3684
+   https://github.com/owncloud/owncloud-design-system/pull/1453
 
 
 * Enhancement - Table Sorting by String or Function: [#1377](https://github.com/owncloud/owncloud-design-system/pull/1377)
