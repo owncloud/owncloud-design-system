@@ -100,7 +100,7 @@ def testing(ctx):
                 'commands': [
                     'yarn build:docs',
                 ],
-                'depends_on': ['eslint', 'stylelint']
+                'depends_on': ['unit tests', 'eslint', 'stylelint']
             },
             {
                 'name': 'build system',
@@ -109,7 +109,7 @@ def testing(ctx):
                 'commands': [
                     'yarn build:system',
                 ],
-                'depends_on': ['eslint', 'stylelint']
+                'depends_on': ['unit tests', 'eslint', 'stylelint']
             },
         ],
         'trigger': {
