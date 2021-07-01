@@ -1,29 +1,10 @@
 import { mount } from "@vue/test-utils"
-import { DateTime } from "luxon"
 
 import Table from "./OcTableFiles.vue"
 
 const ASC = "ascending"
 const DESC = "descending"
 const NONE = "none"
-
-function todayMinusDays(daysPassed) {
-  return DateTime.fromJSDate(new Date())
-    .minus({ days: daysPassed })
-    .toFormat("EEE, dd MMM yyyy HH:mm:ss")
-}
-
-const mdate1 = todayMinusDays(4)
-const sdate1 = todayMinusDays(3)
-const ddate1 = todayMinusDays(1)
-
-const mdate2 = todayMinusDays(0)
-const sdate2 = todayMinusDays(3)
-const ddate2 = todayMinusDays(1)
-
-const mdate3 = todayMinusDays(3)
-const sdate3 = todayMinusDays(3)
-const ddate3 = todayMinusDays(1)
 
 const sharedWithOne = [
   {
@@ -94,9 +75,7 @@ const resourcesWithAllFields = [
     indicators,
     type: "file",
     size: "111000234",
-    mdate: mdate1,
-    sdate: sdate1,
-    ddate: ddate1,
+    mdate: "Thu, 01 Jul 2021 08:34:04 GMT",
     owner: firstOwner,
     sharedWith: sharedWithOne,
   },
@@ -108,9 +87,7 @@ const resourcesWithAllFields = [
     indicators,
     type: "file",
     size: "1245",
-    mdate: mdate2,
-    sdate: sdate2,
-    ddate: ddate2,
+    mdate: "Thu, 01 Jul 2021 08:45:04 GMT",
     owner: secondOwner,
     sharedWith: sharedWithTwo,
   },
@@ -122,9 +99,7 @@ const resourcesWithAllFields = [
     indicators,
     type: "folder",
     size: "5324435",
-    mdate: mdate3,
-    sdate: sdate3,
-    ddate: ddate3,
+    mdate: "Sat, 09 Jan 2021 14:34:04 GMT",
     owner: firstOwner,
     sharedWith: sharedWithThree,
   },
@@ -147,7 +122,7 @@ describe("OcTableFiles.sort", () => {
   const sortByMdate = headers.at(5)
 
   it("renders all sorting table headers correctly", () => {
-    expect(wrapper.findAll("[aria-sort]").length).toBe(7)
+    expect(wrapper.findAll("[aria-sort]").length).toBe(5)
   })
 
   it("displays all fields in initial order", () => {
@@ -221,8 +196,8 @@ describe("OcTableFiles.sort", () => {
 
     let resourcesOne = wrapper.findAll(".oc-resource-name")
 
-    expect(resourcesOne.at(0).attributes("data-test-resource-name")).toBe("forest.jpg")
-    expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("Documents")
+    expect(resourcesOne.at(0).attributes("data-test-resource-name")).toBe("Documents")
+    expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("forest.jpg")
     expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("notes.txt")
 
     await sortByMdate.trigger("click")
@@ -232,8 +207,8 @@ describe("OcTableFiles.sort", () => {
     let resourcesTwo = wrapper.findAll(".oc-resource-name")
 
     expect(resourcesTwo.at(0).attributes("data-test-resource-name")).toBe("notes.txt")
-    expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("Documents")
   })
 
   it("sorts by owner", async () => {
