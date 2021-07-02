@@ -10,7 +10,7 @@
         :aria-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
         appearance="raw"
-        :data-test-id="indicator.id"
+        :data-testid="indicator.id"
         :data-test-indicator-type="indicator.type"
         @click.stop="indicator.handler(resource, indicator.target)"
       >
@@ -26,7 +26,7 @@
         :name="indicator.icon"
         :accessible-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
-        :data-test-id="indicator.id"
+        :data-testid="indicator.id"
         :data-test-indicator-type="indicator.type"
       />
       <p

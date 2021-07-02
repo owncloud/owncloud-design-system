@@ -12,11 +12,11 @@ describe("OcSwitch", () => {
       propsData: defaultProps,
     })
 
-    await wrapper.find('[data-test-id="oc-switch-btn"]').trigger("click")
+    await wrapper.find('[data-testid="oc-switch-btn"]').trigger("click")
 
     expect(wrapper.emitted().change[0][0]).toEqual(true)
 
-    await wrapper.find('[data-test-id="oc-switch-btn"]').trigger("click")
+    await wrapper.find('[data-testid="oc-switch-btn"]').trigger("click")
 
     expect(wrapper.emitted().change[0][0]).toEqual(true)
   })
