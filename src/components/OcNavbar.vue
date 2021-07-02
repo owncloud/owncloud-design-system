@@ -5,8 +5,9 @@
     :uk-sticky="'offset: ' + offset"
     class="uk-navbar-container"
     uk-navbar
-    ><slot
-  /></component>
+  >
+    <slot />
+  </component>
   <component :is="tag" v-else class="uk-navbar-container" uk-navbar><slot /></component>
 </template>
 
