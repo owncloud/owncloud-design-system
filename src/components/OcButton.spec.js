@@ -113,13 +113,14 @@ describe("OcButton", () => {
       ${"justifyContent"}
       ${"variation"}
       ${"gapSize"}
-    `('when prop "$prop" is set an invalid value"', ({ prop, value }) => {
+    `('when prop "$prop" is set to an invalid value"', ({ prop, value }) => {
       try {
         let props = {}
         props[prop] = "not-valid"
         getWrapperWithProps(props)
         throw new Error(`Provided value "${value}" for prop "${prop}" is valid.`)
       } catch (e) {
+        /* eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect */
         expect(e).toContain(
           `[Vue warn]: Invalid prop: custom validator check failed for prop "${prop}".`
         )

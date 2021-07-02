@@ -8,8 +8,7 @@
     "eslint:recommended",
     "plugin:vue/recommended",
     "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/vue",
+    "prettier",
     "plugin:jest/recommended"
   ],
   "parserOptions": {
