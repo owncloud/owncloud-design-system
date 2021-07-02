@@ -2,7 +2,7 @@
   <span :key="`oc-switch-${checked.toString()}`" class="oc-switch">
     <span :id="labelId" v-text="label" />
     <button
-      data-test-id="oc-switch-btn"
+      data-testid="oc-switch-btn"
       class="oc-switch-btn"
       role="switch"
       :aria-checked="checked.toString()"
