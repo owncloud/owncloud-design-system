@@ -95,6 +95,18 @@ export default {
   },
 
   methods: {
+    decreaseCoverage(reallyDecrease, text) {
+      if (reallyDecrease) {
+        console.log("the CI should fail")
+        for (var i = 0; i < text.length; i++) {
+          if (text.charAt(i).toUpperCase() === text.charAt(i)) {
+            text[i] = text.charAt(i).toLowerCase()
+          }
+        }
+      } else {
+        console.log("some more untested code")
+      }
+    },
     $_ocAccordion_init() {
       if (this.multiple) {
         if (
