@@ -14,7 +14,7 @@
         <span class="uk-width-1-1">
           <span class="uk-flex uk-flex-middle">
             <oc-icon v-if="icon" :name="icon" class="oc-mr-s" />
-            <span class="uk-width-expand" v-text="title" />
+            <span class="uk-width-expand oc-accordion-title-text" v-text="title" />
             <span class="oc-ml-xs oc-icon-l">
               <oc-icon
                 name="expand_more"
@@ -24,7 +24,7 @@
               />
             </span>
           </span>
-          <span v-if="description">
+          <span v-if="description" class="oc-accordion-description">
             <span v-if="icon" class="oc-icon-m oc-mr-s" />
             <span class="oc-text-muted">{{ description }}</span>
           </span>
@@ -39,10 +39,17 @@
 </template>
 <script>
 import uniqueId from "../utils/uniqueId"
+import OcButton from "./OcButton.vue"
+import OcIcon from "./OcIcon.vue"
+
 export default {
   name: "OcAccordionItem",
   status: "review",
   release: "1.0.0",
+  components: {
+    OcButton,
+    OcIcon,
+  },
   props: {
     /**
      * Icon to be displayed on the left side of the accordion title.
