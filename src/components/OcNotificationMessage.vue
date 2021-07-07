@@ -9,7 +9,7 @@
       <div class="oc-notification-message-title">
         {{ title }}
       </div>
-      <div v-if="message" class="oc-text-muted uk-width-1-1">
+      <div v-if="message" class="oc-text-muted uk-width-1-1 oc-notification-message-content">
         {{ message }}
       </div>
     </div>
@@ -75,11 +75,14 @@ export default {
     iconVariation() {
       return this.status
     },
+    isStatusDanger() {
+      return this.status === "danger"
+    },
     role() {
-      return this.status === "danger" ? "alert" : "status"
+      return this.isStatusDanger ? "alert" : "status"
     },
     ariaLive() {
-      return this.status === "danger" ? "assertive" : "polite"
+      return this.isStatusDanger ? "assertive" : "polite"
     },
   },
   mounted() {
