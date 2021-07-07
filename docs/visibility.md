@@ -8,7 +8,7 @@ Add one or more of the following classes to any element to display elements only
 | ---------------- | -------------------------------------------------------- |
 | .oc-invisible    | Hides element without removing it from the document flow |
 | .oc-visible@s    | Displays element on screens smaller than 640px           |
-| .oc-visible@m    | Displays element on screens smaller than 1960px          |
+| .oc-visible@m    | Displays element on screens smaller than 960px           |
 | .oc-visible@l    | Displays element on screens smaller than 1200px          |
 | .oc-visible@xl   | Displays element on screens smaller than 1600px          |
 | .oc-invisible-sr | Hides element, keeping it accessible for screen readers  |
