@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import OcIcon from "./OcIcon.vue"
 /**
  * Create a list menu item.
  *
@@ -24,6 +25,9 @@ export default {
   name: "OcNavItem",
   status: "prototype",
   release: "0.0.1",
+  components: {
+    OcIcon,
+  },
   props: {
     /**
      * The icon to display.
