@@ -1,7 +1,13 @@
 <template>
-  <label class="oc-page-size">
-    <span class="oc-page-size-label" data-testid="oc-page-size-label" v-text="label" />
+  <div class="oc-page-size">
+    <label
+      class="oc-page-size-label"
+      :for="selectId"
+      data-testid="oc-page-size-label"
+      v-text="label"
+    />
     <oc-select
+      :input-id="selectId"
       class="oc-page-size-select"
       data-testid="oc-page-size-select"
       :value="selected"
@@ -10,10 +16,12 @@
       :searchable="false"
       @input="emitChange"
     />
-  </label>
+  </div>
 </template>
 
 <script>
+import uniqueId from "../../utils/uniqueId"
+
 import OcSelect from "../OcSelect.vue"
 
 /**
@@ -55,6 +63,16 @@ export default {
     selected: {
       type: [String, Number],
       required: true,
+    },
+
+    /**
+     * An ID of the select component.
+     * Default value is a unique ID with prefix `oc-page-size`
+     */
+    selectId: {
+      type: String,
+      required: false,
+      default: uniqueId("oc-page-size-"),
     },
   },
 
