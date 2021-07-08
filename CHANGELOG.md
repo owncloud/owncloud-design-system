@@ -7,6 +7,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Rename previews to thumbnails: [#1429](https://github.com/owncloud/owncloud-design-system/pull/1429)
+* Change - Remove custom model from OcSelect: [#1478](https://github.com/owncloud/owncloud-design-system/pull/1478)
+* Enhancement - Add page size component: [#1478](https://github.com/owncloud/owncloud-design-system/pull/1478)
 * Enhancement - Initial focus in OcModal: [#1453](https://github.com/owncloud/owncloud-design-system/pull/1453)
 * Enhancement - Table Sorting by String or Function: [#1377](https://github.com/owncloud/owncloud-design-system/pull/1377)
 
@@ -20,6 +22,22 @@ The following sections list the changes in ownCloud Design System unreleased.
    `thumbnails` to avoid naming conflicts down the road.
 
    https://github.com/owncloud/owncloud-design-system/pull/1429
+
+
+* Change - Remove custom model from OcSelect: [#1478](https://github.com/owncloud/owncloud-design-system/pull/1478)
+
+   We've removed the custom model defined in OcSelect component. It is no longer possible to pass
+   the value via `model` prop. You can use `value` instead. `v-model` is still available.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1478
+
+
+* Enhancement - Add page size component: [#1478](https://github.com/owncloud/owncloud-design-system/pull/1478)
+
+   We've added page size component. This component can be used for specifying the pagination
+   limit of items per page.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1478
 
 
 * Enhancement - Initial focus in OcModal: [#1453](https://github.com/owncloud/owncloud-design-system/pull/1453)
