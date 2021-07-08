@@ -48,6 +48,8 @@
   "oc-size-max-height-logo": {"value":"65px","name":"oc-size-max-height-logo","type":"number","category":"size","info":{}},
   "oc-size-max-width-logo": {"value":"150px","name":"oc-size-max-width-logo","type":"number","category":"size","info":{}},
   "oc-size-width-medium": {"value":"300px","name":"oc-size-width-medium","type":"number","category":"size","info":{}},
+  "oc-size-width-small": {"value":"150px","name":"oc-size-width-small","type":"number","category":"size","info":{}},
+  "oc-size-width-xsmall": {"value":"100px","name":"oc-size-width-xsmall","type":"number","category":"size","info":{}},
   "oc-space-large": {"value":"30px","name":"oc-space-large","type":"number","category":"space","info":{}},
   "oc-space-medium": {"value":"20px","name":"oc-space-medium","type":"number","category":"space","info":{}},
   "oc-space-small": {"value":"10px","name":"oc-space-small","type":"number","category":"space","info":{}},
