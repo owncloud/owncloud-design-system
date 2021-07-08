@@ -79,7 +79,7 @@ export default {
   methods: {
     emitChange(value) {
       /**
-       * Triggers when the a value is selected
+       * Triggers when a value is selected
        *
        * @event change
        * @property {number|string} value selected value
@@ -104,7 +104,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <template>
   <div>
     <oc-page-size v-model="selected" label="Items per page" :options="[100, 500, 1000, 'All']" />
