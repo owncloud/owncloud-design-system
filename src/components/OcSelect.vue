@@ -1,5 +1,5 @@
 <template>
-  <vue-select ref="select" :value="model" class="oc-select" v-bind="$attrs" v-on="$listeners">
+  <vue-select ref="select" class="oc-select" v-bind="$attrs" v-on="$listeners">
     <template v-for="(index, name) in $scopedSlots" #[name]="data">
       <slot :name="name" v-bind="data"></slot>
     </template>
@@ -20,19 +20,6 @@ export default {
   components: { VueSelect },
 
   inheritAttrs: true,
-
-  model: {
-    prop: "model",
-    event: "input",
-  },
-
-  props: {
-    model: {
-      type: [Array, String, Object],
-      required: false,
-      default: null,
-    },
-  },
 
   mounted() {
     this.setComboBoxAriaLabel()

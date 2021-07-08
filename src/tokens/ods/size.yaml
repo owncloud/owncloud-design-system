@@ -12,6 +12,10 @@ size:
     table-row:
       value: 49px
   width:
+    xsmall:
+      value: 100px
+    small:
+      value: 150px
     medium:
       value: 300px
   icon-default:
