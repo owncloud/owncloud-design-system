@@ -34,7 +34,7 @@
         <oc-icon name="close" size="small" variation="passive" />
       </oc-button>
     </div>
-    <div :class="{ 'oc-invisible-sr': buttonHidden }">
+    <div class="oc-search-button-wrapper" :class="{ 'oc-invisible-sr': buttonHidden }">
       <oc-button
         class="oc-search-button"
         variation="primary"
@@ -42,13 +42,19 @@
         :size="small ? 'small' : 'medium'"
         :disabled="loading || searchQuery.length < 1"
         @click="onSearch"
-        >{{ buttonLabel }}</oc-button
       >
+        {{ buttonLabel }}
+      </oc-button>
     </div>
   </oc-grid>
 </template>
 
 <script>
+import OcButton from "./OcButton.vue"
+import OcGrid from "./OcGrid.vue"
+import OcIcon from "./OcIcon.vue"
+import OcSpinner from "./OcSpinner.vue"
+
 /**
  * The search bar is an input element used for searching server side resources or to filter local results.
  *
@@ -67,6 +73,12 @@ export default {
   name: "OcSearchBar",
   status: "ready",
   release: "1.0.0",
+  components: {
+    OcButton,
+    OcGrid,
+    OcIcon,
+    OcSpinner,
+  },
   props: {
     /**
      * Set the search query
