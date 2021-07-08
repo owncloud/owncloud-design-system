@@ -9,7 +9,7 @@
  */
 export default {
   name: "OcTabbedTab",
-  status: "prototype",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     /**

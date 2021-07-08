@@ -8,6 +8,8 @@
 <script>
 export default {
   name: "OcTag",
+  status: "ready",
+  release: "2.0.0",
 
   props: {
     /**

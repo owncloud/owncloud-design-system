@@ -44,7 +44,7 @@ import OcIcon from "./OcIcon.vue"
 
 export default {
   name: "OcAccordionItem",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   components: {
     OcButton,

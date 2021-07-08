@@ -22,7 +22,7 @@ import OcIcon from "./OcIcon.vue"
  */
 export default {
   name: "OcAlert",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   components: {
     OcButton,

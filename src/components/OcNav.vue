@@ -9,7 +9,7 @@
  */
 export default {
   name: "OcNav",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
 }
 </script>

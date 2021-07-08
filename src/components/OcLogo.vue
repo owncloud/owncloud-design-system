@@ -13,7 +13,7 @@ import OcImg from "./OcImage"
 
 export default {
   name: "OcLogo",
-  status: "review",
+  status: "ready",
   release: "unreleased",
   components: { OcImg },
 

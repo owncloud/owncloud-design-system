@@ -23,7 +23,7 @@ import OcIcon from "./OcIcon.vue"
  */
 export default {
   name: "OcNavItem",
-  status: "prototype",
+  status: "deprecated",
   release: "0.0.1",
   components: {
     OcIcon,

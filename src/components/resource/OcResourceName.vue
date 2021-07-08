@@ -16,7 +16,7 @@
 <script>
 export default {
   name: "OcResourceName",
-  status: "review",
+  status: "ready",
   released: "2.1.0",
 
   props: {

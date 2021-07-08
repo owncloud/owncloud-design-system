@@ -10,7 +10,7 @@ export default {
   name: "OcAccordion",
   // eslint-disable-next-line vue/no-unused-components
   components: { OcAccordionItem },
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   props: {
     /**

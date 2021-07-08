@@ -11,7 +11,7 @@
  */
 export default {
   name: "OcTabItem",
-  status: "prototype",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     /**

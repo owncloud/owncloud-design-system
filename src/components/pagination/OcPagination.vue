@@ -39,6 +39,8 @@ import OcIcon from "../OcIcon.vue"
  */
 export default {
   name: "OcPagination",
+  status: "ready",
+  release: "7.2.0",
 
   components: { OcIcon },
 

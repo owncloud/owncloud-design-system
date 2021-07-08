@@ -13,8 +13,8 @@
 <script>
 export default {
   name: "OcAvatarLink",
-  status: "review",
-  release: "not released",
+  status: "ready",
+  release: "2.1.0",
 
   props: {
     /**

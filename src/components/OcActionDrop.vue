@@ -64,7 +64,7 @@ import OcButton from "./OcButton.vue"
 
 export default {
   name: "OcActionDrop",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
   components: {
     OcButton,

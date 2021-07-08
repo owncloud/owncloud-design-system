@@ -22,7 +22,7 @@ import uniqueId from "../utils/uniqueId"
  */
 export default {
   name: "OcRadio",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   props: {
     /**

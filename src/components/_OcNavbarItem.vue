@@ -4,7 +4,7 @@
 <script>
 export default {
   name: "OcNavbarItem",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     position: {

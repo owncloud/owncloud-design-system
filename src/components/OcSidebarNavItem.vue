@@ -30,8 +30,8 @@ import OcIcon from "./OcIcon.vue"
 
 export default {
   name: "OcSidebarNavItem",
-  status: "review",
-  release: "1.0.0",
+  status: "ready",
+  release: "1.5.0",
   components: {
     OcIcon,
   },

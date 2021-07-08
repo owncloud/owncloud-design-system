@@ -104,7 +104,7 @@ import { EVENT_TROW_MOUNTED } from "./helpers/constants"
 
 export default {
   name: "OcTableFiles",
-  status: "review",
+  status: "ready",
   release: "2.1.0",
   components: { OcTable, OcResource, OcIcon, OcAvatarGroup, OcCheckbox, OcButton, OcResourceSize },
   model: {

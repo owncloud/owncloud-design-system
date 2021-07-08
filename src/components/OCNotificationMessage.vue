@@ -21,7 +21,7 @@
  */
 export default {
   name: "OcNotificationMessage",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   props: {
     /**

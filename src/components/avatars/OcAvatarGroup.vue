@@ -34,7 +34,7 @@ import OcAvatarLink from "./OcAvatarLink.vue"
  */
 export default {
   name: "OcAvatarGroup",
-  status: "review",
+  status: "ready",
   release: "2.1.0",
 
   components: { OcAvatar, OcAvatarCount, OcAvatarLink },

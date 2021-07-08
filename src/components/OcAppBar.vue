@@ -20,7 +20,7 @@
  */
 export default {
   name: "OcAppBar",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
 }
 </script>
