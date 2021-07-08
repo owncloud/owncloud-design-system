@@ -17,7 +17,7 @@ import uniqueId from "../utils/uniqueId"
  */
 export default {
   name: "OcDrop",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   props: {
     /**

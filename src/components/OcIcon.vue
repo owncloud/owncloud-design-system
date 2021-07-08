@@ -77,7 +77,7 @@ InlineSvg.methods.download = name => {
 
 export default {
   name: "OcIcon",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   components: {
     InlineSvg,

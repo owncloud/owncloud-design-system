@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "OcDropzone",
-  status: "review",
+  status: "ready",
   release: "0.0.1",
 }
 </script>

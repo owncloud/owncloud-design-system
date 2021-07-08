@@ -6,7 +6,7 @@
 <script>
 export default {
   name: "OcTbody",
-  status: "review",
+  status: "ready",
   release: "2.1.0",
 }
 </script>

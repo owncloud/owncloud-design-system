@@ -50,7 +50,7 @@ import uniqueId from "../utils/uniqueId"
  */
 export default {
   name: "OcStatusIndicators",
-  status: "review",
+  status: "ready",
   release: "2.0.1",
 
   components: { OcIcon, OcButton },

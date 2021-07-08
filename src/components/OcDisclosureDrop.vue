@@ -35,7 +35,7 @@
  * */
 export default {
   name: "OcDisclosureDrop",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     /**

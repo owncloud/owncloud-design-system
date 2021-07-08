@@ -20,7 +20,7 @@ import uniqueId from "../../utils/uniqueId"
  */
 export default {
   name: "OcSwitch",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   model: {
     prop: "checked",

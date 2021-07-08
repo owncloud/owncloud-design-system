@@ -16,7 +16,7 @@
 export default {
   name: "OcAppLayout",
   components: {},
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     leftHidden: {

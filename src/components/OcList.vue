@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "OcList",
-  status: "review",
+  status: "ready",
   released: "unreleased",
 }
 </script>

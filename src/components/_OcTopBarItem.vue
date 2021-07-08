@@ -6,7 +6,7 @@
 <script>
 export default {
   name: "OcTopbarItem",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
 }
 </script>

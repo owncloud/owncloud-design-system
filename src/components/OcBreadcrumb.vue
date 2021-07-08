@@ -70,7 +70,7 @@ import OcIcon from "./OcIcon.vue"
  */
 export default {
   name: "OcBreadcrumb",
-  status: "review",
+  status: "ready",
   release: "1.0.0",
 
   components: {

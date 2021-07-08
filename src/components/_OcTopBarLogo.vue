@@ -10,7 +10,7 @@
 <script>
 export default {
   name: "OcTopbarLogo",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     icon: {

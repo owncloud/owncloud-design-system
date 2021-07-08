@@ -45,11 +45,11 @@
               name="review"
               variation="warning"
             />
-            <oc-icon v-if="component.status === 'prototype'" name="prototype" variation="danger" />
+            <oc-icon v-if="component.status === 'prototype'" name="prototype" variation="passive" />
             <oc-icon
               v-if="component.status === 'deprecated'"
               name="deprecated"
-              variation="passive"
+              variation="danger"
             />
           </td>
           <td v-else>—</td>

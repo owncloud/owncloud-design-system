@@ -19,7 +19,7 @@
  */
 export default {
   name: "OcTabs",
-  status: "prototype",
+  status: "deprecated",
   release: "1.0.0",
 }
 </script>

@@ -9,7 +9,7 @@
  */
 export default {
   name: "OcTableSimple",
-  status: "review",
+  status: "ready",
   release: "2.1.0",
   props: {
     /**

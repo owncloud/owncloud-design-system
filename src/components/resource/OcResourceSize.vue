@@ -10,7 +10,7 @@ import filesize from "filesize"
  */
 export default {
   name: "OcResourceSize",
-  status: "review",
+  status: "ready",
   released: "2.1.0",
 
   props: {

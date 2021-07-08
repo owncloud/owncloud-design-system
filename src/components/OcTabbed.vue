@@ -18,7 +18,7 @@
 <script>
 export default {
   name: "OcTabbed",
-  status: "prototype",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     initial: {

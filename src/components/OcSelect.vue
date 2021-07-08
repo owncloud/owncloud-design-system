@@ -16,6 +16,8 @@ import "vue-select/dist/vue-select.css"
  */
 export default {
   name: "OcSelect",
+  status: "ready",
+  release: "4.3.0",
 
   components: { VueSelect },
 

@@ -6,8 +6,8 @@
 <script>
 export default {
   name: "OcTableCell",
-  status: "review",
-  release: "1.0.0",
+  status: "ready",
+  release: "2.1.0",
   props: {
     type: {
       type: String,

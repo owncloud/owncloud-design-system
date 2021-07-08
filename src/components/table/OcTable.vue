@@ -81,7 +81,7 @@ import { EVENT_THEAD_CLICKED, EVENT_TROW_CLICKED, EVENT_TROW_MOUNTED } from "./h
  */
 export default {
   name: "OcTable",
-  status: "review",
+  status: "ready",
   release: "2.1.0",
   components: {
     OcThead,

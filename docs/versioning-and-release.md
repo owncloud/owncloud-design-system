@@ -14,9 +14,10 @@ The highest type before a new release determines the version update number, so i
 2.  Create a folder in `changelog/` for the release version and date: `mkdir changelog/$major.$minor.$patchVersion_YYYY-MM-DD`.
 3.  Move all changelog items from the `changelog/unreleased/` folder to the `$major.$minor.$patchVersion_YYYY-MM-DD` folder.
 4.  Update the version in `package.json` and `sonar-project.properties`
-5.  Make sure [the translations](https://www.transifex.com/owncloud-org/owncloud/owncloud-design-system/) are up to date. If not, reach out to one of the repo maintainers
-6.  Commit your changes, push and create a pull request to the `master` branch of the owncloud-design-system
-7.  After merging, wait for the CI to run on the merge commit.
-8.  Go to the [new Releases section](https://github.com/owncloud/owncloud-design-system/releases/new) in the https://github.com/owncloud/owncloud-design-system repo.
-9.  Use v$major.$minor.$patch as a tag (the v prefix is important) and $major.$minor.$patch as a title (leave description and attachments empty since the CI is taking care of that). Depending on whether this release should show up on the main page of repository, you can mark it as a `pre-release` using the checkbox at the bottom. Once you're done, hit the **Publish release** button to trigger the relase.
-10.  The tag and the Release artifacts will be created automatically. Once this has finished, the new version is published an can be downloaded via NPM.
+5.  Update `released in` and `status` fields of components (see `oC Components` docs for an easy overview)  
+6.  Make sure [the translations](https://www.transifex.com/owncloud-org/owncloud/owncloud-design-system/) are up to date. If not, reach out to one of the repo maintainers
+7.  Commit your changes, push and create a pull request to the `master` branch of the owncloud-design-system
+8.  After merging, wait for the CI to run on the merge commit.
+9.  Go to the [new Releases section](https://github.com/owncloud/owncloud-design-system/releases/new) in the https://github.com/owncloud/owncloud-design-system repo.
+10.  Use v$major.$minor.$patch as a tag (the v prefix is important) and $major.$minor.$patch as a title (leave description and attachments empty since the CI is taking care of that). Depending on whether this release should show up on the main page of repository, you can mark it as a `pre-release` using the checkbox at the bottom. Once you're done, hit the **Publish release** button to trigger the relase.
+11.  The tag and the Release artifacts will be created automatically. Once this has finished, the new version is published an can be downloaded via NPM.

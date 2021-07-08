@@ -29,8 +29,8 @@ import OcSelect from "../OcSelect.vue"
  */
 export default {
   name: "OcPageSize",
-  status: "review",
-  release: "unreleased",
+  status: "ready",
+  release: "8.0.0",
 
   components: { OcSelect },
 

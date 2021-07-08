@@ -63,7 +63,7 @@ import OcIcon from "./OcIcon"
 export default {
   name: "OcTextInput",
   components: { OcIcon, OcButton },
-  status: "review",
+  status: "ready",
   release: "1.0.0",
   inheritAttrs: false,
   props: {

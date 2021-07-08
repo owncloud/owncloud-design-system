@@ -23,7 +23,7 @@
  */
 export default {
   name: "OcUser",
-  status: "review",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     /**
