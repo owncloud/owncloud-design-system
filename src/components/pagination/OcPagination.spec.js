@@ -75,22 +75,20 @@ describe("OcPagination", () => {
     expect(wrapper.find(selectors.listItemPrevious).exists()).toBeFalsy()
     expect(wrapper.find(selectors.listItemNext).exists()).toBeTruthy()
 
-    wrapper.setProps({ currentPage: 2 })
-    await wrapper.vm.$nextTick()
+    await wrapper.setProps({ currentPage: 2 })
 
     expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeFalsy()
     expect(wrapper.find(selectors.listItemPrevious).exists()).toBeTruthy()
     expect(wrapper.find(selectors.listItemNext).exists()).toBeTruthy()
 
-    wrapper.setProps({ currentPage: 4 })
-    await wrapper.vm.$nextTick()
+    await wrapper.setProps({ currentPage: 4 })
 
     expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeFalsy()
     expect(wrapper.find(selectors.listItemPrevious).exists()).toBeTruthy()
     expect(wrapper.find(selectors.listItemNext).exists()).toBeFalsy()
 
-    wrapper.setProps({ pages: 10 })
-    await wrapper.vm.$nextTick()
+    await wrapper.setProps({ pages: 10 })
+
     expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeTruthy()
   })
 
