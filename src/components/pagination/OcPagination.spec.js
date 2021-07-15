@@ -8,119 +8,102 @@ const defaultProps = {
   currentRoute: { name: "files" },
 }
 
+const selectors = {
+  listItemPage: ".oc-pagination-list-item-page",
+  listItemCurrent: ".oc-pagination-list-item-current",
+  listItemPrevious: ".oc-pagination-list-item-prev",
+  listItemNext: ".oc-pagination-list-item-next",
+  listItemEllipsis: ".oc-pagination-list-item-ellipsis",
+  listItemLink: ".oc-pagination-list-item-link",
+}
+
+function getWrapper(props = {}) {
+  return shallowMount(Pagination, {
+    propsData: { ...defaultProps, ...props },
+  })
+}
+
 describe("OcPagination", () => {
   it("displays all pages", () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: defaultProps,
-    })
+    const wrapper = getWrapper()
 
-    expect(wrapper.findAll(".oc-pagination-list-item-page").length).toBe(5)
-    expect(wrapper.findAll(".oc-pagination-list-item-current").length).toBe(1)
+    expect(wrapper.findAll(selectors.listItemPage).length).toBe(5)
+    expect(wrapper.findAll(selectors.listItemCurrent).length).toBe(1)
   })
 
   it("displays prev and next links", () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: defaultProps,
-    })
+    const wrapper = getWrapper()
 
-    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
-    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemPrevious).exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemNext).exists()).toBeTruthy()
   })
 
   it("hides prev link if the current page is the first page", () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        currentPage: 1,
-      },
-    })
+    const wrapper = getWrapper({ currentPage: 1 })
 
-    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeFalsy()
-    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemPrevious).exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemNext).exists()).toBeTruthy()
   })
 
   it("hides next link if the current page is the last page", () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        currentPage: 5,
-      },
-    })
+    const wrapper = getWrapper({ currentPage: 5 })
 
-    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
-    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemPrevious).exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemNext).exists()).toBeFalsy()
   })
 
   it("truncates pages if maxDisplayed prop is set", () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        pages: 10,
-        currentPage: 5,
-        maxDisplayed: 3,
-      },
+    const wrapper = getWrapper({
+      pages: 10,
+      currentPage: 5,
+      maxDisplayed: 3,
     })
 
-    expect(wrapper.findAll(".oc-pagination-list-item-ellipsis").length).toBe(2)
-    expect(wrapper.findAll(".oc-pagination-list-item-link").length).toBe(4)
-    expect(wrapper.findAll(".oc-pagination-list-item-current").length).toBe(1)
+    expect(wrapper.findAll(selectors.listItemEllipsis).length).toBe(2)
+    expect(wrapper.findAll(selectors.listItemLink).length).toBe(4)
+    expect(wrapper.findAll(selectors.listItemCurrent).length).toBe(1)
   })
 
   it("does not truncates pages if length of pages is the same as with ...", async () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        pages: 4,
-        currentPage: 1,
-        maxDisplayed: 3,
-      },
+    const wrapper = getWrapper({
+      pages: 4,
+      currentPage: 1,
+      maxDisplayed: 3,
     })
 
-    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeFalsy()
-    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeFalsy()
-    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemPrevious).exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemNext).exists()).toBeTruthy()
 
-    wrapper.setProps({ currentPage: 2 })
-    await wrapper.vm.$nextTick()
+    await wrapper.setProps({ currentPage: 2 })
 
-    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeFalsy()
-    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
-    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemPrevious).exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemNext).exists()).toBeTruthy()
 
-    wrapper.setProps({ currentPage: 4 })
-    await wrapper.vm.$nextTick()
+    await wrapper.setProps({ currentPage: 4 })
 
-    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeFalsy()
-    expect(wrapper.find(".oc-pagination-list-item-prev").exists()).toBeTruthy()
-    expect(wrapper.find(".oc-pagination-list-item-next").exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeFalsy()
+    expect(wrapper.find(selectors.listItemPrevious).exists()).toBeTruthy()
+    expect(wrapper.find(selectors.listItemNext).exists()).toBeFalsy()
 
-    wrapper.setProps({ pages: 10 })
-    await wrapper.vm.$nextTick()
-    expect(wrapper.find(".oc-pagination-list-item-ellipsis").exists()).toBeTruthy()
+    await wrapper.setProps({ pages: 10 })
+
+    expect(wrapper.find(selectors.listItemEllipsis).exists()).toBeTruthy()
   })
 
   it("doesn't show ellipsis if maxDisplayed prop is set but no pages are removed", () => {
-    const wrapper = shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        maxDisplayed: 3,
-      },
-    })
+    const wrapper = getWrapper({ maxDisplayed: 3 })
 
-    expect(wrapper.findAll(".oc-pagination-list-item-ellipsis").length).toBe(0)
-    expect(wrapper.findAll(".oc-pagination-list-item-link").length).toBe(4)
-    expect(wrapper.findAll(".oc-pagination-list-item-current").length).toBe(1)
+    expect(wrapper.findAll(selectors.listItemEllipsis).length).toBe(0)
+    expect(wrapper.findAll(selectors.listItemLink).length).toBe(4)
+    expect(wrapper.findAll(selectors.listItemCurrent).length).toBe(1)
   })
 
   it("logs error if maxDisplayed prop is not an even number", () => {
     console.error = jest.fn()
 
-    shallowMount(Pagination, {
-      propsData: {
-        ...defaultProps,
-        maxDisplayed: 2,
-      },
-    })
+    getWrapper({ maxDisplayed: 2 })
 
     // Error is called twice because of a default Vue validator error and our custom message
     expect(console.error).toHaveBeenCalledTimes(2)
