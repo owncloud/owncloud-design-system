@@ -73,14 +73,23 @@
         <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
         <slot name="quickActions" :resource="item" />
         <oc-button
+          :id="`quick-action-${item.id.replaceAll('=', '')}`"
           :aria-label="$gettext('Show details')"
           class="oc-table-files-btn-show-details"
           variation="passive"
           appearance="raw"
-          @click="showDetails(item)"
+          @click.native.stop
         >
           <oc-icon name="more_vert" />
         </oc-button>
+        <oc-drop
+          :drop-id="`quick-action-menu-drop-${item.id.replaceAll('=', '')}`"
+          :toggle="`#quick-action-${item.id.replaceAll('=', '')}`"
+          mode="click"
+          close-on-click
+        >
+          <slot name="quickActions" :resource="item" />
+        </oc-drop>
       </div>
     </template>
     <template v-if="$slots.footer" #footer>
@@ -101,12 +110,22 @@ import OcCheckbox from "../OcCheckbox.vue"
 import OcButton from "../OcButton.vue"
 import OcResourceSize from "../resource/OcResourceSize.vue"
 import { EVENT_TROW_MOUNTED } from "./helpers/constants"
+import OcDrop from "../OcDrop.vue"
 
 export default {
   name: "OcTableFiles",
   status: "ready",
   release: "2.1.0",
-  components: { OcTable, OcResource, OcIcon, OcAvatarGroup, OcCheckbox, OcButton, OcResourceSize },
+  components: {
+    OcTable,
+    OcResource,
+    OcIcon,
+    OcAvatarGroup,
+    OcCheckbox,
+    OcButton,
+    OcResourceSize,
+    OcDrop,
+  },
   model: {
     prop: "selection",
     event: "select",
