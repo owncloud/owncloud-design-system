@@ -3,19 +3,21 @@
     <oc-icon :variation="iconVariation" size="large" name="info" class="oc-mr-s" />
     <div
       class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
-      :role="status === 'danger' ? 'alert' : 'status'"
-      :aria-live="status === 'danger' ? 'assertive' : 'polite'"
+      :role="role"
+      :aria-live="ariaLive"
     >
       <div class="oc-notification-message-title">
         {{ title }}
       </div>
-      <div v-if="message" class="oc-text-muted uk-width-1-1">
+      <div v-if="message" class="oc-text-muted uk-width-1-1 oc-notification-message-content">
         {{ message }}
       </div>
     </div>
   </div>
 </template>
 <script>
+import OcIcon from "./OcIcon.vue"
+
 /**
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
  */
@@ -23,6 +25,9 @@ export default {
   name: "OcNotificationMessage",
   status: "ready",
   release: "1.0.0",
+  components: {
+    OcIcon,
+  },
   props: {
     /**
      * Notification messages are sub components of the oc-notifications component.
@@ -69,6 +74,15 @@ export default {
     },
     iconVariation() {
       return this.status
+    },
+    isStatusDanger() {
+      return this.status === "danger"
+    },
+    role() {
+      return this.isStatusDanger ? "alert" : "status"
+    },
+    ariaLive() {
+      return this.isStatusDanger ? "assertive" : "polite"
     },
   },
   mounted() {
