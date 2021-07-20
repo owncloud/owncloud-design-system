@@ -21,10 +21,16 @@
  * Additional properties can be added to the `properties` slot.
  * Actions can be added to the `actions` slot.
  */
+
+import OcAvatar from "./avatars/OcAvatar.vue"
+
 export default {
   name: "OcUser",
   status: "deprecated",
   release: "1.0.0",
+  components: {
+    OcAvatar,
+  },
   props: {
     /**
      * Image source, path to avatar
