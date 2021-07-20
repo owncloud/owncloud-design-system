@@ -6,9 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - No hover on current breadcrumb item: [#1416](https://github.com/owncloud/owncloud-design-system/issues/1416)
 * Bugfix - Inverse button hover: [#1401](https://github.com/owncloud/owncloud-design-system/issues/1401)
 
 ## Details
+
+* Bugfix - No hover on current breadcrumb item: [#1416](https://github.com/owncloud/owncloud-design-system/issues/1416)
+
+   The current page's breadcrumb item is not interactive and shouldn't have a focus on hover, so we
+   removed it.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1416
+   https://github.com/owncloud/owncloud-design-system/pull/1511
+
 
 * Bugfix - Inverse button hover: [#1401](https://github.com/owncloud/owncloud-design-system/issues/1401)
 
