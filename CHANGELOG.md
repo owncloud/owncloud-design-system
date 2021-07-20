@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - No hover on current breadcrumb item: [#1416](https://github.com/owncloud/owncloud-design-system/issues/1416)
 * Bugfix - Inverse button hover: [#1401](https://github.com/owncloud/owncloud-design-system/issues/1401)
+* Bugfix - OcSwitch Off State is not pixel perfect: [#1458](https://github.com/owncloud/owncloud-design-system/issues/1458)
 
 ## Details
 
@@ -27,6 +28,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1401
    https://github.com/owncloud/owncloud-design-system/pull/1506
+
+
+* Bugfix - OcSwitch Off State is not pixel perfect: [#1458](https://github.com/owncloud/owncloud-design-system/issues/1458)
+
+   We've addressed the fact that the OcSwitch wasn't aligned properly in it's off state. Both
+   states are now aligned equaly.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1458
+   https://github.com/owncloud/owncloud-design-system/pull/1512
 
 # Changelog for [8.0.0] (2021-07-08)
 
