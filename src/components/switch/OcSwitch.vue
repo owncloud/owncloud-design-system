@@ -80,23 +80,23 @@ export default {
     border-radius: 20px;
     cursor: pointer;
     display: block;
-    height: $form-radio-size;
+    height: 16px;
     margin: 0;
     padding: 0;
     position: relative;
     transition: background-color 0.25s;
-    width: $form-radio-size * 1.75;
+    width: 29px;
 
     &::before {
       background-color: var(--oc-color-text-inverse);
       border-radius: 50%;
       content: "";
-      height: $form-radio-size - 4;
+      height: 12px;
       left: 1px;
       position: absolute;
       top: 2px;
       transition: transform 0.25s;
-      width: $form-radio-size - 4;
+      width: 12px;
     }
 
     &[aria-checked="false"] {
@@ -104,6 +104,7 @@ export default {
 
       &::before {
         transform: translateX(0);
+        left: 2px;
       }
     }
 
@@ -112,6 +113,7 @@ export default {
 
       &::before {
         transform: translateX(calc(100% + 1px));
+        left: 1px;
       }
     }
   }
