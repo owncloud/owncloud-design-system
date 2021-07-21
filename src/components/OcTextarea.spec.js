@@ -64,4 +64,67 @@ describe("OcTextarea", () => {
       expect(wrapper.find(selectors.textareaMessage).text()).toBe("You may pass.")
     })
   })
+  describe("when an error message is provided", () => {
+    const wrapper = getShallowWrapper({ errorMessage: "You shall not pass." })
+    it("should add the error class to the textarea", () => {
+      expect(wrapper.find("textarea").attributes().class).toContain("oc-textarea-danger")
+    })
+    it("should add the error class to the textarea message", () => {
+      expect(wrapper.find(selectors.textareaMessage).attributes().class).toContain(
+        "oc-textarea-danger"
+      )
+    })
+    it("should show the error message as the textarea message text", () => {
+      expect(wrapper.find(selectors.textareaMessage).text()).toBe("You shall not pass.")
+    })
+    it("should set the input aria-invalid attribute to true", () => {
+      expect(wrapper.find("textarea").attributes("aria-invalid")).toBe("true")
+    })
+  })
+  describe("message priority", () => {
+    it("should give error message top priority", () => {
+      const wrapper = getShallowWrapper({
+        errorMessage: "You shall not pass.",
+        warningMessage: "You may pass.",
+        descriptionMessage: "Your should pass.",
+      })
+      const messageEl = wrapper.find(".oc-textarea-message span")
+      expect(messageEl.attributes().class).toBe(
+        "oc-textarea-description oc-textarea-warning oc-textarea-danger"
+      )
+      expect(messageEl.text()).toBe("You shall not pass.")
+    })
+    it("should give waring message priority over description message", () => {
+      const wrapper = getShallowWrapper({
+        warningMessage: "You may pass.",
+        descriptionMessage: "Your should pass.",
+      })
+      const messageEl = wrapper.find(selectors.textareaMessage)
+      expect(messageEl.attributes().class).toBe("oc-textarea-description oc-textarea-warning")
+      expect(messageEl.text()).toBe("You may pass.")
+    })
+  })
+  describe("input events", () => {
+    it("should emit an input event on typing", async () => {
+      const wrapper = getShallowWrapper()
+      expect(wrapper.emitted().input).toBeFalsy()
+      await wrapper.find("textarea").setValue("a")
+      expect(wrapper.emitted().input).toBeTruthy()
+      expect(wrapper.emitted().input[0][0]).toBe("a")
+    })
+  })
+  describe("change events", () => {
+    it("should emit an change event if submitOnEnter is true", async () => {
+      const wrapper = getShallowWrapper({ submitOnEnter: true })
+      expect(wrapper.emitted().change).toBeFalsy()
+      await wrapper.find("textarea").trigger('keydown.enter') 
+      expect(wrapper.emitted().change).toBeTruthy()
+    })
+    it("shouldnt emit an change event if submitOnEnter is false", async () => {
+      const wrapper = getShallowWrapper({ submitOnEnter: false })
+      expect(wrapper.emitted().change).toBeFalsy()
+      await wrapper.find("textarea").trigger('keydown.enter') 
+      expect(wrapper.emitted().change).toBeFalsy()
+    })
+  })
 });
