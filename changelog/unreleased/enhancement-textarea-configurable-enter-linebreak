@@ -1,4 +1,4 @@
-Feature: OcTextarea configurable Enter/Linebreak
+Enhancement: OcTextarea configurable Enter/Linebreak
 
 OcTextArea has now an property 'submitOnEnter'. 
 This prop controls how the textarea should react to ENTER.
