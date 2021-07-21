@@ -110,8 +110,8 @@ export default {
     submitOnEnter: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     showMessageLine() {
@@ -168,13 +168,13 @@ export default {
       this.$emit("focus", value)
     },
     onKeyDown(e) {
-      if(this.submitOnEnter && e.keyCode === 13 && !e.ctrlKey && !e.shiftKey){
+      if (this.submitOnEnter && e.keyCode === 13 && !e.ctrlKey && !e.shiftKey) {
         /**
          * Change event - emitted as soon as the user hits enter (without ctrl or shift)
          * Only applies if submitOnEnter is set to true
          * @type {string}
          */
-        this.$emit("change", e.target.value);
+        this.$emit("change", e.target.value)
       }
 
       /**

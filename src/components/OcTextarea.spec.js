@@ -1,4 +1,4 @@
-import { shallowMount, mount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import OcTextarea from "./OcTextarea.vue"
 
 const defaultProps = {
@@ -9,20 +9,21 @@ describe("OcTextarea", () => {
   function getShallowWrapper(props = {}) {
     return shallowMount(OcTextarea, {
       propsData: {
-      ...defaultProps,
-      ...props,
+        ...defaultProps,
+        ...props,
       },
     })
   }
-  function getMountedWrapper(options = {}) {
-    return mount(OcTextarea, options)
-  }
+
   const selectors = {
     textareaMessage: ".oc-textarea-message span",
     textArea: ".oc-textarea",
   }
   describe("id prop", () => {
-    const wrapper = getShallowWrapper({ id: "test-textarea-id", descriptionMessage: "hello" })
+    const wrapper = getShallowWrapper({
+      id: "test-textarea-id",
+      descriptionMessage: "hello",
+    })
     it("should set provided id to the textarea", () => {
       expect(wrapper.find("textarea").attributes().id).toBe("test-textarea-id")
     })
@@ -30,7 +31,9 @@ describe("OcTextarea", () => {
       expect(wrapper.find("label").attributes().for).toBe("test-textarea-id")
     })
     it("should set message id according to provided id", () => {
-      expect(wrapper.find(selectors.textareaMessage).attributes().id).toBe("test-textarea-id-message")
+      expect(wrapper.find(selectors.textareaMessage).attributes().id).toBe(
+        "test-textarea-id-message"
+      )
     })
   })
   describe("label prop", () => {
@@ -117,14 +120,14 @@ describe("OcTextarea", () => {
     it("should emit an change event if submitOnEnter is true", async () => {
       const wrapper = getShallowWrapper({ submitOnEnter: true })
       expect(wrapper.emitted().change).toBeFalsy()
-      await wrapper.find("textarea").trigger('keydown.enter') 
+      await wrapper.find("textarea").trigger("keydown.enter")
       expect(wrapper.emitted().change).toBeTruthy()
     })
     it("shouldnt emit an change event if submitOnEnter is false", async () => {
       const wrapper = getShallowWrapper({ submitOnEnter: false })
       expect(wrapper.emitted().change).toBeFalsy()
-      await wrapper.find("textarea").trigger('keydown.enter') 
+      await wrapper.find("textarea").trigger("keydown.enter")
       expect(wrapper.emitted().change).toBeFalsy()
     })
   })
-});
+})
