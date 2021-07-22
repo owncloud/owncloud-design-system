@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - No hover on current breadcrumb item: [#1416](https://github.com/owncloud/owncloud-design-system/issues/1416)
 * Bugfix - Inverse button hover: [#1401](https://github.com/owncloud/owncloud-design-system/issues/1401)
 * Bugfix - OcSwitch Off State is not pixel perfect: [#1458](https://github.com/owncloud/owncloud-design-system/issues/1458)
+* Enhancement - OcSwitch off state color: [#1457](https://github.com/owncloud/owncloud-design-system/issues/1457)
 * Enhancement - OcTableFiles dropdown menu: [#1420](https://github.com/owncloud/owncloud-design-system/pull/1420)
 * Enhancement - OcTextarea configurable Enter/Linebreak: [#1422](https://github.com/owncloud/owncloud-design-system/issues/1422)
 
@@ -39,6 +40,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1458
    https://github.com/owncloud/owncloud-design-system/pull/1512
+
+
+* Enhancement - OcSwitch off state color: [#1457](https://github.com/owncloud/owncloud-design-system/issues/1457)
+
+   We've addressed the fact that the OcSwitch 'off' state color doesn't differ enough from 'on'
+   state
+
+   https://github.com/owncloud/owncloud-design-system/issues/1457
+   https://github.com/owncloud/owncloud-design-system/pull/1522
 
 
 * Enhancement - OcTableFiles dropdown menu: [#1420](https://github.com/owncloud/owncloud-design-system/pull/1420)
