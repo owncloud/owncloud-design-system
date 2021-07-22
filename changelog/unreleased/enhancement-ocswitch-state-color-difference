@@ -1,4 +1,4 @@
-Bugfix: OcSwitch off state color 
+Enhancement: OcSwitch off state color 
 
 We've addressed the fact that the OcSwitch 'off' state color doesn't differ enough from 'on' state
 
