@@ -5,13 +5,13 @@
   &::before {
     border-bottom: 1px solid var(--oc-color-swatch-primary-muted);
     bottom: 0;
-    content: '';
+    content: "";
     left: 0;
     position: absolute;
     right: 0;
   }
 
-  [role='tab'] {
+  [role="tab"] {
     @extend .oc-button-reset;
 
     border-bottom: 1px solid transparent;
@@ -27,7 +27,7 @@
       background-color: var(--oc-color-swatch-primary-muted);
     }
 
-    &[aria-selected='true'] {
+    &[aria-selected="true"] {
       border-color: var(--oc-color-swatch-brand-default);
       color: var(--oc-color-swatch-brand-default);
       position: relative;

@@ -5,7 +5,7 @@
   max-height: calc(100vh - #{$navbar-nav-item-height});
 }
 
-[oc-scroll-offset*='.oc-app-bar'] {
+[oc-scroll-offset*=".oc-app-bar"] {
   //        Height of oc-top-bar      height of oc-app-bar      added padding
   $offset: $navbar-nav-item-height + $global-control-height + $oc-space-medium;
 
