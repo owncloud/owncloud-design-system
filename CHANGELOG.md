@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v8.1.0...master
+
+## Summary
+
+* Bugfix - OcTableFiles Contextmenu ID: [#1525](https://github.com/owncloud/owncloud-design-system/pull/1525)
+
+## Details
+
+* Bugfix - OcTableFiles Contextmenu ID: [#1525](https://github.com/owncloud/owncloud-design-system/pull/1525)
+
+   Handling of `=`s in resource IDs in the OcTableFiles contextmenu was broken and lead to
+   undesired behavior. This has been fixed now.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1525
+
 # Changelog for [8.1.0] (2021-07-22)
 
 The following sections list the changes in ownCloud Design System 8.1.0.
