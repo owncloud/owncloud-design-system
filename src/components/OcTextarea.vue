@@ -103,14 +103,14 @@ export default {
       default: false,
     },
     /**
-     * Configure if the value should be emited on 'enter' or if it should do a linebreak
-     * if true: 'enter' emits value, ctrl + enter creates linebreak
+     * Configure if the value should be emitted on 'enter' or if it should do a linebreak
+     * if true: 'enter' emits value, ctrl + enter and shift + enter creates linebreak
      * if false: 'enter' creates linebreak
      */
     submitOnEnter: {
       type: Boolean,
       required: false,
-      default: false,
+      default: true,
     },
   },
   computed: {
@@ -168,7 +168,8 @@ export default {
       this.$emit("focus", value)
     },
     onKeyDown(e) {
-      if (this.submitOnEnter && e.keyCode === 13 && !e.ctrlKey && !e.shiftKey) {
+      e.keyEnter = e.key === "Enter";
+      if (this.submitOnEnter && e.keyEnter && !e.ctrlKey && !e.shiftKey) {
         /**
          * Change event - emitted as soon as the user hits enter (without ctrl or shift)
          * Only applies if submitOnEnter is set to true

@@ -97,7 +97,7 @@ describe("OcTextarea", () => {
       )
       expect(messageEl.text()).toBe("You shall not pass.")
     })
-    it("should give waring message priority over description message", () => {
+    it("should give warning message priority over description message", () => {
       const wrapper = getShallowWrapper({
         warningMessage: "You may pass.",
         descriptionMessage: "Your should pass.",
@@ -117,13 +117,13 @@ describe("OcTextarea", () => {
     })
   })
   describe("change events", () => {
-    it("should emit an change event if submitOnEnter is true", async () => {
+    it("should emit a change event if submitOnEnter is true", async () => {
       const wrapper = getShallowWrapper({ submitOnEnter: true })
       expect(wrapper.emitted().change).toBeFalsy()
       await wrapper.find("textarea").trigger("keydown.enter")
       expect(wrapper.emitted().change).toBeTruthy()
     })
-    it("shouldnt emit an change event if submitOnEnter is false", async () => {
+    it("shouldn't emit a change event if submitOnEnter is false", async () => {
       const wrapper = getShallowWrapper({ submitOnEnter: false })
       expect(wrapper.emitted().change).toBeFalsy()
       await wrapper.find("textarea").trigger("keydown.enter")
