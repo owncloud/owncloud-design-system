@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Inverse button hover: [#1401](https://github.com/owncloud/owncloud-design-system/issues/1401)
 * Bugfix - OcSwitch Off State is not pixel perfect: [#1458](https://github.com/owncloud/owncloud-design-system/issues/1458)
 * Enhancement - OcTableFiles dropdown menu: [#1420](https://github.com/owncloud/owncloud-design-system/pull/1420)
+* Enhancement - OcTextarea configurable Enter/Linebreak: [#1422](https://github.com/owncloud/owncloud-design-system/issues/1422)
 
 ## Details
 
@@ -48,6 +49,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/5102
    https://github.com/owncloud/web/issues/5103
    https://github.com/owncloud/owncloud-design-system/pull/1420
+
+
+* Enhancement - OcTextarea configurable Enter/Linebreak: [#1422](https://github.com/owncloud/owncloud-design-system/issues/1422)
+
+   OcTextArea has now an property 'submitOnEnter'. This prop controls how the textarea should
+   react to ENTER.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1422
+   https://github.com/owncloud/owncloud-design-system/pull/1517
 
 # Changelog for [8.0.0] (2021-07-08)
 
