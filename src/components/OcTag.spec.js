@@ -20,8 +20,7 @@ describe("OcTag", () => {
       },
     })
 
-    wrapper.trigger("click")
-    await wrapper.vm.$nextTick()
+    await wrapper.trigger("click")
     expect(wrapper.emitted().click).toBeTruthy()
   })
 })

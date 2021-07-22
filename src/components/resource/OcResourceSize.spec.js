@@ -31,10 +31,9 @@ describe("OcResourceSize", () => {
     })
     expect(wrapper.find(".oc-resource-size").text()).toEqual("24 KB")
 
-    wrapper.setProps({
+    await wrapper.setProps({
       size: 44145049,
     })
-    await wrapper.vm.$nextTick()
     expect(wrapper.find(".oc-resource-size").text()).toEqual("42.1 MB")
   })
 
