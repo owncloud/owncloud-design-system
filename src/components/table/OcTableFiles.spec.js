@@ -104,6 +104,10 @@ const resourcesWithAllFields = [
 ]
 
 describe("OcTableFiles", () => {
+  const spyDisplayPositionedDropdown = jest
+    .spyOn(Table.methods, "displayPositionedDropdown")
+    .mockImplementation()
+
   // As we do not care about design here, we can render the full set of fields
   // Since we are using mount, use it only once to save some time
   const wrapper = mount(Table, {
@@ -132,9 +136,7 @@ describe("OcTableFiles", () => {
   })
 
   it("emits showDetails event when clicking on the row", async () => {
-    wrapper.find(".oc-tbody-tr").trigger("click")
-
-    await wrapper.vm.$nextTick()
+    await wrapper.find(".oc-tbody-tr").trigger("click")
 
     expect(wrapper.emitted().showDetails.length).toEqual(2)
   })
@@ -167,5 +169,20 @@ describe("OcTableFiles", () => {
     wrapper.find(".oc-tbody-tr-forest .oc-resource-name").trigger("click")
 
     expect(wrapper.emitted().fileClick[0][0].name).toMatch("forest.jpg")
+  })
+
+  it("emitting contextmenu-clicked event on table row", async () => {
+    const tableRow = await wrapper.find(".oc-tbody-tr-forest")
+    tableRow.vm.$emit("contextmenuClicked")
+    expect(tableRow.emitted().contextmenuClicked).toBeTruthy()
+  })
+
+  it("emitting contextmenu-clicked event on clicking the three-dot icon in table row", async () => {
+    const threeDotButton = await wrapper.find(
+      ".oc-table-data-cell-actions .oc-table-files-btn-action-dropdown"
+    )
+    threeDotButton.trigger("click")
+    expect(spyDisplayPositionedDropdown).toHaveBeenCalledTimes(1)
+    expect(threeDotButton.emitted().click).toBeTruthy()
   })
 })
