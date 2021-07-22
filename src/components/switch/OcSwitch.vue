@@ -88,7 +88,7 @@ export default {
     width: 29px;
 
     &::before {
-      background-color: var(--oc-color-text-inverse);
+      background-color: var(--oc-color-swatch-inverse-default);
       border-radius: 50%;
       content: "";
       height: 12px;
@@ -100,7 +100,7 @@ export default {
     }
 
     &[aria-checked="false"] {
-      background-color: var(--oc-color-text-muted);
+      background-color: var(--oc-color-swatch-inverse-muted);
 
       &::before {
         transform: translateX(0);
