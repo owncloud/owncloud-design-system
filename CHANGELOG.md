@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - No hover on current breadcrumb item: [#1416](https://github.com/owncloud/owncloud-design-system/issues/1416)
 * Bugfix - Inverse button hover: [#1401](https://github.com/owncloud/owncloud-design-system/issues/1401)
 * Bugfix - OcSwitch Off State is not pixel perfect: [#1458](https://github.com/owncloud/owncloud-design-system/issues/1458)
+* Enhancement - OcTableFiles dropdown menu: [#1420](https://github.com/owncloud/owncloud-design-system/pull/1420)
 
 ## Details
 
@@ -37,6 +38,16 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1458
    https://github.com/owncloud/owncloud-design-system/pull/1512
+
+
+* Enhancement - OcTableFiles dropdown menu: [#1420](https://github.com/owncloud/owncloud-design-system/pull/1420)
+
+   The OcTableFiles component now has a slot that will be displayed inside an OcDrop upon either
+   right-clicking a table row or the three-dot button on the right end of the row.
+
+   https://github.com/owncloud/web/issues/5102
+   https://github.com/owncloud/web/issues/5103
+   https://github.com/owncloud/owncloud-design-system/pull/1420
 
 # Changelog for [8.0.0] (2021-07-08)
 
