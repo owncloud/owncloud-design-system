@@ -380,11 +380,10 @@ export default {
       event.preventDefault()
 
       const instance = rows.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
-        ._tippy
       if (instance === undefined) {
         return
       }
-      this.displayPositionedDropdown(instance, event)
+      this.displayPositionedDropdown(instance._tippy, event)
     },
 
     displayPositionedDropdown(dropdown, event) {
