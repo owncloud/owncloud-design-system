@@ -1,4 +1,4 @@
-Change: deprecate OcAutocomplete
+Enhancement: deprecate OcAutocomplete
 
 We've deprecated the OcAutocomplete component. OcSelect with `:multiple="true"` prop can be used to achieve the same behaviour.
 
