@@ -8,27 +8,17 @@
           v-bind="extractThProps(field, index)"
           @click.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
         >
-          <span
-            v-if="field.headerType === 'slot'"
+          <component
+            :is="extractThValueComponent(field)"
+            v-bind="extractThValueProps(field)"
             :key="field.name + 'Header'"
             class="oc-table-thead-content"
+            :class="{ 'oc-table-sort': field.sortable }"
+            v-on="extractThValueListeners(field)"
           >
-            <slot :name="field.name + 'Header'" />
-          </span>
-          <span
-            v-else
-            :key="field.name + 'Header'"
-            class="oc-table-thead-content"
-            v-text="extractFieldTitle(field)"
-          />
-          <oc-button
-            v-if="field.sortable"
-            :aria-label="getSortLabel(field.name)"
-            class="oc-button-sort"
-            variant="passive"
-            appearance="raw"
-            @click.stop="$emit(constants.EVENT_THEAD_CLICKED, field)"
-          />
+            <slot v-if="field.headerType === 'slot'" :name="field.name + 'Header'" />
+            <span v-else v-text="extractFieldTitle(field)" />
+          </component>
         </oc-th>
       </oc-tr>
     </oc-thead>
@@ -254,6 +244,28 @@ export default {
 
       return props
     },
+    extractThValueComponent(field) {
+      if (!field.sortable) {
+        return "span"
+      }
+      return "oc-button"
+    },
+    extractThValueProps(field) {
+      if (!field.sortable) {
+        return {}
+      }
+      return {
+        appearance: "raw",
+      }
+    },
+    extractThValueListeners(field) {
+      if (!field.sortable) {
+        return {}
+      }
+      return {
+        click: () => this.emitSort(field),
+      }
+    },
     extractTbodyTrProps(item, index) {
       return {
         class: [
@@ -336,10 +348,11 @@ export default {
       return [...prefix, item[field.name]].join("-")
     },
 
-    getSortLabel(name) {
-      const label = this.$gettext("Sort by %{ name }")
-
-      return this.$gettextInterpolate(label, { name })
+    emitSort(field) {
+      if (!field.sortable) {
+        return
+      }
+      this.$emit(EVENT_THEAD_CLICKED, field)
     },
   },
 }
