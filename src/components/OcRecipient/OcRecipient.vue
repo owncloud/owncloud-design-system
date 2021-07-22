@@ -98,8 +98,8 @@ export default {
 <docs>
 ```js
 <div class="uk-flex uk-flex-column uk-flex-left uk-flex-top">
-  <oc-recipient :recipient="{ name: 'Alice', avatar: 'https://picsum.photos/24' }" class="oc-mb-s" />
-  <oc-recipient :recipient="{ name: 'Alice' }" />
+  <oc-recipient :recipient="{ name: 'Alice', avatar: 'https://picsum.photos/24', hasAvatar: true, isAvatarLoading: false }" class="oc-mb-s" />
+  <oc-recipient :recipient="{ name: 'Alice', icon: { name: 'person', label: 'User' }, hasAvatar: false }" />
 </div>
 ```
 </docs>
