@@ -168,8 +168,8 @@ export default {
       this.$emit("focus", value)
     },
     onKeyDown(e) {
-      e.keyEnter = e.key === "Enter";
-      if (this.submitOnEnter && e.keyEnter && !e.ctrlKey && !e.shiftKey) {
+      const enterKey = e.key === "Enter"
+      if (this.submitOnEnter && enterKey && !e.ctrlKey && !e.shiftKey) {
         /**
          * Change event - emitted as soon as the user hits enter (without ctrl or shift)
          * Only applies if submitOnEnter is set to true
