@@ -82,20 +82,20 @@
         <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
         <slot name="quickActions" :resource="item" />
         <oc-button
-          :id="`quick-action-${item.id.replace(/=*/, '')}`"
-          :aria-label="$gettext('Show quick actions')"
+          :id="`context-menu-trigger-${item.id.replace(/=+/, '')}`"
+          :aria-label="$gettext('Show context menu')"
           class="oc-table-files-btn-action-dropdown"
           appearance="raw"
           @click.stop.prevent="
-            resetDropPosition(`quick-action-drop-ref-${item.id.replace(/=*/, '')}`, $event)
+            resetDropPosition(`context-menu-drop-ref-${item.id.replace(/=+/, '')}`, $event)
           "
         >
           <oc-icon name="more_vert" />
         </oc-button>
         <oc-drop
-          :ref="`quick-action-drop-ref-${item.id.replace(/=*/, '')}`"
-          :drop-id="`quick-action-menu-drop-${item.id.replace(/=*/, '')}`"
-          :toggle="`#quick-action-${item.id.replace(/=*/, '')}`"
+          :ref="`context-menu-drop-ref-${item.id.replace(/=+/, '')}`"
+          :drop-id="`context-menu-drop-${item.id.replace(/=+/, '')}`"
+          :toggle="`#context-menu-trigger-${item.id.replace(/=+/, '')}`"
           mode="click"
           close-on-click
         >
