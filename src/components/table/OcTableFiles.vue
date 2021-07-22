@@ -8,6 +8,7 @@
     :header-position="headerPosition"
     @highlight="showDetails"
     @rowMounted="rowMounted"
+    @contextmenuClicked="showContextMenu"
   >
     <template #selectHeader>
       <div class="oc-table-files-select-all">
@@ -70,17 +71,37 @@
     </template>
     <template #actions="{ item }">
       <div class="oc-table-files-actions">
-        <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
-        <slot name="quickActions" :resource="item" />
         <oc-button
           :aria-label="$gettext('Show details')"
           class="oc-table-files-btn-show-details"
-          variation="passive"
           appearance="raw"
           @click="showDetails(item)"
         >
+          <oc-icon name="info_outline" />
+        </oc-button>
+        <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
+        <slot name="quickActions" :resource="item" />
+        <oc-button
+          :id="`quick-action-${item.id.replace(/=/, '')}`"
+          :aria-label="$gettext('Show quick actions')"
+          class="oc-table-files-btn-action-dropdown"
+          appearance="raw"
+          @click.stop.prevent="
+            resetDropPosition(`quick-action-drop-ref-${item.id.replace(/=/, '')}`, $event)
+          "
+        >
           <oc-icon name="more_vert" />
         </oc-button>
+        <oc-drop
+          :ref="`quick-action-drop-ref-${item.id.replace(/=/, '')}`"
+          :drop-id="`quick-action-menu-drop-${item.id.replace(/=/, '')}`"
+          :toggle="`#quick-action-${item.id.replace(/=/, '')}`"
+          mode="click"
+          close-on-click
+        >
+          <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
+          <slot name="contextMenu" :resource="item" />
+        </oc-drop>
       </div>
     </template>
     <template v-if="$slots.footer" #footer>
@@ -100,13 +121,23 @@ import OcAvatarGroup from "../avatars/OcAvatarGroup.vue"
 import OcCheckbox from "../OcCheckbox.vue"
 import OcButton from "../OcButton.vue"
 import OcResourceSize from "../resource/OcResourceSize.vue"
+import OcDrop from "../OcDrop.vue"
 import { EVENT_TROW_MOUNTED } from "./helpers/constants"
 
 export default {
   name: "OcTableFiles",
   status: "ready",
   release: "2.1.0",
-  components: { OcTable, OcResource, OcIcon, OcAvatarGroup, OcCheckbox, OcButton, OcResourceSize },
+  components: {
+    OcTable,
+    OcResource,
+    OcIcon,
+    OcAvatarGroup,
+    OcCheckbox,
+    OcButton,
+    OcResourceSize,
+    OcDrop,
+  },
   model: {
     prop: "selection",
     event: "select",
@@ -337,6 +368,38 @@ export default {
     },
   },
   methods: {
+    resetDropPosition(id, event) {
+      const instance = this.$refs[id].tippy
+      if (instance === undefined) {
+        return
+      }
+      this.displayPositionedDropdown(instance, event)
+    },
+
+    showContextMenu(rows, event) {
+      event.preventDefault()
+
+      const instance = rows.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
+      if (instance === undefined) {
+        return
+      }
+      this.displayPositionedDropdown(instance._tippy, event)
+    },
+
+    displayPositionedDropdown(dropdown, event) {
+      dropdown.setProps({
+        getReferenceClientRect: () => ({
+          width: 0,
+          height: 0,
+          top: event.clientY,
+          bottom: event.clientY,
+          left: event.clientX,
+          right: event.clientX,
+        }),
+      })
+      dropdown.show()
+    },
+
     rowMounted(resource, component) {
       /**
        * Triggered whenever a row is mounted
@@ -488,6 +551,9 @@ export default {
           <oc-icon name="link-add" />
         </oc-button>
       </template>
+      <template v-slot:contextMenu="props">
+        <p>Action Dropdown Placeholder</p>
+      </template>
       <template #footer>
         {{ resources.length }} resources
       </template>
@@ -588,6 +654,7 @@ export default {
       resources() {
         return [
           {
+            id: "example1-forest",
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
             thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
@@ -597,6 +664,7 @@ export default {
             sharedWith: this.sharedWith
           },
           {
+            id: "example1-notes",
             name: "notes.txt",
             path: "/Documents/notes.txt",
             icon: "text",
@@ -606,6 +674,7 @@ export default {
             sharedWith: this.sharedWithOverlapping
           },
           {
+            id: "example1-Documents",
             name: "Documents",
             path: "/Documents",
             icon: "folder",
@@ -714,6 +783,7 @@ export default {
       resources() {
         return [
           {
+            id: "example3-forest",
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
             thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
@@ -729,6 +799,7 @@ export default {
             status: 1
           },
           {
+            id: "example3-notes",
             name: "notes.txt",
             path: "/Documents/notes.txt",
             icon: "text",
@@ -743,6 +814,7 @@ export default {
             status: 0
           },
           {
+            id: "example3-documents",
             name: "Documents",
             path: "/Documents",
             icon: "folder",
@@ -792,6 +864,7 @@ export default {
       resources() {
         return [
           {
+            id: "example4-forest",
             name: "forest.jpg",
             path: "images/nature/forest.jpg",
             icon: "image",
@@ -800,6 +873,7 @@ export default {
             ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
           },
           {
+            id: "example4-notes",
             name: "notes.txt",
             path: "/Documents/notes.txt",
             icon: "text",
@@ -808,6 +882,7 @@ export default {
             ddate: "Mon, 11 Jan 2021 14:34:04 GMT"
           },
           {
+            id: "example4-documents",
             name: "Documents",
             path: "/Documents",
             icon: "folder",

@@ -21,8 +21,7 @@ describe("OcIcon", () => {
     const inlineSvg = wrapper.findComponent({ name: "inline-svg" })
 
     for (const icon of icons) {
-      wrapper.setProps({ name: icon.name })
-      await wrapper.vm.$nextTick()
+      await wrapper.setProps({ name: icon.name })
       await inlineSvg.emitted("unloaded")
       await inlineSvg.emitted("loaded")
       expect(wrapper.find("text").text()).toBe(icon.name)

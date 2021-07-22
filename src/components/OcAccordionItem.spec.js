@@ -86,7 +86,6 @@ describe("OcAccordionItem", () => {
       const wrapper = getWrapperWithMockMethods()
       const titleButton = wrapper.find(".oc-accordion-title button")
       await titleButton.trigger("click")
-      await wrapper.vm.$nextTick()
       expect(mockMethods.toggleExpanded).toHaveBeenCalledTimes(1)
     })
   })

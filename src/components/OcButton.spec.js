@@ -31,7 +31,6 @@ describe("OcButton", () => {
     it("should emit click event when click is triggered", async () => {
       const wrapper = getWrapperWithProps({})
       await wrapper.trigger("click")
-      await wrapper.vm.$nextTick()
       expect(wrapper.emitted("click")).toBeTruthy()
     })
     it.each`
@@ -41,7 +40,6 @@ describe("OcButton", () => {
     `("should not emit click event when type is $type", async ({ type }) => {
       const wrapper = getWrapperWithProps({ type: type })
       await wrapper.trigger("click")
-      await wrapper.vm.$nextTick()
       expect(wrapper.emitted("click")).toBeFalsy()
     })
   })
@@ -55,7 +53,6 @@ describe("OcButton", () => {
     })
     it("should not emit click event", async () => {
       await wrapper.trigger("click")
-      await wrapper.vm.$nextTick()
       expect(wrapper.emitted("click")).toBeFalsy()
     })
   })

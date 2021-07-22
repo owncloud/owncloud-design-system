@@ -39,6 +39,9 @@
         :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
         @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
+        @contextmenu.native="
+          $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event)
+        "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
       >
         <oc-td
@@ -74,7 +77,12 @@ import OcButton from "../OcButton"
 import SortMixin from "./mixins/sort"
 import { getSizeClass } from "../../utils/sizeClasses"
 
-import { EVENT_THEAD_CLICKED, EVENT_TROW_CLICKED, EVENT_TROW_MOUNTED } from "./helpers/constants"
+import {
+  EVENT_THEAD_CLICKED,
+  EVENT_TROW_CLICKED,
+  EVENT_TROW_MOUNTED,
+  EVENT_TROW_CONTEXTMENU,
+} from "./helpers/constants"
 
 /**
  * A table component with dynamic layout and data.
@@ -192,6 +200,7 @@ export default {
         EVENT_THEAD_CLICKED,
         EVENT_TROW_CLICKED,
         EVENT_TROW_MOUNTED,
+        EVENT_TROW_CONTEXTMENU,
       },
     }
   },

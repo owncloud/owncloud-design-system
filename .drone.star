@@ -52,7 +52,6 @@ def testing(ctx):
             {
                 'name': 'dependencies',
                 'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
                 'commands': [
                     'yarn install'
                 ],
@@ -61,7 +60,6 @@ def testing(ctx):
             {
                 'name': 'eslint',
                 'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
                 'commands': [
                     'yarn lint:eslint',
                 ],
@@ -70,7 +68,6 @@ def testing(ctx):
             {
                 'name': 'stylelint',
                 'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
                 'commands': [
                     'yarn lint:stylelint',
                 ],
@@ -79,7 +76,6 @@ def testing(ctx):
             {
                 'name': 'unit tests',
                 'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
                 'commands': [
                     'yarn run tokens',
                     'yarn test',
@@ -135,7 +131,6 @@ def build(ctx):
             {
                 'name': 'build-docs',
                 'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
                 'commands': [
                     'yarn install',
                     'yarn build:docs',
@@ -144,7 +139,6 @@ def build(ctx):
             {
                 'name': 'build-system',
                 'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
                 'commands': [
                     'yarn install',
                     'yarn build:system',
