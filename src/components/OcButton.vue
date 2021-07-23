@@ -280,7 +280,7 @@ export default {
   border-radius: 3px;
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
-  display: flex;
+  display: inline-flex;
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   text-align: center;
