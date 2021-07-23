@@ -1,4 +1,4 @@
-$directives: ('m': 'margin', 'p': 'padding');
+$directives: ("m": "margin", "p": "padding");
 
 @each $directiveKey, $directiveValue in $directives {
   .oc-#{$directiveKey} {

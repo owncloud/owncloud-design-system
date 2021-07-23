@@ -101,7 +101,7 @@ import uniqueId from "../utils/uniqueId"
 export default {
   name: "OcAutocomplete",
   components: { OcSpinner },
-  status: "ready",
+  status: "deprecated",
   release: "1.0.0",
   props: {
     /**

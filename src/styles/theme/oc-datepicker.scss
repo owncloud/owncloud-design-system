@@ -28,7 +28,7 @@
 
     &::after {
       clear: both;
-      content: '';
+      content: "";
       display: table;
     }
 
@@ -71,7 +71,7 @@
 
     &::after {
       clear: both;
-      content: '';
+      content: "";
       display: table;
     }
 
@@ -252,7 +252,7 @@
     }
   }
 
-  [class$='--disabled'] {
+  [class$="--disabled"] {
     cursor: not-allowed;
 
     &,

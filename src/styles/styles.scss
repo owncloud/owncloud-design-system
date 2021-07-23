@@ -1,40 +1,40 @@
 // Import UIkit default theme (or uikit.scss with only core styles)
 
 // 1. Your custom variables and variable overwrites.
-@import 'theme/variables';
+@import "theme/variables";
 
 // 2. Import default variables and available mixins.
-@import '../../node_modules/uikit/src/scss/variables-theme';
-@import '../../node_modules/uikit/src/scss/mixins-theme';
+@import "../../node_modules/uikit/src/scss/variables-theme";
+@import "../../node_modules/uikit/src/scss/mixins-theme";
 
 // 3. Import Vendor.
-@import '../../node_modules/uikit/src/scss/uikit-theme';
-@import '../../node_modules/tippy.js/dist/tippy';
+@import "../../node_modules/uikit/src/scss/uikit-theme";
+@import "../../node_modules/tippy.js/dist/tippy";
 
 // 4. Your custom mixin overwrites.
-@import 'theme/animations';
-@import 'theme/background';
-@import 'theme/helper';
-@import 'theme/login';
-@import 'theme/main';
-@import 'theme/menu-secondary';
-@import 'theme/oc-app-bar';
-@import 'theme/oc-app-menu';
-@import 'theme/oc-card';
-@import 'theme/oc-datepicker';
-@import 'theme/oc-dropdown';
-@import 'theme/oc-file-actions';
-@import 'theme/oc-icon';
-@import 'theme/oc-loader';
-@import 'theme/oc-progress-pie';
-@import 'theme/oc-public-share-icon';
-@import 'theme/oc-radio';
-@import 'theme/oc-scroll';
-@import 'theme/oc-spacing';
-@import 'theme/oc-spinner';
-@import 'theme/oc-tabbed';
-@import 'theme/oc-text';
-@import 'theme/oc-topbar';
-@import 'theme/oc-transitions';
-@import 'theme/oc-user-menu';
-@import 'theme/oc-visibility';
+@import "theme/animations";
+@import "theme/background";
+@import "theme/helper";
+@import "theme/login";
+@import "theme/main";
+@import "theme/menu-secondary";
+@import "theme/oc-app-bar";
+@import "theme/oc-app-menu";
+@import "theme/oc-card";
+@import "theme/oc-datepicker";
+@import "theme/oc-dropdown";
+@import "theme/oc-file-actions";
+@import "theme/oc-icon";
+@import "theme/oc-loader";
+@import "theme/oc-progress-pie";
+@import "theme/oc-public-share-icon";
+@import "theme/oc-radio";
+@import "theme/oc-scroll";
+@import "theme/oc-spacing";
+@import "theme/oc-spinner";
+@import "theme/oc-tabbed";
+@import "theme/oc-text";
+@import "theme/oc-topbar";
+@import "theme/oc-transitions";
+@import "theme/oc-user-menu";
+@import "theme/oc-visibility";

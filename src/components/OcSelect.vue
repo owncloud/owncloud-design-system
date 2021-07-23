@@ -1,13 +1,27 @@
 <template>
-  <vue-select ref="select" class="oc-select" v-bind="$attrs" v-on="$listeners">
+  <vue-select
+    ref="select"
+    :disabled="disabled"
+    :filter="filter"
+    class="oc-select"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
+    <template #search="{ attributes, events }">
+      <input class="vs__search" v-bind="attributes" @input="userInput" v-on="events" />
+    </template>
     <template v-for="(index, name) in $scopedSlots" #[name]="data">
-      <slot :name="name" v-bind="data"></slot>
+      <slot v-if="name !== 'search'" :name="name" v-bind="data" />
     </template>
     <div slot="no-options" v-translate>No options available.</div>
+    <template #spinner="{ loading }">
+      <oc-spinner v-if="loading" />
+    </template>
   </vue-select>
 </template>
 
 <script>
+import Fuse from "fuse.js"
 import VueSelect from "vue-select"
 import "vue-select/dist/vue-select.css"
 
@@ -23,13 +37,50 @@ export default {
 
   inheritAttrs: true,
 
+  props: {
+    filter: {
+      type: Function,
+      required: false,
+      default: (items, search) => {
+        if (items.length < 1) {
+          return []
+        }
+
+        const fuse = new Fuse(items, {
+          shouldSort: true,
+          threshold: 0.2,
+          location: 0,
+          distance: 100,
+          maxPatternLength: 32,
+          minMatchCharLength: 1,
+        })
+
+        return search.length ? fuse.search(search).map(({ item }) => item) : fuse.list
+      },
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+
   mounted() {
     this.setComboBoxAriaLabel()
   },
+
   methods: {
     setComboBoxAriaLabel() {
       const comboBoxElement = this.$refs.select.$el.querySelector("div:first-child")
       comboBoxElement.setAttribute("aria-label", this.$gettext("Search for option"))
+    },
+    userInput(event) {
+      /**
+       * Triggers when a value of search input is changed
+       *
+       * @property {string} query search query
+       */
+      this.$emit("search:input", event.target.value)
     },
   },
 }
@@ -59,8 +110,13 @@ export default {
       }
     }
 
-    &__actions svg {
-      overflow: visible;
+    &__actions {
+      flex-flow: row wrap;
+      gap: var(--oc-space-xsmall);
+
+      svg {
+        overflow: visible;
+      }
     }
 
     &__clear svg {
@@ -69,6 +125,24 @@ export default {
 
     &__open-indicator {
       margin-top: 2px;
+    }
+
+    &__selected-options {
+      flex: auto;
+    }
+  }
+
+  &[multiple="multiple"] {
+    .vs {
+      &__selected {
+        background-color: var(--oc-color-swatch-inverse-default);
+        border: 1px solid var(--oc-color-input-border);
+        fill: var(--oc-color-text-default);
+      }
+
+      &__deselect {
+        fill: var(--oc-color-text-default);
+      }
     }
   }
 
@@ -117,6 +191,28 @@ export default {
 </script>
 ```
 
+### Multiple selection
+```js
+<template>
+  <div class="oc-docs-width-medium">
+    <oc-select v-model="selected" :multiple="true" :options="options" />
+  </div>
+</template>
+<script>
+export default {
+  data: () => ({
+    selected: ['Apple']
+  }),
+
+  computed: {
+    options() {
+      return ['Apple', 'Bannana', 'Orange', 'Pear'].filter(option => this.selected.indexOf(option) < 0)
+    }
+  }
+}
+</script>
+```
+
 ### Disable search
 To prevent user from filtering options by typing a serach query into the `oc-select` component, set prop called `searchable` to false.
 
@@ -152,6 +248,9 @@ We can then retrieve all the values that we want to display from the slots param
       <template #no-options>
         Your search query hasn't returned any results.
       </template>
+      <template #selected-option="{ title, desc }">
+        <strong class="oc-mr-s" v-text="title" /> <small v-text="desc.substr(0, 20) + '...'" />
+      </template>
     </oc-select>
     <p>
       Selected: {{ selected }}
@@ -186,5 +285,10 @@ export default {
   display: block;
 }
 </style>
+```
+
+## Loading spinner
+```js
+<oc-select :options="['Apple', 'Bannana', 'Orange', 'Pear']" :multiple="true" :loading="true" />
 ```
 </docs>

@@ -150,14 +150,14 @@ describe("OcTableFiles", () => {
   })
 
   describe("resource selection", () => {
-    it("adds resources to selection model when clicking on checkboxes", () => {
-      wrapper.find(".oc-table-files-select-all .oc-checkbox").trigger("click")
-      wrapper.find(".oc-tbody-tr-documents .oc-checkbox").trigger("click")
+    it("adds resources to selection model via checkboxes", () => {
+      wrapper.find(".oc-table-files-select-all .oc-checkbox").setChecked()
+      wrapper.find(".oc-tbody-tr-documents .oc-checkbox").setChecked()
       expect(wrapper.emitted().select.length).toBe(2)
     })
 
     describe("all rows already selected", () => {
-      it("de-selects all resources upon click on the select-all checkbox", () => {
+      it("de-selects all resources via the select-all checkbox", async () => {
         const wrapperSelected = mount(Table, {
           propsData: {
             resources: resourcesWithAllFields,
@@ -165,7 +165,7 @@ describe("OcTableFiles", () => {
           },
         })
 
-        wrapperSelected.find(".oc-table-files-select-all .oc-checkbox").trigger("click")
+        await wrapperSelected.find(".oc-table-files-select-all .oc-checkbox").setChecked(false)
         expect(wrapperSelected.emitted().select[0][0].length).toBe(0)
       })
     })
