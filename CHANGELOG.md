@@ -6,9 +6,18 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Button as inline element: [#1529](https://github.com/owncloud/owncloud-design-system/pull/1529)
 * Bugfix - OcTableFiles Contextmenu ID: [#1525](https://github.com/owncloud/owncloud-design-system/pull/1525)
 
 ## Details
+
+* Bugfix - Button as inline element: [#1529](https://github.com/owncloud/owncloud-design-system/pull/1529)
+
+   We made our OcButton an inline-flex instead of a flex element, so that it behaves correctly
+   regarding alignment inside containers.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1529
+
 
 * Bugfix - OcTableFiles Contextmenu ID: [#1525](https://github.com/owncloud/owncloud-design-system/pull/1525)
 
