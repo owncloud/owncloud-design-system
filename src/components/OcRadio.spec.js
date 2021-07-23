@@ -72,12 +72,12 @@ describe("OcRadio", () => {
     })
   })
   describe("radio input", () => {
-    it("should emit input event if clicked", async () => {
+    it("should emit input event if checked", async () => {
       const wrapper = getWrapper()
       const radioInput = wrapper.find(radioElementSelector)
       expect(wrapper.emitted("input")).toBeFalsy()
-      await radioInput.trigger("click")
-      expect(radioInput.element.checked).toBeTruthy()
+      await radioInput.setChecked()
+      expect(radioInput.element.selected).toBeTruthy()
       expect(wrapper.emitted("input")).toBeTruthy()
     })
     it("should not emit input event if disabled", async () => {
@@ -113,11 +113,11 @@ describe("OcRadio", () => {
     it("should set aria-checked if option equals selected value", async () => {
       const wrapper = mount(Component, options)
       const inputs = wrapper.findAll(radioElementSelector)
-      await inputs.at(0).trigger("click")
+      await inputs.at(0).setChecked()
       expect(inputs.at(0).attributes("aria-checked")).toBe("true")
       expect(inputs.at(1).attributes("aria-checked")).toBe("false")
       expect(inputs.at(2).attributes("aria-checked")).toBe("false")
-      await inputs.at(1).trigger("click")
+      await inputs.at(1).setChecked()
       expect(inputs.at(0).attributes("aria-checked")).toBe("false")
       expect(inputs.at(1).attributes("aria-checked")).toBe("true")
       expect(inputs.at(2).attributes("aria-checked")).toBe("false")
