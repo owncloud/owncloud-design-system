@@ -8,6 +8,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Button as inline element: [#1529](https://github.com/owncloud/owncloud-design-system/pull/1529)
 * Bugfix - OcTableFiles Contextmenu ID: [#1525](https://github.com/owncloud/owncloud-design-system/pull/1525)
+* Enhancement - Deprecate OcAutocomplete: [#1521](https://github.com/owncloud/owncloud-design-system/pull/1521)
+* Enhancement - Add OcRecipient component: [#1521](https://github.com/owncloud/owncloud-design-system/pull/1521)
+* Enhancement - Add `search:input` event to OcSelect: [#1521](https://github.com/owncloud/owncloud-design-system/pull/1521)
 
 ## Details
 
@@ -26,6 +29,29 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/pull/1525
    https://github.com/owncloud/owncloud-design-system/pull/1528
+
+
+* Enhancement - Deprecate OcAutocomplete: [#1521](https://github.com/owncloud/owncloud-design-system/pull/1521)
+
+   We've deprecated the OcAutocomplete component. OcSelect with `:multiple="true"` prop can
+   be used to achieve the same behaviour.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1521
+
+
+* Enhancement - Add OcRecipient component: [#1521](https://github.com/owncloud/owncloud-design-system/pull/1521)
+
+   We've added OcRecipient component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1521
+
+
+* Enhancement - Add `search:input` event to OcSelect: [#1521](https://github.com/owncloud/owncloud-design-system/pull/1521)
+
+   We've added `search:input` event to the OcSelect component which is triggered when a search
+   query is typed into the select.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1521
 
 # Changelog for [8.1.0] (2021-07-22)
 
