@@ -101,6 +101,20 @@ const resourcesWithAllFields = [
     sharedWith,
     owner,
   },
+  {
+    id: "another-one==",
+    name: "Another one",
+    path: "/Another one",
+    icon: "folder",
+    indicators,
+    type: "folder",
+    size: "237895",
+    mdate: getCurrentDate(),
+    sdate: getCurrentDate(),
+    ddate: getCurrentDate(),
+    sharedWith,
+    owner,
+  },
 ]
 
 describe("OcTableFiles", () => {
@@ -193,6 +207,15 @@ describe("OcTableFiles", () => {
       threeDotButton.trigger("click")
       expect(spyDisplayPositionedDropdown).toHaveBeenCalledTimes(1)
       expect(threeDotButton.emitted().click).toBeTruthy()
+    })
+
+    it("removes invalid chars from item ids for usage in html template", async () => {
+      const contextMenuTriggers = await wrapper.findAll(".oc-table-files-btn-action-dropdown")
+      for (let i = 0; i < contextMenuTriggers.length; i++) {
+        const id = contextMenuTriggers.at(i).attributes().id
+        expect(id).not.toBeUndefined()
+        expect(id).toEqual(expect.not.stringContaining("="))
+      }
     })
   })
 })
