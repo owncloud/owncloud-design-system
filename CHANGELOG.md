@@ -16,6 +16,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    undesired behavior. This has been fixed now.
 
    https://github.com/owncloud/owncloud-design-system/pull/1525
+   https://github.com/owncloud/owncloud-design-system/pull/1528
 
 # Changelog for [8.1.0] (2021-07-22)
 
