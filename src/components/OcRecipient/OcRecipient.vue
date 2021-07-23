@@ -19,7 +19,7 @@
       />
     </template>
     <oc-icon
-      v-else
+      v-else-if="recipient.icon && recipient.icon.name"
       class="oc-recipient-icon"
       size="small"
       :name="recipient.icon.name"
@@ -62,6 +62,32 @@ export default {
 
         if (recipient.name.length < 1) {
           throw new Error("Recipient name is empty")
+        }
+
+        if (Object.prototype.hasOwnProperty.call(recipient, "icon")) {
+          if (!Object.prototype.hasOwnProperty.call(recipient.icon, "name")) {
+            throw new Error("Recipient icon name is not defined")
+          }
+
+          if (typeof recipient.icon.name !== "string") {
+            throw new Error("Recipient icon name is not a string")
+          }
+
+          if (recipient.icon.name.length < 1) {
+            throw new Error("Recipient icon name is empty")
+          }
+
+          if (!Object.prototype.hasOwnProperty.call(recipient.icon, "label")) {
+            throw new Error("Recipient icon label is not defined")
+          }
+
+          if (typeof recipient.icon.label !== "string") {
+            throw new Error("Recipient icon label is not a string")
+          }
+
+          if (recipient.icon.label.length < 1) {
+            throw new Error("Recipient icon label is empty")
+          }
         }
 
         return true

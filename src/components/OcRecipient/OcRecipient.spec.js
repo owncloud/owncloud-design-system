@@ -81,6 +81,15 @@ describe("OcRecipient", () => {
         name: "",
       },
     ],
+    ["icon name is not defined", { name: "Alice", icon: {} }],
+    ["icon name is not a string", { name: "Alice", icon: { name: { inverted: "inverted" } } }],
+    ["icon name is empty", { name: "Alice", icon: { name: "" } }],
+    ["icon label is not defined", { name: "Alice", icon: { name: "person" } }],
+    [
+      "icon label is not a string",
+      { name: "Alice", icon: { name: "person", label: { long: "Long label" } } },
+    ],
+    ["icon label is empty", { name: "Alice", icon: { name: "Alice", label: "" } }],
   ])("throws an error if %s", (def, prop) => {
     expect(() => shallowMount(Recipient, { propsData: { recipient: prop } })).toThrow(
       `Recipient ${def}`
