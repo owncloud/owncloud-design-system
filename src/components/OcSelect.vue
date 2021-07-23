@@ -33,16 +33,6 @@ export default {
       default: null,
     },
   },
-
-  mounted() {
-    this.setComboBoxAriaLabel()
-  },
-  methods: {
-    setComboBoxAriaLabel() {
-      const comboBoxElement = this.$refs.select.$el.querySelector("div:first-child")
-      comboBoxElement.setAttribute("aria-label", this.$gettext("Search for option"))
-    },
-  },
 }
 </script>
 
