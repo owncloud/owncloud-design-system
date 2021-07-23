@@ -1,0 +1,7 @@
+Enhancement: OcSelect remove aria label
+
+Now the screenreader should read the actual label for the OcSelect rather than
+the generic term "Search for option"
+
+https://github.com/owncloud/web/issues/5394
+https://github.com/owncloud/owncloud-design-system/pull/1534
