@@ -106,6 +106,7 @@ export default {
       interactive: true,
       plugins: [hideOnEsc],
       theme: "none",
+      role: "",
       aria: {
         content: "describedby",
       },
