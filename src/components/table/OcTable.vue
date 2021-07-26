@@ -6,7 +6,6 @@
           v-for="(field, index) in fields"
           :key="`oc-thead-${field.name}`"
           v-bind="extractThProps(field, index)"
-          @click.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
         >
           <span
             v-if="field.headerType === 'slot'"

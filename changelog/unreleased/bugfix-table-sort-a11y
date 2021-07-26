@@ -1,0 +1,5 @@
+Bugfix: A11y for table sorting
+
+Table sorting now only happens with one button with native labelling for a11y, not with a span and a button anymore.
+
+https://github.com/owncloud/owncloud-design-system/pull/1533
