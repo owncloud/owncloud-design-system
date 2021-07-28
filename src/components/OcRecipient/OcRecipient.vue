@@ -39,8 +39,8 @@ import OcSpinner from "../OcSpinner.vue"
 
 export default {
   name: "OcRecipient",
-  status: "review",
-  release: "unreleased",
+  status: "ready",
+  release: "8.2.0",
 
   components: { OcAvatar, OcIcon, OcSpinner },
 
