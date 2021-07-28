@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v8.2.0...master
+
+## Summary
+
+* Enhancement - Update vue select: [#1536](https://github.com/owncloud/owncloud-design-system/pull/1536)
+
+## Details
+
+* Enhancement - Update vue select: [#1536](https://github.com/owncloud/owncloud-design-system/pull/1536)
+
+   We've updated vue select to version 3.12.0
+
+   https://github.com/owncloud/owncloud-design-system/pull/1536
+
 # Changelog for [8.2.0] (2021-07-23)
 
 The following sections list the changes in ownCloud Design System 8.2.0.
