@@ -1,0 +1,5 @@
+Enhancement: added drag-drop property
+
+In order to enable file moving via drag & drop we added 
+the property drag-drop on OcTable and OcTableFiles
+

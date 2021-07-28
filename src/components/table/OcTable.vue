@@ -38,11 +38,17 @@
         :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
         :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
+        :data-file-id="item.id"
+        :draggable="dragDrop"
         @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
         @contextmenu.native="
           $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event)
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
+        @dragstart.native="dragStart(item)"
+        @drop.native="dropRowEvent"
+        @dragenter.native.prevent
+        @dragover.native.prevent
       >
         <oc-td
           v-for="(field, tdIndex) in fields"
@@ -82,6 +88,8 @@ import {
   EVENT_TROW_CLICKED,
   EVENT_TROW_MOUNTED,
   EVENT_TROW_CONTEXTMENU,
+  EVENT_FILE_DROPPED,
+  EVENT_FILE_DRAGGED,
 } from "./helpers/constants"
 
 /**
@@ -193,6 +201,14 @@ export default {
       default: "small",
       validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
     },
+    /**
+     * Enable Drag & Drop events
+     */
+    dragDrop: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
@@ -227,6 +243,17 @@ export default {
     },
   },
   methods: {
+    dragStart(file) {
+      if (!this.dragDrop) return
+      this.$emit(EVENT_FILE_DRAGGED, file)
+    },
+    dropRowEvent(event) {
+      if (!this.dragDrop) return
+      var dropTarget = event.target
+      var dropTargetTr = dropTarget.closest("tr")
+      var dropFileId = dropTargetTr.dataset.fileId
+      this.$emit(EVENT_FILE_DROPPED, dropFileId)
+    },
     isFieldTypeSlot(field) {
       return field.type === "slot"
     },
