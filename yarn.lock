@@ -13514,7 +13514,7 @@ vue-loader@^15.9.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-select@^3.11.2:
+vue-select@^3.12.0:
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.12.1.tgz#769d8d99db6fec7139fc45f265b341c9ef19dbd4"
   integrity sha512-8t2XQLIN5lsKj5r+ixjnOOPnjLdEU/vyRDnpsUmXrmVEgcwU6jfgJnK3EvXF5VfmixoWNRDyCONNbXedLRz1dQ==

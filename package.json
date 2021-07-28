@@ -127,7 +127,7 @@
     "vue-inline-svg": "^2.0.0",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.9.0",
-    "vue-select": "^3.11.2",
+    "vue-select": "^3.12.0",
     "vue-style-loader": "^4.1.2",
     "vue-styleguidist": "^4.34.1",
     "vue-template-compiler": "^2.6.12",
@@ -154,7 +154,7 @@
     "vue": "^2.6.11",
     "vue-datetime": "^1.0.0-beta.10",
     "vue-inline-svg": "^2.0.0",
-    "vue-select": "^3.11.2",
+    "vue-select": "^3.12.0",
     "webfontloader": "^1.6.28",
     "weekstart": "^1.0.0"
   },
