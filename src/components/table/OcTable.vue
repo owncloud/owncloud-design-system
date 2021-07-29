@@ -45,10 +45,10 @@
           $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event)
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
-        @dragstart.native="dragStart(item)"
-        @drop.native="dropRowEvent"
-        @dragenter.native.prevent
-        @dragover.native.prevent
+        @dragstart.native.stop="dragStart(item)"
+        @drop.native.stop="dropRowEvent"
+        @dragenter.native.prevent.stop
+        @dragover.native.prevent.stop
       >
         <oc-td
           v-for="(field, tdIndex) in fields"
