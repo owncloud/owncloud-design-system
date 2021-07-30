@@ -205,4 +205,16 @@ describe("OcTable", () => {
     })
     expect(wrapper.html().indexOf("data-file-id")).toBeGreaterThan(-1)
   })
+
+  it("enable dragDrop should enable draggable on rows", () => {
+    const wrapper = shallowMount(Table, {
+      propsData: {
+        fields,
+        data,
+        highlighted: [],
+        dragDrop: true,
+      },
+    })
+    expect(wrapper.html().indexOf("draggable")).toBeGreaterThan(-1)
+  })
 })
