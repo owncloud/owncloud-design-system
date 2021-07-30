@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v8.3.0...master
+
+## Summary
+
+* Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
+
+## Details
+
+* Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
+
+   To focus on the quality of the currently relevant components and to reduce bundle size, we are
+   dropping a bunch of deprecated components from our design system.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1545
+
 # Changelog for [8.3.0] (2021-07-28)
 
 The following sections list the changes in ownCloud Design System 8.3.0.
