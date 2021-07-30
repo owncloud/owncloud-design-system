@@ -194,4 +194,15 @@ describe("OcTable", () => {
 
     expect(wrapper.findAll(".oc-table-highlighted").length).toEqual(2)
   })
+
+  it("adds data-file-id for rows", () => {
+    const wrapper = shallowMount(Table, {
+      propsData: {
+        fields,
+        data,
+        highlighted: [],
+      },
+    })
+    expect(wrapper.html().indexOf("data-file-id")).toBeGreaterThan(-1)
+  });
 })
