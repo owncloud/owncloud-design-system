@@ -37,26 +37,8 @@ import uniqueId from "../utils/uniqueId"
  * The description-message can be used additionally to give further information about the datepicker. When a description is given, it will be automatically referenced via the `aria-describedby` property.
  */
 export default {
-  /**
-   * Component names should be short, pronounceable and Capitalized.
-   */
   name: "OcDatepicker",
-  /**
-   * Components in the system are labelled with status labels that reflect their
-   * state of completion. See example below. All available statuses are:
-   *
-   * STATUS:        COLOR:     DESCRIPTION:
-   *
-   * deprecated     Red        Component is deprecated
-   * prototype      Blue       Prototype, do not implement!
-   * under-review   Yellow     Component is currently being reviewed
-   * ready          Green      Ready to be used
-   */
   status: "prototype",
-  /**
-   * Release indicates when this component was added into the system.
-   * (in which design system version)
-   */
   release: "1.0.0",
   components: {
     Datetime,
