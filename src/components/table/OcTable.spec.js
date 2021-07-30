@@ -204,5 +204,5 @@ describe("OcTable", () => {
       },
     })
     expect(wrapper.html().indexOf("data-file-id")).toBeGreaterThan(-1)
-  });
+  })
 })
