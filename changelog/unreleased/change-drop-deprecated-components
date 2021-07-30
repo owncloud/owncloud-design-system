@@ -1,0 +1,6 @@
+Change: Remove deprecated components
+
+To focus on the quality of the currently relevant components and to reduce bundle size, 
+we are dropping a bunch of deprecated components from our design system.
+
+https://github.com/owncloud/owncloud-design-system/pull/1545
