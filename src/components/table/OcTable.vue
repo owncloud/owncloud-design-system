@@ -249,9 +249,9 @@ export default {
     },
     dropRowEvent(event) {
       if (!this.dragDrop) return
-      var dropTarget = event.target
-      var dropTargetTr = dropTarget.closest("tr")
-      var dropFileId = dropTargetTr.dataset.fileId
+      const dropTarget = event.target
+      const dropTargetTr = dropTarget.closest("tr")
+      const dropFileId = dropTargetTr.dataset.fileId
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
     isFieldTypeSlot(field) {
