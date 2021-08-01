@@ -381,7 +381,8 @@ export default {
   },
   methods: {
     fileDragged(file) {
-      if (this.selectedResources.filter(e => e.id === file.id).length <= 0) {
+      const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
+      if (selectedResourceInResources) {
         this.selectedResources.push(file)
       }
       this.$emit("select", this.selectedResources)
@@ -649,7 +650,7 @@ export default {
     },
     methods: {
       fileDropped(fileId) {
-        var selectedString = this.selectedIds.join(`, `)
+        const selectedString = this.selectedIds.join(`, `)
         alert(selectedString + ` -> ` + fileId);
       },
       highlightResource(resource) {
