@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
+* Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
 * Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
 
@@ -17,7 +18,23 @@ The following sections list the changes in ownCloud Design System unreleased.
    To focus on the quality of the currently relevant components and to reduce bundle size, we are
    dropping a bunch of deprecated components from our design system.
 
+   List of removed components, for reference:
+
+   - OcActionDrop.vue - OcAppLayout.vue - OcAutocomplete.vue - OcDatepicker.vue -
+   OcDisclosureDrop.vue - OcNav.vue - OcNavItem.vue - OcNavbar.vue - OcTabItem.vue -
+   OcTabbed.vue - OcTabbedPanel.vue - OcTabbedTab.vue - OcTabs.vue - OcTopBar.vue -
+   OcUser.vue - _OcNavbarItem.vue - _OcSidebarNavDivider.vue - _OcSidebarNavHeader.vue -
+   _OcTopBarItem.vue - _OcTopBarLogo.vue
+
    https://github.com/owncloud/owncloud-design-system/pull/1545
+
+
+* Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
+
+   In the past, we shipped the docs `.scss` file and some example images which now have been removed
+   from the production bundle to reduce size.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1553
 
 
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
