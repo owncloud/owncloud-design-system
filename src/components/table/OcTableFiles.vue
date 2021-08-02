@@ -6,9 +6,12 @@
     :disabled="disabled"
     :sticky="true"
     :header-position="headerPosition"
+    :drag-drop="dragDrop"
     @highlight="showDetails"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
+    @fileDropped="fileDropped"
+    @fileDragged="fileDragged"
   >
     <template #selectHeader>
       <div class="oc-table-files-select-all">
@@ -122,7 +125,7 @@ import OcCheckbox from "../OcCheckbox.vue"
 import OcButton from "../OcButton.vue"
 import OcResourceSize from "../resource/OcResourceSize.vue"
 import OcDrop from "../OcDrop.vue"
-import { EVENT_TROW_MOUNTED } from "./helpers/constants"
+import { EVENT_TROW_MOUNTED, EVENT_FILE_DROPPED } from "./helpers/constants"
 
 export default {
   name: "OcTableFiles",
@@ -251,12 +254,21 @@ export default {
       default: "small",
       validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
     },
+    /**
+     * Enable Drag & Drop events
+     */
+    dragDrop: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
       constants: {
         EVENT_TROW_MOUNTED,
       },
+      selectedResources: [],
     }
   },
   computed: {
@@ -368,6 +380,16 @@ export default {
     },
   },
   methods: {
+    fileDragged(file) {
+      const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
+      if (selectedResourceInResources) {
+        this.selectedResources.push(file)
+      }
+      this.$emit("select", this.selectedResources)
+    },
+    fileDropped(fileId) {
+      this.$emit(EVENT_FILE_DROPPED, fileId)
+    },
     resetDropPosition(id, event) {
       const instance = this.$refs[id].tippy
       if (instance === undefined) {
@@ -425,6 +447,7 @@ export default {
        * Triggered when a checkbox for selecting a resource or the checkbox for selecting all resources is clicked
        * @property {array} resources The selected resources
        */
+      this.selectedResources = resources
       this.$emit("select", resources)
     },
 
@@ -542,7 +565,7 @@ export default {
 <template>
   <div>
     <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb"
-                    @showDetails="highlightResource" @action="handleAction">
+                    @showDetails="highlightResource" @action="handleAction" @fileDropped="fileDropped" :drag-drop="true">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
           <oc-icon name="group-add" />
@@ -626,6 +649,10 @@ export default {
       }
     },
     methods: {
+      fileDropped(fileId) {
+        const selectedString = this.selectedIds.join(`, `)
+        alert(selectedString + ` -> ` + fileId);
+      },
       highlightResource(resource) {
         this.highlighted = resource.id
       },
