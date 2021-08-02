@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
+* Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
 
 ## Details
 
@@ -16,6 +17,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    dropping a bunch of deprecated components from our design system.
 
    https://github.com/owncloud/owncloud-design-system/pull/1545
+
+
+* Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
+
+   There has been confusion in user experience about the current usage of the `exit_to_app` icon
+   as sign-out icon. We have added a dedicated `sign-out` icon to avoid this in the future.
+
+   https://github.com/owncloud/web/issues/5590
+   https://github.com/owncloud/owncloud-design-system/pull/1551
 
 # Changelog for [8.3.0] (2021-07-28)
 
