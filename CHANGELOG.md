@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
+* Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
 
 ## Details
 
@@ -26,6 +27,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5590
    https://github.com/owncloud/owncloud-design-system/pull/1551
+
+
+* Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
+
+   In order to enable file moving via drag & drop we added the property drag-drop on OcTable and
+   OcTableFiles
+
+   https://github.com/owncloud/web/issues/5592
+   https://github.com/owncloud/owncloud-design-system/pull/1539
 
 # Changelog for [8.3.0] (2021-07-28)
 
