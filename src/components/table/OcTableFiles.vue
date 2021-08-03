@@ -101,6 +101,7 @@
           :toggle="`#context-menu-trigger-${item.id.replace(/=+/, '')}`"
           mode="click"
           close-on-click
+          @click.native.stop.prevent
         >
           <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
           <slot name="contextMenu" :resource="item" />
