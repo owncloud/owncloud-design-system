@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OcBreadcrumb displays all items 1`] = `
-<nav accessible-label="Breadcrumb navigation" class="oc-breadcrumb oc-breadcrumb-default">
+<nav aria-label="Breadcrumb navigation" class="oc-breadcrumb oc-breadcrumb-default">
   <ol class="oc-breadcrumb-list">
     <li class="oc-breadcrumb-list-item">
       <router-link-stub tag="a" to="[object Object]">First folder</router-link-stub>
@@ -37,7 +37,7 @@ exports[`OcBreadcrumb displays all items 1`] = `
 `;
 
 exports[`OcBreadcrumb sets correct variation 1`] = `
-<nav accessible-label="Breadcrumb navigation" class="oc-breadcrumb oc-breadcrumb-lead">
+<nav aria-label="Breadcrumb navigation" class="oc-breadcrumb oc-breadcrumb-lead">
   <ol class="oc-breadcrumb-list">
     <li class="oc-breadcrumb-list-item">
       <router-link-stub tag="a" to="[object Object]">First folder</router-link-stub>
