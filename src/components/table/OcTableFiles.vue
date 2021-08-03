@@ -381,8 +381,9 @@ export default {
   },
   methods: {
     fileDragged(file) {
-      const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
-      if (selectedResourceInResources) {
+      const selectedResourceInResources = this.selectedResources.find(e => e.id === file.id)
+      console.log(selectedResourceInResources);
+      if (!selectedResourceInResources) {
         this.selectedResources.push(file)
       }
       this.$emit("select", this.selectedResources)
