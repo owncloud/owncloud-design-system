@@ -19,43 +19,53 @@ export default {
       if (!this.isSortable || !this.sortBy) {
         return
       }
-
-      return [...this.data].sort((a, b) => {
-        let aValue = a[this.sortBy]
-        let bValue = b[this.sortBy]
-        const modifier = this.sortDir === SORT_DIRECTION_ASC ? 1 : -1
-
-        const { sortable } = this.fields.find(f => f.name === this.sortBy)
-
-        if (sortable) {
-          if (typeof sortable === "string") {
-            const genArrComp = vals => {
-              return vals.map(val => val[sortable]).join("")
-            }
-
-            aValue = genArrComp(aValue)
-            bValue = genArrComp(bValue)
-          } else if (typeof sortable === "function") {
-            aValue = sortable(aValue)
-            bValue = sortable(bValue)
-          }
+      if(this.sortBy === 'name') {
+        let folders = this.data.filter(i => i.type === 'folder')
+        folders = [...folders].sort((a, b) => this.sortData(a, b))
+        let files = this.data.filter(i => i.type === 'file')
+        files = [...files].sort((a, b) => this.sortData(a, b))
+        if(this.sortDir === SORT_DIRECTION_ASC) {
+          return folders.concat(files)
         }
-
-        if (!isNaN(aValue) && !isNaN(bValue)) {
-          return (aValue - bValue) * modifier
-        }
-
-        if (aValue < bValue) return -1 * modifier
-        if (aValue > bValue) return modifier
-
-        return 0
-      })
+        return files.concat(folders)
+      }
+      return [...this.data].sort((a, b) => this.sortData(a, b))
     },
     isSortable() {
       return this.fields.some(f => f.sortable)
     },
   },
   methods: {
+    sortData(a, b) {
+      let aValue = a[this.sortBy]
+      let bValue = b[this.sortBy]
+      const modifier = this.sortDir === SORT_DIRECTION_ASC ? 1 : -1
+
+      const { sortable } = this.fields.find(f => f.name === this.sortBy)
+
+      if (sortable) {
+        if (typeof sortable === "string") {
+          const genArrComp = vals => {
+            return vals.map(val => val[sortable]).join("")
+          }
+
+          aValue = genArrComp(aValue)
+          bValue = genArrComp(bValue)
+        } else if (typeof sortable === "function") {
+          aValue = sortable(aValue)
+          bValue = sortable(bValue)
+        }
+      }
+
+      if (!isNaN(aValue) && !isNaN(bValue)) {
+        return (aValue - bValue) * modifier
+      }
+
+      if (aValue < bValue) return -1 * modifier
+      if (aValue > bValue) return modifier
+
+      return 0
+    },
     fieldIsSortable({ sortable }) {
       return !!sortable
     },
