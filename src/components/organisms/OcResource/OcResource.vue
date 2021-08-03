@@ -8,7 +8,13 @@
       width="40"
       height="40"
     />
-    <oc-icon v-else key="resource-icon" :name="resource.icon" size="large" />
+    <oc-icon
+      v-else
+      key="resource-icon"
+      :variation="isFolder ? 'passive' : 'primary'"
+      :name="resource.icon"
+      size="large"
+    />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
