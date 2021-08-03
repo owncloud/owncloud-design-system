@@ -19,7 +19,8 @@ export default {
       if (!this.isSortable || !this.sortBy) {
         return
       }
-      if(this.sortBy === 'name') {
+      const hasFilesOrFolders = this.data.some(i => i.type === 'folder' || i.type === 'file');
+      if(this.sortBy === 'name' && hasFilesOrFolders) {
         let folders = this.data.filter(i => i.type === 'folder')
         folders = [...folders].sort((a, b) => this.sortData(a, b))
         let files = this.data.filter(i => i.type === 'file')
