@@ -19,13 +19,13 @@ export default {
       if (!this.isSortable || !this.sortBy) {
         return
       }
-      const hasFilesOrFolders = this.data.some(i => i.type === 'folder' || i.type === 'file');
-      if(this.sortBy === 'name' && hasFilesOrFolders) {
-        let folders = this.data.filter(i => i.type === 'folder')
+      const hasFilesOrFolders = this.data.some(i => i.type === "folder" || i.type === "file")
+      if (this.sortBy === "name" && hasFilesOrFolders) {
+        let folders = this.data.filter(i => i.type === "folder")
         folders = [...folders].sort((a, b) => this.sortData(a, b))
-        let files = this.data.filter(i => i.type === 'file')
+        let files = this.data.filter(i => i.type === "file")
         files = [...files].sort((a, b) => this.sortData(a, b))
-        if(this.sortDir === SORT_DIRECTION_ASC) {
+        if (this.sortDir === SORT_DIRECTION_ASC) {
           return folders.concat(files)
         }
         return files.concat(folders)
