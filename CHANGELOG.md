@@ -6,12 +6,22 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Drag & Drop doesn't select files correctly: [#1560](https://github.com/owncloud/owncloud-design-system/issues/1560)
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 * Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
 * Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
 
 ## Details
+
+* Bugfix - Drag & Drop doesn't select files correctly: [#1560](https://github.com/owncloud/owncloud-design-system/issues/1560)
+
+   Due to refactoring there was a case where selecting files when dragging didn't work right. This
+   has been addressed and fixed now.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1560
+   https://github.com/owncloud/owncloud-design-system/pull/1562
+
 
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 
