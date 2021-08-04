@@ -1,0 +1,6 @@
+Bugfix: Drag & Drop doesn't select files correctly
+
+Due to refactoring there was a case where selecting files when dragging didn't work right. This has been addressed and fixed now.
+
+https://github.com/owncloud/owncloud-design-system/issues/1560
+https://github.com/owncloud/owncloud-design-system/pull/1562

@@ -383,7 +383,7 @@ export default {
   methods: {
     fileDragged(file) {
       const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
-      if (selectedResourceInResources) {
+      if (!selectedResourceInResources) {
         this.selectedResources.push(file)
       }
       this.$emit("select", this.selectedResources)
