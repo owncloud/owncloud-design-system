@@ -7,7 +7,7 @@
     :sticky="true"
     :header-position="headerPosition"
     :drag-drop="dragDrop"
-    @highlight="showDetails"
+    @highlight="fileClicked"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
     @fileDropped="fileDropped"
@@ -378,14 +378,17 @@ export default {
   },
   methods: {
     fileDragged(file) {
+      this.addSelectedResource(file)
+    },
+    fileDropped(fileId) {
+      this.$emit(EVENT_FILE_DROPPED, fileId)
+    },
+    addSelectedResource(file) {
       const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
       if (!selectedResourceInResources) {
         this.selectedResources.push(file)
       }
       this.$emit("select", this.selectedResources)
-    },
-    fileDropped(fileId) {
-      this.$emit(EVENT_FILE_DROPPED, fileId)
     },
     resetDropPosition(id, event) {
       const instance = this.$refs[id].tippy
@@ -427,14 +430,22 @@ export default {
        */
       this.$emit("rowMounted", resource, component)
     },
+    fileClicked(resource) {
+      /**
+       * Triggered when the file row is clicked
+       * @property {object} resource The resource for which the event is triggered
+       */
+      this.emitSelect([resource])
+      //this.$emit("showDetails", resource)
+    },
     showDetails(resource) {
       /**
        * Triggered when the showDetails button in the actions column is clicked
        * @property {object} resource The resource for which the event is triggered
        */
-      this.$emit("showDetails", resource)
+      // TODO for future: Should force the sidebar to open even if it was manually closed
+      this.emitSelect([resource])
     },
-
     formatDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
     },
