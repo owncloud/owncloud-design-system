@@ -73,7 +73,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           from: path.resolve(__dirname, "../src/assets"),
           to: config.system.assetsSubDirectory,
           globOptions: {
-            ignore: [".*"],
+            ignore: [".*", "**/docs.scss", "**/examples/**"],
           },
         },
         {
