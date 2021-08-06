@@ -2,12 +2,12 @@
   <oc-table
     :data="resources"
     :fields="fields"
-    :highlighted="highlighted"
+    :highlighted="selectedIds"
     :disabled="disabled"
     :sticky="true"
     :header-position="headerPosition"
     :drag-drop="dragDrop"
-    @highlight="showDetails"
+    @highlight="fileClicked"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
     @fileDropped="fileDropped"
@@ -198,14 +198,6 @@ export default {
       default: true,
     },
     /**
-     * The ids of highlighted resources. Null or an empty string/array for no highlighting.
-     */
-    highlighted: {
-      type: [String, Array],
-      required: false,
-      default: null,
-    },
-    /**
      * Target route path used to build the link when navigating into a resource
      */
     targetRoute: {
@@ -379,17 +371,24 @@ export default {
     areAllResourcesSelected() {
       return this.selection.length === this.resources.length
     },
+
+    selectedIds() {
+      return this.selectedResources.map(r => r.id)
+    },
   },
   methods: {
     fileDragged(file) {
+      this.addSelectedResource(file)
+    },
+    fileDropped(fileId) {
+      this.$emit(EVENT_FILE_DROPPED, fileId)
+    },
+    addSelectedResource(file) {
       const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
       if (!selectedResourceInResources) {
         this.selectedResources.push(file)
       }
       this.$emit("select", this.selectedResources)
-    },
-    fileDropped(fileId) {
-      this.$emit(EVENT_FILE_DROPPED, fileId)
     },
     resetDropPosition(id, event) {
       const instance = this.$refs[id].tippy
@@ -431,14 +430,21 @@ export default {
        */
       this.$emit("rowMounted", resource, component)
     },
+    fileClicked(resource) {
+      /**
+       * Triggered when the file row is clicked
+       * @property {object} resource The resource for which the event is triggered
+       */
+      this.emitSelect([resource])
+    },
     showDetails(resource) {
       /**
        * Triggered when the showDetails button in the actions column is clicked
        * @property {object} resource The resource for which the event is triggered
        */
-      this.$emit("showDetails", resource)
+      this.emitSelect([resource])
+      this.$emit("showDetails")
     },
-
     formatDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
     },
@@ -565,8 +571,8 @@ export default {
 ```js
 <template>
   <div>
-    <oc-table-files :resources="resources" :highlighted="highlighted" disabled="notes" v-model="selected" class="oc-mb"
-                    @showDetails="highlightResource" @action="handleAction" @fileDropped="fileDropped" :drag-drop="true">
+    <oc-table-files :resources="resources" disabled="notes" v-model="selected" class="oc-mb"
+                    @action="handleAction" @fileDropped="fileDropped" :drag-drop="true">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
           <oc-icon name="group-add" />
@@ -590,8 +596,7 @@ export default {
 <script>
   export default {
     data: () => ({
-      selected: [],
-      highlighted: "forest"
+      selected: []
     }),
     computed: {
       resources() {
@@ -653,9 +658,6 @@ export default {
       fileDropped(fileId) {
         const selectedString = this.selectedIds.join(`, `)
         alert(selectedString + ` -> ` + fileId);
-      },
-      highlightResource(resource) {
-        this.highlighted = resource.id
       },
       handleAction(resource) {
         alert(`Clicked ${resource.name}`)
