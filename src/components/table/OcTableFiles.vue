@@ -436,14 +436,13 @@ export default {
        * @property {object} resource The resource for which the event is triggered
        */
       this.emitSelect([resource])
-      //this.$emit("showDetails", resource)
     },
     showDetails(resource) {
       /**
        * Triggered when the showDetails button in the actions column is clicked
        * @property {object} resource The resource for which the event is triggered
        */
-      // TODO for future: Should force the sidebar to open even if it was manually closed
+      this.$emit("showDetails", resource)
       this.emitSelect([resource])
     },
     formatDate(date) {
