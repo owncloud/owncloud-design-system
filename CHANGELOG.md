@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 * Change - Enable multiple highlighting for OcTableFiles: [#5164](https://github.com/owncloud/web/issues/5164)
 * Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
+* Enhancement - Group files and folder when sorting by name: [#5613](https://github.com/owncloud/web/issues/5613)
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
 * Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
 
@@ -55,6 +56,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    from the production bundle to reduce size.
 
    https://github.com/owncloud/owncloud-design-system/pull/1553
+
+
+* Enhancement - Group files and folder when sorting by name: [#5613](https://github.com/owncloud/web/issues/5613)
+
+   Like in oc10 when sorting by name, files and folders should be listed separately
+
+   https://github.com/owncloud/web/issues/5613
+   https://github.com/owncloud/owncloud-design-system/pull/1559
 
 
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
