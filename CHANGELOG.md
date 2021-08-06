@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Drag & Drop doesn't select files correctly: [#1560](https://github.com/owncloud/owncloud-design-system/issues/1560)
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
+* Change - Enable multiple highlighting for OcTableFiles: [#5164](https://github.com/owncloud/web/issues/5164)
 * Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
 * Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
@@ -37,6 +38,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    _OcTopBarItem.vue - _OcTopBarLogo.vue
 
    https://github.com/owncloud/owncloud-design-system/pull/1545
+
+
+* Change - Enable multiple highlighting for OcTableFiles: [#5164](https://github.com/owncloud/web/issues/5164)
+
+   We changed the highlighting in a way that now every selected file is highlighted
+   automatically. The `highlighted` prop has been removed as it's not used anymore.
+
+   https://github.com/owncloud/web/issues/5164
+   https://github.com/owncloud/owncloud-design-system/pull/1568
 
 
 * Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
