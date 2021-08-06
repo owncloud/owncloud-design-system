@@ -442,8 +442,8 @@ export default {
        * Triggered when the showDetails button in the actions column is clicked
        * @property {object} resource The resource for which the event is triggered
        */
-      this.$emit("showDetails", resource)
       this.emitSelect([resource])
+      this.$emit("showDetails")
     },
     formatDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
