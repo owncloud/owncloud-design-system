@@ -23,6 +23,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1560
    https://github.com/owncloud/owncloud-design-system/pull/1562
+   https://github.com/owncloud/owncloud-design-system/pull/1574
 
 
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
