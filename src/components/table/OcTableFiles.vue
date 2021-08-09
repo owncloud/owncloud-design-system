@@ -261,7 +261,6 @@ export default {
       constants: {
         EVENT_TROW_MOUNTED,
       },
-      selectedResources: [],
     }
   },
   computed: {
@@ -373,7 +372,7 @@ export default {
     },
 
     selectedIds() {
-      return this.selectedResources.map(r => r.id)
+      return this.selection.map(r => r.id)
     },
   },
   methods: {
@@ -384,11 +383,12 @@ export default {
       this.$emit(EVENT_FILE_DROPPED, fileId)
     },
     addSelectedResource(file) {
-      const selectedResourceInResources = this.selectedResources.some(e => e.id === file.id)
-      if (!selectedResourceInResources) {
-        this.selectedResources.push(file)
+      const isSelected = this.selection.some(e => e.id === file.id)
+      if (!isSelected) {
+        this.$emit("select", this.selection.concat([file]))
+      } else {
+        this.$emit("select", this.selection)
       }
-      this.$emit("select", this.selectedResources)
     },
     resetDropPosition(id, event) {
       const instance = this.$refs[id].tippy
@@ -454,7 +454,6 @@ export default {
        * Triggered when a checkbox for selecting a resource or the checkbox for selecting all resources is clicked
        * @property {array} resources The selected resources
        */
-      this.selectedResources = resources
       this.$emit("select", resources)
     },
 
