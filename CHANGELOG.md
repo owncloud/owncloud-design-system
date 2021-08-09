@@ -1,12 +1,11 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [9.0.0] (2021-08-09)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 9.0.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v8.3.1...master
+[9.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v8.3.1...v9.0.0
 
 ## Summary
 
-* Bugfix - Drag & Drop doesn't select files correctly: [#1560](https://github.com/owncloud/owncloud-design-system/issues/1560)
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 * Change - Enable multiple highlighting for OcTableFiles: [#5164](https://github.com/owncloud/web/issues/5164)
 * Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
@@ -17,16 +16,6 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
 
 ## Details
-
-* Bugfix - Drag & Drop doesn't select files correctly: [#1560](https://github.com/owncloud/owncloud-design-system/issues/1560)
-
-   Due to refactoring there was a case where selecting files when dragging didn't work right. This
-   has been addressed and fixed now.
-
-   https://github.com/owncloud/owncloud-design-system/issues/1560
-   https://github.com/owncloud/owncloud-design-system/pull/1562
-   https://github.com/owncloud/owncloud-design-system/pull/1574
-
 
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 
@@ -102,6 +91,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5592
    https://github.com/owncloud/owncloud-design-system/pull/1539
+   https://github.com/owncloud/owncloud-design-system/pull/1562
+   https://github.com/owncloud/owncloud-design-system/pull/1574
 
 # Changelog for [8.3.1] (2021-08-04)
 
@@ -358,7 +349,7 @@ The following sections list the changes in ownCloud Design System 7.5.0.
 
 The following sections list the changes in ownCloud Design System 7.4.2.
 
-[7.4.2]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...v7.4.2
+[7.4.2]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...v7.4.2
 
 ## Summary
 
@@ -397,11 +388,40 @@ The following sections list the changes in ownCloud Design System 7.4.2.
 
    https://github.com/owncloud/owncloud-design-system/pull/1406
 
+# Changelog for [7.4.1] (2021-06-17)
+
+The following sections list the changes in ownCloud Design System 7.4.1.
+
+[7.4.1]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...v7.4.1
+
+## Summary
+
+* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+## Details
+
+* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
+
+   The pagination list had a small left padding which caused it to be visually off from the desired
+   horizontal center.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1398
+
+
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
+   visually make them better differentiable.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1387
+   https://github.com/owncloud/owncloud-design-system/pull/1390
+
 # Changelog for [7.4.0] (2021-06-17)
 
 The following sections list the changes in ownCloud Design System 7.4.0.
 
-[7.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...v7.4.0
+[7.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...v7.4.0
 
 ## Summary
 
@@ -426,35 +446,6 @@ The following sections list the changes in ownCloud Design System 7.4.0.
 
    https://github.com/owncloud/web/pull/5281
    https://github.com/owncloud/owncloud-design-system/pull/1388
-
-# Changelog for [7.4.1] (2021-06-17)
-
-The following sections list the changes in ownCloud Design System 7.4.1.
-
-[7.4.1]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...v7.4.1
-
-## Summary
-
-* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
-* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
-
-## Details
-
-* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
-
-   The pagination list had a small left padding which caused it to be visually off from the desired
-   horizontal center.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1398
-
-
-* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
-
-   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
-   visually make them better differentiable.
-
-   https://github.com/owncloud/owncloud-design-system/issues/1387
-   https://github.com/owncloud/owncloud-design-system/pull/1390
 
 # Changelog for [7.3.0] (2021-06-14)
 
@@ -848,7 +839,7 @@ The following sections list the changes in ownCloud Design System 6.4.0.
 
 The following sections list the changes in ownCloud Design System 6.3.0.
 
-[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.3.0
+[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...v6.3.0
 
 ## Summary
 
@@ -939,39 +930,11 @@ The following sections list the changes in ownCloud Design System 6.3.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1240
 
-# Changelog for [6.2.0] (2021-04-22)
-
-The following sections list the changes in ownCloud Design System 6.2.0.
-
-[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...v6.2.0
-
-## Summary
-
-* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-## Details
-
-* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-   - property productName shouldn't be required anymore in OcSidebar after logoAlt has been
-   introduced - role="progressbar" is obsolete on `<progress>` HTML elements
-
-   https://github.com/owncloud/owncloud-design-system/pull/1233
-
-
-* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-   By adding a negative tabindex the table rows are now focusable which is an important aspect of
-   accessibility/keyboard navigation.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1233
-
 # Changelog for [6.1.0] (2021-04-22)
 
 The following sections list the changes in ownCloud Design System 6.1.0.
 
-[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.1.0
+[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.1.0
 
 ## Summary
 
@@ -1025,6 +988,34 @@ The following sections list the changes in ownCloud Design System 6.1.0.
    needs to describe the link rather than the image.
 
    https://github.com/owncloud/owncloud-design-system/pull/1231
+
+# Changelog for [6.2.0] (2021-04-22)
+
+The following sections list the changes in ownCloud Design System 6.2.0.
+
+[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.2.0
+
+## Summary
+
+* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+## Details
+
+* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+   - property productName shouldn't be required anymore in OcSidebar after logoAlt has been
+   introduced - role="progressbar" is obsolete on `<progress>` HTML elements
+
+   https://github.com/owncloud/owncloud-design-system/pull/1233
+
+
+* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+   By adding a negative tabindex the table rows are now focusable which is an important aspect of
+   accessibility/keyboard navigation.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1233
 
 # Changelog for [6.0.0] (2021-04-19)
 
