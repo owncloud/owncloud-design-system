@@ -149,7 +149,7 @@ export default {
      *
      * @public
      */
-    $_ocDrop_show(duration) {
+    show(duration) {
       this.tippy.show(duration)
     },
 
@@ -158,7 +158,7 @@ export default {
      *
      * @public
      */
-    $_ocDrop_hide(duration) {
+    hide(duration) {
       this.tippy.hide(duration)
     },
   },
