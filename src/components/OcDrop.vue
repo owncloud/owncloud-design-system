@@ -101,7 +101,7 @@ export default {
   },
   mounted() {
     destroy(this.tippy)
-    let to = this.target
+    const to = this.target
       ? document.querySelector(this.target)
       : this.toggle
       ? document.querySelector(this.toggle)
