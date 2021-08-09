@@ -630,6 +630,16 @@ export default {
             type: "folder",
             size: "5324435",
             mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "pdfs",
+            name: "PDFs",
+            path: "/pdfs",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            size: "5324435",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
           }
         ]
       },
