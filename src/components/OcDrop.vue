@@ -48,13 +48,15 @@ export default {
       },
     },
     /**
-     * Comma separated list of drop trigger behaviour modes: `click or hover`
+     * Events that cause the drop to show. Multiple event names are separated by spaces
+     *
+     * @values click, hover, manual
      **/
     mode: {
       type: String,
       default: "click",
       validator: value => {
-        return value.match(/(click|hover)/)
+        return value.match(/(click|hover|manual)/)
       },
     },
     /**
@@ -63,6 +65,14 @@ export default {
     closeOnClick: {
       type: Boolean,
       required: false,
+    },
+    /**
+     * Element selector used as a target of the drop
+     */
+    target: {
+      type: String,
+      required: false,
+      default: null,
     },
   },
   data() {
@@ -91,14 +101,18 @@ export default {
   },
   mounted() {
     destroy(this.tippy)
-    const to = this.toggle ? document.querySelector(this.toggle) : this.$el.previousElementSibling
+    const to = this.target
+      ? document.querySelector(this.target)
+      : this.toggle
+      ? document.querySelector(this.toggle)
+      : this.$el.previousElementSibling
     const content = this.$refs.drop
 
     if (!to || !content) {
       return
     }
 
-    this.tippy = tippy(to, {
+    const config = {
       trigger: this.triggerMapping,
       placement: this.position,
       arrow: false,
@@ -113,13 +127,39 @@ export default {
         hideAll({ exclude: instance })
       },
       content,
-    })
+    }
+
+    if (this.target) {
+      config.triggerTarget = this.toggle
+        ? document.querySelector(this.toggle)
+        : this.$el.previousElementSibling
+    }
+
+    this.tippy = tippy(to, config)
   },
   methods: {
     $_ocDrop_close() {
       if (this.closeOnClick) {
         this.tippy.hide()
       }
+    },
+
+    /**
+     * Programatically show the drop
+     *
+     * @public
+     */
+    show(duration) {
+      this.tippy.show(duration)
+    },
+
+    /**
+     * Programatically hide the drop
+     *
+     * @public
+     */
+    hide(duration) {
+      this.tippy.hide(duration)
     },
   },
 }
@@ -193,5 +233,39 @@ export default {
     </oc-drop>
   </div>
 </template>
+```
+
+### Custom target
+```
+<div>
+  <div>
+    <p id="target">This is the target of the drop</p>
+  </div>
+  <oc-button id="custom-target-toggle">Trigger drop</oc-button>
+  <oc-drop dropId="oc-drop-custom-target" toggle="#custom-target-toggle" target="#target" mode="click" closeOnClick>
+    I am attached to a custom element
+  </oc-drop>
+</div>
+```
+
+### Open drop programatically
+```
+<template>
+<div>
+  <oc-button id="manual-target" @click="open">Open</oc-button>
+  <oc-drop ref="drop" mode="manual" target="#manual-target">
+    I am triggered manually
+  </oc-drop>
+</div>
+</template>
+<script>
+export default {
+  methods: {
+    open() {
+      this.$refs.drop.$_ocDrop_show()
+    }
+  }
+}
+</script>
 ```
 </docs>
