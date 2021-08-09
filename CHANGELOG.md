@@ -10,7 +10,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove deprecated components: [#1545](https://github.com/owncloud/owncloud-design-system/pull/1545)
 * Change - Enable multiple highlighting for OcTableFiles: [#5164](https://github.com/owncloud/web/issues/5164)
 * Change - Production Bundle Content: [#1553](https://github.com/owncloud/owncloud-design-system/pull/1553)
+* Enhancement - Add drop target: [#1575](https://github.com/owncloud/owncloud-design-system/pull/1575)
 * Enhancement - Group files and folder when sorting by name: [#5613](https://github.com/owncloud/web/issues/5613)
+* Enhancement - Add manual mode to oc-drop: [#1575](https://github.com/owncloud/owncloud-design-system/pull/1575)
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
 * Enhancement - Added drag-drop property: [#5592](https://github.com/owncloud/web/issues/5592)
 
@@ -59,12 +61,29 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/1553
 
 
+* Enhancement - Add drop target: [#1575](https://github.com/owncloud/owncloud-design-system/pull/1575)
+
+   We've added a target prop to the `oc-drop` component so that the drop can be opened at another
+   element than the trigger.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1575
+
+
 * Enhancement - Group files and folder when sorting by name: [#5613](https://github.com/owncloud/web/issues/5613)
 
    Like in oc10 when sorting by name, files and folders should be listed separately
 
    https://github.com/owncloud/web/issues/5613
    https://github.com/owncloud/owncloud-design-system/pull/1559
+
+
+* Enhancement - Add manual mode to oc-drop: [#1575](https://github.com/owncloud/owncloud-design-system/pull/1575)
+
+   We've added the manual mode to `oc-drop` component. This mode enables showing/hiding the drop
+   **only** via provided methods ([see
+   docs](https://owncloud.design/#/oC%20Components/OcDrop)).
+
+   https://github.com/owncloud/owncloud-design-system/pull/1575
 
 
 * Enhancement - Add sign-out icon: [#5590](https://github.com/owncloud/web/issues/5590)
