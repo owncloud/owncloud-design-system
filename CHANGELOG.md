@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v9.0.0...master
+
+## Summary
+
+* Bugfix - Contextmenu should change selection model: [#1580](https://github.com/owncloud/owncloud-design-system/pull/1580)
+
+## Details
+
+* Bugfix - Contextmenu should change selection model: [#1580](https://github.com/owncloud/owncloud-design-system/pull/1580)
+
+   We changed the rightclick logic so the selection model changes to the file the rightclick was
+   performed on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1580
+
 # Changelog for [9.0.0] (2021-08-09)
 
 The following sections list the changes in ownCloud Design System 9.0.0.
