@@ -12,7 +12,7 @@
         appearance="raw"
         :data-testid="indicator.id"
         :data-test-indicator-type="indicator.type"
-        @click.stop="indicator.handler(resource, indicator.target)"
+        @click="indicator.handler(resource, indicator.target)"
       >
         <oc-icon :name="indicator.icon" variation="passive" />
       </oc-button>
