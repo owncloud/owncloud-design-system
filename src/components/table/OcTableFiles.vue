@@ -90,7 +90,7 @@
           class="oc-table-files-btn-action-dropdown"
           appearance="raw"
           @click.stop.prevent="
-            resetDropPosition(`context-menu-drop-ref-${item.id.replace(/=+/, '')}`, $event)
+            resetDropPosition(`context-menu-drop-ref-${item.id.replace(/=+/, '')}`, $event, item)
           "
         >
           <oc-icon name="more_vert" />
@@ -390,21 +390,19 @@ export default {
         this.$emit("select", this.selection)
       }
     },
-    resetDropPosition(id, event) {
+    resetDropPosition(id, event, item) {
       const instance = this.$refs[id].tippy
-      if (instance === undefined) {
-        return
-      }
+      if (instance === undefined) return
+      this.showDetails(item)
       this.displayPositionedDropdown(instance, event)
     },
 
-    showContextMenu(rows, event) {
+    showContextMenu(row, event, item) {
       event.preventDefault()
 
-      const instance = rows.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
-      if (instance === undefined) {
-        return
-      }
+      const instance = row.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
+      if (instance === undefined) return
+      this.showDetails(item)
       this.displayPositionedDropdown(instance._tippy, event)
     },
 
@@ -442,7 +440,7 @@ export default {
        * Triggered when the showDetails button in the actions column is clicked
        * @property {object} resource The resource for which the event is triggered
        */
-      this.emitSelect([resource])
+      this.fileClicked(resource)
       this.$emit("showDetails")
     },
     formatDate(date) {
