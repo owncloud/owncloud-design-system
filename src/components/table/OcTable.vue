@@ -42,7 +42,7 @@
         :draggable="dragDrop"
         @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
         @contextmenu.native="
-          $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event)
+          $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native.stop="dragStart(item)"
