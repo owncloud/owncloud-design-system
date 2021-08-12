@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Change - Show compile errors and enforce node.js version in package.json: [#1579](https://github.com/owncloud/owncloud-design-system/pull/1579)
+* Change - Downgrade sass version: [#1583](https://github.com/owncloud/owncloud-design-system/pull/1583)
 
 ## Details
 
@@ -16,6 +17,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    v14.0.0 or greater to permit optional chaining to be used
 
    https://github.com/owncloud/owncloud-design-system/pull/1579
+
+
+* Change - Downgrade sass version: [#1583](https://github.com/owncloud/owncloud-design-system/pull/1583)
+
+   Decrease the version of sass in order to prevent emitting of deprecation warnings in the ui-kit
+   libray.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1583
 
 # Changelog for [9.0.1] (2021-08-11)
 
