@@ -1,5 +1,8 @@
 <template>
-  <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
+  <nav
+    :class="`oc-breadcrumb oc-breadcrumb-${variation}`"
+    :aria-label="$gettext('Breadcrumb navigation')"
+  >
     <ol class="oc-breadcrumb-list">
       <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
         <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">{{

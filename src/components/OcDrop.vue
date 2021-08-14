@@ -120,9 +120,6 @@ export default {
       interactive: true,
       plugins: [hideOnEsc],
       theme: "none",
-      aria: {
-        content: "describedby",
-      },
       onShow(instance) {
         hideAll({ exclude: instance })
       },
