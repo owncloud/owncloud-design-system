@@ -331,7 +331,7 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             callback: date => this.formatDate(date),
-            sortable: true,
+            sortable: date => this.unixDate(date),
           },
           {
             name: "sdate",
@@ -340,7 +340,7 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             callback: date => this.formatDate(date),
-            sortable: true,
+            sortable: date => this.unixDate(date),
           },
           {
             name: "ddate",
@@ -349,7 +349,7 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             callback: date => this.formatDate(date),
-            sortable: true,
+            sortable: date => this.unixDate(date),
           },
         ].filter(field => Object.prototype.hasOwnProperty.call(firstResource, field.name))
       )
@@ -445,6 +445,9 @@ export default {
     },
     formatDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
+    },
+    unixDate(date) {
+      return DateTime.fromJSDate(new Date(date)).valueOf()
     },
 
     emitSelect(resources) {
