@@ -1,7 +1,6 @@
-import { mount, shallowMount } from "@vue/test-utils"
+import { mount } from "@vue/test-utils"
 
 import Table from "./OcTableFiles.vue"
-import OcButton from "../OcButton"
 
 const ASC = "ascending"
 const DESC = "descending"
