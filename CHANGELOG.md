@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Change - Show compile errors and enforce node.js version in package.json: [#1579](https://github.com/owncloud/owncloud-design-system/pull/1579)
 * Change - Downgrade sass version: [#1583](https://github.com/owncloud/owncloud-design-system/pull/1583)
+* Enhancement - Add sidebar toggle icons: [#5165](https://github.com/owncloud/web/issues/5165)
 
 ## Details
 
@@ -25,6 +26,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    libray.
 
    https://github.com/owncloud/owncloud-design-system/pull/1583
+
+
+* Enhancement - Add sidebar toggle icons: [#5165](https://github.com/owncloud/web/issues/5165)
+
+   We added two new icons for the toggle button to switch between sidebar open and close
+
+   https://github.com/owncloud/web/issues/5165
+   https://github.com/owncloud/owncloud-design-system/pull/1587
 
 # Changelog for [9.0.1] (2021-08-11)
 
