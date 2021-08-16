@@ -11,6 +11,7 @@ export default {
   }),
   created() {
     if (this.isSortable) {
+      this.sortBy = this.firstSortableField
       this.$on(EVENT_THEAD_CLICKED, this.handleSort)
     }
   },
@@ -23,7 +24,7 @@ export default {
         const folders = [...this.data.filter(i => i.type === "folder")].sort((a, b) =>
           this.sortData(a, b)
         )
-        const files = [...this.data.filter(i => i.type === "file")].sort((a, b) =>
+        const files = [...this.data.filter(i => i.type !== "folder")].sort((a, b) =>
           this.sortData(a, b)
         )
         if (this.sortDir === SORT_DIRECTION_ASC) {
@@ -35,6 +36,13 @@ export default {
     },
     isSortable() {
       return this.fields.some(f => f.sortable)
+    },
+    firstSortableField() {
+      const sortableFields = this.fields.filter(f => f.sortable).map(f => f.name)
+      if (sortableFields) {
+        return sortableFields[0]
+      }
+      return null
     },
   },
   methods: {
