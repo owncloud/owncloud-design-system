@@ -101,12 +101,10 @@ describe("OcDrop", () => {
     await trigger.trigger("click") // show
     await wait()
     expect(wrapper.findComponent(Drop).exists()).toBeTruthy()
-    expect(trigger.attributes()["aria-expanded"]).toBe("true")
     expect(wrapper.element).toMatchSnapshot()
 
     await trigger.trigger("click") // hide
     await wait()
-    expect(trigger.attributes()["aria-expanded"]).toBe("false")
     expect(wrapper.element).toMatchSnapshot()
 
     await wrapper.setData({
@@ -115,7 +113,6 @@ describe("OcDrop", () => {
 
     await trigger.trigger("mouseenter") // show
     await wait()
-    expect(trigger.attributes()["aria-expanded"]).toBe("true")
     expect(wrapper.element).toMatchSnapshot()
   })
 })
