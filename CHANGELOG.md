@@ -6,11 +6,30 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Initial sorting for OcTableFiles: [#1588](https://github.com/owncloud/owncloud-design-system/pull/1588)
+* Bugfix - Sorting by date: [#1552](https://github.com/owncloud/owncloud-design-system/issues/1552)
 * Change - Show compile errors and enforce node.js version in package.json: [#1579](https://github.com/owncloud/owncloud-design-system/pull/1579)
 * Change - Downgrade sass version: [#1583](https://github.com/owncloud/owncloud-design-system/pull/1583)
 * Enhancement - Add sidebar toggle icons: [#5165](https://github.com/owncloud/web/issues/5165)
 
 ## Details
+
+* Bugfix - Initial sorting for OcTableFiles: [#1588](https://github.com/owncloud/owncloud-design-system/pull/1588)
+
+   The OcTableFiles component didn't apply initial sorting. This was set to the first sortable
+   field in the list of fields (which is "name").
+
+   https://github.com/owncloud/owncloud-design-system/pull/1588
+
+
+* Bugfix - Sorting by date: [#1552](https://github.com/owncloud/owncloud-design-system/issues/1552)
+
+   The OcTableFiles component sorted rows lexicographically by relative dates (e.g. "1 hour
+   ago"). This was fixed to sort by unix timestamps instead.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1552
+   https://github.com/owncloud/owncloud-design-system/pull/1588
+
 
 * Change - Show compile errors and enforce node.js version in package.json: [#1579](https://github.com/owncloud/owncloud-design-system/pull/1579)
 
