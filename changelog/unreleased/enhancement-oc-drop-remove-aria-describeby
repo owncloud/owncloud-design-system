@@ -1,0 +1,6 @@
+Enhancement: OcDrop remove aria-describedby
+
+The aria-describedby-Attribute which triggers the output should be removed, so 
+that screenreaders don't read out the whole content on focus.
+
+https://github.com/owncloud/web/issues/5398

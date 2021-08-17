@@ -107,9 +107,6 @@ export default {
       plugins: [hideOnEsc],
       theme: "none",
       role: "",
-      aria: {
-        content: "describedby",
-      },
       onShow(instance) {
         hideAll({ exclude: instance })
       },
