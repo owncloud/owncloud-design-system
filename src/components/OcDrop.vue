@@ -262,7 +262,7 @@ export default {
 export default {
   methods: {
     open() {
-      this.$refs.drop.$_ocDrop_show()
+      this.$refs.drop.show()
     }
   }
 }
