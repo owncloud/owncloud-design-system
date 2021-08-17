@@ -106,6 +106,7 @@ export default {
       interactive: true,
       plugins: [hideOnEsc],
       theme: "none",
+      role: "",
       onShow(instance) {
         hideAll({ exclude: instance })
       },
