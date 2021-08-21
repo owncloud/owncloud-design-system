@@ -41,12 +41,13 @@ export default {
     filter: {
       type: Function,
       required: false,
-      default: (items, search) => {
+      default: (items, search, props) => {
         if (items.length < 1) {
           return []
         }
 
         const fuse = new Fuse(items, {
+          keys: props.label ? [props.label] : [],
           shouldSort: true,
           threshold: 0.2,
           location: 0,
