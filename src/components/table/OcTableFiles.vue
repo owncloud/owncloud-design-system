@@ -391,17 +391,19 @@ export default {
         this.$emit("select", this.selection)
       }
     },
-    resetDropPosition(id, event) {
+    resetDropPosition(id, event, item) {
       const instance = this.$refs[id].tippy
       if (instance === undefined) return
+      this.emitSelect([item])
       this.displayPositionedDropdown(instance, event)
     },
 
-    showContextMenu(row, event) {
+    showContextMenu(row, event, item) {
       event.preventDefault()
 
       const instance = row.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
       if (instance === undefined) return
+      this.emitSelect([item])
       this.displayPositionedDropdown(instance._tippy, event)
     },
 
