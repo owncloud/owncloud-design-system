@@ -1,23 +1,19 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [9.3.0] (2021-08-23)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 9.3.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v9.2.0...master
+[9.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v9.2.0...v9.3.0
 
 ## Summary
 
-* Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
 * Bugfix - Fix search for options provided as objects: [#1602](https://github.com/owncloud/owncloud-design-system/pull/1602)
+* Bugfix - Contextmenu button triggered wrong event: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+* Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
+* Enhancement - OcTableFiles Contextmenu Tooltip: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+* Enhancement - Highlight droptarget in OcTableFiles: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+* Enhancement - Remove "Showdetails" button in OcTableFiles: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
 
 ## Details
-
-* Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
-
-   We changed the cursor for the actions (down/up arrows) on `OcSelect` to `pointer`. It used to be
-   a `text` cursor.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1604
-
 
 * Bugfix - Fix search for options provided as objects: [#1602](https://github.com/owncloud/owncloud-design-system/pull/1602)
 
@@ -28,6 +24,50 @@ The following sections list the changes in ownCloud Design System unreleased.
    filter objects at all.
 
    https://github.com/owncloud/owncloud-design-system/pull/1602
+
+
+* Bugfix - Contextmenu button triggered wrong event: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+
+   The contextmenu button in the OcTableFiles triggered a `showDetails` event, which lead to the
+   sidebar appearing instead of the (expected) contextmenu. This has been fixed.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1608
+   https://github.com/owncloud/owncloud-design-system/pull/1610
+
+
+* Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
+
+   We changed the cursor for the actions (down/up arrows) on `OcSelect` to `pointer`. It used to be
+   a `text` cursor.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1604
+
+
+* Enhancement - OcTableFiles Contextmenu Tooltip: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+
+   Since most of the quickactions in the OcTableFiles have a tooltip the contextmenu button
+   should get one, too. It also replaces the (removed) Showdetails button and leads to better
+   discoverability of the contextmenu (and therefore the sidebar).
+
+   https://github.com/owncloud/owncloud-design-system/pull/1610
+
+
+* Enhancement - Highlight droptarget in OcTableFiles: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+
+   The targeted table row in the OcTableFiles now gets a highlighted background when another
+   resource is dragged over it for visual user feedback.
+
+   https://github.com/owncloud/web/issues/5705
+   https://github.com/owncloud/owncloud-design-system/pull/1610
+
+
+* Enhancement - Remove "Showdetails" button in OcTableFiles: [#1610](https://github.com/owncloud/owncloud-design-system/pull/1610)
+
+   We removed the Showdetails button in the OcTableFiles quickactions to de-clutter the UI.
+   Opening the sidebar is supposed to happen from the contextmenu which gets triggered by the
+   three dots button.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1610
 
 # Changelog for [9.2.0] (2021-08-18)
 
