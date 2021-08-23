@@ -17,7 +17,7 @@
       <div class="oc-table-files-select-all">
         <oc-checkbox
           id="oc-table-files-select-all"
-          :label="$gettext('Select all resources')"
+          :label="allResourcesCheckboxLabel"
           :hide-label="true"
           :value="areAllResourcesSelected"
           @input="toggleSelectionAll"
@@ -78,7 +78,8 @@
         <slot name="quickActions" :resource="item" />
         <oc-button
           :id="`context-menu-trigger-${item.id.replace(/=+/, '')}`"
-          :aria-label="$gettext('Show context menu')"
+          v-oc-tooltip="contextMenuLabel"
+          :aria-label="contextMenuLabel"
           class="oc-table-files-btn-action-dropdown"
           appearance="raw"
           @click.stop.prevent="
@@ -365,6 +366,14 @@ export default {
 
     selectedIds() {
       return this.selection.map(r => r.id)
+    },
+
+    allResourcesCheckboxLabel() {
+      return this.$gettext("Select all resources")
+    },
+
+    contextMenuLabel() {
+      return this.$gettext("Show context menu")
     },
   },
   methods: {
