@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
+* Bugfix - Fix search for options provided as objects: [#1602](https://github.com/owncloud/owncloud-design-system/pull/1602)
 
 ## Details
 
@@ -16,6 +17,17 @@ The following sections list the changes in ownCloud Design System unreleased.
    a `text` cursor.
 
    https://github.com/owncloud/owncloud-design-system/pull/1604
+
+
+* Bugfix - Fix search for options provided as objects: [#1602](https://github.com/owncloud/owncloud-design-system/pull/1602)
+
+   We fixed a regression that was introduced in
+   https://github.com/owncloud/owncloud-design-system/pull/1521. `vue-select`
+   automatically uses the property specified in `label` for filtering. When custom filtering
+   based on Fuse.js was introduced that functionality got lost. Hence it was not possible to
+   filter objects at all.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1602
 
 # Changelog for [9.2.0] (2021-08-18)
 
