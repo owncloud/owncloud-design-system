@@ -17,7 +17,7 @@
       <div class="oc-table-files-select-all">
         <oc-checkbox
           id="oc-table-files-select-all"
-          :label="$gettext('Select all resources')"
+          :label="allResourcesCheckboxLabel"
           :hide-label="true"
           :value="areAllResourcesSelected"
           @input="toggleSelectionAll"
@@ -74,19 +74,12 @@
     </template>
     <template #actions="{ item }">
       <div class="oc-table-files-actions">
-        <oc-button
-          :aria-label="$gettext('Show details')"
-          class="oc-table-files-btn-show-details"
-          appearance="raw"
-          @click="showDetails(item)"
-        >
-          <oc-icon name="info_outline" />
-        </oc-button>
-        <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
+        <!-- @slot Add quick actions before the `context-menu / three dot` button in the actions column -->
         <slot name="quickActions" :resource="item" />
         <oc-button
           :id="`context-menu-trigger-${item.id.replace(/=+/, '')}`"
-          :aria-label="$gettext('Show context menu')"
+          v-oc-tooltip="contextMenuLabel"
+          :aria-label="contextMenuLabel"
           class="oc-table-files-btn-action-dropdown"
           appearance="raw"
           @click.stop.prevent="
@@ -374,6 +367,14 @@ export default {
     selectedIds() {
       return this.selection.map(r => r.id)
     },
+
+    allResourcesCheckboxLabel() {
+      return this.$gettext("Select all resources")
+    },
+
+    contextMenuLabel() {
+      return this.$gettext("Show context menu")
+    },
   },
   methods: {
     fileDragged(file) {
@@ -393,7 +394,7 @@ export default {
     resetDropPosition(id, event, item) {
       const instance = this.$refs[id].tippy
       if (instance === undefined) return
-      this.showDetails(item)
+      this.emitSelect([item])
       this.displayPositionedDropdown(instance, event)
     },
 
@@ -402,7 +403,7 @@ export default {
 
       const instance = row.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
       if (instance === undefined) return
-      this.showDetails(item)
+      this.emitSelect([item])
       this.displayPositionedDropdown(instance._tippy, event)
     },
 
@@ -434,14 +435,6 @@ export default {
        * @property {object} resource The resource for which the event is triggered
        */
       this.emitSelect([resource])
-    },
-    showDetails(resource) {
-      /**
-       * Triggered when the showDetails button in the actions column is clicked
-       * @property {object} resource The resource for which the event is triggered
-       */
-      this.fileClicked(resource)
-      this.$emit("showDetails")
     },
     formatDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
