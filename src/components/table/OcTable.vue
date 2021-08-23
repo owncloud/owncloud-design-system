@@ -47,7 +47,9 @@
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native.stop="dragStart(item)"
         @drop.native.stop="dropRowEvent"
-        @dragenter.native.prevent.stop
+        @dragenter.native.prevent.stop="dropRowStyling(item.id, true, $event)"
+        @dragleave.native.prevent.stop="dropRowStyling(item.id, false, $event)"
+        @mouseleave="dropRowStyling(item.id, false, $event)"
         @dragover.native.prevent.stop
       >
         <oc-td
@@ -254,6 +256,19 @@ export default {
       const dropFileId = dropTargetTr.dataset.fileId
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
+    dropRowStyling(id, isTrue, event) {
+      if (event.currentTarget.contains(event.relatedTarget)) {
+        return
+      }
+
+      isTrue == true
+        ? document
+            .getElementsByClassName(`oc-tbody-tr-${id}`)[0]
+            .classList.add("highlightedDropTarget")
+        : document
+            .getElementsByClassName(`oc-tbody-tr-${id}`)[0]
+            .classList.remove("highlightedDropTarget")
+    },
     isFieldTypeSlot(field) {
       return field.type === "slot"
     },
@@ -424,6 +439,10 @@ export default {
       position: sticky;
       z-index: 1;
     }
+  }
+
+  .highlightedDropTarget {
+    background-color: var(--oc-color-input-border);
   }
 
   &-thead-content {
