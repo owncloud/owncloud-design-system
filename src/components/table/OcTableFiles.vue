@@ -74,15 +74,7 @@
     </template>
     <template #actions="{ item }">
       <div class="oc-table-files-actions">
-        <oc-button
-          :aria-label="$gettext('Show details')"
-          class="oc-table-files-btn-show-details"
-          appearance="raw"
-          @click="showDetails(item)"
-        >
-          <oc-icon name="info_outline" />
-        </oc-button>
-        <!-- @slot Add quick actions directly next to the `showDetails` button in the actions column -->
+        <!-- @slot Add quick actions before the `context-menu / three dot` button in the actions column -->
         <slot name="quickActions" :resource="item" />
         <oc-button
           :id="`context-menu-trigger-${item.id.replace(/=+/, '')}`"
@@ -432,14 +424,6 @@ export default {
        * @property {object} resource The resource for which the event is triggered
        */
       this.emitSelect([resource])
-    },
-    showDetails(resource) {
-      /**
-       * Triggered when the showDetails button in the actions column is clicked
-       * @property {object} resource The resource for which the event is triggered
-       */
-      this.fileClicked(resource)
-      this.$emit("showDetails")
     },
     formatDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
