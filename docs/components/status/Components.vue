@@ -33,7 +33,9 @@
       <tbody>
         <tr v-for="(component, index) in components" :key="index" class="component">
           <td v-if="component.name">
-            <code class="name">{{ component.name }}</code>
+            <a :href="`/#/oC%20Components/${component.name}`">
+              <code class="name">{{ component.name }}</code>
+            </a>
           </td>
           <td v-else>N/A</td>
           <td v-if="component.release">{{ component.release }}</td>
