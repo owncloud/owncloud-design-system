@@ -117,6 +117,8 @@ export default {
       svg {
         overflow: visible;
       }
+
+      cursor: pointer;
     }
 
     &__clear svg {
