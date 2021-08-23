@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v9.2.0...master
+
+## Summary
+
+* Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
+
+## Details
+
+* Bugfix - Use pointer cursor for OcSelect actions: [#1604](https://github.com/owncloud/owncloud-design-system/pull/1604)
+
+   We changed the cursor for the actions (down/up arrows) on `OcSelect` to `pointer`. It used to be
+   a `text` cursor.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1604
+
 # Changelog for [9.2.0] (2021-08-18)
 
 The following sections list the changes in ownCloud Design System 9.2.0.
