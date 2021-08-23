@@ -179,19 +179,19 @@ describe("OcTableFiles", () => {
     })
   })
 
-  describe("resource details", () => {
+  test.skip("resource details", () => {
     // TODO: rewrite tests for hightlighting
-    /*it("emits showDetails event when clicking on the button in actions column", () => {
+    test("emits showDetails event when clicking on the button in actions column", () => {
       wrapper.find(".oc-table-data-cell-actions .oc-table-files-btn-show-details").vm.$emit("click")
 
       expect(wrapper.emitted().showDetails).toBeTruthy()
     })
 
-    it("emits showDetails event when clicking on the row", async () => {
+    test("emits showDetails event when clicking on the row", async () => {
       await wrapper.find(".oc-tbody-tr").trigger("click")
 
       expect(wrapper.emitted().showDetails.length).toEqual(2)
-    })*/
+    })
   })
 
   describe("context menu", () => {
