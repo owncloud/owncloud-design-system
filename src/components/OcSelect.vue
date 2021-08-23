@@ -41,12 +41,13 @@ export default {
     filter: {
       type: Function,
       required: false,
-      default: (items, search) => {
+      default: (items, search, props) => {
         if (items.length < 1) {
           return []
         }
 
         const fuse = new Fuse(items, {
+          ...(props.label && { keys: [props.label] }),
           shouldSort: true,
           threshold: 0.2,
           location: 0,
@@ -167,16 +168,17 @@ For detailed documentation (props, slots, events, etc.), please visit https://vu
   </div>
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: 'Apple'
-  })
-}
+  export default {
+    data: () => ({
+      selected: "Apple"
+    })
+  };
 </script>
 ```
 
 ### Prevent user from clearing the selection
-If we want to disable the clear button from the `oc-select`, we can set prop `clearable` to false. This will also prevent clearing the selected value by hitting `delete`.
+If we want to disable the clear button from the `oc-select`, we can set prop `clearable` to false. This will also
+prevent clearing the selected value by hitting `delete`.
 
 ```js
 <template>
@@ -185,11 +187,11 @@ If we want to disable the clear button from the `oc-select`, we can set prop `cl
   </div>
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: 'Apple'
-  })
-}
+  export default {
+    data: () => ({
+      selected: "Apple"
+    })
+  };
 </script>
 ```
 
@@ -201,22 +203,23 @@ export default {
   </div>
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: ['Apple']
-  }),
+  export default {
+    data: () => ({
+      selected: ["Apple"]
+    }),
 
-  computed: {
-    options() {
-      return ['Apple', 'Bannana', 'Orange', 'Pear'].filter(option => this.selected.indexOf(option) < 0)
+    computed: {
+      options() {
+        return ["Apple", "Bannana", "Orange", "Pear"].filter(option => this.selected.indexOf(option) < 0);
+      }
     }
-  }
-}
+  };
 </script>
 ```
 
 ### Disable search
-To prevent user from filtering options by typing a serach query into the `oc-select` component, set prop called `searchable` to false.
+To prevent user from filtering options by typing a serach query into the `oc-select` component, set prop called
+`searchable` to false.
 
 ```js
 <template>
@@ -225,17 +228,19 @@ To prevent user from filtering options by typing a serach query into the `oc-sel
   </div>
 </template>
 <script>
-export default {
-  data: () => ({
-    selected: 'Apple'
-  })
-}
+  export default {
+    data: () => ({
+      selected: "Apple"
+    })
+  };
 </script>
 ```
 
 ### Using slots to display complex options
-Sometimes we need to display more complex options. This can include e.g. an option with a title and a description. To still display all those values exactly as we want to, we need to use scoped slot called `option`.
-We can then retrieve all the values that we want to display from the slots parametres. It is important to specify the `label` prop on the `oc-select` component which will specify which key should be used as the option label.
+Sometimes we need to display more complex options. This can include e.g. an option with a title and a description. To
+still display all those values exactly as we want to, we need to use scoped slot called `option`.
+We can then retrieve all the values that we want to display from the slots parametres. It is important to specify the
+`label` prop on the `oc-select` component which will specify which key should be used as the option label.
 
 ```js
 <template>
@@ -260,32 +265,32 @@ We can then retrieve all the values that we want to display from the slots param
   </div>
 </template>
 <script>
-const options = [
-  {
-    title: 'Apple',
-    desc: 'An apple is an edible fruit produced by an apple tree (Malus domestica)'
-  },
-  {
-    title: 'Bannana',
-    desc: 'Bannana is a genus of goblin spiders (family Oonopidae) native to Xishuangbanna prefecture, Yunnan Province, China, where it lives in the leaf-litter of tropical rainforest'
-  },
-  {
-    title: 'Orange',
-    desc: 'The orange is the fruit of various citrus species in the family Rutaceae'
-  },
-]
+  const options = [
+    {
+      title: "Apple",
+      desc: "An apple is an edible fruit produced by an apple tree (Malus domestica)"
+    },
+    {
+      title: "Bannana",
+      desc: "Bannana is a genus of goblin spiders (family Oonopidae) native to Xishuangbanna prefecture, Yunnan Province, China, where it lives in the leaf-litter of tropical rainforest"
+    },
+    {
+      title: "Orange",
+      desc: "The orange is the fruit of various citrus species in the family Rutaceae"
+    }
+  ];
 
-export default {
-  data: () => ({
-    selected: options[0],
-    options
-  })
-}
+  export default {
+    data: () => ({
+      selected: options[0],
+      options
+    })
+  };
 </script>
 <style scoped>
-.option {
-  display: block;
-}
+  .option {
+    display: block;
+  }
 </style>
 ```
 
