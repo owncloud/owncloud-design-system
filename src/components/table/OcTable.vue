@@ -47,9 +47,9 @@
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native.stop="dragStart(item)"
         @drop.native.stop="dropRowEvent"
-        @dragenter.native.prevent.stop="dropRowStyling(item.id, true, $event)"
-        @dragleave.native.prevent.stop="dropRowStyling(item.id, false, $event)"
-        @mouseleave="dropRowStyling(item.id, false, $event)"
+        @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
+        @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
+        @mouseleave="dropRowStyling(item.id, true, $event)"
         @dragover.native.prevent.stop
       >
         <oc-td
@@ -256,18 +256,14 @@ export default {
       const dropFileId = dropTargetTr.dataset.fileId
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
-    dropRowStyling(id, isTrue, event) {
+    dropRowStyling(id, leaving, event) {
       if (event.currentTarget.contains(event.relatedTarget)) {
         return
       }
 
-      isTrue == true
-        ? document
-            .getElementsByClassName(`oc-tbody-tr-${id}`)[0]
-            .classList.add("highlightedDropTarget")
-        : document
-            .getElementsByClassName(`oc-tbody-tr-${id}`)[0]
-            .classList.remove("highlightedDropTarget")
+      const classList = document.getElementsByClassName(`oc-tbody-tr-${id}`)[0].classList
+      const className = "highlightedDropTarget"
+      leaving ? classList.remove(className) : classList.add(className)
     },
     isFieldTypeSlot(field) {
       return field.type === "slot"
