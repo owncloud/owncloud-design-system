@@ -29,12 +29,12 @@ describe("OcResourceSize", () => {
         size: 24064,
       },
     })
-    expect(wrapper.find(".oc-resource-size").text()).toEqual("24 KB")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("24 kB")
 
     await wrapper.setProps({
       size: 44145049,
     })
-    expect(wrapper.find(".oc-resource-size").text()).toEqual("42.1 MB")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("44.1 MB")
   })
 
   it("converts strings to numbers", () => {
@@ -43,7 +43,7 @@ describe("OcResourceSize", () => {
         size: "24064",
       },
     })
-    expect(wrapper.find(".oc-resource-size").text()).toEqual("24 KB")
+    expect(wrapper.find(".oc-resource-size").text()).toEqual("24 kB")
   })
 
   describe("language is not defined", () => {
