@@ -144,7 +144,7 @@ describe("OcTableFiles", () => {
   })
 
   it("formats the resource size to a human readable format", () => {
-    expect(wrapper.find(".oc-tbody-tr-forest .oc-table-data-cell-size").text()).toEqual("105.9 MB")
+    expect(wrapper.find(".oc-tbody-tr-forest .oc-table-data-cell-size").text()).toEqual("111 MB")
     expect(wrapper.find(".oc-tbody-tr-documents .oc-table-data-cell-size").text()).toEqual("--")
     expect(wrapper.find(".oc-tbody-tr-notes .oc-table-data-cell-size").text()).toEqual("?")
   })
