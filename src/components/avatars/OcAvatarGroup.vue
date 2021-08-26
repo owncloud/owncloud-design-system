@@ -142,17 +142,6 @@ export default {
     .oc-avatar-link + .oc-avatar-link {
       border: 1px solid var(--oc-color-text-inverse);
       margin-left: -25px;
-      transition: margin-left $transition-duration-short ease-in-out;
-    }
-
-    &:hover,
-    &:focus {
-      .oc-avatar + .oc-avatar,
-      .oc-avatar-count,
-      .oc-avatar + .oc-avatar-link,
-      .oc-avatar-link + .oc-avatar-link {
-        margin-left: 0;
-      }
     }
   }
 }

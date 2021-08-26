@@ -1,0 +1,7 @@
+Enhancement: Remove expand animation from OcAvatarGroup
+
+We've had to remove the expand animation on hover/focus
+because it was misleading to the user
+
+https://github.com/owncloud/web/issues/5736
+https://github.com/owncloud/owncloud-design-system/pull/1614
