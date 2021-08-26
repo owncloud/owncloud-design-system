@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v9.3.0...master
+
+## Summary
+
+* Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
+
+## Details
+
+* Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
+
+   We've switched from base-2 to base-10 when calculating the displayed file-size to align it
+   better with user expectations.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1598
+   https://github.com/owncloud/owncloud-design-system/pull/1615
+
 # Changelog for [9.3.0] (2021-08-23)
 
 The following sections list the changes in ownCloud Design System 9.3.0.
