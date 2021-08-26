@@ -13409,9 +13409,9 @@ vue-loader@^15.9.0:
     vue-style-loader "^4.1.0"
 
 vue-select@^3.12.0:
-  version "3.12.3"
-  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.12.3.tgz#e833e409bcb17132dfa0d640224b3f16021563a0"
-  integrity sha512-pCvOtbg0V+XDmkhKSrraWlmGChO5KggFz1wsH7qv85lZYk1uiWEeD1FwKyyohCWq65YifJh2VztB5bXhZBcTJw==
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.13.0.tgz#78d519984139156adcbf56af260fb6c2a69093a6"
+  integrity sha512-+PcWtfA1i3WVtkVwBPQknnOZL6QWSD2XiAVbSn0xAQvjOrmGAg7z+o9HkezXhtGdEstloJOdM8SujrUVyphKqg==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"
