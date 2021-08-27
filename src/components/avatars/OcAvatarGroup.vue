@@ -43,7 +43,7 @@ export default {
     /**
      * Users and public links to be displayed with avatars
      */
-    users: {
+    users: { // find better name eg. items
       type: Array,
       required: true,
     },
@@ -107,7 +107,7 @@ export default {
     },
 
     avatars() {
-      const a = this.users.filter(u => !u.link)
+      const a = this.users.filter(u => u.sharedType === 'people')
       if (!this.isOverlapping) {
         return a
       }
@@ -115,7 +115,7 @@ export default {
     },
 
     links() {
-      const a = this.users.filter(u => !!u.link)
+      const a = this.users.filter(u => u.sharedType === 'link' || u.sharedType === 'federated' || u.sharedType === 'guest' || u.sharedType === 'group' ) // should have sharedType prop. to easily filter
       if (!this.isOverlapping) {
         return a
       }
@@ -138,8 +138,8 @@ export default {
   &-stacked {
     .oc-avatar + .oc-avatar,
     .oc-avatar-count,
-    .oc-avatar + .oc-avatar-link,
-    .oc-avatar-link + .oc-avatar-link {
+    .oc-avatar + .oc-avatar-item,
+    .oc-avatar-item + .oc-avatar-item {
       border: 1px solid var(--oc-color-text-inverse);
       margin-left: -25px;
     }
@@ -163,20 +163,38 @@ export default {
       {
         username: "bob",
         displayName: "Bob",
-        avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+        sharedType: 'federated'
       },
       {
         username: "marie",
         displayName: "Marie",
-        avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+        avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        sharedType: 'people'
+      },
+      {
+        username: "peter",
+        displayName: "Peter",
+        avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        sharedType: 'people'
+      },
+      {
+        username: "udo",
+        displayName: "Udo",
+        avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        sharedType: 'people'
       },
       {
         username: "john",
-        displayName: "John Richards Emperor of long names"
+        displayName: "John Richards Emperor of long names",
+        sharedType: 'guest'
       },
       {
         name: "Public link",
-        link: true
+        sharedType: 'link'
+      },
+      {
+        name: "Test",
+        sharedType: 'group'
       }
     ]
   })

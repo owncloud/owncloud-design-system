@@ -1,10 +1,10 @@
 <template>
-  <oc-avatar-item background="#C6CFD9" icon="link" :name="name" :accessible-label="accessibleLabel"></oc-avatar-item>
+  <oc-avatar-item background="#C6CFD9" icon="filter_drama" icon-color="#5AAB9F" :name="name" :accessible-label="accessibleLabel"></oc-avatar-item>
 </template>
 
 <script>
 export default {
-  name: "OcAvatarLink",
+  name: "OcAvatarFederated",
   status: "ready",
   release: "2.1.0",
 
@@ -32,6 +32,6 @@ export default {
 
 <docs>
 ```js
-<oc-avatar-link name="Public link" accessible-label="Public link" />
+<oc-avatar-federated name="Federated" accessible-label="Federated" />
 ```
 </docs>
