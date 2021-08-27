@@ -31,7 +31,7 @@ export default {
     icon: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     /**
      * Color that should be used for the icon
@@ -39,7 +39,7 @@ export default {
     iconColor: {
       type: String,
       required: false,
-      default: '#ffffff'
+      default: "#ffffff",
     },
     /**
      * Background color that should be used for the avatar. If empty
@@ -48,7 +48,7 @@ export default {
     background: {
       type: String,
       required: false,
-      default: null
+      default: "var(--oc-color-swatch-brand-default)",
     },
     /**
      * Accessibility label used as alt. Use only in case the avatar is used alone.
@@ -110,6 +110,14 @@ export default {
   }
   .oc-icon > svg {
     fill: var(--icon-color);
+  }
+  .oc-icon > svg:after {
+    content: "";
+    background-color: red;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    width: 30px;
+    height: 30px;
   }
 }
 </style>

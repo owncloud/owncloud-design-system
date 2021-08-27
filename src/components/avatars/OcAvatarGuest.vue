@@ -1,5 +1,10 @@
 <template>
-  <oc-avatar-item background="#C6CFD9" icon="user_remote" icon-color="#D78841" :name="name" :accessible-label="accessibleLabel"></oc-avatar-item>
+  <oc-avatar-item
+    icon="user_remote"
+    icon-color="#D78841"
+    :name="name"
+    :accessible-label="accessibleLabel"
+  ></oc-avatar-item>
 </template>
 
 <script>
@@ -26,7 +31,7 @@ export default {
       required: false,
       default: "",
     },
-  }
+  },
 }
 </script>
 

@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils"
 
-import Group from "./OcAvatarGroup.vue"
+import Avatars from "./OcAvatars.vue"
 
 const users = [
   {
@@ -34,10 +34,10 @@ const users = [
   },
 ]
 
-describe("OcAvatarGroup", () => {
+describe("OcAvatars", () => {
   it("displays tooltip", () => {
     const OcTooltip = jest.fn()
-    const wrapper = shallowMount(Group, {
+    const wrapper = shallowMount(Avatars, {
       propsData: {
         users,
         maxDisplayed: 2,
@@ -55,7 +55,7 @@ describe("OcAvatarGroup", () => {
 
   it("prefers avatars over links when maxDisplayed is exceeded", () => {
     const OcTooltip = jest.fn()
-    const wrapper = shallowMount(Group, {
+    const wrapper = shallowMount(Avatars, {
       propsData: {
         users,
         maxDisplayed: 3,
@@ -75,7 +75,7 @@ describe("OcAvatarGroup", () => {
 
   it("shows avatars first and links last", () => {
     const OcTooltip = jest.fn()
-    const wrapper = shallowMount(Group, {
+    const wrapper = shallowMount(Avatars, {
       propsData: {
         users,
         isTooltipDisplayed: true,

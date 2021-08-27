@@ -52,7 +52,7 @@
       <slot name="status" :resource="item" />
     </template>
     <template #sharedWith="{ item }">
-      <oc-avatar-group
+      <oc-avatars
         class="oc-table-files-people"
         :users="item.sharedWith"
         :stacked="true"
@@ -65,7 +65,7 @@
       <oc-resource-size :size="item.size" />
     </template>
     <template #owner="{ item }">
-      <oc-avatar-group
+      <oc-avatars
         class="oc-table-files-people"
         :users="item.owner"
         :is-tooltip-displayed="true"
@@ -114,7 +114,7 @@ import { DateTime } from "luxon"
 import OcTable from "./OcTable.vue"
 import OcResource from "../resource/OcResource.vue"
 import OcIcon from "../OcIcon.vue"
-import OcAvatarGroup from "../avatars/OcAvatarGroup.vue"
+import OcAvatars from "../avatars/OcAvatars.vue"
 import OcCheckbox from "../OcCheckbox.vue"
 import OcButton from "../OcButton.vue"
 import OcResourceSize from "../resource/OcResourceSize.vue"
@@ -129,7 +129,7 @@ export default {
     OcTable,
     OcResource,
     OcIcon,
-    OcAvatarGroup,
+    OcAvatars,
     OcCheckbox,
     OcButton,
     OcResourceSize,
