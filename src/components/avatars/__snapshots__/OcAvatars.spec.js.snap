@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OcAvatarGroup displays tooltip 1`] = `
+exports[`OcAvatars displays tooltip 1`] = `
 <div>
-  <div aria-hidden="true" class="oc-avatar-group">
+  <div aria-hidden="true" class="oc-avatars">
     <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="Bob" accessiblelabel="" width="30"></oc-avatar-stub>
     <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="Marie" accessiblelabel="" width="30"></oc-avatar-stub>
     <!---->
@@ -11,9 +11,9 @@ exports[`OcAvatarGroup displays tooltip 1`] = `
 </div>
 `;
 
-exports[`OcAvatarGroup prefers avatars over links when maxDisplayed is exceeded 1`] = `
+exports[`OcAvatars prefers avatars over links when maxDisplayed is exceeded 1`] = `
 <div>
-  <div aria-hidden="true" class="oc-avatar-group">
+  <div aria-hidden="true" class="oc-avatars">
     <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="Bob" accessiblelabel="" width="30"></oc-avatar-stub>
     <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="Marie" accessiblelabel="" width="30"></oc-avatar-stub>
     <oc-avatar-stub src="" username="John Richards Emperor of long names" accessiblelabel="" width="30"></oc-avatar-stub>
@@ -23,14 +23,14 @@ exports[`OcAvatarGroup prefers avatars over links when maxDisplayed is exceeded 
 </div>
 `;
 
-exports[`OcAvatarGroup shows avatars first and links last 1`] = `
+exports[`OcAvatars shows avatars first and links last 1`] = `
 <div>
-  <div aria-hidden="true" class="oc-avatar-group">
+  <div aria-hidden="true" class="oc-avatars">
     <oc-avatar-stub src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="Bob" accessiblelabel="" width="30"></oc-avatar-stub>
     <oc-avatar-stub src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" username="Marie" accessiblelabel="" width="30"></oc-avatar-stub>
     <oc-avatar-stub src="" username="John Richards Emperor of long names" accessiblelabel="" width="30"></oc-avatar-stub>
-    <oc-avatar-link-stub name="link 0" accessiblelabel=""></oc-avatar-link-stub>
-    <oc-avatar-link-stub name="link 1" accessiblelabel=""></oc-avatar-link-stub>
+    <ocavatarlink-stub name="link 0" accessiblelabel=""></ocavatarlink-stub>
+    <ocavatarlink-stub name="link 1" accessiblelabel=""></ocavatarlink-stub>
     <!---->
   </div> <span class="oc-invisible-sr">List of users</span>
 </div>

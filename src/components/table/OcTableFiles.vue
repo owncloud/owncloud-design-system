@@ -54,7 +54,7 @@
     <template #sharedWith="{ item }">
       <oc-avatars
         class="oc-table-files-people"
-        :users="item.sharedWith"
+        :items="item.sharedWith"
         :stacked="true"
         :max-displayed="3"
         :is-tooltip-displayed="true"
@@ -67,7 +67,7 @@
     <template #owner="{ item }">
       <oc-avatars
         class="oc-table-files-people"
-        :users="item.owner"
+        :items="item.owner"
         :is-tooltip-displayed="true"
         :accessible-description="getOwnerAvatarDescription(item)"
       />

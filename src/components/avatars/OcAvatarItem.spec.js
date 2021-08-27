@@ -1,9 +1,9 @@
-import OcAvatarLink from "./OcAvatarLink.vue"
+import OcAvatarItem from "./OcAvatarItem.vue"
 import { mount } from "@vue/test-utils"
 
-describe("OcAvatarLink", () => {
+describe("OcAvatarItem", () => {
   function getWrapperWithProps(props = {}) {
-    return mount(OcAvatarLink, {
+    return mount(OcAvatarItem, {
       propsData: {
         ...props,
         name: "test link",

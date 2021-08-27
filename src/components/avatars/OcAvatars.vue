@@ -23,7 +23,7 @@
           :name="item.name"
         />
       </template>
-      <oc-avatar-count v-if="isOverlapping" :count="users.length - maxDisplayed" />
+      <oc-avatar-count v-if="isOverlapping" :count="items.length - maxDisplayed" />
     </div>
     <span class="oc-invisible-sr" v-text="accessibleDescription"></span>
   </div>
@@ -49,7 +49,7 @@ export default {
 
   props: {
     /**
-     * Users public links, groups, federated and guests to be displayed with avatars
+     * Users, public links, groups, federated and guests to be displayed with avatars
      */
     items: {
       // find better name eg. items
@@ -100,7 +100,7 @@ export default {
         const names = this.avatars.map(user => user.displayName)
 
         if (this.otherItems.length > 0) {
-          names.push(...this.otherItems.map(link => link.name))
+          names.push(...this.otherItems.map(item => item.name))
         }
 
         let tooltip = names.join(", ")
