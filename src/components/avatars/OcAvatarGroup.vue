@@ -10,7 +10,7 @@ export default {
 
   props: {
     /**
-     * Name of the public link used as an accessible label
+     * Name of the group used as an accessible label
      */
     name: {
       type: String,

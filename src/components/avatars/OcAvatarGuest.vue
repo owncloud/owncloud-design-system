@@ -15,7 +15,7 @@ export default {
 
   props: {
     /**
-     * Name of the public link used as an accessible label
+     * Name of the guest used as an accessible label
      */
     name: {
       type: String,

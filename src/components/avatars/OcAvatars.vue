@@ -52,7 +52,6 @@ export default {
      * Users, public links, groups, federated and guests to be displayed with avatars
      */
     items: {
-      // find better name eg. items
       type: Array,
       required: true,
     },
