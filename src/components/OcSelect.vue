@@ -1,10 +1,19 @@
 <template>
-  <vue-select ref="select" :value="model" class="oc-select" v-bind="$attrs" v-on="$listeners">
-    <template v-for="(index, name) in $scopedSlots" #[name]="data">
-      <slot :name="name" v-bind="data"></slot>
-    </template>
-    <div slot="no-options" v-translate>No options available.</div>
-  </vue-select>
+  <div>
+    <label :for="this.$attrs['input-id']" v-text="setLabel" />
+    <vue-select
+      ref="select"
+      :value="model"
+      class="oc-select"
+      v-bind="setCustomizedAttrs()"
+      v-on="$listeners"
+    >
+      <template v-for="(index, name) in $scopedSlots" #[name]="data">
+        <slot :name="name" v-bind="data"></slot>
+      </template>
+      <div slot="no-options" v-translate>No options available.</div>
+    </vue-select>
+  </div>
 </template>
 
 <script>
@@ -33,6 +42,11 @@ export default {
       default: null,
     },
   },
+  computed: {
+    setLabel() {
+      return this.$attrs["label"]
+    },
+  },
 
   mounted() {
     this.setComboBoxAriaLabel()
@@ -41,6 +55,11 @@ export default {
     setComboBoxAriaLabel() {
       const comboBoxElement = this.$refs.select.$el.querySelector("div:first-child")
       comboBoxElement.setAttribute("aria-label", this.$gettext("Search for option"))
+    },
+    setCustomizedAttrs() {
+      const customAttrs = this.$attrs
+      delete customAttrs.label
+      return customAttrs
     },
   },
 }
@@ -98,7 +117,7 @@ For detailed documentation (props, slots, events, etc.), please visit https://vu
 ```js
 <template>
   <div class="oc-docs-width-medium">
-    <oc-select v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
+    <oc-select label="Custom label" input-id="my-custom-id" v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
   </div>
 </template>
 <script>
@@ -147,16 +166,18 @@ export default {
 ```
 
 ### Using slots to display complex options
-Sometimes we need to display more complex options. This can include e.g. an option with a title and a description. To still display all those values exactly as we want to, we need to use scoped slot called `option`.
-We can then retrieve all the values that we want to display from the slots parametres. It is important to specify the `label` prop on the `oc-select` component which will specify which key should be used as the option label.
+Sometimes we need to display more complex options. This can include e.g. an option with a title and a description. 
+To still display all those values exactly as we want to, we need to use scoped slot called `option`.
+We can then retrieve all the values that we want to display from the slots parametres. 
+It is important to use a `label` key inside the passed object since `oc-select` will look for it.
 
 ```js
 <template>
   <div class="oc-docs-width-medium">
-    <oc-select v-model="selected" :options="options" label="title" class="oc-mb-m">
+    <oc-select v-model="selected" :options="options" class="oc-mb-m">
       <template v-slot:option="{ title, desc }">
         <span class="option">
-          <strong v-text="title" />
+          <strong v-text="label" />
         </span>
         <span class="option" v-text="desc" />
       </template>
@@ -172,15 +193,15 @@ We can then retrieve all the values that we want to display from the slots param
 <script>
 const options = [
   {
-    title: 'Apple',
+    label: 'Apple',
     desc: 'An apple is an edible fruit produced by an apple tree (Malus domestica)'
   },
   {
-    title: 'Bannana',
+    label: 'Bannana',
     desc: 'Bannana is a genus of goblin spiders (family Oonopidae) native to Xishuangbanna prefecture, Yunnan Province, China, where it lives in the leaf-litter of tropical rainforest'
   },
   {
-    title: 'Orange',
+    label: 'Orange',
     desc: 'The orange is the fruit of various citrus species in the family Rutaceae'
   },
 ]
