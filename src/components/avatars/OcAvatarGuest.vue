@@ -4,7 +4,7 @@
     icon-color="#D78841"
     :name="name"
     :accessible-label="accessibleLabel"
-  ></oc-avatar-item>
+  />
 </template>
 
 <script>

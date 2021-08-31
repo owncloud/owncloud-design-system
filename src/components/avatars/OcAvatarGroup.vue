@@ -1,5 +1,5 @@
 <template>
-  <oc-avatar-item icon="group" :name="name" :accessible-label="accessibleLabel"></oc-avatar-item>
+  <oc-avatar-item icon="group" :name="name" :accessible-label="accessibleLabel" />
 </template>
 
 <script>

@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { shareTypes } from "../../utils/shareTypes"
 import OcAvatar from "./OcAvatar.vue"
 import OcAvatarCount from "./OcAvatarCount.vue"
 import OcAvatarLink from "./OcAvatarLink.vue"
@@ -122,7 +123,7 @@ export default {
     },
 
     avatars() {
-      const a = this.items.filter(u => u.shareType === "people")
+      const a = this.items.filter(u => u.shareType === shareTypes.user)
       if (!this.isOverlapping) {
         return a
       }
@@ -130,7 +131,7 @@ export default {
     },
 
     otherItems() {
-      const a = this.items.filter(u => u.shareType !== "people")
+      const a = this.items.filter(u => u.shareType !== shareTypes.user)
       if (!this.isOverlapping) {
         return a
       }
@@ -143,13 +144,13 @@ export default {
   methods: {
     getAvatarComponentForItem(item) {
       switch (item.shareType) {
-        case "link":
+        case shareTypes.link:
           return OcAvatarLink
-        case "federated":
+        case shareTypes.remote:
           return OcAvatarFederated
-        case "group":
+        case shareTypes.group:
           return OcAvatarGroup
-        case "guest":
+        case shareTypes.guest:
           return OcAvatarGuest
       }
     },
@@ -191,37 +192,37 @@ export default {
     items: [
       {
         name: "bob",
-        shareType: 'federated'
+        shareType: 6
       },
       {
         username: "marie",
         displayName: "Marie",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        shareType: 'people'
+        shareType: 0
       },
       {
         username: "peter",
         displayName: "Peter",
         avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        shareType: 'people'
+        shareType: 0
       },
       {
         username: "udo",
         displayName: "Udo",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        shareType: 'people'
+        shareType: 0
       },
       {
         name: "john",
-        shareType: 'guest'
+        shareType: 4
       },
       {
         name: "Public link",
-        shareType: 'link'
+        shareType: 3
       },
       {
         name: "Test",
-        shareType: 'group'
+        shareType: 1
       }
     ]
   })
