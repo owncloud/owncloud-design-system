@@ -10,8 +10,8 @@
 <script>
 export default {
   name: "OcAvatarFederated",
-  status: "ready",
-  release: "2.1.0",
+  status: "review",
+  release: "",
 
   props: {
     /**

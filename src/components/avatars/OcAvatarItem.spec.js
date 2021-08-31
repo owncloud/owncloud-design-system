@@ -13,7 +13,7 @@ describe("OcAvatarItem", () => {
   describe("when prop 'name' is provided", () => {
     it("should set data test user attribute on wrapper", () => {
       const wrapper = getWrapperWithProps()
-      expect(wrapper.attributes("data-test-link-name")).toBe("test link")
+      expect(wrapper.attributes("data-test-item-name")).toBe("test link")
     })
   })
   describe("accessibleLabel", () => {

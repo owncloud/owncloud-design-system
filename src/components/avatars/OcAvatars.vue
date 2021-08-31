@@ -45,7 +45,14 @@ export default {
   status: "ready",
   release: "2.1.0",
 
-  components: { OcAvatar, OcAvatarCount, OcAvatarLink },
+  components: {
+    OcAvatar,
+    OcAvatarCount,
+    OcAvatarLink,
+    OcAvatarGroup,
+    OcAvatarFederated,
+    OcAvatarGuest,
+  },
 
   props: {
     /**
@@ -115,7 +122,7 @@ export default {
     },
 
     avatars() {
-      const a = this.items.filter(u => u.sharedType === "people")
+      const a = this.items.filter(u => u.shareType === "people")
       if (!this.isOverlapping) {
         return a
       }
@@ -123,7 +130,7 @@ export default {
     },
 
     otherItems() {
-      const a = this.items.filter(u => u.sharedType !== "people")
+      const a = this.items.filter(u => u.shareType !== "people")
       if (!this.isOverlapping) {
         return a
       }
@@ -135,7 +142,7 @@ export default {
   },
   methods: {
     getAvatarComponentForItem(item) {
-      switch (item.sharedType) {
+      switch (item.shareType) {
         case "link":
           return OcAvatarLink
         case "federated":
@@ -184,37 +191,37 @@ export default {
     items: [
       {
         name: "bob",
-        sharedType: 'federated'
+        shareType: 'federated'
       },
       {
         username: "marie",
         displayName: "Marie",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        sharedType: 'people'
+        shareType: 'people'
       },
       {
         username: "peter",
         displayName: "Peter",
         avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        sharedType: 'people'
+        shareType: 'people'
       },
       {
         username: "udo",
         displayName: "Udo",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        sharedType: 'people'
+        shareType: 'people'
       },
       {
         name: "john",
-        sharedType: 'guest'
+        shareType: 'guest'
       },
       {
         name: "Public link",
-        sharedType: 'link'
+        shareType: 'link'
       },
       {
         name: "Test",
-        sharedType: 'group'
+        shareType: 'group'
       }
     ]
   })

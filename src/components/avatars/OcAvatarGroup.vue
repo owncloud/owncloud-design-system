@@ -5,8 +5,8 @@
 <script>
 export default {
   name: "OcAvatarGroup",
-  status: "ready",
-  release: "2.1.0",
+  status: "review",
+  release: "",
 
   props: {
     /**

@@ -6,7 +6,7 @@
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
-    :data-test-link-name="name"
+    :data-test-item-name="name"
   >
     <oc-icon v-if="hasIcon" :name="icon" size="small"></oc-icon>
   </span>
@@ -14,8 +14,8 @@
 <script>
 export default {
   name: "OcAvatarItem",
-  status: "ready",
-  release: "2.1.0",
+  status: "review",
+  release: "",
 
   props: {
     /**
@@ -39,7 +39,7 @@ export default {
     iconColor: {
       type: String,
       required: false,
-      default: "#ffffff",
+      default: "var(--oc-color-text-inverse)",
     },
     /**
      * Background color that should be used for the avatar. If empty
@@ -67,7 +67,7 @@ export default {
       return this.icon !== null
     },
     backgroundColor() {
-      return this.background ? this.background : this.pickBackgroundColor
+      return this.background || this.pickBackgroundColor
     },
     pickBackgroundColor() {
       const backgroundColors = [
@@ -86,9 +86,7 @@ export default {
         "#795548",
         "#465a64",
       ]
-      let bgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
-
-      return bgColor
+      return backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
     },
   },
 }
@@ -110,14 +108,6 @@ export default {
   }
   .oc-icon > svg {
     fill: var(--icon-color);
-  }
-  .oc-icon > svg:after {
-    content: "";
-    background-color: red;
-    margin-right: -5px;
-    margin-bottom: -5px;
-    width: 30px;
-    height: 30px;
   }
 }
 </style>
