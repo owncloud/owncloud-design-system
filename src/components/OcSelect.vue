@@ -1,23 +1,26 @@
 <template>
-  <vue-select
-    ref="select"
-    :disabled="disabled"
-    :filter="filter"
-    class="oc-select"
-    v-bind="$attrs"
-    v-on="$listeners"
-  >
-    <template #search="{ attributes, events }">
-      <input class="vs__search" v-bind="attributes" @input="userInput" v-on="events" />
-    </template>
-    <template v-for="(index, name) in $scopedSlots" #[name]="data">
-      <slot v-if="name !== 'search'" :name="name" v-bind="data" />
-    </template>
-    <div slot="no-options" v-translate>No options available.</div>
-    <template #spinner="{ loading }">
-      <oc-spinner v-if="loading" />
-    </template>
-  </vue-select>
+  <div>
+    <label :for="this.$attrs['input-id']" v-text="setLabel" />
+    <vue-select
+      ref="select"
+      :disabled="disabled"
+      :filter="filter"
+      class="oc-select"
+      v-bind="setCustomizedAttrs()"
+      v-on="$listeners"
+    >
+      <template #search="{ attributes, events }">
+        <input class="vs__search" v-bind="attributes" @input="userInput" v-on="events" />
+      </template>
+      <template v-for="(index, name) in $scopedSlots" #[name]="data">
+        <slot v-if="name !== 'search'" :name="name" v-bind="data" />
+      </template>
+      <div slot="no-options" v-translate>No options available.</div>
+      <template #spinner="{ loading }">
+        <oc-spinner v-if="loading" />
+      </template>
+    </vue-select>
+  </div>
 </template>
 
 <script>
@@ -65,6 +68,11 @@ export default {
       default: false,
     },
   },
+  computed: {
+    setLabel() {
+      return this.$attrs["label"]
+    },
+  },
 
   mounted() {
     this.setComboBoxAriaLabel()
@@ -82,6 +90,11 @@ export default {
        * @property {string} query search query
        */
       this.$emit("search:input", event.target.value)
+    },
+    setCustomizedAttrs() {
+      const customAttrs = this.$attrs
+      delete customAttrs.label
+      return customAttrs
     },
   },
 }
@@ -164,7 +177,7 @@ For detailed documentation (props, slots, events, etc.), please visit https://vu
 ```js
 <template>
   <div class="oc-docs-width-medium">
-    <oc-select v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
+    <oc-select label="Custom label" input-id="my-custom-id" v-model="selected" :options="['Bannana', 'Orange', 'Pear']" />
   </div>
 </template>
 <script>
@@ -242,13 +255,14 @@ still display all those values exactly as we want to, we need to use scoped slot
 We can then retrieve all the values that we want to display from the slots parametres. It is important to specify the
 `label` prop on the `oc-select` component which will specify which key should be used as the option label.
 
+
 ```js
 <template>
   <div class="oc-docs-width-medium">
-    <oc-select v-model="selected" :options="options" label="title" class="oc-mb-m">
+    <oc-select v-model="selected" :options="options" class="oc-mb-m">
       <template v-slot:option="{ title, desc }">
         <span class="option">
-          <strong v-text="title" />
+          <strong v-text="label" />
         </span>
         <span class="option" v-text="desc" />
       </template>
@@ -267,15 +281,15 @@ We can then retrieve all the values that we want to display from the slots param
 <script>
   const options = [
     {
-      title: "Apple",
+      label: "Apple",
       desc: "An apple is an edible fruit produced by an apple tree (Malus domestica)"
     },
     {
-      title: "Bannana",
+      label: "Bannana",
       desc: "Bannana is a genus of goblin spiders (family Oonopidae) native to Xishuangbanna prefecture, Yunnan Province, China, where it lives in the leaf-litter of tropical rainforest"
     },
     {
-      title: "Orange",
+      label: "Orange",
       desc: "The orange is the fruit of various citrus species in the family Rutaceae"
     }
   ];
