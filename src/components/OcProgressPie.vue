@@ -1,6 +1,6 @@
 <template>
   <div class="oc-progress-pie" :data-fill="_fill">
-    <div class="oc-progress-pie-container"></div>
+    <div class="oc-progress-pie-container" />
     <label v-if="showLabel" class="oc-progress-pie-label" v-text="_label" />
   </div>
 </template>

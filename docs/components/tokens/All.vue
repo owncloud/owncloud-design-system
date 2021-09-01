@@ -23,7 +23,9 @@
             <code class="type">{{ token.value }} </code>
           </td>
           <td v-else>N/A</td>
-          <td v-if="token.category">{{ token.category }}</td>
+          <td v-if="token.category">
+            {{ token.category }}
+          </td>
           <td v-else>N/A</td>
         </tr>
       </tbody>

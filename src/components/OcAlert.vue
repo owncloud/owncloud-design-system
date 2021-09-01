@@ -7,7 +7,7 @@
       :aria-label="$gettext('Close alert')"
       @click="onClose"
     >
-      <oc-icon variation="inverse" name="close" size="small"></oc-icon>
+      <oc-icon variation="inverse" name="close" size="small" />
     </oc-button>
     <slot />
   </div>

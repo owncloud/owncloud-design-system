@@ -5,7 +5,7 @@
     :aria-live="level"
     aria-atomic="true"
     v-text="announcement"
-  ></span>
+  />
 </template>
 <script>
 /**

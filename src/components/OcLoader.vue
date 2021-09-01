@@ -1,5 +1,5 @@
 <template>
-  <div :class="['oc-loader', { 'oc-loader-flat': flat }]" :aria-label="ariaLabel"></div>
+  <div :class="['oc-loader', { 'oc-loader-flat': flat }]" :aria-label="ariaLabel" />
 </template>
 
 <script>

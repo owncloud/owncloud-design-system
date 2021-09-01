@@ -2,9 +2,9 @@
   <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
     <ol class="oc-breadcrumb-list">
       <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
-        <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">{{
-          item.text
-        }}</router-link>
+        <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
+          {{ item.text }}
+        </router-link>
         <oc-button
           v-else-if="item.onClick"
           :aria-current="getAriaCurrent(index)"
@@ -38,17 +38,18 @@
       <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
         <ol class="uk-nav uk-nav-default">
           <li v-for="(item, index) in dropdownItems" :key="index">
-            <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">{{
-              item.text
-            }}</router-link>
+            <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
+              {{ item.text }}
+            </router-link>
             <oc-button
               v-else-if="item.onClick"
               justify-content="left"
               appearance="raw"
               :aria-current="getAriaCurrent(index)"
               @click="item.onClick"
-              >{{ item.text }}</oc-button
             >
+              {{ item.text }}
+            </oc-button>
             <span v-else :aria-current="getAriaCurrent(index)" v-text="item.text" />
           </li>
         </ol>

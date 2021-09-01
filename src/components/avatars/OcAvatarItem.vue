@@ -8,7 +8,7 @@
     :role="accessibleLabel === '' ? null : 'img'"
     :data-test-item-name="name"
   >
-    <oc-icon v-if="hasIcon" :name="icon" size="small"></oc-icon>
+    <oc-icon v-if="hasIcon" :name="icon" size="small" />
   </span>
 </template>
 <script>
