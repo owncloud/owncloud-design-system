@@ -1,9 +1,9 @@
-import OcAvatarLink from "./OcAvatarLink.vue"
+import OcAvatarItem from "./OcAvatarItem.vue"
 import { mount } from "@vue/test-utils"
 
-describe("OcAvatarLink", () => {
+describe("OcAvatarItem", () => {
   function getWrapperWithProps(props = {}) {
-    return mount(OcAvatarLink, {
+    return mount(OcAvatarItem, {
       propsData: {
         ...props,
         name: "test link",
@@ -13,7 +13,7 @@ describe("OcAvatarLink", () => {
   describe("when prop 'name' is provided", () => {
     it("should set data test user attribute on wrapper", () => {
       const wrapper = getWrapperWithProps()
-      expect(wrapper.attributes("data-test-link-name")).toBe("test link")
+      expect(wrapper.attributes("data-test-item-name")).toBe("test link")
     })
   })
   describe("accessibleLabel", () => {

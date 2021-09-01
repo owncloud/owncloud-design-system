@@ -1,16 +1,21 @@
 <template>
-  <oc-avatar-item icon="link" :name="name" :accessible-label="accessibleLabel" />
+  <oc-avatar-item
+    icon="filter_drama"
+    icon-color="#5AAB9F"
+    :name="name"
+    :accessible-label="accessibleLabel"
+  />
 </template>
 
 <script>
 export default {
-  name: "OcAvatarLink",
-  status: "ready",
-  release: "2.1.0",
+  name: "OcAvatarFederated",
+  status: "review",
+  release: "",
 
   props: {
     /**
-     * Name of the public link used as an accessible label
+     * Name of the federated share used as an accessible label
      */
     name: {
       type: String,
@@ -32,6 +37,6 @@ export default {
 
 <docs>
 ```js
-<oc-avatar-link name="Public link" accessible-label="Public link" />
+<oc-avatar-federated name="Federated" accessible-label="Federated" />
 ```
 </docs>
