@@ -53,7 +53,7 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
   }
 
   if (value.content !== 0 && !value.content) {
-    destroy(elm.tolltip)
+    destroy(elm.tooltip)
     return
   }
 
@@ -68,20 +68,20 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
     value,
   ])
 
-  if (!elm.tolltip) {
-    elm.tolltip = tippy(el, {
+  if (!elm.tooltip) {
+    elm.tooltip = tippy(el, {
       ...props,
       plugins: [hideOnEsc, ariaHidden],
     })
     return
   }
 
-  elm.tolltip.setProps(props)
+  elm.tooltip.setProps(props)
 }
 
 export default {
   name: "OcTooltip",
   bind: initOrUpdate,
   componentUpdated: initOrUpdate,
-  unbind: (el, binding, { elm }) => destroy(elm.tolltip),
+  unbind: (el, binding, { elm }) => destroy(elm.tooltip),
 }

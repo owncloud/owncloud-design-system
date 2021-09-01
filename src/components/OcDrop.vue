@@ -189,11 +189,11 @@ export default {
   <div class="uk-button-group oc-mt-s">
     <oc-button id="my_menu" class="oc-mr-s">Menu</oc-button>
     <oc-drop toggle="#my_menu" mode="click">
-      <oc-nav>
-        <oc-nav-item icon="create_new_folder" autofocus>Item with icon</oc-nav-item>
-        <oc-nav-item>Item without icon</oc-nav-item>
-        <oc-nav-item>Active item</oc-nav-item>
-      </oc-nav>
+      <ul>
+        <li icon="create_new_folder" autofocus>Item with icon</li>
+        <li>Item without icon</li>
+        <li>Active item</li>
+      </ul>
     </oc-drop>
 
     <oc-button id="my_filter" class="oc-mr-s">Filter</oc-button>
