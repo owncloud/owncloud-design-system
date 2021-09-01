@@ -1,7 +1,7 @@
 Change: Refactor OcAvatarGroup and rename to OcAvatars
 
 We've added more share types for the OcAvatars and refactored
-the components used, also we removed the expand animation when focus
+the components used, also we removed the expand animation when focused
 or hover.
 
 https://github.com/owncloud/web/issues/5736
