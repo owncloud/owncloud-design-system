@@ -1,7 +1,7 @@
 /**
- * Share types
+ * Share type
  */
-export const shareTypes = {
+export const shareType = {
   user: 0,
   group: 1,
   link: 3,

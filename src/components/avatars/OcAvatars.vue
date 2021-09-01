@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { shareTypes } from "../../utils/shareTypes"
+import { shareType } from "../../utils/shareType"
 import OcAvatar from "./OcAvatar.vue"
 import OcAvatarCount from "./OcAvatarCount.vue"
 import OcAvatarLink from "./OcAvatarLink.vue"
@@ -123,7 +123,7 @@ export default {
     },
 
     avatars() {
-      const a = this.items.filter(u => u.shareType === shareTypes.user)
+      const a = this.items.filter(u => u.shareType === shareType.user)
       if (!this.isOverlapping) {
         return a
       }
@@ -131,7 +131,7 @@ export default {
     },
 
     otherItems() {
-      const a = this.items.filter(u => u.shareType !== shareTypes.user)
+      const a = this.items.filter(u => u.shareType !== shareType.user)
       if (!this.isOverlapping) {
         return a
       }
@@ -144,13 +144,13 @@ export default {
   methods: {
     getAvatarComponentForItem(item) {
       switch (item.shareType) {
-        case shareTypes.link:
+        case shareType.link:
           return OcAvatarLink
-        case shareTypes.remote:
+        case shareType.remote:
           return OcAvatarFederated
-        case shareTypes.group:
+        case shareType.group:
           return OcAvatarGroup
-        case shareTypes.guest:
+        case shareType.guest:
           return OcAvatarGuest
       }
     },
