@@ -118,11 +118,11 @@ describe("OcPagination", () => {
 
     expect(Pagination.computed.previousPageLink.call(localThis)).toMatchObject({
       name: "files",
-      params: { page: 2 },
+      query: { page: 2 },
     })
     expect(Pagination.computed.nextPageLink.call(localThis)).toMatchObject({
       name: "files",
-      params: { page: 4 },
+      query: { page: 4 },
     })
   })
 })

@@ -192,11 +192,8 @@ export default {
     bindPageLink(page) {
       return {
         name: this.currentRoute.name,
-        query: this.currentRoute.query,
-        params: {
-          ...this.currentRoute.params,
-          page,
-        },
+        query: { ...this.currentRoute.query, page },
+        params: this.currentRoute.params,
       }
     },
   },
