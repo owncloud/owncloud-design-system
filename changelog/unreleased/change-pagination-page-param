@@ -1,4 +1,4 @@
-Enhancement: Use route query to store active page
+Change: Use route query to store active page
 
 We've switched the storage of current paginated page to use route query object instead of param.
 
