@@ -46,7 +46,7 @@
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native.stop="dragStart(item)"
-        @drop.native.stop="dropRowEvent"
+        @drop.native.stop="dropRowEvent(item.id, $event)"
         @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
         @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
         @mouseleave="dropRowStyling(item.id, true, $event)"
@@ -249,15 +249,16 @@ export default {
       if (!this.dragDrop) return
       this.$emit(EVENT_FILE_DRAGGED, file)
     },
-    dropRowEvent(event) {
+    dropRowEvent(id, event) {
       if (!this.dragDrop) return
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
       const dropFileId = dropTargetTr.dataset.fileId
+      this.dropRowStyling(id, true, event)
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
     dropRowStyling(id, leaving, event) {
-      if (event.currentTarget.contains(event.relatedTarget)) {
+      if (event.currentTarget?.contains(event.relatedTarget)) {
         return
       }
 
