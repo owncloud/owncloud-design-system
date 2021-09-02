@@ -24,7 +24,7 @@
           'oc-textarea-danger': !!errorMessage,
         }"
         v-text="messageText"
-      ></span>
+      />
     </div>
   </div>
 </template>

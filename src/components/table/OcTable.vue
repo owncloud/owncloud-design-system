@@ -61,7 +61,9 @@
           <template v-else-if="isFieldTypeCallback(field)">
             {{ field.callback(item[field.name]) }}
           </template>
-          <template v-else>{{ item[field.name] }}</template>
+          <template v-else>
+            {{ item[field.name] }}
+          </template>
         </oc-td>
       </oc-tr>
     </oc-tbody>

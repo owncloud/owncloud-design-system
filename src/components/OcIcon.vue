@@ -16,7 +16,7 @@
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
-    ></inline-svg>
+    />
   </component>
 </template>
 
@@ -160,6 +160,104 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+@mixin oc-icon-size($factor) {
+  height: $oc-size-icon-default * $factor;
+  max-height: $oc-size-icon-default * $factor;
+  max-width: $oc-size-icon-default * $factor;
+  width: $oc-size-icon-default * $factor;
+}
+
+.oc-icon {
+  // SVG wrapper
+  display: inline-block;
+  vertical-align: baseline;
+
+  svg {
+    display: block;
+    fill: var(--oc-color-swatch-passive-default);
+  }
+
+  &,
+  > svg {
+    @include oc-icon-size(1);
+  }
+
+  &-xs {
+    &,
+    > svg {
+      @include oc-icon-size(0.5);
+    }
+  }
+
+  &-s {
+    &,
+    > svg {
+      @include oc-icon-size(0.7);
+    }
+  }
+
+  &-m {
+    &,
+    > svg {
+      @include oc-icon-size(1);
+    }
+  }
+
+  &-l {
+    &,
+    > svg {
+      @include oc-icon-size(1.5);
+    }
+  }
+
+  &-xl {
+    &,
+    > svg {
+      @include oc-icon-size(2);
+    }
+  }
+
+  &-xxl {
+    &,
+    > svg {
+      @include oc-icon-size(4);
+    }
+  }
+
+  &-xxxl {
+    &,
+    > svg {
+      @include oc-icon-size(8);
+    }
+  }
+
+  &-primary > svg {
+    fill: var(--oc-color-swatch-primary-default);
+  }
+
+  &-passive > svg {
+    fill: var(--oc-color-swatch-passive-default);
+  }
+
+  &-warning > svg {
+    fill: var(--oc-color-swatch-warning-default);
+  }
+
+  &-success > svg {
+    fill: var(--oc-color-swatch-success-default);
+  }
+
+  &-danger > svg {
+    fill: var(--oc-color-swatch-danger-default);
+  }
+
+  &-inverse > svg {
+    fill: var(--oc-color-text-inverse) !important;
+  }
+}
+</style>
 
 <docs>
 ```js

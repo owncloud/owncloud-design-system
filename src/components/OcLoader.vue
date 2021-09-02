@@ -1,5 +1,5 @@
 <template>
-  <div :class="['oc-loader', { 'oc-loader-flat': flat }]" :aria-label="ariaLabel"></div>
+  <div :class="['oc-loader', { 'oc-loader-flat': flat }]" :aria-label="ariaLabel" />
 </template>
 
 <script>
@@ -28,6 +28,51 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.oc-loader {
+  @extend .uk-progress;
+  @extend .uk-position-relative;
+
+  &-flat {
+    border-radius: 0 !important;
+    height: 5px !important;
+  }
+
+  &::after {
+    @extend .uk-position-absolute;
+    @extend .uk-display-block;
+
+    background: var(--oc-color-text-muted);
+    content: "";
+    height: 100%;
+    width: 0;
+
+    animation: {
+      duration: $spinner-duration;
+      iteration-count: infinite;
+      name: oc-loader;
+    }
+  }
+}
+
+@keyframes oc-loader {
+  0% {
+    left: 0;
+    width: 0;
+  }
+
+  50% {
+    left: 0;
+    width: 66%;
+  }
+
+  100% {
+    left: 100%;
+    width: 10%;
+  }
+}
+</style>
 
 <docs>
 ```js

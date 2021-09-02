@@ -1,6 +1,6 @@
 <template>
   <div class="oc-alerts" :class="classes">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

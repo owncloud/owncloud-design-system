@@ -38,7 +38,9 @@
             </a>
           </td>
           <td v-else>N/A</td>
-          <td v-if="component.release">{{ component.release }}</td>
+          <td v-if="component.release">
+            {{ component.release }}
+          </td>
           <td v-else>N/A</td>
           <td v-if="component.status">
             <oc-icon v-if="component.status === 'ready'" name="ready" variation="success" />

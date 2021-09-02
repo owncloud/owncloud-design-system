@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-app-bar">
+  <div class="oc-app-bar oc-p-s">
     <oc-grid flex gutter="small">
       <slot />
     </oc-grid>
@@ -24,6 +24,12 @@ export default {
   release: "1.0.0",
 }
 </script>
+
+<style lang="scss">
+.oc-app-bar {
+  min-height: $global-control-height;
+}
+</style>
 
 <docs>
 ```js

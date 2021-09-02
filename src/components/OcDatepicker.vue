@@ -13,13 +13,9 @@
       :max-datetime="maxDatetime"
       @cancel="cancel()"
       @input="input()"
-    ></datetime>
+    />
     <div v-if="!!descriptionMessage" class="oc-datepicker-message">
-      <span
-        :id="descriptionId"
-        class="oc-datepicker-description"
-        v-text="descriptionMessage"
-      ></span>
+      <span :id="descriptionId" class="oc-datepicker-description" v-text="descriptionMessage" />
     </div>
   </div>
 </template>

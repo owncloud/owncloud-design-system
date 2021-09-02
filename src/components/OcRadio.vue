@@ -114,6 +114,41 @@ export default {
 }
 </script>
 
+<style lang="scss">
+@mixin oc-form-check-size($factor) {
+  height: $oc-size-form-check-default * $factor;
+  width: $oc-size-form-check-default * $factor;
+}
+
+.oc-radio {
+  @extend .uk-radio;
+
+  background-color: var(--oc-color-input-bg);
+  border: 1px solid var(--oc-color-input-border);
+
+  &:checked {
+    background-color: var(--oc-color-swatch-brand-default);
+  }
+
+  // FIXME: Do not use such specific selectors after we get rid of UIkit
+  &.oc-radio-s {
+    @include oc-form-check-size(0.7);
+  }
+
+  &.oc-radio-m {
+    @include oc-form-check-size(1);
+  }
+
+  &.oc-radio-l {
+    @include oc-form-check-size(1.5);
+  }
+}
+
+label > .oc-radio + span {
+  margin-left: var(--oc-space-xsmall);
+}
+</style>
+
 <docs>
 ```js
 <template>
