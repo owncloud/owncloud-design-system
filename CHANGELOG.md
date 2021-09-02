@@ -6,11 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Reset droptarget background color in OcTableFiles: [#1625](https://github.com/owncloud/owncloud-design-system/pull/1625)
 * Change - Use route query to store active page: [#1626](https://github.com/owncloud/owncloud-design-system/pull/1626)
 * Change - Refactor OcAvatarGroup and rename to OcAvatars: [#5736](https://github.com/owncloud/web/issues/5736)
 * Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
 
 ## Details
+
+* Bugfix - Reset droptarget background color in OcTableFiles: [#1625](https://github.com/owncloud/owncloud-design-system/pull/1625)
+
+   The targeted table row in the OcTableFiles gets highlighted background when another resource
+   is dragged over it for visual user feedback, but the background wasn't reset upon a successful
+   drop event, which has been fixed.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1625
+
 
 * Change - Use route query to store active page: [#1626](https://github.com/owncloud/owncloud-design-system/pull/1626)
 
