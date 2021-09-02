@@ -287,7 +287,7 @@ We can then retrieve all the values that we want to display from the slots param
     })
   };
 </script>
-<style scoped>
+<style>
   .option {
     display: block;
   }
