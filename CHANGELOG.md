@@ -6,10 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Use route query to store active page: [#1626](https://github.com/owncloud/owncloud-design-system/pull/1626)
 * Change - Refactor OcAvatarGroup and rename to OcAvatars: [#5736](https://github.com/owncloud/web/issues/5736)
 * Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
 
 ## Details
+
+* Change - Use route query to store active page: [#1626](https://github.com/owncloud/owncloud-design-system/pull/1626)
+
+   We've switched the storage of current paginated page to use route query object instead of
+   param.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1626
+
 
 * Change - Refactor OcAvatarGroup and rename to OcAvatars: [#5736](https://github.com/owncloud/web/issues/5736)
 
