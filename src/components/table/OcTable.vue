@@ -50,8 +50,6 @@
         @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
         @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
         @mouseleave="dropRowStyling(item.id, true, $event)"
-        @mouseover.native="$emit(constants.EVENT_TROW_MOUSE_OVER, item, $refs[`row-${trIndex}`][0])"
-        @mouseout.native="$emit(constants.EVENT_TROW_MOUSE_LEFT, item, $refs[`row-${trIndex}`][0])"
         @dragover.native.prevent.stop
       >
         <oc-td
@@ -95,8 +93,8 @@ import {
   EVENT_TROW_MOUNTED,
   EVENT_TROW_CONTEXTMENU,
   EVENT_FILE_DROPPED,
-  EVENT_FILE_DRAGGED, EVENT_TROW_MOUSE_ENTERED, EVENT_TROW_MOUSE_LEFT, EVENT_TROW_MOUSE_OVER
-} from './helpers/constants'
+  EVENT_FILE_DRAGGED,
+} from "./helpers/constants"
 
 /**
  * A table component with dynamic layout and data.
@@ -223,8 +221,6 @@ export default {
         EVENT_TROW_CLICKED,
         EVENT_TROW_MOUNTED,
         EVENT_TROW_CONTEXTMENU,
-        EVENT_TROW_MOUSE_OVER,
-        EVENT_TROW_MOUSE_LEFT,
       },
     }
   },

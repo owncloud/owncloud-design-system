@@ -10,8 +10,6 @@
     :hover="hover"
     @highlight="fileClicked"
     @rowMounted="rowMounted"
-    @mouseOver="mouseOver"
-    @mouseLeft="mouseLeft"
     @contextmenuClicked="showContextMenu"
     @fileDropped="fileDropped"
     @fileDragged="fileDragged"
@@ -440,25 +438,6 @@ export default {
        */
       this.$emit("rowMounted", resource, component)
     },
-
-    mouseOver(resource, component) {
-      /**
-       * Triggered whenever a row is mounted
-       * @property {object} resource The resource which was mounted as table row
-       * @property {object} component The table row component
-       */
-      this.$emit("mouseOver", resource, component)
-    },
-
-    mouseLeft(resource, component) {
-      /**
-       * Triggered whenever a row is mounted
-       * @property {object} resource The resource which was mounted as table row
-       * @property {object} component The table row component
-       */
-      this.$emit("mouseLeft", resource, component)
-    },
-
     fileClicked(resource) {
       /**
        * Triggered when the file row is clicked
