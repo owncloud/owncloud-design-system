@@ -1,5 +1,0 @@
-Enhancement: Label for OcSelect
-
-We've added a configurable `<label>` for the OcSelect label.
-
-https://github.com/owncloud/web/issues/1570
