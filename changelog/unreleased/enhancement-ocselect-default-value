@@ -1,0 +1,8 @@
+Enhancement: Add support for showing default values in OcSelect
+
+We've added a `defaultValue` prop to OcSelect.
+
+The value provided as `defaultValue` is selected when the actual `value` is `null`.
+When the default value is shown the clear button is hidden because you can't clear the default.
+
+https://github.com/owncloud/owncloud-design-system/pull/1634
