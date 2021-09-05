@@ -16,6 +16,7 @@
         :value="value"
         :disabled="disabled"
         v-on="listeners"
+        @change="onChange($event.target.value)"
         @input="onInput($event.target.value)"
         @focus="onFocus($event.target)"
       />
@@ -177,6 +178,7 @@ export default {
       const listeners = this.$listeners
 
       // Delete listeners for events which are emitted via methods
+      delete listeners["change"]
       delete listeners["input"]
       delete listeners["focus"]
 
@@ -222,9 +224,17 @@ export default {
       this.$refs.input.focus()
     },
     onClear() {
-      this.$refs.input.value = ""
       this.$refs.input.focus()
+
       this.onInput(null)
+      this.onChange(null)
+    },
+    onChange(value) {
+      /**
+       * Change event
+       * @type {event}
+       **/
+      this.$emit("change", value)
     },
     onInput(value) {
       /**
