@@ -2,7 +2,8 @@
   <span>
     <input
       :id="id"
-      v-model="model"
+      :checked="displayValue"
+      @input="onInput($event.target.checked)"
       type="checkbox"
       name="checkbox"
       :class="classes"
@@ -102,17 +103,17 @@ export default {
     },
   },
   computed: {
-    model: {
-      get() {
-        return typeof this.value === 'boolean' ? this.value : this.defaultValue
-      },
-      set: function (value) {
-        this.$emit("input", value)
-        this.setChecked(value)
-      },
-    },
     classes() {
       return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
+    },
+    displayValue() {
+      if (this.value === null) {
+        return this.defaultValue
+      } else if (typeof this.value === "boolean") {
+        return this.value
+      }
+
+      return this.value.includes(this.option)
     },
     labelClasses() {
       return {
@@ -121,19 +122,10 @@ export default {
       }
     },
   },
-  created() {
-    this.setChecked(this.model)
-  },
   methods: {
-    setChecked: function (value) {
-      if (value === null) {
-        this.checked = this.defaultValue
-      } else if (typeof value === "boolean") {
-        this.checked = value
-      } else {
-        this.checked = value.includes(this.option)
-      }
-    },
+    onInput(value) {
+      this.$emit("input", value)
+    }
   },
 }
 </script>
