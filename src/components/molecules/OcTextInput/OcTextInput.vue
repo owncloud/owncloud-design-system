@@ -224,7 +224,7 @@ export default {
     onClear() {
       this.$refs.input.value = ""
       this.$refs.input.focus()
-      this.onInput("")
+      this.onInput(null)
     },
     onInput(value) {
       /**
