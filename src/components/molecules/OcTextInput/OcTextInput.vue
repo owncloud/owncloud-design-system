@@ -207,7 +207,7 @@ export default {
       return this.descriptionMessage
     },
     showClearButton() {
-      return !this.disabled && this.clearButtonEnabled && this.value && this.value.length > 0
+      return !this.disabled && this.clearButtonEnabled && this.value !== null
     },
     clearButtonAccessibleLabelValue() {
       return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
