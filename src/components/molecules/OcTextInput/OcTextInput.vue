@@ -13,7 +13,7 @@
           'oc-text-input-danger': !!errorMessage,
         }"
         :type="type"
-        :value="value"
+        :value="displayValue"
         :disabled="disabled"
         v-on="listeners"
         @change="onChange($event.target.value)"
@@ -228,6 +228,9 @@ export default {
     clearButtonAccessibleLabelValue() {
       return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
     },
+    displayValue() {
+      return this.value || ""
+    }
   },
   methods: {
     /**
@@ -341,7 +344,7 @@ export default {
     <oc-text-input label="Clear input" v-model="inputValueForClearing" :clear-button-enabled="true" />
     <oc-text-input label="Input with default" v-model="inputValueWithDefault" :clear-button-enabled="true" default-value="Some default"/>
     <p>
-      Value: {{ inputValueWithDefault || "null" }}
+      Value: {{ inputValueWithDefault !== null ? inputValueWithDefault : "null" }}
     </p>
     <h3 class="oc-heading-divider">
       Messages
