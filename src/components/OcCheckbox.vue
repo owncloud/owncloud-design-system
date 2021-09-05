@@ -48,7 +48,7 @@ export default {
     clearButtonEnabled: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
     /**
      * The aria label for the clear button. Only used if it's enabled at all.
