@@ -230,7 +230,7 @@ export default {
     },
     displayValue() {
       return this.value || ""
-    }
+    },
   },
   methods: {
     /**
