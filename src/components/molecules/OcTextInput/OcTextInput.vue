@@ -14,6 +14,7 @@
         }"
         :type="type"
         :value="value"
+        :disabled="disabled"
         v-on="listeners"
         @input="onInput($event.target.value)"
         @focus="onFocus($event.target)"
@@ -112,6 +113,13 @@ export default {
       default: "",
     },
     /**
+     * Disables the input field
+     */
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    /**
      * Accessible of the form input field, via aria-label.
      **/
     label: {
@@ -199,7 +207,7 @@ export default {
       return this.descriptionMessage
     },
     showClearButton() {
-      return this.clearButtonEnabled && this.value && this.value.length > 0
+      return !this.disabled && this.clearButtonEnabled && this.value && this.value.length > 0
     },
     clearButtonAccessibleLabelValue() {
       return this.clearButtonAccessibleLabel || this.$gettext("Clear input")

@@ -165,7 +165,11 @@ describe("OcTextInput", () => {
 
   describe("clear input", () => {
     it("has no clear button when it is disabled", () => {
-      const wrapper = getShallowWrapper({ value: "non-empty-value" })
+      const wrapper = getShallowWrapper({
+        value: "non-empty-value",
+        clearButtonEnabled: true,
+        disabled: true,
+      })
       expect(wrapper.find(selectors.clearInputButton).exists()).toBeFalsy()
     })
 
