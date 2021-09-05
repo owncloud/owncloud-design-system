@@ -33,6 +33,17 @@ export default {
       default: () => uniqueId("oc-checkbox-"),
     },
     /**
+     * Value to show when no value is provided
+     * This does not set `value` automatically.
+     * The user needs to explicitly check or uncheck to set `value`.
+     */
+    defaultValue: {
+      // TODO: should we support arrays here? What would be the semantics?
+      type: Boolean,
+      required: false,
+      default: null,
+    },
+    /**
      * Disables the checkbox
      */
     disabled: {
@@ -48,7 +59,7 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     value: {
       required: false,
-      default: false,
+      default: null,
     },
     /**
      * The value/object this checkbox represents.
@@ -93,7 +104,7 @@ export default {
   computed: {
     model: {
       get() {
-        return this.value
+        return typeof this.value === 'boolean' ? this.value : this.defaultValue
       },
       set: function (value) {
         this.$emit("input", value)
@@ -115,7 +126,9 @@ export default {
   },
   methods: {
     setChecked: function (value) {
-      if (typeof value === "boolean") {
+      if (value === null) {
+        this.checked = this.defaultValue
+      } else if (typeof value === "boolean") {
         this.checked = value
       } else {
         this.checked = value.includes(this.option)
@@ -220,6 +233,39 @@ label > .oc-checkbox + span {
   </section>
 </template>
 ```
+
+We can provide a `defaultValue` to `oc-checkbox` that is shown when `value` is `null`.
+
+```js
+<template>
+  <section>
+    <h3 class="oc-heading-divider oc-mt-s">
+      Providing a default value
+    </h3>
+    <div class="oc-mb-s">
+      <oc-checkbox :default-value="false" v-model="uncheckedByDefault" label="Checkbox unchecked by default" aria-label="Checkbox unchecked by default"/>
+      <br/>
+      <span>Value: {{ uncheckedByDefault !== null && uncheckedByDefault.toString() || "null" }} </span>
+    </div>
+    <div class="oc-mb-s">
+      <oc-checkbox :default-value="true" v-model="checkedByDefault" label="Checkbox checked by default" aria-label="Checkbox checked by default"/>
+      <br/>
+      <span>Value: {{ checkedByDefault !== null && checkedByDefault.toString() || "null" }} </span>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      uncheckedByDefault: null,
+      checkedByDefault: null,
+    }
+  }
+}
+</script>
+```
+
 ```js
 <template>
   <section>
