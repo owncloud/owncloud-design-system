@@ -114,6 +114,16 @@ export default {
       default: "",
     },
     /**
+     * Value to show when no value is provided
+     * This does not set `value` automatically.
+     * The user needs to explicitly enter a text to set it as `value`.
+     */
+    defaultValue: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    /**
      * Disables the input field
      */
     disabled: {
@@ -191,6 +201,10 @@ export default {
       const additionalAttrs = {}
       if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
         additionalAttrs["aria-describedby"] = this.messageId
+      }
+      // FIXME: placeholder usage is discouraged, we need to find a better UX concept
+      if (this.defaultValue) {
+        additionalAttrs["placeholder"] = this.defaultValue
       }
       return { ...this.$attrs, ...additionalAttrs }
     },
@@ -325,6 +339,10 @@ export default {
     <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
     <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
     <oc-text-input label="Clear input" v-model="inputValueForClearing" :clear-button-enabled="true" />
+    <oc-text-input label="Input with default" v-model="inputValueWithDefault" :clear-button-enabled="true" default-value="Some default"/>
+    <p>
+      Value: {{ inputValueWithDefault || "null" }}
+    </p>
     <h3 class="oc-heading-divider">
       Messages
     </h3>
@@ -358,6 +376,7 @@ export default {
         inputValue: 'initial',
         valueForMessages: '',
         inputValueForClearing: 'clear me',
+        inputValueWithDefault: null,
       }
     },
     computed: {
