@@ -11,6 +11,15 @@
       :disabled="disabled"
     />
     <label :for="id" :class="labelClasses" v-text="label" />
+    <oc-button
+      v-if="showClearButton"
+      :aria-label="clearButtonAccessibleLabelValue"
+      appearance="raw"
+      @click="onClear"
+    >
+      <oc-icon name="close" size="small" variation="passive" />
+    </oc-button>
+
   </span>
 </template>
 
@@ -32,6 +41,22 @@ export default {
       type: String,
       required: false,
       default: () => uniqueId("oc-checkbox-"),
+    },
+    /**
+     * Whether or not the checkbox should have a dedicated button for clearing the value (revert to default).
+     */
+    clearButtonEnabled: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    /**
+     * The aria label for the clear button. Only used if it's enabled at all.
+     */
+    clearButtonAccessibleLabel: {
+      type: String,
+      required: false,
+      default: "",
     },
     /**
      * Value to show when no value is provided
@@ -106,6 +131,9 @@ export default {
     classes() {
       return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
     },
+    clearButtonAccessibleLabelValue() {
+      return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
+    },
     displayValue() {
       if (this.value === null) {
         return this.defaultValue
@@ -121,8 +149,14 @@ export default {
         "oc-cursor-pointer": !this.disabled,
       }
     },
+    showClearButton() {
+      return this.clearButtonEnabled && this.value !== null
+    },
   },
   methods: {
+    onClear() {
+      this.onInput(null)
+    },
     onInput(value) {
       this.$emit("input", value)
     }
@@ -235,12 +269,12 @@ We can provide a `defaultValue` to `oc-checkbox` that is shown when `value` is `
       Providing a default value
     </h3>
     <div class="oc-mb-s">
-      <oc-checkbox :default-value="false" v-model="uncheckedByDefault" label="Checkbox unchecked by default" aria-label="Checkbox unchecked by default"/>
+      <oc-checkbox :default-value="false" :clearButtonEnabled="true" v-model="uncheckedByDefault" label="Checkbox unchecked by default" aria-label="Checkbox unchecked by default"/>
       <br/>
       <span>Value: {{ uncheckedByDefault !== null && uncheckedByDefault.toString() || "null" }} </span>
     </div>
     <div class="oc-mb-s">
-      <oc-checkbox :default-value="true" v-model="checkedByDefault" label="Checkbox checked by default" aria-label="Checkbox checked by default"/>
+      <oc-checkbox :default-value="true" :clearButtonEnabled="true" v-model="checkedByDefault" label="Checkbox checked by default" aria-label="Checkbox checked by default"/>
       <br/>
       <span>Value: {{ checkedByDefault !== null && checkedByDefault.toString() || "null" }} </span>
     </div>
