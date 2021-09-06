@@ -5,7 +5,6 @@
       ref="select"
       :disabled="disabled"
       :filter="filter"
-      :input-id="id"
       class="oc-select"
       v-bind="additionalAttributes"
       v-on="$listeners"
@@ -104,6 +103,7 @@ export default {
   computed: {
     additionalAttributes() {
       const additionalAttrs = {}
+      additionalAttrs["input-id"] = this.id
       if (this.optionLabel) {
         additionalAttrs["label"] = this.optionLabel
       }
