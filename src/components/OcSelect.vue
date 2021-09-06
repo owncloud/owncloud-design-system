@@ -3,7 +3,6 @@
     <label :for="id" v-text="label" />
     <vue-select
       ref="select"
-      :input-id="id"
       :value="model"
       class="oc-select"
       v-bind="additionalAttributes"
@@ -75,6 +74,7 @@ export default {
   computed: {
     additionalAttributes() {
       const additionalAttrs = {}
+      additionalAttrs["input-id"] = this.id
       if (this.optionLabel) {
         additionalAttrs["label"] = this.optionLabel
       }
