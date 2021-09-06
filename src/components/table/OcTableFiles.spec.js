@@ -219,4 +219,33 @@ describe("OcTableFiles", () => {
       }
     })
   })
+
+  describe("hover effect", () => {
+    it("disables hover effect by default", () => {
+      const wrapper = mount(Table, {
+        propsData: {
+          resources: resourcesWithAllFields,
+          selection: [],
+          slots: {
+            status: "<div class='status-slot'>Hello world!</div>",
+          },
+        },
+      })
+      expect(wrapper.classes()).not.toContain("oc-table-hover")
+    })
+
+    it("enables hover effect", () => {
+      const wrapper = mount(Table, {
+        propsData: {
+          resources: resourcesWithAllFields,
+          selection: [],
+          slots: {
+            status: "<div class='status-slot'>Hello world!</div>",
+          },
+          hover: true,
+        },
+      })
+      expect(wrapper.classes()).toContain("oc-table-hover")
+    })
+  })
 })
