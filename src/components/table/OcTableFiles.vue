@@ -679,6 +679,8 @@ export default {
   <oc-table-files :resources="resources" :arePathsDisplayed="true" v-model="selected" />
 </template>
 <script>
+  import { shareType } from "../../utils/shareType"
+
   export default {
     data: () => ({
       selected: []
@@ -724,18 +726,21 @@ export default {
             id: "bob",
             username: "bob",
             displayName: "Bob",
-            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            shareType: shareType.user
           },
           {
             id: "marie",
             username: "marie",
             displayName: "Marie",
-            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            shareType: shareType.user
           },
           {
             id: "john",
             username: "john",
-            displayName: "John Richards Emperor of long names"
+            displayName: "John Richards Emperor of long names",
+            shareType: shareType.user
           }
         ]
       },
@@ -745,23 +750,27 @@ export default {
             id: "bob",
             username: "bob",
             displayName: "Bob",
-            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            shareType: shareType.user
           },
           {
             id: "marie",
             username: "marie",
             displayName: "Marie",
-            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            shareType: shareType.user
           },
           {
             id: "john",
             username: "john",
-            displayName: "John Richards Emperor of long names"
+            displayName: "John Richards Emperor of long names",
+            shareType: shareType.user
           },
           {
             id: "einstein",
             username: "einstein",
-            displayName: "Einstein"
+            displayName: "Einstein",
+            shareType: shareType.user
           }
         ]
       },
@@ -771,7 +780,8 @@ export default {
             id: "bob",
             username: "bob",
             displayName: "Bob",
-            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            shareType: shareType.user
           }
         ]
       }

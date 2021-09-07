@@ -8,10 +8,12 @@
 </template>
 
 <script>
+import OcAvatarItem from "./OcAvatarItem"
 export default {
   name: "OcAvatarFederated",
   status: "review",
   release: "",
+  components: { OcAvatarItem },
 
   props: {
     /**

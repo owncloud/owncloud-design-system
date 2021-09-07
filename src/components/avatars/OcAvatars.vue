@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div
+  <span>
+    <span
       v-oc-tooltip="tooltip"
       class="oc-avatars"
       :class="{ 'oc-avatars-stacked': stacked }"
@@ -24,9 +24,9 @@
         />
       </template>
       <oc-avatar-count v-if="isOverlapping" :count="items.length - maxDisplayed" />
-    </div>
+    </span>
     <span v-if="accessibleDescription" class="oc-invisible-sr" v-text="accessibleDescription" />
-  </div>
+  </span>
 </template>
 
 <script>
@@ -161,7 +161,8 @@ export default {
 
 <style lang="scss">
 .oc-avatars {
-  display: flex;
+  display: inline-flex;
+  box-sizing: border-box;
   flex-flow: row wrap;
   gap: var(--oc-space-xsmall);
   width: fit-content;

@@ -3,10 +3,12 @@
 </template>
 
 <script>
+import OcAvatarItem from "./OcAvatarItem"
 export default {
   name: "OcAvatarLink",
   status: "ready",
   release: "2.1.0",
+  components: { OcAvatarItem },
 
   props: {
     /**
