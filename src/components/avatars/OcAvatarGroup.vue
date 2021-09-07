@@ -3,10 +3,12 @@
 </template>
 
 <script>
+import OcAvatarItem from "./OcAvatarItem"
 export default {
   name: "OcAvatarGroup",
   status: "review",
   release: "",
+  components: { OcAvatarItem },
 
   props: {
     /**

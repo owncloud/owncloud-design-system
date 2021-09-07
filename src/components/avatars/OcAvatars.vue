@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div
+  <span>
+    <span
       v-oc-tooltip="tooltip"
       class="oc-avatars"
       :class="{ 'oc-avatars-stacked': stacked }"
@@ -24,9 +24,9 @@
         />
       </template>
       <oc-avatar-count v-if="isOverlapping" :count="items.length - maxDisplayed" />
-    </div>
-    <span class="oc-invisible-sr" v-text="accessibleDescription" />
-  </div>
+    </span>
+    <span v-if="accessibleDescription" class="oc-invisible-sr" v-text="accessibleDescription" />
+  </span>
 </template>
 
 <script>
@@ -93,7 +93,8 @@ export default {
      */
     accessibleDescription: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
     },
   },
 
@@ -160,7 +161,8 @@ export default {
 
 <style lang="scss">
 .oc-avatars {
-  display: flex;
+  display: inline-flex;
+  box-sizing: border-box;
   flex-flow: row wrap;
   gap: var(--oc-space-xsmall);
   width: fit-content;
@@ -181,48 +183,55 @@ export default {
 ```js
 <template>
   <div>
+    <h3>Default configuration</h3>
+    <p>No stacking, no tooltip, no <b>:maxDisplayed</b> configured</p>
     <oc-avatars :items="items" accessible-description="This resource is shared with many users." class="oc-mb" />
-    <oc-avatars :items="items" accessible-description="This resource is shared with many users." :stacked="true" :isTooltipDisplayed="true" :maxDisplayed="5" class="oc-mb" />
+    <h3>Stacked, tooltip, maxDisplayed</h3>
+    <p>Using <b>:stacked="true"</b>, <b>:isTooltipDisplayed="true"</b> and <b>:maxDisplayed="5"</b></p>
+    <oc-avatars :items="items" accessible-description="This resource is shared with many users." :stacked="true" :maxDisplayed="5" :isTooltipDisplayed="true" />
+    <h3>Unstacked, tooltip, maxDisplayed</h3>
+    <p>Using <b>:isTooltipDisplayed="true"</b> and <b>:maxDisplayed="2"</b></p>
     <oc-avatars :items="items" accessible-description="This resource is shared with many users." :maxDisplayed="2" :isTooltipDisplayed="true" />
   </div>
 </template>
 <script>
+import { shareType } from "../../utils/shareType"
 export default {
   data: () => ({
     items: [
       {
         name: "bob",
-        shareType: 6
+        shareType: shareType.remote
       },
       {
         username: "marie",
         displayName: "Marie",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        shareType: 0
+        shareType: shareType.user
       },
       {
         username: "peter",
         displayName: "Peter",
         avatar: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        shareType: 0
+        shareType: shareType.user
       },
       {
         username: "udo",
         displayName: "Udo",
         avatar: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhY2V8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        shareType: 0
+        shareType: shareType.user
       },
       {
         name: "john",
-        shareType: 4
+        shareType: shareType.guest
       },
       {
         name: "Public link",
-        shareType: 3
+        shareType: shareType.link
       },
       {
         name: "Test",
-        shareType: 1
+        shareType: shareType.group
       }
     ]
   })
