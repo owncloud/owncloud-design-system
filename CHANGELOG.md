@@ -49,6 +49,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5736
    https://github.com/owncloud/owncloud-design-system/pull/1614
+   https://github.com/owncloud/owncloud-design-system/pull/1639
 
 
 * Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
