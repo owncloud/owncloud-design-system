@@ -25,7 +25,7 @@
       </template>
       <oc-avatar-count v-if="isOverlapping" :count="items.length - maxDisplayed" />
     </div>
-    <span class="oc-invisible-sr" v-text="accessibleDescription" />
+    <span v-if="accessibleDescription" class="oc-invisible-sr" v-text="accessibleDescription" />
   </div>
 </template>
 
@@ -93,7 +93,8 @@ export default {
      */
     accessibleDescription: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
     },
   },
 
