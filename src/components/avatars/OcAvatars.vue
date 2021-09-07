@@ -183,8 +183,14 @@ export default {
 ```js
 <template>
   <div>
+    <h3>Default configuration</h3>
+    <p>No stacking, no tooltip, no <b>:maxDisplayed</b> configured</p>
     <oc-avatars :items="items" accessible-description="This resource is shared with many users." class="oc-mb" />
-    <oc-avatars :items="items" accessible-description="This resource is shared with many users." :stacked="true" :isTooltipDisplayed="true" :maxDisplayed="5" class="oc-mb" />
+    <h3>Stacked, tooltip, maxDisplayed</h3>
+    <p>Using <b>:stacked="true"</b>, <b>:isTooltipDisplayed="true"</b> and <b>:maxDisplayed="5"</b></p>
+    <oc-avatars :items="items" accessible-description="This resource is shared with many users." :stacked="true" :maxDisplayed="5" :isTooltipDisplayed="true" />
+    <h3>Unstacked, tooltip, maxDisplayed</h3>
+    <p>Using <b>:isTooltipDisplayed="true"</b> and <b>:maxDisplayed="2"</b></p>
     <oc-avatars :items="items" accessible-description="This resource is shared with many users." :maxDisplayed="2" :isTooltipDisplayed="true" />
   </div>
 </template>
