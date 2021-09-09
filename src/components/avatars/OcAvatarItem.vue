@@ -134,10 +134,12 @@ export default {
 <docs>
 ```js
 <h3>Empty OcAvatarItem</h3>
-<oc-avatar-item :width="50" name="Public link" accessible-label="Public link" />
+<oc-avatar-item name="Public link" accessible-label="Public link" />
 <h3>OcAvatarItem with icon and default background</h3>
-<oc-avatar-item :width="100" icon-size="xlarge" name="Public link" icon="close" accessible-label="Public link" />
+<oc-avatar-item name="Public link" icon="close" accessible-label="Public link" />
 <h3>OcAvatarItem with icon and custom background</h3>
 <oc-avatar-item name="Public link" icon="close" background="#465a64" accessible-label="Public link" />
+<h3>OcAvatarItem with icon and custom background and custom width and iconsize</h3>
+<oc-avatar-item :width="100" iconSize="large" name="Public link" icon="close" background="#465a64" accessible-label="Public link" />
 ```
 </docs>
