@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Label for OcSelect: [#1633](https://github.com/owncloud/owncloud-design-system/pull/1633)
 * Change - Use route query to store active page: [#1626](https://github.com/owncloud/owncloud-design-system/pull/1626)
 * Change - Refactor OcAvatarGroup and rename to OcAvatars: [#5736](https://github.com/owncloud/web/issues/5736)
+* Enhancement - Make OcAvatarX sizeable: [#1645](https://github.com/owncloud/owncloud-design-system/pull/1645)
 * Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
 
 ## Details
@@ -50,6 +51,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/5736
    https://github.com/owncloud/owncloud-design-system/pull/1614
    https://github.com/owncloud/owncloud-design-system/pull/1639
+
+
+* Enhancement - Make OcAvatarX sizeable: [#1645](https://github.com/owncloud/owncloud-design-system/pull/1645)
+
+   We've added the possibility to size Avatars and gave e.g. OcAvatarGroup a width and iconSize.
+
+   https://github.com/owncloud/web/issues/5763
+   https://github.com/owncloud/owncloud-design-system/pull/1645
 
 
 * Enhancement - Switch filesize calculation base: [#1598](https://github.com/owncloud/owncloud-design-system/pull/1598)
