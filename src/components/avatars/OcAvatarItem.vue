@@ -1,14 +1,14 @@
 <template>
   <span
     class="oc-avatar-item"
-    :style="{ backgroundColor: backgroundColor, '--icon-color': iconColor }"
+    :style="{ backgroundColor: backgroundColor, '--icon-color': iconColor, '--width': avatarWidth }"
     :aria-label="accessibleLabel === '' ? null : accessibleLabel"
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
     :data-test-item-name="name"
   >
-    <oc-icon v-if="hasIcon" :name="icon" size="small" />
+    <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" />
   </span>
 </template>
 <script>
@@ -60,9 +60,30 @@ export default {
       required: false,
       default: "",
     },
+
+    /**
+     * Describes the width of the avatar
+     */
+    width: {
+      type: Number,
+      required: false,
+      default: 30,
+    },
+
+    /**
+     * Describes the size of the avatar icon e.g.(small)
+     */
+    iconSize: {
+      type: String,
+      required: false,
+      default: "small",
+    },
   },
 
   computed: {
+    avatarWidth() {
+      return this.width + "px"
+    },
     hasIcon() {
       return this.icon !== null
     },
@@ -100,9 +121,9 @@ export default {
   background-size: 18px;
   border-radius: 50%;
   display: inline-flex;
-  height: 30px;
+  height: var(--width);
   justify-content: center;
-  width: 30px;
+  width: var(--width);
 
   .oc-icon > svg {
     fill: var(--icon-color);
@@ -118,5 +139,7 @@ export default {
 <oc-avatar-item name="Public link" icon="close" accessible-label="Public link" />
 <h3>OcAvatarItem with icon and custom background</h3>
 <oc-avatar-item name="Public link" icon="close" background="#465a64" accessible-label="Public link" />
+<h3>OcAvatarItem with icon and custom background and custom width and iconsize</h3>
+<oc-avatar-item :width="100" iconSize="large" name="Public link" icon="close" background="#465a64" accessible-label="Public link" />
 ```
 </docs>
