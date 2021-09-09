@@ -1,5 +1,11 @@
 <template>
-  <oc-avatar-item icon="group" :name="name" :accessible-label="accessibleLabel" />
+  <oc-avatar-item
+    :width="width"
+    :icon-size="iconSize"
+    icon="group"
+    :name="name"
+    :accessible-label="accessibleLabel"
+  />
 </template>
 
 <script>
@@ -27,6 +33,23 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    /**
+     * Describes the width of the avatar
+     */
+    width: {
+      type: Number,
+      required: false,
+      default: 30,
+    },
+
+    /**
+     * Describes the size of the avatar icon e.g.(small)
+     */
+    iconSize: {
+      type: String,
+      required: false,
+      default: "small",
     },
   },
 }

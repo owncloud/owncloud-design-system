@@ -1,5 +1,7 @@
 <template>
   <oc-avatar-item
+    :width="width"
+    :icon-size="iconSize"
     icon="filter_drama"
     icon-color="#5AAB9F"
     :name="name"
@@ -32,6 +34,23 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    /**
+     * Describes the width of the avatar
+     */
+    width: {
+      type: Number,
+      required: false,
+      default: 30,
+    },
+
+    /**
+     * Describes the size of the avatar icon e.g.(small)
+     */
+    iconSize: {
+      type: String,
+      required: false,
+      default: "small",
     },
   },
 }
