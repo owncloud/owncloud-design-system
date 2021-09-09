@@ -94,18 +94,16 @@ export default {
 
 <style lang="scss">
 .oc-avatar-item {
+  align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 18px;
   border-radius: 50%;
-  display: block;
+  display: inline-flex;
   height: 30px;
+  justify-content: center;
   width: 30px;
 
-  .oc-icon {
-    margin-left: 6.5px;
-    margin-top: 6.5px;
-  }
   .oc-icon > svg {
     fill: var(--icon-color);
   }
@@ -114,10 +112,11 @@ export default {
 
 <docs>
 ```js
+<h3>Empty OcAvatarItem</h3>
 <oc-avatar-item name="Public link" accessible-label="Public link" />
-<br/>
+<h3>OcAvatarItem with icon and default background</h3>
 <oc-avatar-item name="Public link" icon="close" accessible-label="Public link" />
-<br/>
+<h3>OcAvatarItem with icon and custom background</h3>
 <oc-avatar-item name="Public link" icon="close" background="#465a64" accessible-label="Public link" />
 ```
 </docs>
