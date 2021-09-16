@@ -73,7 +73,7 @@ def build_stages(ctx):
         {
             'name': 'build docs',
             'image': 'owncloudci/nodejs:14',
-                'commands': [
+            'commands': [
                 'yarn build:docs',
             ],
             'depends_on': ['unit tests']
@@ -81,7 +81,7 @@ def build_stages(ctx):
         {
             'name': 'build system',
             'image': 'owncloudci/nodejs:14',
-                'commands': [
+            'commands': [
                 'yarn build:system',
             ],
             'depends_on': ['unit tests']
