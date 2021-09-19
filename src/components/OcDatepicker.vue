@@ -5,7 +5,7 @@
       v-model="update"
       :input-id="id"
       v-bind="additionalAttributes"
-      class="oc-datepicker"
+      class="oc-datepicker-old"
       :title="title"
       :type="type"
       :phrases="phrases"
