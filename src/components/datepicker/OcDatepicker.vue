@@ -14,9 +14,9 @@ import DatePicker from "v-calendar/lib/components/date-picker.umd"
  * Datepicker component based on [v-calendar](https://vcalendar.io/)
  */
 export default {
-  name: "OcDatePicker",
-  status: "review",
-  release: "unreleased",
+  name: "OcDatepicker",
+  status: "ready",
+  release: "1.0.0",
 
   components: { DatePicker },
 
