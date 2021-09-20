@@ -35,11 +35,11 @@ export default {
 ```vue
 <template>
 <div>
-  <oc-date-picker v-model="date">
+  <oc-datepicker v-model="date">
     <template #default="{ togglePopover }">
       <oc-button @click="togglePopover">Open datepicker</oc-button>
     </template>
-  </oc-date-picker>
+  </oc-datepicker>
   <p v-if="date" v-text="date" />
 </div>
 </template>
