@@ -1,17 +1,13 @@
 def main(ctx):
-    before = [
-        testing(ctx),
-    ]
-
     stages = [
         changelog(ctx),
-        build(ctx),
+        build_stages(ctx),
     ]
 
-    return before + stages
+    return stages
 
 
-def testing(ctx):
+def build_stages(ctx):
     sonar_env = {
         "SONAR_TOKEN": {
             "from_secret": "sonar_token",
@@ -26,10 +22,141 @@ def testing(ctx):
 
     repo_slug = ctx.build.source_repo if ctx.build.source_repo else ctx.repo.slug
 
+    lint_test_build = [
+        {
+            'name': 'clone',
+            'image': 'owncloudci/alpine:latest',
+            'commands': [
+                'git clone https://github.com/%s.git .' % (repo_slug),
+                'git checkout $DRONE_COMMIT',
+            ]
+        },
+        {
+            'name': 'dependencies',
+            'image': 'owncloudci/nodejs:14',
+            'commands': [
+                'yarn install'
+            ],
+            'depends_on': ['clone']
+        },
+        {
+            'name': 'eslint',
+            'image': 'owncloudci/nodejs:14',
+            'commands': [
+                'yarn lint:eslint',
+            ],
+            'depends_on': ['dependencies']
+        },
+        {
+            'name': 'stylelint',
+            'image': 'owncloudci/nodejs:14',
+            'commands': [
+                'yarn lint:stylelint',
+            ],
+            'depends_on': ['dependencies']
+        },
+        {
+            'name': 'unit tests',
+            'image': 'owncloudci/nodejs:14',
+            'commands': [
+                'yarn run tokens',
+                'yarn test',
+            ],
+            'depends_on': ['eslint', 'stylelint']
+        },
+        {
+            'name': 'sonarcloud',
+            'image': 'sonarsource/sonar-scanner-cli:latest',
+            'environment': sonar_env,
+            'depends_on': ['unit tests']
+        },
+        {
+            'name': 'build docs',
+            'image': 'owncloudci/nodejs:14',
+            'commands': [
+                'yarn build:docs',
+            ],
+            'depends_on': ['unit tests']
+        },
+        {
+            'name': 'build system',
+            'image': 'owncloudci/nodejs:14',
+            'commands': [
+                'yarn build:system',
+            ],
+            'depends_on': ['unit tests']
+        },
+    ]
+
+    release_steps = [
+        {
+            'name': 'publish-docs',
+            'image': 'plugins/gh-pages:1',
+            'settings': {
+                'username': {
+                    'from_secret': 'github_username',
+                },
+                'password': {
+                    'from_secret': 'github_token',
+                },
+                'pages_directory': 'dist/docs',
+            },
+            'depends_on': ['build docs', 'build system']
+        },
+        {
+            'name': 'publish-system',
+            'image': 'plugins/npm:1',
+            'settings': {
+                'username': {
+                    'from_secret': 'npm_username',
+                },
+                'email': {
+                    'from_secret': 'npm_email',
+                },
+                'token': {
+                    'from_secret': 'npm_token',
+                },
+            },
+            'depends_on': ['build docs', 'build system']
+        },
+        {
+            'name': 'changelog',
+            'image': 'toolhippie/calens:latest',
+            'commands': [
+                'mkdir tmp',
+                'calens --version %s -o tmp/CHANGELOG.md' % ctx.build.ref.replace(
+                    "refs/tags/v", "").split("-")[0],
+            ],
+            'depends_on': ['publish-docs', 'publish-system']
+        },
+        {
+            'name': 'release',
+            'image': 'plugins/github-release:1',
+            'settings': {
+                'api_key': {
+                    'from_secret': 'github_token',
+                },
+                'files': [],
+                'title': ctx.build.ref.replace("refs/tags/v", ""),
+                'note': 'tmp/CHANGELOG.md',
+                'overwrite': True,
+                'prerelease': len(ctx.build.ref.split("-")) > 1,
+            },
+            'depends_on': ['publish-docs', 'publish-system']
+        },
+    ]
+
+    final_steps = lint_test_build
+    name = 'test, build'
+
+    if ctx.build.event == "tag":
+        final_steps += release_steps
+        name += ', release'
+
     return {
         'kind': 'pipeline',
         'type': 'docker',
-        'name': 'testing',
+        'name': name,
         'platform': {
             'os': 'linux',
             'arch': 'amd64',
@@ -40,74 +167,7 @@ def testing(ctx):
             # real commit at the tip of the branch.
             "disable": True,
         },
-        'steps': [
-            {
-                 'name': 'clone',
-                 'image': 'owncloudci/alpine:latest',
-                 'commands': [
-                     'git clone https://github.com/%s.git .' % (repo_slug),
-                     'git checkout $DRONE_COMMIT',
-                 ]
-            },
-            {
-                'name': 'dependencies',
-                'image': 'owncloudci/nodejs:14',
-                'commands': [
-                    'yarn install'
-                ],
-                'depends_on': ['clone']
-            },
-            {
-                'name': 'eslint',
-                'image': 'owncloudci/nodejs:14',
-                'commands': [
-                    'yarn lint:eslint',
-                ],
-                'depends_on': ['dependencies']
-            },
-            {
-                'name': 'stylelint',
-                'image': 'owncloudci/nodejs:14',
-                'commands': [
-                    'yarn lint:stylelint',
-                ],
-                'depends_on': ['dependencies']
-            },
-            {
-                'name': 'unit tests',
-                'image': 'owncloudci/nodejs:14',
-                'commands': [
-                    'yarn run tokens',
-                    'yarn test',
-                ],
-                'depends_on': ['eslint', 'stylelint']
-            },
-            {
-              'name': 'sonarcloud',
-              'image': 'sonarsource/sonar-scanner-cli:latest',
-              'pull': 'always',
-              'environment': sonar_env,
-              'depends_on': ['unit tests']
-            },
-            {
-                'name': 'build docs',
-                'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
-                'commands': [
-                    'yarn build:docs',
-                ],
-                'depends_on': ['unit tests', 'eslint', 'stylelint']
-            },
-            {
-                'name': 'build system',
-                'image': 'owncloudci/nodejs:14',
-                'pull': 'always',
-                'commands': [
-                    'yarn build:system',
-                ],
-                'depends_on': ['unit tests', 'eslint', 'stylelint']
-            },
-        ],
+        'steps': final_steps,
         'trigger': {
             'ref': [
                 'refs/heads/master',
@@ -116,101 +176,6 @@ def testing(ctx):
             ],
         },
     }
-
-
-def build(ctx):
-    return {
-        'kind': 'pipeline',
-        'type': 'docker',
-        'name': 'build and publish',
-        'platform': {
-            'os': 'linux',
-            'arch': 'amd64',
-        },
-        'steps': [
-            {
-                'name': 'build-docs',
-                'image': 'owncloudci/nodejs:14',
-                'commands': [
-                    'yarn install',
-                    'yarn build:docs',
-                ],
-            },
-            {
-                'name': 'build-system',
-                'image': 'owncloudci/nodejs:14',
-                'commands': [
-                    'yarn install',
-                    'yarn build:system',
-                ],
-            },
-            {
-                'name': 'publish-docs',
-                'image': 'plugins/gh-pages:1',
-                'pull': 'always',
-                'settings': {
-                    'username': {
-                        'from_secret': 'github_username',
-                    },
-                    'password': {
-                        'from_secret': 'github_token',
-                    },
-                    'pages_directory': 'dist/docs',
-                },
-            },
-            {
-                'name': 'publish-system',
-                'image': 'plugins/npm:1',
-                'pull': 'always',
-                'settings': {
-                    'username': {
-                        'from_secret': 'npm_username',
-                    },
-                    'email': {
-                        'from_secret': 'npm_email',
-                    },
-                    'token': {
-                        'from_secret': 'npm_token',
-                    },
-                },
-            },
-            {
-                'name': 'changelog',
-                'image': 'toolhippie/calens:latest',
-                'pull': 'always',
-                'commands': [
-                    'mkdir tmp',
-                    'calens --version %s -o tmp/CHANGELOG.md' % ctx.build.ref.replace(
-                        "refs/tags/v", "").split("-")[0],
-                ],
-            },
-            {
-                'name': 'release',
-                'image': 'plugins/github-release:1',
-                'pull': 'always',
-                'settings': {
-                    'api_key': {
-                        'from_secret': 'github_token',
-                    },
-                    'files': [],
-                    'title': ctx.build.ref.replace("refs/tags/v", ""),
-                    'note': 'tmp/CHANGELOG.md',
-                    'overwrite': True,
-                    'prerelease': len(ctx.build.ref.split("-")) > 1,
-                },
-            },
-        ],
-        'trigger': {
-            'ref': [
-                'refs/tags/**',
-            ],
-        },
-        'depends_on': [
-            'changelog',
-            'testing',
-        ],
-    }
-
 
 def changelog(ctx):
     repo_slug = ctx.build.source_repo if ctx.build.source_repo else ctx.repo.slug
@@ -229,7 +194,6 @@ def changelog(ctx):
             {
                 'name': 'clone',
                 'image': 'plugins/git-action:1',
-                'pull': 'always',
                 'settings': {
                     'actions': [
                         'clone',
@@ -249,7 +213,6 @@ def changelog(ctx):
             {
                 'name': 'generate',
                 'image': 'toolhippie/calens:latest',
-                'pull': 'always',
                 'commands': [
                     'calens >| CHANGELOG.md',
                 ],
@@ -257,7 +220,6 @@ def changelog(ctx):
             {
                 'name': 'diff',
                 'image': 'owncloudci/alpine:latest',
-                'pull': 'always',
                 'commands': [
                     'git diff',
                 ],
@@ -265,7 +227,6 @@ def changelog(ctx):
             {
                 'name': 'output',
                 'image': 'owncloudci/alpine:latest',
-                'pull': 'always',
                 'commands': [
                     'cat CHANGELOG.md',
                 ],
@@ -273,7 +234,6 @@ def changelog(ctx):
             {
                 'name': 'publish',
                 'image': 'plugins/git-action:1',
-                'pull': 'always',
                 'settings': {
                     'actions': [
                         'commit',
