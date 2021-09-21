@@ -1,3 +1,19 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v10.0.0...master
+
+## Summary
+
+* Bugfix - Prevent hover style on footer of <oc-table>: [#1667](https://github.com/owncloud/owncloud-design-system/pull/1667)
+
+## Details
+
+* Bugfix - Prevent hover style on footer of <oc-table>: [#1667](https://github.com/owncloud/owncloud-design-system/pull/1667)
+
+   https://github.com/owncloud/owncloud-design-system/pull/1667
+
 # Changelog for [10.0.0] (2021-09-13)
 
 The following sections list the changes in ownCloud Design System 10.0.0.
