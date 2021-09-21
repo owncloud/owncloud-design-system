@@ -68,7 +68,7 @@
       </oc-tr>
     </oc-tbody>
     <tfoot v-if="$slots.footer" class="oc-table-footer">
-      <tr>
+      <tr class="oc-table-footer-row">
         <td :colspan="footerColspan" class="oc-table-footer-cell">
           <!-- @slot Footer of the table -->
           <slot name="footer" />
@@ -416,7 +416,7 @@ export default {
     border-top: 1px solid var(--oc-color-border);
   }
 
-  &-hover tr:hover {
+  &-hover tr:not(&-footer-row):hover {
     background-color: var(--oc-color-input-border);
   }
 
