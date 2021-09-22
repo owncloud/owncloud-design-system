@@ -12321,9 +12321,9 @@ style-search@^0.1.0:
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
 style-value-types@^4.1.4:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/style-value-types/-/style-value-types-4.1.4.tgz#80f37cb4fb024d6394087403dfb275e8bb627e75"
-  integrity sha512-LCJL6tB+vPSUoxgUBt9juXIlNJHtBMy8jkXzUJSBzeHWdBu6lhzHqCvLVkXFGsFIlNa2ln1sQHya/gzaFmB2Lg==
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/style-value-types/-/style-value-types-4.1.5.tgz#74c007621d6b6a2f16b4b9bd426f800c662f5b5b"
+  integrity sha512-0CCNAAsTERbf+IuLeJFpy8DJ/2sbC9UBhnx2hsbbsr78POVi0kC4jc+cYOhOnXMUoPLG1Kuw1QG+zcI+h/PH0Q==
   dependencies:
     hey-listen "^1.0.8"
     tslib "^2.1.0"
