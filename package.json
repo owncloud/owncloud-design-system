@@ -129,7 +129,6 @@
     "webpack-merge": "^5.4.0",
     "webpack-merge-and-include-globally": "^2.1.24",
     "webpack-node-externals": "^3.0.0",
-    "weekstart": "^1.0.0",
     "yaml": "^1.10.2"
   },
   "peerDependencies": {
@@ -146,8 +145,7 @@
     "vue": "^2.6.11",
     "vue-inline-svg": "^2.0.0",
     "vue-select": "^3.12.0",
-    "webfontloader": "^1.6.28",
-    "weekstart": "^1.0.0"
+    "webfontloader": "^1.6.28"
   },
   "engines": {
     "node": ">= 14.0.0",
