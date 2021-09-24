@@ -5812,9 +5812,9 @@ focus-trap-vue@^1.1.1:
   integrity sha512-N+M4d4uYymCogct417gUL7wWSMIW/oUcCicfg3eRdo+gz7jlQnIGwUwViFxPkKV7iyzpc81g6JeSxRWiYWU3eQ==
 
 focus-trap@^6.4.0:
-  version "6.6.1"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.6.1.tgz#761ce2c82ddd72beeb049e968bc8414e25b704aa"
-  integrity sha512-x9BWuAeF5UrfWuYKJ3jYrjcVYSYptS9CqtxH5IH7lPlZrMsaugKeAa0HtoZSBZe5DmeTMx2m0qY464ZMzqarzw==
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.7.0.tgz#9b8660ca7d4c621dae7529e73f30e4e59e4419b4"
+  integrity sha512-Srd0gR1sq0gfvXNDWkrrW0DbOBoKA5k0iHLTX03Pg/Y9u9xy2tlu3rSgozecCcH10Qj7CV+6nglv0G3YpQ98VA==
   dependencies:
     tabbable "^5.2.1"
 
