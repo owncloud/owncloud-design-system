@@ -7,6 +7,7 @@
     :sticky="true"
     :header-position="headerPosition"
     :drag-drop="dragDrop"
+    :hover="hover"
     @highlight="fileClicked"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
@@ -244,6 +245,14 @@ export default {
      * Enable Drag & Drop events
      */
     dragDrop: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * Enable hover effect
+     */
+    hover: {
       type: Boolean,
       required: false,
       default: false,
