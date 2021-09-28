@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Prevent hover style on footer of <oc-table>: [#1667](https://github.com/owncloud/owncloud-design-system/pull/1667)
 * Change - Replace vue-datetime with v-calendar in our datepicker component: [#1661](https://github.com/owncloud/owncloud-design-system/pull/1661)
+* Enhancement - Allow hover option in OcTableFiles: [#1632](https://github.com/owncloud/owncloud-design-system/pull/1632)
 
 ## Details
 
@@ -22,6 +23,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    so, we removed the old datepicker library that we use, `vue-datetime`.
 
    https://github.com/owncloud/owncloud-design-system/pull/1661
+
+
+* Enhancement - Allow hover option in OcTableFiles: [#1632](https://github.com/owncloud/owncloud-design-system/pull/1632)
+
+   We've added the possibility to use the `hover` option from OcTable also in OcTableFiles.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1632
+   https://github.com/owncloud/owncloud-design-system/pull/1680
 
 # Changelog for [10.0.0] (2021-09-13)
 
