@@ -1008,4 +1008,64 @@ export default {
   }
 </script>
 ```
+
+## With hover enabled
+```js
+<template>
+  <oc-table-files :resources="resources" v-model="selected" :hover="true" />
+</template>
+<script>
+export default {
+    data: () => ({
+      selected: []
+    }),
+    computed: {
+      resources() {
+        return [
+          {
+            id: "forest",
+            name: "forest.jpg",
+            path: "images/nature/forest.jpg",
+            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            indicators: [],
+            type: "file",
+            size: "111000234",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "notes",
+            name: "notes.txt",
+            path: "/Documents/notes.txt",
+            icon: "text",
+            indicators: [],
+            type: "file",
+            size: "1245",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "documents",
+            name: "Documents",
+            path: "/Documents",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            size: "5324435",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          },
+          {
+            id: "pictures",
+            name: "Pictures and Movies as well as other resources",
+            path: "/Pictures and Movies as well as other resources",
+            icon: "folder",
+            indicators: [],
+            type: "folder",
+            size: "4323556",
+            mdate: "Mon, 11 Jan 2021 14:34:04 GMT"
+          }
+        ]
+      }
+    }
+  }
+</script>
+```
 </docs>
