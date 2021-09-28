@@ -105,7 +105,7 @@
     "shelljs": "^0.8.3",
     "style-dictionary": "^3.0.0-rc.8",
     "style-loader": "^2.0.0",
-    "style-value-types": "^4.1.4",
+    "style-value-types": "^5.0.0",
     "stylelint": "^13.6.1",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-config-standard": "^22.0.0",
