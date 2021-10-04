@@ -6,11 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Prevent contextmenu display issues within OcTableFiles: [#1691](https://github.com/owncloud/owncloud-design-system/pull/1691)
 * Bugfix - Prevent hover style on footer of <oc-table>: [#1667](https://github.com/owncloud/owncloud-design-system/pull/1667)
 * Change - Replace vue-datetime with v-calendar in our datepicker component: [#1661](https://github.com/owncloud/owncloud-design-system/pull/1661)
 * Enhancement - Allow hover option in OcTableFiles: [#1632](https://github.com/owncloud/owncloud-design-system/pull/1632)
 
 ## Details
+
+* Bugfix - Prevent contextmenu display issues within OcTableFiles: [#1691](https://github.com/owncloud/owncloud-design-system/pull/1691)
+
+   Context menu for files table now detects if available space is enough to show all items. If not,
+   it automatically calculates the height and adds scroll bars to the menu.
+
+   https://github.com/owncloud/web/issues/5845
+   https://github.com/owncloud/owncloud-design-system/pull/1691
+
 
 * Bugfix - Prevent hover style on footer of <oc-table>: [#1667](https://github.com/owncloud/owncloud-design-system/pull/1667)
 
