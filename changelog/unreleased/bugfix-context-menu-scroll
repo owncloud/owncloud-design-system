@@ -1,4 +1,4 @@
-Bugfix: Prevent hover style on footer of <oc-table>
+Bugfix: Prevent contextmenu display issues within OcTableFiles
 
 Context menu for files table now detects if available space is enough to show all items. If not,
 it automatically calculates the height and adds scroll bars to the menu.
