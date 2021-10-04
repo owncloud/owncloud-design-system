@@ -13353,9 +13353,9 @@ vue-inbrowser-compiler@^4.41.2:
     walkes "^0.2.1"
 
 vue-inline-svg@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-inline-svg/-/vue-inline-svg-2.0.0.tgz#479908ef6f739fed5bfb4cf9f7f9a231706b080a"
-  integrity sha512-tvuYR9ynqJEuzrwqneNQ2q5uoFbgbot1fFuWIADfpmA1Sm9CMkid1SJyRuvmUdQHdjgAstGEU3tMbiTk5ud4OQ==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-inline-svg/-/vue-inline-svg-2.1.0.tgz#45f20a34d458636c5caea5da28eef6cad9a87fcb"
+  integrity sha512-80u/BGtjOzXp31yFahXsfvkBrHKHEHKyrkZ42MGoAbD6jHzWpMJLijsyRj66pps7IyKxZcnYkO3ijsJhr4zXsg==
 
 vue-jest@^3.0.4:
   version "3.0.7"
