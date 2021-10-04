@@ -29,6 +29,13 @@ export default {
       default: () => uniqueId("oc-drop-"),
     },
     /**
+     * Specifies custom Popper options
+     */
+    popperOptions: {
+      type: Object,
+      required: false,
+    },
+    /**
      * CSS selector for the element to be used as toggle. By default, the preceding element is used.
      **/
     toggle: {
@@ -126,6 +133,7 @@ export default {
       onShow(instance) {
         hideAll({ exclude: instance })
       },
+      popperOptions: this.popperOptions,
       content,
     }
 

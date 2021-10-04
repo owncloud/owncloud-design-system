@@ -93,6 +93,7 @@
           :ref="`context-menu-drop-ref-${item.id.replace(/=+/, '')}`"
           :drop-id="`context-menu-drop-${item.id.replace(/=+/, '')}`"
           :toggle="`#context-menu-trigger-${item.id.replace(/=+/, '')}`"
+          :popper-options="popperOptions"
           mode="click"
           close-on-click
           @click.native.stop.prevent
@@ -111,6 +112,7 @@
 
 <script>
 import { DateTime } from "luxon"
+import maxSize from "popper-max-size-modifier"
 
 import OcTable from "./OcTable.vue"
 import OcResource from "../resource/OcResource.vue"
@@ -266,6 +268,25 @@ export default {
     }
   },
   computed: {
+    popperOptions() {
+      return {
+        modifiers: [
+          maxSize,
+          {
+            name: "applyMaxSize",
+            enabled: true,
+            phase: "beforeWrite",
+            requires: ["maxSize"],
+            fn({ state }) {
+              const { height } = state.modifiersData.maxSize
+
+              state.styles.popper.overflowY = `auto`
+              state.styles.popper.maxHeight = `${height - 5}px`
+            },
+          },
+        ],
+      }
+    },
     fields() {
       if (this.resources.length === 0) {
         return []
