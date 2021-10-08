@@ -42,7 +42,7 @@
 
 <script>
 import OcIcon from "../OcIcon.vue"
-import OcButton from "../OcButton.vue"
+import OcButton from "../OcButton/OcButton.vue"
 import uniqueId from "../../utils/uniqueId"
 
 /**
