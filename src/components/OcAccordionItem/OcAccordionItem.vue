@@ -39,8 +39,8 @@
 </template>
 <script>
 import uniqueId from "../../utils/uniqueId"
-import OcButton from "../OcButton.vue"
-import OcIcon from "../OcButton.vue"
+import OcButton from "../OcButton/OcButton.vue"
+import OcIcon from "../OcIcon.vue"
 
 export default {
   name: "OcAccordionItem",
