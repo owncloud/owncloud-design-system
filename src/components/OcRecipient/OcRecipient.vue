@@ -34,7 +34,7 @@
 
 <script>
 import OcAvatar from "../avatars/OcAvatar.vue"
-import OcIcon from "../OcIcon.vue"
+import OcIcon from "../OcIcon/OcIcon.vue"
 import OcSpinner from "../OcSpinner/OcSpinner.vue"
 
 export default {
