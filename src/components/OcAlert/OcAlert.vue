@@ -15,7 +15,7 @@
 
 <script>
 import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon.vue"
+import OcIcon from "../OcIcon/OcIcon.vue"
 
 /**
  * Display success, warning and error messages.
