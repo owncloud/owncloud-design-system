@@ -32,7 +32,7 @@
 <script>
 import { shareType } from "../../utils/shareType"
 import OcAvatar from "./OcAvatar.vue"
-import OcAvatarCount from "./OcAvatarCount.vue"
+import OcAvatarCount from "./OcAvatarCount/OcAvatarCount.vue"
 import OcAvatarLink from "./OcAvatarLink.vue"
 import OcAvatarGroup from "./OcAvatarGroup.vue"
 import OcAvatarFederated from "./OcAvatarFederated.vue"
