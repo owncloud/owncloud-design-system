@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import OcIcon from "../../../src/components/OcIcon"
+import OcIcon from "../../../src/components/OcIcon/OcIcon.vue"
 const req = require.context("@/assets/icons/", true, /^\.\/.*\.svg$/)
 
 /**
