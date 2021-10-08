@@ -51,8 +51,8 @@
 </template>
 <script>
 import OcButton from "../OcButton.vue"
-import OcImg from "../OcImage.vue"
-import OcStatusIndicators from "../OcStatusIndicators.vue"
+import OcImg from "../OcImage/OcImage.vue"
+import OcStatusIndicators from "../OcStatusIndicators/OcStatusIndicators.vue"
 import OcIcon from "../OcIcon.vue"
 import OcResourceName from "./OcResourceName.vue"
 import uniqueId from "../../utils/uniqueId"
