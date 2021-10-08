@@ -44,7 +44,7 @@
 
 <script>
 import uniqueId from "../../utils/uniqueId"
-import OcButton from "../OcButton"
+import OcButton from "../OcButton/OcButton.vue"
 import OcIcon from "../OcIcon"
 
 /**
