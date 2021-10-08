@@ -57,7 +57,7 @@
 
 <script>
 import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon.vue"
+import OcIcon from "../OcIcon/OcIcon.vue"
 import OcTextInput from "../OcTextInput/OcTextInput.vue"
 import { FocusTrap } from "focus-trap-vue"
 
