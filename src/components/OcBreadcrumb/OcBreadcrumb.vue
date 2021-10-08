@@ -61,7 +61,7 @@
 <script>
 import OcButton from "../OcButton/OcButton.vue"
 import OcDrop from "../OcDrop/OcDrop.vue"
-import OcIcon from "../OcIcon.vue"
+import OcIcon from "../OcIcon/OcIcon.vue"
 
 /**
  * Displays a breadcrumb. Each item in the items property has the following elements:
