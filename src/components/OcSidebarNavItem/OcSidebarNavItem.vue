@@ -26,7 +26,7 @@
   </li>
 </template>
 <script>
-import OcIcon from "../OcIcon.vue"
+import OcIcon from "../OcIcon/OcIcon.vue"
 
 export default {
   name: "OcSidebarNavItem",
