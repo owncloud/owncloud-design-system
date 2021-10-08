@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import OcAvatarItem from "./OcAvatarItem"
+import OcAvatarItem from "../avatars/OcAvatarItem/OcAvatarItem.vue"
 export default {
   name: "OcAvatarGuest",
   status: "review",
