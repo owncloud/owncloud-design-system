@@ -50,7 +50,7 @@
   </div>
 </template>
 <script>
-import OcButton from "../OcButton.vue"
+import OcButton from "../OcButton/OcButton.vue"
 import OcImg from "../OcImage/OcImage.vue"
 import OcStatusIndicators from "../OcStatusIndicators/OcStatusIndicators.vue"
 import OcIcon from "../OcIcon.vue"
