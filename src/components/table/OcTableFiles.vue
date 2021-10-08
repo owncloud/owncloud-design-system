@@ -118,10 +118,10 @@ import OcTable from "./OcTable.vue"
 import OcResource from "../resource/OcResource.vue"
 import OcIcon from "../OcIcon.vue"
 import OcAvatars from "../avatars/OcAvatars.vue"
-import OcCheckbox from "../OcCheckbox.vue"
+import OcCheckbox from "../OcCheckbox/OcCheckbox.vue"
 import OcButton from "../OcButton.vue"
 import OcResourceSize from "../resource/OcResourceSize.vue"
-import OcDrop from "../OcDrop.vue"
+import OcDrop from "../OcDrop/OcDrop.vue"
 import { EVENT_TROW_MOUNTED, EVENT_FILE_DROPPED } from "./helpers/constants"
 
 export default {
