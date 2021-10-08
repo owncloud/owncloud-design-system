@@ -116,7 +116,7 @@ import maxSize from "popper-max-size-modifier"
 
 import OcTable from "./OcTable.vue"
 import OcResource from "../resource/OcResource.vue"
-import OcIcon from "../OcIcon.vue"
+import OcIcon from "../OcIcon/OcIcon.vue"
 import OcAvatars from "../avatars/OcAvatars.vue"
 import OcCheckbox from "../OcCheckbox/OcCheckbox.vue"
 import OcButton from "../OcButton/OcButton.vue"
