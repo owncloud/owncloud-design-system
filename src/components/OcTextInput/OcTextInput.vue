@@ -45,7 +45,7 @@
 <script>
 import uniqueId from "../../utils/uniqueId"
 import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon"
+import OcIcon from "../OcIcon/OcIcon.vue"
 
 /**
  * Form Inputs are used to allow users to provide text input when the expected
