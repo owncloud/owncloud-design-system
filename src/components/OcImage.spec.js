@@ -27,7 +27,7 @@ describe("OcImage", () => {
       getWrapper({ loadingType: "invalid" })
       throw Error("value 'invalid' is valid for prop 'loadingType'.")
     } catch (e) {
-      /* eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect */
+      /* eslint-disable-next-line jest/no-conditional-expect */
       expect(e).toContain(
         `[Vue warn]: Invalid prop: custom validator check failed for prop "loadingType".`
       )
