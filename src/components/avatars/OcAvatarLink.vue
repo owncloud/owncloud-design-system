@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import OcAvatarItem from "../avatars/OcAvatarItem/OcAvatarItem.vue"
+import OcAvatarItem from "../OcAvatarItem/OcAvatarItem.vue"
 export default {
   name: "OcAvatarLink",
   status: "ready",
