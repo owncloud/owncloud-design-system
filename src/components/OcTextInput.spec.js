@@ -127,7 +127,7 @@ describe("OcTextInput", () => {
         getShallowWrapper({ type: "binary" })
         throw new Error(`Provided value 'binary' for prop 'type' is valid.`)
       } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect */
+        /* eslint-disable-next-line jest/no-conditional-expect */
         expect(e).toContain(
           '[Vue warn]: Invalid prop: custom validator check failed for prop "type".'
         )

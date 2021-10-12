@@ -1,7 +1,6 @@
 {
   "ignores": [
     "autoprefixer",
-    "babel-eslint",
     "easygettext",
     "webpack-dev-server",
     "stylelint-config-standard",

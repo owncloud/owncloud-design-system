@@ -13,7 +13,7 @@ describe("OcNotifications", () => {
         })
         throw new Error(`Provided value for prop "position" is valid.`)
       } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect */
+        /* eslint-disable-next-line jest/no-conditional-expect */
         expect(e).toContain(
           '[Vue warn]: Invalid prop: custom validator check failed for prop "position".'
         )
