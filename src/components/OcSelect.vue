@@ -3,11 +3,15 @@
     <label :for="id" v-text="label" />
     <vue-select
       ref="select"
+      :clearable="showClearButton"
       :disabled="disabled"
       :filter="filter"
       class="oc-select"
+      :value="displayValue"
+      @input="onInput"
+      @option:selecting="onOptionSelecting"
       v-bind="additionalAttributes"
-      v-on="$listeners"
+      v-on="listeners"
     >
       <template #search="{ attributes, events }">
         <input class="vs__search" v-bind="attributes" @input="userInput" v-on="events" />
@@ -51,6 +55,31 @@ export default {
       default: () => uniqueId("oc-select-"),
     },
     /**
+     * Whether or not the select component should have a dedicated button for clearing the selection.
+     */
+    clearButtonEnabled: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    /**
+     * Value to preselect when no value is provided
+     * This does not set `value` automatically.
+     * The user needs to explicitly select the value to set it.
+     */
+    defaultValue: {
+      required: false,
+      default: null,
+    },
+    /**
+     * Disable the select component
+     */
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
      * Function to filter items when searching
      */
     filter: {
@@ -75,14 +104,6 @@ export default {
       },
     },
     /**
-     * Disable the select component
-     */
-    disabled: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    /**
      * Label of the select component
      * ATTENTION: this shadows the vue-select prop `label`. If you need access to that use `optionLabel`.
      */
@@ -98,6 +119,12 @@ export default {
       type: String,
       default: null,
     },
+    /**
+     * Current value of the select component.
+     */
+    value: {
+      default: null,
+    },
   },
 
   computed: {
@@ -107,7 +134,24 @@ export default {
       if (this.optionLabel) {
         additionalAttrs["label"] = this.optionLabel
       }
-      return { ...this.$attrs, ...additionalAttrs }
+      const attrs = { ...this.$attrs, ...additionalAttrs }
+      delete attrs.clearable
+      return attrs
+    },
+    displayValue() {
+      return this.value || this.defaultValue
+    },
+    listeners() {
+      const listeners = this.$listeners
+
+      // Delete listeners for events which are emitted via methods
+      delete listeners["input"]
+      delete listeners["change"]
+
+      return listeners
+    },
+    showClearButton() {
+      return this.clearButtonEnabled && this.value !== null
     },
   },
 
@@ -127,6 +171,23 @@ export default {
        * @property {string} query search query
        */
       this.$emit("search:input", event.target.value)
+    },
+    onInput(value) {
+      // selecting a value is handled via onOptionSelecting, we just nead to handle clear events here
+      if (value !== null) {
+        return
+      }
+
+      this.onOptionSelecting(null)
+    },
+    /**
+     * We use the option:selecting event as it's the only one that fires when an option is reselected
+     * When we are showing a `defaultValue` we need to allow the user to explicitly set that value
+     * to override the default because a default might change one day
+     */
+    onOptionSelecting(value) {
+      this.$emit("input", value)
+      this.$emit("change", value)
     },
   },
 }
@@ -235,6 +296,28 @@ prevent clearing the selected value by hitting `delete`.
   export default {
     data: () => ({
       selected: "Apple"
+    })
+  };
+</script>
+```
+
+### Providing a default value
+We can provide a `defaultValue` to `oc-select` that is preselected when `value` is `null`.
+When the `defaultValue` is displayed the clear button is automatically disabled.
+
+```js
+<template>
+  <div class="oc-docs-width-medium">
+    <oc-select v-model="selected" :options="['Apple', 'Bannana', 'Orange', 'Pear']" default-value="Orange" />
+    <p>
+      Selected: {{ selected === null ? "null" : selected }}
+    </p>
+  </div>
+</template>
+<script>
+  export default {
+    data: () => ({
+      selected: null
     })
   };
 </script>
