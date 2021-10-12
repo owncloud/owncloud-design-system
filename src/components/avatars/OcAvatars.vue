@@ -35,7 +35,7 @@ import OcAvatar from "./OcAvatar.vue"
 import OcAvatarCount from "./OcAvatarCount/OcAvatarCount.vue"
 import OcAvatarLink from "./OcAvatarLink.vue"
 import OcAvatarGroup from "./OcAvatarGroup.vue"
-import OcAvatarFederated from "./OcAvatarFederated.vue"
+import OcAvatarFederated from "../OcAvatarFederated/OcAvatarFederated.vue"
 import OcAvatarGuest from "./OcAvatarGuest.vue"
 
 /**
