@@ -53,14 +53,4 @@ describe("OcCheckbox", () => {
       expect(checkboxElement.attributes("class")).toContain(item.class)
     })
   })
-  describe("set checked", () => {
-    it("should set check on input change", async () => {
-      const wrapper = await getWrapperWithProps({})
-      const checkbox = wrapper.find(checkboxSelector)
-      expect(checkbox.element.checked).toBeFalsy()
-      await checkbox.setChecked()
-      expect(wrapper.emitted("input")).toBeTruthy()
-      expect(checkbox.element.checked).toBeTruthy()
-    })
-  })
 })

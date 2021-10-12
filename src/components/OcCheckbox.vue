@@ -2,7 +2,8 @@
   <span>
     <input
       :id="id"
-      v-model="model"
+      :checked="displayValue"
+      @input="onInput($event.target.checked)"
       type="checkbox"
       name="checkbox"
       :class="classes"
@@ -10,6 +11,15 @@
       :disabled="disabled"
     />
     <label :for="id" :class="labelClasses" v-text="label" />
+    <oc-button
+      v-if="showClearButton"
+      :aria-label="clearButtonAccessibleLabelValue"
+      appearance="raw"
+      @click="onClear"
+    >
+      <oc-icon name="close" size="small" variation="passive" />
+    </oc-button>
+
   </span>
 </template>
 
@@ -33,6 +43,33 @@ export default {
       default: () => uniqueId("oc-checkbox-"),
     },
     /**
+     * Whether or not the checkbox should have a dedicated button for clearing the value (revert to default).
+     */
+    clearButtonEnabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * The aria label for the clear button. Only used if it's enabled at all.
+     */
+    clearButtonAccessibleLabel: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * Value to show when no value is provided
+     * This does not set `value` automatically.
+     * The user needs to explicitly check or uncheck to set `value`.
+     */
+    defaultValue: {
+      // TODO: should we support arrays here? What would be the semantics?
+      type: Boolean,
+      required: false,
+      default: null,
+    },
+    /**
      * Disables the checkbox
      */
     disabled: {
@@ -48,7 +85,7 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     value: {
       required: false,
-      default: false,
+      default: null,
     },
     /**
      * The value/object this checkbox represents.
@@ -91,17 +128,20 @@ export default {
     },
   },
   computed: {
-    model: {
-      get() {
-        return this.value
-      },
-      set: function (value) {
-        this.$emit("input", value)
-        this.setChecked(value)
-      },
-    },
     classes() {
       return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
+    },
+    clearButtonAccessibleLabelValue() {
+      return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
+    },
+    displayValue() {
+      if (this.value === null) {
+        return this.defaultValue
+      } else if (typeof this.value === "boolean") {
+        return this.value
+      }
+
+      return this.value.includes(this.option)
     },
     labelClasses() {
       return {
@@ -109,18 +149,18 @@ export default {
         "oc-cursor-pointer": !this.disabled,
       }
     },
-  },
-  created() {
-    this.setChecked(this.model)
+    showClearButton() {
+      return this.clearButtonEnabled && this.value !== null
+    },
   },
   methods: {
-    setChecked: function (value) {
-      if (typeof value === "boolean") {
-        this.checked = value
-      } else {
-        this.checked = value.includes(this.option)
-      }
+    onClear() {
+      this.onInput(null)
     },
+    onInput(value) {
+      this.$emit("input", value)
+      this.$emit("change", value)
+    }
   },
 }
 </script>
@@ -220,6 +260,39 @@ label > .oc-checkbox + span {
   </section>
 </template>
 ```
+
+We can provide a `defaultValue` to `oc-checkbox` that is shown when `value` is `null`.
+
+```js
+<template>
+  <section>
+    <h3 class="oc-heading-divider oc-mt-s">
+      Providing a default value
+    </h3>
+    <div class="oc-mb-s">
+      <oc-checkbox :default-value="false" :clearButtonEnabled="true" v-model="uncheckedByDefault" label="Checkbox unchecked by default" aria-label="Checkbox unchecked by default"/>
+      <br/>
+      <span>Value: {{ uncheckedByDefault !== null && uncheckedByDefault.toString() || "null" }} </span>
+    </div>
+    <div class="oc-mb-s">
+      <oc-checkbox :default-value="true" :clearButtonEnabled="true" v-model="checkedByDefault" label="Checkbox checked by default" aria-label="Checkbox checked by default"/>
+      <br/>
+      <span>Value: {{ checkedByDefault !== null && checkedByDefault.toString() || "null" }} </span>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      uncheckedByDefault: null,
+      checkedByDefault: null,
+    }
+  }
+}
+</script>
+```
+
 ```js
 <template>
   <section>
