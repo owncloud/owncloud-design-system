@@ -79,13 +79,13 @@
   </table>
 </template>
 <script>
-import OcThead from "../table/_OcTableHeader.vue"
+import OcThead from "../_OcTableHeader/_OcTableHeader.vue"
 import OcTbody from "../_OcTableBody/_OcTableBody.vue"
-import OcTr from "../table/_OcTableRow"
-import OcTh from "../table/_OcTableCellHead"
-import OcTd from "../table/_OcTableCellData"
+import OcTr from "../_OcTableRow/_OcTableRow"
+import OcTh from "../_OcTableCellHead/_OcTableCellHead"
+import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
 import OcButton from "../OcButton/OcButton.vue"
-import SortMixin from "../table/mixins/sort"
+import SortMixin from "../mixins/sort"
 import { getSizeClass } from "../../utils/sizeClasses"
 
 import {
