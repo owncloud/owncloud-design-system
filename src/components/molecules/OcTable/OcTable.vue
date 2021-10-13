@@ -1,82 +1,228 @@
 <template>
-  <table v-bind="extractTableProps()">
-    <oc-thead v-if="hasHeader">
-      <oc-tr class="oc-table-header-row">
-        <oc-th
-          v-for="(field, index) in fields"
-          :key="`oc-thead-${field.name}`"
-          v-bind="extractThProps(field, index)"
-          @click.native="$emit(constants.EVENT_THEAD_CLICKED, field)"
-        >
-          <span
-            v-if="field.headerType === 'slot'"
-            :key="field.name + 'Header'"
-            class="oc-table-thead-content"
+  <div>
+    <div
+      v-if="groupingSettings && groupingAllowed && groupingSettings.showGroupingOptions"
+      style="padding-bottom: 20px"
+    >
+      <div class="oc-docs-width-small" style="display: inline">
+        <label class="oc-mx-s">Group By:</label>
+      </div>
+      <div class="oc-docs-width-medium" style="display: inline-block; width: 250px">
+        <oc-select
+          v-model="selected"
+          :options="['None', ...Object.keys(groupingSettings.groupingFunctions)]"
+          :clearable="false"
+          :searchable="false"
+        />
+      </div>
+    </div>
+    <table v-bind="extractTableProps()">
+      <oc-thead v-if="hasHeader">
+        <oc-tr class="oc-table-header-row">
+          <oc-th
+            v-for="(field, index) in fields"
+            :key="`oc-thead-${field.name}`"
+            v-bind="extractThProps(field, index)"
+            @click.native="clickedField(field)"
           >
-            <slot :name="field.name + 'Header'" />
-          </span>
-          <!-- TODO: Vue warning "v-if/else branches must use unique keys." -->
-          <span
-            v-else
-            :key="field.name + 'Header'"
-            class="oc-table-thead-content"
-            v-text="extractFieldTitle(field)"
-          />
-          <oc-button
-            v-if="field.sortable"
-            :aria-label="getSortLabel(field.name)"
-            class="oc-button-sort"
-            variant="passive"
-            appearance="raw"
-            @click.stop="$emit(constants.EVENT_THEAD_CLICKED, field)"
-          />
-        </oc-th>
-      </oc-tr>
-    </oc-thead>
-    <oc-tbody>
-      <oc-tr
-        v-for="(item, trIndex) in tableData"
-        :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
-        :ref="`row-${trIndex}`"
-        v-bind="extractTbodyTrProps(item, trIndex)"
-        :data-file-id="item.id"
-        :draggable="dragDrop"
-        @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
-        @contextmenu.native="
-          $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
-        "
-        @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
-        @dragstart.native.stop="dragStart(item)"
-        @drop.native.stop="dropRowEvent(item.id, $event)"
-        @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
-        @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
-        @mouseleave="dropRowStyling(item.id, true, $event)"
-        @dragover.native.prevent.stop
-      >
-        <oc-td
-          v-for="(field, tdIndex) in fields"
-          :key="'oc-tbody-td-' + cellKey(field, tdIndex, item)"
-          v-bind="extractTdProps(field, tdIndex)"
+            <span
+              v-if="field.headerType === 'slot'"
+              :key="field.name + 'Header'"
+              class="oc-table-thead-content"
+            >
+              <slot :name="field.name + 'Header'" />
+            </span>
+            <span
+              v-else
+              :key="field.name + 'Header'"
+              class="oc-table-thead-content"
+              v-text="extractFieldTitle(field)"
+            />
+            <oc-button
+              v-if="field.sortable"
+              :aria-label="getSortLabel(field.name)"
+              class="oc-button-sort"
+              variant="passive"
+              appearance="raw"
+              @click.stop="clickedField(field)"
+            />
+          </oc-th>
+        </oc-tr>
+      </oc-thead>
+      <oc-tbody v-if="selected === 'None' || !selected">
+        <oc-tr
+          v-for="(item, trIndex) in tableData"
+          :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
+          :ref="`row-${trIndex}`"
+          v-bind="extractTbodyTrProps(item, trIndex)"
+          :data-file-id="item.id"
+          :draggable="dragDrop"
+          @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
+          @contextmenu.native="
+            $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
+          "
+          @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
+          @dragstart.native.stop="dragStart(item)"
+          @drop.native.stop="dropRowEvent(item.id, $event)"
+          @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
+          @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
+          @mouseleave="dropRowStyling(item.id, true, $event)"
+          @dragover.native.prevent.stop
         >
-          <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
-          <template v-else-if="isFieldTypeCallback(field)">
-            {{ field.callback(item[field.name]) }}
-          </template>
-          <template v-else>
-            {{ item[field.name] }}
-          </template>
-        </oc-td>
-      </oc-tr>
-    </oc-tbody>
-    <tfoot v-if="$slots.footer" class="oc-table-footer">
-      <tr class="oc-table-footer-row">
-        <td :colspan="footerColspan" class="oc-table-footer-cell">
-          <!-- @slot Footer of the table -->
-          <slot name="footer" />
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+          <oc-td
+            v-for="(field, tdIndex) in fields"
+            :key="'oc-tbody-td-' + cellKey(field, tdIndex, item)"
+            v-bind="extractTdProps(field, tdIndex)"
+          >
+            <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
+            <template v-else-if="isFieldTypeCallback(field)">
+              {{ field.callback(item[field.name]) }}
+            </template>
+            <template v-else>
+              {{ item[field.name] }}
+            </template>
+          </oc-td>
+        </oc-tr>
+      </oc-tbody>
+
+      <!-- Collapsibles -->
+
+      <tbody
+        v-for="(item, index) in groupedItems"
+        v-else-if="groupingAllowed && selected !== 'None'"
+        :key="`${item.name + index}`"
+      >
+        <oc-tr
+          style="
+             {
+              height: rowHeight + 'px';
+              cursor: pointer;
+            }
+          "
+          :class="['oc-tbody-tr', 'oc-tbody-tr-accordion']"
+          @click.native="toggle(item, index)"
+          ><oc-td style="colspan='2'"
+            ><oc-avatar
+              v-if="selected === 'Share owner'"
+              :width="30"
+              style="
+                 {
+                  width: 30px;
+                  height: 30px;
+                }
+              "
+              :user-name="item.name"
+              :src="item.data[0].owner[0].avatar"
+              accessible-label="item.name" /></oc-td
+          ><oc-td :colspan="fields.length - 2"> {{ item.name }} </oc-td
+          ><oc-td>
+            <span
+              class="oc-ml-xs oc-icon-l"
+              :style="[resultArray[index].open ? { display: 'none' } : {}]"
+            >
+              <oc-icon
+                name="expand_less"
+                class="oc-accordion-title-arrow-icon"
+                :class="{ rotate: resultArray[index].open }"
+                size="large"
+              />
+            </span>
+            <span
+              class="oc-ml-xs oc-icon-l"
+              :style="[resultArray[index].open ? {} : { display: 'none' }]"
+            >
+              <oc-icon
+                name="expand_more"
+                class="oc-accordion-title-arrow-icon"
+                :class="{ rotate: resultArray[index].open }"
+                size="large"
+              /> </span></oc-td
+        ></oc-tr>
+        <template v-if="resultArray[index].open">
+          <oc-tr
+            v-for="(item, trIndex) in item['data']"
+            :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
+            :ref="`row-${trIndex}`"
+            v-bind="extractTbodyTrProps(item, trIndex)"
+            :data-file-id="item.id"
+            :draggable="dragDrop"
+            @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
+            @contextmenu.native="
+              $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
+            "
+            @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
+            @dragstart.native.stop="dragStart(item)"
+            @drop.native.stop="dropRowEvent(item.id, $event)"
+            @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
+            @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
+            @mouseleave="dropRowStyling(item.id, true, $event)"
+            @dragover.native.prevent.stop
+          >
+            <oc-td
+              v-for="(field, tdIndex) in fields"
+              :key="'oc-tbody-td-' + cellKey(field, tdIndex, item)"
+              v-bind="extractTdProps(field, tdIndex)"
+            >
+              <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
+              <template v-else-if="isFieldTypeCallback(field)">
+                {{ field.callback(item[field.name]) }}
+              </template>
+              <template v-else>{{ item[field.name] }}</template>
+            </oc-td>
+          </oc-tr>
+        </template>
+      </tbody>
+
+      <!-- Show more/show less footer for preview enabled -->
+      <tbody
+        v-if="
+          groupingSettings &&
+          groupingSettings.previewAmount &&
+          data.length > groupingSettings.previewAmount + 1
+        "
+      >
+        <oc-tr
+          style="
+             {
+              height: rowHeight + 'px';
+            }
+          "
+          :class="['oc-tbody-tr', 'preview-settings']"
+          @click.native="previewEnabled = !previewEnabled"
+        >
+          <oc-td
+            v-if="previewEnabled"
+            key="showMore"
+            :colspan="fields.length"
+            style="
+               {
+                text-align: center;
+              }
+            "
+            ><div class="preview-heading">Show more</div> </oc-td
+          ><oc-td
+            v-else
+            key="showLess"
+            :colspan="fields.length"
+            style="
+               {
+                text-align: center;
+              }
+            "
+            ><div class="preview-heading">Show less</div>
+          </oc-td>
+        </oc-tr>
+      </tbody>
+      <tfoot v-if="$slots.footer" class="oc-table-footer">
+        <tr class="oc-table-footer-row">
+          <td :colspan="footerColspan" class="oc-table-footer-cell">
+            <!-- @slot Footer of the table -->
+            <slot name="footer" />
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 </template>
 <script>
 import OcThead from "../../atoms/_OcTableHeader/_OcTableHeader.vue"
@@ -114,6 +260,17 @@ export default {
   },
   mixins: [SortMixin],
   props: {
+    /**
+     * Grouping settings for the table. Following settings are possible:<br />
+     * -**groupingFunctions**: Object with keys as grouping options names and functions that get a table data row and return a group name for that row. The names of the functions are used as grouping options.<br />
+     * -**groupingBy**: must be either one of the keys in groupingFunctions or 'None'. If not set, default grouping will be 'None'.<br />
+     * -**ShowGroupingOptions**:  boolean value for showing or hinding the select element with grouping options above the table. <br />
+     * -**PreviewAmount**: Integer value that is used to show only the first n data rows of the table.
+     */
+    groupingSettings: {
+      type: Object,
+      required: false,
+    },
     /**
      * The data for the table. Each array item will be rendered as one table row. Each array item needs to have a
      * unique identifier. By default we expect this to be an `id` field. If your field has a different name, please
@@ -217,6 +374,19 @@ export default {
   },
   data() {
     return {
+      selected:
+        this.groupingSettings && this.groupingSettings.groupingBy
+          ? this.groupingSettings.groupingBy
+          : "None",
+      accordionClosed: [],
+      previewEnabled: true,
+      previewData: [],
+      resultArray: [],
+      showMore: false,
+      groupingOrderAsc:
+        this.groupingSettings && this.groupingSettings.groupingFunctions
+          ? this.groupingOrder()
+          : {},
       constants: {
         EVENT_THEAD_CLICKED,
         EVENT_TROW_CLICKED,
@@ -227,6 +397,16 @@ export default {
   },
   computed: {
     tableData() {
+      if (
+        this.groupingSettings &&
+        this.groupingSettings.previewAmount &&
+        this.data.length > this.groupingSettings.previewAmount + 1 &&
+        this.selected === "None" &&
+        this.previewEnabled
+      )
+        return this.sortedData
+          ? this.sortedData.slice(0, this.groupingSettings.previewAmount || 3)
+          : this.data.slice(0, this.groupingSettings.previewAmount || 3)
       return this.sortedData || this.data
     },
     tableClasses() {
@@ -246,8 +426,90 @@ export default {
     footerColspan() {
       return this.fields.length
     },
+    groupedItems() {
+      let result = this.createGroupedItems(
+        this.selected,
+        this.tableData,
+        this.groupingOrderAsc[this.selected]
+      )
+
+      if (this.groupingSettings && this.previewEnabled && this.groupingSettings.previewAmount) {
+        let previewCount = this.groupingSettings.previewAmount + 1
+        result.forEach(e => {
+          let eLength = e.data.length
+          if (eLength - previewCount >= 0) e.data = e.data.slice(0, previewCount - 1)
+          previewCount = previewCount - eLength
+        })
+        result = result.filter(e => e.data.length > 0)
+      }
+      this.resultArray = result
+      return result
+    },
+    groupingAllowed() {
+      return this.groupingSettings &&
+        this.groupingSettings.groupingFunctions &&
+        Object.keys(this.groupingSettings.groupingFunctions).length > 0
+        ? true
+        : false
+    },
   },
   methods: {
+    groupingOrder() {
+      let groupingOrder = {}
+      Object.keys(this.groupingSettings.groupingFunctions).forEach(
+        group => (groupingOrder[group] = true)
+      )
+      return groupingOrder
+    },
+    createGroupedItems(col, data, asc) {
+      let groups = {}
+      let resultArray = []
+      if (Object.keys(this.groupingSettings.groupingFunctions).includes(col)) {
+        data.forEach(row => {
+          groups[this.groupingSettings.groupingFunctions[col](row)]
+            ? groups[this.groupingSettings.groupingFunctions[col](row)].push(row)
+            : (groups[this.groupingSettings.groupingFunctions[col](row)] = [row])
+        })
+        for (const [key, value] of Object.entries(groups)) {
+          resultArray.push({
+            name: key.toUpperCase(),
+            open: true,
+            data: value,
+          })
+        }
+
+        if (col === "sdate" || this.groupingSettings.functionColMappings[col] === "sdate") {
+          //resultArray = resultArray.reverse()
+
+          let sorted = resultArray.sort((a, b) => {
+            return asc ? b.data[0].sdate - a.data[0].sdate : a.data[0].sdate - b.data[0].sdate
+          })
+          return sorted
+        }
+        if (asc) return resultArray.sort((a, b) => (a.name > b.name ? 1 : -1))
+        else return resultArray.sort((a, b) => (a.name > b.name ? -1 : 1))
+      }
+    },
+    toggle(item, index) {
+      this.resultArray[index].open = !this.resultArray[index].open
+    },
+    itemOpen(item, index) {
+      return this.resultArray[index].open
+    },
+    clickedField(field) {
+      this.$emit(this.constants.EVENT_THEAD_CLICKED, field)
+      if (this.groupingSettings && this.groupingAllowed) {
+        let group =
+          Object.keys(this.groupingSettings.functionColMappings).find(
+            key => this.groupingSettings.functionColMappings[key] === field.name
+          ) || field.name
+        this.groupingOrderAsc[group] = !this.groupingOrderAsc[group]
+      }
+    },
+    onSwitchAdvanced() {
+      this.isAdvanced = !this.isAdvanced
+    },
+    ///
     dragStart(file) {
       if (!this.dragDrop) return
       this.$emit(EVENT_FILE_DRAGGED, file)
@@ -399,6 +661,23 @@ export default {
 }
 </script>
 <style lang="scss">
+.preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preview-settings {
+  background-color: rgb(247, 245, 245);
+  cursor: pointer;
+}
+.grouping-settings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.oc-tbody-tr-accordion {
+  background-color: var(--oc-color-input-bg);
+}
 .oc-table {
   border-collapse: collapse;
   border-spacing: 0;
