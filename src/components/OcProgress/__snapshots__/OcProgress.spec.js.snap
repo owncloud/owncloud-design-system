@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OcProgress sets correct classes 1`] = `<progress max="10" aria-valuemax="10" aria-valuenow="3" aria-busy="true" aria-valuemin="0" tabindex="-1" class="oc-progress oc-progress-small oc-progress-warning" value="3"></progress>`;
