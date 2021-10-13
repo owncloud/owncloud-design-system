@@ -11,7 +11,7 @@
   </oc-table-cell>
 </template>
 <script>
-import OcTableCell from "./_OcTableCell"
+import OcTableCell from "../_OcTableCell/_OcTableCell.vue"
 
 export default {
   name: "OcTd",
