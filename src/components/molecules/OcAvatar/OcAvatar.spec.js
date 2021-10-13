@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import OcAvatar from "../avatars./OcAvatar/OcAvatar.vue"
+import OcAvatar from "./OcAvatar.vue"
 
 describe("OcAvatar", () => {
   const selectors = {

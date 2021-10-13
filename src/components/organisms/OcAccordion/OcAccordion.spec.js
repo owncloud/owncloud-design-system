@@ -1,8 +1,8 @@
 import OcAccordion from "./OcAccordion.vue"
 import { mount } from "@vue/test-utils"
-import OcAccordionItem from "../OcAccordionItem/OcAccordionItem.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcButton from "../OcButton/OcButton.vue"
+import OcAccordionItem from "../../molecules/OcAccordionItem/OcAccordionItem.vue"
+import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
+import OcButton from "../../atoms/OcButton/OcButton.vue"
 
 const stubs = {
   "oc-accordion-item": OcAccordionItem,

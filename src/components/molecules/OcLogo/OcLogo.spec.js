@@ -1,6 +1,6 @@
 import OcLogo from "./OcLogo.vue"
 import { mount, shallowMount } from "@vue/test-utils"
-import OcImage from "../OcImage/OcImage.vue"
+import OcImage from "../../atoms/OcImage/OcImage.vue"
 
 describe("OcLogo", () => {
   const requiredProps = {
