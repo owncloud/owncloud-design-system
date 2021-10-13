@@ -115,14 +115,14 @@ import { DateTime } from "luxon"
 import maxSize from "popper-max-size-modifier"
 
 import OcTable from "../OcTable/OcTable.vue"
-import OcResource from "../resource/OcResource/OcResource.vue"
+import OcResource from "../OcResource/OcResource.vue"
 import OcIcon from "../OcIcon/OcIcon.vue"
 import OcAvatars from "../OcAvatars/OcAvatars.vue"
 import OcCheckbox from "../OcCheckbox/OcCheckbox.vue"
 import OcButton from "../OcButton/OcButton.vue"
-import OcResourceSize from "../resource/OcResourceSize/OcResourceSize.vue"
+import OcResourceSize from "../OcResourceSize/OcResourceSize.vue"
 import OcDrop from "../OcDrop/OcDrop.vue"
-import { EVENT_TROW_MOUNTED, EVENT_FILE_DROPPED } from "../table/helpers/constants"
+import { EVENT_TROW_MOUNTED, EVENT_FILE_DROPPED } from "../helpers/constants"
 
 export default {
   name: "OcTableFiles",
