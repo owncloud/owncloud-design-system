@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import OcButton from "../OcButton/OcButton.vue"
+import OcButton from "../atoms/OcButton/OcButton.vue"
 import OcIcon from "../OcIcon/OcIcon.vue"
 
 /**

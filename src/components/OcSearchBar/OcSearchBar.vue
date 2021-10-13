@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import OcButton from "../OcButton/OcButton.vue"
+import OcButton from "../atoms/OcButton/OcButton.vue"
 import OcGrid from "../OcGrid/OcGrid.vue"
 import OcIcon from "../OcIcon/OcIcon.vue"
 import OcSpinner from "../OcSpinner/OcSpinner.vue"

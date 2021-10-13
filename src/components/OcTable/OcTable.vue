@@ -79,12 +79,12 @@
   </table>
 </template>
 <script>
-import OcThead from "../_OcTableHeader/_OcTableHeader.vue"
-import OcTbody from "../_OcTableBody/_OcTableBody.vue"
-import OcTr from "../_OcTableRow/_OcTableRow"
-import OcTh from "../_OcTableCellHead/_OcTableCellHead"
-import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
-import OcButton from "../OcButton/OcButton.vue"
+import OcThead from "../atoms/_OcTableHeader/_OcTableHeader.vue"
+import OcTbody from "../atoms/_OcTableBody/_OcTableBody.vue"
+import OcTr from "../atoms/_OcTableRow/_OcTableRow"
+import OcTh from "../atoms/_OcTableCellHead/_OcTableCellHead"
+import OcTd from "../atoms/_OcTableCellData/_OcTableCellData.vue"
+import OcButton from "../atoms/OcButton/OcButton.vue"
 import SortMixin from "../mixins/sort"
 import { getSizeClass } from "../../utils/sizeClasses"
 
