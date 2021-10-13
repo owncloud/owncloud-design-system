@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 
 /**
  * A list of links used for switching to different pages

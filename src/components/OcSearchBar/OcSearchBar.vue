@@ -52,7 +52,7 @@
 <script>
 import OcButton from "../atoms/OcButton/OcButton.vue"
 import OcGrid from "../OcGrid/OcGrid.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 import OcSpinner from "../OcSpinner/OcSpinner.vue"
 
 /**

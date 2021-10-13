@@ -40,7 +40,7 @@
 <script>
 import uniqueId from "../../utils/uniqueId"
 import OcButton from "../atoms/OcButton/OcButton.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 
 export default {
   name: "OcAccordionItem",

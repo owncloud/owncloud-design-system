@@ -28,7 +28,7 @@
  * Create a sidebar with title, content and footer that includes a close button
  * in the corner.
  */
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 import OcButton from "../atoms/OcButton/OcButton.vue"
 
 export default {

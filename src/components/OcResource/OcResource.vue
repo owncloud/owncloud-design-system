@@ -52,8 +52,8 @@
 <script>
 import OcButton from "../atoms/OcButton/OcButton.vue"
 import OcImg from "../OcImage/OcImage.vue"
-import OcStatusIndicators from "../OcStatusIndicators/OcStatusIndicators.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcStatusIndicators from "../molecules/OcStatusIndicators/OcStatusIndicators.vue"
+import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../OcResourceName/OcResourceName.vue"
 import uniqueId from "../../utils/uniqueId"
 

@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 
 /**
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
