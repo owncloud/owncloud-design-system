@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import OcImg from "../OcImage/OcImage.vue"
+import OcImg from "../atoms/OcImage/OcImage.vue"
 
 export default {
   name: "OcLogo",

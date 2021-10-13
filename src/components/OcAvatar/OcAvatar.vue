@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import OcImg from "../OcImage/OcImage.vue"
+import OcImg from "../atoms/OcImage/OcImage.vue"
 
 /**
  * Avatar is a thumbnail representing user or group
