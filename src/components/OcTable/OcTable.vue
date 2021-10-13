@@ -95,7 +95,7 @@ import {
   EVENT_TROW_CONTEXTMENU,
   EVENT_FILE_DROPPED,
   EVENT_FILE_DRAGGED,
-} from "../table/helpers/constants"
+} from "../helpers/constants"
 
 /**
  * A table component with dynamic layout and data.
