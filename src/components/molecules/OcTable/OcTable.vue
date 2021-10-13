@@ -85,7 +85,7 @@ import OcTr from "../../atoms/_OcTableRow/_OcTableRow"
 import OcTh from "../../atoms/_OcTableCellHead/_OcTableCellHead"
 import OcTd from "../../atoms/_OcTableCellData/_OcTableCellData.vue"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
-import SortMixin from "../../mixins/sort"
+import SortMixin from "../../../mixins/sort"
 import { getSizeClass } from "../../../utils/sizeClasses"
 
 import {
@@ -95,7 +95,7 @@ import {
   EVENT_TROW_CONTEXTMENU,
   EVENT_FILE_DROPPED,
   EVENT_FILE_DRAGGED,
-} from "../../helpers/constants"
+} from "../../../helpers/constants"
 
 /**
  * A table component with dynamic layout and data.
