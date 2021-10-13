@@ -60,7 +60,7 @@
 
 <script>
 import OcButton from "../atoms/OcButton/OcButton.vue"
-import OcDrop from "../OcDrop/OcDrop.vue"
+import OcDrop from "../atoms/OcDrop/OcDrop.vue"
 import OcIcon from "../atoms/OcIcon/OcIcon.vue"
 
 /**
