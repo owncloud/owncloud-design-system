@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import OcAvatar from "../avatars/OcAvatar.vue"
+import OcAvatar from "../OcAvatar/OcAvatar.vue"
 import OcIcon from "../OcIcon/OcIcon.vue"
 import OcSpinner from "../OcSpinner/OcSpinner.vue"
 
