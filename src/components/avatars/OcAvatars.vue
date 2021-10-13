@@ -32,11 +32,11 @@
 <script>
 import { shareType } from "../../utils/shareType"
 import OcAvatar from "./OcAvatar.vue"
-import OcAvatarCount from "./OcAvatarCount/OcAvatarCount.vue"
-import OcAvatarLink from "./OcAvatarLink.vue"
-import OcAvatarGroup from "./OcAvatarGroup.vue"
+import OcAvatarCount from "../OcAvatarCount/OcAvatarCount.vue"
+import OcAvatarLink from "../OcAvatarLink/OcAvatarLink.vue"
+import OcAvatarGroup from "../OcAvatarGroup/OcAvatarGroup.vue"
 import OcAvatarFederated from "../OcAvatarFederated/OcAvatarFederated.vue"
-import OcAvatarGuest from "./OcAvatarGuest.vue"
+import OcAvatarGuest from "../OcAvatarGuest/OcAvatarGuest.vue"
 
 /**
  * Display a group of avatars
