@@ -51,9 +51,9 @@
 
 <script>
 import OcButton from "../atoms/OcButton/OcButton.vue"
-import OcGrid from "../OcGrid/OcGrid.vue"
+import OcGrid from "../atoms/OcGrid/OcGrid.vue"
 import OcIcon from "../atoms/OcIcon/OcIcon.vue"
-import OcSpinner from "../OcSpinner/OcSpinner.vue"
+import OcSpinner from "../atoms/OcSpinner/OcSpinner.vue"
 
 /**
  * The search bar is an input element used for searching server side resources or to filter local results.

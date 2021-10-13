@@ -21,8 +21,7 @@
 
 <script>
 import uniqueId from "../../utils/uniqueId"
-
-import OcSelect from "../OcSelect/OcSelect.vue"
+import OcSelect from "../atoms/OcSelect/OcSelect.vue"
 
 /**
  * Select how many items will be displayed per page
