@@ -1,8 +1,12 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
+const path = require("path")
+const { merge } = require("webpack-merge")
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../docs/**/*.stories.mdx",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -27,19 +31,19 @@ module.exports = {
               { loader: "postcss-loader" },
               { loader: "sass-loader" },
               {
-                loader: "sass-resources-loader", options: {
+                loader: "sass-resources-loader",
+                options: {
                   resources: [
                     path.resolve(__dirname, "../src/assets/tokens/ods.scss"),
-                    path.resolve(__dirname, "../src/styles/styles.scss")
-                  ]
-                }
-              }
+                    path.resolve(__dirname, "../src/styles/styles.scss"),
+                  ],
+                },
+              },
             ],
-            include: path.resolve(__dirname, "../")
-          }
-        ]
-      }
-    });
-  }
-};
-
+            include: path.resolve(__dirname, "../"),
+          },
+        ],
+      },
+    })
+  },
+}
