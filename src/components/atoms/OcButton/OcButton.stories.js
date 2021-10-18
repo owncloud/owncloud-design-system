@@ -1,3 +1,4 @@
+import { action } from "@storybook/addon-actions"
 import OcButton from "./OcButton.vue"
 
 export default {
@@ -17,19 +18,17 @@ export default {
       defaultValue: "medium",
       options: ["small", "medium", "large"],
     },
-    // TODO: Neither "input" nor "string" are working, what's the necessary value here?
     href: {
-      control: { type: "string" },
-      defaultValue: null,
+      control: { type: "text" },
+      defaultValue: "https://owncloud.design",
     },
     to: {
       control: { type: "object" },
       defaultValue: null,
     },
-    // TODO: Neither "input" nor "string" are working, what's the necessary value here?
     ariaLabel: {
-      control: { type: "input" },
-      defaultValue: null,
+      control: { type: "text" },
+      defaultValue: "Click me for magic",
     },
     submit: {
       control: { type: "select" },
@@ -68,15 +67,14 @@ const Template = (args, { argTypes }) => ({
   components: { OcButton },
   data() {
     return {
-      args: { label: args.text, ...args },
+      args: { onClick: { action: "clicked" }, ...args },
     }
   },
-  // TODO: How to make buttonText editable?
-  // TODO: How to make onClick event handler work? (For Actions addon)
-  template: `<oc-button @onClick="onClick" v-bind="$props">${args.text}</oc-button>`,
+  template: `<oc-button @click="action" v-bind="$props">${args.text}</oc-button>`,
+  methods: { action: action("clicked") },
 })
 
 export const Example = Template.bind({})
 Example.args = {
-  buttonText: "Make me editable please!",
+  text: "Make me editable please!",
 }
