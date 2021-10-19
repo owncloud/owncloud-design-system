@@ -75,7 +75,7 @@ const Template = (args, { argTypes }) => ({
   methods: { action: action("clicked") },
 })
 
-export const Example = Template.bind({})
-Example.args = {
+export const Component = Template.bind({})
+Component.args = {
   text: "Button",
 }
