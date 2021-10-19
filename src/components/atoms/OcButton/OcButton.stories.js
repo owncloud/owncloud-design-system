@@ -70,11 +70,12 @@ const Template = (args, { argTypes }) => ({
       args: { onClick: { action: "clicked" }, ...args },
     }
   },
+  // TODO: Text changes only after refreshing the browser
   template: `<oc-button @click="action" v-bind="$props">${args.text}</oc-button>`,
   methods: { action: action("clicked") },
 })
 
 export const Example = Template.bind({})
 Example.args = {
-  text: "Make me editable please!",
+  text: "Button",
 }
