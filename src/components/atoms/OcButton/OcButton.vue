@@ -195,6 +195,8 @@ export default {
 <style lang="scss">
 @mixin oc-button-gap($factor) {
   gap: round($oc-space-small * $factor / 2) * 2;
+  // TODO: This throws an error but is needed for Sass migration:
+  // gap: round(math.div($oc-space-small * $factor, 2)) * 2;
 }
 
 @mixin oc-button-line-height($factor) {
