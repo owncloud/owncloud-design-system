@@ -170,5 +170,8 @@
   "engines": {
     "node": ">= 14.0.0",
     "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "sass-migrator": "^1.5.2"
   }
 }
