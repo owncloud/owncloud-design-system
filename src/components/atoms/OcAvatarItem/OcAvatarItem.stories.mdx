@@ -1,0 +1,79 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+import OcAvatarItem from "./OcAvatarItem.vue"
+
+<!-- TODO: How to display icon? -->
+
+<Meta title="Atoms/Avatar Item/Examples" component={OcAvatarItem} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OcAvatarItem },
+  template: `<oc-avatar-item v-bind="$props" />`,
+})
+
+# OcAvatarItem
+
+<br />
+
+## Empty OcAvatarItem
+
+<Canvas>
+  <Story
+    name="Empty"
+    args={{
+      name: "Public link",
+      accessibleLabel: "Public link",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## OcAvatarItem with icon and default background
+
+<Canvas>
+  <Story
+    name="Icon and default background"
+    args={{
+      name: "Public link",
+      icon: "close",
+      accessibleLabel: "Public link",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## OcAvatarItem with icon and custom background
+
+<Canvas>
+  <Story
+    name="Icon and custom background"
+    args={{
+      name: "Public link",
+      icon: "close",
+      background: "#465a64",
+      accessibleLabel: "Public link",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## OcAvatarItem with icon and custom background and custom width and iconsize
+
+<Canvas>
+  <Story
+    name="Icon and custom background, width, icon size"
+    args={{
+      name: "Public link",
+      icon: "close",
+      background: "#465a64",
+      accessibleLabel: "Public link",
+      width: 100,
+      iconSize: "large",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
