@@ -50,9 +50,3 @@ export default {
   justify-content: center;
 }
 </style>
-
-<docs>
-```js
-<oc-avatar-count :count="21" />
-```
-</docs>
