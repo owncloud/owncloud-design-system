@@ -6,6 +6,8 @@
 // @param  {Color}  $color to tint
 // @param  {Number} $percentage of `$color` in returned color
 // @return {Color}
+@use "sass:math";
+
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
 }
@@ -70,7 +72,7 @@
     $background: #fff;
   }
 
-  @return $foreground * $background / 255;
+  @return math.div($foreground * $background, 255);
 }
 
 /// Returns the value in rem for a given pixel value.
@@ -84,11 +86,11 @@
   }
 
   @else if $unit == 'px' {
-    @return $value / $size-m * 1rem;
+    @return math.div($value, $size-m) * 1rem;
   }
 
   @else if $unit == 'em' {
-    @return $unit / 1em * 1rem;
+    @return math.div($unit, 1em) * 1rem;
   }
 
   @else {
@@ -107,11 +109,11 @@
   }
 
   @else if $unit == 'em' {
-    @return ($value / 1em) * $size-m;
+    @return math.div($value, 1em) * $size-m;
   }
 
   @else if $unit == 'rem' {
-    @return ($value / 1rem) * $size-m;
+    @return math.div($value, 1rem) * $size-m;
   }
 
   @else {
