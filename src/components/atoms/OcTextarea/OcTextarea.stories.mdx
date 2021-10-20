@@ -1,0 +1,91 @@
+import { action } from "@storybook/addon-actions"
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+
+import OcTextarea from "./OcTextarea.vue"
+
+<Meta title="Atoms/Textarea/Examples" component={OcTextarea} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OcTextarea },
+  template: `<oc-textarea @focus="focus" @input="input" @keydown="keydown" v-bind="$props" />`,
+  methods: { focus: action("focused"), input: action("input"), keydown: action("keydown") },
+})
+
+# Examples for OcTextarea
+
+<br />
+
+## Standard
+
+<Canvas>
+  <Story
+    name="Standard"
+    args={{
+      label: "A simple textarea",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      label: "Disabled textarea",
+      value: "Disabled textarea",
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description message
+
+<Canvas>
+  <Story
+    name="Description message"
+    args={{
+      label: "Textarea with description message below",
+      descriptionMessage: "This is a description message.",
+      fixMessageLine: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Error and warning message with reserved space below
+
+<Canvas>
+  <Story
+    name="Error and warning with space below"
+    args={{
+      label: "Textarea with error and warning messages with reserved space below",
+      errorMessage: "This is a error message.",
+      warningMessage: "This is a warning message.",
+      fixMessageLine: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Error and warning message without reserved space below
+
+<Canvas>
+  <Story
+    name="Error and warning without space below"
+    args={{
+      label: "Textarea with error and warning messages without reserved space below",
+      errorMessage: "This is a error message.",
+      warningMessage: "This is a warning message.",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
