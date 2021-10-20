@@ -33,7 +33,7 @@
     "styleguide:build": "vue-styleguidist build --config ./config/docs.config.js",
     "tokens": "node build/build-tokens.js",
     "tokens:w": "onchange -i \"./src/tokens/**/*.json\" -- npm run tokens",
-    "test": "jest --config ./jest.conf.js --coverage --json --outputFile=.jest-test-results.json",
+    "test": "jest --config ./jest.conf.js --coverage --json",
     "depcheck": "depcheck",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -60,7 +60,6 @@
     "@popperjs/core": "^2.4.0",
     "@storybook/addon-a11y": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.10",
-    "@storybook/addon-jest": "^6.3.12",
     "@storybook/addon-links": "^6.3.10",
     "@storybook/addons": "^6.3.12",
     "@storybook/components": "^6.3.0",

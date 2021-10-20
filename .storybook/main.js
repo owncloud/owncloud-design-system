@@ -11,7 +11,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@storybook/addon-jest",
     "addon-screen-reader",
   ],
   webpackFinal: async (storybookWebpackConfig, { configType }) => {
