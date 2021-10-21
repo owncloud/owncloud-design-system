@@ -47,8 +47,8 @@ export default {
   },
   methods: {
     sortData(a, b) {
-      let aValue = a[this.sortBy]
-      let bValue = b[this.sortBy]
+      let aValue = a[this.sortBy].toLowerCase()
+      let bValue = b[this.sortBy].toLowerCase()
       const modifier = this.sortDir === SORT_DIRECTION_ASC ? 1 : -1
 
       const { sortable } = this.fields.find(f => f.name === this.sortBy)
