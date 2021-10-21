@@ -1,8 +1,38 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs"
-
 import OcButton from "./OcButton.vue"
 
-<Meta title="Atoms/Button/Info" component={OcButton} />
+export const Button = args => ({
+  components: { OcButton },
+  data() {
+    return {
+      args: { ariaLabel: args.text, ...args },
+    }
+  },
+  template: `<oc-button v-bind="args">{{args.text}}</oc-button>`,
+})
+
+<!--
+export const ButtonWithIcon = args => ({
+  components: { OcButton },
+  data() {
+    return {
+      args: { ariaLabel: args.text, ...args },
+    }
+  },
+  template: `<oc-button v-bind="args">{{args.text}}</oc-button>`,
+})
+
+export const ButtonGroup = args => ({
+  components: { OcButton },
+  data() {
+    return {
+      args: { ariaLabel: args.text, ...args },
+    }
+  },
+  template: `<oc-button v-bind="args">{{args.text}}</oc-button>`,
+})  -->
+
+<Meta title="Atoms/Button/Examples" component={OcButton} />
 
 # OcButton
 
@@ -34,42 +64,100 @@ When an aria-label attribute exists, its value will override the button text. So
 
 Every button has to have an accessible name. It cannot be provided by a text between the button tags (for example, because it is an icon button; see "Upload" example below), the accessible name has to be provided by `aria-label`.
 
-<!-- ## Examples
+## Examples
 
-export const Template = (args) => ({
-  components: { OcButton },
-  data(){
-    return {
-      args: {ariaLabel: args.text, ...args}
-    }
-  },
-  template: `
-    <div>
-      <oc-button v-bind="args">{{args.text}}</oc-button>
-    </div>`,
-});
-
-### Standard
+### Button variations
 
 <Canvas>
   <Story
-    name="Standard"
+    name="Passive"
     args={{
-      text: 'CLICK ME!',
-    }}>
-    {Template.bind({})}
+      text: "Passive",
+      variation: "passive",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Primary"
+    args={{
+      text: "Primary",
+      variation: "primary",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Success"
+    args={{
+      text: "Success",
+      variation: "success",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Warning"
+    args={{
+      text: "Warning",
+      variation: "warning",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Danger"
+    args={{
+      text: "Danger",
+      variation: "danger",
+    }}
+  >
+    {Button.bind({})}
   </Story>
 </Canvas>
 
-### Disabled
+### Button sizes
 
 <Canvas>
   <Story
-    name="Disabled"
+    name="Large"
     args={{
-      text: 'CLICK ME!',
-      disabled: true
-    }}>
-    {Template.bind({})}
+      text: "Large",
+      size: "large",
+    }}
+  >
+    {Button.bind({})}
   </Story>
-</Canvas> -->
+  <Story
+    name="Medium (default)"
+    args={{
+      text: "Medium (default)",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{
+      text: "Small",
+      size: "small",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+### Button with icons
+
+<!--
+<Canvas></Canvas> -->
+
+### Using buttons in a group
+
+<!--
+<Canvas></Canvas> -->
+
+### All available button combinations
+
+<!--
+<Canvas></Canvas> -->
