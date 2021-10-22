@@ -1,8 +1,10 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs"
 import OcButton from "./OcButton.vue"
+// import OcIcon from "../OcIcon/OcIcon.vue"
 
 export const Button = args => ({
   components: { OcButton },
+  // subcomponents: OcIcon,
   data() {
     return {
       args: { ariaLabel: args.text, ...args },
@@ -13,15 +15,21 @@ export const Button = args => ({
 
 <!--
 export const ButtonWithIcon = args => ({
-  components: { OcButton },
+  components: { OcButton, OcIcon },
   data() {
     return {
-      args: { ariaLabel: args.text, ...args },
+      args: { ariaLabel: args.text, name: args.icon, ...args },
     }
   },
-  template: `<oc-button v-bind="args">{{args.text}}</oc-button>`,
-})
+  template: `
+    <oc-button v-bind="args">
+      <oc-icon name={{args.icon}} />
+      {{args.text}}
+    </oc-button>
+  `,
+}) -->
 
+<!--
 export const ButtonGroup = args => ({
   components: { OcButton },
   data() {
@@ -149,15 +157,455 @@ Every button has to have an accessible name. It cannot be provided by a text bet
 
 ### Button with icons
 
+WORK IN PROGRESS
+
+<!-- TODO: Add buttons with icons -->
 <!--
-<Canvas></Canvas> -->
+<Canvas>
+  <Story
+    name="Home"
+    args={{
+      text: "Home",
+      variation: "passive",
+      icon: "home",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas> -->
 
 ### Using buttons in a group
+
+WORK IN PROGRESS
+
+<!-- TODO: Add buttons in a group -->
 
 <!--
 <Canvas></Canvas> -->
 
 ### All available button combinations
 
-<!--
-<Canvas></Canvas> -->
+<br />
+
+<!-- TODO: List all buttons combinations (including dark background) with icon-->
+
+#### Default appearance of interactive elements (links and buttons)
+
+<Canvas>
+  <Story
+    name="Passive outline (default)"
+    args={{
+      text: "Passive outline (default)",
+      variation: "passive",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Passive filled"
+    args={{
+      text: "Passive filled",
+      variation: "passive",
+      appearance: "filled",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Passive raw"
+    args={{
+      text: "Passive raw",
+      variation: "passive",
+      appearance: "raw",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled: Passive outline (default)"
+    args={{
+      text: "Disabled: Passive outline (default)",
+      variation: "passive",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Passive filled"
+    args={{
+      text: "Disabled: Passive filled",
+      variation: "passive",
+      appearance: "filled",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Passive raw"
+    args={{
+      text: "Disabled: Passive raw",
+      variation: "passive",
+      appearance: "raw",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+#### Used as a visual clue to the main action on each page
+
+<Canvas>
+  <Story
+    name="Primary outline (default)"
+    args={{
+      text: "Primary outline (default)",
+      variation: "primary",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Primary filled"
+    args={{
+      text: "Primary filled",
+      variation: "primary",
+      appearance: "filled",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Primary raw"
+    args={{
+      text: "Primary raw",
+      variation: "primary",
+      appearance: "raw",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled: Primary outline (default)"
+    args={{
+      text: "Disabled: Primary outline (default)",
+      variation: "primary",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Primary filled"
+    args={{
+      text: "Disabled: Primary filled",
+      variation: "primary",
+      appearance: "filled",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Primary raw"
+    args={{
+      text: "Disabled: Primary raw",
+      variation: "primary",
+      appearance: "raw",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+#### Useful as confirmations or to finish a multi-step process
+
+<Canvas>
+  <Story
+    name="Success outline (default)"
+    args={{
+      text: "Success outline (default)",
+      variation: "success",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Success filled"
+    args={{
+      text: "Success filled",
+      variation: "success",
+      appearance: "filled",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Success raw"
+    args={{
+      text: "Success raw",
+      variation: "success",
+      appearance: "raw",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled: Success outline (default)"
+    args={{
+      text: "Disabled: Success outline (default)",
+      variation: "success",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Success filled"
+    args={{
+      text: "Disabled: Success filled",
+      variation: "success",
+      appearance: "filled",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Success raw"
+    args={{
+      text: "Disabled: Success raw",
+      variation: "success",
+      appearance: "raw",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+#### Used as a visual hint for certain actions, like publicly sharing a file or removing a share
+
+<Canvas>
+  <Story
+    name="Warning outline (default)"
+    args={{
+      text: "Warning outline (default)",
+      variation: "warning",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Warning filled"
+    args={{
+      text: "Warning filled",
+      variation: "warning",
+      appearance: "filled",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Warning raw"
+    args={{
+      text: "Warning raw",
+      variation: "warning",
+      appearance: "raw",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled: Warning outline (default)"
+    args={{
+      text: "Disabled: Warning outline (default)",
+      variation: "warning",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Warning filled"
+    args={{
+      text: "Disabled: Warning filled",
+      variation: "warning",
+      appearance: "filled",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Warning raw"
+    args={{
+      text: "Disabled: Warning raw",
+      variation: "warning",
+      appearance: "raw",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+#### Use for triggering possible destructive and non-reversible actions, like permanently deleting a file
+
+<Canvas>
+  <Story
+    name="Danger outline (default)"
+    args={{
+      text: "Danger outline (default)",
+      variation: "danger",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Danger filled"
+    args={{
+      text: "Danger filled",
+      variation: "danger",
+      appearance: "filled",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Danger raw"
+    args={{
+      text: "Danger raw",
+      variation: "danger",
+      appearance: "raw",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled: Danger outline (default)"
+    args={{
+      text: "Disabled: Danger outline (default)",
+      variation: "danger",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Danger filled"
+    args={{
+      text: "Disabled: Danger filled",
+      variation: "danger",
+      appearance: "filled",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Danger raw"
+    args={{
+      text: "Disabled: Danger raw",
+      variation: "danger",
+      appearance: "raw",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+#### Use on a dark background
+
+<!-- TODO: Display dark background for these stories -->
+
+<Canvas>
+  <Story
+    name="Inverse outline (default)"
+    args={{
+      text: "Inverse outline (default)",
+      variation: "inverse",
+    }}
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+  >
+    >{Button.bind({})}
+  </Story>
+  <Story
+    name="Inverse filled"
+    args={{
+      text: "Inverse filled",
+      variation: "inverse",
+      appearance: "filled",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Inverse raw"
+    args={{
+      text: "Inverse raw",
+      variation: "inverse",
+      appearance: "raw",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled: Inverse outline (default)"
+    args={{
+      text: "Disabled: Inverse outline (default)",
+      variation: "inverse",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Inverse filled"
+    args={{
+      text: "Disabled: Inverse filled",
+      variation: "inverse",
+      appearance: "filled",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+  <Story
+    name="Disabled: Inverse raw"
+    args={{
+      text: "Disabled: Inverse raw",
+      variation: "inverse",
+      appearance: "raw",
+      disabled: true,
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
