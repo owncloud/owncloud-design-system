@@ -4,6 +4,7 @@ import OcButton from "./OcButton.vue"
 export default {
   component: OcButton,
   title: "Atoms/Button",
+  parameters: { controls: { sort: "alpha" } },
   argTypes: {
     type: {
       control: { type: "select" },
