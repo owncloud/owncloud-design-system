@@ -1,0 +1,92 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+
+import OcCheckbox from "./OcCheckbox.vue"
+
+<Meta title="Atoms/Checkbox/Examples" component={OcCheckbox} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OcCheckbox },
+  data() {
+    return {
+      args: { ...args },
+      availableOptions: ["Water", "Wine", "Beer"],
+      selectedOptions: [],
+    }
+  },
+  template: `<oc-checkbox v-bind="args"/>`,
+})
+
+# OcCheckbox
+
+<br />
+
+## Checkboxes Types
+
+<br />
+
+### Small
+
+<Canvas>
+  <Story
+    name="Small"
+    args={{
+      size: "small",
+      label: "Small checkbox",
+      ariaLabel: "Small checkbox",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Medium
+
+<Canvas>
+  <Story
+    name="Medium"
+    args={{
+      value: true,
+      size: "medium",
+      label: "Medium checkbox",
+      ariaLabel: "Medium checkbox",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Large
+
+<Canvas>
+  <Story
+    name="Large"
+    args={{
+      value: true,
+      size: "large",
+      label: "Large checkbox",
+      ariaLabel: "Large checkbox",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Checkbox group with array model
+
+<!-- TODO: Display selected props inside array -->
+
+<Canvas>
+  <Story
+    name="With array model"
+    args={{
+      key: "'option-' + o",
+      vFor: "o in availableOptions",
+      vModel: "selectedOptions",
+      option: "o",
+      label: "o",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
