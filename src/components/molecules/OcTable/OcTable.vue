@@ -46,12 +46,12 @@
           $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
-        @dragstart.native.stop="dragStart(item)"
-        @drop.native.stop="dropRowEvent(item.id, $event)"
-        @dragenter.native.prevent.stop="dropRowStyling(item.id, false, $event)"
-        @dragleave.native.prevent.stop="dropRowStyling(item.id, true, $event)"
+        @dragstart.native="dragStart(item)"
+        @drop.native="dropRowEvent(item.id, $event)"
+        @dragenter.native.prevent="dropRowStyling(item.id, false, $event)"
+        @dragleave.native.prevent="dropRowStyling(item.id, true, $event)"
         @mouseleave="dropRowStyling(item.id, true, $event)"
-        @dragover.native.prevent.stop
+        @dragover.native.prevent
       >
         <oc-td
           v-for="(field, tdIndex) in fields"
@@ -254,6 +254,8 @@ export default {
     },
     dropRowEvent(id, event) {
       if (!this.dragDrop) return
+      const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
+      if (hasFilePayload) return
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
       const dropFileId = dropTargetTr.dataset.fileId
@@ -261,6 +263,8 @@ export default {
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
     dropRowStyling(id, leaving, event) {
+      const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
+      if (hasFilePayload) return
       if (event.currentTarget?.contains(event.relatedTarget)) {
         return
       }
