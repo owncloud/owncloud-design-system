@@ -47,8 +47,8 @@ export default {
   },
   methods: {
     sortData(a, b) {
-      let aValue = a[this.sortBy].toLowerCase()
-      let bValue = b[this.sortBy].toLowerCase()
+      let aValue = a[this.sortBy]
+      let bValue = b[this.sortBy]
       const modifier = this.sortDir === SORT_DIRECTION_ASC ? 1 : -1
 
       const { sortable } = this.fields.find(f => f.name === this.sortBy)
@@ -70,11 +70,9 @@ export default {
       if (!isNaN(aValue) && !isNaN(bValue)) {
         return (aValue - bValue) * modifier
       }
-
-      if (aValue < bValue) return -1 * modifier
-      if (aValue > bValue) return modifier
-
-      return 0
+      const userLang = navigator.language || navigator.userLanguage; 
+      const compare = aValue.toString().localeCompare(bValue, userLang, { sensitivity: 'base' })
+      return compare * modifier;
     },
     fieldIsSortable({ sortable }) {
       return !!sortable
