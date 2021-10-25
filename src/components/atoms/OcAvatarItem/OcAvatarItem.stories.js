@@ -2,8 +2,7 @@ import OcAvatarItem from "./OcAvatarItem.vue"
 
 export default {
   component: OcAvatarItem,
-  title: "Atoms/Avatar Item",
-  // TODO: Sort props alphabetically or stick to custom order?
+  title: "Atoms/AvatarItem",
   parameters: { controls: { sort: "alpha" } },
   argTypes: {
     name: {

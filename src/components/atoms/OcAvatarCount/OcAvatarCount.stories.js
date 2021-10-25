@@ -2,7 +2,7 @@ import OcAvatarCount from "./OcAvatarCount.vue"
 
 export default {
   component: OcAvatarCount,
-  title: "Atoms/Avatar Count",
+  title: "Atoms/AvatarCount",
   argTypes: {
     count: {
       control: { type: "number" },

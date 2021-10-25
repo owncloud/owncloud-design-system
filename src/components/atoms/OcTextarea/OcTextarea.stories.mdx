@@ -14,15 +14,13 @@ export const Template = (args, { argTypes }) => ({
 
 # Examples for OcTextarea
 
-<br />
-
 ## Standard
 
 <Canvas>
   <Story
     name="Standard"
     args={{
-      label: "A simple textarea",
+      label: "A simple textarea with required label",
     }}
   >
     {Template.bind({})}
@@ -36,7 +34,7 @@ export const Template = (args, { argTypes }) => ({
     name="Disabled"
     args={{
       label: "Disabled textarea",
-      value: "Disabled textarea",
+      value: "Uneditable placheolder value",
       disabled: true,
     }}
   >
@@ -51,8 +49,7 @@ export const Template = (args, { argTypes }) => ({
     name="Description message"
     args={{
       label: "Textarea with description message below",
-      descriptionMessage: "This is a description message.",
-      fixMessageLine: true,
+      descriptionMessage: "This is a description message."
     }}
   >
     {Template.bind({})}
