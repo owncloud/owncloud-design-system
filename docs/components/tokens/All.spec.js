@@ -26,6 +26,6 @@ describe("All.vue", () => {
   })
 
   it("should apply inline styles", () => {
-    expect(vm.$el.querySelector(".example.color").style).toBeDefined()
+    expect(vm.$el.querySelector(".color").style).toBeDefined()
   })
 })

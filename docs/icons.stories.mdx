@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+import Icons from './components/tokens/Icon.vue'
+
+<Meta title="Basics/Icons" />
+
+export const Template = () => ({
+  components: { Icons },
+  template: `<icons />`
+})
+
+# Icons
+
+ownCloud Design System is an open source tool for building UI Design Systems with [Vue.js](https://vuejs.org). 
+It provides you and your team a set of organized tools, patterns & practices that work as the foundation for your application development. 
+
+<Canvas>
+  <Story
+    name="All"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,30 +1,27 @@
 <template>
   <div class="component-status">
-    <ul class="status-list">
+    <ul class="uk-list">
       <li>
         <oc-icon name="ready" variation="success" />
-        <p>Ready</p>
+        Ready
       </li>
       <li>
         <oc-icon name="review" variation="warning" />
-        <p>Under review</p>
+        Under review
       </li>
       <li>
         <oc-icon name="deprecated" variation="danger" />
-        <p>Deprecated</p>
+        Deprecated
       </li>
       <li>
         <oc-icon name="prototype" />
-        <p>Prototype</p>
+        Prototype
       </li>
-      <li>
-        <span>—</span>
-        <p>Not applicable</p>
-      </li>
+      <li>- Not applicable</li>
     </ul>
     <table>
       <thead>
-        <tr>
+        <tr class="uk-text-left">
           <th>Component Name</th>
           <th>Released in</th>
           <th>Status</th>
@@ -33,7 +30,7 @@
       <tbody>
         <tr v-for="(component, index) in components" :key="index" class="component">
           <td v-if="component.name">
-            <a :href="`/#/oC%20Components/${component.name}`">
+            <a :href="`/?path=/docs/atoms-${component.name.replace('Oc', '')}--component`">
               <code class="name">{{ component.name }}</code>
             </a>
           </td>
@@ -64,12 +61,14 @@
 </template>
 
 <script>
-// If you want to use your own tokens here, change the following line to:
-// import designTokens from "@/assets/tokens/tokens.raw.json"
 import orderBy from "../../utils/orderBy"
+import OcIcon from "../../../src/components/atoms/OcIcon/OcIcon.vue"
 
 export default {
   name: "Components",
+  components: {
+    OcIcon,
+  },
   data() {
     return {
       components: this.orderData(this.getComponents()),
@@ -78,7 +77,7 @@ export default {
   methods: {
     getComponents: function () {
       const components = []
-      const contexts = [require.context("@/components/", true, /\.vue$/)]
+      const contexts = [require.context("../../../src/components/", true, /\.vue$/)]
 
       contexts.forEach(context => {
         context.keys().forEach(key => components.push(context(key).default))
@@ -94,105 +93,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import "../../docs.tokens";
-
-/* STYLES
---------------------------------------------- */
-.component-status {
-  @include reset;
-  font-family: $font-heading;
-  font-weight: $weight-normal;
-  line-height: $line-height-xs;
-  color: $color-rich-black;
-  margin-bottom: $space-s;
-  font-style: normal;
-  @media (max-width: 1000px) {
-    overflow-x: auto;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-  }
-  thead th {
-    padding: $space-s;
-    background: $color-cloud;
-    font-size: $size-s;
-    font-weight: $weight-bold;
-    color: $color-oxford-blue;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: $weight-semi-bold;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: left;
-    // Chrome has a bug related to thead, this only works on th:
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
-    &:first-child {
-      border-top-left-radius: $radius-default;
-      border-bottom-left-radius: $radius-default;
-    }
-    &:last-child {
-      border-top-right-radius: $radius-default;
-      border-bottom-right-radius: $radius-default;
-    }
-  }
-  tr {
-    border-bottom: 1px solid #dfe3e6;
-    &:last-child {
-      border: 0;
-    }
-  }
-  td {
-    font-size: $size-s;
-    padding: $space-s;
-    &:first-child {
-      font-weight: $weight-bold;
-      white-space: nowrap;
-    }
-  }
-  .status-list {
-    margin: 0 0 $space-m;
-    overflow: hidden;
-    padding: 0;
-    list-style: none;
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-    @media (max-width: 1000px) {
-      display: block;
-    }
-    li {
-      margin: 0 $space-m 0 0;
-      color: $color-silver;
-      font-size: $size-s;
-      align-items: center;
-      display: flex;
-      @media (max-width: 1000px) {
-        width: 50%;
-        float: left;
-        margin: 0;
-      }
-      svg,
-      span {
-        margin: -2px calc(#{$space-s} / 2) 0 0;
-      }
-      p {
-        @media (max-width: 1000px) {
-          margin: $space-xs;
-        }
-      }
-    }
-  }
-}
-</style>
-
-<docs>
-  ```jsx
-  <components />
-  ```
-</docs>

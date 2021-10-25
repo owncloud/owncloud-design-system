@@ -22,12 +22,7 @@ module.exports = {
     "<rootDir>/src/utils/**/*.{js,vue}",
     "<rootDir>/src/system.js",
     "<rootDir>/docs/**/*.{js,vue}",
-    "!<rootDir>/src/main.js",
-    "!<rootDir>/src/router/index.js",
     "!<rootDir>/node_modules/**",
-    "!<rootDir>/docs/docs.helper.js",
     "!<rootDir>/docs/components/status/*",
-    "!<rootDir>/docs/components/Preview.js",
-    "!<rootDir>/docs/utils/tabs.js",
   ],
 }
