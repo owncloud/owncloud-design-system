@@ -1,14 +1,22 @@
 import { create } from "@storybook/theming"
 
-export default create({
-  base: "light",
+const colors = {
+  primaryBlue: "#4a76ac",
+  primaryOrange: "rgb(229,111,53)",
+  swatchBlue: "#041e42",
+  textDefault: "white",
+  textMuted: "#f8f8f8"
+} 
 
-  colorPrimary: "hotpink",
-  colorSecondary: "deepskyblue",
+export default create({
+  base: "dark",
+
+  colorPrimary: colors.primaryBlue,
+  colorSecondary: colors.primaryOrange,
 
   // UI
-  appBg: "white",
-  appContentBg: "silver",
+  appBg: colors.swatchBlue,
+  appContentBg: colors.swatchBlue,
   appBorderColor: "grey",
   appBorderRadius: 4,
 
@@ -17,21 +25,21 @@ export default create({
   fontCode: "monospace",
 
   // Text colors
-  textColor: "black",
-  textInverseColor: "rgba(255,255,255,0.9)",
+  textColor: colors.textDefault,
+  textInverseColor: colors.primaryOrange,
 
   // Toolbar default and active colors
-  barTextColor: "silver",
-  barSelectedColor: "black",
-  barBg: "hotpink",
+  barTextColor: colors.textMuted,
+  barSelectedColor: colors.textDefault,
+  barBg: colors.primaryBlue,
 
   // Form colors
-  inputBg: "white",
-  inputBorder: "silver",
-  inputTextColor: "black",
+  inputBg: "black",
+  inputBorder: colors.textMuted,
   inputBorderRadius: 4,
+  inputTextColor: colors.textMuted,
 
-  brandTitle: "ownCloud Storybook",
-  brandUrl: "https://example.com",
-  brandImage: "https://samhobbs.co.uk/sites/default/files/owncloud-logo4.png",
+  brandTitle: "ownCloud Design System",
+  brandUrl: "https://owncloud.design",
+  brandImage: "",
 })

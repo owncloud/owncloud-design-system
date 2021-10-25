@@ -3,6 +3,7 @@ const { merge } = require("webpack-merge")
 
 module.exports = {
   stories: [
+    "../docs/getting-started.stories.mdx",
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
     "../docs/**/*.stories.mdx",
@@ -10,6 +11,7 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@storybook/addon-controls",
     "@storybook/addon-a11y",
     "addon-screen-reader",
   ],
