@@ -103,7 +103,7 @@ export default {
   background-color: var(--oc-color-swatch-inverse-default);
   border: 1px solid var(--oc-color-input-border);
   border-radius: 6px;
-  display: flex;
+  display: inline-flex;
   gap: var(--oc-space-xsmall);
   justify-content: flex-start;
   padding: var(--oc-space-xsmall);
@@ -120,12 +120,3 @@ export default {
   }
 }
 </style>
-
-<docs>
-```js
-<div class="uk-flex uk-flex-column uk-flex-left uk-flex-top">
-  <oc-recipient :recipient="{ name: 'Alice', avatar: 'https://picsum.photos/24', hasAvatar: true, isAvatarLoading: false }" class="oc-mb-s" />
-  <oc-recipient :recipient="{ name: 'Alice', icon: { name: 'person', label: 'User' }, hasAvatar: false }" />
-</div>
-```
-</docs>

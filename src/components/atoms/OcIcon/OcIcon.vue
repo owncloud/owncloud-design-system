@@ -258,7 +258,7 @@ export default {
   }
 }
 </style>
-
+<!--
 <docs>
 ```js
 <template>
@@ -378,3 +378,4 @@ export default {
 </script>
 ```
 </docs>
+-->

@@ -56,8 +56,8 @@ export default {
 }
 </script>
 
-<docs>
+<!-- <docs>
 ```js
 <oc-avatar-group name="Group" accessible-label="Group" />
 ```
-</docs>
+</docs> -->

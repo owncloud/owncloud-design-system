@@ -149,7 +149,7 @@ label > .oc-radio + span {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <template>
   <div>
@@ -180,4 +180,4 @@ label > .oc-radio + span {
   }
 </script>
 ```
-</docs>
+</docs> -->

@@ -98,7 +98,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 Component to display various information.
 ```js
 <oc-grid>
@@ -130,4 +130,4 @@ The tag component can be rendered as a different element if desired. You can spe
   </div>
 </oc-grid>
 ```
-</docs>
+</docs> -->

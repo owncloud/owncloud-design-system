@@ -193,7 +193,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <template>
   <div class="uk-button-group oc-mt-s">
@@ -278,4 +278,4 @@ export default {
 }
 </script>
 ```
-</docs>
+</docs> -->

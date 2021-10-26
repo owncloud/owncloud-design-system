@@ -203,7 +203,12 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
+
+https://github.com/storybookjs/storybook/issues/2214
+
+
+
 For detailed documentation (props, slots, events, etc.), please visit https://vue-select.org/
 
 ```js
@@ -391,4 +396,4 @@ It is important to specify the `option-label` prop on the `oc-select` to make fi
 ```js
 <oc-select :options="['Apple', 'Bannana', 'Orange', 'Pear']" :multiple="true" :loading="true" />
 ```
-</docs>
+</docs> -->

@@ -134,7 +134,7 @@ $default-size: 64px;
   }
 }
 </style>
-<docs>
+<!-- <docs>
 ```js
 <div class="uk-flex uk-flex-middle">
   <section>
@@ -148,4 +148,4 @@ $default-size: 64px;
   </section>
 </div>
 ```
-</docs>
+</docs> -->

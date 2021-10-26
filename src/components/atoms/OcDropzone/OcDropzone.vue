@@ -33,10 +33,10 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
   <oc-dropzone>
     Drag and drop to upload content into current folder
   </oc-dropzone>
 ```
-</docs>
+</docs> -->

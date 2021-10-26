@@ -118,7 +118,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <template>
   <oc-status-indicators :resource="resource" :indicators="indicators" />
@@ -147,4 +147,4 @@ export default {
   }
 </script>
 ```
-</docs>
+</docs> -->

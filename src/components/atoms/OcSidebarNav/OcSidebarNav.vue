@@ -92,7 +92,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 Sidebar navigation component containing branding
 
 ## Examples
@@ -117,4 +117,4 @@ Sidebar navigation component containing branding
   </template>
 </oc-sidebar-nav>
 ```
-</docs>
+</docs> -->

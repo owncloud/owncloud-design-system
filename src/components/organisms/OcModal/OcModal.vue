@@ -397,7 +397,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
   <oc-modal
     icon="info"
@@ -473,4 +473,4 @@ export default {
 }
 </script>
 ```
-</docs>
+</docs> -->

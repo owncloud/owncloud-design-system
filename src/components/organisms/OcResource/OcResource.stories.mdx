@@ -1,0 +1,141 @@
+
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+
+import OcResource from "./OcResource.vue"
+
+<Meta title="Organisms/Resource/Examples" component={OcResource} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OcResource },
+  template: `<oc-recipient v-bind="$props" />`
+})
+
+# Examples for OcResource
+
+## With targetroute
+
+<Canvas>
+  <Story
+    name="With targetroute"
+    args={{
+      resource: {
+        name: "Documents",
+        path: "/Documents",
+        icon: "folder",
+        indicators: [],
+        type: "folder"
+      },
+      targetRoute: {
+        name: "home",
+        params: {
+          action: "copy"
+        },
+        query: {
+          resource: "notes"
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With displayed path
+
+<Canvas>
+  <Story
+    name="With isPathDisplayed"
+    args={{
+      isPathDisplayed: true,
+      resource: {
+        name: "notes.txt",
+        extension: "txt",
+        path: "Documents/notes.txt",
+        icon: "text",
+        indicators: [],
+        type: "file"
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Not clickable
+
+<Canvas>
+  <Story
+    name="Not clickable"
+    args={{
+      isResourceClickable: false,
+      resource: {
+        name: "notes.txt",
+        extension: "txt",
+        path: "Documents/notes.txt",
+        icon: "text",
+        indicators: [],
+        type: "file"
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With indicators
+
+<Canvas>
+  <Story
+    name="With indicators"
+    args={{
+      isResourceClickable: false,
+      resource: {
+        name: "notes.txt",
+        extension: "txt",
+        path: "Documents/notes.txt",
+        icon: "text",
+        indicators: [
+          {
+            id: 'files-sharing',
+            label: "Shared with other people",
+            visible: true,
+            icon: 'group',
+            handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
+          },
+          {
+            id: 'file-link',
+            label: "Shared via link",
+            visible: true,
+            icon: 'link',
+          }
+        ],
+        type: "file"
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With displayed path and image
+
+<Canvas>
+  <Story
+    name="With isPathDisplayed"
+    args={{
+      isPathDisplayed: true,
+      resource: {
+        name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
+        extension: "jpg",
+        path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
+        thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+        indicators: [],
+        type: "file",
+        opensInNewWindow: true,
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

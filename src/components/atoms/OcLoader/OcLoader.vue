@@ -74,7 +74,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <h3 class="oc-heading-divider">
   Default style
@@ -90,4 +90,4 @@ export default {
   <oc-loader :flat="true" />
 </div>
 ```
-</docs>
+</docs> -->

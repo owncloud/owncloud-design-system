@@ -120,7 +120,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```vue
 <template>
   <section>
@@ -141,4 +141,4 @@ export default {
   }
 </script>
 ```
-</docs>
+</docs> -->

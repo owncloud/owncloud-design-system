@@ -590,7 +590,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <template>
   <div>
@@ -1089,4 +1089,4 @@ export default {
   }
 </script>
 ```
-</docs>
+</docs> -->

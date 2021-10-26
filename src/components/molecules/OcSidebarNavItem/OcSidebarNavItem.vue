@@ -109,7 +109,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ## Examples
 ```js
 <nav class="oc-background-brand">
@@ -146,4 +146,4 @@ export default {
   </oc-list>
 </nav>
 ```
-</docs>
+</docs> -->

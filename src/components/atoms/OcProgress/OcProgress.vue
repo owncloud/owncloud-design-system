@@ -180,7 +180,7 @@ $progress-height-small: 5px !default;
 }
 </style>
 
-<docs>
+<!-- <docs>
 Show progress to the users.
 
 ```js
@@ -189,4 +189,4 @@ Show progress to the users.
   <oc-progress :value="8" :max="10" size="small" variation="warning" />
 </div>
 ```
-</docs>
+</docs> -->

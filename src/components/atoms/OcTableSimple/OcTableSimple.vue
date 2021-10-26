@@ -50,7 +50,7 @@ export default {
   }
 }
 </style>
-<docs>
+<!-- <docs>
 ```js
 <template>
   <section>
@@ -95,4 +95,4 @@ export default {
   }
 </script>
 ```
-</docs>
+</docs> -->

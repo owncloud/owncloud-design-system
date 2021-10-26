@@ -126,7 +126,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" />
 <oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" name="forest.jpg" extension="jpg" type="file" />
@@ -134,4 +134,4 @@ export default {
 <oc-resource-name full-path="some-folder" name="regular-folder" extension="" type="folder" />
 <oc-resource-name full-path="folder-name-with.dot" name="folder-name-with.dot" extension="" type="folder" />
 ```
-</docs>
+</docs> -->

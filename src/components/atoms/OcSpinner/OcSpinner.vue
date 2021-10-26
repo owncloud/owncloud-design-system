@@ -125,7 +125,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <div class="uk-flex uk-flex-middle">
   <oc-spinner aria-label="Loading with extra small spinner" size="xsmall" class="oc-mr-s" />
@@ -138,4 +138,4 @@ export default {
   <oc-spinner aria-label="Loading with extra extra extra large spinner" size="xxxlarge" />
 </div>
 ```
-</docs>
+</docs> -->

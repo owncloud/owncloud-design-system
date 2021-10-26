@@ -31,7 +31,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```vue
 <template>
 <div>
@@ -49,4 +49,4 @@ export default {
 }
 </script>
 ```
-</docs>
+</docs> -->

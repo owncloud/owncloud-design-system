@@ -134,6 +134,6 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
   Please have a look at the component [OcNotifications](#/oC%20Components/OcNotifications) for example code.
-</docs>
+</docs> -->

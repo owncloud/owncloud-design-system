@@ -74,7 +74,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <template>
   <oc-app-side-bar>
@@ -90,4 +90,4 @@ export default {
   </oc-app-side-bar>
 </template>
 ```
-</docs>
+</docs> -->

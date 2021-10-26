@@ -1,0 +1,46 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+
+import OcRecipient from "./OcRecipient.vue"
+
+<Meta title="Organisms/Recipient/Examples" component={OcRecipient} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OcRecipient },
+  data() {
+    return {
+      args: {
+        ...args,
+      },
+    }
+  },
+  template: `<oc-recipient v-bind="$props" />`
+})
+
+# Examples for OcRecipient
+
+## With picture
+
+<Canvas>
+  <Story
+    name="Picture"
+    args={{
+      recipient: { name: 'Alice', avatar: 'https://picsum.photos/24', hasAvatar: true, isAvatarLoading: false }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With icon
+
+<Canvas>
+  <Story
+    name="Icon"
+    args={{
+      recipient: { name: 'Alice', icon: { name: 'person', label: 'User' }, hasAvatar: false }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

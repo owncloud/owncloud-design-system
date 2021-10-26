@@ -72,7 +72,7 @@ export default {
   },
 }
 </script>
-<docs>
+<!-- <docs>
 ```js
   <h3 class="oc-heading-divider">
     Simple boxes
@@ -141,4 +141,4 @@ export default {
   </oc-drop>
 </div>
 ```
-</docs>
+</docs> -->

@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<docs>
+<!-- <docs>
 ```js
 <h3>Example image, with width set explicitly:</h3>
 <oc-img width="200" height="300" src="https://picsum.photos/200/300/?random" title="I am random" alt="example image" />
@@ -67,4 +67,4 @@ export default {
 <h3>Example using a SVG file:</h3>
 <oc-img width="100" src="icons/folder.svg" title="i am a folder" alt="folder icon" />
 ```
-</docs>
+</docs> -->

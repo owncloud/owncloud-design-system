@@ -253,7 +253,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ## Examples
 ```vue
 <div class="uk-flex uk-flex-column" style="gap: 20px;">
@@ -274,4 +274,4 @@ If the current page is close enough to the first or/and last page and ellipsis w
     <oc-pagination :pages="54" :currentPage="51" :maxDisplayed="5" :currentRoute="{ name: 'files' }" />
 </div>
 ```
-</docs>
+</docs> -->

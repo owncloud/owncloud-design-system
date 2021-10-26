@@ -172,9 +172,9 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
   <oc-avatar class="oc-mb-s" src="https://picsum.photos/50/50?image=1074" accessible-label="Lion" />
   <oc-avatar class="oc-mb-s" user-name="Bruce Lee" accessible-label="Lion" />
 ```
-</docs>
+</docs> -->

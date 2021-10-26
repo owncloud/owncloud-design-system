@@ -57,8 +57,8 @@ export default {
 }
 </script>
 
-<docs>
+<!-- <docs>
 ```js
 <oc-avatar-federated name="Federated" accessible-label="Federated" />
 ```
-</docs>
+</docs> -->

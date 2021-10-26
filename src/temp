@@ -1,0 +1,5 @@
+# Known issues
+
+- Icons (SVGs) don't get rendered
+- no <router-link>s
+- no tooltip directive

@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<docs>
+<!-- <docs>
 ```js
 <section>
   <h3 class="oc-heading-divider">
@@ -62,4 +62,4 @@ export default {
   <oc-resource-size size="96001380" />
 </section>
 ```
-</docs>
+</docs> -->

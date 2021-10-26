@@ -56,8 +56,8 @@ export default {
 }
 </script>
 
-<docs>
+<!-- <docs>
 ```js
 <oc-avatar-link name="Public link" accessible-label="Public link" />
 ```
-</docs>
+</docs> -->

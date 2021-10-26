@@ -1,80 +1,157 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs"
-import OcButton from "./OcButton.vue"
-// import OcIcon from "../OcIcon/OcIcon.vue"
 
-export const Button = args => ({
+import OcButton from "./OcButton.vue"
+import OcTableSimple from "../OcTableSimple/OcTableSimple.vue"
+
+<Meta title="Atoms/Button/Examples" component={OcButton} />
+
+export const Button = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
   components: { OcButton },
-  // subcomponents: OcIcon,
   data() {
     return {
-      args: { ariaLabel: args.text, ...args },
+      args: { ...args }
     }
   },
   template: `<oc-button v-bind="args">{{args.text}}</oc-button>`,
 })
 
-<!--
-export const ButtonWithIcon = args => ({
-  components: { OcButton, OcIcon },
-  data() {
-    return {
-      args: { ariaLabel: args.text, name: args.icon, ...args },
-    }
-  },
-  template: `
-    <oc-button v-bind="args">
-      <oc-icon name={{args.icon}} />
-      {{args.text}}
-    </oc-button>
-  `,
-}) -->
-
-<!--
-export const ButtonGroup = args => ({
+export const ButtonVariations = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
   components: { OcButton },
   data() {
     return {
-      args: { ariaLabel: args.text, ...args },
+      args: { ...args }
     }
   },
-  template: `<oc-button v-bind="args">{{args.text}}</oc-button>`,
-})  -->
+  template: `
+  <div>
+    <oc-button v-bind="args" variation="passive">passive</oc-button>
+    <oc-button v-bind="args" variation="primary">primary</oc-button>
+    <oc-button v-bind="args" variation="success">success</oc-button>
+    <oc-button v-bind="args" variation="warning">warning</oc-button>
+    <oc-button v-bind="args" variation="danger">danger</oc-button>
+   </div>
+  `
+})
 
-<Meta title="Atoms/Button/Examples" component={OcButton} />
+export const ButtonSizes = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OcButton },
+  data() {
+    return {
+      args: { ...args }
+    }
+  },
+  template: `
+  <div>
+    <oc-button v-bind="args" size="large" class="oc-mr-s">Large</oc-button>
+    <oc-button v-bind="args" class="oc-mr-s oc-align-self-center">Medium (default)</oc-button>
+    <oc-button v-bind="args" size="small" class="oc-align-self-center">Small</oc-button>
+   </div>
+  `
+})
 
-# OcButton
+export const AllButtons = (args, { argTypes }) => ({
+  components: { OcButton, OcTableSimple },
+  data() {
+    return {
+      args: { ...args },
+    }
+  },
+  computed: {
+    variations() {
+      [
+        {
+          title: "passive",
+          description: "Default appearance of interactive elements (links and buttons)"
+        },
+        {
+          title: "primary",
+          description: "Used as a visual clue to the main action on each page"
+        },
+        {
+          title: "success",
+          description: "Useful as confirmations or to finish a multi-step process"
+        },
+        {
+          title: "warning",
+          description: "Used as a visual hint for certain actions, like publicly sharing a file or removing a share"
+        },
+        {
+          title: "danger",
+          description: "Use for triggering possible destructive and non-reversible actions, like permanently deleting a file"
+        },
+        {
+          title: "inverse",
+          description: "Use on a dark background"
+        }
+      ]
+    },
+    appearances() {
+      [
+        "outline",
+        "filled",
+        "raw"
+      ]
+    }
+  },
+  template: `
+    <oc-table-simple>
+      <oc-thead>
+        <oc-tr>
+          <oc-th>Variation &amp; usage</oc-th>
+          <oc-th>Outline (default)</oc-th>
+          <oc-th>Filled</oc-th>
+          <oc-th>Raw</oc-th>
+        </oc-tr>
+      </oc-thead>
+      <oc-tbody>
+        <oc-tr v-for="variation in variations">
+        <oc-td>
+          {{ variation.description }}
+        </oc-td>
+          <oc-td v-for="appearance in appearances" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-p-m">
+            <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
+              {{ variation.title }}
+              <oc-icon name="home" />
+            </oc-button>
+            <oc-button :variation="variation.title" :appearance="appearance" disabled>
+              {{ variation.title }}
+              <oc-icon name="home" />
+            </oc-button>
+          </oc-td>
+        </oc-tr>
+      </oc-tbody>
+    </oc-table-simple>
+  `
+})
 
-Buttons are generally used for interface actions. Suitable for all-purpose use.
+# Examples for OcButton
 
-Defaults to appearance that has white background with blue border.
-Filled appearance should be used only once per view for main call-to-action.
-All buttons are built with a css grid which ensures that there will be a pre-defined gutter between all child items.
+## Button variations
 
-## Accessibility
+<Canvas>
+  <Story
+    name="Variations"
+  >
+    {ButtonVariations.bind({})}
+  </Story>
+</Canvas>
 
-### Distinction when to use a `<button>`, when to use an `<a>`
+##  Button sizes 
 
-Regardless of the visual representation the following differentiation should be made if in doubt what to choose.
+<Canvas>
+  <Story
+    name="Sizes"
+  >
+    {ButtonSizes.bind({})}
+  </Story>
+</Canvas>
 
-- an anchor/link changes the location, be it internally on the website, or to another resource/document/route.
-- a button does change the state of the website, e.g.: adds, deletes, opens, ...
+##  Button with icons
 
-### Accessible name
-
-The accessible name ([explainer for the term](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)) of a button is derived from several sources. Right now, only two of them are relevant:
-
-1. The value of the `aria-label` attribute
-2. The text between the opening and closing tag, `<button>This text here</button>`
-
-When an aria-label attribute exists, its value will override the button text. So in this case, the accessible name would be "foo": `<button aria-label="foo">Bar</button>`, although visual users will see "Bar". This difference between accessible name and visual name is a problem for a certain type of assistive technology ([explainer for the term](https://en.wikipedia.org/wiki/Assistive_technology)), this is why the [WCAG success criterion 2.5.3, "Label in name"](https://www.w3.org/TR/WCAG21/#label-in-name) exists. This difference should be avoided, if it can't, W3C recommends that the accessible name should start with visible label.
-
-### Icon-only button
-
-Every button has to have an accessible name. It cannot be provided by a text between the button tags (for example, because it is an icon button; see "Upload" example below), the accessible name has to be provided by `aria-label`.
-
-## Examples
-
-### Button variations
+##  Using buttons in a group
 
 <Canvas>
   <Story
@@ -86,526 +163,15 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   >
     {Button.bind({})}
   </Story>
-  <Story
-    name="Primary"
-    args={{
-      text: "Primary",
-      variation: "primary",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Success"
-    args={{
-      text: "Success",
-      variation: "success",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Warning"
-    args={{
-      text: "Warning",
-      variation: "warning",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Danger"
-    args={{
-      text: "Danger",
-      variation: "danger",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
 </Canvas>
 
-### Button sizes
+
+## All available button combinations
 
 <Canvas>
   <Story
-    name="Large"
-    args={{
-      text: "Large",
-      size: "large",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Medium (default)"
-    args={{
-      text: "Medium (default)",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Small"
-    args={{
-      text: "Small",
-      size: "small",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-### Button with icons
-
-WORK IN PROGRESS
-
-<!-- TODO: Add buttons with icons -->
-<!--
-<Canvas>
-  <Story
-    name="Home"
-    args={{
-      text: "Home",
-      variation: "passive",
-      icon: "home",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas> -->
-
-### Using buttons in a group
-
-WORK IN PROGRESS
-
-<!-- TODO: Add buttons in a group -->
-
-<!--
-<Canvas></Canvas> -->
-
-### All available button combinations
-
-<br />
-
-<!-- TODO: List all buttons combinations (including dark background) with icon-->
-
-#### Default appearance of interactive elements (links and buttons)
-
-<Canvas>
-  <Story
-    name="Passive outline (default)"
-    args={{
-      text: "Passive outline (default)",
-      variation: "passive",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Passive filled"
-    args={{
-      text: "Passive filled",
-      variation: "passive",
-      appearance: "filled",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Passive raw"
-    args={{
-      text: "Passive raw",
-      variation: "passive",
-      appearance: "raw",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story
-    name="Disabled: Passive outline (default)"
-    args={{
-      text: "Disabled: Passive outline (default)",
-      variation: "passive",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Passive filled"
-    args={{
-      text: "Disabled: Passive filled",
-      variation: "passive",
-      appearance: "filled",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Passive raw"
-    args={{
-      text: "Disabled: Passive raw",
-      variation: "passive",
-      appearance: "raw",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-#### Used as a visual clue to the main action on each page
-
-<Canvas>
-  <Story
-    name="Primary outline (default)"
-    args={{
-      text: "Primary outline (default)",
-      variation: "primary",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Primary filled"
-    args={{
-      text: "Primary filled",
-      variation: "primary",
-      appearance: "filled",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Primary raw"
-    args={{
-      text: "Primary raw",
-      variation: "primary",
-      appearance: "raw",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story
-    name="Disabled: Primary outline (default)"
-    args={{
-      text: "Disabled: Primary outline (default)",
-      variation: "primary",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Primary filled"
-    args={{
-      text: "Disabled: Primary filled",
-      variation: "primary",
-      appearance: "filled",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Primary raw"
-    args={{
-      text: "Disabled: Primary raw",
-      variation: "primary",
-      appearance: "raw",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-#### Useful as confirmations or to finish a multi-step process
-
-<Canvas>
-  <Story
-    name="Success outline (default)"
-    args={{
-      text: "Success outline (default)",
-      variation: "success",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Success filled"
-    args={{
-      text: "Success filled",
-      variation: "success",
-      appearance: "filled",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Success raw"
-    args={{
-      text: "Success raw",
-      variation: "success",
-      appearance: "raw",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story
-    name="Disabled: Success outline (default)"
-    args={{
-      text: "Disabled: Success outline (default)",
-      variation: "success",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Success filled"
-    args={{
-      text: "Disabled: Success filled",
-      variation: "success",
-      appearance: "filled",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Success raw"
-    args={{
-      text: "Disabled: Success raw",
-      variation: "success",
-      appearance: "raw",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-#### Used as a visual hint for certain actions, like publicly sharing a file or removing a share
-
-<Canvas>
-  <Story
-    name="Warning outline (default)"
-    args={{
-      text: "Warning outline (default)",
-      variation: "warning",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Warning filled"
-    args={{
-      text: "Warning filled",
-      variation: "warning",
-      appearance: "filled",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Warning raw"
-    args={{
-      text: "Warning raw",
-      variation: "warning",
-      appearance: "raw",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story
-    name="Disabled: Warning outline (default)"
-    args={{
-      text: "Disabled: Warning outline (default)",
-      variation: "warning",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Warning filled"
-    args={{
-      text: "Disabled: Warning filled",
-      variation: "warning",
-      appearance: "filled",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Warning raw"
-    args={{
-      text: "Disabled: Warning raw",
-      variation: "warning",
-      appearance: "raw",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-#### Use for triggering possible destructive and non-reversible actions, like permanently deleting a file
-
-<Canvas>
-  <Story
-    name="Danger outline (default)"
-    args={{
-      text: "Danger outline (default)",
-      variation: "danger",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Danger filled"
-    args={{
-      text: "Danger filled",
-      variation: "danger",
-      appearance: "filled",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Danger raw"
-    args={{
-      text: "Danger raw",
-      variation: "danger",
-      appearance: "raw",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story
-    name="Disabled: Danger outline (default)"
-    args={{
-      text: "Disabled: Danger outline (default)",
-      variation: "danger",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Danger filled"
-    args={{
-      text: "Disabled: Danger filled",
-      variation: "danger",
-      appearance: "filled",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Danger raw"
-    args={{
-      text: "Disabled: Danger raw",
-      variation: "danger",
-      appearance: "raw",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-#### Use on a dark background
-
-<!-- TODO: Display dark background for these stories -->
-
-<Canvas>
-  <Story
-    name="Inverse outline (default)"
-    args={{
-      text: "Inverse outline (default)",
-      variation: "inverse",
-    }}
-    parameters={{
-      backgrounds: {
-        default: "dark",
-      },
-    }}
-  >
-    >{Button.bind({})}
-  </Story>
-  <Story
-    name="Inverse filled"
-    args={{
-      text: "Inverse filled",
-      variation: "inverse",
-      appearance: "filled",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Inverse raw"
-    args={{
-      text: "Inverse raw",
-      variation: "inverse",
-      appearance: "raw",
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story
-    name="Disabled: Inverse outline (default)"
-    args={{
-      text: "Disabled: Inverse outline (default)",
-      variation: "inverse",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Inverse filled"
-    args={{
-      text: "Disabled: Inverse filled",
-      variation: "inverse",
-      appearance: "filled",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
-  </Story>
-  <Story
-    name="Disabled: Inverse raw"
-    args={{
-      text: "Disabled: Inverse raw",
-      variation: "inverse",
-      appearance: "raw",
-      disabled: true,
-    }}
-  >
-    {Button.bind({})}
+    name="All"
+    >
+    {AllButtons.bind({})}
   </Story>
 </Canvas>

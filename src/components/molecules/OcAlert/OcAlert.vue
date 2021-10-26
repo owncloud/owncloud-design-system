@@ -110,7 +110,7 @@ export default {
 }
 </style>
 
-<docs>
+<!-- <docs>
 ```js
 <div>
   <oc-alert>
@@ -131,4 +131,4 @@ export default {
   </oc-alert>
 </div>
 ```
-</docs>
+</docs> -->

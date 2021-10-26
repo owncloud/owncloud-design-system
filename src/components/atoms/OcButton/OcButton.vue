@@ -16,6 +16,35 @@
 <script>
 import { getSizeClass } from "../../../utils/sizeClasses"
 
+/** 
+ * Buttons are generally used for interface actions. Suitable for all-purpose use.
+
+ * Defaults to appearance that has white background with blue border.
+ * Filled appearance should be used only once per view for main call-to-action.
+ * All buttons are built with a css grid which ensures that there will be a pre-defined gutter between all child items.
+
+ * ## Accessibility
+ * ### Distinction when to use a `<button>`, when to use an `<a>`
+
+ * Regardless of the visual representation the following differentiation should be made if in doubt what to choose.
+
+ * - an anchor/link changes the location, be it internally on the website, or to another resource/document/route.
+ * - a button does change the state of the website, e.g.: adds, deletes, opens, ...
+
+ * ### Accessible name
+ * The accessible name ([explainer for the term](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)) of a button is derived from several sources. Right now, only two of them are relevant:
+
+ * 1. The value of the `aria-label` attribute
+ * 2. The text between the opening and closing tag, `<button>This text here</button>`
+
+ * When an aria-label attribute exists, its value will override the button text. So in this case, the accessible name would be "foo": `<button aria-label="foo">Bar</button>`, although visual users will see "Bar". This difference between accessible name and visual name is a problem for a certain type of assistive technology ([explainer for the term](https://en.wikipedia.org/wiki/Assistive_technology)), this is why the [WCAG success criterion 2.5.3, "Label in name"](https://www.w3.org/TR/WCAG21/#label-in-name) exists. This difference should be avoided, if it can't, W3C recommends that the accessible name should start with visible label.
+
+ * ### Icon-only button
+
+ * Every button has to have an accessible name. It cannot be provided by a text between the button tags (for example, because it is an icon button; see "Upload" example below), the accessible name has to be provided by `aria-label`.
+
+*/
+
 export default {
   name: "OcButton",
   status: "ready",
@@ -473,160 +502,3 @@ export default {
   }
 }
 </style>
-
-<!-- <docs>
-  Buttons are generally used for interface actions. Suitable for all-purpose use.
-
-  Defaults to appearance that has white background with blue border.
-  Filled appearance should be used only once per view for main call-to-action.
-  All buttons are built with a css grid which ensures that there will be a pre-defined gutter between all child items.
-
-  ## Accessibility
-  ### Distinction when to use a `<button>`, when to use an `<a>`
-
-  Regardless of the visual representation the following differentiation should be made if in doubt what to choose.
-
-  - an anchor/link changes the location, be it internally on the website, or to another resource/document/route.
-  - a button does change the state of the website, e.g.: adds, deletes, opens, ...
-
-  ### Accessible name
-  The accessible name ([explainer for the term](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)) of a button is derived from several sources. Right now, only two of them are relevant:
-
-  1. The value of the `aria-label` attribute
-  2. The text between the opening and closing tag, `<button>This text here</button>`
-
-  When an aria-label attribute exists, its value will override the button text. So in this case, the accessible name would be "foo": `<button aria-label="foo">Bar</button>`, although visual users will see "Bar". This difference between accessible name and visual name is a problem for a certain type of assistive technology ([explainer for the term](https://en.wikipedia.org/wiki/Assistive_technology)), this is why the [WCAG success criterion 2.5.3, "Label in name"](https://www.w3.org/TR/WCAG21/#label-in-name) exists. This difference should be avoided, if it can't, W3C recommends that the accessible name should start with visible label.
-
-  ### Icon-only button
-
-  Every button has to have an accessible name. It cannot be provided by a text between the button tags (for example, because it is an icon button; see "Upload" example below), the accessible name has to be provided by `aria-label`.
-
-  ## Examples
-
-  ```js
-  <template>
-  <div>
-
-    <h3 class="oc-heading-divider">
-      Button variations
-    </h3>
-    <div class="uk-flex">
-      <oc-button v-for="variation in variations" :variation="variation.title" class="oc-mr-s oc-mb-s">
-        {{ variation.title }}
-      </oc-button>
-    </div>
-
-    <h3 class="oc-heading-divider">
-      Button sizes
-    </h3>
-    <div class="uk-flex">
-      <oc-button size="large" class="oc-mr-s">Large</oc-button>
-      <oc-button class="oc-mr-s oc-align-self-center">Medium (default)</oc-button>
-      <oc-button size="small" class="oc-align-self-center">Small</oc-button>
-    </div>
-
-    <h3 class="oc-heading-divider">
-      Button with icons
-    </h3>
-    <div class="uk-flex">
-      <oc-button class="oc-mr-s">
-        <oc-icon name="home" />
-        Home
-      </oc-button>
-      <oc-button variation="primary" class="oc-mr-s">
-        Select
-        <oc-icon name="expand_more" />
-      </oc-button>
-      <oc-button variation="primary" aria-label="Upload a file">
-        <oc-icon name="cloud_upload" />
-      </oc-button>
-    </div>
-
-    <h3 class="oc-heading-divider">
-      Using buttons in a group
-    </h3>
-    <div class="oc-button-group">
-      <oc-button variation="primary" appearance="filled">Hello</oc-button>
-      <oc-button>
-        <oc-icon name="folder" />
-        Demo Button
-      </oc-button>
-      <oc-button variation="danger" appearance="filled">Delete</oc-button>
-    </div>
-
-    <h3 class="oc-heading-divider">
-      All available button combinations
-    </h3>
-    <oc-table-simple>
-      <oc-thead>
-        <oc-tr>
-          <oc-th>Variation &amp; usage</oc-th>
-          <oc-th>Outline (default)</oc-th>
-          <oc-th>Filled</oc-th>
-          <oc-th>Raw</oc-th>
-        </oc-tr>
-      </oc-thead>
-      <oc-tbody>
-        <oc-tr v-for="variation in variations">
-        <oc-td>
-          {{ variation.description }}
-        </oc-td>
-          <oc-td v-for="appearance in appearances" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-p-m">
-            <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
-              {{ variation.title }}
-              <oc-icon name="home" />
-            </oc-button>
-            <oc-button :variation="variation.title" :appearance="appearance" disabled>
-              {{ variation.title }}
-              <oc-icon name="home" />
-            </oc-button>
-          </oc-td>
-        </oc-tr>
-      </oc-tbody>
-    </oc-table-simple>
-    </div>
-  </template>
-  <script>
-  export default {
-    computed: {
-      variations() {
-        return [
-          {
-            title: "passive",
-            description: "Default appearance of interactive elements (links and buttons)"
-          },
-          {
-            title: "primary",
-            description: "Used as a visual clue to the main action on each page"
-          },
-          {
-            title: "success",
-            description: "Useful as confirmations or to finish a multi-step process"
-          },
-          {
-            title: "warning",
-            description: "Used as a visual hint for certain actions, like publicly sharing a file or removing a share"
-
-          },
-          {
-            title: "danger",
-            description: "Use for triggering possible destructive and non-reversible actions, like permanently deleting a file"
-          },
-          {
-            title: "inverse",
-            description: "Use on a dark background"
-          }
-        ]
-      },
-      appearances() {
-        return [
-          "outline",
-          "filled",
-          "raw"
-        ]
-      },
-    },
-  }
-  </script>
-```
-</docs> -->
