@@ -70,11 +70,11 @@ export default {
       if (!isNaN(aValue) && !isNaN(bValue)) {
         return (aValue - bValue) * modifier
       }
-
-      if (aValue < bValue) return -1 * modifier
-      if (aValue > bValue) return modifier
-
-      return 0
+      const userLang = navigator.language || navigator.userLanguage
+      const compare = aValue
+        .toString()
+        .localeCompare(bValue.toString(), userLang, { sensitivity: "base" })
+      return compare * modifier
     },
     fieldIsSortable({ sortable }) {
       return !!sortable

@@ -105,8 +105,20 @@ const resourcesWithAllFields = [
   },
   {
     id: "pdfs",
-    name: "Pdfs",
+    name: "pdfs",
     path: "/pdfs",
+    icon: "folder",
+    indicators,
+    type: "folder",
+    size: "53244",
+    mdate: "Sat, 09 Jan 2021 14:34:04 GMT",
+    owner: firstOwner,
+    sharedWith: sharedWithThree,
+  },
+  {
+    id: "Prints",
+    name: "Prints",
+    path: "/Prints",
     icon: "folder",
     indicators,
     type: "folder",
@@ -159,9 +171,10 @@ describe("OcTableFiles.sort", () => {
     let resources = getWrapperWithProps().findAll(".oc-resource-name")
 
     expect(resources.at(0).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resources.at(1).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resources.at(2).attributes("data-test-resource-name")).toBe("forest.jpg")
-    expect(resources.at(3).attributes("data-test-resource-name")).toBe("notes.txt")
+    expect(resources.at(1).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resources.at(2).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resources.at(3).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resources.at(4).attributes("data-test-resource-name")).toBe("notes.txt")
   })
 
   it("sorts by name on click", async () => {
@@ -178,8 +191,9 @@ describe("OcTableFiles.sort", () => {
 
     expect(resourcesOne.at(0).attributes("data-test-resource-name")).toBe("notes.txt")
     expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("forest.jpg")
-    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("Documents")
+    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesOne.at(4).attributes("data-test-resource-name")).toBe("Documents")
 
     await sortByName.trigger("click")
 
@@ -188,9 +202,10 @@ describe("OcTableFiles.sort", () => {
     let resourcesTwo = wrapper.findAll(".oc-resource-name")
 
     expect(resourcesTwo.at(0).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("forest.jpg")
-    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("notes.txt")
+    expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resourcesTwo.at(4).attributes("data-test-resource-name")).toBe("notes.txt")
   })
 
   it("sorts by size", async () => {
@@ -206,9 +221,10 @@ describe("OcTableFiles.sort", () => {
     let resourcesOne = wrapper.findAll(".oc-resource-name")
 
     expect(resourcesOne.at(0).attributes("data-test-resource-name")).toBe("notes.txt")
-    expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("Documents")
+    expect(resourcesOne.at(4).attributes("data-test-resource-name")).toBe("forest.jpg")
 
     await sortBySize.trigger("click")
 
@@ -218,8 +234,9 @@ describe("OcTableFiles.sort", () => {
 
     expect(resourcesTwo.at(0).attributes("data-test-resource-name")).toBe("forest.jpg")
     expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("notes.txt")
+    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesTwo.at(4).attributes("data-test-resource-name")).toBe("notes.txt")
   })
 
   it("sorts by modification date", async () => {
@@ -235,9 +252,10 @@ describe("OcTableFiles.sort", () => {
     let resourcesOne = wrapper.findAll(".oc-resource-name")
 
     expect(resourcesOne.at(0).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("forest.jpg")
-    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("notes.txt")
+    expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resourcesOne.at(4).attributes("data-test-resource-name")).toBe("notes.txt")
 
     await sortByMdate.trigger("click")
 
@@ -264,8 +282,9 @@ describe("OcTableFiles.sort", () => {
 
     expect(resourcesOne.at(0).attributes("data-test-resource-name")).toBe("forest.jpg")
     expect(resourcesOne.at(1).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("notes.txt")
+    expect(resourcesOne.at(2).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesOne.at(3).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesOne.at(4).attributes("data-test-resource-name")).toBe("notes.txt")
 
     await sortByOwner.trigger("click")
 
@@ -276,7 +295,8 @@ describe("OcTableFiles.sort", () => {
     expect(resourcesTwo.at(0).attributes("data-test-resource-name")).toBe("notes.txt")
     expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("forest.jpg")
     expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("Pdfs")
+    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesTwo.at(4).attributes("data-test-resource-name")).toBe("Prints")
   })
 
   it("sorts by shares", async () => {
@@ -302,8 +322,9 @@ describe("OcTableFiles.sort", () => {
     let resourcesTwo = wrapper.findAll(".oc-resource-name")
 
     expect(resourcesTwo.at(0).attributes("data-test-resource-name")).toBe("Documents")
-    expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("Pdfs")
-    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("notes.txt")
-    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("forest.jpg")
+    expect(resourcesTwo.at(1).attributes("data-test-resource-name")).toBe("pdfs")
+    expect(resourcesTwo.at(2).attributes("data-test-resource-name")).toBe("Prints")
+    expect(resourcesTwo.at(3).attributes("data-test-resource-name")).toBe("notes.txt")
+    expect(resourcesTwo.at(4).attributes("data-test-resource-name")).toBe("forest.jpg")
   })
 })
