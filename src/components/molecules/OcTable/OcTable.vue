@@ -76,10 +76,20 @@
           >
             <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
             <template v-else-if="isFieldTypeCallback(field)">
-              {{ field.callback(item[field.name]) }}
+              <span
+                v-oc-tooltip="getTip(field, item)"
+                aria-hidden="true"
+              >
+                {{ field.callback(item[field.name]) }}
+              </span>
             </template>
             <template v-else>
-              {{ item[field.name] }}
+              <span
+                v-oc-tooltip="getTip(field, item)"
+                aria-hidden="true"
+              >
+                {{ item[field.name] }}
+              </span>
             </template>
           </oc-td>
         </oc-tr>
@@ -165,9 +175,21 @@
             >
               <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
               <template v-else-if="isFieldTypeCallback(field)">
-                {{ field.callback(item[field.name]) }}
+                <span
+                  v-oc-tooltip="getTip(field, item)"
+                  aria-hidden="true"
+                >
+                  {{ field.callback(item[field.name]) }}
+                </span>
               </template>
-              <template v-else>{{ item[field.name] }}</template>
+              <template v-else>
+                <span
+                  v-oc-tooltip="getTip(field, item)"
+                  aria-hidden="true"
+                >
+                  {{ item[field.name] }}
+                </span>
+              </template>
             </oc-td>
           </oc-tr>
         </template>
@@ -556,6 +578,12 @@ export default {
     },
     isFieldTypeCallback(field) {
       return ["callback", "function"].indexOf(field.type) >= 0
+    },
+    getTip(field, item) {
+      if ('tip' in field) {
+        return field.tip(item[field.name])
+      }
+      return null
     },
     extractFieldTitle(field) {
       if (Object.prototype.hasOwnProperty.call(field, "title")) {

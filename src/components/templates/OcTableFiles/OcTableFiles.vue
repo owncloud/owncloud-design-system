@@ -374,8 +374,9 @@ export default {
             type: "callback",
             alignH: "right",
             wrap: "nowrap",
-            callback: date => this.formatDate(date),
+            callback: date => this.relativeDate(date),
             sortable: date => this.unixDate(date),
+            tip: date => this.stringDate(date),
           },
           {
             name: "sdate",
@@ -383,8 +384,9 @@ export default {
             type: "callback",
             alignH: "right",
             wrap: "nowrap",
-            callback: date => this.formatDate(date),
+            callback: date => this.relativeDate(date),
             sortable: date => this.unixDate(date),
+            tip: date => this.stringDate(date),
           },
           {
             name: "ddate",
@@ -392,8 +394,9 @@ export default {
             type: "callback",
             alignH: "right",
             wrap: "nowrap",
-            callback: date => this.formatDate(date),
+            callback: date => this.relativeDate(date),
             sortable: date => this.unixDate(date),
+            tip: date => this.stringDate(date),
           },
         ].filter(field => Object.prototype.hasOwnProperty.call(firstResource, field.name))
       )
@@ -487,7 +490,10 @@ export default {
        */
       this.emitSelect([resource])
     },
-    formatDate(date) {
+    stringDate(date) {
+      return DateTime.fromJSDate(new Date(date)).toLocaleString(DateTime.DATETIME_FULL)
+    },
+    relativeDate(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
     },
     unixDate(date) {
