@@ -28,7 +28,7 @@ color:
           contrast:
             ratio: 4.6
       hover:
-        value: rgb(128, 167, 215)
+        value: rgb(45,89,143)
       muted:
         value: rgb(44, 88, 142)
     success:
