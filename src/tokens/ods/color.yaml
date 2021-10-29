@@ -1,20 +1,20 @@
 ---
 color:
-#  sample:
-#    default:
-#      value: "{color.swatch.warning.hover.value}"
-#      check:
-#        contrast:
-#          ratio: 3.5
-#          background:
-#            - "{color.background.default.value}"
-#            - "{color.background.muted.value}"
-#      transform:
-#        darken: 23
-#        lighten: 10
-#        brighten: 10
-#        desaturate: 10
-#        saturate: 10
+  #  sample:
+  #    default:
+  #      value: "{color.swatch.warning.hover.value}"
+  #      check:
+  #        contrast:
+  #          ratio: 3.5
+  #          background:
+  #            - "{color.background.default.value}"
+  #            - "{color.background.muted.value}"
+  #      transform:
+  #        darken: 23
+  #        lighten: 10
+  #        brighten: 10
+  #        desaturate: 10
+  #        saturate: 10
   swatch:
     brand:
       default:
@@ -95,6 +95,6 @@ color:
       muted:
         value: "{color.swatch.passive.default.value}"
     border:
-      value: rgb(206, 221, 238)
+      value: rgb(48, 91, 139)
     bg:
       value: rgb(240, 244, 248)
