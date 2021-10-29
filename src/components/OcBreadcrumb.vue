@@ -153,7 +153,6 @@ export default {
     > li span:hover,
     > li button:hover {
       color: var(--oc-color-text-default);
-      text-decoration: underline;
     }
   }
 
