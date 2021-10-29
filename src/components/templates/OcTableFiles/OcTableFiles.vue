@@ -1,6 +1,7 @@
 <template>
   <oc-table
     :grouping-settings="groupingSettings"
+    :view="view"
     :data="resources"
     :fields="fields"
     :highlighted="selectedIds"
@@ -144,6 +145,14 @@ export default {
     event: "select",
   },
   props: {
+        /**
+     * Web view in which the table is shown. Used to save sorting settings
+     * -**
+     */
+    view: {
+      type: String,
+      required: false,
+    },
     /**
      * Grouping settings for the table. Following settings are possible:<br />
      * -**groupingFunctions**: Object with keys as grouping options names and functions that get a table data row and return a group name for that row. The names of the functions are used as grouping options.
@@ -611,7 +620,7 @@ div[data-tippy-root] {
 ```js
 <template>
   <div>
-    <oc-table-files :resources="resources" disabled="notes" v-model="selected" class="oc-mb"
+    <oc-table-files :view="'view'" :resources="resources" disabled="notes" v-model="selected" class="oc-mb"
                     @action="handleAction" @fileDropped="fileDropped" :drag-drop="true">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
