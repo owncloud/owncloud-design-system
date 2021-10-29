@@ -2,7 +2,8 @@
   <oc-table
     :grouping-settings="groupingSettings"
     :view="view"
-    :data="resources"
+    :data="getCleanedResources(resources)"
+    idKey="cleanId"
     :fields="fields"
     :highlighted="selectedIds"
     :disabled="disabled"
@@ -29,7 +30,7 @@
     </template>
     <template #select="{ item }">
       <oc-checkbox
-        :id="`oc-table-files-select-${item.id}`"
+        :id="`oc-table-files-select-${item.cleanId}`"
         :label="getResourceCheckboxLabel(item)"
         :hide-label="true"
         size="large"
@@ -41,12 +42,12 @@
     </template>
     <template #name="{ item }">
       <oc-resource
-        :key="`${item.path}-${item.id}-${item.thumbnail}`"
+        :key="`${item.path}-${item.cleanId}-${item.thumbnail}`"
         :resource="item"
         :is-path-displayed="arePathsDisplayed"
         :is-thumbnail-displayed="areThumbnailsDisplayed"
         :target-route="targetRoute"
-        :is-resource-clickable="isResourceClickable(item.id)"
+        :is-resource-clickable="isResourceClickable(item.cleanId)"
         @click="emitFileClick(item)"
       />
     </template>
@@ -80,21 +81,21 @@
         <!-- @slot Add quick actions before the `context-menu / three dot` button in the actions column -->
         <slot name="quickActions" :resource="item" />
         <oc-button
-          :id="`context-menu-trigger-${item.id.replace(/=+/, '')}`"
+          :id="`context-menu-trigger-${item.cleanId}`"
           v-oc-tooltip="contextMenuLabel"
           :aria-label="contextMenuLabel"
           class="oc-table-files-btn-action-dropdown"
           appearance="raw"
           @click.stop.prevent="
-            resetDropPosition(`context-menu-drop-ref-${item.id.replace(/=+/, '')}`, $event, item)
+            resetDropPosition(`context-menu-drop-ref-${item.cleanId}`, $event, item)
           "
         >
           <oc-icon name="more_vert" />
         </oc-button>
         <oc-drop
-          :ref="`context-menu-drop-ref-${item.id.replace(/=+/, '')}`"
-          :drop-id="`context-menu-drop-${item.id.replace(/=+/, '')}`"
-          :toggle="`#context-menu-trigger-${item.id.replace(/=+/, '')}`"
+          :ref="`context-menu-drop-ref-${item.cleanId}`"
+          :drop-id="`context-menu-drop-${item.cleanId}`"
+          :toggle="`#context-menu-trigger-${item.cleanId}`"
           :popper-options="popperOptions"
           mode="click"
           close-on-click
@@ -419,7 +420,7 @@ export default {
     },
 
     selectedIds() {
-      return this.selection.map(r => r.id)
+      return this.selection.map(r => r.cleanId)
     },
 
     allResourcesCheckboxLabel() {
@@ -438,7 +439,7 @@ export default {
       this.$emit(EVENT_FILE_DROPPED, fileId)
     },
     addSelectedResource(file) {
-      const isSelected = this.selection.some(e => e.id === file.id)
+      const isSelected = this.selection.some(e => e.cleanId === file.cleanId)
       if (!isSelected) {
         this.$emit("select", this.selection.concat([file]))
       } else {
@@ -588,6 +589,13 @@ export default {
 
       return description
     },
+
+    getCleanedResources(resources) {
+      for (const resource of resources) {
+        resource.cleanId = resource.id.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0); 
+      }
+      return resources
+    }
   },
 }
 </script>
@@ -716,7 +724,7 @@ div[data-tippy-root] {
         ]
       },
       selectedIds() {
-        return this.selected.map(resource => resource.id)
+        return this.selected.map(resource => resource.cleanId)
       }
     },
     methods: {
