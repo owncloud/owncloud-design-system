@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OcModal displays input 1`] = `
-<div aria-labelledby="oc-modal-title" class="oc-modal-background">
+<div class="oc-modal-background">
   <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
-    <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
+    <div tabindex="0" role="dialog" aria-modal="true" aria-labelledby="oc-modal-title" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <!---->
         <h2 id="oc-modal-title">Create new folder</h2>
@@ -21,9 +21,9 @@ exports[`OcModal displays input 1`] = `
 `;
 
 exports[`OcModal hides icon if not specified 1`] = `
-<div aria-labelledby="oc-modal-title" class="oc-modal-background">
+<div class="oc-modal-background">
   <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
-    <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
+    <div tabindex="0" role="dialog" aria-modal="true" aria-labelledby="oc-modal-title" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <!---->
         <h2 id="oc-modal-title">Example title</h2>
@@ -41,9 +41,9 @@ exports[`OcModal hides icon if not specified 1`] = `
 `;
 
 exports[`OcModal matches snapshot 1`] = `
-<div aria-labelledby="oc-modal-title" class="oc-modal-background">
+<div class="oc-modal-background">
   <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
-    <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
+    <div tabindex="0" role="dialog" aria-modal="true" aria-labelledby="oc-modal-title" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <oc-icon-stub name="info" accessiblelabel="" type="span" size="medium" variation="passive"></oc-icon-stub>
         <h2 id="oc-modal-title">Example title</h2>
@@ -61,9 +61,9 @@ exports[`OcModal matches snapshot 1`] = `
 `;
 
 exports[`OcModal overrides props message with slot 1`] = `
-<div aria-labelledby="oc-modal-title" class="oc-modal-background">
+<div class="oc-modal-background">
   <focus-trap-stub escapedeactivates="true" returnfocusondeactivate="true" allowoutsideclick="true">
-    <div tabindex="0" role="dialog" aria-modal="true" class="oc-modal oc-modal-passive">
+    <div tabindex="0" role="dialog" aria-modal="true" aria-labelledby="oc-modal-title" class="oc-modal oc-modal-passive">
       <div class="oc-modal-title">
         <!---->
         <h2 id="oc-modal-title">Example title</h2>
