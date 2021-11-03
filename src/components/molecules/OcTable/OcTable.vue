@@ -46,12 +46,12 @@
           $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
-        @dragstart.native="dragStart(item)"
+        @dragstart.native="dragStart(item, $event)"
         @drop.native="dropRowEvent(item.id, $event)"
         @dragenter.native.prevent="dropRowStyling(item.id, false, $event)"
         @dragleave.native.prevent="dropRowStyling(item.id, true, $event)"
         @mouseleave="dropRowStyling(item.id, true, $event)"
-        @dragover.native.prevent
+        @dragover.native="dragOver($event)"
       >
         <oc-td
           v-for="(field, tdIndex) in fields"
@@ -79,6 +79,7 @@
   </table>
 </template>
 <script>
+import Vue from "vue"
 import OcThead from "../../atoms/_OcTableHeader/_OcTableHeader.vue"
 import OcTbody from "../../atoms/_OcTableBody/_OcTableBody.vue"
 import OcTr from "../../atoms/_OcTableRow/_OcTableRow"
@@ -87,6 +88,7 @@ import OcTd from "../../atoms/_OcTableCellData/_OcTableCellData.vue"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import SortMixin from "../../../mixins/sort"
 import { getSizeClass } from "../../../utils/sizeClasses"
+import GhostElement from "./GhostElement/GhostElement.vue"
 
 import {
   EVENT_THEAD_CLICKED,
@@ -214,6 +216,11 @@ export default {
       required: false,
       default: false,
     },
+    selection: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -248,8 +255,34 @@ export default {
     },
   },
   methods: {
-    dragStart(file) {
+    dragOver(event) {
+      event.preventDefault()
+      event.target.style.cursor = "move"
+    },
+    setGhostElement(file, event) {
+      const selection = this.selection
+      selection.splice(
+        selection.findIndex(function (i) {
+          return i.id === file.id
+        }),
+        1
+      )
+      const GhostElementComponent = Vue.extend(GhostElement)
+      const ghostInstances = new GhostElementComponent({
+        propsData: {
+          previewItems: [file, ...selection],
+        },
+      })
+      ghostInstances.$mount()
+      const ghost = document.body.appendChild(ghostInstances.$el)
+      event.dataTransfer.setDragImage(ghost, 0, 0)
+      event.dataTransfer.dropEffect = "move"
+      event.dataTransfer.effectAllowed = "move"
+      event.target.style.cursor = "move"
+    },
+    dragStart(file, event) {
       if (!this.dragDrop) return
+      this.setGhostElement(file, event)
       this.$emit(EVENT_FILE_DRAGGED, file)
     },
     dropRowEvent(id, event) {
@@ -259,6 +292,8 @@ export default {
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
       const dropFileId = dropTargetTr.dataset.fileId
+
+      event.target.style.cursor = "default"
       this.dropRowStyling(id, true, event)
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
