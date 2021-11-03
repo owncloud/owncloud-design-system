@@ -33,18 +33,24 @@ export default {
   fill: var(--oc-color-text-default) !important;
 }
 .vc-title {
-  color: var(--oc-color-swatch-brand-default) !important;
+  color: var(--oc-color-text-default) !important;
 }
 .vc-weekday {
-  color: var(--oc-color-swatch-inverse-muted) !important;
+  color: var(--oc-color-text-muted) !important;
 }
 .vc-day {
   color: var(--oc-color-text-default) !important;
 }
-.vc-highlight {
-  color: var(--oc-color-swatch-inverse-default) !important;
-  background-color: var(--oc-color-swatch-primary-default) !important;
+
+.vc-highlights {
+  .vc-highlight {
+    background-color: var(--oc-color-swatch-primary-default) !important;
+  }
+  + span {
+    color: var(--oc-color-text-inverse) !important;
+  }
 }
+
 .vc-day-content.is-disabled {
   color: var(--oc-color-text-muted) !important;
 }
