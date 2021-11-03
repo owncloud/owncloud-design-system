@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - OcTable sorting case sensitivity: [#1698](https://github.com/owncloud/owncloud-design-system/issues/1698)
 * Bugfix - Drag and Drop triggers wrong actions: [#5808](https://github.com/owncloud/web/issues/5808)
+* Enhancement - Streamline OcTextInput: [#1636](https://github.com/owncloud/owncloud-design-system/pull/1636)
 
 ## Details
 
@@ -27,6 +28,18 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5808
    https://github.com/owncloud/owncloud-design-system/pull/1732
+
+
+* Enhancement - Streamline OcTextInput: [#1636](https://github.com/owncloud/owncloud-design-system/pull/1636)
+
+   We have updated the OcTextInput component to be in line with other form components in the design
+   system.
+
+   - Fixed the clear button being visible even when element is disabled - Made clear button emit
+   null instead of empty string - Made input/change event handling a bit more consistent - Added
+   defaultValue prop that is for now passed as placeholder to the input field
+
+   https://github.com/owncloud/owncloud-design-system/pull/1636
 
 # Changelog for [11.0.0] (2021-10-04)
 
