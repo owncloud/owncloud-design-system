@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Add word-break rule to OcNotificationMessage component: [#1712](https://github.com/owncloud/owncloud-design-system/issues/1712)
 * Bugfix - OcTable sorting case sensitivity: [#1698](https://github.com/owncloud/owncloud-design-system/issues/1698)
 * Bugfix - Drag and Drop triggers wrong actions: [#5808](https://github.com/owncloud/web/issues/5808)
+* Enhancement - Make OcDatepicker themable: [#1679](https://github.com/owncloud/owncloud-design-system/issues/1679)
 * Enhancement - Streamline OcTextInput: [#1636](https://github.com/owncloud/owncloud-design-system/pull/1636)
 
 ## Details
@@ -37,6 +38,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5808
    https://github.com/owncloud/owncloud-design-system/pull/1732
+
+
+* Enhancement - Make OcDatepicker themable: [#1679](https://github.com/owncloud/owncloud-design-system/issues/1679)
+
+   We've added styling to the OcDatepicker to use the colors set by the used theme.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1679
+   https://github.com/owncloud/owncloud-design-system/pull/1740
 
 
 * Enhancement - Streamline OcTextInput: [#1636](https://github.com/owncloud/owncloud-design-system/pull/1636)
