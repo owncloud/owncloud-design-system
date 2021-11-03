@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Limit select event in OcTableFiles: [#1753](https://github.com/owncloud/owncloud-design-system/pull/1753)
 * Bugfix - Add word-break rule to OcNotificationMessage component: [#1712](https://github.com/owncloud/owncloud-design-system/issues/1712)
 * Bugfix - OcTable sorting case sensitivity: [#1698](https://github.com/owncloud/owncloud-design-system/issues/1698)
 * Bugfix - Drag and Drop triggers wrong actions: [#5808](https://github.com/owncloud/web/issues/5808)
@@ -13,6 +14,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Streamline OcTextInput: [#1636](https://github.com/owncloud/owncloud-design-system/pull/1636)
 
 ## Details
+
+* Bugfix - Limit select event in OcTableFiles: [#1753](https://github.com/owncloud/owncloud-design-system/pull/1753)
+
+   We've updated the behaviour in the OcTableFiles component so select events only get fired if
+   the target row is not already selected. This allows for batch actions in the contextmenu which
+   was limited to only one resource before.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1753
+
 
 * Bugfix - Add word-break rule to OcNotificationMessage component: [#1712](https://github.com/owncloud/owncloud-design-system/issues/1712)
 
