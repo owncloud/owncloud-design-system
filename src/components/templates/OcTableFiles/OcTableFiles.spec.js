@@ -117,21 +117,29 @@ const resourcesWithAllFields = [
   },
 ]
 
+function getMountedWrapper(selection = [], hover = false) {
+  return mount(Table, {
+    propsData: {
+      resources: resourcesWithAllFields,
+      selection,
+      slots: {
+        status: "<div class='status-slot'>Hello world!</div>",
+      },
+      hover,
+    },
+  })
+}
+
 describe("OcTableFiles", () => {
   const spyDisplayPositionedDropdown = jest
     .spyOn(Table.methods, "displayPositionedDropdown")
     .mockImplementation()
 
-  // As we do not care about design here, we can render the full set of fields
-  // Since we are using mount, use it only once to save some time
-  const wrapper = mount(Table, {
-    propsData: {
-      resources: resourcesWithAllFields,
-      selection: [],
-      slots: {
-        status: "<div class='status-slot'>Hello world!</div>",
-      },
-    },
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = getMountedWrapper()
+    jest.clearAllMocks()
   })
 
   it("displays all known fields of the resources", () => {
@@ -179,36 +187,27 @@ describe("OcTableFiles", () => {
     })
   })
 
-  // eslint-disable-next-line jest/no-disabled-tests
-  test.skip("resource details", () => {
-    // TODO: rewrite tests for hightlighting
-    test("emits showDetails event when clicking on the button in actions column", () => {
-      wrapper.find(".oc-table-data-cell-actions .oc-table-files-btn-show-details").vm.$emit("click")
-
-      expect(wrapper.emitted().showDetails).toBeTruthy()
-    })
-
-    test("emits showDetails event when clicking on the row", async () => {
-      await wrapper.find(".oc-tbody-tr").trigger("click")
-
-      expect(wrapper.emitted().showDetails.length).toEqual(2)
+  describe("resource details", () => {
+    it("emits select event when clicking on the row", async () => {
+      const tableRow = await wrapper.find(".oc-tbody-tr .oc-table-data-cell-size")
+      await tableRow.trigger("click")
+      expect(wrapper.emitted().select).toBeTruthy()
     })
   })
 
   describe("context menu", () => {
-    it("emits contextmenu-clicked event on table row", async () => {
-      const tableRow = await wrapper.find(".oc-tbody-tr-forest")
-      tableRow.vm.$emit("contextmenuClicked")
-      expect(tableRow.emitted().contextmenuClicked).toBeTruthy()
+    it("emits select event on contextmenu click", async () => {
+      await wrapper.find(".oc-tbody-tr").trigger("contextmenu")
+      expect(wrapper.emitted().select.length).toBe(1)
+      expect(spyDisplayPositionedDropdown).toHaveBeenCalledTimes(1)
     })
 
-    it("emits contextmenu-clicked event on clicking the three-dot icon in table row", async () => {
-      const threeDotButton = await wrapper.find(
-        ".oc-table-data-cell-actions .oc-table-files-btn-action-dropdown"
-      )
-      threeDotButton.trigger("click")
+    it("emits select event on clicking the three-dot icon in table row", async () => {
+      await wrapper
+        .find(".oc-table-data-cell-actions .oc-table-files-btn-action-dropdown")
+        .trigger("click")
+      expect(wrapper.emitted().select.length).toBe(1)
       expect(spyDisplayPositionedDropdown).toHaveBeenCalledTimes(1)
-      expect(threeDotButton.emitted().click).toBeTruthy()
     })
 
     it("removes invalid chars from item ids for usage in html template", async () => {
@@ -219,33 +218,37 @@ describe("OcTableFiles", () => {
         expect(id).toEqual(expect.not.stringContaining("="))
       }
     })
+    describe("emits no select event if target row is within selected items", () => {
+      it("for context menu clicks", async () => {
+        const wrapper = getMountedWrapper([resourcesWithAllFields[0], resourcesWithAllFields[1]])
+        expect(wrapper.emitted().select).toBeFalsy()
+        const tableRow = await wrapper.find(".oc-tbody-tr-forest")
+        await tableRow.trigger("contextmenu")
+        expect(wrapper.emitted().select).toBeFalsy()
+        expect(spyDisplayPositionedDropdown).toHaveBeenCalledTimes(1)
+      })
+      it("for three dot button clicks", async () => {
+        const wrapper = getMountedWrapper([resourcesWithAllFields[0], resourcesWithAllFields[1]])
+        expect(wrapper.emitted().select).toBeFalsy()
+        await wrapper
+          .find(
+            ".oc-tbody-tr-forest .oc-table-data-cell-actions .oc-table-files-btn-action-dropdown"
+          )
+          .trigger("click")
+        expect(wrapper.emitted().select).toBeFalsy()
+        expect(spyDisplayPositionedDropdown).toHaveBeenCalledTimes(1)
+      })
+    })
   })
 
   describe("hover effect", () => {
-    it("disables hover effect by default", () => {
-      const wrapper = mount(Table, {
-        propsData: {
-          resources: resourcesWithAllFields,
-          selection: [],
-          slots: {
-            status: "<div class='status-slot'>Hello world!</div>",
-          },
-        },
-      })
+    it("is disabled by default", () => {
+      const wrapper = getMountedWrapper([], false)
       expect(wrapper.classes()).not.toContain("oc-table-hover")
     })
 
-    it("enables hover effect", () => {
-      const wrapper = mount(Table, {
-        propsData: {
-          resources: resourcesWithAllFields,
-          selection: [],
-          slots: {
-            status: "<div class='status-slot'>Hello world!</div>",
-          },
-          hover: true,
-        },
-      })
+    it("can be enabled", () => {
+      const wrapper = getMountedWrapper([], true)
       expect(wrapper.classes()).toContain("oc-table-hover")
     })
   })

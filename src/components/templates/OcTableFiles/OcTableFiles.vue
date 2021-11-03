@@ -424,7 +424,9 @@ export default {
     resetDropPosition(id, event, item) {
       const instance = this.$refs[id].tippy
       if (instance === undefined) return
-      this.emitSelect([item])
+      if (!this.selection.includes(item)) {
+        this.emitSelect([item])
+      }
       this.displayPositionedDropdown(instance, event)
     },
 
@@ -433,7 +435,9 @@ export default {
 
       const instance = row.$el.getElementsByClassName("oc-table-files-btn-action-dropdown")[0]
       if (instance === undefined) return
-      this.emitSelect([item])
+      if (!this.selection.includes(item)) {
+        this.emitSelect([item])
+      }
       this.displayPositionedDropdown(instance._tippy, event)
     },
 
