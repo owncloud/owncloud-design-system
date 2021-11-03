@@ -6,11 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Add word-break rule to OcNotificationMessage component: [#1712](https://github.com/owncloud/owncloud-design-system/issues/1712)
 * Bugfix - OcTable sorting case sensitivity: [#1698](https://github.com/owncloud/owncloud-design-system/issues/1698)
 * Bugfix - Drag and Drop triggers wrong actions: [#5808](https://github.com/owncloud/web/issues/5808)
 * Enhancement - Streamline OcTextInput: [#1636](https://github.com/owncloud/owncloud-design-system/pull/1636)
 
 ## Details
+
+* Bugfix - Add word-break rule to OcNotificationMessage component: [#1712](https://github.com/owncloud/owncloud-design-system/issues/1712)
+
+   We had issues with long filenames overflowing the OcNotificationMessage body.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1712
+   https://github.com/owncloud/owncloud-design-system/pulls/1736
+
 
 * Bugfix - OcTable sorting case sensitivity: [#1698](https://github.com/owncloud/owncloud-design-system/issues/1698)
 
