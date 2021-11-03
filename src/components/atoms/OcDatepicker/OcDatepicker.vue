@@ -25,12 +25,36 @@ export default {
 </script>
 
 <style lang="scss">
-.oc-datepicker .vc-highlight {
-  // `!important` to overwrite the inline style
-  background-color: var(--oc-color-swatch-primary-default) !important;
+.vc-pane-layout {
+  color: var(--oc-color-text-default) !important;
+  background-color: var(--oc-color-background-default) !important;
+}
+.vc-arrow svg path {
+  fill: var(--oc-color-text-default) !important;
+}
+.vc-title {
+  color: var(--oc-color-text-default) !important;
+}
+.vc-weekday {
+  color: var(--oc-color-text-muted) !important;
+}
+.vc-day {
+  color: var(--oc-color-text-default) !important;
+}
+
+.vc-highlights {
+  .vc-highlight {
+    background-color: var(--oc-color-swatch-primary-default) !important;
+  }
+  + span {
+    color: var(--oc-color-text-inverse) !important;
+  }
+}
+
+.vc-day-content.is-disabled {
+  color: var(--oc-color-text-muted) !important;
 }
 </style>
-
 <docs>
 ```vue
 <template>
