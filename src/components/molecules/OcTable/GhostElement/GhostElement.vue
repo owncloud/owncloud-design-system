@@ -6,6 +6,9 @@
 </template>
 
 <script>
+/**
+ * Please head to the OcTableFiles component (https://owncloud.design/#/oC%20Components/OcTableFiles) for a demo of the Ghost Element.
+ */
 export default {
   name: "GhostElement",
   props: {
@@ -31,7 +34,7 @@ export default {
   background-color: transparent;
   padding-top: 4px;
   padding-left: 5px;
-  z-index: 99999;
+  z-index: var(--oc-z-index-modal);
   position: absolute;
   .badge {
     position: absolute;
@@ -52,7 +55,3 @@ export default {
   }
 }
 </style>
-
-<docs>
-
-</docs>

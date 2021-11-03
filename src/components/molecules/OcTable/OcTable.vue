@@ -257,10 +257,9 @@ export default {
   methods: {
     dragOver(event) {
       event.preventDefault()
-      event.target.style.cursor = "move"
     },
     setGhostElement(file, event) {
-      const selection = this.selection
+      const selection = [...this.selection]
       selection.splice(
         selection.findIndex(function (i) {
           return i.id === file.id
@@ -278,7 +277,6 @@ export default {
       event.dataTransfer.setDragImage(ghost, 0, 0)
       event.dataTransfer.dropEffect = "move"
       event.dataTransfer.effectAllowed = "move"
-      event.target.style.cursor = "move"
     },
     dragStart(file, event) {
       if (!this.dragDrop) return
@@ -292,8 +290,6 @@ export default {
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
       const dropFileId = dropTargetTr.dataset.fileId
-
-      event.target.style.cursor = "default"
       this.dropRowStyling(id, true, event)
       this.$emit(EVENT_FILE_DROPPED, dropFileId)
     },
