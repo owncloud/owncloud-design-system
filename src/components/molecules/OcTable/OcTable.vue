@@ -493,8 +493,9 @@ export default {
   mounted(){
     let view = this.view || window.location.href.split('?')[0]
     if (localStorage.getItem(`sortBy:${view}`)){
-      let field = JSON.parse(localStorage.getItem(`sortBy:${view}`))
-       this.$emit(this.constants.EVENT_THEAD_CLICKED, field)   
+      let sortBy = JSON.parse(localStorage.getItem(`sortBy:${view}`))
+       this.$emit(this.constants.EVENT_THEAD_CLICKED, sortBy.field)
+       if (!sortBy.asc) this.$emit(this.constants.EVENT_THEAD_CLICKED, sortBy.field)
     }
   },
   
@@ -544,8 +545,21 @@ export default {
     clickedField(field) {
 
       this.$emit(this.constants.EVENT_THEAD_CLICKED, field)
-        let view = this.view || window.location.href.split('?')[0]
-      localStorage.setItem(`sortBy:${view}`, JSON.stringify(field));
+      let view = this.view || window.location.href.split('?')[0]
+      
+      let orderBy = JSON.parse(localStorage.getItem(`sortBy:${view}`))
+      //case: setup exists, same field clicked
+      if (orderBy && field.title === orderBy.field.title){
+        orderBy.asc = !orderBy.asc
+        localStorage.setItem(`sortBy:${view}`, JSON.stringify(orderBy));
+      } 
+      //case: setup exists, different field clicked
+      else if (orderBy && field.title != orderBy.field.title){
+        localStorage.setItem(`sortBy:${view}`, JSON.stringify({field: field, asc: orderBy.asc}));
+      }
+      //case: first setup
+      else
+      localStorage.setItem(`sortBy:${view}`, JSON.stringify({field: field, asc: field.title==="Name"? false: true}));
 
       if (this.groupingSettings && this.groupingAllowed) {
         let group =
