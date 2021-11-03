@@ -206,6 +206,18 @@ describe("OcTable", () => {
     expect(wrapper.html().indexOf("data-file-id")).toBeGreaterThan(-1)
   })
 
+  it("emits contextmenu-clicked event upon right click on table row", async () => {
+    const wrapper = shallowMount(Table, {
+      propsData: {
+        fields,
+        data,
+        highlighted: [],
+      },
+    })
+    await wrapper.find(".oc-tbody-tr").trigger("contextmenu")
+    expect(wrapper.emitted().contextmenuClicked.length).toBe(1)
+  })
+
   it("enable dragDrop should enable draggable on rows", () => {
     const wrapper = shallowMount(Table, {
       propsData: {
