@@ -165,14 +165,27 @@ describe("OcTextInput", () => {
 
   describe("clear input", () => {
     it("has no clear button when it is disabled", () => {
-      const wrapper = getShallowWrapper({ value: "non-empty-value" })
+      const wrapper = getShallowWrapper({
+        value: "non-empty-value",
+        clearButtonEnabled: true,
+        disabled: true,
+      })
       expect(wrapper.find(selectors.clearInputButton).exists()).toBeFalsy()
     })
 
-    it("has no clear button when it is enabled but the input is empty", () => {
+    it("has clear button when it is enabled but the input is an empty string but not null", () => {
       const wrapper = getShallowWrapper({
         clearButtonEnabled: true,
         value: "",
+      })
+
+      expect(wrapper.find(selectors.clearInputButton).exists()).toBeTruthy()
+    })
+
+    it("has no clear button when it is enabled but the input is null", () => {
+      const wrapper = getShallowWrapper({
+        clearButtonEnabled: true,
+        value: null,
       })
 
       expect(wrapper.find(selectors.clearInputButton).exists()).toBeFalsy()
@@ -203,8 +216,11 @@ describe("OcTextInput", () => {
 
       await btn.trigger("click")
 
-      expect(wrapper.emitted().input[0][0]).toEqual("")
-      expect(input.element.value).toEqual("")
+      // value as data is supposed to be `null`
+      expect(wrapper.emitted().input[0][0]).toEqual(null)
+      // value in DOM would be the empty string if two way binding was used
+      // by just passing in the value it should remain unchanged
+      expect(input.element.value).toEqual("non-empty-value")
       expect(document.activeElement.id).toBe(input.element.id)
     })
   })

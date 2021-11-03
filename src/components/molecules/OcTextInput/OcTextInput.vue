@@ -13,8 +13,10 @@
           'oc-text-input-danger': !!errorMessage,
         }"
         :type="type"
-        :value="value"
+        :value="displayValue"
+        :disabled="disabled"
         v-on="listeners"
+        @change="onChange($event.target.value)"
         @input="onInput($event.target.value)"
         @focus="onFocus($event.target)"
       />
@@ -112,6 +114,23 @@ export default {
       default: "",
     },
     /**
+     * Value to show when no value is provided
+     * This does not set `value` automatically.
+     * The user needs to explicitly enter a text to set it as `value`.
+     */
+    defaultValue: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    /**
+     * Disables the input field
+     */
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    /**
      * Accessible of the form input field, via aria-label.
      **/
     label: {
@@ -169,6 +188,7 @@ export default {
       const listeners = this.$listeners
 
       // Delete listeners for events which are emitted via methods
+      delete listeners["change"]
       delete listeners["input"]
       delete listeners["focus"]
 
@@ -181,6 +201,10 @@ export default {
       const additionalAttrs = {}
       if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
         additionalAttrs["aria-describedby"] = this.messageId
+      }
+      // FIXME: placeholder usage is discouraged, we need to find a better UX concept
+      if (this.defaultValue) {
+        additionalAttrs["placeholder"] = this.defaultValue
       }
       return { ...this.$attrs, ...additionalAttrs }
     },
@@ -199,10 +223,13 @@ export default {
       return this.descriptionMessage
     },
     showClearButton() {
-      return this.clearButtonEnabled && this.value && this.value.length > 0
+      return !this.disabled && this.clearButtonEnabled && this.value !== null
     },
     clearButtonAccessibleLabelValue() {
       return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
+    },
+    displayValue() {
+      return this.value || ""
     },
   },
   methods: {
@@ -214,9 +241,17 @@ export default {
       this.$refs.input.focus()
     },
     onClear() {
-      this.$refs.input.value = ""
-      this.$refs.input.focus()
-      this.onInput("")
+      this.focus()
+
+      this.onInput(null)
+      this.onChange(null)
+    },
+    onChange(value) {
+      /**
+       * Change event
+       * @type {event}
+       **/
+      this.$emit("change", value)
     },
     onInput(value) {
       /**
@@ -307,6 +342,10 @@ export default {
     <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
     <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
     <oc-text-input label="Clear input" v-model="inputValueForClearing" :clear-button-enabled="true" />
+    <oc-text-input label="Input with default" v-model="inputValueWithDefault" :clear-button-enabled="true" default-value="Some default"/>
+    <p>
+      Value: {{ inputValueWithDefault !== null ? inputValueWithDefault : "null" }}
+    </p>
     <h3 class="oc-heading-divider">
       Messages
     </h3>
@@ -340,6 +379,7 @@ export default {
         inputValue: 'initial',
         valueForMessages: '',
         inputValueForClearing: 'clear me',
+        inputValueWithDefault: null,
       }
     },
     computed: {
