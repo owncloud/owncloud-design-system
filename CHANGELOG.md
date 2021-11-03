@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [11.1.0] (2021-11-03)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 11.1.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v11.0.0...master
+[11.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.0.0...v11.1.0
 
 ## Summary
 
@@ -1190,7 +1190,7 @@ The following sections list the changes in ownCloud Design System 6.4.0.
 
 The following sections list the changes in ownCloud Design System 6.3.0.
 
-[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.3.0
+[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...v6.3.0
 
 ## Summary
 
@@ -1281,39 +1281,11 @@ The following sections list the changes in ownCloud Design System 6.3.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1240
 
-# Changelog for [6.2.0] (2021-04-22)
-
-The following sections list the changes in ownCloud Design System 6.2.0.
-
-[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...v6.2.0
-
-## Summary
-
-* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-## Details
-
-* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-   - property productName shouldn't be required anymore in OcSidebar after logoAlt has been
-   introduced - role="progressbar" is obsolete on `<progress>` HTML elements
-
-   https://github.com/owncloud/owncloud-design-system/pull/1233
-
-
-* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-   By adding a negative tabindex the table rows are now focusable which is an important aspect of
-   accessibility/keyboard navigation.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1233
-
 # Changelog for [6.1.0] (2021-04-22)
 
 The following sections list the changes in ownCloud Design System 6.1.0.
 
-[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.1.0
+[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.1.0
 
 ## Summary
 
@@ -1368,11 +1340,59 @@ The following sections list the changes in ownCloud Design System 6.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1231
 
+# Changelog for [6.2.0] (2021-04-22)
+
+The following sections list the changes in ownCloud Design System 6.2.0.
+
+[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.2.0
+
+## Summary
+
+* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+## Details
+
+* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+   - property productName shouldn't be required anymore in OcSidebar after logoAlt has been
+   introduced - role="progressbar" is obsolete on `<progress>` HTML elements
+
+   https://github.com/owncloud/owncloud-design-system/pull/1233
+
+
+* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+   By adding a negative tabindex the table rows are now focusable which is an important aspect of
+   accessibility/keyboard navigation.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1233
+
+# Changelog for [6.0.1] (2021-04-19)
+
+The following sections list the changes in ownCloud Design System 6.0.1.
+
+[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.0.1
+
+## Summary
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+## Details
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+   In the `v6.0.0` release, the color values for `background-muted` and
+   `background-hightlighted` got swapped by accident. This produced unwanted results in the
+   results and gets reverted to the original and working version with this change.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1227
+
 # Changelog for [6.0.0] (2021-04-19)
 
 The following sections list the changes in ownCloud Design System 6.0.0.
 
-[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.0.0
+[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.0
 
 ## Summary
 
@@ -1409,26 +1429,6 @@ The following sections list the changes in ownCloud Design System 6.0.0.
    enabled by simply adding a `sortable: true` to table fields.
 
    https://github.com/owncloud/owncloud-design-system/pull/1219
-
-# Changelog for [6.0.1] (2021-04-19)
-
-The following sections list the changes in ownCloud Design System 6.0.1.
-
-[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.1
-
-## Summary
-
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
-
-## Details
-
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
-
-   In the `v6.0.0` release, the color values for `background-muted` and
-   `background-hightlighted` got swapped by accident. This produced unwanted results in the
-   results and gets reverted to the original and working version with this change.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1227
 
 # Changelog for [5.1.0] (2021-04-15)
 
@@ -1971,7 +1971,7 @@ The following sections list the changes in ownCloud Design System 3.2.1.
 
 The following sections list the changes in ownCloud Design System 3.2.0.
 
-[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.2.0
+[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.2.0
 
 ## Summary
 
@@ -2044,11 +2044,30 @@ The following sections list the changes in ownCloud Design System 3.2.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1139
 
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
+
 # Changelog for [3.0.0] (2021-02-24)
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.0.0
 
 ## Summary
 
@@ -2208,48 +2227,11 @@ The following sections list the changes in ownCloud Design System 3.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
 
-# Changelog for [3.1.0] (2021-02-24)
-
-The following sections list the changes in ownCloud Design System 3.1.0.
-
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.1.0
-
-## Summary
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-## Details
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1119
-
-# Changelog for [2.1.1] (2021-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.1.
-
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
-
-## Summary
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-## Details
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-   The uniqueId helper function returned a callback instead of a string.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1060
-
 # Changelog for [2.1.2] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.2.
 
-[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v2.1.2
 
 ## Summary
 
@@ -2265,6 +2247,24 @@ The following sections list the changes in ownCloud Design System 2.1.2.
    anymore.
 
    https://github.com/owncloud/owncloud-design-system/pull/1064
+
+# Changelog for [2.1.1] (2021-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.1.
+
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
+
+## Summary
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+## Details
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+   The uniqueId helper function returned a callback instead of a string.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.0] (2021-01-19)
 
@@ -2443,7 +2443,7 @@ The following sections list the changes in ownCloud Design System 2.0.0.
 
 The following sections list the changes in ownCloud Design System 1.15.0.
 
-[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.15.0
+[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.15.0
 
 ## Summary
 
@@ -2478,31 +2478,11 @@ The following sections list the changes in ownCloud Design System 1.15.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/924
 
-# Changelog for [1.13.0] (2020-10-28)
-
-The following sections list the changes in ownCloud Design System 1.13.0.
-
-[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.13.0
-
-## Summary
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-## Details
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
-   accessibility aspects are already implement, for example expanding and collapsing
-   accordion items by pressing space or enter already works. More will come later on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/911
-
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
 
-[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.14.0
+[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.14.0
 
 ## Summary
 
@@ -2524,6 +2504,26 @@ The following sections list the changes in ownCloud Design System 1.14.0.
    We added an icon for `file version`
 
    https://github.com/owncloud/owncloud-design-system/pull/917
+
+# Changelog for [1.13.0] (2020-10-28)
+
+The following sections list the changes in ownCloud Design System 1.13.0.
+
+[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.13.0
+
+## Summary
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+## Details
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
+   accessibility aspects are already implement, for example expanding and collapsing
+   accordion items by pressing space or enter already works. More will come later on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/911
 
 # Changelog for [1.12.2] (2020-10-26)
 
