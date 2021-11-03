@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-alert" :class="classes">
+  <div class="oc-alert oc-notification-message" :class="classes">
     <oc-icon :variation="iconVariation" size="large" name="info" class="oc-mr-s" />
     <div
       class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
@@ -106,6 +106,10 @@ export default {
 </script>
 
 <style lang="scss">
+.oc-notification-message {
+  word-break: break-word;
+}
+
 // TODO: Refactor after removal of uikit
 .uk-notification-message {
   background-color: var(--oc-color-background-default) !important;
