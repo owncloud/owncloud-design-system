@@ -631,6 +631,7 @@ export default {
           {
             id: "forest",
             name: "forest.jpg",
+            extension: "jpg",
             path: "images/nature/forest.jpg",
             thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
             indicators: [],

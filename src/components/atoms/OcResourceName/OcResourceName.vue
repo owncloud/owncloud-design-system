@@ -112,13 +112,12 @@ export default {
     display: block;
   }
 
-  &-basename {
+  &-basename,
+  &-extension {
     color: var(--oc-color-text-default);
-    font-weight: bold;
     white-space: pre;
   }
 
-  &-extension,
   &-path {
     color: var(--oc-color-text-muted);
     white-space: pre;
