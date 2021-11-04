@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v11.1.0...master
+
+## Summary
+
+* Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
+
+## Details
+
+* Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
+
+   We reduced the font weight for filenames to make the files list easier for the eye.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1759
+
 # Changelog for [11.1.0] (2021-11-03)
 
 The following sections list the changes in ownCloud Design System 11.1.0.
