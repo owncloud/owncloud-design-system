@@ -95,6 +95,6 @@ color:
       muted:
         value: "{color.swatch.passive.default.value}"
     border:
-      value: rgb(48, 91, 139)
+      value: rgb(64,121,186)
     bg:
       value: rgb(240, 244, 248)
