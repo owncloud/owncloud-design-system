@@ -493,9 +493,12 @@ export default {
   mounted(){
     let view = this.view || window.location.href.split('?')[0]
     if (localStorage.getItem(`sortBy:${view}`)){
+
       let sortBy = JSON.parse(localStorage.getItem(`sortBy:${view}`))
-       this.$emit(this.constants.EVENT_THEAD_CLICKED, sortBy.field)
+       if (sortBy.field.name!=="name") this.$emit(this.constants.EVENT_THEAD_CLICKED, sortBy.field)
        if (!sortBy.asc) this.$emit(this.constants.EVENT_THEAD_CLICKED, sortBy.field)
+    } else {
+      localStorage.setItem(`sortBy:${view}`, JSON.stringify({field: this.fields[1], asc: true}));
     }
   },
   
@@ -557,10 +560,6 @@ export default {
       else if (orderBy && field.title != orderBy.field.title){
         localStorage.setItem(`sortBy:${view}`, JSON.stringify({field: field, asc: orderBy.asc}));
       }
-      //case: first setup
-      else
-      localStorage.setItem(`sortBy:${view}`, JSON.stringify({field: field, asc: field.title==="Name"? false: true}));
-
       if (this.groupingSettings && this.groupingAllowed) {
         let group =
           Object.keys(this.groupingSettings.functionColMappings).find(
