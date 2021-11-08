@@ -36,10 +36,10 @@
     <oc-tbody>
       <oc-tr
         v-for="(item, trIndex) in tableData"
-        :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
+        :key="`oc-tbody-tr-${itemDomSelector(item) || trIndex}`"
         :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
-        :data-file-id="item.id"
+        :data-item-id="item[idKey]"
         :draggable="dragDrop"
         @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
         @contextmenu.native="
@@ -47,10 +47,10 @@
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native="dragStart(item, $event)"
-        @drop.native="dropRowEvent(item.id, $event)"
-        @dragenter.native.prevent="dropRowStyling(item.id, false, $event)"
-        @dragleave.native.prevent="dropRowStyling(item.id, true, $event)"
-        @mouseleave="dropRowStyling(item.id, true, $event)"
+        @drop.native="dropRowEvent(item[idKey], $event)"
+        @dragenter.native.prevent="dropRowStyling(item[idKey], false, $event)"
+        @dragleave.native.prevent="dropRowStyling(item[idKey], true, $event)"
+        @mouseleave="dropRowStyling(item[idKey], true, $event)"
         @dragover.native="dragOver($event)"
       >
         <oc-td
@@ -132,6 +132,16 @@ export default {
     idKey: {
       type: String,
       default: "id",
+    },
+    /**
+     * Closure function to mutate the item id into a valid DOM selector
+     */
+    itemDomSelector: {
+      type: Function,
+      required: false,
+      default(item) {
+        return item[this.idKey]
+      },
     },
     /**
      * The column layout of the table.
@@ -259,18 +269,13 @@ export default {
     dragOver(event) {
       event.preventDefault()
     },
-    setGhostElement(file, event) {
+    setGhostElement(item, event) {
       const selection = [...this.selection]
-      selection.splice(
-        selection.findIndex(function (i) {
-          return i.id === file.id
-        }),
-        1
-      )
+      selection.splice(selection.findIndex((i) => i.id === item.id), 1)
       const GhostElementComponent = Vue.extend(GhostElement)
       const ghostInstances = new GhostElementComponent({
         propsData: {
-          previewItems: [file, ...selection],
+          previewItems: [item, ...selection],
         },
       })
       ghostInstances.$mount()
@@ -352,7 +357,7 @@ export default {
       return {
         class: [
           "oc-tbody-tr",
-          `oc-tbody-tr-${item[this.idKey] || index}`,
+          `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
           this.isHighlighted(item) ? "oc-table-highlighted" : undefined,
           this.isDisabled(item) ? "oc-table-disabled" : undefined,
         ].filter(Boolean),
