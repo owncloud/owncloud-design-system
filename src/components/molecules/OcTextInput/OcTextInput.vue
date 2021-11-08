@@ -1,7 +1,7 @@
 <template>
   <div>
     <label class="oc-label" :for="id" v-text="label" />
-    <div class="uk-position-relative">
+    <div class="oc-position-relative">
       <input
         :id="id"
         v-bind="additionalAttributes"
@@ -23,7 +23,7 @@
       <oc-button
         v-if="showClearButton"
         :aria-label="clearButtonAccessibleLabelValue"
-        class="uk-position-small uk-position-center-right oc-text-input-btn-clear"
+        class="oc-position-small oc-position-center-right oc-text-input-btn-clear"
         appearance="raw"
         @click="onClear"
       >
@@ -267,7 +267,7 @@ export default {
 
 <style lang="scss">
 .oc-text-input {
-  @extend .uk-input;
+  @extend .oc-input;
 
   background-color: var(--oc-color-input-bg);
   border: 1px solid var(--oc-color-input-border);
@@ -301,8 +301,8 @@ export default {
   }
 
   &-message {
-    @extend .uk-flex;
-    @extend .uk-flex-middle;
+    @extend .oc-flex;
+    @extend .oc-flex-middle;
     @extend .oc-mt-xs;
 
     min-height: $oc-font-size-default * 1.5;

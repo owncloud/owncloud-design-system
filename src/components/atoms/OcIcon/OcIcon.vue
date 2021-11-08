@@ -305,7 +305,7 @@ export default {
       <oc-tbody>
         <oc-tr v-for="variation in variations" :key="'variation-' + variation.id">
           <oc-td>{{ variation.name }}</oc-td>
-          <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverse'}">
+          <oc-td v-bind:class="{'oc-background-brand': variation.name == 'inverse'}">
             <oc-icon :variation="variation.name" name="close"/>
             <oc-icon :variation="variation.name" name="delete-bin-5"/>
             <oc-icon :variation="variation.name" name="information"/>

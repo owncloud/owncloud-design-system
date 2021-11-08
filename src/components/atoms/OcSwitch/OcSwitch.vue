@@ -121,7 +121,7 @@ export default {
 </style>
 
 <docs>
-```vue
+```js
 <template>
   <section>
     <h3>Switcher behavior</h3>

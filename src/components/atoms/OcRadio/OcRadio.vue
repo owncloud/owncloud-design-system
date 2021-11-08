@@ -121,16 +121,33 @@ export default {
 }
 
 .oc-radio {
-  @extend .uk-radio;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
-  background-color: var(--oc-color-input-bg);
   border: 1px solid var(--oc-color-input-border);
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: var(--oc-color-input-bg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, border;
+  vertical-align: middle;
+  width: 16px;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 
   &:checked {
     background-color: var(--oc-color-swatch-brand-default);
   }
 
-  // FIXME: Do not use such specific selectors after we get rid of UIkit
   &.oc-radio-s {
     @include oc-form-check-size(0.7);
   }

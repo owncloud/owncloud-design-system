@@ -190,12 +190,21 @@ export default {
 
 <style lang="scss">
 .oc-textarea {
-  @extend .uk-textarea;
-
   background-color: var(--oc-color-input-bg);
-  border-color: var(--oc-color-input-border);
   border-radius: 3px;
+  border: 1px solid var(--oc-color-input-border);
+  box-sizing: border-box;
   color: var(--oc-color-input-text-muted);
+  font-family: initial;
+  margin: 0;
+  max-width: 100%;
+  overflow: auto;
+  padding: 4px 10px;
+
+  transition: 0.2s ease-in-out;
+  transition-property: color, background-color, border;
+  width: 100%;
+  -webkit-appearance: none;
 
   &:focus {
     background-color: var(--oc-color-input-bg);
@@ -220,8 +229,8 @@ export default {
   }
 
   &-message {
-    @extend .uk-flex;
-    @extend .uk-flex-middle;
+    @extend .oc-flex;
+    @extend .oc-flex-middle;
     @extend .oc-mt-xs;
 
     min-height: $oc-font-size-default * 1.5;

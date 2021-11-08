@@ -22,7 +22,7 @@ describe("OcAlert", () => {
     })
 
     expect(wrapper.props().noClose).toBe(true)
-    expect(wrapper.findAll(".uk-alert-close").length).toBe(0)
+    expect(wrapper.findAll(".oc-alert-close").length).toBe(0)
     expect(wrapper).toMatchSnapshot()
   })
 
@@ -44,7 +44,7 @@ describe("OcAlert", () => {
       slots: testSlots,
     })
 
-    wrapper.find(".uk-alert-close").trigger("click")
+    wrapper.find(".oc-alert-close").trigger("click")
     expect(wrapper.emitted().close).toBeTruthy()
   })
 })

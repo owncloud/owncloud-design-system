@@ -489,7 +489,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   <h3 class="oc-heading-divider">
     Button variations
   </h3>
-  <div class="uk-flex">
+  <div>
     <oc-button v-for="variation in variations" :variation="variation.title" class="oc-mr-s oc-mb-s">
       {{ variation.title }}
     </oc-button>
@@ -498,7 +498,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   <h3 class="oc-heading-divider">
     Button sizes
   </h3>
-  <div class="uk-flex">
+  <div class="oc-flex">
     <oc-button size="large" class="oc-mr-s">Large</oc-button>
     <oc-button class="oc-mr-s oc-align-self-center">Medium (default)</oc-button>
     <oc-button size="small" class="oc-align-self-center">Small</oc-button>
@@ -507,7 +507,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   <h3 class="oc-heading-divider">
     Button with icons
   </h3>
-  <div class="uk-flex">
+  <div class="oc-flex">
     <oc-button class="oc-mr-s">
       <oc-icon name="home-2" />
       Home

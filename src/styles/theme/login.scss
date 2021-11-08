@@ -1,10 +1,10 @@
 .oc-login {
-  @extend .uk-background-cover;
+  @extend .oc-background-cover;
 
   position: relative;
 
   &-logo {
-    @extend .uk-background-cover;
+    @extend .oc-background-cover;
 
     left: 50%;
     max-height: 200px;
@@ -19,17 +19,16 @@
   }
 
   &-card {
-    @extend .uk-card;
-    @extend .uk-card-default;
-    @extend .uk-text-center;
+    @extend .oc-card;
+    @extend .oc-text-center;
 
     &-body {
-      @extend .uk-card-body;
+      @extend .oc-card-body;
     }
 
     &-footer {
-      @extend .uk-card-footer;
-      @extend .uk-text-small;
+      @extend .oc-card-footer;
+      @extend .oc-text-small;
     }
   }
 }

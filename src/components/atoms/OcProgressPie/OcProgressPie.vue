@@ -102,7 +102,7 @@ $default-size: 64px;
   }
 
   &-label {
-    @extend .uk-text-muted;
+    @extend .oc-text-muted;
 
     color: var(--oc-color-text-muted) !important;
     left: 50%;
@@ -136,16 +136,14 @@ $default-size: 64px;
 </style>
 <docs>
 ```js
-<div class="uk-flex uk-flex-middle">
-  <section>
-    <h3 class="oc-heading-divider">
-      Pie shape progress
-    </h3>
-    <oc-progress-pie :progress="33" />
-    <oc-progress-pie :progress="33" show-label/>
-    <oc-progress-pie :progress="2" :max="4" />
-    <oc-progress-pie :progress="4" :max="6" show-label />
-  </section>
-</div>
+<section>
+  <h3 class="oc-heading-divider">
+    Pie shape progress
+  </h3>
+  <oc-progress-pie :progress="33" />
+  <oc-progress-pie :progress="33" show-label/>
+  <oc-progress-pie :progress="2" :max="4" />
+  <oc-progress-pie :progress="4" :max="6" show-label />
+</section>
 ```
 </docs>

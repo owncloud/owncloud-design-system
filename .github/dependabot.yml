@@ -7,9 +7,6 @@ updates:
     time: "22:00"
   open-pull-requests-limit: 10
   ignore:
-  - dependency-name: uikit
-    versions:
-    - ">= 0"
   - dependency-name: sass
     versions:
     - ">= 0"

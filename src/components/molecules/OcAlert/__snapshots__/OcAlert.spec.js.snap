@@ -10,7 +10,7 @@ exports[`OcAlert displays correct message 1`] = `
 `;
 
 exports[`OcAlert hides the close button if disabled 1`] = `
-<div uk-alert="" class="oc-alert oc-alert-passive">
+<div class="oc-alert oc-alert-passive">
   <!---->
   <p class="slot-message">Test message</p>
 </div>

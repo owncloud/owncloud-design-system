@@ -4,17 +4,17 @@
       <oc-button
         appearance="raw"
         justify-content="space-between"
-        class="uk-text-left uk-width-1-1"
+        class="oc-text-left oc-width-1-1"
         :aria-expanded="expanded.toString()"
         :aria-controls="contentId"
         @click="toggleExpanded"
         @keydown.space="toggleExpanded"
         @keydown.enter="toggleExpanded"
       >
-        <span class="uk-width-1-1">
-          <span class="uk-flex uk-flex-middle">
+        <span class="oc-width-1-1">
+          <span class="oc-flex oc-flex-middle">
             <oc-icon v-if="icon" :name="icon" class="oc-mr-s" />
-            <span class="uk-width-expand oc-accordion-title-text" v-text="title" />
+            <span class="oc-width-expand oc-accordion-title-text" v-text="title" />
             <span class="oc-ml-xs oc-icon-l">
               <oc-icon
                 name="arrow-drop-down"

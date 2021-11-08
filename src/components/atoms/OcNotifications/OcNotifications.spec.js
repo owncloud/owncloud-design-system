@@ -19,7 +19,7 @@ describe("OcNotifications", () => {
         const wrapper = getWrapper({
           propsData: { position: position },
         })
-        expect(wrapper.attributes("class")).toContain(`uk-notification-${position}`)
+        expect(wrapper.attributes("class")).toContain(`oc-notification-${position}`)
       }
     )
   })

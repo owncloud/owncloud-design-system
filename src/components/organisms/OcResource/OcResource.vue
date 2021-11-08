@@ -286,10 +286,12 @@ export default {
     display: block;
     padding-left: var(--oc-space-small);
 
+    a {
+      text-decoration: none;
+    }
     a:hover,
     a:focus {
       outline-offset: 0;
-      text-decoration: none;
     }
   }
 

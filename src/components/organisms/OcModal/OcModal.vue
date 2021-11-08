@@ -32,7 +32,7 @@
             @keydown.enter="confirm"
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
-          <div class="oc-modal-body-actions uk-flex uk-flex-right">
+          <div class="oc-modal-body-actions oc-flex oc-flex-right">
             <oc-button
               class="oc-modal-body-actions-cancel"
               :variation="buttonCancelVariation"
@@ -373,6 +373,7 @@ export default {
 
     &-message {
       margin-bottom: var(--oc-space-medium);
+      margin-top: var(--oc-space-small);
     }
 
     &-input {
@@ -386,11 +387,6 @@ export default {
 
       .oc-button {
         border-radius: 4px;
-
-        &.uk-button-default {
-          background-color: var(--oc-color-text-inverse);
-          color: var(--oc-color-text-default);
-        }
       }
     }
   }
@@ -405,7 +401,7 @@ export default {
     message="Do you accept our terms of use?"
     button-cancel-text="Decline"
     button-confirm-text="Accept"
-    class="oc-mb-l uk-position-relative"
+    class="oc-mb-l oc-position-relative"
   />
   <oc-modal
     variation="danger"
@@ -416,7 +412,7 @@ export default {
     button-confirm-text="Delete"
     button-confirm-appearance="filled"
     button-confirm-variation="danger"
-    class="oc-mb-l uk-position-relative"
+    class="oc-mb-l oc-position-relative"
   />
   <oc-modal
     title="Create new folder"
@@ -427,14 +423,14 @@ export default {
     input-label="Folder name"
     input-description="Enter a folder name"
     input-error="This name is already taken"
-    class="oc-mb-l uk-position-relative"
+    class="oc-mb-l oc-position-relative"
   />
   <oc-modal
     title="Rename file lorem.txt"
     button-cancel-text="Cancel"
     button-cancel-variation="warning"
     button-confirm-text="Rename"
-    class="uk-position-relative"
+    class="oc-position-relative"
   >
     <template v-slot:content>
       <oc-text-input
@@ -460,7 +456,7 @@ If activated, only focusable elements within the modal are reachable via keyboar
       message="Do you accept our terms of use?"
       button-cancel-text="Decline"
       button-confirm-text="Accept"
-      class="oc-mb-l uk-position-relative"
+      class="oc-mb-l oc-position-relative"
       :focus-trap-active="active"
     />
   </div>

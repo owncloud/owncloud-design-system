@@ -31,8 +31,20 @@ export default {
 
 <style lang="scss">
 .oc-loader {
-  @extend .uk-progress;
-  @extend .uk-position-relative;
+  @extend .oc-position-relative;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f8f8f8;
+  border: 0;
+  border-radius: 500px;
+  display: block;
+  height: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  vertical-align: baseline;
+  width: 100%;
 
   &-flat {
     border-radius: 0 !important;
@@ -40,8 +52,8 @@ export default {
   }
 
   &::after {
-    @extend .uk-position-absolute;
-    @extend .uk-display-block;
+    @extend .oc-position-absolute;
+    @extend .oc-display-block;
 
     background: var(--oc-color-text-muted);
     content: "";

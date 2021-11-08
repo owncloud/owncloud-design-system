@@ -1,10 +1,6 @@
 <template>
   <div :id="dropId" ref="drop" class="oc-drop" @click="$_ocDrop_close">
-    <div
-      v-if="$slots.default"
-      class="uk-card uk-card-default uk-card-small uk-card-body"
-      :class="paddingClass"
-    >
+    <div v-if="$slots.default" class="oc-card oc-card-body" :class="paddingClass">
       <slot />
     </div>
     <slot v-else name="special" />
@@ -217,7 +213,7 @@ export default {
 <docs>
 ```js
 <template>
-  <div class="uk-button-group oc-mt-s">
+  <div class="oc-button-group oc-mt-s">
     <oc-button id="my_menu" class="oc-mr-s">Menu</oc-button>
     <oc-drop toggle="#my_menu" mode="click">
       <ul>
@@ -232,7 +228,7 @@ export default {
       <p>
         Lets filter:
       </p>
-      <ul class="uk-list">
+      <ul class="oc-list">
         <li>
           <oc-checkbox label="" />
           <span class="oc-text-muted">Show Files</span>
@@ -249,13 +245,13 @@ export default {
 
     <oc-button id="my_advanced">Advanced</oc-button>
     <oc-drop dropId="oc-drop" toggle="#my_advanced" mode="click" closeOnClick>
-      <div slot="special" class="uk-card uk-card-default">
-        <div class="uk-card-header">
-          <h3 class="uk-card-title">
+      <div slot="special" class="oc-card">
+        <div class="oc-card-header">
+          <h3 class="oc-card-title">
             Advanced
           </h3>
         </div>
-        <div class="uk-card-body">
+        <div class="oc-card-body">
           <p>
             I'm a slightly more advanced drop down and I'll be closed as soon as you click on me.
           </p>
@@ -267,7 +263,7 @@ export default {
 ```
 
 ### Custom target
-```
+```js
 <div>
   <div>
     <p id="target">This is the target of the drop</p>
@@ -280,7 +276,7 @@ export default {
 ```
 
 ### Open drop programatically
-```
+```js
 <template>
 <div>
   <oc-button id="manual-target" @click="open">Open</oc-button>
