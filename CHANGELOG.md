@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Enhancement - Add accentuated class for OcTable: [#5967](https://github.com/owncloud/web/issues/5967)
+* Enhancement - Add Ghost Element for Drag & Drop: [#5788](https://github.com/owncloud/web/issues/5788)
 * Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
 * Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
 
@@ -19,6 +20,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5967
    https://github.com/owncloud/owncloud-design-system/pull/1763
+
+
+* Enhancement - Add Ghost Element for Drag & Drop: [#5788](https://github.com/owncloud/web/issues/5788)
+
+   We've added a custom ghost element for the drag&drop functionality in the OcTableFiles to
+   better visualize the action to the user.
+
+   https://github.com/owncloud/web/issues/5788
+   https://github.com/owncloud/owncloud-design-system/pull/1754
 
 
 * Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
