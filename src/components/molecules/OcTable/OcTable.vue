@@ -230,6 +230,7 @@ export default {
         EVENT_TROW_MOUNTED,
         EVENT_TROW_CONTEXTMENU,
       },
+      ghostElement: null
     }
   },
   computed: {
@@ -273,10 +274,11 @@ export default {
         },
       })
       ghostInstances.$mount()
-      const ghost = document.body.appendChild(ghostInstances.$el)
-      ghost.style.left = "-99999px"
-      ghost.style.top = "-99999px"
-      event.dataTransfer.setDragImage(ghost, 0, 0)
+      this.ghostElement = document.body.appendChild(ghostInstances.$el)
+      this.ghostElement.ariaHidden = "true"
+      this.ghostElement.style.left = "-99999px"
+      this.ghostElement.style.top = "-99999px"
+      event.dataTransfer.setDragImage(this.ghostElement, 0, 0)
       event.dataTransfer.dropEffect = "move"
       event.dataTransfer.effectAllowed = "move"
     },
@@ -289,6 +291,7 @@ export default {
       if (!this.dragDrop) return
       const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
       if (hasFilePayload) return
+      this.ghostElement.remove()
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
       const dropFileId = dropTargetTr.dataset.fileId
