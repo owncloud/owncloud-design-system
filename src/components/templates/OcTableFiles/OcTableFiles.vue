@@ -170,7 +170,7 @@ export default {
     resourceDomSelector: {
       type: Function,
       required: false,
-      default: resource => resource.id.replace(/[^A-Za-z]/g, ""),
+      default: resource => resource.id.replace(/[^A-Za-z0-9\-_]/g, ""),
     },
     /**
      * Asserts whether resources path should be shown in the resource name

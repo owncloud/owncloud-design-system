@@ -203,7 +203,6 @@ describe("OcTable", () => {
         highlighted: [],
       },
     })
-    console.log(wrapper.html())
     expect(wrapper.html().indexOf("data-item-id")).toBeGreaterThan(-1)
   })
 
