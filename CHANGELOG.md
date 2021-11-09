@@ -6,9 +6,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
 * Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
 
 ## Details
+
+* Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
+
+   https://github.com/owncloud/owncloud-design-system/pull/1771
+
 
 * Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
 
