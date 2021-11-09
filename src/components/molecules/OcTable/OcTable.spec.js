@@ -195,7 +195,7 @@ describe("OcTable", () => {
     expect(wrapper.findAll(".oc-table-highlighted").length).toEqual(2)
   })
 
-  it("adds data-file-id for rows", () => {
+  it("adds data-item-id for rows", () => {
     const wrapper = shallowMount(Table, {
       propsData: {
         fields,
@@ -203,7 +203,21 @@ describe("OcTable", () => {
         highlighted: [],
       },
     })
-    expect(wrapper.html().indexOf("data-file-id")).toBeGreaterThan(-1)
+    expect(wrapper.html().indexOf("data-item-id")).toBeGreaterThan(-1)
+  })
+
+  it("accepts itemDomSelector closure", () => {
+    const wrapper = shallowMount(Table, {
+      propsData: {
+        fields,
+        data,
+        highlighted: [],
+        itemDomSelector: item => ["custom", item.id].join("-"),
+      },
+    })
+    data.forEach(item => {
+      expect(wrapper.find([".oc-tbody-tr-custom", item.id].join("-")).exists()).toBeTruthy()
+    })
   })
 
   it("emits contextmenu-clicked event upon right click on table row", async () => {

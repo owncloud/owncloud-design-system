@@ -8,12 +8,13 @@
     :header-position="headerPosition"
     :drag-drop="dragDrop"
     :hover="hover"
+    :item-dom-selector="resourceDomSelector"
     :selection="selection"
     @highlight="fileClicked"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
-    @fileDropped="fileDropped"
-    @fileDragged="fileDragged"
+    @itemDropped="fileDropped"
+    @itemDragged="fileDragged"
   >
     <template #selectHeader>
       <div class="oc-table-files-select-all">
@@ -28,7 +29,7 @@
     </template>
     <template #select="{ item }">
       <oc-checkbox
-        :id="`oc-table-files-select-${item.id}`"
+        :id="`oc-table-files-select-${resourceDomSelector(item)}`"
         :label="getResourceCheckboxLabel(item)"
         :hide-label="true"
         size="large"
@@ -40,7 +41,7 @@
     </template>
     <template #name="{ item }">
       <oc-resource
-        :key="`${item.path}-${item.id}-${item.thumbnail}`"
+        :key="`${item.path}-${resourceDomSelector(item)}-${item.thumbnail}`"
         :resource="item"
         :is-path-displayed="arePathsDisplayed"
         :is-thumbnail-displayed="areThumbnailsDisplayed"
@@ -79,21 +80,21 @@
         <!-- @slot Add quick actions before the `context-menu / three dot` button in the actions column -->
         <slot name="quickActions" :resource="item" />
         <oc-button
-          :id="`context-menu-trigger-${item.id.replace(/=+/, '')}`"
+          :id="`context-menu-trigger-${resourceDomSelector(item)}`"
           v-oc-tooltip="contextMenuLabel"
           :aria-label="contextMenuLabel"
           class="oc-table-files-btn-action-dropdown"
           appearance="raw"
           @click.stop.prevent="
-            resetDropPosition(`context-menu-drop-ref-${item.id.replace(/=+/, '')}`, $event, item)
+            resetDropPosition(`context-menu-drop-ref-${resourceDomSelector(item)}`, $event, item)
           "
         >
           <oc-icon name="more_vert" />
         </oc-button>
         <oc-drop
-          :ref="`context-menu-drop-ref-${item.id.replace(/=+/, '')}`"
-          :drop-id="`context-menu-drop-${item.id.replace(/=+/, '')}`"
-          :toggle="`#context-menu-trigger-${item.id.replace(/=+/, '')}`"
+          :ref="`context-menu-drop-ref-${resourceDomSelector(item)}`"
+          :drop-id="`context-menu-drop-${resourceDomSelector(item)}`"
+          :toggle="`#context-menu-trigger-${resourceDomSelector(item)}`"
           :popper-options="popperOptions"
           mode="click"
           close-on-click
@@ -123,7 +124,7 @@ import OcCheckbox from "../../atoms/OcCheckbox/OcCheckbox.vue"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import OcResourceSize from "../../atoms/OcResourceSize/OcResourceSize.vue"
 import OcDrop from "../../atoms/OcDrop/OcDrop.vue"
-import { EVENT_TROW_MOUNTED, EVENT_FILE_DROPPED } from "../../../helpers/constants"
+import { EVENT_TROW_MOUNTED, EVENT_ITEM_DROPPED } from "../../../helpers/constants"
 
 export default {
   name: "OcTableFiles",
@@ -162,6 +163,14 @@ export default {
     resources: {
       type: Array,
       required: true,
+    },
+    /**
+     * Closure function to mutate the resource id into a valid DOM selector.
+     */
+    resourceDomSelector: {
+      type: Function,
+      required: false,
+      default: resource => resource.id.replace(/[^A-Za-z0-9\-_]/g, ""),
     },
     /**
      * Asserts whether resources path should be shown in the resource name
@@ -412,7 +421,7 @@ export default {
       this.addSelectedResource(file)
     },
     fileDropped(fileId) {
-      this.$emit(EVENT_FILE_DROPPED, fileId)
+      this.$emit(EVENT_ITEM_DROPPED, fileId)
     },
     addSelectedResource(file) {
       const isSelected = this.selection.some(e => e.id === file.id)
@@ -600,7 +609,7 @@ export default {
 <template>
   <div>
     <oc-table-files :resources="resources" disabled="notes" v-model="selected" class="oc-mb"
-                    @action="handleAction" @fileDropped="fileDropped" :drag-drop="true">
+                    @action="handleAction" @itemDropped="fileDropped" :drag-drop="true" :resource-dom-selector="resourceDomSelector">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
           <oc-icon name="group-add" />
@@ -694,6 +703,9 @@ export default {
       }
     },
     methods: {
+      resourceDomSelector(resource){
+        return ['custom', resource.id].join('-')
+      },
       fileDropped(fileId) {
         const selectedString = this.selectedIds.join(`, `)
         alert(selectedString + ` -> ` + fileId);

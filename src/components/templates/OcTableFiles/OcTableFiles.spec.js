@@ -151,6 +151,22 @@ describe("OcTableFiles", () => {
     }
   })
 
+  it("accepts resourceDomId closure", () => {
+    const wrapper = mount(Table, {
+      propsData: {
+        resources: resourcesWithAllFields,
+        resourceDomSelector: resource => ["custom", resource.id.replace(/=+/, "")].join("-"),
+      },
+    })
+    resourcesWithAllFields.forEach(resource => {
+      ;[".oc-tbody-tr", "#oc-table-files-select", "#context-menu-drop"].forEach(baseSelector => {
+        expect(
+          wrapper.find([baseSelector, "custom", resource.id.replace(/=+/, "")].join("-")).exists()
+        ).toBeTruthy()
+      })
+    })
+  })
+
   it("formats the resource size to a human readable format", () => {
     expect(wrapper.find(".oc-tbody-tr-forest .oc-table-data-cell-size").text()).toEqual("111 MB")
     expect(wrapper.find(".oc-tbody-tr-documents .oc-table-data-cell-size").text()).toEqual("--")

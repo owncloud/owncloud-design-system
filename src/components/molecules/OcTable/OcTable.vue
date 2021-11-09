@@ -36,10 +36,10 @@
     <oc-tbody>
       <oc-tr
         v-for="(item, trIndex) in tableData"
-        :key="`oc-tbody-tr-${item[idKey] || trIndex}`"
+        :key="`oc-tbody-tr-${itemDomSelector(item) || trIndex}`"
         :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
-        :data-file-id="item.id"
+        :data-item-id="item[idKey]"
         :draggable="dragDrop"
         @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
         @contextmenu.native="
@@ -47,10 +47,10 @@
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native="dragStart(item, $event)"
-        @drop.native="dropRowEvent(item.id, $event)"
-        @dragenter.native.prevent="dropRowStyling(item.id, false, $event)"
-        @dragleave.native.prevent="dropRowStyling(item.id, true, $event)"
-        @mouseleave="dropRowStyling(item.id, true, $event)"
+        @drop.native="dropRowEvent(itemDomSelector(item), $event)"
+        @dragenter.native.prevent="dropRowStyling(itemDomSelector(item), false, $event)"
+        @dragleave.native.prevent="dropRowStyling(itemDomSelector(item), true, $event)"
+        @mouseleave="dropRowStyling(itemDomSelector(item), true, $event)"
         @dragover.native="dragOver($event)"
       >
         <oc-td
@@ -95,8 +95,8 @@ import {
   EVENT_TROW_CLICKED,
   EVENT_TROW_MOUNTED,
   EVENT_TROW_CONTEXTMENU,
-  EVENT_FILE_DROPPED,
-  EVENT_FILE_DRAGGED,
+  EVENT_ITEM_DROPPED,
+  EVENT_ITEM_DRAGGED,
 } from "../../../helpers/constants"
 
 /**
@@ -132,6 +132,16 @@ export default {
     idKey: {
       type: String,
       default: "id",
+    },
+    /**
+     * Closure function to mutate the item id into a valid DOM selector
+     */
+    itemDomSelector: {
+      type: Function,
+      required: false,
+      default(item) {
+        return item[this.idKey]
+      },
     },
     /**
      * The column layout of the table.
@@ -216,6 +226,9 @@ export default {
       required: false,
       default: false,
     },
+    /**
+     * Array of items that should be selected by default.
+     */
     selection: {
       type: Array,
       required: false,
@@ -259,18 +272,16 @@ export default {
     dragOver(event) {
       event.preventDefault()
     },
-    setGhostElement(file, event) {
+    setGhostElement(item, event) {
       const selection = [...this.selection]
       selection.splice(
-        selection.findIndex(function (i) {
-          return i.id === file.id
-        }),
+        selection.findIndex(i => i.id === item.id),
         1
       )
       const GhostElementComponent = Vue.extend(GhostElement)
       const ghostInstances = new GhostElementComponent({
         propsData: {
-          previewItems: [file, ...selection],
+          previewItems: [item, ...selection],
         },
       })
       ghostInstances.$mount()
@@ -282,30 +293,30 @@ export default {
       event.dataTransfer.dropEffect = "move"
       event.dataTransfer.effectAllowed = "move"
     },
-    dragStart(file, event) {
+    dragStart(item, event) {
       if (!this.dragDrop) return
-      this.setGhostElement(file, event)
-      this.$emit(EVENT_FILE_DRAGGED, file)
+      this.setGhostElement(item, event)
+      this.$emit(EVENT_ITEM_DRAGGED, item)
     },
-    dropRowEvent(id, event) {
+    dropRowEvent(selector, event) {
       if (!this.dragDrop) return
       const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
       if (hasFilePayload) return
       this.ghostElement.remove()
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
-      const dropFileId = dropTargetTr.dataset.fileId
-      this.dropRowStyling(id, true, event)
-      this.$emit(EVENT_FILE_DROPPED, dropFileId)
+      const dropItemId = dropTargetTr.dataset.itemId
+      this.dropRowStyling(selector, true, event)
+      this.$emit(EVENT_ITEM_DROPPED, dropItemId)
     },
-    dropRowStyling(id, leaving, event) {
+    dropRowStyling(selector, leaving, event) {
       const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
       if (hasFilePayload) return
       if (event.currentTarget?.contains(event.relatedTarget)) {
         return
       }
 
-      const classList = document.getElementsByClassName(`oc-tbody-tr-${id}`)[0].classList
+      const classList = document.getElementsByClassName(`oc-tbody-tr-${selector}`)[0].classList
       const className = "highlightedDropTarget"
       leaving ? classList.remove(className) : classList.add(className)
     },
@@ -352,7 +363,7 @@ export default {
       return {
         class: [
           "oc-tbody-tr",
-          `oc-tbody-tr-${item[this.idKey] || index}`,
+          `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
           this.isHighlighted(item) ? "oc-table-highlighted" : undefined,
           this.isDisabled(item) ? "oc-table-disabled" : undefined,
         ].filter(Boolean),
