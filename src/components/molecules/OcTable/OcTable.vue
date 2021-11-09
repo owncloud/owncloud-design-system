@@ -274,8 +274,8 @@ export default {
       })
       ghostInstances.$mount()
       const ghost = document.body.appendChild(ghostInstances.$el)
-      ghost.style.left = '-99999px';
-      ghost.style.top = '-99999px';
+      ghost.style.left = "-99999px"
+      ghost.style.top = "-99999px"
       event.dataTransfer.setDragImage(ghost, 0, 0)
       event.dataTransfer.dropEffect = "move"
       event.dataTransfer.effectAllowed = "move"
