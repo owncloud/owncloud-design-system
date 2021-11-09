@@ -230,7 +230,7 @@ export default {
         EVENT_TROW_MOUNTED,
         EVENT_TROW_CONTEXTMENU,
       },
-      ghostElement: null
+      ghostElement: null,
     }
   },
   computed: {
