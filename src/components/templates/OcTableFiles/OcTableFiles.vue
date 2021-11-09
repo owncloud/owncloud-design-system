@@ -8,6 +8,7 @@
     :header-position="headerPosition"
     :drag-drop="dragDrop"
     :hover="hover"
+    :selection="selection"
     @highlight="fileClicked"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
