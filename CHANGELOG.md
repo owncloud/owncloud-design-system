@@ -6,10 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Add accentuated class for OcTable: [#5967](https://github.com/owncloud/web/issues/5967)
 * Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
 * Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
 
 ## Details
+
+* Enhancement - Add accentuated class for OcTable: [#5967](https://github.com/owncloud/web/issues/5967)
+
+   We've added an accentuated class for the OcTable for accentuating certain files e.g. after
+   uploading, in a different way than already highlighted resources.
+
+   https://github.com/owncloud/web/issues/5967
+   https://github.com/owncloud/owncloud-design-system/pull/1763
+
 
 * Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
 
