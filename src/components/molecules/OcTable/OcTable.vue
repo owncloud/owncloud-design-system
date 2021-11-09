@@ -367,7 +367,6 @@ export default {
 
       return this.highlighted === item[this.idKey]
     },
-
     isDisabled(item) {
       if (!this.disabled) {
         return false
@@ -427,6 +426,10 @@ export default {
 
   &-highlighted {
     background-color: var(--oc-color-background-highlight);
+  }
+
+  &-accentuated {
+    background-color: var(--oc-color-background-accentuate);
   }
 
   &-disabled {
