@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add accentuated class for OcTable: [#5967](https://github.com/owncloud/web/issues/5967)
 * Enhancement - Add Ghost Element for Drag & Drop: [#5788](https://github.com/owncloud/web/issues/5788)
 * Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
+* Enhancement - Add closure to mutate resource dom selector: [#1766](https://github.com/owncloud/owncloud-design-system/pull/1766)
 * Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
 
 ## Details
@@ -34,6 +35,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add "extension" svg icon: [#1771](https://github.com/owncloud/owncloud-design-system/pull/1771)
 
    https://github.com/owncloud/owncloud-design-system/pull/1771
+
+
+* Enhancement - Add closure to mutate resource dom selector: [#1766](https://github.com/owncloud/owncloud-design-system/pull/1766)
+
+   In some cases the resource or item id is not a valid dom selector, we've introduced an optional
+   closure property for oc-table and oc-table-files to customize the selector to its need.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1766
 
 
 * Enhancement - Reduce filename text weight: [#1759](https://github.com/owncloud/owncloud-design-system/pull/1759)
