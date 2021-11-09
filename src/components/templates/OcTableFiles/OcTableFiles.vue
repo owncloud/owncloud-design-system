@@ -13,8 +13,8 @@
     @highlight="fileClicked"
     @rowMounted="rowMounted"
     @contextmenuClicked="showContextMenu"
-    @fileDropped="fileDropped"
-    @fileDragged="fileDragged"
+    @itemDropped="fileDropped"
+    @itemDragged="fileDragged"
   >
     <template #selectHeader>
       <div class="oc-table-files-select-all">
@@ -124,7 +124,7 @@ import OcCheckbox from "../../atoms/OcCheckbox/OcCheckbox.vue"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import OcResourceSize from "../../atoms/OcResourceSize/OcResourceSize.vue"
 import OcDrop from "../../atoms/OcDrop/OcDrop.vue"
-import { EVENT_TROW_MOUNTED, EVENT_FILE_DROPPED } from "../../../helpers/constants"
+import { EVENT_TROW_MOUNTED, EVENT_ITEM_DROPPED } from "../../../helpers/constants"
 
 export default {
   name: "OcTableFiles",
@@ -421,7 +421,7 @@ export default {
       this.addSelectedResource(file)
     },
     fileDropped(fileId) {
-      this.$emit(EVENT_FILE_DROPPED, fileId)
+      this.$emit(EVENT_ITEM_DROPPED, fileId)
     },
     addSelectedResource(file) {
       const isSelected = this.selection.some(e => e.id === file.id)
@@ -609,7 +609,7 @@ export default {
 <template>
   <div>
     <oc-table-files :resources="resources" disabled="notes" v-model="selected" class="oc-mb"
-                    @action="handleAction" @fileDropped="fileDropped" :drag-drop="true" :resource-dom-selector="resourceDomSelector">
+                    @action="handleAction" @itemDropped="fileDropped" :drag-drop="true" :resource-dom-selector="resourceDomSelector">
       <template v-slot:quickActions="props">
         <oc-button @click.stop variation="passive" appearance="raw" aria-label="Share with other people">
           <oc-icon name="group-add" />

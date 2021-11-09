@@ -47,10 +47,10 @@
         "
         @hook:mounted="$emit(constants.EVENT_TROW_MOUNTED, item, $refs[`row-${trIndex}`][0])"
         @dragstart.native="dragStart(item, $event)"
-        @drop.native="dropRowEvent(item[idKey], $event)"
-        @dragenter.native.prevent="dropRowStyling(item[idKey], false, $event)"
-        @dragleave.native.prevent="dropRowStyling(item[idKey], true, $event)"
-        @mouseleave="dropRowStyling(item[idKey], true, $event)"
+        @drop.native="dropRowEvent(itemDomSelector(item), $event)"
+        @dragenter.native.prevent="dropRowStyling(itemDomSelector(item), false, $event)"
+        @dragleave.native.prevent="dropRowStyling(itemDomSelector(item), true, $event)"
+        @mouseleave="dropRowStyling(itemDomSelector(item), true, $event)"
         @dragover.native="dragOver($event)"
       >
         <oc-td
@@ -95,8 +95,8 @@ import {
   EVENT_TROW_CLICKED,
   EVENT_TROW_MOUNTED,
   EVENT_TROW_CONTEXTMENU,
-  EVENT_FILE_DROPPED,
-  EVENT_FILE_DRAGGED,
+  EVENT_ITEM_DROPPED,
+  EVENT_ITEM_DRAGGED,
 } from "../../../helpers/constants"
 
 /**
@@ -226,6 +226,9 @@ export default {
       required: false,
       default: false,
     },
+    /**
+     * Array of items that should be selected by default.
+     */
     selection: {
       type: Array,
       required: false,
@@ -271,7 +274,10 @@ export default {
     },
     setGhostElement(item, event) {
       const selection = [...this.selection]
-      selection.splice(selection.findIndex((i) => i.id === item.id), 1)
+      selection.splice(
+        selection.findIndex(i => i.id === item.id),
+        1
+      )
       const GhostElementComponent = Vue.extend(GhostElement)
       const ghostInstances = new GhostElementComponent({
         propsData: {
@@ -287,30 +293,30 @@ export default {
       event.dataTransfer.dropEffect = "move"
       event.dataTransfer.effectAllowed = "move"
     },
-    dragStart(file, event) {
+    dragStart(item, event) {
       if (!this.dragDrop) return
-      this.setGhostElement(file, event)
-      this.$emit(EVENT_FILE_DRAGGED, file)
+      this.setGhostElement(item, event)
+      this.$emit(EVENT_ITEM_DRAGGED, item)
     },
-    dropRowEvent(id, event) {
+    dropRowEvent(selector, event) {
       if (!this.dragDrop) return
       const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
       if (hasFilePayload) return
       this.ghostElement.remove()
       const dropTarget = event.target
       const dropTargetTr = dropTarget.closest("tr")
-      const dropFileId = dropTargetTr.dataset.fileId
-      this.dropRowStyling(id, true, event)
-      this.$emit(EVENT_FILE_DROPPED, dropFileId)
+      const dropItemId = dropTargetTr.dataset.itemId
+      this.dropRowStyling(selector, true, event)
+      this.$emit(EVENT_ITEM_DROPPED, dropItemId)
     },
-    dropRowStyling(id, leaving, event) {
+    dropRowStyling(selector, leaving, event) {
       const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
       if (hasFilePayload) return
       if (event.currentTarget?.contains(event.relatedTarget)) {
         return
       }
 
-      const classList = document.getElementsByClassName(`oc-tbody-tr-${id}`)[0].classList
+      const classList = document.getElementsByClassName(`oc-tbody-tr-${selector}`)[0].classList
       const className = "highlightedDropTarget"
       leaving ? classList.remove(className) : classList.add(className)
     },
