@@ -12576,9 +12576,9 @@ tinycolor2@^1.4.1, tinycolor2@^1.4.2:
   integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
 tippy.js@^6.2.0, tippy.js@^6.3.1:
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.6.tgz#25e75dfba9a3a29b42595d66acd3adf6f358b152"
-  integrity sha512-59OpvnA4jxYxSTCNu7mb3gUaCrnuyi34FbWxAf9gG4ApJKn4NrJdHO2exB/5TOWf9zl6v03hluRVtZFVYrm/bQ==
+  version "6.3.7"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.7.tgz#8ccfb651d642010ed9a32ff29b0e9e19c5b8c61c"
+  integrity sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==
   dependencies:
     "@popperjs/core" "^2.9.0"
 
