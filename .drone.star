@@ -1,3 +1,6 @@
+OWNCLOUDCI_ALPINE = 'owncloudci/alpine:latest'
+OWNCLOUDCI_NODEJS = 'owncloudci/nodejs:14'
+
 def main(ctx):
     stages = [
         changelog(ctx),
@@ -25,7 +28,7 @@ def build_stages(ctx):
     lint_test_build = [
         {
             'name': 'clone',
-            'image': 'owncloudci/alpine:latest',
+            'image': OWNCLOUDCI_ALPINE,
             'commands': [
                 'git clone https://github.com/%s.git .' % (repo_slug),
                 'git checkout $DRONE_COMMIT',
@@ -33,7 +36,7 @@ def build_stages(ctx):
         },
         {
             'name': 'dependencies',
-            'image': 'owncloudci/nodejs:14',
+            'image': OWNCLOUDCI_NODEJS,
             'commands': [
                 'yarn install'
             ],
@@ -41,7 +44,7 @@ def build_stages(ctx):
         },
         {
             'name': 'eslint',
-            'image': 'owncloudci/nodejs:14',
+            'image': OWNCLOUDCI_NODEJS,
             'commands': [
                 'yarn lint:eslint',
             ],
@@ -49,7 +52,7 @@ def build_stages(ctx):
         },
         {
             'name': 'stylelint',
-            'image': 'owncloudci/nodejs:14',
+            'image': OWNCLOUDCI_NODEJS,
             'commands': [
                 'yarn lint:stylelint',
             ],
@@ -57,7 +60,7 @@ def build_stages(ctx):
         },
         {
             'name': 'unit tests',
-            'image': 'owncloudci/nodejs:14',
+            'image': OWNCLOUDCI_NODEJS,
             'commands': [
                 'yarn run tokens',
                 'yarn test',
@@ -72,7 +75,7 @@ def build_stages(ctx):
         },
         {
             'name': 'build docs',
-            'image': 'owncloudci/nodejs:14',
+            'image': OWNCLOUDCI_NODEJS,
             'commands': [
                 'yarn build:docs',
             ],
@@ -80,7 +83,7 @@ def build_stages(ctx):
         },
         {
             'name': 'build system',
-            'image': 'owncloudci/nodejs:14',
+            'image': OWNCLOUDCI_NODEJS,
             'commands': [
                 'yarn build:system',
             ],
@@ -219,14 +222,14 @@ def changelog(ctx):
             },
             {
                 'name': 'diff',
-                'image': 'owncloudci/alpine:latest',
+                'image': OWNCLOUDCI_ALPINE,
                 'commands': [
                     'git diff',
                 ],
             },
             {
                 'name': 'output',
-                'image': 'owncloudci/alpine:latest',
+                'image': OWNCLOUDCI_ALPINE,
                 'commands': [
                     'cat CHANGELOG.md',
                 ],
