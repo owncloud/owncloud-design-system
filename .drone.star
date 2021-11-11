@@ -1,5 +1,5 @@
 OWNCLOUDCI_ALPINE = "owncloudci/alpine:latest"
-OWNCLOUDCI_NODEJS = "owncloudci/nodejs:14"
+OWNCLOUDCI_NODEJS = "owncloudci/nodejs:16"
 
 def main(ctx):
     stages = [
