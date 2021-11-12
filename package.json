@@ -161,5 +161,8 @@
   "engines": {
     "node": ">= 8.6.0",
     "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "@duetds/date-picker": "^1.4.0"
   }
 }
