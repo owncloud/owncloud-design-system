@@ -1110,6 +1110,13 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.1.tgz#cf87081ac9b0f3eb3b5740415b50b7966bac8fc5"
   integrity sha512-Oee4NT60Lxe90m7VTYBU4UbABNaz0N4Q3G62CPB+6mGE4KuLMsTACmH8q3PH5u9pSZCuOdE9JClJ9vBqsp6DQg==
 
+"@duetds/date-picker@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@duetds/date-picker/-/date-picker-1.4.0.tgz#4bdbc15aa4b6307b8b156d8d9c5fdf67f6b6783b"
+  integrity sha512-jx4oSIrZAVsXYLyQGXbEmuo0gEXAqrNIGp3rG8L03XSxFFFca/bTpCj5v6yd48vVWOtAXD8y04S/+flOimra0A==
+  dependencies:
+    "@stencil/core" "^2.3.0"
+
 "@eslint/eslintrc@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.3.0.tgz#d736d6963d7003b6514e6324bec9c602ac340318"
@@ -1533,6 +1540,11 @@
   integrity sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@stencil/core@^2.3.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.10.0.tgz#acf44b9ae6578a20f0d09bf94296e833beadc885"
+  integrity sha512-15rWMTPQ/sp0lSV82HVCXkIya3QLN+uBl7pqK4JnTrp4HiLrzLmNbWjbvgCs55gw0lULbCIGbRIEsFz+Pe/Q+A==
 
 "@stylelint/postcss-css-in-js@^0.37.2":
   version "0.37.2"
