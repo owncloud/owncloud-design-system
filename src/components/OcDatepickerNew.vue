@@ -1,7 +1,7 @@
 <template>
   <div>
     <label :for="identifier" class="oc-label" v-text="label" />
-    <define-custom-elements
+    <duet-date-picker
       :id="identifier"
       class="oc-datepicker"
       :direction="direction"
@@ -12,7 +12,7 @@
       :role="role"
       :required="required"
       :value="value"
-    ></define-custom-elements>
+    ></duet-date-picker>
     <div v-if="!!descriptionMessage" class="oc-datepicker-message">
       <span
         :id="descriptionId"
@@ -31,8 +31,6 @@ import uniqueId from "../utils/uniqueId"
 // ! Uncaught TypeError: Cannot read properties of undefined (reading 'config')
 // Documentation: https://yarnpkg.com/package/@duetds/date-picker#usage-with-vuejs
 
-// configure Vue.js to ignore Duet Date Picker
-window.Vue.config.ignoredElements = [/duet-\w*/]
 // Register Duet Date Picker
 defineCustomElements(window)
 
@@ -66,9 +64,6 @@ export default {
    * (in which design system version)
    */
   release: "1.0.0",
-  components: {
-    defineCustomElements,
-  },
   /**
    * Prop definitions should be as detailed as possible, specifying at least
    * type(s). See examples below:

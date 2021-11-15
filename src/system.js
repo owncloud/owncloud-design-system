@@ -6,6 +6,7 @@
  */
 
 import "./styles/styles.scss"
+import { applySharedConfig } from "./utils/config"
 
 // Define contexts to require
 const componentsContext = require.context("./components/", true, /\.vue$/)
@@ -21,6 +22,8 @@ const initializeCustomProps = (tokens = [], prefix) => {
 const System = {
   install(Vue, options = {}) {
     const themeOptions = options.tokens
+
+    applySharedConfig(Vue)
     initializeCustomProps(themeOptions?.colorPalette, "color-")
     initializeCustomProps(themeOptions?.fontSizes, "font-size-")
     initializeCustomProps(themeOptions?.sizes, "size-")
