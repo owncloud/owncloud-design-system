@@ -1,11 +1,11 @@
 <template>
   <div>
-    <label :for="id" class="oc-label" v-text="label" />
+    <label :for="identifier" class="oc-label" v-text="label" />
     <define-custom-elements
+      :id="identifier"
       class="oc-datepicker"
       :direction="direction"
       :disabled="disabled"
-      :identifier="id"
       :max="max"
       :min="min"
       :name="name"
@@ -24,8 +24,17 @@
 </template>
 
 <script>
-import uniqueId from "../utils/uniqueId"
 import { defineCustomElements } from "@duetds/date-picker/dist/loader"
+import uniqueId from "../utils/uniqueId"
+
+// TODO: According to the documentation this should make it work, but it's throwing the following error:
+// ! Uncaught TypeError: Cannot read properties of undefined (reading 'config')
+// Documentation: https://yarnpkg.com/package/@duetds/date-picker#usage-with-vuejs
+
+// configure Vue.js to ignore Duet Date Picker
+window.Vue.config.ignoredElements = [/duet-\w*/]
+// Register Duet Date Picker
+defineCustomElements(window)
 
 /**
  * Datepicker inputs are used to select a date from a calendar.
@@ -232,8 +241,7 @@ export default {
       <h3 class="oc-heading-divider">
         BRAND NEW!!! 🔥🔥🔥 Datepicker inputs
       </h3>
-      <label for="date">Choose a date</label>
-      <define-custom-elements identifier="date"></define-custom-elements>
+      <oc-datepicker-new identifier="date" label="Choose a date" />
     </div>
   </div>
 </template>
