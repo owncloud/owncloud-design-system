@@ -182,6 +182,7 @@ export default {
         return {
           appearance: "raw",
           gapSize: "none",
+          justifyContent: "left",
         }
       }
 

@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OcResourceName displays full path 1`] = `<span data-test-resource-path="images/nature/forest.jpg" data-test-resource-name="…/nature/forest.jpg" data-test-resource-type="file" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">…/nature/</span><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span></span>`;
+exports[`OcResourceName displays full path 1`] = `<span data-test-resource-path="images/nature/forest.jpg" data-test-resource-name="…/nature/forest.jpg" data-test-resource-type="file" class="oc-resource-name"><span class="oc-text-truncate"><span class="oc-resource-path">…/nature/</span><span class="oc-resource-basename">forest</span></span> <span class="oc-resource-extension">.jpg</span></span>`;
 
-exports[`OcResourceName displays only direct parent 1`] = `<span data-test-resource-path="Documents/notes.txt" data-test-resource-name="Documents/notes.txt" data-test-resource-type="file" class="oc-resource-name oc-text-truncate"><span class="oc-resource-path">Documents/</span><span class="oc-resource-basename">notes</span><span class="oc-resource-extension">.txt</span></span>`;
+exports[`OcResourceName displays only direct parent 1`] = `<span data-test-resource-path="Documents/notes.txt" data-test-resource-name="Documents/notes.txt" data-test-resource-type="file" class="oc-resource-name"><span class="oc-text-truncate"><span class="oc-resource-path">Documents/</span><span class="oc-resource-basename">notes</span></span> <span class="oc-resource-extension">.txt</span></span>`;
 
 exports[`OcResourceName doesn't add extension to hidden folder 1`] = `
-<span data-test-resource-path=".hidden" data-test-resource-name=".hidden" data-test-resource-type="folder" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">.hidden</span>
+<span data-test-resource-path=".hidden" data-test-resource-name=".hidden" data-test-resource-type="folder" class="oc-resource-name"><span class="oc-text-truncate"><!----><span class="oc-resource-basename">.hidden</span></span>
 <!----></span>
 `;
 
-exports[`OcResourceName hides the path if not enabled 1`] = `<span data-test-resource-path="images/nature/forest.jpg" data-test-resource-name="forest.jpg" data-test-resource-type="file" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">forest</span><span class="oc-resource-extension">.jpg</span></span>`;
+exports[`OcResourceName hides the path if not enabled 1`] = `<span data-test-resource-path="images/nature/forest.jpg" data-test-resource-name="forest.jpg" data-test-resource-type="file" class="oc-resource-name"><span class="oc-text-truncate"><!----><span class="oc-resource-basename">forest</span></span> <span class="oc-resource-extension">.jpg</span></span>`;
 
 exports[`OcResourceName renders folder names with dots completely in the basename 1`] = `
-<span data-test-resource-path="folder.with.dots" data-test-resource-name="folder.with.dots" data-test-resource-type="folder" class="oc-resource-name oc-text-truncate"><!----><span class="oc-resource-basename">folder.with.dots</span>
+<span data-test-resource-path="folder.with.dots" data-test-resource-name="folder.with.dots" data-test-resource-type="folder" class="oc-resource-name"><span class="oc-text-truncate"><!----><span class="oc-resource-basename">folder.with.dots</span></span>
 <!----></span>
 `;
