@@ -6,7 +6,7 @@ Relative dates like "1 day ago" now have a tooltip that shows the absolute date.
 * share date
 * delete date
 
-The tooltip is a11y-compliant and can be reached via tab.
+The tooltip is a11y-compliant and can be reached via keyboard navigation.
 
 https://github.com/owncloud/owncloud-design-system/pull/1787
 https://github.com/owncloud/web/issues/5672
