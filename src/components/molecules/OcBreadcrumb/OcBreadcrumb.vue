@@ -166,6 +166,10 @@ export default {
       vertical-align: middle;
     }
 
+    #oc-breadcrumb-contextmenu li button {
+      display: inline-flex;
+    }
+
     > li button {
       display: inline;
     }
