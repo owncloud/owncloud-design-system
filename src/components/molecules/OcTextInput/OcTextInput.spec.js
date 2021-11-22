@@ -45,13 +45,6 @@ describe("OcTextInput", () => {
     })
   })
 
-  describe("input classes", () => {
-    it("should be empty if stop class propagation is enabled", () => {
-      const wrapper = getShallowWrapper({ stopClassPropagation: true })
-      expect(wrapper.find("input").attributes().class).toBe("")
-    })
-  })
-
   describe("when a description message is provided", () => {
     const wrapper = getShallowWrapper({ descriptionMessage: "You should pass." })
     it("should add the description class to the input message", () => {

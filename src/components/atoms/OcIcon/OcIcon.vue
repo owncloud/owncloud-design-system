@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable vue/no-v-html -->
   <component
     :is="type"
     :class="[
@@ -149,12 +148,11 @@ export default {
     },
     transformSvgElement(svg) {
       if (this.accessibleLabel !== "") {
-        let title = document.createElement("title")
+        const title = document.createElement("title")
         title.setAttribute("id", this.svgTitleId)
         title.appendChild(document.createTextNode(this.accessibleLabel))
         svg.insertBefore(title, svg.firstChild)
       }
-
       return svg
     },
   },
