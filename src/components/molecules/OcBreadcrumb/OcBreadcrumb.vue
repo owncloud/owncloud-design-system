@@ -119,16 +119,6 @@ export default {
       default: "default",
       validator: value => value === "lead" || value === "default",
     },
-    /**
-     * Whether to show a button and
-     * a dropdown menu with the last
-     * breadcrumb item
-     */
-    showContextmenu: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
   },
   computed: {
     dropdownItems() {
@@ -143,6 +133,9 @@ export default {
     },
     contextMenuLabel() {
       return this.$gettext("Show actions for current folder")
+    },
+    showContextmenu() {
+      return !!this.$slots.contextMenu
     },
   },
   methods: {
@@ -262,7 +255,7 @@ export default {
   <div>
     <oc-breadcrumb :items="items" class="oc-mb" />
     <oc-breadcrumb :items="items" variation="lead" />
-    <oc-breadcrumb :items="items" show-contextmenu="true" class="oc-mt-l">
+    <oc-breadcrumb :items="items" class="oc-mt-l">
       <template v-slot:contextMenu>
         <p>I'm an example item</p>
       </template>
