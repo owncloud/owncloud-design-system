@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...master
+
+## Summary
+
+* Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
+
+## Details
+
+* Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
+
+   We've added a button to the last item of the OcBreadcrumb component that triggers a dropdown
+   which can be customizably filled.
+
+   https://github.com/owncloud/web/issues/6030
+   https://github.com/owncloud/owncloud-design-system/pull/1786
+
 # Changelog for [11.2.2] (2021-11-11)
 
 The following sections list the changes in ownCloud Design System 11.2.2.
