@@ -28,11 +28,10 @@ describe("OcBreadcrumb", () => {
       },
     })
 
-    expect(wrapper.findAll(".oc-breadcrumb-list-item").length).toBe(4)
-    expect(wrapper.findAll("#oc-breadcrumb-contextmenu-trigger").length).toBe(0)
+    expect(wrapper.findAll(".oc-breadcrumb-list-item").length).toBe(items.length)
     expect(wrapper).toMatchSnapshot()
   })
-  it("displays context menu trigger", () => {
+  it("displays context menu trigger when a slot is given", () => {
     const wrapper = shallowMount(Breadcrumb, {
       propsData: {
         items,
@@ -42,7 +41,7 @@ describe("OcBreadcrumb", () => {
       },
     })
 
-    expect(wrapper.findAll("#oc-breadcrumb-contextmenu-trigger").length).toBe(1)
+    expect(wrapper.find("#oc-breadcrumb-contextmenu-trigger").exists()).toBe(true)
   })
   it("does not display context menu trigger when no slot given", () => {
     const wrapper = shallowMount(Breadcrumb, {
@@ -50,19 +49,7 @@ describe("OcBreadcrumb", () => {
         items,
       },
     })
-
-    expect(wrapper.findAll("#oc-breadcrumb-contextmenu-trigger").length).toBe(0)
-  })
-  it("does not display context menu trigger with only one item", () => {
-    const wrapper = shallowMount(Breadcrumb, {
-      propsData: {
-        items: [{ text: "First and only folder", to: { path: "folder" } }],
-      },
-      slots: {
-        contextMenu: "Example item",
-      },
-    })
-
-    expect(wrapper.findAll("#oc-breadcrumb-contextmenu-trigger").length).toBe(0)
+    console.log(wrapper.html())
+    expect(wrapper.find("#oc-breadcrumb-contextmenu-trigger").exists()).toBe(false)
   })
 })

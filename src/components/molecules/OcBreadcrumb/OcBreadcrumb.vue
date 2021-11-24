@@ -14,7 +14,7 @@
           {{ item.text }}
         </oc-button>
         <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
-        <template v-if="showContextmenu && index == items.length - 1 && items.length > 1">
+        <template v-if="showContextMenu && index == items.length - 1">
           <oc-button
             id="oc-breadcrumb-contextmenu-trigger"
             v-oc-tooltip="contextMenuLabel"
@@ -134,7 +134,7 @@ export default {
     contextMenuLabel() {
       return this.$gettext("Show actions for current folder")
     },
-    showContextmenu() {
+    showContextMenu() {
       return !!this.$slots.contextMenu
     },
   },
