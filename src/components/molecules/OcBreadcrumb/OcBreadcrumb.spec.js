@@ -49,7 +49,7 @@ describe("OcBreadcrumb", () => {
         items,
       },
     })
-    console.log(wrapper.html())
+
     expect(wrapper.find("#oc-breadcrumb-contextmenu-trigger").exists()).toBe(false)
   })
 })
