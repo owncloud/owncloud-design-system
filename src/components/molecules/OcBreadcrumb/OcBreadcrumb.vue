@@ -14,6 +14,27 @@
           {{ item.text }}
         </oc-button>
         <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
+        <template v-if="showContextMenu && index == items.length - 1">
+          <oc-button
+            id="oc-breadcrumb-contextmenu-trigger"
+            v-oc-tooltip="contextMenuLabel"
+            :aria-label="contextMenuLabel"
+            appearance="raw"
+            :variation="primary"
+          >
+            <oc-icon name="more_vert" />
+          </oc-button>
+          <oc-drop
+            drop-id="oc-breadcrumb-contextmenu"
+            toggle="#oc-breadcrumb-contextmenu-trigger"
+            mode="click"
+            close-on-click
+            @click.native.stop.prevent
+          >
+            <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
+            <slot name="contextMenu" />
+          </oc-drop>
+        </template>
       </li>
     </ol>
     <div class="oc-breadcrumb-drop">
@@ -110,6 +131,12 @@ export default {
 
       return [...this.items].reverse()[0]
     },
+    contextMenuLabel() {
+      return this.$gettext("Show actions for current folder")
+    },
+    showContextMenu() {
+      return !!this.$slots.contextMenu
+    },
   },
   methods: {
     getAriaCurrent(index) {
@@ -127,6 +154,14 @@ export default {
     @extend .uk-visible\@s;
     @extend .uk-breadcrumb;
     @extend .oc-m-rm;
+
+    #oc-breadcrumb-contextmenu-trigger > span {
+      vertical-align: middle;
+    }
+
+    #oc-breadcrumb-contextmenu li button {
+      display: inline-flex;
+    }
 
     > li button {
       display: inline;
@@ -220,6 +255,11 @@ export default {
   <div>
     <oc-breadcrumb :items="items" class="oc-mb" />
     <oc-breadcrumb :items="items" variation="lead" />
+    <oc-breadcrumb :items="items" class="oc-mt-l">
+      <template v-slot:contextMenu>
+        <p>I'm an example item</p>
+      </template>
+    </oc-breadcrumb>
   </div>
 </template>
 <script>
