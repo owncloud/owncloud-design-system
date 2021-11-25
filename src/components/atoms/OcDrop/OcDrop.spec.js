@@ -1,17 +1,18 @@
 import { shallowMount, mount } from "@vue/test-utils"
 import Drop from "./OcDrop.vue"
+import { getSizeClass } from "../../../utils/sizeClasses"
 
-const dom = ({ position = "auto", mode = "click" } = {}) => {
+const dom = ({ position = "auto", mode = "click", paddingSize = "medium" } = {}) => {
   document.body.innerHTML = ""
   const wrapper = mount(
     {
       template:
-        '<div><p id="trigger">trigger</p><oc-drop :position="position" :mode="mode" toggle="#trigger">show</oc-drop></div>',
+        '<div><p id="trigger">trigger</p><oc-drop :position="position" :mode="mode" :padding-size="paddingSize" toggle="#trigger">show</oc-drop></div>',
       components: { "oc-drop": Drop },
     },
     {
       attachTo: document.body,
-      data: () => ({ position, mode }),
+      data: () => ({ position, mode, paddingSize }),
     }
   )
   const drop = wrapper.findComponent({ name: "oc-drop" })
@@ -38,7 +39,7 @@ describe("OcDrop", () => {
     }
   })
 
-  it("handles position prop", () => {
+  it("handles position prop validator", () => {
     ;[
       "top",
       "right",
@@ -70,52 +71,62 @@ describe("OcDrop", () => {
     expect(Drop.props.mode.validator("unknown")).toBeFalsy()
   })
 
-  it("inits tippy", () => {
-    const { wrapper, drop, tippy } = dom()
-
-    expect(tippy).toBeTruthy()
-    expect(tippy.reference).toBe(wrapper.find("#trigger").element)
-    expect(tippy.props.content).toBe(drop.vm.$refs.drop)
-  })
-
-  it("updates tippy", async () => {
-    const { wrapper, tippy } = dom()
-
-    await wrapper.setData({
-      position: "left",
-      mode: "hover",
-    })
-
-    expect(tippy.props.placement).toBe("left")
-    expect(tippy.props.trigger).toBe("mouseenter focus")
-  })
-
-  it("renders tippy", async () => {
-    const { wrapper } = dom()
-    const trigger = wrapper.find("#trigger")
-    const wait = async () => {
-      await wrapper.vm.$nextTick()
-      return new Promise(resolve => setTimeout(resolve, 100))
+  it.each(["xsmall", "small", "medium", "large", "xlarge", "xxlarge", "remove"])(
+    "handles padding size prop for value %s",
+    size => {
+      const { drop } = dom({ paddingSize: size })
+      expect(drop.html().includes(`oc-p-${getSizeClass(size)}`)).toBeTruthy()
     }
+  )
 
-    await trigger.trigger("click") // show
-    await wait()
-    expect(wrapper.findComponent(Drop).exists()).toBeTruthy()
-    expect(trigger.attributes()["aria-expanded"]).toBe("true")
-    expect(wrapper.element).toMatchSnapshot()
+  describe("tippy", () => {
+    it("inits tippy", () => {
+      const { wrapper, drop, tippy } = dom()
 
-    await trigger.trigger("click") // hide
-    await wait()
-    expect(trigger.attributes()["aria-expanded"]).toBe("false")
-    expect(wrapper.element).toMatchSnapshot()
-
-    await wrapper.setData({
-      mode: "hover",
+      expect(tippy).toBeTruthy()
+      expect(tippy.reference).toBe(wrapper.find("#trigger").element)
+      expect(tippy.props.content).toBe(drop.vm.$refs.drop)
     })
 
-    await trigger.trigger("mouseenter") // show
-    await wait()
-    expect(trigger.attributes()["aria-expanded"]).toBe("true")
-    expect(wrapper.element).toMatchSnapshot()
+    it("updates tippy", async () => {
+      const { wrapper, tippy } = dom()
+
+      await wrapper.setData({
+        position: "left",
+        mode: "hover",
+      })
+
+      expect(tippy.props.placement).toBe("left")
+      expect(tippy.props.trigger).toBe("mouseenter focus")
+    })
+
+    it("renders tippy", async () => {
+      const { wrapper } = dom()
+      const trigger = wrapper.find("#trigger")
+      const wait = async () => {
+        await wrapper.vm.$nextTick()
+        return new Promise(resolve => setTimeout(resolve, 100))
+      }
+
+      await trigger.trigger("click") // show
+      await wait()
+      expect(wrapper.findComponent(Drop).exists()).toBeTruthy()
+      expect(trigger.attributes()["aria-expanded"]).toBe("true")
+      expect(wrapper.element).toMatchSnapshot()
+
+      await trigger.trigger("click") // hide
+      await wait()
+      expect(trigger.attributes()["aria-expanded"]).toBe("false")
+      expect(wrapper.element).toMatchSnapshot()
+
+      await wrapper.setData({
+        mode: "hover",
+      })
+
+      await trigger.trigger("mouseenter") // show
+      await wait()
+      expect(trigger.attributes()["aria-expanded"]).toBe("true")
+      expect(wrapper.element).toMatchSnapshot()
+    })
   })
 })

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OcDrop renders tippy 1`] = `
+exports[`OcDrop tippy renders tippy 1`] = `
 <div>
   <p
-    aria-describedby="tippy-3"
+    aria-describedby="tippy-10"
     aria-expanded="true"
     id="trigger"
   >
@@ -11,7 +11,7 @@ exports[`OcDrop renders tippy 1`] = `
   </p>
   <div
     data-tippy-root=""
-    id="tippy-3"
+    id="tippy-10"
     style="z-index: 9999; visibility: visible; position: absolute; left: 0px; top: 0px; margin: 0px; bottom: 0px; transform: translate(0px, -10px);"
   >
     <div
@@ -33,10 +33,10 @@ exports[`OcDrop renders tippy 1`] = `
       >
         <div
           class="oc-drop"
-          id="oc-drop-8"
+          id="oc-drop-15"
         >
           <div
-            class="uk-card uk-card-default uk-card-small uk-card-body"
+            class="uk-card uk-card-default uk-card-small uk-card-body oc-p-m"
           >
             show
           </div>
@@ -47,7 +47,7 @@ exports[`OcDrop renders tippy 1`] = `
 </div>
 `;
 
-exports[`OcDrop renders tippy 2`] = `
+exports[`OcDrop tippy renders tippy 2`] = `
 <div>
   <p
     aria-expanded="false"
@@ -57,7 +57,7 @@ exports[`OcDrop renders tippy 2`] = `
   </p>
   <div
     data-tippy-root=""
-    id="tippy-3"
+    id="tippy-10"
     style="z-index: 9999; visibility: hidden; position: absolute; left: 0px; top: 0px; margin: 0px; bottom: 0px; transform: translate(0px, -10px); pointer-events: none;"
   >
     <div
@@ -79,10 +79,10 @@ exports[`OcDrop renders tippy 2`] = `
       >
         <div
           class="oc-drop"
-          id="oc-drop-8"
+          id="oc-drop-15"
         >
           <div
-            class="uk-card uk-card-default uk-card-small uk-card-body"
+            class="uk-card uk-card-default uk-card-small uk-card-body oc-p-m"
           >
             show
           </div>
@@ -93,10 +93,10 @@ exports[`OcDrop renders tippy 2`] = `
 </div>
 `;
 
-exports[`OcDrop renders tippy 3`] = `
+exports[`OcDrop tippy renders tippy 3`] = `
 <div>
   <p
-    aria-describedby="tippy-3"
+    aria-describedby="tippy-10"
     aria-expanded="true"
     id="trigger"
   >
@@ -104,7 +104,7 @@ exports[`OcDrop renders tippy 3`] = `
   </p>
   <div
     data-tippy-root=""
-    id="tippy-3"
+    id="tippy-10"
     style="z-index: 9999; visibility: visible; position: absolute; left: 0px; top: 0px; margin: 0px; bottom: 0px; transform: translate(0px, -10px);"
   >
     <div
@@ -126,10 +126,10 @@ exports[`OcDrop renders tippy 3`] = `
       >
         <div
           class="oc-drop"
-          id="oc-drop-8"
+          id="oc-drop-15"
         >
           <div
-            class="uk-card uk-card-default uk-card-small uk-card-body"
+            class="uk-card uk-card-default uk-card-small uk-card-body oc-p-m"
           >
             show
           </div>

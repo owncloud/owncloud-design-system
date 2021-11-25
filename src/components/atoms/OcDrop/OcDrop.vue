@@ -1,6 +1,10 @@
 <template>
   <div :id="dropId" ref="drop" class="oc-drop" @click="$_ocDrop_close">
-    <div v-if="$slots.default" class="uk-card uk-card-default uk-card-small uk-card-body">
+    <div
+      v-if="$slots.default"
+      class="uk-card uk-card-default uk-card-small uk-card-body"
+      :class="paddingClass"
+    >
       <slot />
     </div>
     <slot v-else name="special" />
@@ -11,6 +15,7 @@
 import tippy, { hideAll } from "tippy.js"
 import { destroy, hideOnEsc } from "../../../directives/OcTooltip"
 import uniqueId from "../../../utils/uniqueId"
+import { getSizeClass } from "../../../utils/sizeClasses"
 
 /**
  * Position any element in relation to another element.
@@ -81,6 +86,19 @@ export default {
       required: false,
       default: null,
     },
+    /**
+     * Defines the padding size around the drop content. Defaults to `medium`.
+     *
+     * @values xsmall, small, medium, large, xlarge, xxlarge, xxxlarge, remove
+     */
+    paddingSize: {
+      type: String,
+      required: false,
+      default: "medium",
+      validator: value => {
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
+      },
+    },
   },
   data() {
     return { tippy: null }
@@ -92,6 +110,9 @@ export default {
           hover: "mouseenter focus",
         }[this.mode] || this.mode
       )
+    },
+    paddingClass() {
+      return `oc-p-${getSizeClass(this.paddingSize)}`
     },
   },
   watch: {

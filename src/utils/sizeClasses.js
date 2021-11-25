@@ -8,6 +8,7 @@ const sizeClassMappings = {
   xlarge: "xl",
   xxlarge: "xxl",
   xxxlarge: "xxxl",
+  remove: "rm",
 }
 
 export function getSizeClass(size) {
