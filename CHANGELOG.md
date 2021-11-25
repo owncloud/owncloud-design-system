@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
+* Enhancement - Optional padding size for OcDrop: [#1798](https://github.com/owncloud/owncloud-design-system/pull/1798)
 
 ## Details
 
@@ -17,6 +18,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6030
    https://github.com/owncloud/owncloud-design-system/pull/1786
+
+
+* Enhancement - Optional padding size for OcDrop: [#1798](https://github.com/owncloud/owncloud-design-system/pull/1798)
+
+   We've added a `paddingSize` property to the OcDrop component for specifying a dedicated
+   padding of the div that wraps the content slot. It defaults to "medium" and also allows to remove
+   the padding entirely.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1798
 
 # Changelog for [11.2.2] (2021-11-11)
 
