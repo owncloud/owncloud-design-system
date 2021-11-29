@@ -6,10 +6,22 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Relative date tooltips in the OcTableFiles component: [#1787](https://github.com/owncloud/owncloud-design-system/pull/1787)
 * Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
 * Enhancement - Optional padding size for OcDrop: [#1798](https://github.com/owncloud/owncloud-design-system/pull/1798)
 
 ## Details
+
+* Enhancement - Relative date tooltips in the OcTableFiles component: [#1787](https://github.com/owncloud/owncloud-design-system/pull/1787)
+
+   Relative dates like "1 day ago" now have a tooltip that shows the absolute date. The following
+   dates in the files table are affected:
+
+   * modify date * share date * delete date
+
+   https://github.com/owncloud/web/issues/5672
+   https://github.com/owncloud/owncloud-design-system/pull/1787
+
 
 * Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
 
