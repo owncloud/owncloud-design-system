@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Relative date tooltips in the OcTableFiles component: [#1787](https://github.com/owncloud/owncloud-design-system/pull/1787)
 * Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
 * Enhancement - Optional padding size for OcDrop: [#1798](https://github.com/owncloud/owncloud-design-system/pull/1798)
+* Enhancement - Truncate file names while preserving file extensions: [#1758](https://github.com/owncloud/owncloud-design-system/issues/1758)
 
 ## Details
 
@@ -39,6 +40,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    the padding entirely.
 
    https://github.com/owncloud/owncloud-design-system/pull/1798
+
+
+* Enhancement - Truncate file names while preserving file extensions: [#1758](https://github.com/owncloud/owncloud-design-system/issues/1758)
+
+   File names that exceed the horizontal space of a file list now get truncated while preserving
+   their extensions. This way, the user can quickly identify the type of a file.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1758
+   https://github.com/owncloud/owncloud-design-system/pull/1782
 
 # Changelog for [11.2.2] (2021-11-11)
 
