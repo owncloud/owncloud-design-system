@@ -1,15 +1,18 @@
 <template>
   <span
     v-oc-tooltip="tooltip"
-    class="oc-resource-name oc-text-truncate"
+    class="oc-resource-name"
     :data-test-resource-path="fullPath"
     :data-test-resource-name="fullName"
     :data-test-resource-type="type"
   >
-    <span v-if="displayPath" class="oc-resource-path" v-text="displayPath" /><span
-      class="oc-resource-basename"
-      v-text="displayName"
-    /><span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
+    <span class="oc-text-truncate">
+      <span v-if="displayPath" class="oc-resource-path" v-text="displayPath" /><span
+        class="oc-resource-basename"
+        v-text="displayName"
+      />
+    </span>
+    <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
   </span>
 </template>
 
@@ -109,7 +112,8 @@ export default {
 <style lang="scss">
 .oc-resource {
   &-name {
-    display: block;
+    display: flex;
+    min-width: 0;
   }
 
   &-basename,
@@ -128,6 +132,7 @@ export default {
 <docs>
 ```js
 <oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" />
+<oc-resource-name full-path="documents/notes.txt" name="super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt" extension="txt" type="file" />
 <oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" name="forest.jpg" extension="jpg" type="file" />
 <oc-resource-name full-path="super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root-super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root/asdf.txt" :is-path-displayed="true" name="asdf.txt" extension="txt" type="file" />
 <oc-resource-name full-path="some-folder" name="regular-folder" extension="" type="folder" />
