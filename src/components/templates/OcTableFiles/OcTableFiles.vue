@@ -385,6 +385,8 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             sortable: date => this.unixDate(date),
+            accessibleLabelCallback: item =>
+              this.formatDateRelative(item.mdate) + " (" + this.formatDate(item.mdate) + ")",
           },
           {
             name: "sdate",
@@ -393,6 +395,8 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             sortable: date => this.unixDate(date),
+            accessibleLabelCallback: item =>
+              this.formatDateRelative(item.sdate) + " (" + this.formatDate(item.sdate) + ")",
           },
           {
             name: "ddate",
@@ -401,6 +405,8 @@ export default {
             alignH: "right",
             wrap: "nowrap",
             sortable: date => this.unixDate(date),
+            accessibleLabelCallback: item =>
+              this.formatDateRelative(item.ddate) + " (" + this.formatDate(item.ddate) + ")",
           },
         ].filter(field => Object.prototype.hasOwnProperty.call(firstResource, field.name))
       )
