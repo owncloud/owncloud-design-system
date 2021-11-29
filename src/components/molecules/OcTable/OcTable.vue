@@ -56,7 +56,7 @@
         <oc-td
           v-for="(field, tdIndex) in fields"
           :key="'oc-tbody-td-' + cellKey(field, tdIndex, item)"
-          v-bind="extractTdProps(field, tdIndex)"
+          v-bind="extractTdProps(field, tdIndex, item)"
         >
           <slot v-if="isFieldTypeSlot(field)" :name="field.name" :item="item" />
           <template v-else-if="isFieldTypeCallback(field)">
@@ -369,7 +369,7 @@ export default {
         ].filter(Boolean),
       }
     },
-    extractTdProps(field, index) {
+    extractTdProps(field, index, item) {
       const props = this.extractCellProps(field, index)
       props.class = `oc-table-data-cell oc-table-data-cell-${field.name}`
       if (Object.prototype.hasOwnProperty.call(field, "tdClass")) {
@@ -385,6 +385,10 @@ export default {
 
       if (index === this.fields.length - 1) {
         props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
+      }
+
+      if (Object.prototype.hasOwnProperty.call(field, "accessibleLabelCallback")) {
+        props["aria-label"] = field.accessibleLabelCallback(item)
       }
 
       return props

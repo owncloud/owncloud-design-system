@@ -67,6 +67,27 @@
     <template #size="{ item }">
       <oc-resource-size :size="item.size" />
     </template>
+    <template #mdate="{ item }">
+      <span
+        v-oc-tooltip="formatDate(item.mdate)"
+        tabindex="0"
+        v-text="formatDateRelative(item.mdate)"
+      />
+    </template>
+    <template #sdate="{ item }">
+      <span
+        v-oc-tooltip="formatDate(item.sdate)"
+        tabindex="0"
+        v-text="formatDateRelative(item.sdate)"
+      />
+    </template>
+    <template #ddate="{ item }">
+      <span
+        v-oc-tooltip="formatDate(item.ddate)"
+        tabindex="0"
+        v-text="formatDateRelative(item.ddate)"
+      />
+    </template>
     <template #owner="{ item }">
       <oc-avatars
         class="oc-table-files-people"
@@ -361,29 +382,32 @@ export default {
           {
             name: "mdate",
             title: this.$gettext("Modified"),
-            type: "callback",
+            type: "slot",
             alignH: "right",
             wrap: "nowrap",
-            callback: date => this.formatDate(date),
             sortable: date => this.unixDate(date),
+            accessibleLabelCallback: item =>
+              this.formatDateRelative(item.mdate) + " (" + this.formatDate(item.mdate) + ")",
           },
           {
             name: "sdate",
             title: this.$gettext("Shared on"),
-            type: "callback",
+            type: "slot",
             alignH: "right",
             wrap: "nowrap",
-            callback: date => this.formatDate(date),
             sortable: date => this.unixDate(date),
+            accessibleLabelCallback: item =>
+              this.formatDateRelative(item.sdate) + " (" + this.formatDate(item.sdate) + ")",
           },
           {
             name: "ddate",
             title: this.$gettext("Deleted"),
-            type: "callback",
+            type: "slot",
             alignH: "right",
             wrap: "nowrap",
-            callback: date => this.formatDate(date),
             sortable: date => this.unixDate(date),
+            accessibleLabelCallback: item =>
+              this.formatDateRelative(item.ddate) + " (" + this.formatDate(item.ddate) + ")",
           },
         ].filter(field => Object.prototype.hasOwnProperty.call(firstResource, field.name))
       )
@@ -482,6 +506,9 @@ export default {
       this.emitSelect([resource])
     },
     formatDate(date) {
+      return DateTime.fromJSDate(new Date(date)).toLocaleString(DateTime.DATETIME_FULL)
+    },
+    formatDateRelative(date) {
       return DateTime.fromJSDate(new Date(date)).toRelative()
     },
     unixDate(date) {
