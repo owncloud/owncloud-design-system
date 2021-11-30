@@ -6,12 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Set language for date formatting: [#1806](https://github.com/owncloud/owncloud-design-system/pull/1806)
 * Enhancement - Relative date tooltips in the OcTableFiles component: [#1787](https://github.com/owncloud/owncloud-design-system/pull/1787)
 * Enhancement - Breadcrumb contextmenu: [#6030](https://github.com/owncloud/web/issues/6030)
 * Enhancement - Optional padding size for OcDrop: [#1798](https://github.com/owncloud/owncloud-design-system/pull/1798)
 * Enhancement - Truncate file names while preserving file extensions: [#1758](https://github.com/owncloud/owncloud-design-system/issues/1758)
 
 ## Details
+
+* Bugfix - Set language for date formatting: [#1806](https://github.com/owncloud/owncloud-design-system/pull/1806)
+
+   We're now setting the language when formatting dates, so that localized parts of the date/time
+   get shown according to the respective language.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1806
+
 
 * Enhancement - Relative date tooltips in the OcTableFiles component: [#1787](https://github.com/owncloud/owncloud-design-system/pull/1787)
 
