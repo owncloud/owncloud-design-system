@@ -440,6 +440,10 @@ export default {
     contextMenuLabel() {
       return this.$gettext("Show context menu")
     },
+
+    currentLanguage() {
+      return (this.$language?.current || "").split("_")[0]
+    },
   },
   methods: {
     fileDragged(file) {
@@ -506,13 +510,15 @@ export default {
       this.emitSelect([resource])
     },
     formatDate(date) {
-      return DateTime.fromJSDate(new Date(date)).toLocaleString(DateTime.DATETIME_FULL)
+      return DateTime.fromJSDate(new Date(date))
+        .setLocale(this.currentLanguage)
+        .toLocaleString(DateTime.DATETIME_FULL)
     },
     formatDateRelative(date) {
-      return DateTime.fromJSDate(new Date(date)).toRelative()
+      return DateTime.fromJSDate(new Date(date)).setLocale(this.currentLanguage).toRelative()
     },
     unixDate(date) {
-      return DateTime.fromJSDate(new Date(date)).valueOf()
+      return DateTime.fromJSDate(new Date(date)).setLocale(this.currentLanguage).valueOf()
     },
 
     emitSelect(resources) {
