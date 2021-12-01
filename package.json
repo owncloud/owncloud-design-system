@@ -125,6 +125,7 @@
     "vue-style-loader": "^4.1.2",
     "vue-styleguidist": "^4.41.2",
     "vue-template-compiler": "^2.6.12",
+    "vuetify": "^2.6.1",
     "webfontloader": "^1.6.28",
     "webpack": "^4.41.6",
     "webpack-bundle-analyzer": "^4.2.0",

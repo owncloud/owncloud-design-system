@@ -1,8 +1,8 @@
-const path = require("path")
-const baseConfig = require("../build/webpack.base.conf.js")
-const { merge } = require("webpack-merge")
-const packageConfig = require("../package.json")
-const chalk = require("chalk")
+const path = require("path");
+const baseConfig = require("../build/webpack.base.conf.js");
+const { merge } = require("webpack-merge");
+const packageConfig = require("../package.json");
+const chalk = require("chalk");
 
 module.exports = {
   /**
@@ -18,15 +18,15 @@ module.exports = {
     sidebarWidth: 240,
     fontFamily: {
       base: ["'Fira Sans'", "Helvetica", "Arial", "sans-serif"],
-      monospace: ["Consolas", "'Liberation Mono'", "Menlo", "monospace"],
-    },
+      monospace: ["Consolas", "'Liberation Mono'", "Menlo", "monospace"]
+    }
   },
   renderRootJsx: path.join(__dirname, "../docs/components/Preview.js"),
   /**
    * Define a custom code highlighting theme.
    */
   editorConfig: {
-    theme: "night",
+    theme: "night"
   },
   simpleEditor: false,
   /**
@@ -42,7 +42,7 @@ module.exports = {
    */
   require: [
     path.join(__dirname, "../docs/docs.helper.js"),
-    path.join(__dirname, "../docs/docs.styles.scss"),
+    path.join(__dirname, "../docs/docs.styles.scss")
   ],
   /**
    * Enabling the following option splits sections into separate views.
@@ -57,28 +57,28 @@ module.exports = {
       components: "../docs/components/status/**/[A-Z]*.vue",
       sectionDepth: 1,
       exampleMode: "hide",
-      usageMode: "hide",
+      usageMode: "hide"
     },
     {
       name: "Design Principles",
       content: "../docs/principles.md",
       sectionDepth: 1,
       exampleMode: "hide",
-      usageMode: "hide",
+      usageMode: "hide"
     },
     {
       name: "Interface Guidelines",
       content: "../docs/guidelines.md",
       sectionDepth: 1,
       exampleMode: "hide",
-      usageMode: "hide",
+      usageMode: "hide"
     },
     {
       name: "Voice & Tone",
       content: "../docs/voice-and-tone.md",
       sectionDepth: 1,
       exampleMode: "hide",
-      usageMode: "hide",
+      usageMode: "hide"
     },
     {
       name: "Design Tokens",
@@ -91,8 +91,8 @@ module.exports = {
         "../docs/components/tokens/Color.vue",
         "../docs/components/tokens/FontSize.vue",
         "../docs/components/tokens/Spacing.vue",
-        "../docs/components/tokens/All.vue",
-      ],
+        "../docs/components/tokens/All.vue"
+      ]
     },
     {
       name: "oC Components",
@@ -100,7 +100,7 @@ module.exports = {
       components: "../src/components/**/[A-Z]*.vue",
       exampleMode: "expand",
       usageMode: "expand",
-      sectionDepth: 2,
+      sectionDepth: 2
     },
     {
       name: "Utilities",
@@ -112,59 +112,59 @@ module.exports = {
         {
           name: "Margin",
           content: "../docs/margins.md",
-          description: "Utility classes to assign a margin to elements",
+          description: "Utility classes to assign a margin to elements"
         },
         {
           name: "Padding",
           content: "../docs/paddings.md",
-          description: "Utility classes to assign a padding to elements",
+          description: "Utility classes to assign a padding to elements"
         },
         {
           name: "Visibility",
           content: "../docs/visibility.md",
-          description: "Utility classes to hide/display from a certain screen width",
+          description: "Utility classes to hide/display from a certain screen width"
         },
         {
           name: "Text",
           content: "../docs/text.md",
-          description: "Utility classes to change the way text is displayed",
-        },
-      ],
+          description: "Utility classes to change the way text is displayed"
+        }
+      ]
     },
     {
       name: "Animations",
       content: "../docs/animations.md",
       exampleMode: "hide",
       usageMode: "hide",
-      sectionDepth: 1,
+      sectionDepth: 1
     },
     {
       name: "Use of ARIA",
       content: "../docs/use-of-aria.md",
       exampleMode: "hide",
       usageMode: "hide",
-      sectionDepth: 1,
+      sectionDepth: 1
     },
     {
       name: "Internationalization",
       content: "../docs/i18n.md",
       exampleMode: "hide",
       usageMode: "hide",
-      sectionDepth: 1,
+      sectionDepth: 1
     },
     {
       name: "Downloads",
       content: "../docs/downloads.md",
       exampleMode: "hide",
       usageMode: "hide",
-      sectionDepth: 1,
+      sectionDepth: 1
     },
     {
       name: "Versioning & Release",
       content: "../docs/versioning-and-release.md",
       exampleMode: "hide",
       usageMode: "hide",
-      sectionDepth: 1,
+      sectionDepth: 1
     },
     {
       /**
@@ -175,8 +175,8 @@ module.exports = {
       name: "Private Components",
       exampleMode: "hide",
       usageMode: "hide",
-      components: "../src/**/[_]*.vue",
-    },
+      components: "../src/**/[_]*.vue"
+    }
   ],
   /**
    * Custom wrapper template for the documentation.
@@ -189,14 +189,14 @@ module.exports = {
       meta: [
         {
           name: "viewport",
-          content: "width=device-width,initial-scale=1.0",
+          content: "width=device-width,initial-scale=1.0"
         },
         {
           name: "format-detection",
-          content: "telephone=no",
-        },
-      ],
-    },
+          content: "telephone=no"
+        }
+      ]
+    }
   },
   /**
    * Ignore app.vue, tests, and example component.
@@ -207,18 +207,38 @@ module.exports = {
     "**/*.test.js",
     "**/*.test.jsx",
     "**/*.spec.js",
-    "**/*.spec.jsx",
+    "**/*.spec.jsx"
   ],
   webpackConfig: merge(baseConfig, {
     module: {
       rules: [
         {
-          test: /\.(css?|scss|sass)(\?.*)?$/,
+          test: /\.sass$/,
           use: [
             "style-loader",
             "css-loader",
-            "postcss-loader",
-            "sass-loader",
+            {
+              loader: "sass-loader",
+              options: {
+                implementation: require("sass"),
+                sassOptions: {
+                  indentedSyntax: true
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(css?|scss)(\?.*)?$/,
+          use: [
+            "style-loader",
+            "css-loader",
+            {
+              loader: "sass-loader",
+              options: {
+                implementation: require("sass"),
+              },
+            },
             {
               loader: "sass-resources-loader",
               options: {
@@ -228,27 +248,28 @@ module.exports = {
                   path.join(__dirname, "../docs/docs.mixins.scss"),
                   path.join(__dirname, "../docs/docs.functions.scss"),
                   path.join(__dirname, "../docs/docs.spacing.scss"),
-                  path.join(__dirname, "../src/styles/styles.scss"),
+                  path.join(__dirname, "../src/styles/styles.scss")
                 ],
               },
             },
           ],
         },
-      ],
-    },
+      ]
+    }
   }),
   styleguideDir: "../dist/docs",
-  printServerInstructions() {},
+  printServerInstructions() {
+  },
   printBuildInstructions(config) {
-    console.log(chalk.cyan("\n  Design System Docs build finished succesfully!\n"))
+    console.log(chalk.cyan("\n  Design System Docs build finished succesfully!\n"));
     console.log(
       chalk.yellow(
         "  Tip: You can now deploy the docs as a static website.\n" +
-          "  Copy the build files from " +
-          `${config.styleguideDir}\n`
+        "  Copy the build files from " +
+        `${config.styleguideDir}\n`
       )
-    )
-  },
+    );
+  }
   /**
    * Configure docs server to redirect asset queries
    */
@@ -258,4 +279,4 @@ module.exports = {
   //     res.redirect(req.params.file)
   //   })
   // },
-}
+};
