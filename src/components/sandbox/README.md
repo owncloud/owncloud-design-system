@@ -3,14 +3,14 @@ one of the tasks that we have in our current sprint is to evaluate if it makes s
 
 ## The why is simple to answer:
 * spent less time implementing low level (atoms) components (good example, everyone likes to write his own form component... even if it is already done by many others).
-* use something battle proved (cross browser styles, implementation logic) and don't do common failures on our own.
-* improve speed (development time) to land a new component.
+* use something battle proven (cross browser styles, implementation logic, ...) and don't do common failures our own.
+* improve speed (development time) to land a new component or even ui feature.
 
 ## Decision criteria
-* it should not ba a blown up framework, we want to write our business logic on our own (or at least just consume needed parts).
+* it should not ba a blown up framework, we want to write the business logic on our own (or at least just consume needed parts).
 * we're not forced to buy in everything, instead we must be able to pick just the parts we need.
-* it should contain most of the needed low level components, it should be our one stop shop! It's a no no to include even another ui library to get some here and some there.
-* it must be something battle proved, the community should be strong (or at least big enough) and the project should be around for some time (stars., pr's, issues....)
+* it should contain most of the needed low level components, it should be our one stop shop! It's a no no to include even other ui libraries to pick some here and some there.
+* it must be something battle proven, the community should be strong (or at least big enough) and the project should be around for some time (stars., pr's, issues....)
 * the license must fit our needs (consume it in our own opensource project)
 * the documentation must be good
 * the default look and feel should be nice and crisp, but it's a must have to be able to overwrite the styles (replace!?) and make it CI compliant.
@@ -54,11 +54,11 @@ This is already done and tested for the docs only mode (docs/docs.config.js) in 
 start ODS and search for `sbv` (sandbox-vuetify-ogname) then use it. Example: `/src/components/sandbox/vuetify/*`
 
 ## ToDo's
-* pull in colleagues (four/six/eight-eyes principle), the decision should stand of the shoulders of many (giants)
-* check out every (or most) components and check if it's a good fit on the second look too
-* double check license (current stable and current alpha version)
-* play with it more, those decisions are hard to revise and we did it too often in the past...
-* make it work for distributed version of ODS
+* pull in colleagues (four/six/eight-eyes principle), the decision should stand on the shoulders of many (giants)
+* check out every (or most) lib components and check if it's a good fit on the second look too...
+* double check license (current stable and upcoming alpha version)
+* play with it more, those decisions are hard to revise, and we did this too often in the past...
+* make it work for the distributed version of ODS
 
 # Quasar
 ## Facts
