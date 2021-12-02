@@ -4,6 +4,9 @@
     :ref="data.ref"
     :class="[
       'oc-sidebar-nav-item',
+      'oc-pb-xs',
+      'oc-pl-s',
+      'oc-pr-s',
       { 'oc-sidebar-nav-item-isolated': props.isolate },
       { 'oc-sidebar-nav-item-parent': slots().subnav },
       data.staticClass,
@@ -78,35 +81,38 @@ export default {
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
     border-bottom: 1px solid transparent;
-    color: var(--oc-color-text-inverse);
+    color: var(--oc-color-border);
     display: flex;
-    font-weight: 600;
-    padding: var(--oc-space-small) var(--oc-space-medium);
+    font-weight: 400;
+    padding: var(--oc-space-small) var(--oc-space-small);
+    border-radius: 5px;
 
-    &:hover,
     &.active {
-      background-color: var(--oc-color-swatch-inverse-default);
-      border-color: var(--oc-color-swatch-brand-default);
-      color: var(--oc-color-text-default);
+      background: linear-gradient(90deg, #0869DE 0%, #4E85C8 100%);
+      color: var(--oc-color-text-inverse);
+      border: 0px;
+    }
+
+    .oc-icon > svg {
+      fill: var(--oc-color-border) !important;
+    }
+
+    &.active > .oc-icon > svg {
+      fill: var(--oc-color-text-inverse) !important;
     }
 
     &:hover {
       text-decoration: none;
-    }
-    &:hover > .oc-icon > svg {
-      fill: var(--oc-color-text-default) !important;
+      color: var(--oc-color-text-inverse);
     }
 
     &.active {
       cursor: default;
     }
-    &.active > .oc-icon > svg {
-      fill: var(--oc-color-text-default) !important;
-    }
   }
 
   &-icon {
-    margin-right: var(--oc-space-small);
+    margin-right: var(--oc-space-medium);
   }
 
   &-isolated {

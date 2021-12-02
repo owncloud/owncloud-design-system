@@ -68,17 +68,24 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden auto;
-  padding: var(--oc-space-large) 0 var(--oc-space-medium);
   width: var(--oc-size-width-medium);
+  background-color: #202020;
+  overflow: visible;
+  z-index: var(--oc-z-index-modal);
 
   &-header {
-    margin-bottom: var(--oc-space-xxlarge);
     padding: 0 var(--oc-space-medium);
+    height: 64px;
   }
 
   &-nav {
     flex: auto;
     margin-bottom: var(--oc-space-large);
+    background-color: #2D2D2D;
+    border-radius: 15px;
+    padding-top: var(--oc-space-large);
+    margin-left: var(--oc-space-small);
+    box-shadow: 5px 0px 25px rgba(0, 0, 0, 0.3);
   }
 
   &-footer {
