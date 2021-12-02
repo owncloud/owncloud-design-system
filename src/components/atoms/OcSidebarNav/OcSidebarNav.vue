@@ -7,7 +7,7 @@
   >
     <header
       v-if="slots().header"
-      class="oc-sidebar-header"
+      class="oc-sidebar-header uk-flex uk-flex-middle"
       :aria-label="props.accessibleLabelHeader"
     >
       <!-- @slot Header of the sidebar -->

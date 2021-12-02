@@ -257,9 +257,8 @@ export default {
   &-input {
     @extend .uk-input;
 
-    background-color: var(--oc-color-input-bg);
-    border: 1px solid var(--oc-color-input-border);
-    border-radius: 3px;
+    border-radius: 100px;
+    border: 0px;
     color: var(--oc-color-input-text-muted);
     padding-right: var(--oc-space-medium);
 
