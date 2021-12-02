@@ -11,7 +11,10 @@
     ]"
     :aria-current="props.active ? 'page' : null"
   >
-    <router-link :class="['oc-sidebar-nav-item-link', { active: props.active }]" :to="props.target">
+    <router-link
+      v-if="props.target"
+      :class="['oc-sidebar-nav-item-link', { active: props.active }]"
+      :to="props.target">
       <oc-icon
         :class="{ 'oc-sidebar-nav-item-icon': !props.collapsed }"
         :name="props.icon"
@@ -20,6 +23,9 @@
       />
       <slot v-if="!props.collapsed" name="default" />
     </router-link>
+    <span @click="this.$emit('click', $event)" v-else>
+      <slot name="default" />
+    </span>
     <oc-list v-if="slots().subnav" class="oc-sidebar-nav-item-list">
       <slot name="subnav" />
     </oc-list>
@@ -145,6 +151,28 @@ export default {
     <oc-sidebar-nav-item target="#" icon="group" :collapsed="true" isolate>Users</oc-sidebar-nav-item>
   </oc-list>
 </nav>
+```
+
+### Nav item without custom target
+```js
+<template>
+<nav class="oc-background-brand">
+  <oc-list>
+    <oc-sidebar-nav-item>
+      <oc-icon variation="inverse" name="apps" @click="customTarget" />
+    </oc-sidebar-nav-item>
+  </oc-list>
+</nav>
+</template>
+<script>
+export default {
+  methods: {
+    customTarget() {
+      alert("hi")
+    }
+  }
+}
+</script>
 ```
 
 ### Nested nav items
