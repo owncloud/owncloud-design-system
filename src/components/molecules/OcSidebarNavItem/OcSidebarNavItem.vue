@@ -13,12 +13,12 @@
   >
     <router-link :class="['oc-sidebar-nav-item-link', { active: props.active }]" :to="props.target">
       <oc-icon
-        class="oc-sidebar-nav-item-icon"
+        :class="{ 'oc-sidebar-nav-item-icon': !props.collapsed }"
         :name="props.icon"
         variation="inverse"
         aria-hidden="true"
       />
-      <slot name="default" />
+      <slot v-if="!props.collapsed" name="default" />
     </router-link>
     <oc-list v-if="slots().subnav" class="oc-sidebar-nav-item-list">
       <slot name="subnav" />
@@ -52,6 +52,11 @@ export default {
       default: "",
     },
     isolate: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    collapsed: {
       type: Boolean,
       required: false,
       default: false,
@@ -127,6 +132,17 @@ export default {
     <oc-sidebar-nav-item target="#" icon="folder" active>Files</oc-sidebar-nav-item>
     <oc-sidebar-nav-item target="#" icon="delete">Deleted files</oc-sidebar-nav-item>
     <oc-sidebar-nav-item target="#" icon="group" isolate>Users</oc-sidebar-nav-item>
+  </oc-list>
+</nav>
+```
+
+### Collapsed nav items
+```js
+<nav class="oc-background-brand">
+  <oc-list>
+    <oc-sidebar-nav-item target="#" icon="folder" :collapsed="true" active>Files</oc-sidebar-nav-item>
+    <oc-sidebar-nav-item target="#" icon="delete" :collapsed="true">Deleted files</oc-sidebar-nav-item>
+    <oc-sidebar-nav-item target="#" icon="group" :collapsed="true" isolate>Users</oc-sidebar-nav-item>
   </oc-list>
 </nav>
 ```
