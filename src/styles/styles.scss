@@ -1,5 +1,3 @@
-// Import UIkit default theme (or uikit.scss with only core styles)
-
 // 1. Your custom variables and variable overwrites.
 @import "theme/variables";
 
@@ -16,12 +14,14 @@
 @import "theme/background";
 @import "theme/helper";
 @import "theme/login";
-@import "theme/main";
 @import "theme/oc-card";
-@import "theme/oc-file-actions";
-@import "theme/oc-public-share-icon";
-@import "theme/oc-scroll";
+@import "theme/oc-flex";
+@import "theme/oc-form";
+@import "theme/oc-height";
+@import "theme/oc-input";
+@import "theme/oc-position";
 @import "theme/oc-spacing";
 @import "theme/oc-text";
 @import "theme/oc-transitions";
 @import "theme/oc-visibility";
+@import "theme/oc-width";
