@@ -14,13 +14,12 @@
           {{ item.text }}
         </oc-button>
         <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
-        <template v-if="showContextMenu && index == items.length - 1">
+        <template v-if="showContextMenu && index === items.length - 1">
           <oc-button
             id="oc-breadcrumb-contextmenu-trigger"
             v-oc-tooltip="contextMenuLabel"
             :aria-label="contextMenuLabel"
             appearance="raw"
-            :variation="primary"
           >
             <oc-icon name="more_vert" />
           </oc-button>
@@ -29,6 +28,7 @@
             toggle="#oc-breadcrumb-contextmenu-trigger"
             mode="click"
             close-on-click
+            padding-size="remove"
             @click.native.stop.prevent
           >
             <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
