@@ -17,7 +17,8 @@
     <router-link
       v-if="props.target"
       :class="['oc-sidebar-nav-item-link', { active: props.active }]"
-      :to="props.target">
+      :to="props.target"
+    >
       <oc-icon
         :class="{ 'oc-sidebar-nav-item-icon': !props.collapsed }"
         :name="props.icon"
@@ -26,9 +27,9 @@
       />
       <slot v-if="!props.collapsed" name="default" />
     </router-link>
-    <span @click="this.$emit('click', $event)" v-else>
+    <oc-button v-else appearance="raw" @click="$emit('click', $event)">
       <slot name="default" />
-    </span>
+    </oc-button>
     <oc-list v-if="slots().subnav" class="oc-sidebar-nav-item-list">
       <slot name="subnav" />
     </oc-list>
@@ -88,7 +89,7 @@ export default {
     border-radius: 5px;
 
     &.active {
-      background: linear-gradient(90deg, #0869DE 0%, #4E85C8 100%);
+      background: linear-gradient(90deg, #0869de 0%, #4e85c8 100%);
       color: var(--oc-color-text-inverse);
       border: 0px;
     }

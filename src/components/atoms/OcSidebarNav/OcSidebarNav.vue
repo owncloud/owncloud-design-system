@@ -81,7 +81,7 @@ export default {
   &-nav {
     flex: auto;
     margin-bottom: var(--oc-space-large);
-    background-color: #2D2D2D;
+    background-color: #2d2d2d;
     border-radius: 15px;
     padding-top: var(--oc-space-large);
     margin-left: var(--oc-space-small);
