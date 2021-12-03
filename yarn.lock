@@ -9150,9 +9150,9 @@ npm-user-validate@*:
   integrity sha512-uQwcd/tY+h1jnEaze6cdX/LrhWhoBxfSknxentoqmIuStxUExxjWd3ULMLFPiFUrZKbOVMowH6Jq2FRWfmhcEw==
 
 npm@^8.0.0:
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-8.1.4.tgz#ea3666739f316f1999103ae99b542c50b9b3cca1"
-  integrity sha512-CRwzIUmJQiBCkME3nZj/4tLExlWwdEFl/4dUhKoa/NpW8dbwRO5pb7YzHAU1y2AJvS0B+Ju7sXeBlWsr6OH5rw==
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-8.2.0.tgz#19d889938ed52f952b219544ffcb614e206f22cc"
+  integrity sha512-doYfni7IWhc5xJdikZK3PKENz3QcTcV5Y2EtF8HA3eEPePeemdgGl3j2OyNPT25+UBschVWSVgz4ER1/wnjF7Q==
   dependencies:
     "@isaacs/string-locale-compare" "*"
     "@npmcli/arborist" "*"
@@ -9209,6 +9209,7 @@ npm@^8.0.0:
     opener "*"
     pacote "*"
     parse-conflict-json "*"
+    proc-log "*"
     qrcode-terminal "*"
     read "*"
     read-package-json "*"
@@ -10371,7 +10372,7 @@ private@^0.1.8:
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
   integrity sha512-VvivMrbvd2nKkiG38qjULzlc+4Vx4wm/whI9pQD35YrARNnhxeiRktSOhSukRLFNlzg6Br/cJPet5J/u19r/mg==
 
-proc-log@^1.0.0:
+proc-log@*, proc-log@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/proc-log/-/proc-log-1.0.0.tgz#0d927307401f69ed79341e83a0b2c9a13395eb77"
   integrity sha512-aCk8AO51s+4JyuYGg3Q/a6gnrlDO09NpVWePtjp7xwphcoQ04x5WAfCyugcsbLooWcMJ87CLkD4+604IckEdhg==
