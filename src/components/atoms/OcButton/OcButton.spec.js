@@ -19,14 +19,6 @@ describe("OcButton", () => {
     expect(slot.text()).toBe("Test button")
   })
 
-  it("can stop class propagation", () => {
-    const wrapper = getWrapperWithProps({
-      stopClassPropagation: true,
-      size: "medium",
-    })
-    expect(wrapper.attributes("class")).toBe("")
-  })
-
   describe("click event", () => {
     it("should emit click event when click is triggered", async () => {
       const wrapper = getWrapperWithProps({})

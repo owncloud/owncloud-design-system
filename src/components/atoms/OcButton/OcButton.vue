@@ -1,7 +1,7 @@
 <template>
   <component
     :is="type"
-    v-bind="properties"
+    v-bind="additionalAttributes"
     :type="submit"
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
@@ -65,7 +65,8 @@ export default {
       default: null,
     },
     /**
-     * The aria-label of the button.
+     * The aria-label of the button. Only use this property if you want to overwrite the accessible content of the
+     * oc-button. Usually this is not needed.
      */
     ariaLabel: {
       type: String,
@@ -106,13 +107,6 @@ export default {
       },
     },
     /**
-     * Don't add the element class to this element.
-     */
-    stopClassPropagation: {
-      type: Boolean,
-      default: false,
-    },
-    /**
      * How to justify content within the button. Defaults to center.
      * `left, center, right, space-around, space-between, space-evenly`
      */
@@ -137,9 +131,7 @@ export default {
   },
   computed: {
     $_ocButton_buttonClass() {
-      if (this.stopClassPropagation) return ""
-
-      let classes = [
+      const classes = [
         "oc-button",
         `oc-button-${getSizeClass(this.size)}`,
         `oc-button-justify-content-${this.justifyContent}`,
@@ -160,28 +152,17 @@ export default {
       return classes
     },
 
-    properties: function () {
-      const props = {}
-
-      if (this.href) {
-        props.href = this.href
+    additionalAttributes() {
+      return {
+        ...(this.href && { href: this.href }),
+        ...(this.to && { to: this.to }),
       }
-
-      if (this.to) {
-        props.to = this.to
-      }
-
-      return props
     },
 
-    handlers: function () {
-      const handlers = {}
-
-      if (this.type === "button") {
-        handlers.click = this.$_ocButton_onClick
+    handlers() {
+      return {
+        ...(this.type === "button" && { click: this.$_ocButton_onClick }),
       }
-
-      return handlers
     },
   },
   methods: {
