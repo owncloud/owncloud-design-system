@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...master
+
+## Summary
+
+* Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
+
+## Details
+
+* Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
+
+   We removed the `stopClassProgragation` property in two components, which resulted in
+   unstyled components before but was unused.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1795
+
 # Changelog for [11.3.1] (2021-12-03)
 
 The following sections list the changes in ownCloud Design System 11.3.1.
