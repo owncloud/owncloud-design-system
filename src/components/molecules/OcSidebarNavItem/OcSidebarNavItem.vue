@@ -18,6 +18,7 @@
       v-if="props.target"
       :class="['oc-sidebar-nav-item-link', { active: props.active }]"
       :to="props.target"
+      :id="props.id"
     >
       <oc-icon
         :class="{ 'oc-sidebar-nav-item-icon': !props.collapsed }"
@@ -25,7 +26,7 @@
         variation="inverse"
         aria-hidden="true"
       />
-      <slot v-if="!props.collapsed" name="default" />
+      <slot name="default" />
     </router-link>
     <oc-button v-else appearance="raw" @click="$emit('click', $event)">
       <slot name="default" />
@@ -71,6 +72,11 @@ export default {
       required: false,
       default: false,
     },
+    id: {
+      type: String,
+      required: false,
+      default: ''
+    }
   },
 }
 </script>
@@ -78,8 +84,8 @@ export default {
 <style lang="scss">
 .oc-sidebar-nav-item {
   &-link {
+    position: relative;
     align-items: center;
-    border-left: 1px solid transparent;
     border-right: 1px solid transparent;
     border-bottom: 1px solid transparent;
     color: var(--oc-color-border);
@@ -89,7 +95,6 @@ export default {
     border-radius: 5px;
 
     &.active {
-      background: linear-gradient(90deg, #0869de 0%, #4e85c8 100%);
       color: var(--oc-color-text-inverse);
       border: 0px;
     }
