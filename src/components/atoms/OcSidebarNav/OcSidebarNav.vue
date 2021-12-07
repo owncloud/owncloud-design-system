@@ -76,6 +76,7 @@ export default {
   &-header {
     padding: 0 var(--oc-space-medium);
     height: 64px;
+    flex-shrink: 0;
   }
 
   &-nav {
