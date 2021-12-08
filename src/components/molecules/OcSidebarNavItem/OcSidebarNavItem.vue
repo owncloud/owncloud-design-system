@@ -86,13 +86,14 @@ export default {
   &-link {
     position: relative;
     align-items: center;
-    border-right: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    -webkit-user-drag: none;
     color: var(--oc-color-border);
     display: flex;
     font-weight: 400;
     padding: var(--oc-space-small) var(--oc-space-small);
     border-radius: 5px;
+    white-space: nowrap;
+    user-select: none;
 
     &.active {
       color: var(--oc-color-text-inverse);
