@@ -6,9 +6,20 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
 
 ## Details
+
+* Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
+
+   Ods oc-table-files always contained concrete web-app-files logic, to make development more
+   agile and keep things close oc-table-files was removed from ODS and relocated to live in
+   web-app-files from now on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1817
+   https://github.com/owncloud/web/pull/6106
+
 
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
 
