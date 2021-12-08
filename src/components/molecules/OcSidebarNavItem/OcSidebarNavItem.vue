@@ -16,9 +16,9 @@
   >
     <router-link
       v-if="props.target"
+      :id="props.id"
       :class="['oc-sidebar-nav-item-link', { active: props.active }]"
       :to="props.target"
-      :id="props.id"
     >
       <oc-icon
         :class="{ 'oc-sidebar-nav-item-icon': !props.collapsed }"
@@ -75,8 +75,8 @@ export default {
     id: {
       type: String,
       required: false,
-      default: ''
-    }
+      default: "",
+    },
   },
 }
 </script>

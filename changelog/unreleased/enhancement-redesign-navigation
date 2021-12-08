@@ -1,0 +1,8 @@
+Enhancement: Redesign OcSidebarNav and OcSidebarNavItem
+
+We've made several changes to OcSidebarNav and OcSidebarNavItem in
+order to fit the new design.
+
+https://github.com/owncloud/web/issues/6036
+https://github.com/owncloud/owncloud-design-system/pull/1810
+
