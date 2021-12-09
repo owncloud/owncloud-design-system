@@ -9150,9 +9150,9 @@ npm-user-validate@*:
   integrity sha512-uQwcd/tY+h1jnEaze6cdX/LrhWhoBxfSknxentoqmIuStxUExxjWd3ULMLFPiFUrZKbOVMowH6Jq2FRWfmhcEw==
 
 npm@^8.0.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-8.2.0.tgz#19d889938ed52f952b219544ffcb614e206f22cc"
-  integrity sha512-doYfni7IWhc5xJdikZK3PKENz3QcTcV5Y2EtF8HA3eEPePeemdgGl3j2OyNPT25+UBschVWSVgz4ER1/wnjF7Q==
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-8.3.0.tgz#03d32b0ddb07a5865726baf7149bb0475023df4d"
+  integrity sha512-ug4xToae4Dh3yZh8Fp6MOnAPSS3fqCTANpJx1fXP2C4LTUzoZf7rEantHQR/ANPVYDBe5qQT4tGVsoPqqiYZMw==
   dependencies:
     "@isaacs/string-locale-compare" "*"
     "@npmcli/arborist" "*"
