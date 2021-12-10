@@ -257,7 +257,7 @@ export default {
   &-input {
     @extend .uk-input;
 
-    border-radius: 100px;
+    border-radius: 25px;
     border: 0px;
     color: var(--oc-color-input-text-muted);
     padding-right: var(--oc-space-medium);
