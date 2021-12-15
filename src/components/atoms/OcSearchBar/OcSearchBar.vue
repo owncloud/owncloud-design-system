@@ -7,7 +7,7 @@
   >
     <div class="uk-width-expand uk-position-relative">
       <span v-if="icon" class="uk-form-icon">
-        <oc-icon v-show="!loading" :name="icon" />
+        <oc-icon v-show="!loading" :name="icon" fill-type="line" />
         <oc-spinner
           v-show="loading"
           :size="spinnerSize"
