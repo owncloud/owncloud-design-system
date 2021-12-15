@@ -7,8 +7,8 @@
         v-bind="additionalAttributes"
         ref="input"
         :aria-invalid="ariaInvalid"
+        class="oc-text-input"
         :class="{
-          'oc-text-input': !stopClassPropagation,
           'oc-text-input-warning': !!warningMessage,
           'oc-text-input-danger': !!errorMessage,
         }"
@@ -131,19 +131,12 @@ export default {
       default: false,
     },
     /**
-     * Accessible of the form input field, via aria-label.
+     * Accessible label of the form input field.
      **/
     label: {
       type: String,
       required: true,
       default: null,
-    },
-    /**
-     * Don't add the element class to this element.
-     */
-    stopClassPropagation: {
-      type: Boolean,
-      default: false,
     },
     /**
      * A warning message which is shown below the input.

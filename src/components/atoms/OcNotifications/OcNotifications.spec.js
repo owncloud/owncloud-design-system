@@ -7,17 +7,11 @@ describe("OcNotifications", () => {
   }
   describe("position prop", () => {
     it("should not allow values other than top-left, top-center, top-right", () => {
-      try {
+      expect(() => {
         getWrapper({
           propsData: { position: "not-valid" },
         })
-        throw new Error(`Provided value for prop "position" is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          '[Vue warn]: Invalid prop: custom validator check failed for prop "position".'
-        )
-      }
+      }).toThrow('[Vue warn]: Invalid prop: custom validator check failed for prop "position".')
     })
     it.each(["top-left", "top-center", "top-right"])(
       "it should set provided position as class for wrapper",

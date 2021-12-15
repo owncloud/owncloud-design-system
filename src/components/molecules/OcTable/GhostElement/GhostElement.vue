@@ -7,7 +7,7 @@
 
 <script>
 /**
- * Please head to the OcTableFiles component (https://owncloud.design/#/oC%20Components/OcTableFiles) for a demo of the Ghost Element.
+ * Please head to the ownCloud web ResourceTable component (https://github.com/owncloud/web/blob/master/packages/web-app-files/src/components/FilesList/ResourceTable.vue) for a demo of the Ghost Element.
  */
 export default {
   name: "GhostElement",

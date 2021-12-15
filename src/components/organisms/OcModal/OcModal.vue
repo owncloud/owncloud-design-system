@@ -194,7 +194,7 @@ export default {
       default: false,
     },
     /**
-     * Asserts whether the modal contains input
+     * Asserts whether the modal should render a text input
      */
     hasInput: {
       type: Boolean,
@@ -210,7 +210,7 @@ export default {
       default: null,
     },
     /**
-     * Label of the input
+     * Label of the text input field
      */
     inputLabel: {
       type: String,
@@ -226,7 +226,7 @@ export default {
       default: null,
     },
     /**
-     * Error of the input
+     * Error message for the input field
      */
     inputError: {
       type: String,
@@ -234,7 +234,7 @@ export default {
       default: null,
     },
     /**
-     * Asserts whether the input is disabled or not
+     * Asserts whether the input is disabled
      */
     inputDisabled: {
       type: Boolean,

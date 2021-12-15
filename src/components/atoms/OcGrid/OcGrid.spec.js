@@ -18,17 +18,11 @@ describe("OcGrid", () => {
       }
     )
     it("should not accept invalid values", () => {
-      try {
+      expect(() => {
         getWrapper({
           gutter: "invalid",
         })
-        throw new Error(`Provided value for prop "gutter" is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          `[Vue warn]: Invalid prop: custom validator check failed for prop "gutter".`
-        )
-      }
+      }).toThrow(`[Vue warn]: Invalid prop: custom validator check failed for prop "gutter".`)
     })
   })
   describe("when match prop is true", () => {

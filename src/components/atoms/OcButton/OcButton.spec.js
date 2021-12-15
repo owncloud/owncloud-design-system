@@ -19,14 +19,6 @@ describe("OcButton", () => {
     expect(slot.text()).toBe("Test button")
   })
 
-  it("can stop class propagation", () => {
-    const wrapper = getWrapperWithProps({
-      stopClassPropagation: true,
-      size: "medium",
-    })
-    expect(wrapper.attributes("class")).toBe("")
-  })
-
   describe("click event", () => {
     it("should emit click event when click is triggered", async () => {
       const wrapper = getWrapperWithProps({})
@@ -110,32 +102,22 @@ describe("OcButton", () => {
       ${"justifyContent"}
       ${"variation"}
       ${"gapSize"}
-    `('when prop "$prop" is set to an invalid value"', ({ prop, value }) => {
-      try {
-        let props = {}
-        props[prop] = "not-valid"
+    `('when prop "$prop" is set to an invalid value"', ({ prop }) => {
+      let props = {}
+      props[prop] = "not-valid"
+      expect(() => {
         getWrapperWithProps(props)
-        throw new Error(`Provided value "${value}" for prop "${prop}" is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          `[Vue warn]: Invalid prop: custom validator check failed for prop "${prop}".`
-        )
-      }
+      }).toThrow(`[Vue warn]: Invalid prop: custom validator check failed for prop "${prop}".`)
     })
     it('when invalid value is set for prop "type"', () => {
-      try {
+      expect(() => {
         getWrapperWithProps({
           type: "not-valid",
         })
-        throw new Error(`Provided value for prop "type" is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          "[Vue warn]: Unknown custom element: <not-valid> - did you register the" +
-            ' component correctly? For recursive components, make sure to provide the "name" option.'
-        )
-      }
+      }).toThrow(
+        "[Vue warn]: Unknown custom element: <not-valid> - did you register the" +
+          ' component correctly? For recursive components, make sure to provide the "name" option.'
+      )
     })
   })
   describe("oc button appearance", () => {

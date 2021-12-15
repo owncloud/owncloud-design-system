@@ -45,13 +45,6 @@ describe("OcTextInput", () => {
     })
   })
 
-  describe("input classes", () => {
-    it("should be empty if stop class propagation is enabled", () => {
-      const wrapper = getShallowWrapper({ stopClassPropagation: true })
-      expect(wrapper.find("input").attributes().class).toBe("")
-    })
-  })
-
   describe("when a description message is provided", () => {
     const wrapper = getShallowWrapper({ descriptionMessage: "You should pass." })
     it("should add the description class to the input message", () => {
@@ -123,15 +116,9 @@ describe("OcTextInput", () => {
 
   describe("type prop", () => {
     it("should only allow text, number, email and password as type", () => {
-      try {
+      expect(() => {
         getShallowWrapper({ type: "binary" })
-        throw new Error(`Provided value 'binary' for prop 'type' is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          '[Vue warn]: Invalid prop: custom validator check failed for prop "type".'
-        )
-      }
+      }).toThrow('[Vue warn]: Invalid prop: custom validator check failed for prop "type".')
     })
     it.each(["text", "number", "email", "password"])(
       "should set the provided type for the input",
