@@ -23,15 +23,9 @@ describe("OcImage", () => {
     expect(wrapper.attributes("loading")).toBe(loadingType)
   })
   it("should not accept value other than (lazy & eager) for prop loading type", () => {
-    try {
+    expect(() => {
       getWrapper({ loadingType: "invalid" })
-      throw Error("value 'invalid' is valid for prop 'loadingType'.")
-    } catch (e) {
-      /* eslint-disable-next-line jest/no-conditional-expect */
-      expect(e).toContain(
-        `[Vue warn]: Invalid prop: custom validator check failed for prop "loadingType".`
-      )
-    }
+    }).toThrow(`[Vue warn]: Invalid prop: custom validator check failed for prop "loadingType".`)
   })
   describe("when alt is set", () => {
     const wrapper = getWrapper({ alt: "test alt text" })
