@@ -29,18 +29,11 @@ describe("OcNotificationMessage", () => {
 
   describe("status prop", () => {
     it("should not allow values other than passive, primary, success, warning, danger", () => {
-      try {
+      expect(() => {
         getWrapper({
           status: "not-valid",
         })
-
-        throw new Error(`Provided value for prop "status" is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          '[Vue warn]: Invalid prop: custom validator check failed for prop "status".'
-        )
-      }
+      }).toThrow('[Vue warn]: Invalid prop: custom validator check failed for prop "status".')
     })
 
     it.each(["passive", "primary", "success", "warning", "danger"])(

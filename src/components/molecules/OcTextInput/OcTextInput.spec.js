@@ -116,15 +116,9 @@ describe("OcTextInput", () => {
 
   describe("type prop", () => {
     it("should only allow text, number, email and password as type", () => {
-      try {
+      expect(() => {
         getShallowWrapper({ type: "binary" })
-        throw new Error(`Provided value 'binary' for prop 'type' is valid.`)
-      } catch (e) {
-        /* eslint-disable-next-line jest/no-conditional-expect */
-        expect(e).toContain(
-          '[Vue warn]: Invalid prop: custom validator check failed for prop "type".'
-        )
-      }
+      }).toThrow('[Vue warn]: Invalid prop: custom validator check failed for prop "type".')
     })
     it.each(["text", "number", "email", "password"])(
       "should set the provided type for the input",
