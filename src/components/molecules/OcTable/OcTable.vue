@@ -35,7 +35,7 @@
     </oc-thead>
     <oc-tbody>
       <oc-tr
-        v-for="(item, trIndex) in tableData"
+        v-for="(item, trIndex) in data"
         :key="`oc-tbody-tr-${itemDomSelector(item) || trIndex}`"
         :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
@@ -247,9 +247,6 @@ export default {
     }
   },
   computed: {
-    tableData() {
-      return this.data
-    },
     tableClasses() {
       const result = ["oc-table"]
 
