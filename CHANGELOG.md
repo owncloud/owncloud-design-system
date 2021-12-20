@@ -6,10 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
 * Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
 
 ## Details
+
+* Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
+
+   We removed sorting from OcTable and added a `sort` event instead, which can be used to sort the
+   data externally. This is crucial for server side sorting and handling pagination correctly.
+
+   https://github.com/owncloud/web/issues/5687
+   https://github.com/owncloud/owncloud-design-system/pull/1825
+   https://github.com/owncloud/web/pull/6136
+
 
 * Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
 
