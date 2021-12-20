@@ -35,7 +35,7 @@
     </oc-thead>
     <oc-tbody>
       <oc-tr
-        v-for="(item, trIndex) in tableData"
+        v-for="(item, trIndex) in data"
         :key="`oc-tbody-tr-${itemDomSelector(item) || trIndex}`"
         :ref="`row-${trIndex}`"
         v-bind="extractTbodyTrProps(item, trIndex)"
@@ -247,9 +247,6 @@ export default {
     }
   },
   computed: {
-    tableData() {
-      return this.sortedData || this.data
-    },
     tableClasses() {
       const result = ["oc-table"]
 
@@ -571,6 +568,78 @@ export default {
 <template>
   <section>
     <h3 class="oc-heading-divider">
+      A sortable table with plain field types
+    </h3>
+    <oc-table @sort="handleSort" :sort-by="sortBy" :sort-dir="sortDir" :fields="fields" :data="data" highlighted="4b136c0a-5057-11eb-ac70-eba264112003"
+      disabled="8468c9f0-5057-11eb-924b-934c6fd827a2" :sticky="true">
+      <template #footer>
+        3 resources
+      </template>
+    </oc-table>
+  </section>
+</template>
+<script>
+  const orderBy = (list, prop, desc) => {
+    return [...list].sort((a, b) => {
+      a = a[prop];
+      b = b[prop];
+
+      if (a == b) return 0;
+      return (desc ? a > b : a < b) ? -1 : 1;
+    });
+  };
+
+  export default {
+    data() {
+      return {
+        sortBy: 'resource',
+        sortDir: 'desc'
+      }
+    },
+    methods: {
+      handleSort(event) {
+        this.sortBy = event.sortBy
+        this.sortDir = event.sortDir
+
+      }
+    },
+    computed: {
+      fields() {
+        return [{
+          name: "resource",
+          title: "Resource",
+          alignH: "left",
+          sortable: true,
+        }, {
+          name: "last_modified",
+          title: "Last modified",
+          alignH: "right",
+          sortable: true,
+        }]
+      },
+      data() {
+        return orderBy([{
+          id: "4b136c0a-5057-11eb-ac70-eba264112003",
+          resource: "hello-world.txt",
+          last_modified: 1609962211
+        }, {
+          id: "8468c9f0-5057-11eb-924b-934c6fd827a2",
+          resource: "I am a folder",
+          last_modified: 1608887766
+        }, {
+          id: "9c4cf97e-5057-11eb-8044-b3d5df9caa21",
+          resource: "this is fine.png",
+          last_modified: 1599999999
+        }], this.sortBy, this.sortDir === 'desc')
+      }
+    }
+  }
+</script>
+```
+```js
+<template>
+  <section>
+    <h3 class="oc-heading-divider">
       A simple table with all existing field types
     </h3>
     <oc-table :fields="fields" :data="data">
@@ -633,6 +702,7 @@ export default {
   }
 </script>
 ```
+
 ```js
 <template>
   <section>

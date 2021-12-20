@@ -68,22 +68,9 @@ describe("OcTable.sort", () => {
     })
   })
 
-  it("sorts by the first sortable field by default (= without interaction)", () => {
-    const wrapper = mount(Table, {
-      propsData: {
-        fields: [...tableFields],
-        data,
-      },
-    })
-    const firstSortableFieldIndex = tableFields.findIndex(f => f.sortable)
-    const headers = wrapper.findAll("thead th")
-    for (let i = 0; i < firstSortableFieldIndex; i++) {
-      expect(headers.at(i).attributes()["aria-sort"]).toBeFalsy()
-    }
-    expect(headers.at(firstSortableFieldIndex).attributes()["aria-sort"]).toEqual(DESC)
-  })
-
-  it("can sort", async () => {
+  it("emits sort events", async () => {
+    let click = 0
+    let sortArgs
     const wrapper = mount(Table, {
       propsData: {
         fields: tableFields,
@@ -94,27 +81,37 @@ describe("OcTable.sort", () => {
     const th1 = headers.at(1)
     const th2 = headers.at(2)
 
-    expect(th1.attributes("aria-sort")).toBe(DESC)
+    expect(th1.attributes("aria-sort")).toBe(NONE)
     expect(th2.attributes("aria-sort")).toBe(NONE)
-    expect(wrapper.findAll("tbody tr td").at(1).text()).toBe("1245")
-    expect(wrapper.findAll("tbody tr td").at(2).text()).toBe("id-3")
+    expect(wrapper.findAll("tbody tr td").at(1).text()).toBe("111000234")
+    expect(wrapper.findAll("tbody tr td").at(2).text()).toBe("id-1")
 
     await th1.trigger("click")
+    sortArgs = { sortBy: "id", sortDir: "desc" }
+    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
+    await wrapper.setProps(sortArgs)
+    expect(th1.attributes("aria-sort")).toBe(DESC)
+    expect(th2.attributes("aria-sort")).toBe(NONE)
+
+    await th1.trigger("click")
+    sortArgs = { sortBy: "id", sortDir: "asc" }
+    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
+    await wrapper.setProps(sortArgs)
     expect(th1.attributes("aria-sort")).toBe(ASC)
     expect(th2.attributes("aria-sort")).toBe(NONE)
-    expect(wrapper.findAll("tbody tr td").at(1).text()).toBe("111000234")
-    expect(wrapper.findAll("tbody tr td").at(2).text()).toBe("id-1")
 
     await th2.trigger("click")
+    sortArgs = { sortBy: "resource", sortDir: "asc" }
+    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
+    await wrapper.setProps(sortArgs)
     expect(th1.attributes("aria-sort")).toBe(NONE)
     expect(th2.attributes("aria-sort")).toBe(ASC)
-    expect(wrapper.findAll("tbody tr td").at(1).text()).toBe("1245")
-    expect(wrapper.findAll("tbody tr td").at(2).text()).toBe("id-3")
 
     await th2.trigger("click")
+    sortArgs = { sortBy: "resource", sortDir: "desc" }
+    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
+    await wrapper.setProps(sortArgs)
     expect(th1.attributes("aria-sort")).toBe(NONE)
     expect(th2.attributes("aria-sort")).toBe(DESC)
-    expect(wrapper.findAll("tbody tr td").at(1).text()).toBe("111000234")
-    expect(wrapper.findAll("tbody tr td").at(2).text()).toBe("id-1")
   })
 })
