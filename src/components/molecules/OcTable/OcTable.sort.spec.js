@@ -5,21 +5,25 @@ const ASC = "ascending"
 const DESC = "descending"
 const NONE = "none"
 
+const tableFieldId = {
+  name: "id",
+  title: "Id",
+  sortable: true,
+  sortDir: "desc",
+}
+const tableFieldResource = {
+  name: "resource",
+  title: "Resource",
+  sortable: true,
+  sortDir: "asc",
+}
 const tableFields = [
   {
     name: "selected",
     title: "Select",
   },
-  {
-    name: "id",
-    title: "Id",
-    sortable: true,
-  },
-  {
-    name: "resource",
-    title: "Resource",
-    sortable: true,
-  },
+  tableFieldId,
+  tableFieldResource,
 ]
 const data = [
   {
@@ -66,52 +70,107 @@ describe("OcTable.sort", () => {
         expect(headers.at(index).attributes()["aria-sort"]).toBeFalsy()
       })
     })
+    it.each([
+      [
+        ASC,
+        {
+          sortBy: tableFieldId.name,
+          sortDir: "asc",
+          ariaSort: ASC,
+        },
+      ],
+      [
+        DESC,
+        {
+          sortBy: tableFieldId.name,
+          sortDir: "desc",
+          ariaSort: DESC,
+        },
+      ],
+      [
+        NONE,
+        {
+          sortBy: tableFieldResource.name,
+          sortDir: "asc",
+          ariaSort: NONE,
+        },
+      ],
+    ])(
+      "has the correct [aria-sort] = %s attribute according to the active sort direction of the ID column",
+      async (name, { sortBy, sortDir, ariaSort }) => {
+        await wrapper.setProps({
+          sortBy,
+          sortDir,
+        })
+        expect(headers.at(1).attributes()["aria-sort"]).toBe(ariaSort)
+      }
+    )
   })
 
-  it("emits sort events", async () => {
-    let click = 0
-    let sortArgs
-    const wrapper = mount(Table, {
-      propsData: {
-        fields: tableFields,
-        data,
-      },
+  describe("emits sort events", () => {
+    it("toggles the sort direction when repeatedly clicking on the same column", async () => {
+      const wrapper = mount(Table, {
+        propsData: {
+          fields: tableFields,
+          sortBy: tableFieldId.name,
+          sortDir: tableFieldId.sortDir,
+          data,
+        },
+      })
+
+      const headers = wrapper.findAll("thead th")
+      const th1 = headers.at(1)
+
+      await th1.trigger("click")
+      expect(wrapper.emitted("sort")[0]).toMatchObject([
+        {
+          sortBy: tableFieldId.name,
+          sortDir: tableFieldId.sortDir === "asc" ? "desc" : "asc",
+        },
+      ])
     })
-    const headers = wrapper.findAll("thead th")
-    const th1 = headers.at(1)
-    const th2 = headers.at(2)
+    it.each([
+      [
+        "clicking on a new column",
+        {
+          sortByOld: tableFieldId.name,
+          sortDirOld: tableFieldId.sortDir,
+          sortByNew: tableFieldResource.name,
+          sortDirNew: tableFieldResource.sortDir,
+        },
+      ],
+      [
+        "no direction was set before",
+        {
+          sortByOld: tableFieldId.name,
+          sortDirOld: undefined,
+          sortByNew: tableFieldResource.name,
+          sortDirNew: tableFieldResource.sortDir,
+        },
+      ],
+    ])(
+      "sets the default sort direction from the field when %s",
+      async (name, { sortByOld, sortDirOld, sortByNew, sortDirNew }) => {
+        const wrapper = mount(Table, {
+          propsData: {
+            fields: tableFields,
+            data,
+            sortBy: sortByOld,
+            sortDir: sortDirOld,
+          },
+        })
 
-    expect(th1.attributes("aria-sort")).toBe(NONE)
-    expect(th2.attributes("aria-sort")).toBe(NONE)
-    expect(wrapper.findAll("tbody tr td").at(1).text()).toBe("111000234")
-    expect(wrapper.findAll("tbody tr td").at(2).text()).toBe("id-1")
+        const headers = wrapper.findAll("thead th")
+        const th2 = headers.at(2)
 
-    await th1.trigger("click")
-    sortArgs = { sortBy: "id", sortDir: "desc" }
-    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
-    await wrapper.setProps(sortArgs)
-    expect(th1.attributes("aria-sort")).toBe(DESC)
-    expect(th2.attributes("aria-sort")).toBe(NONE)
-
-    await th1.trigger("click")
-    sortArgs = { sortBy: "id", sortDir: "asc" }
-    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
-    await wrapper.setProps(sortArgs)
-    expect(th1.attributes("aria-sort")).toBe(ASC)
-    expect(th2.attributes("aria-sort")).toBe(NONE)
-
-    await th2.trigger("click")
-    sortArgs = { sortBy: "resource", sortDir: "asc" }
-    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
-    await wrapper.setProps(sortArgs)
-    expect(th1.attributes("aria-sort")).toBe(NONE)
-    expect(th2.attributes("aria-sort")).toBe(ASC)
-
-    await th2.trigger("click")
-    sortArgs = { sortBy: "resource", sortDir: "desc" }
-    expect(wrapper.emitted("sort")[click++]).toMatchObject([sortArgs])
-    await wrapper.setProps(sortArgs)
-    expect(th1.attributes("aria-sort")).toBe(NONE)
-    expect(th2.attributes("aria-sort")).toBe(DESC)
+        await th2.trigger("click")
+        expect(wrapper.emitted("sort")[0]).toMatchObject([
+          {
+            sortBy: sortByNew,
+            sortDir: sortDirNew,
+          },
+        ])
+      }
+    )
   })
 })

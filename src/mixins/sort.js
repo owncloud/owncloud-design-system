@@ -22,7 +22,7 @@ export default {
       required: false,
       default: undefined,
       validator: value => {
-        return [SORT_DIRECTION_ASC, SORT_DIRECTION_DESC].includes(value)
+        return value === undefined || [SORT_DIRECTION_ASC, SORT_DIRECTION_DESC].includes(value)
       },
     },
   },
@@ -56,10 +56,14 @@ export default {
         return
       }
 
-      // only toggle sortDir if already sorted by this column
       let sortDir = this.sortDir
-      if (field.name === this.sortBy || this.sortDir === undefined) {
+      // toggle sortDir if already sorted by this column
+      if (this.sortBy === field.name && this.sortDir !== undefined) {
         sortDir = this.sortDir === SORT_DIRECTION_DESC ? SORT_DIRECTION_ASC : SORT_DIRECTION_DESC
+      }
+      // set default sortDir of the field when sortDir not set or sortBy changed
+      if (this.sortBy !== field.name || this.sortDir === undefined) {
+        sortDir = field.sortDir || SORT_DIRECTION_DESC
       }
 
       /**
