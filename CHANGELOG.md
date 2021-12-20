@@ -19,6 +19,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/5687
    https://github.com/owncloud/owncloud-design-system/pull/1825
+   https://github.com/owncloud/owncloud-design-system/pull/1839
    https://github.com/owncloud/web/pull/6136
 
 
