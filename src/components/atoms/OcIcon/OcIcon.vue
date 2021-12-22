@@ -42,7 +42,7 @@ import { getSizeClass } from "../../../utils/sizeClasses"
  * the download patch takes care of this by overwriting the native functionality and makes it compatible
  */
 InlineSvg.name = "inline-svg"
-InlineSvg.methods.download = name => {
+/*InlineSvg.methods.download = name => {
   return (promise => {
     if (promise.isPending) return promise
     let isPending = true
@@ -72,7 +72,7 @@ InlineSvg.methods.download = name => {
       resolve(new DOMParser().parseFromString(svg, "image/svg+xml").documentElement)
     })
   )
-}
+}*/
 
 export default {
   name: "OcIcon",
@@ -144,9 +144,10 @@ export default {
       return uniqueId("oc-icon-title-")
     },
     nameWithFillType() {
+      const path = "themes/owncloud/assets/icons/"
       const fillType = this.fillType.toLowerCase()
-      if (fillType === "none") return this.name
-      return `${this.name}-${fillType}`
+      if (fillType === "none") return `${path}${this.name}.svg`
+      return `${path}${this.name}-${fillType}.svg`
     },
   },
   methods: {
