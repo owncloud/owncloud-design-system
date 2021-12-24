@@ -114,7 +114,7 @@ export default {
       const style = {
         width: `${this.width}px`,
         height: `${this.width}px`,
-        lineHeight: `${this.width + Math.floor(this.width / 20)}px`,
+        lineHeight: `${this.width}px`,
       }
 
       const initialBackgroundAndFontStyle = {

@@ -76,7 +76,7 @@ describe("OcAvatar", () => {
         expect(wrapper.attributes("style")).toContain("width: 100px; height: 100px;")
       })
       it("should determine font size and line height", () => {
-        expect(wrapper.attributes("style")).toContain("line-height: 105px;")
+        expect(wrapper.attributes("style")).toContain("line-height: 100px;")
         expect(wrapper.attributes("style")).toContain("font-size: 40px;")
       })
     })
