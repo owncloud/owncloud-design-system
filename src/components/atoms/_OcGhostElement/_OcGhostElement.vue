@@ -10,7 +10,7 @@
  * Please head to the ownCloud web ResourceTable component (https://github.com/owncloud/web/blob/master/packages/web-app-files/src/components/FilesList/ResourceTable.vue) for a demo of the Ghost Element.
  */
 export default {
-  name: "GhostElement",
+  name: "OcGhostElement",
   props: {
     previewItems: {
       type: Array,
