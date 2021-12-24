@@ -2,15 +2,29 @@
 
 The following sections list the changes in ownCloud Design System unreleased.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v11.4.0...master
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...master
 
 ## Summary
 
+* Bugfix - Rename GhostElement: [#1845](https://github.com/owncloud/owncloud-design-system/pull/1845)
 * Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
+* Change - Remove OcAppSideBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
+* Change - Remove OcAppBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
+* Change - Move OcSidebarNav and OcSidebarNavItem to web: [#6036](https://github.com/owncloud/web/issues/6036)
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
+* Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
+* Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
 
 ## Details
+
+* Bugfix - Rename GhostElement: [#1845](https://github.com/owncloud/owncloud-design-system/pull/1845)
+
+   We've renamed the GhostElement component to OcGhostElement to follow the atomic design
+   principles.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1845
+
 
 * Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
 
@@ -21,48 +35,6 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/1825
    https://github.com/owncloud/owncloud-design-system/pull/1839
    https://github.com/owncloud/web/pull/6136
-
-
-* Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
-
-   Ods oc-table-files always contained concrete web-app-files logic, to make development more
-   agile and keep things close oc-table-files was removed from ODS and relocated to live in
-   web-app-files from now on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1817
-   https://github.com/owncloud/web/pull/6106
-
-
-* Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
-
-   We removed the `stopClassProgragation` property in two components, which resulted in
-   unstyled components before but was unused.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1795
-
-# Changelog for [11.4.0] (2021-12-15)
-
-The following sections list the changes in ownCloud Design System 11.4.0.
-
-[11.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v11.4.0
-
-## Summary
-
-* Change - Move OcSidebarNav and OcSidebarNavItem to web: [#6036](https://github.com/owncloud/web/issues/6036)
-* Change - Remove OcAppSideBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
-* Change - Remove OcAppBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
-* Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
-* Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
-
-## Details
-
-* Change - Move OcSidebarNav and OcSidebarNavItem to web: [#6036](https://github.com/owncloud/web/issues/6036)
-
-   We've moved OcSidebarNav and OcSidebarNavItem to web and renamed it to SidebarNav and
-   SidebarNavItem.
-
-   https://github.com/owncloud/web/issues/6036
-   https://github.com/owncloud/owncloud-design-system/pull/1810
 
 
 * Change - Remove OcAppSideBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
@@ -77,6 +49,33 @@ The following sections list the changes in ownCloud Design System 11.4.0.
    We have removed the OcAppBar component since it's not actively used anywhere and broken.
 
    https://github.com/owncloud/owncloud-design-system/pull/1810
+
+
+* Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
+
+   Ods oc-table-files always contained concrete web-app-files logic, to make development more
+   agile and keep things close oc-table-files was removed from ODS and relocated to live in
+   web-app-files from now on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1817
+   https://github.com/owncloud/web/pull/6106
+
+
+* Change - Move OcSidebarNav and OcSidebarNavItem to web: [#6036](https://github.com/owncloud/web/issues/6036)
+
+   We've moved OcSidebarNav and OcSidebarNavItem to web and renamed it to SidebarNav and
+   SidebarNavItem.
+
+   https://github.com/owncloud/web/issues/6036
+   https://github.com/owncloud/owncloud-design-system/pull/1810
+
+
+* Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
+
+   We removed the `stopClassProgragation` property in two components, which resulted in
+   unstyled components before but was unused.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1795
 
 
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
@@ -2237,7 +2236,7 @@ The following sections list the changes in ownCloud Design System 3.2.1.
 
 The following sections list the changes in ownCloud Design System 3.2.0.
 
-[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.2.0
+[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.2.0
 
 ## Summary
 
@@ -2310,11 +2309,30 @@ The following sections list the changes in ownCloud Design System 3.2.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1139
 
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
+
 # Changelog for [3.0.0] (2021-02-24)
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.0.0
 
 ## Summary
 
@@ -2473,25 +2491,6 @@ The following sections list the changes in ownCloud Design System 3.0.0.
    whether resources in the table can be selected.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
-
-# Changelog for [3.1.0] (2021-02-24)
-
-The following sections list the changes in ownCloud Design System 3.1.0.
-
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.1.0
-
-## Summary
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-## Details
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1119
 
 # Changelog for [2.1.2] (2021-01-21)
 
