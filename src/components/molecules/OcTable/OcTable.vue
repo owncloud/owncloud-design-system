@@ -85,10 +85,10 @@ import OcTbody from "../../atoms/_OcTableBody/_OcTableBody.vue"
 import OcTr from "../../atoms/_OcTableRow/_OcTableRow"
 import OcTh from "../../atoms/_OcTableCellHead/_OcTableCellHead"
 import OcTd from "../../atoms/_OcTableCellData/_OcTableCellData.vue"
+import OcGhostElement from "../../atoms/_OcGhostElement/_OcGhostElement.vue"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import SortMixin from "../../../mixins/sort"
 import { getSizeClass } from "../../../utils/sizeClasses"
-import GhostElement from "./GhostElement/GhostElement.vue"
 
 import {
   EVENT_THEAD_CLICKED,
@@ -275,7 +275,7 @@ export default {
         selection.findIndex(i => i.id === item.id),
         1
       )
-      const GhostElementComponent = Vue.extend(GhostElement)
+      const GhostElementComponent = Vue.extend(OcGhostElement)
       const ghostInstances = new GhostElementComponent({
         propsData: {
           previewItems: [item, ...selection],
