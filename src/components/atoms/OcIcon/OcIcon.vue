@@ -144,7 +144,7 @@ export default {
       return uniqueId("oc-icon-title-")
     },
     nameWithFillType() {
-      const path = "themes/owncloud/assets/icons/"
+      const path = "icons/"
       const fillType = this.fillType.toLowerCase()
       if (fillType === "none") return `${path}${this.name}.svg`
       return `${path}${this.name}-${fillType}.svg`
