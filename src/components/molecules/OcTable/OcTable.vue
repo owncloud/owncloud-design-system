@@ -388,6 +388,10 @@ export default {
         props["aria-label"] = field.accessibleLabelCallback(item)
       }
 
+      if (Object.prototype.hasOwnProperty.call(field, "lazy")) {
+        props.lazy = field.lazy
+      }
+
       return props
     },
     extractCellProps(field) {
@@ -538,7 +542,10 @@ export default {
         return [{
           name: "resource",
           title: "Resource",
-          alignH: "left"
+          alignH: "left",
+          lazy: {
+            delay: 1500
+          }
         }, {
           name: "last_modified",
           title: "Last modified",
