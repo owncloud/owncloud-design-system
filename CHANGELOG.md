@@ -15,6 +15,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
+* Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
 
 ## Details
 
@@ -91,6 +92,11 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6036
    https://github.com/owncloud/owncloud-design-system/pull/1810/
+
+
+* Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
+
+   https://github.com/owncloud/owncloud-design-system/pull/1846
 
 # Changelog for [11.3.1] (2021-12-03)
 
