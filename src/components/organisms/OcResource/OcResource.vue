@@ -79,7 +79,7 @@ export default {
     isPathDisplayed: {
       type: Boolean,
       required: false,
-      default: false,
+      default: true,
     },
     /**
      * Asserts whether the resource thumbnail should be displayed
