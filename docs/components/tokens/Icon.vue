@@ -23,6 +23,10 @@ const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
 
 /**
  * All known icons in ownCloud Design System
+ * <p>
+ *  Icons made by Remixicon from 
+ *  <a href="https://remixicon.com/">www.remixicon.com</a>
+ * </p>
  */
 export default {
   name: "Icon",
