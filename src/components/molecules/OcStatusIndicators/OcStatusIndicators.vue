@@ -14,7 +14,7 @@
         :data-test-indicator-type="indicator.type"
         @click="indicator.handler(resource, indicator.target)"
       >
-        <oc-icon :name="indicator.icon" variation="passive" />
+        <oc-icon :name="indicator.icon" :fill-type="indicator.fillType" variation="passive" />
       </oc-button>
       <oc-icon
         v-else
@@ -24,6 +24,7 @@
         tabindex="-1"
         class="oc-status-indicators-indicator"
         :name="indicator.icon"
+        :fill-type="indicator.fillType"
         :accessible-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
         :data-testid="indicator.id"

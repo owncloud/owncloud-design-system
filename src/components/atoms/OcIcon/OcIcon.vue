@@ -10,7 +10,7 @@
     @click="onClick"
   >
     <inline-svg
-      :src="name"
+      :src="nameWithFillType"
       :transform-source="transformSvgElement"
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
@@ -42,7 +42,7 @@ import { getSizeClass } from "../../../utils/sizeClasses"
  * the download patch takes care of this by overwriting the native functionality and makes it compatible
  */
 InlineSvg.name = "inline-svg"
-InlineSvg.methods.download = name => {
+/*InlineSvg.methods.download = name => {
   return (promise => {
     if (promise.isPending) return promise
     let isPending = true
@@ -72,7 +72,7 @@ InlineSvg.methods.download = name => {
       resolve(new DOMParser().parseFromString(svg, "image/svg+xml").documentElement)
     })
   )
-}
+}*/
 
 export default {
   name: "OcIcon",
@@ -88,6 +88,17 @@ export default {
     name: {
       type: String,
       default: "info",
+    },
+    /**
+     * The fill type of the icon, fill or line
+     */
+    fillType: {
+      type: String,
+      required: false,
+      default: "fill",
+      validator: value => {
+        return value.match(/(fill|line|none)/)
+      },
     },
     /**
      * Descriptive text to be read to screenreaders.
@@ -131,6 +142,12 @@ export default {
   computed: {
     svgTitleId() {
       return uniqueId("oc-icon-title-")
+    },
+    nameWithFillType() {
+      const path = "icons/"
+      const fillType = this.fillType.toLowerCase()
+      if (fillType === "none") return `${path}${this.name}.svg`
+      return `${path}${this.name}-${fillType}.svg`
     },
   },
   methods: {
@@ -265,15 +282,15 @@ export default {
       Default icons
     </h3>
     <oc-icon name="close" accessible-label="Close"/>
-    <oc-icon name="delete" accessible-label="Delete"/>
-    <oc-icon name="info" accessible-label="Information"/>
-    <oc-icon name="account_circle" accessible-label="Account"/>
+    <oc-icon name="delete-bin-5" accessible-label="Delete"/>
+    <oc-icon name="information" accessible-label="Information"/>
+    <oc-icon name="account-circle" accessible-label="Account"/>
 
     <h3 class="oc-heading-divider">
       Hover over the icons to see the effect of accessible labels
     </h3>
-    <oc-icon size="large" name="account_circle" accessible-label="Account"/>
-    <oc-icon size="large" name="account_circle"/>
+    <oc-icon size="large" name="account-circle" accessible-label="Account"/>
+    <oc-icon size="large" name="account-circle"/>
 
     <h3 class="oc-heading-divider">
       Icon color variations
@@ -290,9 +307,9 @@ export default {
           <oc-td>{{ variation.name }}</oc-td>
           <oc-td v-bind:class="{'uk-background-primary': variation.name == 'inverse'}">
             <oc-icon :variation="variation.name" name="close"/>
-            <oc-icon :variation="variation.name" name="delete"/>
-            <oc-icon :variation="variation.name" name="info"/>
-            <oc-icon :variation="variation.name" name="account_circle"/>
+            <oc-icon :variation="variation.name" name="delete-bin-5"/>
+            <oc-icon :variation="variation.name" name="information"/>
+            <oc-icon :variation="variation.name" name="account-circle"/>
           </oc-td>
         </oc-tr>
       </oc-tbody>
@@ -313,9 +330,9 @@ export default {
           <oc-td>{{ size.name }}</oc-td>
           <oc-td>
             <oc-icon :size="size.name" name="close"/>
-            <oc-icon :size="size.name" name="delete"/>
-            <oc-icon :size="size.name" name="info"/>
-            <oc-icon :size="size.name" name="account_circle"/>
+            <oc-icon :size="size.name" name="delete-bin-5"/>
+            <oc-icon :size="size.name" name="information"/>
+            <oc-icon :size="size.name" name="account-circle"/>
           </oc-td>
         </oc-tr>
       </oc-tbody>

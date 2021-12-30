@@ -1,16 +1,16 @@
 <template>
   <div>
     <div v-for="(filename, index) in icons" :key="index">
-      <oc-icon :name="filename" size="large" variation="passive" />
-      <oc-icon :name="filename" size="large" variation="primary" />
-      <oc-icon :name="filename" size="large" variation="success" />
-      <oc-icon :name="filename" size="large" variation="warning" />
-      <oc-icon :name="filename" size="large" variation="danger" />
+      <oc-icon :name="filename" fill-type="none" size="large" variation="passive" />
+      <oc-icon :name="filename" fill-type="none" size="large" variation="primary" />
+      <oc-icon :name="filename" fill-type="none" size="large" variation="success" />
+      <oc-icon :name="filename" fill-type="none" size="large" variation="warning" />
+      <oc-icon :name="filename" fill-type="none" size="large" variation="danger" />
       <span
         style="background-color: var(--oc-color-swatch-brand-default); display: inline-block"
         class="oc-icon-l"
       >
-        <oc-icon :name="filename" size="large" variation="inverse" />
+        <oc-icon :name="filename" fill-type="none" size="large" variation="inverse" />
       </span>
       <span>{{ filename }}</span>
     </div>
@@ -19,10 +19,14 @@
 
 <script>
 import OcIcon from "../../../src/components/atoms/OcIcon/OcIcon.vue"
-const req = require.context("@/assets/icons/", true, /^\.\/.*\.svg$/)
+const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
 
 /**
  * All known icons in ownCloud Design System
+ * <p>
+ *  Icons made by Remixicon from
+ *  <a href="https://remixicon.com/">www.remixicon.com</a>
+ * </p>
  */
 export default {
   name: "Icon",
