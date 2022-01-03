@@ -65,7 +65,7 @@ export default {
   border-radius: 7px;
   box-sizing: border-box;
   color: var(--oc-color-text-muted);
-  display: flex;
+  display: inline-flex;
   font-size: 0.875rem;
   gap: var(--oc-space-xsmall);
   min-height: $oc-size-icon-default + (2 * $oc-space-xsmall) + 2px;
@@ -103,7 +103,7 @@ Component to display various information.
 ```js
 <oc-grid>
   <oc-tag>
-    <oc-icon name="link" />
+    <oc-icon name="links" />
     Shared via link
   </oc-tag>
 </oc-grid>
@@ -121,7 +121,7 @@ The tag component can be rendered as a different element if desired. You can spe
   </div>
   <div>
     <oc-tag type="a">
-      <oc-icon name="link" />
+      <oc-icon name="links" />
       Shared via link
     </oc-tag>
   </div>

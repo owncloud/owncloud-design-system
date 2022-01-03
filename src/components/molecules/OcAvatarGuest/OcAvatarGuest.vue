@@ -2,7 +2,8 @@
   <oc-avatar-item
     :width="width"
     :icon-size="iconSize"
-    icon="user_remote"
+    icon="global"
+    icon-fill-type="line"
     icon-color="#D78841"
     :name="name"
     :accessible-label="accessibleLabel"

@@ -141,7 +141,7 @@ export default {
         {
           id: 'file-link',
           label: "Shared via link",
-          icon: 'link',
+          icon: 'links',
         }
       ]
     }),

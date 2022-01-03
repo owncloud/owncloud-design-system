@@ -17,7 +17,8 @@
             <span class="uk-width-expand oc-accordion-title-text" v-text="title" />
             <span class="oc-ml-xs oc-icon-l">
               <oc-icon
-                name="expand_more"
+                name="arrow-drop-down"
+                fill-type="line"
                 class="oc-accordion-title-arrow-icon"
                 :class="{ rotate: expanded }"
                 size="large"

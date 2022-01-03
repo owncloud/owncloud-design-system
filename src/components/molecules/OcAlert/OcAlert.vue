@@ -117,7 +117,7 @@ export default {
     This is a plain alert-box.
   </oc-alert>
   <oc-alert variation="primary">
-    <oc-icon name="info" variation="inverse" class="uk-float-left oc-mr-s" />
+    <oc-icon name="information" variation="inverse" class="uk-float-left oc-mr-s" />
     I am nice and blue and have an icon
   </oc-alert>
   <oc-alert variation="success">

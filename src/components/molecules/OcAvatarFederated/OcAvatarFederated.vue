@@ -2,7 +2,8 @@
   <oc-avatar-item
     :width="width"
     :icon-size="iconSize"
-    icon="filter_drama"
+    icon="cloud"
+    icon-fill-type="line"
     icon-color="#5AAB9F"
     :name="name"
     :accessible-label="accessibleLabel"

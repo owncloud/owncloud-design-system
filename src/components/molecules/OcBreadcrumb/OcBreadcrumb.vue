@@ -21,7 +21,7 @@
             :aria-label="contextMenuLabel"
             appearance="raw"
           >
-            <oc-icon name="more_vert" />
+            <oc-icon name="arrow-drop-down" fill-type="line" />
           </oc-button>
           <oc-drop
             drop-id="oc-breadcrumb-contextmenu"

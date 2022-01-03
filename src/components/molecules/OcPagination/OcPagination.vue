@@ -7,7 +7,7 @@
           :aria-label="$gettext('Go to the previous page')"
           :to="previousPageLink"
         >
-          <oc-icon name="chevron_left" />
+          <oc-icon name="arrow-drop-left" fill-type="line" />
         </router-link>
       </li>
       <li v-for="(page, index) in displayedPages" :key="index" class="oc-pagination-list-item">
@@ -24,7 +24,7 @@
           :aria-label="$gettext('Go to the next page')"
           :to="nextPageLink"
         >
-          <oc-icon name="chevron_right" />
+          <oc-icon name="arrow-drop-right" fill-type="line" />
         </router-link>
       </li>
     </ol>
