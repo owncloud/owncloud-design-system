@@ -2,19 +2,19 @@
   <div class="component-status">
     <ul class="status-list">
       <li>
-        <oc-icon name="ready" variation="success" />
+        <oc-icon name="checkbox-circle" variation="success" />
         <p>Ready</p>
       </li>
       <li>
-        <oc-icon name="review" variation="warning" />
+        <oc-icon name="todo" variation="warning" />
         <p>Under review</p>
       </li>
       <li>
-        <oc-icon name="deprecated" variation="danger" />
+        <oc-icon name="alert" variation="danger" />
         <p>Deprecated</p>
       </li>
       <li>
-        <oc-icon name="prototype" />
+        <oc-icon name="code-box" />
         <p>Prototype</p>
       </li>
       <li>
@@ -43,18 +43,18 @@
           </td>
           <td v-else>N/A</td>
           <td v-if="component.status">
-            <oc-icon v-if="component.status === 'ready'" name="ready" variation="success" />
+            <oc-icon
+              v-if="component.status === 'ready'"
+              name="checkbox-circle"
+              variation="success"
+            />
             <oc-icon
               v-if="component.status === 'under-review' || component.status === 'review'"
-              name="review"
+              name="todo"
               variation="warning"
             />
-            <oc-icon v-if="component.status === 'prototype'" name="prototype" variation="passive" />
-            <oc-icon
-              v-if="component.status === 'deprecated'"
-              name="deprecated"
-              variation="danger"
-            />
+            <oc-icon v-if="component.status === 'prototype'" name="code-box" variation="passive" />
+            <oc-icon v-if="component.status === 'deprecated'" name="alert" variation="danger" />
           </td>
           <td v-else>—</td>
         </tr>

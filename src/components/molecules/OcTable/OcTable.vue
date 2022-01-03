@@ -691,7 +691,7 @@ export default {
         return [{
           id: "4b136c0a-5057-11eb-ac70-eba264112003",
           resource: "hello-world.txt",
-          icon: "text",
+          icon: "file-list",
           last_modified: 1609962211
         }, {
           id: "8468c9f0-5057-11eb-924b-934c6fd827a2",

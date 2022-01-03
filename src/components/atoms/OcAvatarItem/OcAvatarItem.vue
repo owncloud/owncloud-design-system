@@ -8,7 +8,7 @@
     :role="accessibleLabel === '' ? null : 'img'"
     :data-test-item-name="name"
   >
-    <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" />
+    <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" :fill-type="iconFillType" />
   </span>
 </template>
 
@@ -41,6 +41,14 @@ export default {
       type: String,
       required: false,
       default: "var(--oc-color-text-inverse)",
+    },
+    /**
+     * Fill-type that should be used for the icon
+     */
+    iconFillType: {
+      type: String,
+      required: false,
+      default: "fill",
     },
     /**
      * Background color that should be used for the avatar. If empty

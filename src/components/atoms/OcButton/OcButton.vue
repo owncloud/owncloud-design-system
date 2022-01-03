@@ -509,15 +509,15 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   </h3>
   <div class="uk-flex">
     <oc-button class="oc-mr-s">
-      <oc-icon name="home" />
+      <oc-icon name="home-2" />
       Home
     </oc-button>
     <oc-button variation="primary" class="oc-mr-s">
       Select
-      <oc-icon name="expand_more" />
+      <oc-icon name="arrow-drop-down" fill-type="line" />
     </oc-button>
     <oc-button variation="primary" aria-label="Upload a file">
-      <oc-icon name="cloud_upload" />
+      <oc-icon name="upload-cloud-2" fill-type="line" />
     </oc-button>
   </div>
 
@@ -553,11 +553,11 @@ Every button has to have an accessible name. It cannot be provided by a text bet
         <oc-td v-for="appearance in appearances" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-p-m">
           <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
             {{ variation.title }}
-            <oc-icon name="home" />
+            <oc-icon name="home-2" />
           </oc-button>
           <oc-button :variation="variation.title" :appearance="appearance" disabled>
             {{ variation.title }}
-            <oc-icon name="home" />
+            <oc-icon name="home-2" />
           </oc-button>
         </oc-td>
       </oc-tr>

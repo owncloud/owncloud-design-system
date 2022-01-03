@@ -1,6 +1,6 @@
 <template>
   <div class="oc-alert oc-notification-message" :class="classes">
-    <oc-icon :variation="iconVariation" size="large" name="info" class="oc-mr-s" />
+    <oc-icon :variation="iconVariation" size="large" name="information" class="oc-mr-s" />
     <div
       class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
       :role="role"
