@@ -97,6 +97,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6100
    https://github.com/owncloud/owncloud-design-system/pull/1826
+   https://github.com/owncloud/owncloud-design-system/pull/1853
 
 
 * Enhancement - Make Vue-Composition-API available: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
