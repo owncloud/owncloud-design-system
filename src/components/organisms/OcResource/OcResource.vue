@@ -34,6 +34,7 @@
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
         />
+        
       </component>
       <oc-resource-name
         v-else
@@ -44,6 +45,12 @@
         :is-path-displayed="isPathDisplayed"
       />
       <div v-if="resource.indicators.length > 0" class="oc-resource-indicators">
+        <span style="display: flex; align-items: center">
+          <oc-icon style="padding-right: 5px" name="folder-2" fill-type="line" />
+          <span>
+            {{ resource.path }}
+          </span>
+        </span>
         <oc-status-indicators :resource="resource" :indicators="resource.indicators" />
       </div>
     </div>
@@ -135,7 +142,9 @@ export default {
       default: true,
     },
   },
-
+  mounted() {
+    console.log(this.resource)
+  },
   computed: {
     isFolder() {
       return this.resource.type === "folder"
