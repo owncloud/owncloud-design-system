@@ -1,14 +1,14 @@
 ---
 space:
   xsmall:
-    value: 5px
+    value: 4px
   small:
-    value: 10px
+    value: 8px
   medium:
-    value: 20px
+    value: 16px
   large:
-    value: 30px
+    value: 24px
   xlarge:
-    value: 50px
+    value: 48px
   xxlarge:
-    value: 100px
+    value: 96px
