@@ -44,14 +44,12 @@
         :full-path="resource.path"
         :is-path-displayed="isPathDisplayed"
       />
-      <div v-if="resource.indicators.length > 0" class="oc-resource-indicators">
-        <span style="display: flex; align-items: center">
-          <oc-icon style="padding-right: 5px" name="folder-2" fill-type="line" />
-          <span>
-            {{ resource.path }}
-          </span>
+      <div class="oc-resource-indicators">
+        <span v-if="isPathDisplayed" class="parent-folder">
+          <oc-icon name="folder-2" class="oc-pr-xs" size="small" fill-type="line" />
+          <span v-text="parentFolder" class="text" style="font-size: 15px; color: var(--oc-color-text-muted);" />
         </span>
-        <oc-status-indicators :resource="resource" :indicators="resource.indicators" />
+        <oc-status-indicators v-if="resource.indicators.length > 0" :resource="resource" :indicators="resource.indicators" />
       </div>
     </div>
   </div>
@@ -63,6 +61,7 @@ import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndic
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
 import uniqueId from "../../../utils/uniqueId"
+import * as path from 'path';
 
 /**
  * Displays a resource together with the resource type icon or thumbnail
@@ -146,6 +145,10 @@ export default {
     console.log(this.resource)
   },
   computed: {
+    parentFolder() {
+      return path.basename(path.dirname(this.resource.path));
+    },
+
     isFolder() {
       return this.resource.type === "folder"
     },
@@ -260,6 +263,17 @@ export default {
 
   &-indicators {
     display: flex;
+
+    .parent-folder {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+
+      .text {
+        font-size: 15px;
+        color: var(--oc-color-text-muted);
+      }
+    }
   }
 }
 </style>
