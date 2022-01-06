@@ -19,6 +19,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Enhancement - Add option to render table cells lazy: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
+* Enhancement - Sizes: [#1857](https://github.com/owncloud/owncloud-design-system/pull/1857)
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
 
 ## Details
@@ -139,6 +140,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6036
    https://github.com/owncloud/owncloud-design-system/pull/1810/
+
+
+* Enhancement - Sizes: [#1857](https://github.com/owncloud/owncloud-design-system/pull/1857)
+
+   The size variables which define margins and paddings have been changed to use multiples of 8
+   instead of 10.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1857
 
 
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
