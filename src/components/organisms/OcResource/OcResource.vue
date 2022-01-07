@@ -48,7 +48,8 @@
           v-if="isPathDisplayed"
           :to="parentFolderLinkPath"
           :style="parentFolderStyle"
-          class="parent-folder">
+          class="parent-folder"
+        >
           <oc-icon name="folder-2" size="small" fill-type="line" />
           <span class="text" v-text="parentFolder" />
         </router-link>
@@ -156,7 +157,7 @@ export default {
     },
 
     parentFolderStyle() {
-      const hasLinkTarget = this.targetRoute !== null;
+      const hasLinkTarget = this.targetRoute !== null
       return {
         cursor: hasLinkTarget ? "pointer" : "default",
       }
