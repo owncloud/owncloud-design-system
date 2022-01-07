@@ -34,7 +34,6 @@
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
         />
-        
       </component>
       <oc-resource-name
         v-else
@@ -45,11 +44,15 @@
         :is-path-displayed="isPathDisplayed"
       />
       <div class="oc-resource-indicators">
-        <span v-if="isPathDisplayed" class="parent-folder">
-          <oc-icon name="folder-2" class="oc-pr-xs" size="small" fill-type="line" />
-          <span v-text="parentFolder" class="text" style="font-size: 15px; color: var(--oc-color-text-muted);" />
-        </span>
-        <oc-status-indicators v-if="resource.indicators.length > 0" :resource="resource" :indicators="resource.indicators" />
+        <router-link v-if="isPathDisplayed" :to="parentFolderLinkPath" class="parent-folder">
+          <oc-icon name="folder-2" size="small" fill-type="line" />
+          <span class="text" v-text="parentFolder" />
+        </router-link>
+        <oc-status-indicators
+          v-if="resource.indicators.length > 0"
+          :resource="resource"
+          :indicators="resource.indicators"
+        />
       </div>
     </div>
   </div>
@@ -61,7 +64,7 @@ import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndic
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
 import uniqueId from "../../../utils/uniqueId"
-import * as path from 'path';
+import * as path from "path"
 
 /**
  * Displays a resource together with the resource type icon or thumbnail
@@ -141,12 +144,22 @@ export default {
       default: true,
     },
   },
-  mounted() {
-    console.log(this.resource)
-  },
   computed: {
     parentFolder() {
-      return path.basename(path.dirname(this.resource.path));
+      const folder = path.basename(path.dirname(this.resource.path))
+      if (folder !== "") return folder
+      return this.$gettext("All Files and Folders")
+    },
+
+    parentFolderLinkPath() {
+      return {
+        name: this.targetRoute.name,
+        query: this.targetRoute.query,
+        params: {
+          item: path.dirname(this.resource.path),
+          ...this.targetRoute.params,
+        },
+      }
     },
 
     isFolder() {
@@ -267,11 +280,24 @@ export default {
     .parent-folder {
       display: flex;
       align-items: center;
-      padding-right: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+
+      padding: 0 2px 0 2px;
+      margin: 0 8px 0 -2px;
+
+      .oc-icon {
+        padding-right: 3px;
+      }
 
       .text {
-        font-size: 15px;
+        font-size: 13px;
         color: var(--oc-color-text-muted);
+      }
+
+      &:hover {
+        background-color: var(--oc-color-input-bg);
+        border-radius: 2px;
       }
     }
   }

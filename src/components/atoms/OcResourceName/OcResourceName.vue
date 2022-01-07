@@ -7,10 +7,7 @@
     :data-test-resource-type="type"
   >
     <span class="oc-text-truncate">
-      <span
-        class="oc-resource-basename"
-        v-text="displayName"
-      />
+      <span class="oc-resource-basename" v-text="displayName" />
     </span>
     <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
   </span>
