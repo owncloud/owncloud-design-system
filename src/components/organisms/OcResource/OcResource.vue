@@ -44,7 +44,11 @@
         :is-path-displayed="isPathDisplayed"
       />
       <div class="oc-resource-indicators">
-        <router-link v-if="isPathDisplayed" :to="parentFolderLinkPath" class="parent-folder">
+        <router-link
+          v-if="isPathDisplayed"
+          :to="parentFolderLinkPath"
+          :style="parentFolderStyle"
+          class="parent-folder">
           <oc-icon name="folder-2" size="small" fill-type="line" />
           <span class="text" v-text="parentFolder" />
         </router-link>
@@ -146,12 +150,23 @@ export default {
   },
   computed: {
     parentFolder() {
-      const folder = path.basename(path.dirname(this.resource.path))
+      const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
       if (folder !== "") return folder
       return this.$gettext("All Files and Folders")
     },
 
+    parentFolderStyle() {
+      const hasLinkTarget = this.targetRoute !== null;
+      return {
+        cursor: hasLinkTarget ? "pointer" : "default",
+      }
+    },
+
     parentFolderLinkPath() {
+      console.log(this.resource.path)
+      if (this.targetRoute === null) {
+        return {}
+      }
       return {
         name: this.targetRoute.name,
         query: this.targetRoute.query,
@@ -281,7 +296,6 @@ export default {
       display: flex;
       align-items: center;
       margin-right: 10px;
-      cursor: pointer;
 
       padding: 0 2px 0 2px;
       margin: 0 8px 0 -2px;
