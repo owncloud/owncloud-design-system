@@ -54,7 +54,7 @@
           <span class="text" v-text="parentFolder" />
         </router-link>
         <oc-status-indicators
-          v-if="resource.indicators.length > 0"
+          v-if="resource.indicators.length"
           :resource="resource"
           :indicators="resource.indicators"
         />
@@ -164,7 +164,6 @@ export default {
     },
 
     parentFolderLinkPath() {
-      console.log(this.resource.path)
       if (this.targetRoute === null) {
         return {}
       }
