@@ -44,15 +44,16 @@
         :is-path-displayed="isPathDisplayed"
       />
       <div class="oc-resource-indicators">
-        <router-link
-          v-if="isPathDisplayed"
+        <component
+          :is="parentFolderComponentType"
           :to="parentFolderLinkPath"
           :style="parentFolderStyle"
+          v-if="isPathDisplayed"
           class="parent-folder"
         >
           <oc-icon name="folder-2" size="small" fill-type="line" />
           <span class="text" v-text="parentFolder" />
-        </router-link>
+        </component>
         <oc-status-indicators
           v-if="resource.indicators.length"
           :resource="resource"
@@ -150,6 +151,10 @@ export default {
     },
   },
   computed: {
+    parentFolderComponentType() {
+      return this.targetRoute !== null ? "router-link" : "span"
+    },
+
     parentFolder() {
       const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
       if (folder !== "") return folder
