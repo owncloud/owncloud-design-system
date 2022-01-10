@@ -94,7 +94,7 @@ export default {
     isPathDisplayed: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
     /**
      * Asserts whether the resource thumbnail should be displayed
@@ -308,7 +308,7 @@ export default {
       }
 
       .text {
-        font-size: 13px;
+        font-size: 0.8125rem;
         color: var(--oc-color-text-muted);
       }
 
