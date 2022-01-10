@@ -202,6 +202,7 @@ export default {
 }
 
 .oc-drop {
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
   width: 300px;
 
   li a:focus {
