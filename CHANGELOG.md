@@ -19,6 +19,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Make Vue-Composition-API available: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Enhancement - Add option to render table cells lazy: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
+* Enhancement - Show path / parent folder to distinguish files: [#5953](https://github.com/owncloud/web/issues/5953)
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
 * Enhancement - Sizes: [#1857](https://github.com/owncloud/owncloud-design-system/pull/1857)
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
@@ -141,6 +142,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    outer area of the element which then increases the visibility detection radius
 
    https://github.com/owncloud/owncloud-design-system/pull/1848
+
+
+* Enhancement - Show path / parent folder to distinguish files: [#5953](https://github.com/owncloud/web/issues/5953)
+
+   We've added an option to show the path / parent folder under the resource name in order to
+   distinguish files better
+
+   https://github.com/owncloud/web/issues/5953
+   https://github.com/owncloud/owncloud-design-system/pull/1860
 
 
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
