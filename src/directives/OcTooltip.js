@@ -54,6 +54,7 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
 
   if (value.content !== 0 && !value.content) {
     destroy(elm.tooltip)
+    elm.tooltip = null
     return
   }
 
