@@ -138,7 +138,7 @@ export default {
   transition: 0.2s ease-in-out;
   transition-property: background-color, border;
   vertical-align: middle;
-  width: 16px;
+  width: 1rem;
 
   &:not(:disabled) {
     cursor: pointer;

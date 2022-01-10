@@ -14,7 +14,7 @@
 .oc-card-header {
   border-bottom: 1px solid var(--oc-color-input-border);
   display: flow-root;
-  padding: 15px 30px;
+  padding: var(--oc-space-small) var(--oc-space-medium);
 }
 
 .oc-card-title {
@@ -29,7 +29,7 @@
 
 .oc-card-footer {
   display: flow-root;
-  padding: 15px 30px;
+  padding: var(--oc-space-small) var(--oc-space-medium);
 }
 
 .oc-card-body > :last-child,

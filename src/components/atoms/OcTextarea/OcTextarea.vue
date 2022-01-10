@@ -199,7 +199,7 @@ export default {
   margin: 0;
   max-width: 100%;
   overflow: auto;
-  padding: 4px 10px;
+  padding: var(--oc-space-xsmall) var(--oc-space-small);
 
   transition: 0.2s ease-in-out;
   transition-property: color, background-color, border;

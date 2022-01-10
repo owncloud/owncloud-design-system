@@ -308,7 +308,7 @@ export default {
 
 .oc-modal {
   border-radius: 8px;
-  border-top: 10px solid var(--oc-color-swatch-passive-default);
+  border-top: var(--oc-space-small) solid var(--oc-color-swatch-passive-default);
   box-shadow: 0 2px 4px rgba(14, 30, 37, 0.25);
   max-width: 500px;
   overflow: hidden;

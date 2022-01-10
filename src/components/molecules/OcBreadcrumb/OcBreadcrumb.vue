@@ -182,7 +182,7 @@ export default {
     > :nth-child(n + 2)::before {
       content: "/";
       display: inline-block;
-      margin: 0 10px 0 6px;
+      margin: 0 var(--oc-space-small) 0 var(--oc-space-xsmall);
       font-size: 0.875rem;
     }
 

@@ -45,12 +45,12 @@ export default {
 .oc-notification {
   box-sizing: border-box;
   position: fixed;
-  top: 10px;
+  top: var(--oc-space-small);
   width: 350px;
   z-index: 1040;
 
   &-top-left {
-    left: 10px;
+    left: var(--oc-space-small);
   }
   &-top-center {
     left: 0;
@@ -59,7 +59,7 @@ export default {
     margin-right: auto;
   }
   &-top-right {
-    right: 10px;
+    right: var(--oc-space-small);
   }
 }
 </style>

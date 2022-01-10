@@ -9,8 +9,8 @@
 
   &-divider > :nth-child(n+2) {
     border-top: 1px solid var(--oc-color-border);
-    margin-top: 10px;
-    padding-top: 10px;
+    margin-top: var(--oc-space-small);
+    padding-top: var(--oc-space-small);
   }
 }
 
@@ -84,23 +84,6 @@
 
 .oc-disabled {
   opacity: 0.4;
-}
-
-.oc-form-icon {
-  align-items: center;
-  bottom: 0;
-  color: var(--oc-color-text-muted);
-  display: inline-flex;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 40px;
-}
-
-// only used once, check if we can remove it
-.oc-form-icon:not(a):not(button):not(input) {
-  pointer-events: none;
 }
 
 hr {

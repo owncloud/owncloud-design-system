@@ -117,7 +117,7 @@ export default {
   cursor: pointer;
   font-size: 1.25rem;
   line-height: 1.4;
-  margin-top: 10px;
+  margin-top: var(--oc-space-small);
   padding: 15px;
   position: relative;
 

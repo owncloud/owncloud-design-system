@@ -82,11 +82,11 @@ export default {
   background-color: var(--oc-color-input-text-muted);
   bottom: 12px;
   display: inline-block;
-  left: 10px;
+  left: var(--oc-space-small);
   opacity: 0.2;
   overflow: hidden;
   position: absolute;
-  right: 10px;
+  right: var(--oc-space-small);
   top: 12px;
 
   &::after {

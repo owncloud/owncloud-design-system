@@ -1,32 +1,11 @@
 // Name:            Form
 // Description:     Styles for forms
 //
-// Component:       `oc-form-*`
-//                  `oc-input`
+// Component:       `oc-input`
 //                  `oc-select`
 //                  `oc-textarea`
 //                  `oc-radio`
 //                  `oc-checkbox`
-//                  `oc-fieldset`
-//
-// Sub-objects:     `oc-form-custom`
-//                  `oc-form-stacked`
-//                  `oc-form-horizontal`
-//                  `oc-form-label`
-//                  `oc-form-controls`
-//                  `oc-form-icon`
-//                  `oc-form-icon-flip`
-//
-// Modifiers:       `oc-form-small`
-//                  `oc-form-large`
-//                  `oc-form-danger`
-//                  `oc-form-success`
-//                  `oc-form-blank`
-//                  `oc-form-width-xsmall`
-//                  `oc-form-width-small`
-//                  `oc-form-width-medium`
-//                  `oc-form-width-large`
-//                  `oc-form-controls-text`
 //
 // ========================================================================
 
@@ -55,8 +34,8 @@
 
 $form-height: var(--oc-font-size-default) !default;
 $form-line-height: $form-height !default;
-$form-padding-horizontal: 10px !default;
-$form-padding-vertical: 4px !default;
+$form-padding-horizontal: var(--oc-space-small) !default;
+$form-padding-vertical: var(--oc-space-xsmall) !default;
 
 $form-background: var(--oc-color-background-muted) !default;
 $form-color: var(--oc-color-text-default) !default;
@@ -222,17 +201,6 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
 .oc-radio:not(:disabled),
 .oc-checkbox:not(:disabled) { cursor: pointer; }
 
-/*
- * Define consistent border, margin, and padding.
- */
-
-.oc-fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-
 /* Input, select and textarea
  * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
             `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
@@ -265,9 +233,6 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
   /* 1 */
   max-width: 100%;
 
-  /* 4 */
-  padding: 0 $form-padding-horizontal;
-
   /* 2 */
   width: 100%;
 
@@ -281,12 +246,24 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
  *    Also needed to center the text vertically
  */
 
-.oc-input,
-.oc-select:not([multiple]):not([size]) {
-  /* 1 */
+.oc-input {
+  border: 1px solid var(--oc-color-input-border);
+  border-radius: 0;
+  box-sizing: border-box;
+  color: var(--oc-color-input-text-default) ;
   display: inline-block;
-  height: $form-height;
+  height: 2rem;
+  line-height: inherit;
+  margin: 0;
+  max-width: 100%;
+  overflow: visible;
+  padding: var(--oc-space-xsmall) var(--oc-space-small);
+  transition: 0.2s ease-in-out;
+  transition-property: all;
+  transition-property: color, background-color, border;
   vertical-align: middle;
+  width: 100%;
+  -webkit-appearance: none;
 }
 
 /* 2 */
@@ -297,8 +274,6 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
  * Multi-line
  */
 
-.oc-select[multiple],
-.oc-select[size],
 .oc-textarea {
   padding-bottom: $form-padding-vertical;
   padding-top: $form-padding-vertical;
@@ -426,14 +401,10 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
 .oc-select:not([multiple]):not([size]) {
   @include svg-fill($internal-form-select-image, "#000", $form-select-icon-color);
 
-  /* 1 */
   -webkit-appearance: none;
   -moz-appearance: none;
   background-position: 100% 50%;
   background-repeat: no-repeat;
-
-  /* 2 */
-  padding-right: $form-select-padding-right;
 }
 
 /* 3 */
@@ -547,166 +518,5 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
 .oc-radio:disabled:checked { @include svg-fill($internal-form-radio-image, "#000", $form-radio-disabled-icon-color); }
 .oc-checkbox:disabled:checked { @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-disabled-icon-color); }
 .oc-checkbox:disabled:indeterminate { @include svg-fill($internal-form-checkbox-indeterminate-image, "#000", $form-radio-disabled-icon-color); }
-
-/* Custom controls
- ========================================================================== */
-
-/*
- * 1. Container fits its content
- * 2. Create position context
- * 3. Prevent content overflow
- * 4. Behave like most inline-block elements
- */
-
-.oc-form-custom {
-  /* 1 */
-  display: inline-block;
-
-  /* 3 */
-  max-width: 100%;
-
-  /* 2 */
-  position: relative;
-
-  /* 4 */
-  vertical-align: middle;
-}
-
-/*
- * 1. Position and resize the form control to always cover its container
- * 2. Required for Firefox for positioning to the left
- * 3. Required for Webkit to make `height` work
- * 4. Hide controle and show cursor
- * 5. Needed for the cursor
- * 6. Clip height caused by 5. Needed for Webkit only
- */
-
-.oc-form-custom select,
-.oc-form-custom input[type="file"] {
-  /* 3 */
-  -webkit-appearance: none;
-  cursor: pointer;
-  height: 100%;
-
-  /* 2 */
-  left: 0;
-
-  /* 4 */
-  opacity: 0;
-
-  /* 1 */
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.oc-form-custom input[type="file"] {
-  /* 5 */
-  font-size: 500px;
-
-  /* 6 */
-  overflow: hidden;
-}
-
-/* Layout
- ========================================================================== */
-
-/*
- * Stacked
- */
-
-.oc-form-stacked .oc-form-label {
-  display: block;
-  margin-bottom: $form-stacked-margin-bottom;
-}
-
-/*
- * Horizontal
- */
-
-/* Tablet portrait and smaller */
-@media (max-width: var(--oc-breakpoint-small-max)) {
-  /* Behave like `oc-form-stacked` */
-  .oc-form-horizontal .oc-form-label {
-    display: block;
-    margin-bottom: $form-stacked-margin-bottom;
-  }
-}
-
-/* Tablet landscape and bigger */
-@media (min-width: $oc-breakpoint-medium-default) {
-  .oc-form-horizontal .oc-form-label {
-    float: left;
-    margin-top: $form-horizontal-label-margin-top;
-    width: $form-horizontal-label-width;
-  }
-
-  .oc-form-horizontal .oc-form-controls { margin-left: $form-horizontal-controls-margin-left; }
-
-  /* Better vertical alignment if controls are checkboxes and radio buttons with text */
-  .oc-form-horizontal .oc-form-controls-text { padding-top: $form-horizontal-controls-text-padding-top; }
-}
-
-
-/* Icons
- ========================================================================== */
-
-/*
- * 1. Set position
- * 2. Set width
- * 3. Center icon vertically and horizontally
- * 4. Style
- */
-
-.oc-form-icon {
-  align-items: center;
-  bottom: 0;
-
-  /* 4 */
-  color: $form-icon-color;
-
-  /* 3 */
-  display: inline-flex;
-  justify-content: center;
-  left: 0;
-
-  /* 1 */
-  position: absolute;
-  top: 0;
-
-  /* 2 */
-  width: $form-icon-width;
-}
-
-/*
- * Required for `a`.
- */
-
-.oc-form-icon:hover { color: $form-icon-hover-color; }
-
-
-/*
- * Make `input` element clickable through icon, e.g. if it's a `span`
- */
-
-.oc-form-icon:not(a):not(button):not(input) { pointer-events: none; }
-
-/*
- * Input padding
- */
-
-.oc-form-icon:not(.oc-form-icon-flip) ~ .oc-input { padding-left: $form-icon-width !important; }
-
-/*
- * Position modifier
- */
-
-.oc-form-icon-flip {
-  left: auto;
-  right: 0;
-}
-
-.oc-form-icon-flip ~ .oc-input { padding-right: $form-icon-width !important; }
 
 /* stylelint-enable */

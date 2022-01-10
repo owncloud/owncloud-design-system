@@ -32,7 +32,7 @@ export default {
 <style lang="scss">
 .ghost-element {
   background-color: transparent;
-  padding-top: 4px;
+  padding-top: var(--oc-space-xsmall);
   padding-left: 5px;
   z-index: var(--oc-z-index-modal);
   position: absolute;
@@ -40,13 +40,13 @@ export default {
     position: absolute;
     top: -2px;
     right: -8px;
-    padding: 4px;
-    line-height: 10px;
+    padding: var(--oc-space-xsmall);
+    line-height: var(--oc-space-small);
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-    min-width: 10px;
-    height: 10px;
+    min-width: var(--oc-space-small);
+    height: var(--oc-space-small);
     text-align: center;
 
     font-size: 12px;

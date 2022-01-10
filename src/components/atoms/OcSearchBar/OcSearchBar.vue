@@ -6,7 +6,7 @@
     :class="{ 'oc-search-small': small }"
   >
     <div class="oc-width-expand oc-position-relative">
-      <span v-if="icon" class="oc-form-icon">
+      <span v-if="icon" class="oc-search-icon">
         <oc-icon v-show="!loading" :name="icon" fill-type="line" />
         <oc-spinner
           v-show="loading"
@@ -253,13 +253,24 @@ export default {
     z-index: 0;
   }
 
+  &-icon {
+    align-items: center;
+    bottom: 0;
+    color: var(--oc-color-text-muted);
+    display: inline-flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
   &-input {
     @extend .oc-input;
 
     border-radius: 25px;
     border: 0;
     color: var(--oc-color-input-text-muted);
-    padding-right: var(--oc-space-medium);
 
     &:focus {
       background-color: var(--oc-color-input-bg);
@@ -274,7 +285,7 @@ export default {
   }
 
   &-input-icon {
-    padding-left: $oc-space-large + $oc-space-small;
+    padding: 0 var(--oc-space-xlarge);
   }
 
   &-input-button {
@@ -286,14 +297,11 @@ export default {
     .oc-search-input {
       height: 30px;
       line-height: 28px;
-      padding-left: 8px;
-      padding-right: 8px;
-
-      padding-right: var(--oc-space-medium) !important;
+      padding: 0 var(--oc-space-small);
     }
 
     .oc-search-input-icon {
-      padding-left: var(--oc-space-large) !important;
+      padding-left: var(--oc-space-large);
     }
 
     .oc-icon {
