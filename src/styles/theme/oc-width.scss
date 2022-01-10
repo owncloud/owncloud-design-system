@@ -52,7 +52,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Phone landscape and bigger */
-@media (min-width: var(--oc-breakpoint-small-default)) {
+@media (min-width: $oc-breakpoint-small-default) {
 
   .oc-child-width-1-1\@s > * { width: 100%; }
   .oc-child-width-1-2\@s > * { width: 50%; }
@@ -70,7 +70,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Tablet landscape and bigger */
-@media (min-width: var(--oc-breakpoint-medium-default)) {
+@media (min-width: $oc-breakpoint-medium-default) {
 
   .oc-child-width-1-1\@m > * { width: 100%; }
   .oc-child-width-1-2\@m > * { width: 50%; }
@@ -88,7 +88,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
 
   .oc-child-width-1-1\@l > * { width: 100%; }
   .oc-child-width-1-2\@l > * { width: 50%; }
@@ -106,7 +106,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Large screen and bigger */
-@media (min-width: var(--oc-breakpoint-xlarge)) {
+@media (min-width: $oc-breakpoint-xlarge) {
 
   .oc-child-width-1-1\@xl > * { width: 100%; }
   .oc-child-width-1-2\@xl > * { width: 50%; }
@@ -176,7 +176,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Phone landscape and bigger */
-@media (min-width: var(--oc-breakpoint-small-default)) {
+@media (min-width: $oc-breakpoint-small-default) {
   /* Whole */
   .oc-width-1-1\@s { width: 100%; }
 
@@ -219,7 +219,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Tablet landscape and bigger */
-@media (min-width: var(--oc-breakpoint-medium-default)) {
+@media (min-width: $oc-breakpoint-medium-default) {
   /* Whole */
   .oc-width-1-1\@m { width: 100%; }
 
@@ -262,7 +262,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
   /* Whole */
   .oc-width-1-1\@l { width: 100%; }
 
@@ -305,7 +305,7 @@ $width-2xlarge-width: 750px !default;
 }
 
 /* Large screen and bigger */
-@media (min-width: var(--oc-breakpoint-xlarge)) {
+@media (min-width: $oc-breakpoint-xlarge) {
   /* Whole */
   .oc-width-1-1\@xl { width: 100%; }
 

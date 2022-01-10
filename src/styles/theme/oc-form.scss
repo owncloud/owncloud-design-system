@@ -635,7 +635,7 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
 }
 
 /* Tablet landscape and bigger */
-@media (min-width: var(--oc-breakpoint-medium-default)) {
+@media (min-width: $oc-breakpoint-medium-default) {
   .oc-form-horizontal .oc-form-label {
     float: left;
     margin-top: $form-horizontal-label-margin-top;

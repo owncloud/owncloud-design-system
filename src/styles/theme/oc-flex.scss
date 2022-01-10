@@ -32,7 +32,7 @@
 .oc-flex-around { justify-content: space-around; }
 
 /* Phone landscape and bigger */
-@media (min-width: var(--oc-breakpoint-small-default)) {
+@media (min-width: $oc-breakpoint-small-default) {
 
   .oc-flex-left\@s { justify-content: flex-start; }
   .oc-flex-center\@s { justify-content: center; }
@@ -42,7 +42,7 @@
 }
 
 /* Tablet landscape and bigger */
-@media (min-width: var(--oc-breakpoint-medium-default)) {
+@media (min-width: $oc-breakpoint-medium-default) {
 
   .oc-flex-left\@m { justify-content: flex-start; }
   .oc-flex-center\@m { justify-content: center; }
@@ -52,7 +52,7 @@
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
 
   .oc-flex-left\@l { justify-content: flex-start; }
   .oc-flex-center\@l { justify-content: center; }
@@ -62,7 +62,7 @@
 }
 
 /* Large screen and bigger */
-@media (min-width: var(--oc-breakpoint-xlarge)) {
+@media (min-width: $oc-breakpoint-xlarge) {
 
   .oc-flex-left\@xl { justify-content: flex-start; }
   .oc-flex-center\@xl { justify-content: center; }
@@ -123,28 +123,28 @@
 .oc-flex-last { order: 99; }
 
 /* Phone landscape and bigger */
-@media (min-width: var(--oc-breakpoint-small-default)) {
+@media (min-width: $oc-breakpoint-small-default) {
 
   .oc-flex-first\@s { order: -1; }
   .oc-flex-last\@s { order: 99; }
 }
 
 /* Tablet landscape and bigger */
-@media (min-width: var(--oc-breakpoint-medium-default)) {
+@media (min-width: $oc-breakpoint-medium-default) {
 
   .oc-flex-first\@m { order: -1; }
   .oc-flex-last\@m { order: 99; }
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
 
   .oc-flex-first\@l { order: -1; }
   .oc-flex-last\@l { order: 99; }
 }
 
 /* Large screen and bigger */
-@media (min-width: var(--oc-breakpoint-xlarge)) {
+@media (min-width: $oc-breakpoint-xlarge) {
 
   .oc-flex-first\@xl { order: -1; }
   .oc-flex-last\@xl { order: 99; }

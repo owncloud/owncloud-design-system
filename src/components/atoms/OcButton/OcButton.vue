@@ -265,6 +265,7 @@ export default {
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   text-align: center;
+  text-decoration: none;
 
   &-justify-content {
     &-left {

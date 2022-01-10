@@ -157,7 +157,7 @@ $grid-divider-border: #e5e5e5 !default;
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
   /* Horizontal */
   .oc-grid {
     margin-left: (-$grid-gutter-horizontal-l);
@@ -244,7 +244,7 @@ $grid-divider-border: #e5e5e5 !default;
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
   /* Horizontal */
   .oc-grid-large,
   .oc-grid-column-large {
@@ -338,7 +338,7 @@ $grid-divider-border: #e5e5e5 !default;
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
   /* Horizontal */
   .oc-grid-divider {
     margin-left: -($grid-gutter-horizontal-l * 2);
@@ -474,7 +474,7 @@ $grid-divider-border: #e5e5e5 !default;
 }
 
 /* Desktop and bigger */
-@media (min-width: var(--oc-breakpoint-large-default)) {
+@media (min-width: $oc-breakpoint-large-default) {
   /* Horizontal */
   .oc-grid-divider.oc-grid-large,
   .oc-grid-divider.oc-grid-column-large {
