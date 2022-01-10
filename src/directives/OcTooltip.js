@@ -73,6 +73,7 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
     elm.tooltip = tippy(el, {
       ...props,
       plugins: [hideOnEsc, ariaHidden],
+      placement: 'left'
     })
     return
   }
