@@ -157,8 +157,7 @@ export default {
 
     parentFolder() {
       const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
-      if (folder !== "") return folder
-      return this.$gettext("All Files and Folders")
+      return folder !== "" ? folder : this.$gettext("All Files and Folders")
     },
 
     parentFolderStyle() {
@@ -300,7 +299,6 @@ export default {
     .parent-folder {
       display: flex;
       align-items: center;
-      margin-right: 10px;
 
       padding: 0 2px 0 2px;
       margin: 0 8px 0 -2px;
