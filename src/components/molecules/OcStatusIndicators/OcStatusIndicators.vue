@@ -14,7 +14,12 @@
         :data-test-indicator-type="indicator.type"
         @click="indicator.handler(resource, indicator.target)"
       >
-        <oc-icon :name="indicator.icon" :fill-type="indicator.fillType" variation="passive" />
+        <oc-icon
+          :name="indicator.icon"
+          size="small"
+          :fill-type="indicator.fillType"
+          variation="passive"
+        />
       </oc-button>
       <oc-icon
         v-else
@@ -22,6 +27,7 @@
         :key="indicator.id"
         v-oc-tooltip="indicator.label"
         tabindex="-1"
+        size="small"
         class="oc-status-indicators-indicator"
         :name="indicator.icon"
         :fill-type="indicator.fillType"

@@ -43,8 +43,22 @@
         :full-path="resource.path"
         :is-path-displayed="isPathDisplayed"
       />
-      <div v-if="resource.indicators.length > 0" class="oc-resource-indicators">
-        <oc-status-indicators :resource="resource" :indicators="resource.indicators" />
+      <div class="oc-resource-indicators">
+        <component
+          :is="parentFolderComponentType"
+          :to="parentFolderLinkPath"
+          :style="parentFolderStyle"
+          v-if="isPathDisplayed"
+          class="parent-folder"
+        >
+          <oc-icon name="folder-2" size="small" fill-type="line" />
+          <span class="text" v-text="parentFolder" />
+        </component>
+        <oc-status-indicators
+          v-if="resource.indicators.length"
+          :resource="resource"
+          :indicators="resource.indicators"
+        />
       </div>
     </div>
   </div>
@@ -56,6 +70,7 @@ import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndic
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
 import uniqueId from "../../../utils/uniqueId"
+import * as path from "path"
 
 /**
  * Displays a resource together with the resource type icon or thumbnail
@@ -135,8 +150,37 @@ export default {
       default: true,
     },
   },
-
   computed: {
+    parentFolderComponentType() {
+      return this.targetRoute !== null ? "router-link" : "span"
+    },
+
+    parentFolder() {
+      const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
+      return folder !== "" ? folder : this.$gettext("All Files and Folders")
+    },
+
+    parentFolderStyle() {
+      const hasLinkTarget = this.targetRoute !== null
+      return {
+        cursor: hasLinkTarget ? "pointer" : "default",
+      }
+    },
+
+    parentFolderLinkPath() {
+      if (this.targetRoute === null) {
+        return {}
+      }
+      return {
+        name: this.targetRoute.name,
+        query: this.targetRoute.query,
+        params: {
+          item: path.dirname(this.resource.path),
+          ...this.targetRoute.params,
+        },
+      }
+    },
+
     isFolder() {
       return this.resource.type === "folder"
     },
@@ -251,6 +295,28 @@ export default {
 
   &-indicators {
     display: flex;
+
+    .parent-folder {
+      display: flex;
+      align-items: center;
+
+      padding: 0 2px 0 2px;
+      margin: 0 8px 0 -2px;
+
+      .oc-icon {
+        padding-right: 3px;
+      }
+
+      .text {
+        font-size: 0.8125rem;
+        color: var(--oc-color-text-muted);
+      }
+
+      &:hover {
+        background-color: var(--oc-color-input-bg);
+        border-radius: 2px;
+      }
+    }
   }
 }
 </style>
