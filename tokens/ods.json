@@ -51,11 +51,11 @@
   "oc-size-width-medium": {"value":"300px","name":"oc-size-width-medium","type":"number","category":"size","info":{}},
   "oc-size-width-small": {"value":"150px","name":"oc-size-width-small","type":"number","category":"size","info":{}},
   "oc-size-width-xsmall": {"value":"100px","name":"oc-size-width-xsmall","type":"number","category":"size","info":{}},
-  "oc-space-large": {"value":"30px","name":"oc-space-large","type":"number","category":"space","info":{}},
-  "oc-space-medium": {"value":"20px","name":"oc-space-medium","type":"number","category":"space","info":{}},
-  "oc-space-small": {"value":"10px","name":"oc-space-small","type":"number","category":"space","info":{}},
-  "oc-space-xlarge": {"value":"50px","name":"oc-space-xlarge","type":"number","category":"space","info":{}},
-  "oc-space-xsmall": {"value":"5px","name":"oc-space-xsmall","type":"number","category":"space","info":{}},
-  "oc-space-xxlarge": {"value":"100px","name":"oc-space-xxlarge","type":"number","category":"space","info":{}},
+  "oc-space-large": {"value":"24px","name":"oc-space-large","type":"number","category":"space","info":{}},
+  "oc-space-medium": {"value":"16px","name":"oc-space-medium","type":"number","category":"space","info":{}},
+  "oc-space-small": {"value":"8px","name":"oc-space-small","type":"number","category":"space","info":{}},
+  "oc-space-xlarge": {"value":"48px","name":"oc-space-xlarge","type":"number","category":"space","info":{}},
+  "oc-space-xsmall": {"value":"4px","name":"oc-space-xsmall","type":"number","category":"space","info":{}},
+  "oc-space-xxlarge": {"value":"96px","name":"oc-space-xxlarge","type":"number","category":"space","info":{}},
   "oc-z-index-modal": {"value":"9999","name":"oc-z-index-modal","type":"number","category":"z-index","info":{}}
 }
