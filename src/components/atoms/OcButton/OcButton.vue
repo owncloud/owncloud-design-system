@@ -491,7 +491,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     Button variations
   </h3>
   <div>
-    <oc-button v-for="variation in variations" :variation="variation.title" class="oc-mr-s oc-mb-s">
+    <oc-button v-for="variation in variations" :variation="variation.title" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-mr-s oc-mb-s">
       {{ variation.title }}
     </oc-button>
   </div>
