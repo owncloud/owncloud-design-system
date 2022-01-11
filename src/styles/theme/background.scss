@@ -5,3 +5,21 @@
 .oc-background-brand {
   background-color: var(--oc-color-swatch-brand-default) !important;
 }
+
+.oc-background-muted {
+  background-color: var(--oc-color-background-muted) !important;
+}
+
+.oc-background-contain {
+  background-size: contain;
+}
+
+.oc-background-cover {
+  background-size: cover;
+}
+
+.oc-background-contain,
+.oc-background-cover {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}

@@ -2,14 +2,14 @@
   <div class="oc-alert oc-notification-message" :class="classes">
     <oc-icon :variation="iconVariation" size="large" name="information" class="oc-mr-s" />
     <div
-      class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-1 oc-mr"
+      class="oc-flex oc-flex-wrap oc-flex-middle oc-flex-1 oc-mr"
       :role="role"
       :aria-live="ariaLive"
     >
       <div class="oc-notification-message-title">
         {{ title }}
       </div>
-      <div v-if="message" class="oc-text-muted uk-width-1-1 oc-notification-message-content">
+      <div v-if="message" class="oc-text-muted oc-width-1-1 oc-notification-message-content">
         {{ message }}
       </div>
     </div>
@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     classes() {
-      return `uk-flex uk-flex-wrap uk-notification-message uk-notification-message-${this.status}`
+      return `oc-flex oc-flex-wrap oc-notification-message oc-notification-message-${this.status}`
     },
     iconVariation() {
       return this.status
@@ -111,9 +111,15 @@ export default {
 }
 
 // TODO: Refactor after removal of uikit
-.uk-notification-message {
+.oc-notification-message {
   background-color: var(--oc-color-background-default) !important;
   border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-top: var(--oc-space-small);
+  padding: 15px;
+  position: relative;
 
   &-passive {
     color: var(--oc-color-swatch-passive-default) !important;

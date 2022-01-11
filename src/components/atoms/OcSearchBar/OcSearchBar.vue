@@ -5,8 +5,8 @@
     class="oc-search"
     :class="{ 'oc-search-small': small }"
   >
-    <div class="uk-width-expand uk-position-relative">
-      <span v-if="icon" class="uk-form-icon">
+    <div class="oc-width-expand oc-position-relative">
+      <span v-if="icon" class="oc-search-icon">
         <oc-icon v-show="!loading" :name="icon" fill-type="line" />
         <oc-spinner
           v-show="loading"
@@ -27,7 +27,7 @@
       <oc-button
         v-if="query.length > 0"
         :aria-label="$gettext('Clear search query')"
-        class="oc-search-clear uk-position-small uk-position-center-right"
+        class="oc-search-clear oc-position-small oc-position-center-right oc-mt-rm"
         appearance="raw"
         @click="onClear"
       >
@@ -240,8 +240,7 @@ export default {
 
 <style lang="scss">
 .oc-search {
-  @extend .uk-grid-collapse;
-  @extend .uk-flex-middle;
+  @extend .oc-flex-middle;
 
   min-width: $form-width-medium;
 
@@ -254,13 +253,24 @@ export default {
     z-index: 0;
   }
 
+  &-icon {
+    align-items: center;
+    bottom: 0;
+    color: var(--oc-color-text-muted);
+    display: inline-flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
   &-input {
-    @extend .uk-input;
+    @extend .oc-input;
 
     border-radius: 25px;
     border: 0;
     color: var(--oc-color-input-text-muted);
-    padding-right: var(--oc-space-medium);
 
     &:focus {
       background-color: var(--oc-color-input-bg);
@@ -275,7 +285,7 @@ export default {
   }
 
   &-input-icon {
-    padding-left: $oc-space-large + $oc-space-small;
+    padding: 0 var(--oc-space-xlarge);
   }
 
   &-input-button {
@@ -285,16 +295,9 @@ export default {
 
   &-small {
     .oc-search-input {
-      @extend .uk-form-small;
-
-      // Overrride default padding of small from
-      // TODO: Remove `!important` after we get rid of UIkit
-      padding-right: var(--oc-space-medium) !important;
-    }
-
-    .oc-search-input-icon {
-      // TODO: Remove `!important` after we get rid of UIkit
-      padding-left: var(--oc-space-large) !important;
+      height: 30px;
+      line-height: 28px;
+      padding-left: var(--oc-space-xlarge);
     }
 
     .oc-icon {
@@ -318,12 +321,11 @@ export default {
       </h3>
       <oc-search-bar label="Search files" placeholder="Search files" @search="onSearch" @clear="onClear" />
       <div v-if="searchQuery" class="oc-m">Search query: {{ searchQuery }}</div>
-      <hr>
-      <div class="oc-mb">
-        <oc-search-bar label="Loading..." placeholder="Loading ..." loadingAccessibleLabel="Custom loading aria label" :loading="true"></oc-search-bar>
+      <div class="oc-my-m">
+        <oc-search-bar label="Loading..." placeholder="Loading ..." loadingAccessibleLabel="Custom loading aria label" :loading="true" />
       </div>
-      <div class="oc-mb">
-        <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" :loading="true"></oc-search-bar>
+      <div class="oc-my-m">
+        <oc-search-bar small label="Small searchbar" placeholder="Small searchbar" :loading="true" />
       </div>
     </section>
     <section>
@@ -338,7 +340,7 @@ export default {
       <h3 class="oc-heading-divider">
         Filter examples
       </h3>
-      <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon=""></oc-search-bar>
+      <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon="" />
       <div v-if="filterQuery" class="oc-m">Filter query: {{ filterQuery }}</div>
     </section>
   </div>

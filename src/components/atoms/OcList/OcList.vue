@@ -1,5 +1,10 @@
 <template functional>
-  <ul v-bind="data.attrs" :ref="data.ref" class="oc-list" :class="[data.staticClass, data.class]">
+  <ul
+    v-bind="data.attrs"
+    :ref="data.ref"
+    class="oc-list oc-my-rm oc-mx-rm"
+    :class="[data.staticClass, data.class]"
+  >
     <slot />
   </ul>
 </template>
@@ -11,11 +16,3 @@ export default {
   released: "unreleased",
 }
 </script>
-
-<style lang="scss">
-.oc-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-</style>

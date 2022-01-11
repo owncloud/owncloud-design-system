@@ -134,6 +134,9 @@ export default {
 
 <style lang="scss">
 .oc-select {
+  background-image: none !important;
+  line-height: 24px !important;
+
   .vs {
     &__search::placeholder,
     &__dropdown-toggle,
@@ -168,7 +171,7 @@ export default {
     }
 
     &__clear svg {
-      max-width: 10px;
+      max-width: var(--oc-space-small);
     }
 
     &__open-indicator {

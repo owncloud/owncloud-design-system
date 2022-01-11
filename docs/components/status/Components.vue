@@ -148,7 +148,7 @@ export default {
     }
   }
   td {
-    font-size: $size-s;
+    font-size: $size-m;
     padding: $space-s;
     &:first-child {
       font-weight: $weight-bold;

@@ -56,7 +56,7 @@ export default {
 }
 </style>
 <docs>
-```vue
+```js
 <template>
 <div>
   <oc-datepicker v-model="date">

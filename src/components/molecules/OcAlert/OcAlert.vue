@@ -1,8 +1,8 @@
 <template>
-  <div :class="_class" uk-alert>
+  <div :class="classes">
     <oc-button
       v-if="!noClose"
-      class="uk-alert-close"
+      class="oc-alert-close"
       appearance="raw"
       :aria-label="$gettext('Close alert')"
       @click="onClose"
@@ -52,7 +52,7 @@ export default {
     },
   },
   computed: {
-    _class() {
+    classes() {
       let classes = ["oc-alert"]
 
       if (this.variation) classes.push(`oc-alert-${this.variation}`)
@@ -87,7 +87,7 @@ export default {
   }
 }
 
-.uk-alert.oc-alert {
+.oc-alert {
   &-passive {
     @include oc-alert-variation(var(--oc-color-swatch-passive-default));
   }
@@ -117,7 +117,7 @@ export default {
     This is a plain alert-box.
   </oc-alert>
   <oc-alert variation="primary">
-    <oc-icon name="information" variation="inverse" class="uk-float-left oc-mr-s" />
+    <oc-icon name="information" variation="inverse" class="oc-float-left oc-mr-s" />
     I am nice and blue and have an icon
   </oc-alert>
   <oc-alert variation="success">

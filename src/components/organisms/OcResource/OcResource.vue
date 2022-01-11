@@ -46,9 +46,9 @@
       <div class="oc-resource-indicators">
         <component
           :is="parentFolderComponentType"
+          v-if="isPathDisplayed"
           :to="parentFolderLinkPath"
           :style="parentFolderStyle"
-          v-if="isPathDisplayed"
           class="parent-folder"
         >
           <oc-icon name="folder-2" size="small" fill-type="line" />
@@ -286,10 +286,12 @@ export default {
     display: block;
     padding-left: var(--oc-space-small);
 
+    a {
+      text-decoration: none;
+    }
     a:hover,
     a:focus {
       outline-offset: 0;
-      text-decoration: none;
     }
   }
 

@@ -8,10 +8,7 @@ module.exports = {
     const data = [
       ...props.map(p => `$${p.name}: ${p.value};`),
       "",
-      ":root {",
-      ...props.map(p => `  --${p.name}: #{$${p.name}};`),
-      "}",
-      ":host {",
+      ":host, :root {",
       ...props.map(p => `  --${p.name}: #{$${p.name}};`),
       "}",
       "",

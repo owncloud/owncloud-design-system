@@ -651,7 +651,7 @@ export default {
     </h3>
     <oc-table :fields="fields" :data="data">
       <template v-slot:resourceHeader>
-        <div class="uk-flex uk-flex-middle">
+        <div class="oc-flex oc-flex-middle">
           <oc-icon name="folder" class="oc-mr-s" />
           Resource
         </div>

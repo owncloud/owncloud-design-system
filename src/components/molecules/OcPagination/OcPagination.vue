@@ -255,8 +255,8 @@ export default {
 
 <docs>
 ## Examples
-```vue
-<div class="uk-flex uk-flex-column" style="gap: 20px;">
+```js
+<div class="oc-flex oc-flex-column" style="gap: 20px;">
     <oc-pagination :pages="3" :currentPage="3" :currentRoute="{ name: 'files' }" />
     <oc-pagination :pages="4" :currentPage="1" :currentRoute="{ name: 'files' }" />
     <oc-pagination :pages="5" :currentPage="3" :currentRoute="{ name: 'files' }" />
@@ -266,8 +266,8 @@ export default {
 ### Truncate visible pages with ellipsis
 If the current page is close enough to the first or/and last page and ellipsis would hide only 1 page, ellipsis will be omitted and the actual page will be still displayed instead.
 
-```vue
-<div class="uk-flex uk-flex-column" style="gap: 20px;">
+```js
+<div class="oc-flex oc-flex-column" style="gap: 20px;">
     <oc-pagination :pages="5" :currentPage="3" :maxDisplayed="3" :currentRoute="{ name: 'files' }" />
     <oc-pagination :pages="10" :currentPage="3" :maxDisplayed="3" :currentRoute="{ name: 'files' }" />
     <oc-pagination :pages="54" :currentPage="28" :maxDisplayed="3" :currentRoute="{ name: 'files' }" />

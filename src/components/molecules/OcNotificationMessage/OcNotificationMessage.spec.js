@@ -41,7 +41,7 @@ describe("OcNotificationMessage", () => {
       status => {
         const wrapper = getWrapper({ status: status })
 
-        expect(wrapper.attributes("class")).toContain(`uk-notification-message-${status}`)
+        expect(wrapper.attributes("class")).toContain(`oc-notification-message-${status}`)
       }
     )
 

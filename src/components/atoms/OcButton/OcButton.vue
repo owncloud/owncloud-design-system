@@ -265,6 +265,7 @@ export default {
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   text-align: center;
+  text-decoration: none;
 
   &-justify-content {
     &-left {
@@ -322,7 +323,7 @@ export default {
     @include oc-button-line-height(0.7);
 
     font-size: 0.9rem;
-    min-height: $global-control-small-height;
+    min-height: 1.2rem;
   }
 
   &-m {
@@ -336,7 +337,7 @@ export default {
     @include oc-button-line-height(1.5);
 
     font-size: 1.5rem;
-    min-height: $global-control-large-height;
+    min-height: 2rem;
   }
 
   .oc-icon > svg {
@@ -489,8 +490,8 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   <h3 class="oc-heading-divider">
     Button variations
   </h3>
-  <div class="uk-flex">
-    <oc-button v-for="variation in variations" :variation="variation.title" class="oc-mr-s oc-mb-s">
+  <div>
+    <oc-button v-for="variation in variations" :variation="variation.title" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-mr-s oc-mb-s">
       {{ variation.title }}
     </oc-button>
   </div>
@@ -498,7 +499,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   <h3 class="oc-heading-divider">
     Button sizes
   </h3>
-  <div class="uk-flex">
+  <div class="oc-flex">
     <oc-button size="large" class="oc-mr-s">Large</oc-button>
     <oc-button class="oc-mr-s oc-align-self-center">Medium (default)</oc-button>
     <oc-button size="small" class="oc-align-self-center">Small</oc-button>
@@ -507,7 +508,7 @@ Every button has to have an accessible name. It cannot be provided by a text bet
   <h3 class="oc-heading-divider">
     Button with icons
   </h3>
-  <div class="uk-flex">
+  <div class="oc-flex">
     <oc-button class="oc-mr-s">
       <oc-icon name="home-2" />
       Home

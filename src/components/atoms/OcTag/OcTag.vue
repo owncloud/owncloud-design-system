@@ -101,33 +101,25 @@ export default {
 <docs>
 Component to display various information.
 ```js
-<oc-grid>
-  <oc-tag>
-    <oc-icon name="links" />
-    Shared via link
-  </oc-tag>
-</oc-grid>
+<oc-tag>
+  <oc-icon name="links" />
+  Shared via link
+</oc-tag>
 ```
 ## Different types of the tag component
 The tag component can be rendered as a different element if desired. You can specify such element via property `type`.
 
 ```js
-<oc-grid gutter="small" flex>
-  <div>
-    <oc-tag>
+<oc-grid gutter="small" flex="true">
+    <oc-tag class="oc-mr-s">
       <oc-icon name="group" />
       Shared with other people
     </oc-tag>
-  </div>
-  <div>
-    <oc-tag type="a">
+    <oc-tag class="oc-mr-s" type="a">
       <oc-icon name="links" />
       Shared via link
     </oc-tag>
-  </div>
-  <div>
-    <oc-tag type="button">Expires in 2 days</oc-tag>
-  </div>
+    <oc-tag class="oc-mr-s" type="button">Expires in 2 days</oc-tag>
 </oc-grid>
 ```
 </docs>

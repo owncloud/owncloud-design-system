@@ -123,7 +123,7 @@ export default {
 
 <docs>
 ```js
-<div class="uk-flex uk-flex-column uk-flex-left uk-flex-top">
+<div class="oc-flex oc-flex-column oc-flex-left oc-flex-top">
   <oc-recipient :recipient="{ name: 'Alice', avatar: 'https://picsum.photos/24', hasAvatar: true, isAvatarLoading: false }" class="oc-mb-s" />
   <oc-recipient :recipient="{ name: 'Alice', icon: { name: 'person', label: 'User' }, hasAvatar: false }" />
 </div>

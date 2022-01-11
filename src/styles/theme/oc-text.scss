@@ -7,10 +7,12 @@ h5,
 h6,
 p {
   color: var(--oc-color-text-default);
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: var(--oc-color-swatch-primary-default);
+  text-decoration: none;
 
   &:hover {
     color: var(--oc-color-swatch-primary-hover);
@@ -69,13 +71,48 @@ td.oc-text-break {
   word-break: break-all;
 }
 
+.oc-text-meta {
+  color: var(--oc-color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
 .oc-text-initial {
   font-size: 1rem;
+}
+
+.oc-text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.oc-text-normal {
+  font-weight: 400;
+}
+
+.oc-text-large {
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 .oc-text-lead {
   color: var(--oc-color-text-default);
   font-size: 1.5rem;
   line-height: 1.5;
-  margin: 0;
+}
+
+.oc-text-center {
+  text-align: center;
+}
+
+.oc-text-left {
+  text-align: left;
+}
+
+.oc-text-right {
+  text-align: right;
+}
+
+.oc-text-uppercase {
+  text-transform: uppercase !important;
 }

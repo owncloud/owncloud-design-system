@@ -32,11 +32,11 @@ exports[`OcDrop tippy renders tippy 1`] = `
         style="transition-duration: 300ms;"
       >
         <div
-          class="oc-drop"
+          class="oc-drop oc-box-shadow-medium"
           id="oc-drop-15"
         >
           <div
-            class="uk-card uk-card-default uk-card-small uk-card-body oc-p-m"
+            class="oc-card oc-card-body oc-p-m"
           >
             show
           </div>
@@ -78,11 +78,11 @@ exports[`OcDrop tippy renders tippy 2`] = `
         style="transition-duration: 250ms;"
       >
         <div
-          class="oc-drop"
+          class="oc-drop oc-box-shadow-medium"
           id="oc-drop-15"
         >
           <div
-            class="uk-card uk-card-default uk-card-small uk-card-body oc-p-m"
+            class="oc-card oc-card-body oc-p-m"
           >
             show
           </div>
@@ -125,11 +125,11 @@ exports[`OcDrop tippy renders tippy 3`] = `
         style="transition-duration: 300ms;"
       >
         <div
-          class="oc-drop"
+          class="oc-drop oc-box-shadow-medium"
           id="oc-drop-15"
         >
           <div
-            class="uk-card uk-card-default uk-card-small uk-card-body oc-p-m"
+            class="oc-card oc-card-body oc-p-m"
           >
             show
           </div>

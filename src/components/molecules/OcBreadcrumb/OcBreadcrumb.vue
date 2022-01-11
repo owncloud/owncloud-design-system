@@ -28,7 +28,7 @@
             toggle="#oc-breadcrumb-contextmenu-trigger"
             mode="click"
             close-on-click
-            padding-size="remove"
+            :padding-size="contextMenuPadding"
             @click.native.stop.prevent
           >
             <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
@@ -57,7 +57,7 @@
         />
       </label>
       <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
-        <ol class="uk-nav uk-nav-default">
+        <ol>
           <li v-for="(item, index) in dropdownItems" :key="index">
             <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
               {{ item.text }}
@@ -119,6 +119,19 @@ export default {
       default: "default",
       validator: value => value === "lead" || value === "default",
     },
+    /**
+     * Defines the padding size around the drop content. Defaults to `medium`.
+     *
+     * @values xsmall, small, medium, large, xlarge, xxlarge, xxxlarge, remove
+     */
+    contextMenuPadding: {
+      type: String,
+      required: false,
+      default: "medium",
+      validator: value => {
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
+      },
+    },
   },
   computed: {
     dropdownItems() {
@@ -151,9 +164,15 @@ export default {
   overflow: hidden;
 
   &-list {
-    @extend .uk-visible\@s;
-    @extend .uk-breadcrumb;
+    @extend .oc-visible\@s;
     @extend .oc-m-rm;
+    @extend .oc-p-rm;
+
+    list-style: none;
+
+    > * {
+      display: contents;
+    }
 
     #oc-breadcrumb-contextmenu-trigger > span {
       vertical-align: middle;
@@ -170,8 +189,14 @@ export default {
     > li a,
     > li button,
     > li span,
-    > :nth-child(n + 2):not(.uk-first-column)::before {
+    > :nth-child(n + 2)::before {
       color: var(--oc-color-text-muted);
+    }
+    > :nth-child(n + 2)::before {
+      content: "/";
+      display: inline-block;
+      margin: 0 var(--oc-space-small) 0 var(--oc-space-xsmall);
+      font-size: 0.875rem;
     }
 
     > :last-child > span {
@@ -195,7 +220,6 @@ export default {
     }
   }
 
-  /* stylelint-disable */
   &-lead &-list-item {
     &::before,
     a,
@@ -207,9 +231,14 @@ export default {
   /* stylelint-enable */
 
   &-drop {
-    @extend .uk-hidden\@s;
+    @extend .oc-hidden\@s;
 
-    .uk-drop > .uk-card > .uk-nav-default {
+    .oc-drop > .oc-card > ol {
+      @extend .oc-m-rm;
+      @extend .oc-p-rm;
+
+      list-style: none;
+
       > li a,
       > li button,
       > li span {
@@ -224,17 +253,15 @@ export default {
       }
 
       li button {
-        padding-left: 20px;
-        padding-right: 20px;
         width: 100%;
       }
     }
 
     &-label {
-      @extend .uk-flex;
-      @extend .uk-flex-middle;
-      @extend .uk-flex-between;
-      @extend .uk-background-default;
+      @extend .oc-flex;
+      @extend .oc-flex-middle;
+      @extend .oc-flex-between;
+      @extend .oc-background-brand;
 
       border: $global-border-width solid var(--oc-color-swatch-primary-muted);
       cursor: pointer;
@@ -242,7 +269,7 @@ export default {
       padding: var(--oc-space-small);
 
       &-text {
-        @extend .uk-text-truncate;
+        @extend .oc-text-truncate;
       }
     }
   }
@@ -252,8 +279,11 @@ export default {
 <docs>
 ```js
 <template>
+<section>
   <div>
     <oc-breadcrumb :items="items" class="oc-mb" />
+  </div>
+  <div>
     <oc-breadcrumb :items="items" variation="lead" />
     <oc-breadcrumb :items="items" class="oc-mt-l">
       <template v-slot:contextMenu>
@@ -261,6 +291,7 @@ export default {
       </template>
     </oc-breadcrumb>
   </div>
+</section>
 </template>
 <script>
   export default {

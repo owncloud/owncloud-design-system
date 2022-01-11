@@ -35,11 +35,34 @@ export default {
   },
   computed: {
     classes() {
-      return `uk-notification uk-notification-${this.position}`
+      return `oc-notification oc-notification-${this.position}`
     },
   },
 }
 </script>
+
+<style lang="scss">
+.oc-notification {
+  box-sizing: border-box;
+  position: fixed;
+  top: var(--oc-space-small);
+  width: 350px;
+  z-index: 1040;
+
+  &-top-left {
+    left: var(--oc-space-small);
+  }
+  &-top-center {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &-top-right {
+    right: var(--oc-space-small);
+  }
+}
+</style>
 
 <docs>
 ```js
@@ -49,38 +72,50 @@ export default {
         Notifications examples
       </h3>
 
-      <oc-grid gutter="small">
-        <div>
-          <oc-button @click="show('center')">Show center notifications</oc-button>
-          <oc-notifications position="top-center">
-            <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
-              <oc-notification-message
-                  v-for="item in messages.center"
-                  :key="item.title"
-                  :status="item.status"
-                  :title="item.title"
-                  :message="item.message"
-                  :timeout="item.timeout"
-                  @close="removeNotification('center', item)"
-              />
-            </transition-group>
-          </oc-notifications>
-        </div>
-        <div>
-          <oc-button @click="show('right')">Show right notifications</oc-button>
-          <oc-notifications position="top-right">
-            <oc-notification-message
-                v-for="(item, index) in messages.right"
-                :key="item.title"
-                :status="item.status"
-                :title="item.title"
-                :message="item.message"
-                :timeout="item.timeout"
-                @close="removeNotification('right', item)"
-            />
-          </oc-notifications>
-        </div>
-      </oc-grid>
+      <oc-button @click="show('left')">Show left notifications</oc-button>
+      <oc-button @click="show('center')">Show center notifications</oc-button>
+      <oc-button @click="show('right')">Show right notifications</oc-button>
+
+      <oc-notifications position="top-left">
+        <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
+          <oc-notification-message
+              v-for="item in messages.left"
+              :key="item.title"
+              :status="item.status"
+              :title="item.title"
+              :message="item.message"
+              :timeout="item.timeout"
+              @close="removeNotification('left', item)"
+          />
+        </transition-group>
+      </oc-notifications>
+
+      <oc-notifications position="top-center">
+        <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
+          <oc-notification-message
+              v-for="item in messages.center"
+              :key="item.title"
+              :status="item.status"
+              :title="item.title"
+              :message="item.message"
+              :timeout="item.timeout"
+              @close="removeNotification('center', item)"
+          />
+        </transition-group>
+      </oc-notifications>
+
+      <oc-notifications position="top-right">
+        <oc-notification-message
+            v-for="(item, index) in messages.right"
+            :key="item.title"
+            :status="item.status"
+            :title="item.title"
+            :message="item.message"
+            :timeout="item.timeout"
+            @close="removeNotification('right', item)"
+        />
+      </oc-notifications>
+
     </section>
   </template>
   <script>

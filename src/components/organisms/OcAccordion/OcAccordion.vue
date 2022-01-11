@@ -202,7 +202,7 @@ The accordion component is using `oc-accordion-item` as its children.
 To see documentation on how to use this component, see [oc-accordion-item](/#/oC%20Components/oc-accordion-item).
 
 ```js
-<oc-accordion :expand-first="true" :multiple="false" class="uk-width-1-2">
+<oc-accordion :expand-first="true" :multiple="false" class="oc-width-1-2">
   <oc-accordion-item title="My accordion item" icon="folder">
     <p>
       I am the content of this accordion
@@ -231,7 +231,7 @@ you need to listen to the `expand` and `collapse` events, which are emitted on t
       <div><oc-button variation="danger" size="small" @click="collapseAll()">Collapse all</oc-button></div>
     </oc-grid>
     <div>
-      <oc-accordion :expanded-ids="expandedIds" :multiple="true" mode="data" class="uk-width-1-2">
+      <oc-accordion :expanded-ids="expandedIds" :multiple="true" mode="data" class="oc-width-1-2">
         <oc-accordion-item :id="FIRST" icon="filter_1" title="First accordion item">
           <p>Hello there.</p>
         </oc-accordion-item>
