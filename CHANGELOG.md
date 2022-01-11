@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - OcNotification positioning: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
 * Bugfix - Rename GhostElement: [#1845](https://github.com/owncloud/owncloud-design-system/pull/1845)
 * Bugfix - OcTooltip isn't reactive: [#1863](https://github.com/owncloud/owncloud-design-system/pull/1863)
 * Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
@@ -13,7 +14,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove OcAppBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Change - Remove implicit ODS registration: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
 * Change - Remove oc-table-files from ods: [#1817](https://github.com/owncloud/owncloud-design-system/pull/1817)
+* Change - Remove OcGrid options: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
 * Change - Move OcSidebarNav and OcSidebarNavItem to web: [#6036](https://github.com/owncloud/web/issues/6036)
+* Change - Remove UiKit: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
 * Change - Use remixicons for redesign: [#1826](https://github.com/owncloud/owncloud-design-system/pull/1826)
 * Enhancement - Make Vue-Composition-API available: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
@@ -25,6 +28,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
 
 ## Details
+
+* Bugfix - OcNotification positioning: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
+
+   We have taken care of the positioning in the OcNotification component, which didn't work as
+   expected. Notifications can now be displayed on the left or right side or centered.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1658
+
 
 * Bugfix - Rename GhostElement: [#1845](https://github.com/owncloud/owncloud-design-system/pull/1845)
 
@@ -85,6 +96,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/pull/6106
 
 
+* Change - Remove OcGrid options: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
+
+   We have removed the `match` and `childWidth` option in the OcGrid component since they were
+   unused and relied heavily on the removed UiKit library.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1658
+
+
 * Change - Move OcSidebarNav and OcSidebarNavItem to web: [#6036](https://github.com/owncloud/web/issues/6036)
 
    We've moved OcSidebarNav and OcSidebarNavItem to web and renamed it to SidebarNav and
@@ -92,6 +111,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6036
    https://github.com/owncloud/owncloud-design-system/pull/1810
+
+
+* Change - Remove UiKit: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
+
+   We have removed the UiKit library this design system originally was built on. The necessary
+   style rules for the design system itself and our web repository have been internalized, and
+   everything else got dropped to greatly reduce bundle size and build times.
+
+   Please note that with this change, we have also dropped and/or refactored a lot of CSS classes
+   and correlated styling.
+
+   https://github.com/owncloud/owncloud-design-system/issues/538
+   https://github.com/owncloud/owncloud-design-system/pull/1658
 
 
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
