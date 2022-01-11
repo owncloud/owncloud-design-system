@@ -323,7 +323,7 @@ export default {
     @include oc-button-line-height(0.7);
 
     font-size: 0.9rem;
-    min-height: $global-control-small-height;
+    min-height: 1.2rem;
   }
 
   &-m {
@@ -337,7 +337,7 @@ export default {
     @include oc-button-line-height(1.5);
 
     font-size: 1.5rem;
-    min-height: $global-control-large-height;
+    min-height: 2rem;
   }
 
   .oc-icon > svg {

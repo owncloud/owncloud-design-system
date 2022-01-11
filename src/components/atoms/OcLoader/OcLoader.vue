@@ -61,7 +61,7 @@ export default {
     width: 0;
 
     animation: {
-      duration: $spinner-duration;
+      duration: 1.4s;
       iteration-count: infinite;
       name: oc-loader;
     }

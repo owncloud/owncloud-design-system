@@ -28,7 +28,7 @@
             toggle="#oc-breadcrumb-contextmenu-trigger"
             mode="click"
             close-on-click
-            padding-size="remove"
+            :padding-size="contextMenuPadding"
             @click.native.stop.prevent
           >
             <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
@@ -118,6 +118,19 @@ export default {
       required: false,
       default: "default",
       validator: value => value === "lead" || value === "default",
+    },
+    /**
+     * Defines the padding size around the drop content. Defaults to `medium`.
+     *
+     * @values xsmall, small, medium, large, xlarge, xxlarge, xxxlarge, remove
+     */
+    contextMenuPadding: {
+      type: String,
+      required: false,
+      default: "medium",
+      validator: value => {
+        return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
+      },
     },
   },
   computed: {

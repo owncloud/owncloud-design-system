@@ -297,11 +297,7 @@ export default {
     .oc-search-input {
       height: 30px;
       line-height: 28px;
-      padding: 0 var(--oc-space-small);
-    }
-
-    .oc-search-input-icon {
-      padding-left: var(--oc-space-large);
+      padding-left: var(--oc-space-xlarge);
     }
 
     .oc-icon {

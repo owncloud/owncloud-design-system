@@ -23,7 +23,7 @@
       <oc-button
         v-if="showClearButton"
         :aria-label="clearButtonAccessibleLabelValue"
-        class="oc-position-small oc-position-center-right oc-text-input-btn-clear"
+        class="oc-pr-s oc-position-center-right oc-text-input-btn-clear"
         appearance="raw"
         @click="onClear"
       >
@@ -330,9 +330,9 @@ export default {
     <h3 class="oc-heading-divider">
       Interactions
     </h3>
-    <oc-button @click="_focus">Focus input below</oc-button>
+    <oc-button @click="_focus" class="oc-my-m">Focus input below</oc-button>
     <oc-text-input label="Focus field" ref="inputForFocus"/>
-    <oc-button @click="_focusAndSelect">Focus and select input below</oc-button>
+    <oc-button @click="_focusAndSelect" class="oc-my-m">Focus and select input below</oc-button>
     <oc-text-input label="Select field" value="Will you select this existing text?" ref="inputForFocusSelect"/>
     <oc-text-input label="Clear input" v-model="inputValueForClearing" :clear-button-enabled="true" />
     <oc-text-input label="Input with default" v-model="inputValueWithDefault" :clear-button-enabled="true" default-value="Some default"/>

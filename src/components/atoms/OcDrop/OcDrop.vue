@@ -1,5 +1,5 @@
 <template>
-  <div :id="dropId" ref="drop" class="oc-drop" @click="$_ocDrop_close">
+  <div :id="dropId" ref="drop" class="oc-drop oc-box-shadow-medium" @click="$_ocDrop_close">
     <div v-if="$slots.default" class="oc-card oc-card-body" :class="paddingClass">
       <slot />
     </div>
@@ -202,7 +202,6 @@ export default {
 }
 
 .oc-drop {
-  box-shadow: 0 5px 15px rgba(0,0,0,.08);
   width: 300px;
 
   li a:focus {

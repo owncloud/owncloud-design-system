@@ -46,9 +46,9 @@
       <div class="oc-resource-indicators">
         <component
           :is="parentFolderComponentType"
+          v-if="isPathDisplayed"
           :to="parentFolderLinkPath"
           :style="parentFolderStyle"
-          v-if="isPathDisplayed"
           class="parent-folder"
         >
           <oc-icon name="folder-2" size="small" fill-type="line" />
