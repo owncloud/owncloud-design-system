@@ -26,6 +26,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
 * Enhancement - Sizes: [#1858](https://github.com/owncloud/owncloud-design-system/pull/1858)
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
+* Enhancement - Use Roboto font: [#1876](https://github.com/owncloud/owncloud-design-system/pull/1876)
 
 ## Details
 
@@ -205,6 +206,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
 
    https://github.com/owncloud/owncloud-design-system/pull/1846
+
+
+* Enhancement - Use Roboto font: [#1876](https://github.com/owncloud/owncloud-design-system/pull/1876)
+
+   We've switched the default font from Fira Sans to Roboto.
+
+   https://github.com/owncloud/web/issues/6100/
+   https://github.com/owncloud/owncloud-design-system/pull/1876
 
 # Changelog for [11.3.1] (2021-12-03)
 
