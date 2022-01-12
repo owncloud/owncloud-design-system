@@ -2,4 +2,4 @@ Enhancement: Sizes
 
 The size variables which define margins and paddings have been changed to use multiples of 8 instead of 10.
 
-https://github.com/owncloud/owncloud-design-system/pull/1857
+https://github.com/owncloud/owncloud-design-system/pull/1858
