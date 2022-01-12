@@ -17,7 +17,7 @@ module.exports = {
     maxWidth: "100%",
     sidebarWidth: 240,
     fontFamily: {
-      base: ["'Fira Sans'", "Helvetica", "Arial", "sans-serif"],
+      base: ["'Roboto'", "sans-serif"],
       monospace: ["Consolas", "'Liberation Mono'", "Menlo", "monospace"],
     },
   },

@@ -1,7 +1,7 @@
 ---
 font:
   text:
-    value: "'Fira Sans', Helvetica, Arial, sans-serif"
+    value: "'Roboto', sans-serif"
   weight:
     bold:
       value: '700'

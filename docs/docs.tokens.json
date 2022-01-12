@@ -212,15 +212,15 @@
     "font_heading": {
       "type": "...",
       "category": "font",
-      "value": "'Fira Sans', Helvetica, Arial, sans-serif",
-      "originalValue": "'Fira Sans', Helvetica, Arial, sans-serif",
+      "value": "'Roboto', sans-serif",
+      "originalValue": "'Roboto', sans-serif",
       "name": "font_heading"
     },
     "font_text": {
       "type": "...",
       "category": "font",
-      "value": "'Fira Sans', Helvetica, Arial, sans-serif",
-      "originalValue": "'Fira Sans', Helvetica, Arial, sans-serif",
+      "value": "'Roboto', sans-serif",
+      "originalValue": "'Roboto', sans-serif",
       "name": "font_text"
     },
     "weight_bold": {
