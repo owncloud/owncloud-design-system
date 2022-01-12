@@ -50,6 +50,8 @@
           :to="parentFolderLinkPath"
           :style="parentFolderStyle"
           class="parent-folder"
+          @click.stop
+          @click.native.stop
         >
           <oc-icon name="folder-2" size="small" fill-type="line" />
           <span class="text" v-text="parentFolder" />
