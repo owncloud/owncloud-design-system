@@ -23,7 +23,7 @@ export default {
   props: {
     /**
      * The html element used for the button.
-     * `button, a, router`
+     * `button, a, router-link`
      */
     type: {
       type: String,
@@ -61,7 +61,7 @@ export default {
      * When setting the button’s type to a router-link, use this option to give a to.
      */
     to: {
-      type: Object,
+      type: [String, Object],
       default: null,
     },
     /**
