@@ -74,8 +74,6 @@ $form-select-disabled-icon-color: var(--oc-color-text-muted) !default;
 $form-datalist-padding-right: 20px !default;
 $form-datalist-icon-color: var(--oc-color-text-default) !default;
 
-$form-radio-size: 16px !default;
-$form-radio-margin-top: -4px !default;
 $form-radio-background: var(--oc-color-background-muted) !default;
 
 $form-radio-checked-background: $oc-color-swatch-primary-default !default;
@@ -463,9 +461,6 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
 
   /* 1 */
   display: inline-block;
-
-  /* 3 */
-  margin-top: $form-radio-margin-top;
 
   /* 2 */
   overflow: hidden;
