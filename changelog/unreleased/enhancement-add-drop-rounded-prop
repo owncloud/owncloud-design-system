@@ -1,0 +1,6 @@
+Enhancement: Add OcDrop rounded property
+
+We've added a new rounded prop for OcDrop in order
+to fit the needs of the redesign.
+
+https://github.com/owncloud/owncloud-design-system/pull/1881
