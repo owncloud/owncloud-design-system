@@ -1,6 +1,6 @@
 <template>
-  <div :id="dropId" ref="drop" class="oc-drop oc-box-shadow-medium" @click="$_ocDrop_close">
-    <div v-if="$slots.default" class="oc-card oc-card-body" :class="paddingClass">
+  <div :id="dropId" ref="drop" :class="[ 'oc-drop', 'oc-box-shadow-medium', { 'rounded': rounded }]" @click="$_ocDrop_close">
+    <div v-if="$slots.default" :class="[ 'oc-card', 'oc-card-body', { 'rounded': rounded }]">
       <slot />
     </div>
     <slot v-else name="special" />
@@ -95,6 +95,14 @@ export default {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
       },
     },
+    /**
+     * Element border radius enabled
+     */
+    rounded: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
   },
   data() {
     return { tippy: null }
@@ -195,14 +203,20 @@ export default {
   background-color: transparent;
   font-size: inherit;
   line-height: inherit;
+  border-radius: 5px;
 
   .tippy-content {
     padding: 0;
   }
 }
 
+.rounded {
+  border-radius: 5px;
+}
+
 .oc-drop {
   width: 300px;
+  border-radius: 5px;
 
   li a:focus {
     outline: auto 1px !important;
