@@ -125,6 +125,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/538
    https://github.com/owncloud/owncloud-design-system/pull/1658
+   https://github.com/owncloud/owncloud-design-system/pull/1882
 
 
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
