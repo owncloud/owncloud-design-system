@@ -49,6 +49,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../assets/tokens/ods";
+@import "../../../styles/styles";
+
 // Ported from UiKit until we change UI frameworks
 
 // Name:            Grid

@@ -1,42 +1,29 @@
-/**
- * System.js creates the Design System Library.
- * It’s used in the system itself and when exporting it.
- *
- * You should & can add your own dependencies here if needed.
- */
+import "./styles/styles.scss";
+import atoms from "./components/atoms/**/*.vue";
+import molecules from "./components/molecules/**/*.vue";
+import organisms from "./components/organisms/**/*.vue";
+import directivesContext from "./directives/**/*.js";
 
-import "./styles/styles.scss"
-
-// Define contexts to require
-const componentsContext = require.context("./components/", true, /\.vue$/)
-const directivesContext = require.context("./directives/", true, /\.js$/)
+const componentsContext = [...atoms, ...organisms, ...molecules]
 
 const initializeCustomProps = (tokens = [], prefix) => {
   for (const param in tokens) {
-    document.querySelector(":root").style.setProperty("--oc-" + prefix + param, tokens[param])
+    document.querySelector(":root").style.setProperty("--oc-" + prefix + param, tokens[param]);
   }
-}
+};
 
 // Install the above defined components
 const System = {
   install(Vue, options = {}) {
-    const themeOptions = options.tokens
-    initializeCustomProps(themeOptions?.breakpoints, "breakpoint-")
-    initializeCustomProps(themeOptions?.colorPalette, "color-")
-    initializeCustomProps(themeOptions?.fontSizes, "font-size-")
-    initializeCustomProps(themeOptions?.sizes, "size-")
-    initializeCustomProps(themeOptions?.spacing, "space-")
+    const themeOptions = options.tokens;
+    initializeCustomProps(themeOptions?.breakpoints, "breakpoint-");
+    initializeCustomProps(themeOptions?.colorPalette, "color-");
+    initializeCustomProps(themeOptions?.fontSizes, "font-size-");
+    initializeCustomProps(themeOptions?.sizes, "size-");
+    initializeCustomProps(themeOptions?.spacing, "space-");
 
-    componentsContext
-      .keys()
-      .forEach(key =>
-        Vue.component(componentsContext(key).default.name, componentsContext(key).default)
-      )
-    directivesContext
-      .keys()
-      .forEach(key =>
-        Vue.directive(directivesContext(key).default.name, directivesContext(key).default)
-      )
+    componentsContext.forEach(c => Vue.component(c.default.name, c.default))
+    directivesContext.forEach(d => Vue.directive(d.default.name, d.default))
   },
 }
 

@@ -266,6 +266,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../assets/tokens/ods";
+@import "../../../styles/styles";
+
 .oc-text-input {
   @extend .oc-input;
 

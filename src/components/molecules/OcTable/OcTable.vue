@@ -462,6 +462,9 @@ export default {
 }
 </script>
 <style lang="scss">
+@import "../../../assets/tokens/ods.scss";
+@import "../../../styles/theme/variables.scss";
+
 .oc-table {
   border-collapse: collapse;
   border-spacing: 0;

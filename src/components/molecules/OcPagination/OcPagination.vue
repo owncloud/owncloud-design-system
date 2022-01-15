@@ -201,6 +201,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../assets/tokens/ods.scss";
+@import "../../../styles/theme/variables.scss";
+
 .oc-pagination {
   &-list {
     align-items: center;

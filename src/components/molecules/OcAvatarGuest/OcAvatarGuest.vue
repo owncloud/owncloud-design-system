@@ -2,7 +2,7 @@
   <oc-avatar-item
     :width="width"
     :icon-size="iconSize"
-    icon="global"
+    icon="add"
     icon-fill-type="line"
     icon-color="#D78841"
     :name="name"
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+// todo:
+// icon="global" seems to be a reserved stopword when using esbuild or the vue-esbuild addon
+// investigate why!?
 import OcAvatarItem from "../../atoms/OcAvatarItem/OcAvatarItem.vue"
 
 export default {

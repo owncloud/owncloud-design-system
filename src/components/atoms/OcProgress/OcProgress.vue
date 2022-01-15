@@ -68,6 +68,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../assets/tokens/ods";
+@import "../../../styles/styles";
+
 $progress-height: 15px !default;
 $progress-height-small: 5px !default;
 

@@ -51,6 +51,9 @@ export default {
 }
 </script>
 <style lang="scss">
+@import "../../../assets/tokens/ods";
+@import "../../../styles/theme/oc-text";
+
 $default-size: 64px;
 
 .oc-progress-pie {

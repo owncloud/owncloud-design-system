@@ -30,6 +30,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../assets/tokens/ods";
+@import "../../../styles/styles";
+
 .oc-loader {
   @extend .oc-position-relative;
 

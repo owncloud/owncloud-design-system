@@ -115,6 +115,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../../assets/tokens/ods";
+@import "../../../styles/styles";
+
 @mixin oc-form-check-size($factor) {
   height: $oc-size-form-check-default * $factor;
   width: $oc-size-form-check-default * $factor;
