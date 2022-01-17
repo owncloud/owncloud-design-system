@@ -2,10 +2,10 @@
   <div
     :id="dropId"
     ref="drop"
-    :class="['oc-drop', 'oc-box-shadow-medium', { rounded: rounded }]"
+    class="oc-drop oc-box-shadow-medium rounded"
     @click="$_ocDrop_close"
   >
-    <div v-if="$slots.default" :class="['oc-card', 'oc-card-body', { rounded: rounded }]">
+    <div v-if="$slots.default" :class="['oc-card', 'oc-card-body', 'rounded' , paddingClass]">
       <slot />
     </div>
     <slot v-else name="special" />
@@ -99,15 +99,7 @@ export default {
       validator: value => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
       },
-    },
-    /**
-     * Enable border radius for drop
-     */
-    rounded: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
+    }
   },
   data() {
     return { tippy: null }
