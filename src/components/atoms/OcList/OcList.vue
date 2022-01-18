@@ -14,13 +14,13 @@ export default {
   name: "OcList",
   status: "ready",
   released: "unreleased",
-  props: { 
+  props: {
     raw: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
-  }
+  },
 }
 </script>
 
@@ -30,12 +30,11 @@ export default {
   margin: 0;
   padding: 0;
 
-  &-divider > :nth-child(n+2) {
+  &-divider > :nth-child(n + 2) {
     border-top: 1px solid var(--oc-color-border);
     margin-top: var(--oc-space-small);
     padding-top: var(--oc-space-small);
   }
-  
 }
 .oc-list-raw {
   list-style-type: none;

@@ -1,11 +1,9 @@
 <template>
-  <div
-    :id="dropId"
-    ref="drop"
-    class="oc-drop oc-box-shadow-medium rounded"
-    @click="$_ocDrop_close"
-  >
-    <div v-if="$slots.default" :class="['oc-card', 'oc-card-body', 'oc-drop-rounded' , paddingClass]">
+  <div :id="dropId" ref="drop" class="oc-drop oc-box-shadow-medium rounded" @click="$_ocDrop_close">
+    <div
+      v-if="$slots.default"
+      :class="['oc-card', 'oc-card-body', 'oc-drop-rounded', paddingClass]"
+    >
       <slot />
     </div>
     <slot v-else name="special" />
@@ -99,7 +97,7 @@ export default {
       validator: value => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
       },
-    }
+    },
   },
   data() {
     return { tippy: null }
