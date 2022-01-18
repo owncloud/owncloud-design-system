@@ -35,13 +35,13 @@ export default {
     margin-top: var(--oc-space-small);
     padding-top: var(--oc-space-small);
   }
-}
-.oc-list-raw {
-  list-style-type: none;
-  a {
-    text-decoration: none !important;
-    &:hover {
-      color: inherit;
+  &-raw {
+    list-style-type: none;
+    a {
+      text-decoration: none !important;
+      &:hover {
+        color: inherit;
+      }
     }
   }
 }

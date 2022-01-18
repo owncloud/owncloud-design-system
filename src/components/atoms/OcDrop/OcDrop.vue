@@ -1,5 +1,10 @@
 <template>
-  <div :id="dropId" ref="drop" class="oc-drop oc-box-shadow-medium rounded" @click="$_ocDrop_close">
+  <div
+    :id="dropId"
+    ref="drop"
+    class="oc-drop oc-box-shadow-medium oc-drop-rounded"
+    @click="$_ocDrop_close"
+  >
     <div
       v-if="$slots.default"
       :class="['oc-card', 'oc-card-body', 'oc-drop-rounded', paddingClass]"
@@ -210,7 +215,6 @@ export default {
 
 .oc-drop {
   width: 300px;
-  border-radius: 5px;
 
   li a:focus {
     outline: auto 1px !important;
