@@ -14,7 +14,7 @@ import OcAvatarItem from "../../atoms/OcAvatarItem/OcAvatarItem.vue"
 export default {
   name: "OcAvatarGroup",
   status: "review",
-  release: "",
+  release: "10.0.0",
   components: { OcAvatarItem },
 
   props: {

@@ -13,11 +13,15 @@
 </template>
 
 <script>
+import OcIcon from "../OcIcon/OcIcon.vue"
+
 export default {
   name: "OcAvatarItem",
   status: "review",
-  release: "",
-
+  release: "10.0.0",
+  components: {
+    OcIcon,
+  },
   props: {
     /**
      * Name of the public link used as an accessible label
