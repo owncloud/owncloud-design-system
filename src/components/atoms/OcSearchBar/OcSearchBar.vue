@@ -269,7 +269,7 @@ export default {
     @extend .oc-input;
 
     border-radius: 25px;
-    border: 0;
+    border: 1px solid var(--oc-color-input-border);
     color: var(--oc-color-input-text-muted);
 
     &:focus {

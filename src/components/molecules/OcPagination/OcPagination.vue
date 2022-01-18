@@ -214,20 +214,20 @@ export default {
     &-item {
       &-page {
         border-radius: 4px;
-        color: var(--oc-color-swatch-brand-default);
+        color: var(--oc-color-text-default);
         padding: var(--oc-space-xsmall) var(--oc-space-small);
         transition: background-color $transition-duration-short ease-in-out;
 
         &:not(span):hover,
         &:not(span):focus {
-          background-color: var(--oc-color-swatch-brand-default);
+          background-color: var(--oc-color-swatch-passive-default);
           color: var(--oc-color-text-inverse);
           text-decoration: none;
         }
       }
 
       &-current {
-        background-color: var(--oc-color-swatch-brand-default);
+        background-color: var(--oc-color-swatch-passive-default);
         color: var(--oc-color-text-inverse);
         font-weight: bold;
       }
@@ -237,7 +237,7 @@ export default {
         display: flex;
 
         > .oc-icon > svg {
-          fill: var(--oc-color-swatch-brand-default);
+          fill: var(--oc-color-text-default);
         }
       }
 
