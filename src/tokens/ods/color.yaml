@@ -31,6 +31,8 @@ color:
         value: rgb(128, 167, 215)
       muted:
         value: rgb(44, 88, 142)
+      gradient:
+        value: rgb(78, 133, 200)
     success:
       default:
         value: rgb(79, 130, 47)
