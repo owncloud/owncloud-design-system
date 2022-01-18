@@ -100,7 +100,7 @@ export default {
 <style lang="scss">
 .oc-recipient {
   align-items: center;
-  background-color: var(--oc-color-swatch-inverse-default);
+  background-color: var(--oc-color-background-default);
   border: 1px solid var(--oc-color-input-border);
   border-radius: 6px;
   display: flex;

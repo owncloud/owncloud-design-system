@@ -57,7 +57,7 @@ export default {
     background: {
       type: String,
       required: false,
-      default: "var(--oc-color-swatch-brand-default)",
+      default: "var(--oc-color-swatch-passive-default)",
     },
     /**
      * Accessibility label used as alt. Use only in case the avatar is used alone.

@@ -136,8 +136,13 @@ export default {
 .oc-select {
   background-image: none !important;
   line-height: 24px !important;
+  color: var(--oc-color-input-text-default);
 
   .vs {
+    &__search,
+    &__selected {
+      color: var(--oc-color-input-text-default);
+    }
     &__search::placeholder,
     &__dropdown-toggle,
     &__dropdown-menu {
@@ -152,10 +157,12 @@ export default {
     }
 
     &__dropdown-option {
+      color: var(--oc-color-input-text-default);
       white-space: normal;
 
       &--highlight {
         background: var(--oc-color-input-text-default);
+        color: var(--oc-color-text-inverse);
       }
     }
 
