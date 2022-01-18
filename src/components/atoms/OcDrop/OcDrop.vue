@@ -5,7 +5,7 @@
     class="oc-drop oc-box-shadow-medium rounded"
     @click="$_ocDrop_close"
   >
-    <div v-if="$slots.default" :class="['oc-card', 'oc-card-body', 'rounded' , paddingClass]">
+    <div v-if="$slots.default" :class="['oc-card', 'oc-card-body', 'oc-drop-rounded' , paddingClass]">
       <slot />
     </div>
     <slot v-else name="special" />
@@ -206,7 +206,7 @@ export default {
   }
 }
 
-.rounded {
+.oc-drop-rounded {
   border-radius: 5px;
 }
 
