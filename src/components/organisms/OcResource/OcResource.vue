@@ -8,7 +8,7 @@
       width="40"
       height="40"
     />
-    <oc-icon v-else key="resource-icon" :name="resource.icon" size="large" />
+    <oc-icon v-else key="resource-icon" :name="resource.icon" :color="resource.iconColor" size="large" />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
@@ -343,6 +343,7 @@ export default {
             name: "Documents",
             path: "/Documents",
             icon: "folder",
+            iconColor: "#2C65FF",
             indicators: [],
             type: "folder"
           }
@@ -352,7 +353,8 @@ export default {
             name: "notes.txt",
             extension: "txt",
             path: "Documents/notes.txt",
-            icon: "text",
+            icon: "file-word-2",
+            iconColor: "#FF6F00",
             indicators: this.indicators,
             type: "file"
           }
@@ -362,7 +364,7 @@ export default {
             name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
             extension: "jpg",
             path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
-            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://picsum.photos/200/300",
             indicators: [],
             type: "file",
             opensInNewWindow: true,
