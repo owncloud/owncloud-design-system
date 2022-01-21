@@ -15,6 +15,7 @@
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
+      :style="color !== '' ? { 'fill': color } : {}"
     />
   </component>
 </template>
@@ -137,6 +138,14 @@ export default {
       validator: value => {
         return value.match(/(passive|primary|danger|success|warning|inverse)/)
       },
+    },
+    /**
+     * Overwrite the color of the icon.
+     */
+    color: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
   computed: {
