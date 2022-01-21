@@ -46,3 +46,29 @@ export default {
   }
 }
 </style>
+
+<docs>
+```js
+<h3>Example list</h3>
+<oc-list>
+  <li>
+      <oc-icon name="user" fill-type="line" />
+      <a href="https://google.de">
+        Profile
+      </a>
+  </li>
+  <li>
+      <oc-icon name="link" fill-type="line" />
+      <a href="https://google.de">
+        Links
+      </a>
+  </li>
+  <li>
+      <oc-icon name="file" fill-type="line" />
+      <a href="https://google.de">
+        Dateien
+      </a>
+  </li>
+</oc-list>
+```
+</docs>
