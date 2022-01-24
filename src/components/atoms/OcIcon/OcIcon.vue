@@ -16,6 +16,7 @@
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
       :style="color !== '' ? { 'fill': color } : {}"
+      :class="{ 'overwrite-svg-color': color !== '' }"
     />
   </component>
 </template>
@@ -98,7 +99,7 @@ export default {
       required: false,
       default: "fill",
       validator: value => {
-        return value.match(/(fill|line|none)/)
+        return value.match(/(fill|line|solid|none)/)
       },
     },
     /**
@@ -201,6 +202,10 @@ export default {
   svg {
     display: block;
     fill: var(--oc-color-swatch-passive-default);
+  }
+
+  .overwrite-svg-color path {
+    fill: inherit;
   }
 
   &,
