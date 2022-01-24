@@ -8,7 +8,7 @@
       width="40"
       height="40"
     />
-    <oc-icon v-else key="resource-icon" :name="resource.icon" :color="resource.iconColor" size="large" />
+    <oc-icon v-else key="resource-icon" :name="resource.icon" :color="resource.iconColor" :fill-type="resource.iconFillType ? resource.iconFillType : 'fill'" size="large" />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
