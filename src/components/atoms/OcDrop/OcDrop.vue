@@ -1,6 +1,15 @@
 <template>
-  <div :id="dropId" ref="drop" class="oc-drop oc-box-shadow-medium" @click="$_ocDrop_close">
-    <div v-if="$slots.default" class="oc-card oc-card-body" :class="paddingClass">
+  <div
+    :id="dropId"
+    ref="drop"
+    class="oc-drop oc-box-shadow-medium oc-drop-rounded"
+    style="box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12)"
+    @click="$_ocDrop_close"
+  >
+    <div
+      v-if="$slots.default"
+      :class="['oc-card', 'oc-card-body', 'oc-drop-rounded', paddingClass]"
+    >
       <slot />
     </div>
     <slot v-else name="special" />
@@ -199,6 +208,10 @@ export default {
   .tippy-content {
     padding: 0;
   }
+}
+
+.oc-drop-rounded {
+  border-radius: 5px;
 }
 
 .oc-drop {
