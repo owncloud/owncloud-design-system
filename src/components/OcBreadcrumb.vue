@@ -143,12 +143,16 @@ export default {
 
     > :last-child > span {
       color: var(--oc-color-text-default);
+
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     > li a:hover,
     > li span:hover,
     > li button:hover {
-      color: var(--oc-color-swatch-primary-default);
+      color: var(--oc-color-text-default);
     }
   }
 
