@@ -1,5 +1,4 @@
 import { shallowMount } from "@vue/test-utils"
-import CompressionPlugin from "compression-webpack-plugin"
 import Sidebar from "./OcSidebarNav.vue"
 
 const defaultProps = {

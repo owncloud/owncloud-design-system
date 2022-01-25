@@ -71,7 +71,7 @@ export default {
   padding: var(--oc-space-large) 0 var(--oc-space-medium);
   width: var(--oc-size-width-medium);
 
-  &-figure {
+  &-header {
     margin-bottom: var(--oc-space-xxlarge);
     padding: 0 var(--oc-space-medium);
   }
