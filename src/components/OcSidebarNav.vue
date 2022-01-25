@@ -5,14 +5,14 @@
     :class="[data.staticClass, data.class]"
     v-bind="data.attrs"
   >
-    <header
+    <figure
       v-if="slots().header"
       class="oc-sidebar-header"
       :aria-label="props.accessibleLabelHeader"
     >
       <!-- @slot Header of the sidebar -->
       <slot name="header" />
-    </header>
+    </figure>
     <nav v-if="slots().nav" class="oc-sidebar-nav" :aria-label="props.accessibleLabelNav">
       <!-- @slot Main content of the sidebar -->
       <slot name="nav" />
