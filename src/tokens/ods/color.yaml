@@ -30,7 +30,7 @@ color:
       hover:
         value: rgb(128, 167, 215)
       muted:
-        value: rgb(44, 88, 142)
+        value: rgb(8, 105, 222)
       gradient:
         value: rgb(78, 133, 200)
     success:
