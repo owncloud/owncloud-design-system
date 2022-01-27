@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - OcNotification positioning: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
 * Bugfix - Rename GhostElement: [#1845](https://github.com/owncloud/owncloud-design-system/pull/1845)
 * Bugfix - OcTooltip isn't reactive: [#1863](https://github.com/owncloud/owncloud-design-system/pull/1863)
+* Change - Drop Internet Explorer support: [#1909](https://github.com/owncloud/owncloud-design-system/pull/1909)
 * Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
 * Change - Remove OcAppSideBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Change - Remove OcAppBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
@@ -54,6 +55,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    reactivated with some value.
 
    https://github.com/owncloud/owncloud-design-system/pull/1863
+
+
+* Change - Drop Internet Explorer support: [#1909](https://github.com/owncloud/owncloud-design-system/pull/1909)
+
+   Since it's nearing its end-of-life, we've dropped polyfills for IE in favor of a smaller bundle
+   size.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1909
 
 
 * Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
