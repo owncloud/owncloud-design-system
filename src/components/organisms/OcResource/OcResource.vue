@@ -342,7 +342,7 @@ export default {
           return {
             name: "Documents",
             path: "/Documents",
-            icon: "folder",
+            icon: "resource-type-folder",
             iconColor: "#2C65FF",
             indicators: [],
             type: "folder"
@@ -353,7 +353,7 @@ export default {
             name: "notes.txt",
             extension: "txt",
             path: "Documents/notes.txt",
-            icon: "file-word-2",
+            icon: "resource-type-powerpoint",
             iconColor: "#FF6F00",
             indicators: this.indicators,
             type: "file"

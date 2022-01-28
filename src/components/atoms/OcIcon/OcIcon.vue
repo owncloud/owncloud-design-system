@@ -16,7 +16,6 @@
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
       :style="color !== '' ? { 'fill': color } : {}"
-      :class="{ 'overwrite-svg-color': color !== '' }"
     />
   </component>
 </template>
@@ -99,7 +98,7 @@ export default {
       required: false,
       default: "fill",
       validator: value => {
-        return value.match(/(fill|line|solid|none)/)
+        return value.match(/(fill|line|none)/)
       },
     },
     /**
@@ -204,10 +203,6 @@ export default {
     fill: var(--oc-color-swatch-passive-default);
   }
 
-  .overwrite-svg-color path {
-    fill: inherit;
-  }
-
   &,
   > svg {
     @include oc-icon-size(1);
@@ -304,10 +299,9 @@ export default {
       Hover over the icons to see the effect of accessible labels
     </h3>
     <oc-icon size="large" name="account-circle" accessible-label="Account"/>
-    <oc-icon size="large" name="account-circle"/>
 
     <h3 class="oc-heading-divider">
-      Icon color variations
+      Default Icon color variations
     </h3>
     <oc-table-simple :hover="true">
       <oc-thead>
@@ -328,6 +322,11 @@ export default {
         </oc-tr>
       </oc-tbody>
     </oc-table-simple>
+
+    <h3 class="oc-heading-divider">
+      If needed, you can pass custom colors to your Icon
+    </h3>
+    <oc-icon size="large" name="account-circle" color="lime"/>
 
     <h3 class="oc-heading-divider">
       Icon sizes
