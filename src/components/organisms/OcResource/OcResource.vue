@@ -84,7 +84,7 @@ export default {
   components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName },
   props: {
     /**
-     * The resources folder link
+     * The resource folder link
      */
     folderLink: {
       type: Object,
