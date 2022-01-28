@@ -85,6 +85,13 @@ export default {
   components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName, OcResourceIcon },
   props: {
     /**
+     * The resources folder link
+     */
+    folderLink: {
+      type: Object,
+      required: false,
+    },
+    /**
      * The resource to be displayed
      */
     resource: {
@@ -205,23 +212,6 @@ export default {
 
     isRouterLink() {
       return this.isResourceClickable && this.isFolder
-    },
-
-    folderLink() {
-      if (this.targetRoute === null) {
-        return null
-      }
-
-      const path = this.resource.path.replace(/^\//, "")
-
-      return {
-        name: this.targetRoute.name,
-        query: this.targetRoute.query,
-        params: {
-          item: path,
-          ...this.targetRoute.params,
-        },
-      }
     },
 
     componentProps() {
