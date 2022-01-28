@@ -24,8 +24,7 @@ const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
 /**
  * All known icons in ownCloud Design System
  * <p>
- *  Icons made by Remixicon from
- *  <a href="https://remixicon.com/">www.remixicon.com</a>
+ *  Icons made by <a href="https://remixicon.com/">Remixicon</a> and, in the case of the `resource-type-*` icons, <a href="https://fontawesome.com/">Font Awesome</a> (available under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license).
  * </p>
  */
 export default {
