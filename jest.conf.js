@@ -12,8 +12,8 @@ module.exports = {
   transform: {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
     ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
-    "^.+\\.svg$": "jest-svg-transformer",
   },
+  testEnvironment: "jsdom",
   setupFiles: ["./jest.setup.js", "./jest.overrides.js"],
   snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
   coverageDirectory: "<rootDir>/coverage",
