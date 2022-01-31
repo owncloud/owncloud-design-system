@@ -37,7 +37,7 @@ def build_stages(ctx):
             "name": "dependencies",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn install",
+                "yarn install --immutable",
             ],
             "depends_on": ["clone"],
         },
