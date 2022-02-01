@@ -1,5 +1,5 @@
 <template>
-  <oc-icon :key="`resource-icon-${iconName}`" :name="iconName" :color="iconColor" :size="large" />
+  <oc-icon :key="`resource-icon-${iconName}`" :name="iconName" :color="iconColor" :size="size" />
 </template>
 
 <script>
