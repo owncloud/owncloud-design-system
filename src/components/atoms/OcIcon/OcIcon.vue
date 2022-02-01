@@ -202,11 +202,7 @@ export default {
     display: block;
     fill: var(--oc-color-swatch-passive-default);
   }
-
-  .overwrite-svg-color path {
-    fill: inherit;
-  }
-
+  
   &,
   > svg {
     @include oc-icon-size(1);
