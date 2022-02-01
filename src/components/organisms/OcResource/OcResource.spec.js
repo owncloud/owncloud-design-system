@@ -8,7 +8,7 @@ const fileResource = {
   thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
   indicators: [],
   type: "file",
-  extension: "jpg"
+  extension: "jpg",
 }
 const folderResource = {
   name: "Documents",

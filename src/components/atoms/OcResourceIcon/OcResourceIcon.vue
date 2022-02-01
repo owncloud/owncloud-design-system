@@ -7,7 +7,6 @@ import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import iconNameMap from "../../../helpers/resourceIconExtensionMapping"
 import iconColorMap from "../../../helpers/resourceIconColorExtensionMapping"
 
-
 const defaultFolderColor = "var(--oc-color-icon-folder)"
 const defaultFolderIcon = "folder"
 const defaultFallbackIconColor = "var(--oc-color-text-default)"
@@ -40,12 +39,12 @@ export default {
   },
   computed: {
     iconName() {
-      if(this.isFolder) return defaultFolderIcon
+      if (this.isFolder) return defaultFolderIcon
       const icon = iconNameMap[this.extension]
       return `resource-type-${icon ? icon : defaultFallbackIcon}`
     },
     iconColor() {
-			if(this.isFolder) return defaultFolderColor
+      if (this.isFolder) return defaultFolderColor
       const color = iconColorMap[this.extension]
       return color ? color : defaultFallbackIconColor
     },
