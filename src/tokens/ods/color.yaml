@@ -104,7 +104,7 @@ color:
       value: rgb(240, 244, 248)
   icon:
     folder:
-      value: 
+      value: rgb(44, 101, 255)
     archive:
       value: rgb(255, 207, 1)
     file:

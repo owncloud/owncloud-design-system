@@ -8,7 +8,7 @@ import iconNameMap from "../../../helpers/resourceIconExtensionMapping"
 import iconColorMap from "../../../helpers/resourceIconColorExtensionMapping"
 
 
-const defaultFolderColor = "rgb(44, 101, 255)"
+const defaultFolderColor = "var(--oc-color-icon-folder)"
 const defaultFolderIcon = "folder"
 const defaultFallbackIconColor = "var(--oc-color-text-default)"
 const defaultFallbackIcon = "file"
@@ -19,10 +19,17 @@ export default {
   release: "12.0.0",
   components: { OcIcon },
   props: {
+    /**
+     * The resource to be displayed
+     */
     resource: {
       type: Object,
       required: true,
     },
+    /**
+     * The size of the icon. Defaults to small.
+     * `xsmall, small, medium, large, xlarge, xxlarge`
+     */
     size: {
       type: String,
       default: "large",
