@@ -1,55 +1,60 @@
 <template>
-	<oc-icon 
-		key="resource-icon" 
-		:name="resource.icon"
-		:color="resource.iconColor"
-		size="large" />
+  <oc-icon key="resource-icon" :name="iconName" :color="iconColor" size="large" />
 </template>
 
 <script>
-import path from 'path'
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
-import iconExtensionMapping from "../../../helpers/resourceIconExtensionMapping"
-import iconColorExtensionMapping from "../../../helpers/resourceIconColorExtensionMapping"
+import iconNameMap from "../../../helpers/resourceIconExtensionMapping"
+import iconColorMap from "../../../helpers/resourceIconColorExtensionMapping"
 
 export default {
-	name: "OcResourceIcon",
+  name: "OcResourceIcon",
   status: "ready",
   release: "12.0.0",
-	components: { OcIcon },
-	props: { 
-		resource: {
-			type: Object,
-			required: true,
+  components: { OcIcon },
+  props: {
+    resource: {
+      type: Object,
+      required: true,
+    },
+    defaultFallbackIcon: {
+      type: String,
+      required: false,
+      default: "file",
+    },
+    defaultFallbackIconColor: {
+      type: String,
+      required: false,
+      default: "var(--oc-color-text-default)",
+    },
+    defaultFolderIcon: {
+      type: String,
+      required: false,
+      default: "folder",
+    },
+		defaultFolderColor: {
+			type: String,
+      required: false,
+      default: "rgb(44, 101, 255)",
 		}
-	},
-	computed: {
-		extensionName() {
-			return this.getFileExtension(this.resource.name)
-		},
-		iconName() {
-			const icon = iconExtensionMapping[this.extensionName.toLowerCase()]
-			if (icon) {
-				return `resource-type-${icon}`
-			}
-			return 'resource-type-file'
-		},
-		iconColor() {
-			const color = iconColorExtensionMapping[this.extensionName.toLowerCase()]
-			if (color) {
-				return color
-			}
-			return 'var(--oc-color-text-default)'
-		}
-	},
-	methods: {
-		getFileExtension(name) {
-			const extension = path.extname(name)
-			if (!extension) {
-				return ''
-			}
-			return extension.replace(/^(.)/, '')
-		}
-	}
+  },
+  computed: {
+    iconName() {
+      if(this.isFolder) return this.defaultFolderIcon
+      const icon = iconNameMap[this.extension]
+      return `resource-type-${icon ? icon : this.defaultFallbackIcon}`
+    },
+    iconColor() {
+			if(this.isFolder) return this.defaultFolderColor
+      const color = iconColorMap[this.extension]
+      return color ? color : this.defaultFallbackIconColor
+    },
+    isFolder() {
+      return this.resource.type === "folder"
+    },
+    extension() {
+      return this.resource.extension.toLowerCase()
+    },
+  },
 }
 </script>

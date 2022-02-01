@@ -15,7 +15,7 @@
       :aria-hidden="accessibleLabel === '' ? 'true' : null"
       :aria-labelledby="accessibleLabel === '' ? null : svgTitleId"
       :focusable="accessibleLabel === '' ? 'false' : null"
-      :style="color !== '' ? { 'fill': color } : {}"
+      :style="color !== '' ? { fill: color } : {}"
     />
   </component>
 </template>
