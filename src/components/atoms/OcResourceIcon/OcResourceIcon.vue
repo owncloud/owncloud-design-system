@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import path from 'path'
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import iconExtensionMapping from "../../../helpers/resourceIconExtensionMapping"
 import iconColorExtensionMapping from "../../../helpers/resourceIconColorExtensionMapping"
@@ -14,7 +15,7 @@ import iconColorExtensionMapping from "../../../helpers/resourceIconColorExtensi
 export default {
 	name: "OcResourceIcon",
   status: "ready",
-  release: "2.1.0",
+  release: "12.0.0",
 	components: { OcIcon },
 	props: { 
 		resource: {
@@ -23,31 +24,31 @@ export default {
 		}
 	},
 	computed: {
-		iconName() {
-			return this.getResourceIcon(this.resource.icon);
+		extensionName() {
+			return this.getFileExtension(this.resource.name)
 		},
-		iconColor() {
-			return this.getResourceIconColor(this.resource.iconColor);
-		}
-	},
-	methods: {
-		getResourceIcon(extension) {
-			const icon = iconExtensionMapping[extension.toLowerCase()]
-
+		iconName() {
+			const icon = iconExtensionMapping[this.extensionName.toLowerCase()]
 			if (icon) {
 				return `resource-type-${icon}`
 			}
-
 			return 'resource-type-file'
 		},
-		getResourceIconColor(extension) {
-			const color = iconColorExtensionMapping[extension.toLowerCase()]
-
+		iconColor() {
+			const color = iconColorExtensionMapping[this.extensionName.toLowerCase()]
 			if (color) {
 				return color
 			}
-
 			return 'var(--oc-color-text-default)'
+		}
+	},
+	methods: {
+		getFileExtension(name) {
+			const extension = path.extname(name)
+			if (!extension) {
+				return ''
+			}
+			return extension.replace(/^(.)/, '')
 		}
 	}
 }
