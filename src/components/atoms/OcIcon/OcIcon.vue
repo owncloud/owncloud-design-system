@@ -202,7 +202,7 @@ export default {
     display: block;
     fill: var(--oc-color-swatch-passive-default);
   }
-  
+
   &,
   > svg {
     @include oc-icon-size(1);
