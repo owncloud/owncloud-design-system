@@ -26,6 +26,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Make OcDrop rounded: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
 * Enhancement - Improve OcList: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
 * Enhancement - Show path / parent folder to distinguish files: [#5953](https://github.com/owncloud/web/issues/5953)
+* Enhancement - Redesign Filetype icons: [#6278](https://github.com/owncloud/web/issues/6278)
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
 * Enhancement - Sizes: [#1858](https://github.com/owncloud/owncloud-design-system/pull/1858)
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
@@ -211,6 +212,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/5953
    https://github.com/owncloud/owncloud-design-system/pull/1860
    https://github.com/owncloud/owncloud-design-system/pull/1871
+
+
+* Enhancement - Redesign Filetype icons: [#6278](https://github.com/owncloud/web/issues/6278)
+
+   We've adjusted the resource icons to fit the redesign. We've added a new OcResourceIcon
+   component that is themable.
+
+   https://github.com/owncloud/web/issues/6278
+   https://github.com/owncloud/owncloud-design-system/pull/1900
 
 
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
