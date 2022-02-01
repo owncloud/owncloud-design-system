@@ -113,15 +113,15 @@ color:
       value: "{color.text.default.value}"
     text:
       value: "{color.text.default.value}"
-    excel:
+    spreadsheet:
       value: rgb(0, 182, 87)
-    word:
+    document:
       value: rgb(44, 101, 255)
     video:
       value: rgb(0, 187, 219)
     audio:
       value: rgb(208, 67, 236)
-    powerpoint:
+    presentation:
       value: rgb(255, 64, 6)
     pdf:
       value: rgb(225, 5, 14)
