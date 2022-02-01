@@ -8,7 +8,7 @@
       width="40"
       height="40"
     />
-    <oc-icon v-else key="resource-icon" :name="resource.icon" :color="resource.iconColor" :fill-type="resource.iconFillType ? resource.iconFillType : 'fill'" size="large" />
+    <oc-resource-icon :resource="resource"></oc-resource-icon>
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
@@ -71,6 +71,7 @@ import OcImg from "../../atoms/OcImage/OcImage.vue"
 import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndicators.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
+import OcResourceIcon from "../../atoms/OcResourceIcon/OcResourceIcon.vue"
 import uniqueId from "../../../utils/uniqueId"
 import * as path from "path"
 
@@ -81,7 +82,7 @@ export default {
   name: "OcResource",
   status: "ready",
   release: "2.1.0",
-  components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName },
+  components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName, OcResourceIcon },
   props: {
     /**
      * The resource to be displayed

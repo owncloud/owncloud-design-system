@@ -102,3 +102,27 @@ color:
       value: rgb(206, 221, 238)
     bg:
       value: rgb(240, 244, 248)
+  icon:
+    archive:
+      value: rgb(255, 207, 1)
+    file:
+      value: "{color.text.default.value}"
+    image:
+      value: rgb(255, 111, 0)
+    code:
+      value: "{color.text.default.value}"
+    text:
+      value: "{color.text.default.value}"
+    excel:
+      value: rgb(0, 182, 87)
+    word:
+      value: rgb(44, 101, 255)
+    video:
+      value: rgb(0, 187, 219)
+    audio:
+      value: rgb(208, 67, 236)
+    powerpoint:
+      value: rgb(255, 64, 6)
+    pdf:
+      value: rgb(225, 5, 14)
+    
