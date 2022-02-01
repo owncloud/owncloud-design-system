@@ -98,7 +98,7 @@ export default {
       required: false,
       default: "fill",
       validator: value => {
-        return value.match(/(fill|line|solid|none)/)
+        return value.match(/(fill|line|none)/)
       },
     },
     /**
