@@ -30,7 +30,7 @@ color:
       hover:
         value: rgb(128, 167, 215)
       muted:
-        value: rgb(44, 88, 142)
+        value: rgb(8, 105, 222)
       gradient:
         value: rgb(78, 133, 200)
     success:
@@ -102,3 +102,29 @@ color:
       value: rgb(206, 221, 238)
     bg:
       value: rgb(240, 244, 248)
+  icon:
+    folder:
+      value: rgb(44, 101, 255)
+    archive:
+      value: rgb(255, 207, 1)
+    file:
+      value: "{color.text.default.value}"
+    image:
+      value: rgb(255, 111, 0)
+    code:
+      value: "{color.text.default.value}"
+    text:
+      value: "{color.text.default.value}"
+    spreadsheet:
+      value: rgb(0, 182, 87)
+    document:
+      value: rgb(44, 101, 255)
+    video:
+      value: rgb(0, 187, 219)
+    audio:
+      value: rgb(208, 67, 236)
+    presentation:
+      value: rgb(255, 64, 6)
+    pdf:
+      value: rgb(225, 5, 14)
+    

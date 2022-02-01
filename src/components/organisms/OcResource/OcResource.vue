@@ -8,7 +8,7 @@
       width="40"
       height="40"
     />
-    <oc-icon v-else key="resource-icon" :name="resource.icon" size="large" />
+    <oc-resource-icon v-else :resource="resource" />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
@@ -71,6 +71,7 @@ import OcImg from "../../atoms/OcImage/OcImage.vue"
 import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndicators.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
+import OcResourceIcon from "../../atoms/OcResourceIcon/OcResourceIcon.vue"
 import uniqueId from "../../../utils/uniqueId"
 import * as path from "path"
 
@@ -81,7 +82,7 @@ export default {
   name: "OcResource",
   status: "ready",
   release: "2.1.0",
-  components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName },
+  components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName, OcResourceIcon },
   props: {
     /**
      * The resource to be displayed
@@ -342,7 +343,6 @@ export default {
           return {
             name: "Documents",
             path: "/Documents",
-            icon: "folder",
             indicators: [],
             type: "folder"
           }
@@ -352,7 +352,6 @@ export default {
             name: "notes.txt",
             extension: "txt",
             path: "Documents/notes.txt",
-            icon: "text",
             indicators: this.indicators,
             type: "file"
           }
@@ -362,7 +361,7 @@ export default {
             name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
             extension: "jpg",
             path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
-            thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
+            thumbnail: "https://picsum.photos/200/300",
             indicators: [],
             type: "file",
             opensInNewWindow: true,
