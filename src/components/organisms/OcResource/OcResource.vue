@@ -8,7 +8,7 @@
       width="40"
       height="40"
     />
-    <oc-resource-icon :resource="resource"></oc-resource-icon>
+    <oc-resource-icon v-else :resource="resource" />
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
@@ -343,8 +343,6 @@ export default {
           return {
             name: "Documents",
             path: "/Documents",
-            icon: "resource-type-folder",
-            iconColor: "#2C65FF",
             indicators: [],
             type: "folder"
           }
@@ -354,8 +352,6 @@ export default {
             name: "notes.txt",
             extension: "txt",
             path: "Documents/notes.txt",
-            icon: "resource-type-powerpoint",
-            iconColor: "#FF6F00",
             indicators: this.indicators,
             type: "file"
           }
