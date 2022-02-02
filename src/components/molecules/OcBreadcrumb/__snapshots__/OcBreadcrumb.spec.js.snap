@@ -28,7 +28,7 @@ exports[`OcBreadcrumb displays all items 1`] = `
   <div class="oc-breadcrumb-drop"><label tabindex="0" class="oc-breadcrumb-drop-label"><span aria-current="page" class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
       <oc-icon-stub name="expand_more" filltype="fill" accessiblelabel="Expand more" type="span" size="medium" variation="passive" color="" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
     </label>
-    <oc-drop-stub dropid="oc-drop-2" toggle="" position="bottom-start" mode="click" paddingsize="medium" options="[object Object]">
+    <oc-drop-stub dropid="oc-drop-2" toggle="" position="bottom-start" mode="click" paddingsize="medium">
       <ol>
         <li>
           <router-link-stub tag="a" to="[object Object]">
@@ -79,7 +79,7 @@ exports[`OcBreadcrumb sets correct variation 1`] = `
   <div class="oc-breadcrumb-drop"><label tabindex="0" class="oc-breadcrumb-drop-label"><span aria-current="page" class="oc-breadcrumb-drop-label-text">Deeper ellipsize in responsive mode</span>
       <oc-icon-stub name="expand_more" filltype="fill" accessiblelabel="Expand more" type="span" size="medium" variation="passive" color="" class="oc-breadcrumb-drop-label-icon"></oc-icon-stub>
     </label>
-    <oc-drop-stub dropid="oc-drop-1" toggle="" position="bottom-start" mode="click" paddingsize="medium" options="[object Object]">
+    <oc-drop-stub dropid="oc-drop-1" toggle="" position="bottom-start" mode="click" paddingsize="medium">
       <ol>
         <li>
           <router-link-stub tag="a" to="[object Object]">
