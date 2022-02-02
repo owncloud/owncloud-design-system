@@ -1,5 +1,5 @@
 <template>
-  <oc-icon :key="`resource-icon-${iconName}`" :name="iconName" :color="iconColor" :size="size" />
+  <oc-icon :key="`resource-icon-${iconName}`" :class="[ 'oc-resource-icon', { 'oc-resource-icon-files': !isFolder }]" :name="iconName" :color="iconColor" :size="size" />
 </template>
 
 <script>
@@ -57,3 +57,15 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.oc-resource-icon {
+  display: flex;
+  align-items: center;
+  &-files svg{
+    width: 36px;
+    height: 25px;
+    max-width: 36px;
+    max-height: 25px;
+  }
+}
+</style>
