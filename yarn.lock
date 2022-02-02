@@ -12892,9 +12892,9 @@ uuid@^8.3.2:
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v-calendar@^2.3.2:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/v-calendar/-/v-calendar-2.3.4.tgz#3615602adf07764cb9b8e5cfb7f780015751c839"
-  integrity sha512-jH9cCuryt7++LWkHE4zvkqORQYUmmfLwhYxaDzndTrd3hWyLtm3WGyfanc++PEqchTkPP31VewFTXqlSf3Gk7Q==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/v-calendar/-/v-calendar-2.4.0.tgz#98e4f02287b7b73c2b4a6523962d8a07700c4dda"
+  integrity sha512-TvdtRxX/AopiXrHrwtg1ZKoLS3V35aA7lQqE79xpfavVuv3LPsBsSq2JQ2n/slIAiofU1txhxWP9uJQhlSbQkg==
   dependencies:
     core-js "^3.15.2"
     date-fns "^2.22.1"
