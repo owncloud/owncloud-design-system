@@ -8,7 +8,7 @@
   >
     <div
       v-if="$slots.default"
-      :class="['oc-card', 'oc-card-body', 'oc-drop-rounded', paddingClass]"
+      :class="['oc-card oc-card-body oc-rounded oc-background-muted', paddingClass]"
     >
       <slot />
     </div>
@@ -208,10 +208,6 @@ export default {
   .tippy-content {
     padding: 0;
   }
-}
-
-.oc-drop-rounded {
-  border-radius: 5px;
 }
 
 .oc-drop {

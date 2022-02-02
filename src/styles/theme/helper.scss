@@ -81,3 +81,27 @@ hr {
   overflow: visible;
   text-align: inherit;
 }
+
+.oc-rounded {
+  border-radius: 5px;
+}
+
+.oc-rounded-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.oc-rounded-bottom {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.oc-rounded-left {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.oc-rounded-right {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}

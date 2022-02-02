@@ -56,7 +56,7 @@
           :accessible-label="$gettext('Expand more')"
         />
       </label>
-      <oc-drop v-if="dropdownItems" :options="{ offset: 20 }">
+      <oc-drop v-if="dropdownItems">
         <ol>
           <li v-for="(item, index) in dropdownItems" :key="index">
             <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
