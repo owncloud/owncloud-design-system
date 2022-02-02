@@ -25,6 +25,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Enhancement - Add option to render table cells lazy: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
 * Enhancement - Make OcDrop rounded: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
+* Enhancement - Change background color of OcDrop: [#1919](https://github.com/owncloud/owncloud-design-system/pull/1919)
 * Enhancement - Improve OcList: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
 * Enhancement - Show path / parent folder to distinguish files: [#5953](https://github.com/owncloud/web/issues/5953)
 * Enhancement - Redesign Filetype icons: [#6278](https://github.com/owncloud/web/issues/6278)
@@ -204,6 +205,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've added a border-radius for the OcDrop to make it rounded.
 
    https://github.com/owncloud/owncloud-design-system/pull/1881
+
+
+* Enhancement - Change background color of OcDrop: [#1919](https://github.com/owncloud/owncloud-design-system/pull/1919)
+
+   The OcDrop component now has a different background color than the default color to improve the
+   contrast.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1919
 
 
 * Enhancement - Improve OcList: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
