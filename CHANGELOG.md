@@ -21,6 +21,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove unused props for unstyled components: [#1795](https://github.com/owncloud/owncloud-design-system/pull/1795)
 * Change - Use remixicons for redesign: [#1826](https://github.com/owncloud/owncloud-design-system/pull/1826)
 * Enhancement - Make Vue-Composition-API available: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
+* Enhancement - Export mappings of types, icons and colors of resources: [#1920](https://github.com/owncloud/owncloud-design-system/pull/1920)
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Enhancement - Add option to render table cells lazy: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
 * Enhancement - Make OcDrop rounded: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
@@ -164,6 +165,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    `https://github.com/vuejs/composition-api` can be used.
 
    https://github.com/owncloud/owncloud-design-system/pull/1848
+
+
+* Enhancement - Export mappings of types, icons and colors of resources: [#1920](https://github.com/owncloud/owncloud-design-system/pull/1920)
+
+   The bundled design system now contains two json files that map file extensions to their
+   dedicated resource icon and the corresponding color token.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1920
 
 
 * Enhancement - Fix OcAvatar line-height: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
