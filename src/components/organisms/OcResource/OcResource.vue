@@ -90,6 +90,16 @@ export default {
     folderLink: {
       type: Object,
       required: false,
+      default: null,
+    },
+
+    /**
+     * The resource parent folder link path
+     */
+    parentFolderLinkPath: {
+      type: Object,
+      required: false,
+      default: null,
     },
     /**
      * The resource to be displayed
@@ -162,7 +172,7 @@ export default {
   },
   computed: {
     parentFolderComponentType() {
-      return this.targetRoute !== null ? "router-link" : "span"
+      return this.parentFolderLinkPath !== null ? "router-link" : "span"
     },
 
     parentFolder() {
@@ -171,23 +181,9 @@ export default {
     },
 
     parentFolderStyle() {
-      const hasLinkTarget = this.targetRoute !== null
+      const hasLinkTarget = this.parentFolderLinkPath !== null
       return {
         cursor: hasLinkTarget ? "pointer" : "default",
-      }
-    },
-
-    parentFolderLinkPath() {
-      if (this.targetRoute === null) {
-        return {}
-      }
-      return {
-        name: this.targetRoute.name,
-        query: this.targetRoute.query,
-        params: {
-          item: path.dirname(this.resource.path),
-          ...this.targetRoute.params,
-        },
       }
     },
 
@@ -320,13 +316,15 @@ export default {
   ```js
     <template>
       <div>
-        <oc-resource :resource="documents" :targetRoute="targetRoute" class="oc-mb" />
+        <oc-resource :resource="documents" :parent-folder-link-path="parentFolderLinkPath" :is-path-displayed="true" class="oc-mb" />
         <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
         <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
         <oc-resource :resource="forest" :isPathDisplayed="true" />
       </div>
     </template>
     <script>
+    import * as path from "path"
+
     export default {
       computed: {
         documents() {
@@ -374,11 +372,12 @@ export default {
             }
           ]
         },
-        targetRoute() {
+        parentFolderLinkPath() {
           return {
             name: "home",
             params: {
-              action: "copy"
+              action: "copy",
+              item: 'Documents',
             },
             query: {
               resource: "notes"
