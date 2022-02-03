@@ -125,43 +125,6 @@ export default {
       default: true,
     },
     /**
-     * Target route object used to build the link when navigating into a resource.
-     * @values { name, query }
-     */
-    targetRoute: {
-      type: Object,
-      required: false,
-      default: null,
-      validator: value => {
-        if (value === null) {
-          return true
-        }
-
-        if (!Object.prototype.hasOwnProperty.call(value, "name")) {
-          console.error("Target route needs to have a route name")
-
-          return false
-        }
-
-        if (typeof value.name !== "string") {
-          console.error("Target route name needs to be of type String")
-
-          return false
-        }
-
-        if (
-          Object.prototype.hasOwnProperty.call(value, "query") &&
-          typeof value.query !== "object"
-        ) {
-          console.error("Target route query needs to be of type Object")
-
-          return false
-        }
-
-        return true
-      },
-    },
-    /**
      * Asserts whether clicking on the resource name triggers any action
      */
     isResourceClickable: {
