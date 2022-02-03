@@ -206,7 +206,7 @@ export default {
   line-height: inherit;
 
   .tippy-content {
-    padding: 0;
+    padding: var(--oc-space-xsmall);
   }
 }
 
