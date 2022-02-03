@@ -1,5 +1,14 @@
 <template>
-  <oc-icon :key="`resource-icon-${iconName}`" :name="iconName" :color="iconColor" :size="size" />
+  <oc-icon
+    :key="`resource-icon-${iconName}`"
+    :name="iconName"
+    :color="iconColor"
+    :size="size"
+    :class="[
+      'oc-resource-icon',
+      { 'oc-resource-icon-file': !isFolder, 'oc-resource-icon-folder': isFolder },
+    ]"
+  />
 </template>
 
 <script>
@@ -49,7 +58,7 @@ export default {
       return color ? color : defaultFallbackIconColor
     },
     isFolder() {
-      return this.resource.type === "folder"
+      return this.resource.isFolder
     },
     extension() {
       return this.resource.extension.toLowerCase()
@@ -57,3 +66,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.oc-resource-icon {
+  display: inline-flex;
+  align-items: center;
+  &-file svg {
+    height: 75%;
+  }
+}
+</style>
