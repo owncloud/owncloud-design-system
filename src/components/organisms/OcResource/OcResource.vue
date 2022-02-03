@@ -47,7 +47,7 @@
         <component
           :is="parentFolderComponentType"
           v-if="isPathDisplayed"
-          :to="parentFolderLinkPath"
+          :to="parentFolderLink"
           :style="parentFolderStyle"
           class="parent-folder"
           @click.stop
@@ -85,6 +85,23 @@ export default {
   components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName, OcResourceIcon },
   props: {
     /**
+     * The resource folder link
+     */
+    folderLink: {
+      type: Object,
+      required: false,
+      default: null,
+    },
+
+    /**
+     * The resource parent folder link path
+     */
+    parentFolderLink: {
+      type: Object,
+      required: false,
+      default: null,
+    },
+    /**
      * The resource to be displayed
      */
     resource: {
@@ -108,43 +125,6 @@ export default {
       default: true,
     },
     /**
-     * Target route object used to build the link when navigating into a resource.
-     * @values { name, query }
-     */
-    targetRoute: {
-      type: Object,
-      required: false,
-      default: null,
-      validator: value => {
-        if (value === null) {
-          return true
-        }
-
-        if (!Object.prototype.hasOwnProperty.call(value, "name")) {
-          console.error("Target route needs to have a route name")
-
-          return false
-        }
-
-        if (typeof value.name !== "string") {
-          console.error("Target route name needs to be of type String")
-
-          return false
-        }
-
-        if (
-          Object.prototype.hasOwnProperty.call(value, "query") &&
-          typeof value.query !== "object"
-        ) {
-          console.error("Target route query needs to be of type Object")
-
-          return false
-        }
-
-        return true
-      },
-    },
-    /**
      * Asserts whether clicking on the resource name triggers any action
      */
     isResourceClickable: {
@@ -155,7 +135,7 @@ export default {
   },
   computed: {
     parentFolderComponentType() {
-      return this.targetRoute !== null ? "router-link" : "span"
+      return this.parentFolderLink !== null ? "router-link" : "span"
     },
 
     parentFolder() {
@@ -164,23 +144,9 @@ export default {
     },
 
     parentFolderStyle() {
-      const hasLinkTarget = this.targetRoute !== null
+      const hasLinkTarget = this.parentFolderLink !== null
       return {
         cursor: hasLinkTarget ? "pointer" : "default",
-      }
-    },
-
-    parentFolderLinkPath() {
-      if (this.targetRoute === null) {
-        return {}
-      }
-      return {
-        name: this.targetRoute.name,
-        query: this.targetRoute.query,
-        params: {
-          item: path.dirname(this.resource.path),
-          ...this.targetRoute.params,
-        },
       }
     },
 
@@ -205,23 +171,6 @@ export default {
 
     isRouterLink() {
       return this.isResourceClickable && this.isFolder
-    },
-
-    folderLink() {
-      if (this.targetRoute === null) {
-        return null
-      }
-
-      const path = this.resource.path.replace(/^\//, "")
-
-      return {
-        name: this.targetRoute.name,
-        query: this.targetRoute.query,
-        params: {
-          item: path,
-          ...this.targetRoute.params,
-        },
-      }
     },
 
     componentProps() {
@@ -330,7 +279,7 @@ export default {
   ```js
     <template>
       <div>
-        <oc-resource :resource="documents" :targetRoute="targetRoute" class="oc-mb" />
+        <oc-resource :resource="documents" :parent-folder-link="parentFolderLink" class="oc-mb" />
         <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
         <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
         <oc-resource :resource="forest" :isPathDisplayed="true" />
@@ -384,11 +333,12 @@ export default {
             }
           ]
         },
-        targetRoute() {
+        parentFolderLink() {
           return {
             name: "home",
             params: {
-              action: "copy"
+              action: "copy",
+              item: 'Documents',
             },
             query: {
               resource: "notes"

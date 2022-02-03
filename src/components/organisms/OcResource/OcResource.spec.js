@@ -56,4 +56,29 @@ describe("OcResource", () => {
     wrapper.find(".oc-resource-name").trigger("click")
     expect(wrapper.emitted().click).toBeTruthy()
   })
+
+  it("parent folder component type is link if parent folder given", () => {
+    const wrapper = mount(Resource, {
+      propsData: {
+        resource: fileResource,
+        isPathDisplayed: true,
+        parentFolderLink: {},
+      },
+    })
+
+    expect(wrapper.find(".parent-folder").find("a").exists()).toBeTruthy()
+    expect(wrapper.find(".parent-folder").attributes("style")).toEqual("cursor: pointer;")
+  })
+
+  it("parent folder component type is span if parent folder not given", () => {
+    const wrapper = mount(Resource, {
+      propsData: {
+        resource: fileResource,
+        isPathDisplayed: true,
+      },
+    })
+
+    expect(wrapper.find(".parent-folder").find("a").exists()).toBeFalsy()
+    expect(wrapper.find(".parent-folder").attributes("style")).toEqual("cursor: default;")
+  })
 })
