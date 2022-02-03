@@ -47,7 +47,7 @@
         <component
           :is="parentFolderComponentType"
           v-if="isPathDisplayed"
-          :to="parentFolderLinkPath"
+          :to="parentFolderLink"
           :style="parentFolderStyle"
           class="parent-folder"
           @click.stop
@@ -96,7 +96,7 @@ export default {
     /**
      * The resource parent folder link path
      */
-    parentFolderLinkPath: {
+    parentFolderLink: {
       type: Object,
       required: false,
       default: null,
@@ -172,7 +172,7 @@ export default {
   },
   computed: {
     parentFolderComponentType() {
-      return this.parentFolderLinkPath !== null ? "router-link" : "span"
+      return this.parentFolderLink !== null ? "router-link" : "span"
     },
 
     parentFolder() {
@@ -181,7 +181,7 @@ export default {
     },
 
     parentFolderStyle() {
-      const hasLinkTarget = this.parentFolderLinkPath !== null
+      const hasLinkTarget = this.parentFolderLink !== null
       return {
         cursor: hasLinkTarget ? "pointer" : "default",
       }
@@ -316,15 +316,13 @@ export default {
   ```js
     <template>
       <div>
-        <oc-resource :resource="documents" :parent-folder-link-path="parentFolderLinkPath" :is-path-displayed="true" class="oc-mb" />
+        <oc-resource :resource="documents" :parent-folder-link="parentFolderLink" class="oc-mb" />
         <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
         <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
         <oc-resource :resource="forest" :isPathDisplayed="true" />
       </div>
     </template>
     <script>
-    import * as path from "path"
-
     export default {
       computed: {
         documents() {
@@ -372,7 +370,7 @@ export default {
             }
           ]
         },
-        parentFolderLinkPath() {
+        parentFolderLink() {
           return {
             name: "home",
             params: {
