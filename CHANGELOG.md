@@ -32,6 +32,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
 * Enhancement - Sizes: [#1858](https://github.com/owncloud/owncloud-design-system/pull/1858)
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
+* Enhancement - OcTable header alignment: [#1922](https://github.com/owncloud/owncloud-design-system/pull/1922)
 * Enhancement - Use Roboto font: [#1876](https://github.com/owncloud/owncloud-design-system/pull/1876)
 
 ## Details
@@ -260,6 +261,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add svg icon for spaces: [#1846](https://github.com/owncloud/owncloud-design-system/pull/1846)
 
    https://github.com/owncloud/owncloud-design-system/pull/1846
+
+
+* Enhancement - OcTable header alignment: [#1922](https://github.com/owncloud/owncloud-design-system/pull/1922)
+
+   We've applied the full row height to the table header and made it vertically centered to give a
+   more fluffy experience for the eye.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1922
 
 
 * Enhancement - Use Roboto font: [#1876](https://github.com/owncloud/owncloud-design-system/pull/1876)
