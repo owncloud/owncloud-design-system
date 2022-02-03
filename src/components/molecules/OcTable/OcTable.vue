@@ -464,7 +464,7 @@ export default {
     transition: background-color $transition-duration-short ease-in-out;
   }
 
-  tr:not(&-header-row) {
+  tr {
     height: var(--oc-size-height-table-row);
   }
 
