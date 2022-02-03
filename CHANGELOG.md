@@ -6,11 +6,13 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Missing OcDrop shadow: [#1926](https://github.com/owncloud/owncloud-design-system/pull/1926)
 * Bugfix - OcNotification positioning: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
 * Bugfix - Rename GhostElement: [#1845](https://github.com/owncloud/owncloud-design-system/pull/1845)
 * Bugfix - OcTooltip isn't reactive: [#1863](https://github.com/owncloud/owncloud-design-system/pull/1863)
 * Change - Drop Internet Explorer support: [#1909](https://github.com/owncloud/owncloud-design-system/pull/1909)
 * Change - Do not sort in OcTable: [#1825](https://github.com/owncloud/owncloud-design-system/pull/1825)
+* Change - Pass folderLink to OcResource component: [#1913](https://github.com/owncloud/owncloud-design-system/pull/1913)
 * Change - Remove OcAppSideBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Change - Remove OcAppBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
 * Change - Remove implicit ODS registration: [#1848](https://github.com/owncloud/owncloud-design-system/pull/1848)
@@ -36,6 +38,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Use Roboto font: [#1876](https://github.com/owncloud/owncloud-design-system/pull/1876)
 
 ## Details
+
+* Bugfix - Missing OcDrop shadow: [#1926](https://github.com/owncloud/owncloud-design-system/pull/1926)
+
+   In certain situations, other DOM elements made the OcDrop shadow invisible. This has been
+   resolved.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1926
+
 
 * Bugfix - OcNotification positioning: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
 
@@ -78,6 +88,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/1825
    https://github.com/owncloud/owncloud-design-system/pull/1839
    https://github.com/owncloud/web/pull/6136
+
+
+* Change - Pass folderLink to OcResource component: [#1913](https://github.com/owncloud/owncloud-design-system/pull/1913)
+
+   For more flexibility, the folderLink needs to be passed to the OcResource component
+
+   https://github.com/owncloud/owncloud-design-system/pull/1913
 
 
 * Change - Remove OcAppSideBar component: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810)
