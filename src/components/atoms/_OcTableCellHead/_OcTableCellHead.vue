@@ -26,7 +26,7 @@ export default {
     },
     alignV: {
       type: String,
-      default: "bottom",
+      default: "middle",
       validator: alignment => /(top|middle|bottom)/.test(alignment),
     },
     width: {
