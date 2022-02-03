@@ -214,6 +214,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    contrast.
 
    https://github.com/owncloud/owncloud-design-system/pull/1919
+   https://github.com/owncloud/owncloud-design-system/pull/1923
 
 
 * Enhancement - Improve OcList: [#1881](https://github.com/owncloud/owncloud-design-system/pull/1881)
