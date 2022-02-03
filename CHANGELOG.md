@@ -241,6 +241,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6278
    https://github.com/owncloud/owncloud-design-system/pull/1900
+   https://github.com/owncloud/owncloud-design-system/pull/1924
 
 
 * Enhancement - Adjust OcSearchBar to new design: [#1810](https://github.com/owncloud/owncloud-design-system/pull/1810/)
