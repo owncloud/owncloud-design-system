@@ -17,7 +17,7 @@ import iconNameMap from "../../../helpers/resourceIconExtensionMapping"
 import iconColorMap from "../../../helpers/resourceIconColorExtensionMapping"
 
 const defaultFolderColor = "var(--oc-color-icon-folder)"
-const defaultFolderIcon = "folder"
+const defaultFolderIcon = "resource-type-folder"
 const defaultFallbackIconColor = "var(--oc-color-text-default)"
 const defaultFallbackIcon = "file"
 
@@ -72,7 +72,7 @@ export default {
   display: inline-flex;
   align-items: center;
   &-file svg {
-    height: 75%;
+    height: 70%;
   }
 }
 </style>
