@@ -473,7 +473,7 @@ export default {
   }
 
   &-hover tr:not(&-footer-row):hover {
-    background-color: var(--oc-color-input-border);
+    background-color: var(--oc-color-background-accentuate);
   }
 
   &-highlighted {

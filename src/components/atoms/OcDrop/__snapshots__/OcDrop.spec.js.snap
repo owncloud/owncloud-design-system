@@ -37,7 +37,7 @@ exports[`OcDrop tippy renders tippy 1`] = `
           style="box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);"
         >
           <div
-            class="oc-card oc-card-body oc-rounded oc-background-muted oc-p-m"
+            class="oc-card oc-card-body oc-rounded oc-background-highlight oc-p-m"
           >
             show
           </div>
@@ -84,7 +84,7 @@ exports[`OcDrop tippy renders tippy 2`] = `
           style="box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);"
         >
           <div
-            class="oc-card oc-card-body oc-rounded oc-background-muted oc-p-m"
+            class="oc-card oc-card-body oc-rounded oc-background-highlight oc-p-m"
           >
             show
           </div>
@@ -132,7 +132,7 @@ exports[`OcDrop tippy renders tippy 3`] = `
           style="box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);"
         >
           <div
-            class="oc-card oc-card-body oc-rounded oc-background-muted oc-p-m"
+            class="oc-card oc-card-body oc-rounded oc-background-highlight oc-p-m"
           >
             show
           </div>
