@@ -45,6 +45,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    resolved.
 
    https://github.com/owncloud/owncloud-design-system/pull/1926
+   https://github.com/owncloud/owncloud-design-system/pull/1931
 
 
 * Bugfix - OcNotification positioning: [#1658](https://github.com/owncloud/owncloud-design-system/pull/1658)
