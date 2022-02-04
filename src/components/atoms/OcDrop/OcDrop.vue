@@ -2,8 +2,7 @@
   <div
     :id="dropId"
     ref="drop"
-    class="oc-drop oc-box-shadow-medium oc-drop-rounded"
-    style="box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12)"
+    class="oc-drop oc-box-shadow-medium oc-rounded"
     @click="$_ocDrop_close"
   >
     <div
@@ -206,7 +205,8 @@ export default {
   line-height: inherit;
 
   .tippy-content {
-    padding: var(--oc-space-xsmall);
+    // note: needed so that the box shadow from `oc-box-shadow-medium` doesn't get suppressed
+    padding: 8px;
   }
 }
 
