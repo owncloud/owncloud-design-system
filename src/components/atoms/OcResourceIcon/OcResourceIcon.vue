@@ -23,7 +23,7 @@ const defaultFallbackIcon = "file"
 
 export default {
   name: "OcResourceIcon",
-  status: "unreleased",
+  status: "ready",
   release: "12.0.0",
   components: { OcIcon },
   props: {

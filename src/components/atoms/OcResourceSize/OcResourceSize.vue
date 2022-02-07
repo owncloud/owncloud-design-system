@@ -11,8 +11,7 @@ import filesize from "filesize"
 export default {
   name: "OcResourceSize",
   status: "ready",
-  released: "2.1.0",
-
+  release: "2.1.0",
   props: {
     /**
      * Number of bytes to display as a reasonable resource size string.
