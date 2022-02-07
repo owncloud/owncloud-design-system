@@ -11,6 +11,8 @@
  */
 export default {
   name: "OcGhostElement",
+  status: "ready",
+  release: "11.2.0",
   props: {
     previewItems: {
       type: Array,

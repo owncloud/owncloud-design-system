@@ -17,7 +17,7 @@ import OcIcon from "../OcIcon/OcIcon.vue"
 
 export default {
   name: "OcAvatarItem",
-  status: "review",
+  status: "ready",
   release: "10.0.0",
   components: {
     OcIcon,

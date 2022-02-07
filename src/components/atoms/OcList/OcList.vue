@@ -13,7 +13,7 @@
 export default {
   name: "OcList",
   status: "ready",
-  released: "unreleased",
+  release: "12.0.0",
   props: {
     raw: {
       type: Boolean,

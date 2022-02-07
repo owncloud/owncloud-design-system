@@ -17,8 +17,7 @@
 export default {
   name: "OcResourceName",
   status: "ready",
-  released: "2.1.0",
-
+  release: "2.1.0",
   props: {
     /**
      * The name of the resource

@@ -14,7 +14,7 @@ import OcImg from "../../atoms/OcImage/OcImage.vue"
 export default {
   name: "OcLogo",
   status: "ready",
-  release: "unreleased",
+  release: "7.3.0",
   components: { OcImg },
 
   props: {

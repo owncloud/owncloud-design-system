@@ -13,7 +13,7 @@ import OcAvatarItem from "../../atoms/OcAvatarItem/OcAvatarItem.vue"
 
 export default {
   name: "OcAvatarGroup",
-  status: "review",
+  status: "ready",
   release: "10.0.0",
   components: { OcAvatarItem },
 
