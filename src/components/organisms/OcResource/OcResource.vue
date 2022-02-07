@@ -140,7 +140,7 @@ export default {
 
     parentFolder() {
       const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
-      return folder !== "" ? folder : this.$gettext("All Files and Folders")
+      return folder !== "" ? folder : this.$gettext("All files and folders")
     },
 
     parentFolderStyle() {
