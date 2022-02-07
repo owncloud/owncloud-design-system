@@ -16,7 +16,10 @@
       <div class="oc-docs-width-medium" style="display: inline-block; width: 250px">
         <oc-select
           v-model="selected"
-          :options="Object.keys(groupingSettings.groupingFunctions)"
+          :options="[
+            ...Object.keys(groupingSettings.groupingFunctions),
+            !Object.keys(groupingSettings.groupingFunctions).includes('None') ? 'None' : '',
+          ]"
           :clearable="false"
           :searchable="false"
         />
@@ -409,6 +412,18 @@ export default {
       this.copyArray = [...result]
 
       return result
+    },
+  },
+  watch: {
+    //callback for selection of None by enabled groupingSettings
+    selected: function () {
+      if (
+        this.selected === "None" &&
+        this.groupingSettings &&
+        this.groupingSettings.groupingFunctions &&
+        this.groupingSettings.groupingFunctions["None"]
+      )
+        this.groupingSettings.groupingFunctions["None"]()
     },
   },
 
