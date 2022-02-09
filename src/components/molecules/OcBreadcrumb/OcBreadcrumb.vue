@@ -207,6 +207,7 @@ export default {
     > li span:not([aria-current="page"]):hover,
     > li button:hover {
       color: var(--oc-color-swatch-primary-default);
+      text-decoration: underline;
     }
   }
 
