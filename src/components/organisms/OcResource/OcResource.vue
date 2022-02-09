@@ -264,6 +264,10 @@ export default {
       .text {
         font-size: 0.8125rem;
         color: var(--oc-color-text-muted);
+        &:hover {
+          color: var(--oc-color-text-default);
+          text-decoration: underline;
+        }
       }
 
       &:hover {
