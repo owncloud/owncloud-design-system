@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Background-primary-gradient border: [#6383](https://github.com/owncloud/web/issues/6383)
+* Enhancement - Redesign OcModal: [#1953](https://github.com/owncloud/owncloud-design-system/pull/1953)
 
 ## Details
 
@@ -18,6 +19,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6383
    https://github.com/owncloud/owncloud-design-system/pull/1945
+
+
+* Enhancement - Redesign OcModal: [#1953](https://github.com/owncloud/owncloud-design-system/pull/1953)
+
+   We have redesigned the OcModal to suit better to dark mode UIs, to have a nicer background
+   overlay, to always have a primary confirm button and fixed some icon bugs in its code examples.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1953
 
 # Changelog for [12.0.0] (2022-02-07)
 
