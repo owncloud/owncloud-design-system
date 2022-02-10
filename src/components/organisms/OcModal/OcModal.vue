@@ -42,7 +42,7 @@
             />
             <oc-button
               class="oc-modal-body-actions-confirm oc-ml-s"
-              :variation="buttonConfirmVariation || variation"
+              variation="primary"
               :appearance="buttonConfirmAppearance"
               :disabled="buttonConfirmDisabled || !!inputError"
               @click="confirm"
@@ -162,17 +162,6 @@ export default {
       type: String,
       required: false,
       default: "Confirm",
-    },
-    /**
-     * Variation type of the confirm button
-     */
-    buttonConfirmVariation: {
-      type: String,
-      required: false,
-      default: null,
-      validator: value => {
-        return value === null || value.match(/(passive|primary|danger|success|warning)/)
-      },
     },
     /**
      * Appearance of the confirm button
@@ -299,8 +288,6 @@ export default {
 
 <style lang="scss">
 @mixin oc-modal-variation($color) {
-  border-top-color: $color;
-
   span {
     color: $color;
   }
@@ -308,9 +295,9 @@ export default {
 
 .oc-modal {
   background-color: var(--oc-color-background-default);
-  border-radius: 8px;
-  border-top: var(--oc-space-small) solid var(--oc-color-swatch-passive-default);
-  box-shadow: 0 2px 4px rgba(14, 30, 37, 0.25);
+  border-radius: 15px;
+  border: 1px solid var(--oc-color-swatch-brand-default);
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   overflow: hidden;
   width: 100%;
@@ -321,7 +308,7 @@ export default {
 
   &-background {
     align-items: center;
-    background-color: rgba(100, 100, 100, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     flex-flow: row wrap;
     height: 100%;
@@ -351,7 +338,7 @@ export default {
 
   &-title {
     align-items: center;
-    background-color: var(--oc-color-text-inverse);
+    background-color: var(--oc-color-swatch-brand-default);
     display: flex;
     flex-flow: row wrap;
     padding: var(--oc-space-small) var(--oc-space-medium);
@@ -361,6 +348,7 @@ export default {
     }
 
     > h2 {
+      color: var(--oc-color-swatch-inverse-default);
       font-size: 1rem;
       font-weight: bold;
       margin: 0;
@@ -368,7 +356,7 @@ export default {
   }
 
   &-body {
-    background-color: var(--oc-color-background-muted);
+    background-color: var(--oc-color-background-default);
     color: var(--oc-color-text-default);
     padding: var(--oc-space-medium);
 
@@ -397,7 +385,7 @@ export default {
 <docs>
 ```js
   <oc-modal
-    icon="info"
+    icon="information"
     title="Accept terms of use"
     message="Do you accept our terms of use?"
     button-cancel-text="Decline"
@@ -406,7 +394,7 @@ export default {
   />
   <oc-modal
     variation="danger"
-    icon="warning"
+    icon="alarm-warning"
     title="Delete file lorem.txt"
     message="Are you sure you want to delete this file? All it’s content will be permanently removed. This action cannot be undone."
     button-cancel-text="Cancel"
