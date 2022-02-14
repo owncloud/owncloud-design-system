@@ -19,17 +19,23 @@
           <span
             v-else
             :key="field.name + 'Header'"
-            class="oc-table-thead-content"
+            class="oc-table-thead-content header-text"
             v-text="extractFieldTitle(field)"
           />
           <oc-button
             v-if="field.sortable"
             :aria-label="getSortLabel(field.name)"
             class="oc-button-sort"
-            variant="passive"
+            variation="inverse"
             appearance="raw"
             @click.stop="$emit(constants.EVENT_THEAD_CLICKED, field)"
-          />
+          >
+            <oc-icon
+              :name="sortDir === 'asc' ? 'arrow-down' : 'arrow-up'"
+              fill-type="line"
+              size="small"
+            />
+          </oc-button>
         </oc-th>
       </oc-tr>
     </oc-thead>
@@ -517,6 +523,26 @@ export default {
       line-height: 1.4;
       padding: var(--oc-space-xsmall);
     }
+  }
+}
+.header-text:hover + .oc-button-sort {
+  opacity: 1;
+}
+.header-text {
+  vertical-align: middle;
+  display: inline-table;
+  color: var(--oc-color-swatch-inverse-default);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.oc-button-sort {
+  opacity: 0;
+  display: inline-table;
+  vertical-align: middle;
+  .oc-icon {
+    display: table-cell !important;
+    vertical-align: middle !important;
   }
 }
 </style>
