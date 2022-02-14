@@ -74,7 +74,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^7.2.0",
+    "eslint-plugin-vue": "^8.4.1",
     "file-loader": "^6.2.0",
     "filesize": "^8.0.0",
     "focus-trap": "^6.4.0",
