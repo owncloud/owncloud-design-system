@@ -1,14 +1,24 @@
 <template>
   <div class="oc-resource oc-text-overflow">
-    <oc-img
-      v-if="hasThumbnail"
-      :key="thumbnail"
-      :src="thumbnail"
-      class="oc-resource-thumbnail"
-      width="40"
-      height="40"
-    />
-    <oc-resource-icon v-else :resource="resource" />
+    <component
+      :is="componentType"
+      v-bind="componentProps"
+      v-if="isResourceClickable"
+      :target="linkTargetBlank"
+      :aria-describedby="opensInNewWindowDescriptionId"
+      @click.stop="emitClick"
+      @click.native.stop
+    >
+      <oc-img
+        v-if="hasThumbnail"
+        :key="thumbnail"
+        :src="thumbnail"
+        class="oc-resource-thumbnail"
+        width="40"
+        height="40"
+      />
+      <oc-resource-icon v-else :resource="resource" />
+    </component>
     <div class="oc-resource-details oc-text-overflow">
       <component
         :is="componentType"
@@ -205,6 +215,9 @@ export default {
   },
 
   methods: {
+    hover() {
+      console.log("hover")
+    },
     emitClick() {
       if (this.isFolder) {
         return
