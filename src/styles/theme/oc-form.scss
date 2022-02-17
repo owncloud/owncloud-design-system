@@ -77,7 +77,7 @@ $form-datalist-icon-color: var(--oc-color-text-default) !default;
 $form-radio-background: var(--oc-color-background-muted) !default;
 
 $form-radio-checked-background: $oc-color-swatch-primary-default !default;
-$form-radio-checked-icon-color: $oc-color-text-inverse !default;
+$form-radio-checked-icon-color: var(--oc-color-input-border) !default;
 
 $form-radio-checked-focus-background: $oc-color-swatch-primary-default !default;
 
@@ -195,8 +195,7 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
  * Improves consistency of cursor style for clickable elements
  */
 
-.oc-radio:not(:disabled),
-.oc-checkbox:not(:disabled) { cursor: pointer; }
+.oc-radio:not(:disabled) { cursor: pointer; }
 
 /* Input, select and textarea
  * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
@@ -446,8 +445,7 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
  * 6. Center icons
  */
 
-.oc-radio,
-.oc-checkbox {
+.oc-radio{
   /* 4 */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -470,8 +468,7 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
 .oc-radio { border-radius: 50%; }
 
 /* Focus */
-.oc-radio:focus,
-.oc-checkbox:focus {
+.oc-radio:focus {
   outline: none;
 }
 
@@ -479,16 +476,12 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
  * Checked
  */
 
-.oc-radio:checked,
-.oc-checkbox:checked,
-.oc-checkbox:indeterminate {
+.oc-radio:checked {
   background-color: $form-radio-checked-background;
 }
 
 /* Focus */
-.oc-radio:checked:focus,
-.oc-checkbox:checked:focus,
-.oc-checkbox:indeterminate:focus {
+.oc-radio:checked:focus {
   background-color: $form-radio-checked-focus-background;
 }
 
@@ -497,20 +490,15 @@ select.oc-form-width-xsmall { width: ($form-width-xsmall + 25px); }
  */
 
 .oc-radio:checked { @include svg-fill($internal-form-radio-image, "#000", $form-radio-checked-icon-color); }
-.oc-checkbox:checked { @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-checked-icon-color); }
-.oc-checkbox:indeterminate { @include svg-fill($internal-form-checkbox-indeterminate-image, "#000", $form-radio-checked-icon-color); }
 
 /*
  * Disabled
  */
 
-.oc-radio:disabled,
-.oc-checkbox:disabled {
+.oc-radio:disabled {
   background-color: $form-radio-disabled-background;
 }
 
 .oc-radio:disabled:checked { @include svg-fill($internal-form-radio-image, "#000", $form-radio-disabled-icon-color); }
-.oc-checkbox:disabled:checked { @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-disabled-icon-color); }
-.oc-checkbox:disabled:indeterminate { @include svg-fill($internal-form-checkbox-indeterminate-image, "#000", $form-radio-disabled-icon-color); }
 
 /* stylelint-enable */
