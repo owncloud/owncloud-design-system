@@ -474,6 +474,10 @@ export default {
     height: var(--oc-size-height-table-row);
   }
 
+  tr:hover {
+    background-color: var(--oc-color-background-secondary);
+  }
+
   tr + tr {
     border-top: 1px solid var(--oc-color-border);
   }
@@ -483,7 +487,7 @@ export default {
   }
 
   &-highlighted {
-    background-color: var(--oc-color-background-highlight);
+    background-color: var(--oc-color-background-highlight) !important;
   }
 
   &-accentuated {
