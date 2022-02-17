@@ -516,6 +516,11 @@ export default {
 
   &-thead-content {
     vertical-align: middle;
+    display: inline-table;
+    color: var(--oc-color-swatch-passive-default);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &-footer {
@@ -531,14 +536,6 @@ export default {
 }
 .header-text:hover + .oc-button-sort {
   opacity: 1;
-}
-.header-text {
-  vertical-align: middle;
-  display: inline-table;
-  color: var(--oc-color-swatch-inverse-default);
-  &:hover {
-    text-decoration: underline;
-  }
 }
 .oc-button-sort {
   opacity: 0;

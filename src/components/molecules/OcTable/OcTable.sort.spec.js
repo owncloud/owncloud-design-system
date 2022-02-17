@@ -48,8 +48,11 @@ describe("OcTable.sort", () => {
     const wrapper = mount(Table, {
       propsData: {
         fields: [...tableFields],
-        data,
+        data
       },
+      stubs: {
+        "oc-icon": true
+      }
     })
     const headers = wrapper.findAll("thead th")
     it("has any [aria-sort] attribute on all sortable column headers", () => {
@@ -114,8 +117,11 @@ describe("OcTable.sort", () => {
           fields: tableFields,
           sortBy: tableFieldId.name,
           sortDir: tableFieldId.sortDir,
-          data,
+          data
         },
+        stubs: {
+          "oc-icon": true
+        }
       })
 
       const headers = wrapper.findAll("thead th")
@@ -156,8 +162,11 @@ describe("OcTable.sort", () => {
             fields: tableFields,
             data,
             sortBy: sortByOld,
-            sortDir: sortDirOld,
+            sortDir: sortDirOld
           },
+          stubs: {
+            "oc-icon": true
+          }
         })
 
         const headers = wrapper.findAll("thead th")
