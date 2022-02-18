@@ -101,7 +101,7 @@ export default {
       },
     },
     classes() {
-      return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
+      return ["oc-checkbox", "oc-rounded", "oc-checkbox-" + getSizeClass(this.size)]
     },
     labelClasses() {
       return {
@@ -139,7 +139,6 @@ export default {
   background-position: 50% 50% !important;
   background-repeat: no-repeat !important;
   border: 2px solid var(--oc-color-input-border);
-  border-radius: 5px;
   display: inline-block;
   overflow: hidden;
   vertical-align: middle;

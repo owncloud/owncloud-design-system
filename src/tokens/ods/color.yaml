@@ -78,7 +78,7 @@ color:
     default:
       value: rgb(255, 255, 255)
     secondary:
-      value: rgb(10, 10, 10)
+      value: rgb(236, 236, 236)
     muted:
       value: rgb(248, 248, 248)
     highlight:

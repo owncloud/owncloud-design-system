@@ -1,4 +1,4 @@
-Enhancement: Redesign FilesTable
+Enhancement: Redesign files table related components
 
 We've adjusted OcTable, OcResource, OcDrop and OcCheckbox
 to fit the redesign.

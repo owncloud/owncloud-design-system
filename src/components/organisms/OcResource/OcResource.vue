@@ -215,9 +215,6 @@ export default {
   },
 
   methods: {
-    hover() {
-      console.log("hover")
-    },
     emitClick() {
       if (this.isFolder) {
         return
