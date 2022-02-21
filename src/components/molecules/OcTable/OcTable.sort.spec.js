@@ -50,6 +50,9 @@ describe("OcTable.sort", () => {
         fields: [...tableFields],
         data,
       },
+      stubs: {
+        "oc-icon": true,
+      },
     })
     const headers = wrapper.findAll("thead th")
     it("has any [aria-sort] attribute on all sortable column headers", () => {
@@ -116,6 +119,9 @@ describe("OcTable.sort", () => {
           sortDir: tableFieldId.sortDir,
           data,
         },
+        stubs: {
+          "oc-icon": true,
+        },
       })
 
       const headers = wrapper.findAll("thead th")
@@ -157,6 +163,9 @@ describe("OcTable.sort", () => {
             data,
             sortBy: sortByOld,
             sortDir: sortDirOld,
+          },
+          stubs: {
+            "oc-icon": true,
           },
         })
 

@@ -19,17 +19,24 @@
           <span
             v-else
             :key="field.name + 'Header'"
-            class="oc-table-thead-content"
+            class="oc-table-thead-content header-text"
             v-text="extractFieldTitle(field)"
           />
           <oc-button
             v-if="field.sortable"
             :aria-label="getSortLabel(field.name)"
             class="oc-button-sort"
-            variant="passive"
+            variation="passive"
             appearance="raw"
             @click.stop="$emit(constants.EVENT_THEAD_CLICKED, field)"
-          />
+          >
+            <oc-icon
+              :name="sortDir === 'asc' ? 'arrow-down' : 'arrow-up'"
+              fill-type="line"
+              size="small"
+              variation="passive"
+            />
+          </oc-button>
         </oc-th>
       </oc-tr>
     </oc-thead>
@@ -468,6 +475,10 @@ export default {
     height: var(--oc-size-height-table-row);
   }
 
+  tr:hover {
+    background-color: var(--oc-color-background-hover);
+  }
+
   tr + tr {
     border-top: 1px solid var(--oc-color-border);
   }
@@ -477,7 +488,7 @@ export default {
   }
 
   &-highlighted {
-    background-color: var(--oc-color-background-highlight);
+    background-color: var(--oc-color-background-highlight) !important;
   }
 
   &-accentuated {
@@ -506,6 +517,11 @@ export default {
 
   &-thead-content {
     vertical-align: middle;
+    display: inline-table;
+    color: var(--oc-color-swatch-passive-default);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &-footer {
@@ -517,6 +533,18 @@ export default {
       line-height: 1.4;
       padding: var(--oc-space-xsmall);
     }
+  }
+}
+.header-text:hover + .oc-button-sort {
+  opacity: 1;
+}
+.oc-button-sort {
+  opacity: 0;
+  display: inline-table;
+  vertical-align: middle;
+  .oc-icon {
+    display: table-cell !important;
+    vertical-align: middle !important;
   }
 }
 </style>

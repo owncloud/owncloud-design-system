@@ -77,12 +77,16 @@ color:
   background:
     default:
       value: rgb(255, 255, 255)
+    secondary:
+      value: rgb(255, 255, 255)
     muted:
       value: rgb(248, 248, 248)
     highlight:
       value: rgb(237, 243, 250)
     accentuate:
       value: rgba(255, 255, 5, 0.1)
+    hover:
+      value: rgb(236, 236, 236)
   border:
     value: rgb(236, 235, 238)
   text:

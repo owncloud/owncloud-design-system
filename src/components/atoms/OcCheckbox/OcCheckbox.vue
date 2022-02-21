@@ -101,7 +101,7 @@ export default {
       },
     },
     classes() {
-      return ["oc-checkbox", "oc-checkbox-" + getSizeClass(this.size)]
+      return ["oc-checkbox", "oc-rounded", "oc-checkbox-" + getSizeClass(this.size)]
     },
     labelClasses() {
       return {
@@ -133,18 +133,16 @@ export default {
 
 .oc-checkbox {
   @include oc-form-check-size(1);
-
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: var(--oc-color-input-bg);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  border: 1px solid var(--oc-color-input-border);
-  border-radius: 3px;
+
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  border: 2px solid var(--oc-color-input-border);
   display: inline-block;
   overflow: hidden;
   vertical-align: middle;
+  background-color: transparent;
 
   &-s {
     @include oc-form-check-size(0.7);
@@ -164,7 +162,7 @@ export default {
 
   &:checked,
   &:indeterminate {
-    background-color: var(--oc-color-swatch-brand-default);
+    background-color: var(--oc-color-swatch-inverse-default);
   }
 
   &:checked {

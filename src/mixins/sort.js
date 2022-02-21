@@ -1,5 +1,4 @@
 import { EVENT_THEAD_CLICKED } from "../helpers/constants"
-import "./sort.scss"
 
 const SORT_DIRECTION_ASC = "asc"
 const SORT_DIRECTION_DESC = "desc"
