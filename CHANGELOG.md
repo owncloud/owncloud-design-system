@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v12.1.0...master
+
+## Summary
+
+* Enhancement - Redesign files table related components: [#1958](https://github.com/owncloud/owncloud-design-system/pull/1958)
+
+## Details
+
+* Enhancement - Redesign files table related components: [#1958](https://github.com/owncloud/owncloud-design-system/pull/1958)
+
+   We've adjusted OcTable, OcResource, OcDrop and OcCheckbox to fit the redesign.
+
+   https://github.com/owncloud/web/issues/6207
+   https://github.com/owncloud/owncloud-design-system/pull/1958
+
 # Changelog for [12.1.0] (2022-02-10)
 
 The following sections list the changes in ownCloud Design System 12.1.0.
