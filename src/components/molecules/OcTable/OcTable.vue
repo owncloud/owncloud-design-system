@@ -26,7 +26,7 @@
             v-if="field.sortable"
             :aria-label="getSortLabel(field.name)"
             class="oc-button-sort"
-            variation="inverse"
+            variation="passive"
             appearance="raw"
             @click.stop="$emit(constants.EVENT_THEAD_CLICKED, field)"
           >
@@ -34,6 +34,7 @@
               :name="sortDir === 'asc' ? 'arrow-down' : 'arrow-up'"
               fill-type="line"
               size="small"
+              variation="passive"
             />
           </oc-button>
         </oc-th>
@@ -475,7 +476,7 @@ export default {
   }
 
   tr:hover {
-    background-color: var(--oc-color-background-secondary);
+    background-color: var(--oc-color-background-hover);
   }
 
   tr + tr {

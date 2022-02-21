@@ -142,7 +142,7 @@ export default {
   display: inline-block;
   overflow: hidden;
   vertical-align: middle;
-  background: transparent;
+  background-color: transparent;
 
   &-s {
     @include oc-form-check-size(0.7);
