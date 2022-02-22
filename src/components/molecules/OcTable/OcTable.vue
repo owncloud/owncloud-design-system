@@ -350,10 +350,7 @@ export default {
   },
   data() {
     return {
-      selected:
-        this.groupingSettings && this.groupingSettings.groupingBy
-          ? this.groupingSettings.groupingBy
-          : "None",
+      selected: this.groupingSettings?.groupingBy ? this.groupingSettings.groupingBy : "None",
       accordionClosed: [],
       copyArray: [],
       showMore: false,
@@ -390,8 +387,7 @@ export default {
     },
 
     groupingAllowed() {
-      return this.groupingSettings &&
-        this.groupingSettings.groupingFunctions &&
+      return this.groupingSettings?.groupingFunctions &&
         Object.keys(this.groupingSettings.groupingFunctions).length > 0
         ? true
         : false
@@ -401,11 +397,7 @@ export default {
       if (!result.length) return []
 
       //sort groups if there is a given sorting function in grouping settings
-      if (
-        this.groupingSettings &&
-        this.groupingSettings.sortGroups &&
-        this.groupingSettings.sortGroups[this.selected]
-      ) {
+      if (this.groupingSettings?.sortGroups?.[this.selected]) {
         result = this.groupingSettings.sortGroups[this.selected](result)
       }
 
@@ -417,12 +409,7 @@ export default {
   watch: {
     //callback for selection of None by enabled groupingSettings
     selected: function () {
-      if (
-        this.selected === "None" &&
-        this.groupingSettings &&
-        this.groupingSettings.groupingFunctions &&
-        this.groupingSettings.groupingFunctions["None"]
-      )
+      if (this.selected === "None" && this.groupingSettings?.groupingFunctions?.["None"])
         this.groupingSettings.groupingFunctions["None"]()
     },
   },
@@ -620,10 +607,7 @@ export default {
     createGroupedData(col, data) {
       let groups = {}
       let resultArray = []
-      if (
-        this.groupingSettings &&
-        Object.keys(this.groupingSettings.groupingFunctions).includes(col)
-      ) {
+      if (Object.keys(this.groupingSettings?.groupingFunctions).includes(col)) {
         data.forEach(row => {
           groups[this.groupingSettings.groupingFunctions[col](row)]
             ? groups[this.groupingSettings.groupingFunctions[col](row)].push(row)
