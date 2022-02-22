@@ -1,6 +1,0 @@
-Enhancement: Extend modal focus-trap functionality
-
-We've re-introduced the ability to disable the focus-trap for the current modal.
-We've also added the option to define which child element should be focused initially.
-
-https://github.com/owncloud/owncloud-design-system/pull/1969
