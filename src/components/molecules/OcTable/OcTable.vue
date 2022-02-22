@@ -401,8 +401,6 @@ export default {
         result = this.groupingSettings.sortGroups[this.selected](result)
       }
 
-      this.copyArray = [...result]
-
       return result
     },
   },
@@ -416,7 +414,12 @@ export default {
 
   mounted() {
     //create copy of array to manipulate toggling
-    //this.copyArray = [...this.groupedData]
+    if (
+      this.groupingAllowed &&
+      this.groupingSettings?.showGroupingOptions &&
+      this.groupingSettings?.groupingFunctions
+    )
+      this.copyArray = [...this.groupedData]
   },
 
   methods: {
