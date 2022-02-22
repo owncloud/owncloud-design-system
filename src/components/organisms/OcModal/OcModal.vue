@@ -1,6 +1,6 @@
 <template>
   <div class="oc-modal-background" aria-labelledby="oc-modal-title">
-    <focus-trap :active="true" :initial-focus="getInitialFocusRef">
+    <focus-trap :active="true" :initial-focus="focusTrapInitial">
       <div
         ref="ocModal"
         :class="classes"
@@ -230,6 +230,15 @@ export default {
       required: false,
       default: false,
     },
+    /**
+     * Overwrite default focused element
+     * Can be `#id, .class`.
+     */
+    focusTrapInitial: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
   data() {
     return {
@@ -277,10 +286,7 @@ export default {
       this.userInputValue = value
     },
     getInitialFocusRef() {
-      if (this.hasInput) {
-        return this.$refs.ocModalInput
-      }
-      return this.$refs.ocModal
+      return this.focusTrapInitial || this.$refs.ocModalInput || this.$refs.ocModal
     },
   },
 }
@@ -430,32 +436,16 @@ export default {
   </oc-modal>
 ```
 
-## Focus trap
-When the modal is displayed, it should not be possible to reach any element outside of the modal. To protect this also for keyboard navigation, focus trap should be activate via prop `focusTrapActive`.
-If activated, only focusable elements within the modal are reachable via keyboard navigation.
-
 ```js
-<template>
-  <div>
-    <oc-button @click="active = !active">Toggle focus trap</oc-button>
-    <p>Focus trap active: {{ active }}</p>
-    <oc-modal
-      icon="info"
-      title="Accept terms of use"
-      message="Do you accept our terms of use?"
-      button-cancel-text="Decline"
-      button-confirm-text="Accept"
-      class="oc-mb-l oc-position-relative"
-      :focus-trap-active="active"
-    />
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({
-    active: false
-  })
-}
-</script>
+<div>
+	<oc-modal
+			icon="info"
+			title="Accept terms of use"
+			message="Do you accept our terms of use?"
+			button-cancel-text="Decline"
+			button-confirm-text="Accept"
+			class="oc-mb-l oc-position-relative"
+	/>
+</div>
 ```
 </docs>
