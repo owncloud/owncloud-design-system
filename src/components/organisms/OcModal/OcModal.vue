@@ -1,6 +1,6 @@
 <template>
   <div class="oc-modal-background" aria-labelledby="oc-modal-title">
-    <focus-trap :active="true" :initial-focus="getInitialFocusRef">
+    <focus-trap :active="focusTrapEnabled" :initial-focus="focusTrapInitial">
       <div
         ref="ocModal"
         :class="classes"
@@ -230,6 +230,24 @@ export default {
       required: false,
       default: false,
     },
+
+    /**
+     * Asserts whether the modal should be protected with focus trap
+     */
+    focusTrapEnabled: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    /**
+     * Overwrite default focused element
+     * Can be `#id, .class`.
+     */
+    focusTrapInitial: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
   data() {
     return {
@@ -277,10 +295,7 @@ export default {
       this.userInputValue = value
     },
     getInitialFocusRef() {
-      if (this.hasInput) {
-        return this.$refs.ocModalInput
-      }
-      return this.$refs.ocModal
+      return this.focusTrapInitial || this.$refs.ocModalInput || this.$refs.ocModal
     },
   },
 }
