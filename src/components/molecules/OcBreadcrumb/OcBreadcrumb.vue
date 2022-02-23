@@ -23,8 +23,8 @@
         <template v-if="showContextMenu && index === items.length - 1">
           <oc-button
             id="oc-breadcrumb-contextmenu-trigger"
-            class="oc-ml-xxs"
             v-oc-tooltip="contextMenuLabel"
+            class="oc-ml-xxs"
             :aria-label="contextMenuLabel"
             appearance="raw"
           >
