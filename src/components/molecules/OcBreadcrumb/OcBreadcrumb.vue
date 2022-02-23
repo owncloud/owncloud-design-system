@@ -1,10 +1,16 @@
 <template>
   <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
-    <ol class="oc-breadcrumb-list">
+    <ol class="oc-breadcrumb-list oc-mb-s">
       <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
         <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
-          {{ item.text }}
+          <span>{{ item.text }}</span>
         </router-link>
+        <oc-icon
+          v-if="item.to"
+          color="var(--oc-color-text-default)"
+          name="arrow-right-s"
+          fill-type="line"
+        />
         <oc-button
           v-else-if="item.onClick"
           :aria-current="getAriaCurrent(index)"
@@ -17,11 +23,12 @@
         <template v-if="showContextMenu && index === items.length - 1">
           <oc-button
             id="oc-breadcrumb-contextmenu-trigger"
+            class="oc-ml-xxs"
             v-oc-tooltip="contextMenuLabel"
             :aria-label="contextMenuLabel"
             appearance="raw"
           >
-            <oc-icon name="more-2" />
+            <oc-icon name="more-2" color="var(--oc-color-text-default)" />
           </oc-button>
           <oc-drop
             drop-id="oc-breadcrumb-contextmenu"
@@ -176,6 +183,11 @@ export default {
 
     #oc-breadcrumb-contextmenu-trigger > span {
       vertical-align: middle;
+      border: 3px solid transparent;
+      &:hover {
+        background-color: var(--oc-color-background-secondary);
+        border-radius: 3px;
+      }
     }
 
     #oc-breadcrumb-contextmenu li button {
@@ -190,13 +202,10 @@ export default {
     > li button,
     > li span,
     > :nth-child(n + 2)::before {
-      color: var(--oc-color-text-muted);
-    }
-    > :nth-child(n + 2)::before {
-      content: "/";
+      color: var(--oc-color-text-default);
       display: inline-block;
-      margin: 0 var(--oc-space-small) 0 var(--oc-space-xsmall);
-      font-size: 0.875rem;
+      vertical-align: middle;
+      line-height: normal;
     }
 
     > :last-child > span {
@@ -204,16 +213,14 @@ export default {
     }
 
     > li a:hover,
-    > li span:not([aria-current="page"]):hover,
+    > li span:not([aria-current="page"]):not(.oc-icon):hover,
     > li button:hover {
-      color: var(--oc-color-swatch-primary-default);
       text-decoration: underline;
     }
   }
 
   /* stylelint-disable */
   &-list-item {
-    &::before,
     a,
     button,
     span {
@@ -222,7 +229,6 @@ export default {
   }
 
   &-lead &-list-item {
-    &::before,
     a,
     button,
     span {
@@ -243,7 +249,7 @@ export default {
       > li a,
       > li button,
       > li span {
-        color: var(--oc-color-text-muted);
+        color: var(--oc-color-text-default);
         font-size: 0.875rem;
       }
 
