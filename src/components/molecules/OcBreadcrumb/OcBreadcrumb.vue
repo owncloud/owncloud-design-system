@@ -293,7 +293,7 @@ export default {
     <oc-breadcrumb :items="items" variation="lead" />
     <oc-breadcrumb :items="items" >
       <template v-slot:contextMenu>
-        <p>I'm an example item</p>
+        <p class="oc-my-rm">I'm an example item</p>
       </template>
     </oc-breadcrumb>
   </div>
