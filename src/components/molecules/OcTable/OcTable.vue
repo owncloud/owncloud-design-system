@@ -475,16 +475,12 @@ export default {
     height: var(--oc-size-height-table-row);
   }
 
-  tr:hover {
-    background-color: var(--oc-color-background-hover);
-  }
-
   tr + tr {
     border-top: 1px solid var(--oc-color-border);
   }
 
   &-hover tr:not(&-footer-row):hover {
-    background-color: var(--oc-color-background-accentuate);
+    background-color: var(--oc-color-background-hover);
   }
 
   &-highlighted {
