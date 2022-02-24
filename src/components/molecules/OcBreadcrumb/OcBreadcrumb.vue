@@ -288,11 +288,11 @@ export default {
 <template>
 <section>
   <div>
-    <oc-breadcrumb :items="items" class="oc-mb" />
+    <oc-breadcrumb :items="items" />
   </div>
   <div>
     <oc-breadcrumb :items="items" variation="lead" />
-    <oc-breadcrumb :items="items" class="oc-mt-l">
+    <oc-breadcrumb :items="items" >
       <template v-slot:contextMenu>
         <p>I'm an example item</p>
       </template>
@@ -306,8 +306,8 @@ export default {
       return {
         items: [
           {text:'First folder',to:{path:'folder'}},
-          {text:'Subfolder', onClick:() => alert('Breadcrumb clicked!')},
-          {text:'Deep',to:{path:'folder'}},
+          {text:'Subfolder', to: {path: 'subfolder'}},
+          {text:'Deep',to:{path:'deep'}},
           {text:'Deeper ellipsize in responsive mode'},
         ]
       }
