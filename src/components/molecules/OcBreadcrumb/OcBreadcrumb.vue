@@ -185,7 +185,7 @@ export default {
       vertical-align: middle;
       border: 3px solid transparent;
       &:hover {
-        background-color: var(--oc-color-background-secondary);
+        background-color: var(--oc-color-background-hover);
         border-radius: 3px;
       }
     }
