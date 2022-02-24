@@ -6,9 +6,17 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Apply outstanding background color to oc-card: [#1974](https://github.com/owncloud/owncloud-design-system/pull/1974)
 * Enhancement - Redesign files table related components: [#1958](https://github.com/owncloud/owncloud-design-system/pull/1958)
 
 ## Details
+
+* Enhancement - Apply outstanding background color to oc-card: [#1974](https://github.com/owncloud/owncloud-design-system/pull/1974)
+
+   We've adjusted he background color to oc-card to have an outstanding look
+
+   https://github.com/owncloud/owncloud-design-system/pull/1974
+
 
 * Enhancement - Redesign files table related components: [#1958](https://github.com/owncloud/owncloud-design-system/pull/1958)
 
