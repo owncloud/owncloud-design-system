@@ -33,6 +33,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6207
    https://github.com/owncloud/owncloud-design-system/pull/1958
+   https://github.com/owncloud/owncloud-design-system/pull/1978
 
 # Changelog for [12.1.0] (2022-02-10)
 
