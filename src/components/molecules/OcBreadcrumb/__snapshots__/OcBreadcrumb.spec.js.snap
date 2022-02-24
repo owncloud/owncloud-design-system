@@ -2,26 +2,26 @@
 
 exports[`OcBreadcrumb displays all items 1`] = `
 <nav class="oc-breadcrumb oc-breadcrumb-default">
-  <ol class="oc-breadcrumb-list">
+  <ol class="oc-breadcrumb-list oc-mb-s">
     <li class="oc-breadcrumb-list-item">
-      <router-link-stub tag="a" to="[object Object]">
-        First folder
-      </router-link-stub>
+      <router-link-stub tag="a" to="[object Object]"><span>First folder</span></router-link-stub>
+      <oc-icon-stub name="arrow-right-s" filltype="line" accessiblelabel="" type="span" size="medium" variation="passive" color="var(--oc-color-text-default)"></oc-icon-stub>
       <!---->
     </li>
     <li class="oc-breadcrumb-list-item">
+      <!---->
       <oc-button-stub type="button" size="medium" variation="passive" appearance="raw" justifycontent="center" gapsize="medium">
         Subfolder
       </oc-button-stub>
       <!---->
     </li>
     <li class="oc-breadcrumb-list-item">
-      <router-link-stub tag="a" to="[object Object]">
-        Deep
-      </router-link-stub>
+      <router-link-stub tag="a" to="[object Object]"><span>Deep</span></router-link-stub>
+      <oc-icon-stub name="arrow-right-s" filltype="line" accessiblelabel="" type="span" size="medium" variation="passive" color="var(--oc-color-text-default)"></oc-icon-stub>
       <!---->
     </li>
-    <li class="oc-breadcrumb-list-item"><span aria-current="page" tabindex="-1">Deeper ellipsize in responsive mode</span>
+    <li class="oc-breadcrumb-list-item">
+      <!----> <span aria-current="page" tabindex="-1">Deeper ellipsize in responsive mode</span>
       <!---->
     </li>
   </ol>
@@ -53,26 +53,26 @@ exports[`OcBreadcrumb displays all items 1`] = `
 
 exports[`OcBreadcrumb sets correct variation 1`] = `
 <nav class="oc-breadcrumb oc-breadcrumb-lead">
-  <ol class="oc-breadcrumb-list">
+  <ol class="oc-breadcrumb-list oc-mb-s">
     <li class="oc-breadcrumb-list-item">
-      <router-link-stub tag="a" to="[object Object]">
-        First folder
-      </router-link-stub>
+      <router-link-stub tag="a" to="[object Object]"><span>First folder</span></router-link-stub>
+      <oc-icon-stub name="arrow-right-s" filltype="line" accessiblelabel="" type="span" size="medium" variation="passive" color="var(--oc-color-text-default)"></oc-icon-stub>
       <!---->
     </li>
     <li class="oc-breadcrumb-list-item">
+      <!---->
       <oc-button-stub type="button" size="medium" variation="passive" appearance="raw" justifycontent="center" gapsize="medium">
         Subfolder
       </oc-button-stub>
       <!---->
     </li>
     <li class="oc-breadcrumb-list-item">
-      <router-link-stub tag="a" to="[object Object]">
-        Deep
-      </router-link-stub>
+      <router-link-stub tag="a" to="[object Object]"><span>Deep</span></router-link-stub>
+      <oc-icon-stub name="arrow-right-s" filltype="line" accessiblelabel="" type="span" size="medium" variation="passive" color="var(--oc-color-text-default)"></oc-icon-stub>
       <!---->
     </li>
-    <li class="oc-breadcrumb-list-item"><span aria-current="page" tabindex="-1">Deeper ellipsize in responsive mode</span>
+    <li class="oc-breadcrumb-list-item">
+      <!----> <span aria-current="page" tabindex="-1">Deeper ellipsize in responsive mode</span>
       <!---->
     </li>
   </ol>
