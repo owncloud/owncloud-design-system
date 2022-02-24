@@ -24,7 +24,6 @@
           <oc-button
             id="oc-breadcrumb-contextmenu-trigger"
             v-oc-tooltip="contextMenuLabel"
-            class="oc-ml-xxs"
             :aria-label="contextMenuLabel"
             appearance="raw"
           >
