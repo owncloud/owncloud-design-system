@@ -10,9 +10,7 @@ exports[`OcBreadcrumb displays all items 1`] = `
     </li>
     <li class="oc-breadcrumb-list-item">
       <!---->
-      <oc-button-stub type="button" size="medium" variation="passive" appearance="raw" justifycontent="center" gapsize="medium">
-        Subfolder
-      </oc-button-stub>
+      <oc-button-stub type="button" size="medium" variation="passive" appearance="raw" justifycontent="center" gapsize="medium"><span>Subfolder</span></oc-button-stub>
       <!---->
     </li>
     <li class="oc-breadcrumb-list-item">
@@ -61,9 +59,7 @@ exports[`OcBreadcrumb sets correct variation 1`] = `
     </li>
     <li class="oc-breadcrumb-list-item">
       <!---->
-      <oc-button-stub type="button" size="medium" variation="passive" appearance="raw" justifycontent="center" gapsize="medium">
-        Subfolder
-      </oc-button-stub>
+      <oc-button-stub type="button" size="medium" variation="passive" appearance="raw" justifycontent="center" gapsize="medium"><span>Subfolder</span></oc-button-stub>
       <!---->
     </li>
     <li class="oc-breadcrumb-list-item">

@@ -17,7 +17,7 @@
           appearance="raw"
           @click="item.onClick"
         >
-          {{ item.text }}
+          <span>{{ item.text }}</span>
         </oc-button>
         <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
         <template v-if="showContextMenu && index === items.length - 1">
