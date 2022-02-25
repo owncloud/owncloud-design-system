@@ -25,6 +25,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6218
    https://github.com/owncloud/owncloud-design-system/pull/1975
+   https://github.com/owncloud/owncloud-design-system/pull/1982
 
 
 * Enhancement - Redesign files table related components: [#1958](https://github.com/owncloud/owncloud-design-system/pull/1958)
