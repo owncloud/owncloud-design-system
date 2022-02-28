@@ -6,7 +6,35 @@
 
 Head over to the [generated docs](https://owncloud.github.io/owncloud-design-system/) for more information!
 
-# How to build locally
+## Installation
+
+Install the ownCloud design system by running
+
+```
+npm install owncloud-design-system
+```
+
+or
+
+```
+yarn add owncloud-design-system
+```
+
+and its `peerDependencies`, depending on whether they're already available in your project via
+
+
+```
+npm install @popperjs/core @vue/composition-api filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
+```
+
+or
+
+
+```
+yarn add @popperjs/core @vue/composition-api filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
+```
+
+## How to build locally
 
 You basically run
 
