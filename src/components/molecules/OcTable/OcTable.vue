@@ -531,16 +531,15 @@ export default {
     }
   }
 }
-.header-text:hover + .oc-button-sort {
-  opacity: 1;
-}
 .oc-button-sort {
-  opacity: 0;
   display: inline-table;
   vertical-align: middle;
   .oc-icon {
     display: table-cell !important;
     vertical-align: middle !important;
+    &:hover {
+      background-color: var(--oc-color-background-hover);
+    }
   }
 }
 </style>
