@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Enhancement - Apply outstanding background color to oc-card: [#1974](https://github.com/owncloud/owncloud-design-system/pull/1974)
+* Enhancement - Extend modal focus-trap functionality: [#1987](https://github.com/owncloud/owncloud-design-system/pull/1987)
 * Enhancement - Redesign OcBreadcrumb: [#6218](https://github.com/owncloud/web/issues/6218)
 * Enhancement - Redesign files table related components: [#1958](https://github.com/owncloud/owncloud-design-system/pull/1958)
 
@@ -17,6 +18,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    We've adjusted he background color to oc-card to have an outstanding look
 
    https://github.com/owncloud/owncloud-design-system/pull/1974
+
+
+* Enhancement - Extend modal focus-trap functionality: [#1987](https://github.com/owncloud/owncloud-design-system/pull/1987)
+
+   We've added the option to define which child element should be focused initially.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1987
 
 
 * Enhancement - Redesign OcBreadcrumb: [#6218](https://github.com/owncloud/web/issues/6218)
