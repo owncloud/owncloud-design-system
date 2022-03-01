@@ -6,9 +6,17 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - OcTable Sort: [#1996](https://github.com/owncloud/owncloud-design-system/pull/1996)
 * Bugfix - Icon & background color for mobile OcBreadcrumb: [#1980](https://github.com/owncloud/owncloud-design-system/issues/1980)
 
 ## Details
+
+* Bugfix - OcTable Sort: [#1996](https://github.com/owncloud/owncloud-design-system/pull/1996)
+
+   We've fixed a visual bug that caused the field sort arrow to be always visible.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1996
+
 
 * Bugfix - Icon & background color for mobile OcBreadcrumb: [#1980](https://github.com/owncloud/owncloud-design-system/issues/1980)
 
