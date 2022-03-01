@@ -58,7 +58,7 @@
         />
         <oc-icon
           class="oc-breadcrumb-drop-label-icon"
-          name="expand_more"
+          name="arrow-down-s"
           :accessible-label="$gettext('Expand more')"
         />
       </label>
@@ -267,7 +267,6 @@ export default {
       @extend .oc-flex;
       @extend .oc-flex-middle;
       @extend .oc-flex-between;
-      @extend .oc-background-brand;
 
       border: $global-border-width solid var(--oc-color-swatch-primary-muted);
       cursor: pointer;
