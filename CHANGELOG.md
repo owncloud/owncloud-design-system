@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - OcTable Sort: [#1996](https://github.com/owncloud/owncloud-design-system/pull/1996)
 * Bugfix - Icon & background color for mobile OcBreadcrumb: [#1980](https://github.com/owncloud/owncloud-design-system/issues/1980)
+* Bugfix - Initial focus in OcModal: [#1995](https://github.com/owncloud/owncloud-design-system/pull/1995)
 
 ## Details
 
@@ -25,6 +26,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1980
    https://github.com/owncloud/owncloud-design-system/pull/1994
+
+
+* Bugfix - Initial focus in OcModal: [#1995](https://github.com/owncloud/owncloud-design-system/pull/1995)
+
+   We've fixed a bug that was introduced in the last version, where the initial focus of modals with
+   text fields was broken.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1995
 
 # Changelog for [12.2.0] (2022-02-28)
 
