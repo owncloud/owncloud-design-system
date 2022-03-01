@@ -1,3 +1,23 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v12.2.0...master
+
+## Summary
+
+* Bugfix - Icon & background color for mobile OcBreadcrumb: [#1980](https://github.com/owncloud/owncloud-design-system/issues/1980)
+
+## Details
+
+* Bugfix - Icon & background color for mobile OcBreadcrumb: [#1980](https://github.com/owncloud/owncloud-design-system/issues/1980)
+
+   The icon in the mobile OcBreadcrumb drop was missing, also the background color made reading
+   the content impossible. This has been adressed.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1980
+   https://github.com/owncloud/owncloud-design-system/pull/1994
+
 # Changelog for [12.2.0] (2022-02-28)
 
 The following sections list the changes in ownCloud Design System 12.2.0.
