@@ -246,6 +246,14 @@ export default {
     }
   },
   computed: {
+    getInitialFocusRef() {
+      if (this.focusTrapInitial) {
+        return this.focusTrapInitial
+      }
+      return () => {
+        return this.$refs.ocModalInput || this.$refs.ocModal
+      }
+    },
     classes() {
       return ["oc-modal", `oc-modal-${this.variation}`]
     },
@@ -284,9 +292,6 @@ export default {
     },
     inputAssignPropAsValue(value) {
       this.userInputValue = value
-    },
-    getInitialFocusRef() {
-      return this.focusTrapInitial || this.$refs.ocModalInput || this.$refs.ocModal
     },
   },
 }
