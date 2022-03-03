@@ -1,6 +1,6 @@
 <template>
   <div class="oc-modal-background" aria-labelledby="oc-modal-title">
-    <focus-trap :active="true" :initial-focus="getInitialFocusRef">
+    <focus-trap :active="true" :initial-focus="initialFocusRef">
       <div
         ref="ocModal"
         :class="classes"
@@ -246,6 +246,14 @@ export default {
     }
   },
   computed: {
+    initialFocusRef() {
+      if (this.focusTrapInitial) {
+        return this.focusTrapInitial
+      }
+      return () => {
+        return this.$refs.ocModalInput || this.$refs.ocModal
+      }
+    },
     classes() {
       return ["oc-modal", `oc-modal-${this.variation}`]
     },
@@ -284,9 +292,6 @@ export default {
     },
     inputAssignPropAsValue(value) {
       this.userInputValue = value
-    },
-    getInitialFocusRef() {
-      return this.focusTrapInitial || this.$refs.ocModalInput || this.$refs.ocModal
     },
   },
 }
