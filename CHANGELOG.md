@@ -6,9 +6,18 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Initial focus in OcModal: [#2001](https://github.com/owncloud/owncloud-design-system/pull/2001)
 * Bugfix - Hidden overflow on OcModal: [#2000](https://github.com/owncloud/owncloud-design-system/pull/2000)
 
 ## Details
+
+* Bugfix - Initial focus in OcModal: [#2001](https://github.com/owncloud/owncloud-design-system/pull/2001)
+
+   We've fixed a bug that was introduced in the last version, where the initial focus element
+   provided via the focusTrapInitial property was broken.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2001
+
 
 * Bugfix - Hidden overflow on OcModal: [#2000](https://github.com/owncloud/owncloud-design-system/pull/2000)
 
