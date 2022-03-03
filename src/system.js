@@ -12,7 +12,6 @@ const initializeCustomProps = (tokens = [], prefix) => {
   }
 }
 
-// Install the above defined components
 const System = {
   install(Vue, options = {}) {
     const themeOptions = options.tokens
@@ -27,5 +26,4 @@ const System = {
   },
 }
 
-// Finally export as default
 export default System

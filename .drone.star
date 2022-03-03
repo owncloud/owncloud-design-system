@@ -84,7 +84,7 @@ def build_stages(ctx):
             "name": "build system",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn build:experimental",
+                "yarn build:system",
             ],
             "depends_on": ["unit tests"],
         },
