@@ -1,6 +1,6 @@
 <template>
   <div class="oc-modal-background" aria-labelledby="oc-modal-title">
-    <focus-trap :active="true" :initial-focus="getInitialFocusRef">
+    <focus-trap :active="true" :initial-focus="initialFocusRef">
       <div
         ref="ocModal"
         :class="classes"
@@ -246,7 +246,7 @@ export default {
     }
   },
   computed: {
-    getInitialFocusRef() {
+    initialFocusRef() {
       if (this.focusTrapInitial) {
         return this.focusTrapInitial
       }
