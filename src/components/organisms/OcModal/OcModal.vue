@@ -300,12 +300,7 @@ export default {
 }
 
 .oc-modal {
-  background-color: var(--oc-color-background-default);
-  border-radius: 15px;
-  border: 1px solid var(--oc-color-swatch-brand-default);
-  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
   max-width: 500px;
-  overflow: hidden;
   width: 100%;
 
   &:focus {
@@ -345,6 +340,10 @@ export default {
   &-title {
     align-items: center;
     background-color: var(--oc-color-swatch-brand-default);
+    border: 1px solid var(--oc-color-swatch-brand-default);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-flow: row wrap;
     padding: var(--oc-space-small) var(--oc-space-medium);
@@ -363,6 +362,10 @@ export default {
 
   &-body {
     background-color: var(--oc-color-background-default);
+    border: 1px solid var(--oc-color-swatch-brand-default);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
     color: var(--oc-color-text-default);
     padding: var(--oc-space-medium);
 
