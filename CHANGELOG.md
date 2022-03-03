@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v12.2.1...master
+
+## Summary
+
+* Bugfix - Hidden overflow on OcModal: [#2000](https://github.com/owncloud/owncloud-design-system/pull/2000)
+
+## Details
+
+* Bugfix - Hidden overflow on OcModal: [#2000](https://github.com/owncloud/owncloud-design-system/pull/2000)
+
+   We've fixed a bug that prevented overflow within the OcModal to e.g. use dropdowns inside the
+   modal body.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2000
+
 # Changelog for [12.2.1] (2022-03-02)
 
 The following sections list the changes in ownCloud Design System 12.2.1.
