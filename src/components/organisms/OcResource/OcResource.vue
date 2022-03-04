@@ -307,7 +307,8 @@ export default {
             name: "Documents",
             path: "/Documents",
             indicators: [],
-            type: "folder"
+            type: "folder",
+            isFolder: true
           }
         },
         notes() {
@@ -316,7 +317,8 @@ export default {
             extension: "txt",
             path: "Documents/notes.txt",
             indicators: this.indicators,
-            type: "file"
+            type: "file",
+            isFolder: false
           }
         },
         forest() {
@@ -327,6 +329,7 @@ export default {
             thumbnail: "https://picsum.photos/200/300",
             indicators: [],
             type: "file",
+            isFolder: false,
             opensInNewWindow: true,
           }
         },

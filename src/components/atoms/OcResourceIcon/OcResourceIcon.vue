@@ -61,7 +61,7 @@ export default {
       return this.resource.isFolder
     },
     extension() {
-      return this.resource.extension.toLowerCase()
+      return this.resource.extension?.toLowerCase()
     },
   },
 }
