@@ -1,7 +1,11 @@
 import { mount } from "@vue/test-utils"
 
 import Resource from "./OcResource.vue"
+import OcButton from "../../atoms/OcButton/OcButton.vue"
 
+const stubs = {
+  "oc-button": OcButton,
+}
 const fileResource = {
   name: "forest.jpg",
   path: "nature/forest.jpg",
@@ -51,6 +55,7 @@ describe("OcResource", () => {
       propsData: {
         resource: fileResource,
       },
+      stubs,
     })
 
     wrapper.find(".oc-resource-name").trigger("click")
@@ -64,6 +69,7 @@ describe("OcResource", () => {
         isPathDisplayed: true,
         parentFolderLink: {},
       },
+      stubs,
     })
 
     expect(wrapper.find(".parent-folder").find("a").exists()).toBeTruthy()
@@ -76,6 +82,7 @@ describe("OcResource", () => {
         resource: fileResource,
         isPathDisplayed: true,
       },
+      stubs,
     })
 
     expect(wrapper.find(".parent-folder").find("a").exists()).toBeFalsy()

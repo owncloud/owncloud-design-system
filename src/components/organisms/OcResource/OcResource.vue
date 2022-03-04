@@ -1,13 +1,10 @@
 <template>
   <div class="oc-resource oc-text-overflow">
-    <component
-      :is="componentType"
-      v-bind="componentProps"
-      v-if="isResourceClickable"
-      :target="linkTargetBlank"
-      :aria-describedby="opensInNewWindowDescriptionId"
-      @click.stop="emitClick"
-      @click.native.stop
+    <oc-resource-link
+      :resource="resource"
+      :is-resource-clickable="isResourceClickable"
+      :folder-link="folderLink"
+      @click="emitClick"
     >
       <oc-img
         v-if="hasThumbnail"
@@ -18,17 +15,15 @@
         height="40"
       />
       <oc-resource-icon v-else :resource="resource" />
-    </component>
+    </oc-resource-link>
     <div class="oc-resource-details oc-text-overflow">
-      <component
-        :is="componentType"
-        v-bind="componentProps"
-        v-if="isResourceClickable"
-        :target="linkTargetBlank"
-        :aria-describedby="opensInNewWindowDescriptionId"
+      <oc-resource-link
+        v-slot="{ opensInNewWindowDescriptionId }"
+        :resource="resource"
+        :is-resource-clickable="isResourceClickable"
+        :folder-link="folderLink"
         class="oc-text-overflow"
-        @click.stop="emitClick"
-        @click.native.stop
+        @click="emitClick"
       >
         <span
           v-if="opensInNewWindowDescriptionId"
@@ -44,15 +39,7 @@
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
         />
-      </component>
-      <oc-resource-name
-        v-else
-        :name="resource.name"
-        :extension="resource.extension"
-        :type="resource.type"
-        :full-path="resource.path"
-        :is-path-displayed="isPathDisplayed"
-      />
+      </oc-resource-link>
       <div class="oc-resource-indicators">
         <component
           :is="parentFolderComponentType"
@@ -82,7 +69,7 @@ import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndic
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
 import OcResourceIcon from "../../atoms/OcResourceIcon/OcResourceIcon.vue"
-import uniqueId from "../../../utils/uniqueId"
+import OcResourceLink from "../../atoms/OcResourceLink/OcResourceLink.vue"
 import * as path from "path"
 
 /**
@@ -92,7 +79,15 @@ export default {
   name: "OcResource",
   status: "ready",
   release: "2.1.0",
-  components: { OcButton, OcImg, OcStatusIndicators, OcIcon, OcResourceName, OcResourceIcon },
+  components: {
+    OcButton,
+    OcImg,
+    OcStatusIndicators,
+    OcIcon,
+    OcResourceName,
+    OcResourceIcon,
+    OcResourceLink,
+  },
   props: {
     /**
      * The resource folder link
@@ -102,7 +97,6 @@ export default {
       required: false,
       default: null,
     },
-
     /**
      * The resource parent folder link path
      */
@@ -160,10 +154,6 @@ export default {
       }
     },
 
-    isFolder() {
-      return this.resource.type === "folder"
-    },
-
     hasThumbnail() {
       return (
         this.isThumbnailDisplayed &&
@@ -174,52 +164,10 @@ export default {
     thumbnail() {
       return this.resource.thumbnail
     },
-
-    componentType() {
-      return this.isFolder ? "router-link" : "oc-button"
-    },
-
-    isRouterLink() {
-      return this.isResourceClickable && this.isFolder
-    },
-
-    componentProps() {
-      if (!this.isRouterLink) {
-        return {
-          appearance: "raw",
-          gapSize: "none",
-          justifyContent: "left",
-        }
-      }
-
-      return {
-        to: this.folderLink,
-      }
-    },
-
-    opensInNewWindowDescriptionId() {
-      if (this.resource.opensInNewWindow) {
-        return uniqueId("oc-link-description-")
-      }
-
-      return null
-    },
-
-    linkTargetBlank() {
-      if (this.isRouterLink && this.resource.opensInNewWindow) {
-        return "_blank"
-      }
-
-      return null
-    },
   },
 
   methods: {
     emitClick() {
-      if (this.isFolder) {
-        return
-      }
-
       /**
        * Triggered when the resource is a file and the name is clicked
        */
