@@ -35,6 +35,18 @@ export const ariaHidden = {
   },
 }
 
+export const truncate = {
+  name: "truncate",
+  defaultValue: true,
+  fn(instance) {
+    return {
+      onCreate() {
+        instance.popper.getElementsByClassName("tippy-content")[0].classList.add("oc-text-truncate")
+      }
+    }
+  }
+}
+
 export const destroy = _tippy => {
   if (!_tippy) {
     return
@@ -72,7 +84,7 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
   if (!elm.tooltip) {
     elm.tooltip = tippy(el, {
       ...props,
-      plugins: [hideOnEsc, ariaHidden],
+      plugins: [hideOnEsc, ariaHidden, truncate],
     })
     return
   }
