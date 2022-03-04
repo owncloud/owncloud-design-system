@@ -1,5 +1,5 @@
 <template>
-  <span class="oc-recipient">
+  <span class="oc-recipient oc-width-auto">
     <template v-if="recipient.hasAvatar">
       <oc-spinner
         v-if="recipient.isLoadingAvatar"
@@ -26,7 +26,7 @@
       :accessible-label="recipient.icon.label"
       data-testid="recipient-icon"
     />
-    <p class="oc-recipient-name" data-testid="recipient-name" v-text="recipient.name" />
+    <p class="oc-recipient-name oc-text-truncate" data-testid="recipient-name" v-text="recipient.name" />
     <!-- @slot Append content (actions, additional info, etc.)  -->
     <slot name="append" />
   </span>
