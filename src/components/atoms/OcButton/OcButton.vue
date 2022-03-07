@@ -2,7 +2,6 @@
   <component
     :is="type"
     v-bind="additionalAttributes"
-    :type="submit"
     :aria-label="ariaLabel"
     :class="$_ocButton_buttonClass"
     :disabled="disabled"
@@ -73,13 +72,13 @@ export default {
       default: null,
     },
     /**
-     * Set the button’s type to “submit”.
+     * Set the button’s type ("submit", "button" or "reset").
      */
     submit: {
       type: String,
-      default: null,
+      default: "button",
       validator: value => {
-        return value.match(/(null|submit)/)
+        return value.match(/(null|button|submit|reset)/)
       },
     },
     /**
@@ -156,6 +155,7 @@ export default {
       return {
         ...(this.href && { href: this.href }),
         ...(this.to && { to: this.to }),
+        ...(this.type === "button" && { type: this.submit }),
       }
     },
 
