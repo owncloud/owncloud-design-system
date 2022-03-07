@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
+* Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
 
 ## Details
 
@@ -16,6 +17,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    theming colors.
 
    https://github.com/owncloud/owncloud-design-system/pull/2008
+
+
+* Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
+
+   We fixed that only clickable resources had icons/thumbnails in `OcResource`. It was fixed by
+   introducing an `OcResourceLink` component that reduces code complexity and duplication
+   when linking resources.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2007
 
 # Changelog for [12.2.2] (2022-03-03)
 
