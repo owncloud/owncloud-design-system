@@ -133,6 +133,16 @@ export default {
 </script>
 
 <style lang="scss">
+.vs--disabled {
+  .vs__clear,
+  .vs__dropdown-toggle,
+  .vs__open-indicator,
+  .vs__search,
+  .vs__selected {
+    background-color: var(--oc-color-input-bg) !important;
+  }
+}
+
 .oc-select {
   background-image: none !important;
   line-height: 24px !important;
@@ -146,7 +156,7 @@ export default {
     &__search::placeholder,
     &__dropdown-toggle,
     &__dropdown-menu {
-      background: var(--oc-color-input-bg);
+      background-color: var(--oc-color-input-bg);
       border: 1px solid var(--oc-color-input-border);
       color: var(--oc-color-input-text-default);
     }
@@ -161,7 +171,7 @@ export default {
       white-space: normal;
 
       &--highlight {
-        background: var(--oc-color-input-text-default);
+        background-color: var(--oc-color-input-text-default);
         color: var(--oc-color-text-inverse);
       }
     }
