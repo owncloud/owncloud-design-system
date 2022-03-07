@@ -116,7 +116,7 @@
     "typescript": "^4.3.2",
     "url-loader": "^4.1.1",
     "v-calendar": "^2.3.2",
-    "vue": "^2.6.11",
+    "vue": "^3.2.31",
     "vue-gettext": "^2.1.12",
     "vue-inline-svg": "^2.0.0",
     "vue-jest": "^3.0.4",
@@ -145,7 +145,7 @@
     "postcss-url": "^9.0.0",
     "tippy.js": "^6.3.7",
     "v-calendar": "^2.3.2",
-    "vue": "^2.6.11",
+    "vue": "^3.2.31",
     "vue-inline-svg": "^2.0.0",
     "vue-select": "^3.12.0",
     "webfontloader": "^1.6.28"
