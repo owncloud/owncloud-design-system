@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v12.2.2...master
+
+## Summary
+
+* Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
+
+## Details
+
+* Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
+
+   We've fixed a bug that prevented the background of disabled OcSelect components from using
+   theming colors.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2008
+
 # Changelog for [12.2.2] (2022-03-03)
 
 The following sections list the changes in ownCloud Design System 12.2.2.
