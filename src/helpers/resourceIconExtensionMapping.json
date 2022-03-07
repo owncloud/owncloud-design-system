@@ -25,6 +25,7 @@
 	"docx": "document",
 	"dot": "document",
 	"dotx": "document",
+	"drawio": "drawio",
 	"eml": "text",
 	"eot": "image",
 	"eps": "image",
@@ -39,6 +40,7 @@
 	"hpp": "code",
 	"htm": "code",
 	"html": "code",
+	"ifc": "ifc",
 	"java": "code",
 	"jpeg": "image",
 	"jpg": "image",
@@ -51,6 +53,7 @@
 	"mp3": "audio",
 	"mp4": "video",
 	"odp": "presentation",
+	"odg": "graphic",
 	"ods": "spreadsheet",
 	"odt": "document",
 	"one": "document",
@@ -111,4 +114,4 @@
 	"yaml": "code",
 	"yml": "code",
 	"zip": "archive"
-	}  
+}
