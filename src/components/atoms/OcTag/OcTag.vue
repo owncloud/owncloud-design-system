@@ -90,11 +90,13 @@ export default {
 
   &-m {
     font-size: 0.875rem;
+    min-height: 2.125rem;
     padding: var(--oc-space-xsmall) var(--oc-space-small);
   }
 
   &-l {
     font-size: 1.5rem;
+    min-height: 2.75rem;
     padding: var(--oc-space-small) var(--oc-space-medium);
   }
 
@@ -137,15 +139,15 @@ Component to display various information.
 ```js
 <div>
 <oc-tag size="small">
-  <oc-icon name="links" />
+  <oc-icon name="links" size="small" />
   Small tag
 </oc-tag>
 <oc-tag size="medium">
-  <oc-icon name="links" />
+  <oc-icon name="links" size="medium" />
   Medium tag
 </oc-tag>
 <oc-tag size="large">
-  <oc-icon name="links" />
+  <oc-icon name="links" size="large" />
   Large tag
 </oc-tag>
 </div>
