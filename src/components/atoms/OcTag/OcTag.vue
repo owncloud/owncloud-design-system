@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { getSizeClass } from "../../../utils/sizeClasses"
+
 export default {
   name: "OcTag",
   status: "ready",
@@ -31,11 +33,23 @@ export default {
       required: false,
       default: null,
     },
+
+    /**
+     * The size of the tag. Defaults to medium.
+     * `small, medium, large`
+     */
+    size: {
+      type: String,
+      default: "medium",
+      validator: value => {
+        return value.match(/(small|medium|large)/)
+      },
+    },
   },
 
   computed: {
     $_ocTag_class() {
-      const classes = ["oc-tag"]
+      const classes = ["oc-tag", `oc-tag-${getSizeClass(this.size)}`]
 
       this.type === "router-link" || this.type === "a"
         ? classes.push("oc-tag-link")
@@ -66,11 +80,25 @@ export default {
   box-sizing: border-box;
   color: var(--oc-color-text-muted);
   display: inline-flex;
-  font-size: 0.875rem;
   gap: var(--oc-space-xsmall);
-  min-height: $oc-size-icon-default + (2 * $oc-space-xsmall) + 2px;
-  padding: var(--oc-space-xsmall) var(--oc-space-small);
   text-decoration: none;
+
+  &-s {
+    font-size: 0.75rem;
+    padding: var(--oc-space-xsmall);
+  }
+
+  &-m {
+    font-size: 0.875rem;
+    min-height: 2.125rem;
+    padding: var(--oc-space-xsmall) var(--oc-space-small);
+  }
+
+  &-l {
+    font-size: 1.5rem;
+    min-height: 2.75rem;
+    padding: var(--oc-space-small) var(--oc-space-medium);
+  }
 
   .oc-icon > svg {
     fill: var(--oc-color-text-muted);
@@ -105,6 +133,24 @@ Component to display various information.
   <oc-icon name="links" />
   Shared via link
 </oc-tag>
+```
+## Different sizes of the tag component
+
+```js
+<div>
+<oc-tag size="small">
+  <oc-icon name="links" size="small" />
+  Small tag
+</oc-tag>
+<oc-tag size="medium">
+  <oc-icon name="links" size="medium" />
+  Medium tag
+</oc-tag>
+<oc-tag size="large">
+  <oc-icon name="links" size="large" />
+  Large tag
+</oc-tag>
+</div>
 ```
 ## Different types of the tag component
 The tag component can be rendered as a different element if desired. You can specify such element via property `type`.
