@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { getSizeClass } from "../../../utils/sizeClasses"
+
 export default {
   name: "OcTag",
   status: "ready",
@@ -31,11 +33,23 @@ export default {
       required: false,
       default: null,
     },
+
+    /**
+     * The size of the tag. Defaults to medium.
+     * `small, medium, large`
+     */
+    size: {
+      type: String,
+      default: "medium",
+      validator: value => {
+        return value.match(/(small|medium|large)/)
+      },
+    },
   },
 
   computed: {
     $_ocTag_class() {
-      const classes = ["oc-tag"]
+      const classes = ["oc-tag", `oc-tag-${getSizeClass(this.size)}`]
 
       this.type === "router-link" || this.type === "a"
         ? classes.push("oc-tag-link")
@@ -68,9 +82,20 @@ export default {
   display: inline-flex;
   font-size: 0.875rem;
   gap: var(--oc-space-xsmall);
-  min-height: $oc-size-icon-default + (2 * $oc-space-xsmall) + 2px;
   padding: var(--oc-space-xsmall) var(--oc-space-small);
   text-decoration: none;
+
+  &-s {
+    min-height: 1.5rem;
+  }
+
+  &-m {
+    min-height: 2.125rem;
+  }
+
+  &-l {
+    min-height: 2.75rem;
+  }
 
   .oc-icon > svg {
     fill: var(--oc-color-text-muted);
