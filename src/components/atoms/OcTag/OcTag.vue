@@ -131,6 +131,24 @@ Component to display various information.
   Shared via link
 </oc-tag>
 ```
+## Different sizes of the tag component
+
+```js
+<div>
+<oc-tag size="small">
+  <oc-icon name="links" />
+  Small tag
+</oc-tag>
+<oc-tag size="medium">
+  <oc-icon name="links" />
+  Medium tag
+</oc-tag>
+<oc-tag size="large">
+  <oc-icon name="links" />
+  Large tag
+</oc-tag>
+</div>
+```
 ## Different types of the tag component
 The tag component can be rendered as a different element if desired. You can specify such element via property `type`.
 
