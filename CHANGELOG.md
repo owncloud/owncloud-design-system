@@ -9,7 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
 * Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
 * Change - Default type of OcButton: [#2009](https://github.com/owncloud/owncloud-design-system/pull/2009)
-* Enhancement - Apply size property to oc-card: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
+* Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
 
 ## Details
 
@@ -39,7 +39,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2009
 
 
-* Enhancement - Apply size property to oc-card: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
+* Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
 
    We've added a size property to oc-tag
 
