@@ -80,21 +80,22 @@ export default {
   box-sizing: border-box;
   color: var(--oc-color-text-muted);
   display: inline-flex;
-  font-size: 0.875rem;
   gap: var(--oc-space-xsmall);
-  padding: var(--oc-space-xsmall) var(--oc-space-small);
   text-decoration: none;
 
   &-s {
-    min-height: 1.5rem;
+    font-size: 0.75rem;
+    padding: var(--oc-space-xsmall);
   }
 
   &-m {
-    min-height: 2.125rem;
+    font-size: 0.875rem;
+    padding: var(--oc-space-xsmall) var(--oc-space-small);
   }
 
   &-l {
-    min-height: 2.75rem;
+    font-size: 1.5rem;
+    padding: var(--oc-space-small) var(--oc-space-medium);
   }
 
   .oc-icon > svg {
