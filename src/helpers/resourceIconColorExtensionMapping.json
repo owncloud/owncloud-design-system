@@ -38,6 +38,7 @@
   "htm": "var(--oc-color-text-default)",
   "html": "var(--oc-color-text-default)",
   "ifc": "var(--oc-color-icon-ifc)",
+  "ipynb": "var(--oc-color-icon-jupyter)",
   "java": "var(--oc-color-text-default)",
   "jpeg": "var(--oc-color-icon-image)",
   "jpg": "var(--oc-color-icon-image)",
