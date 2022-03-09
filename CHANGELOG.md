@@ -9,6 +9,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
 * Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
 * Change - Default type of OcButton: [#2009](https://github.com/owncloud/owncloud-design-system/pull/2009)
+* Change - Remove OcStatusIndicators from OcResource: [#5976](https://github.com/owncloud/web/issues/5976)
+* Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
 
 ## Details
@@ -37,6 +39,25 @@ The following sections list the changes in ownCloud Design System unreleased.
    especially as we use `OcButton` in a lot of (not so obvious) places for a11y reasons.
 
    https://github.com/owncloud/owncloud-design-system/pull/2009
+
+
+* Change - Remove OcStatusIndicators from OcResource: [#5976](https://github.com/owncloud/web/issues/5976)
+
+   We've removed OcStatusIndicators from OcResource since it will be moved in a separate column
+
+   https://github.com/owncloud/web/issues/5976
+   https://github.com/owncloud/web/pull/6552
+   https://github.com/owncloud/owncloud-design-system/pull/2014
+
+
+* Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
+
+   We've redesigned the share/status indicators to fit in a separate column in the ResourceTable
+   in web
+
+   https://github.com/owncloud/web/issues/5976
+   https://github.com/owncloud/web/pull/6552
+   https://github.com/owncloud/owncloud-design-system/pull/2014
 
 
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
