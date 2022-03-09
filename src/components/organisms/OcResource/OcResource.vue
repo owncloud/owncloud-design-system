@@ -53,11 +53,6 @@
           <oc-icon name="folder-2" size="small" fill-type="line" />
           <span class="text" v-text="parentFolder" />
         </component>
-        <oc-status-indicators
-          v-if="resource.indicators.length"
-          :resource="resource"
-          :indicators="resource.indicators"
-        />
       </div>
     </div>
   </div>

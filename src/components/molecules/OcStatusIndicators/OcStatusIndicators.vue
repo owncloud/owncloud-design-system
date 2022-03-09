@@ -6,20 +6,16 @@
         :id="indicator.id"
         :key="indicator.id"
         v-oc-tooltip="indicator.label"
-        class="oc-status-indicators-indicator"
+        class="oc-status-indicators-indicator oc-background-primary-gradient oc-p-xs oc-ml-xs"
         :aria-label="indicator.label"
         :aria-describedby="getIndicatorDescriptionId(indicator)"
         appearance="raw"
+        variation="inverse"
         :data-testid="indicator.id"
         :data-test-indicator-type="indicator.type"
         @click="indicator.handler(resource, indicator.target)"
       >
-        <oc-icon
-          :name="indicator.icon"
-          size="small"
-          :fill-type="indicator.fillType"
-          variation="passive"
-        />
+        <oc-icon :name="indicator.icon" size="small" fill-type="line" />
       </oc-button>
       <oc-icon
         v-else
@@ -122,6 +118,10 @@ export default {
 .oc-status-indicators {
   align-items: center;
   display: flex;
+  justify-content: flex-end;
+  &-indicator {
+    border-radius: 99px;
+  }
 }
 </style>
 
@@ -148,6 +148,7 @@ export default {
           id: 'file-link',
           label: "Shared via link",
           icon: 'links',
+          handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
         }
       ]
     }),
