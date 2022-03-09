@@ -118,7 +118,7 @@ export default {
 .oc-status-indicators {
   align-items: center;
   display: flex;
-  float: right;
+  justify-content: flex-end;
   &-indicator {
     border-radius: 99px;
   }
@@ -148,6 +148,7 @@ export default {
           id: 'file-link',
           label: "Shared via link",
           icon: 'links',
+          handler: (resource, indicatorId) => alert(`Resource: ${resource.name}, indicator: ${indicatorId}`)
         }
       ]
     }),

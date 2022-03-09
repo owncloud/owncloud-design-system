@@ -18,25 +18,16 @@ const indicator = {
 }
 describe("OcStatusIndicators", () => {
   it("does call indicator handler on click", () => {
-    var called = false
+    const spyHandler = jest.spyOn(indicator, "handler")
     const wrapper = mount(StatusIndicators, {
       propsData: {
         resource: fileResource,
-        indicators: [
-          {
-            id: "test",
-            label: "test",
-            type: "test",
-            handler: () => {
-              called = true
-            },
-          },
-        ],
+        indicators: [indicator],
         target: "test",
       },
     })
     wrapper.find(".oc-status-indicators-indicator").trigger("click")
-    expect(called).toBeTruthy()
+    expect(spyHandler).toHaveBeenCalled()
   })
   it("does create indicator with id", () => {
     const wrapper = mount(StatusIndicators, {
