@@ -76,31 +76,32 @@ export default {
   gap: var(--oc-space-small);
 
   &-btn {
-    border: 1px solid var(--oc-color-input-border);
+    border: 1px solid var(--oc-color-input-bg);
     border-radius: 20px;
     cursor: pointer;
     display: block;
-    height: 16px;
+    height: 18px;
     margin: 0;
     padding: 0;
     position: relative;
     transition: background-color 0.25s;
-    width: 29px;
+    width: 31px;
 
     &::before {
-      background-color: var(--oc-color-input-bg);
+      background-color: var(--oc-color-swatch-inverse-hover);
+      box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px 1px;
       border-radius: 50%;
       content: "";
       height: 12px;
       left: 1px;
       position: absolute;
-      top: 1px;
+      top: 2px;
       transition: transform 0.25s;
       width: 12px;
     }
 
     &[aria-checked="false"] {
-      background-color: var(--oc-color-input-text-muted);
+      background-color: var(--oc-color-swatch-inverse-muted);
 
       &::before {
         transform: translateX(0);
@@ -109,7 +110,7 @@ export default {
     }
 
     &[aria-checked="true"] {
-      background-color: var(--oc-color-input-text-default);
+      background-color: var(--oc-color-swatch-primary-default);
 
       &::before {
         transform: translateX(calc(100% + 1px));
