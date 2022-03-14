@@ -10,6 +10,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
 * Change - Default type of OcButton: [#2009](https://github.com/owncloud/owncloud-design-system/pull/2009)
 * Change - Remove OcStatusIndicators from OcResource: [#5976](https://github.com/owncloud/web/issues/5976)
+* Enhancement - Polish OcSwitch: [#6492](https://github.com/owncloud/web/issues/6492)
 * Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
 
@@ -48,6 +49,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/5976
    https://github.com/owncloud/web/pull/6552
    https://github.com/owncloud/owncloud-design-system/pull/2014
+
+
+* Enhancement - Polish OcSwitch: [#6492](https://github.com/owncloud/web/issues/6492)
+
+   We've adjusted the OcSwitch to fit the redesign
+
+   https://github.com/owncloud/web/issues/6492
+   https://github.com/owncloud/owncloud-design-system/pull/2018
 
 
 * Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
