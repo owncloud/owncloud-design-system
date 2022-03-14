@@ -110,6 +110,10 @@ export default {
   &-name {
     display: flex;
     min-width: 0;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: var(--oc-color-text-default);
+    }
   }
 
   &-basename,
