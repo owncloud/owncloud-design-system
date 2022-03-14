@@ -101,7 +101,7 @@ export default {
     }
 
     &[aria-checked="false"] {
-      background-color: var(--oc-color-swatch-primary-default);
+      background-color: var(--oc-color-swatch-inverse-muted);
 
       &::before {
         transform: translateX(0);
@@ -110,7 +110,7 @@ export default {
     }
 
     &[aria-checked="true"] {
-      background-color: var(--oc-color-swatch-inverse-muted);
+      background-color: var(--oc-color-swatch-primary-default);
 
       &::before {
         transform: translateX(calc(100% + 1px));
