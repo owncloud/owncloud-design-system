@@ -262,7 +262,7 @@ export default {
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
   display: inline-flex;
-  font-weight: 600;
+  font-weight: 400;
   padding: 0.5rem 0.75rem;
   text-align: center;
   text-decoration: none;
