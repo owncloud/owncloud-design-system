@@ -191,7 +191,7 @@ export default {
 <style lang="scss">
 .oc-textarea {
   background-color: var(--oc-color-input-bg);
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid var(--oc-color-input-border);
   box-sizing: border-box;
   color: var(--oc-color-input-text-muted);
