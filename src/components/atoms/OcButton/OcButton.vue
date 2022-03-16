@@ -258,11 +258,11 @@ export default {
   align-items: center;
   border: 1px solid;
   border-color: transparent;
-  border-radius: 3px;
+  border-radius: 5px;
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
   display: inline-flex;
-  font-weight: 600;
+  font-weight: 400;
   padding: 0.5rem 0.75rem;
   text-align: center;
   text-decoration: none;
@@ -428,11 +428,11 @@ export default {
       border-radius: 0;
 
       &:first-of-type {
-        border-radius: 3px 0 0 3px;
+        border-radius: 5px 0 0 5px;
       }
 
       &:last-of-type {
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 5px 5px 0;
       }
 
       &-default {

@@ -185,7 +185,7 @@ export default {
       border: 3px solid transparent;
       &:hover {
         background-color: var(--oc-color-background-hover);
-        border-radius: 3px;
+        border-radius: 5px;
       }
     }
 
