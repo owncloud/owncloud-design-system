@@ -7,7 +7,7 @@
         v-bind="additionalAttributes"
         ref="input"
         :aria-invalid="ariaInvalid"
-        class="oc-text-input"
+        class="oc-text-input oc-rounded"
         :class="{
           'oc-text-input-warning': !!warningMessage,
           'oc-text-input-danger': !!errorMessage,
@@ -271,7 +271,6 @@ export default {
 
   background-color: var(--oc-color-input-bg);
   border: 1px solid var(--oc-color-input-border);
-  border-radius: 5px;
   color: var(--oc-color-input-text-muted);
 
   &:focus {

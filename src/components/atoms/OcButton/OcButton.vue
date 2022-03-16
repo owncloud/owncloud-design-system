@@ -132,6 +132,7 @@ export default {
     $_ocButton_buttonClass() {
       const classes = [
         "oc-button",
+        "oc-rounded",
         `oc-button-${getSizeClass(this.size)}`,
         `oc-button-justify-content-${this.justifyContent}`,
         `oc-button-gap-${getSizeClass(this.gapSize)}`,
@@ -258,7 +259,6 @@ export default {
   align-items: center;
   border: 1px solid;
   border-color: transparent;
-  border-radius: 5px;
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
   display: inline-flex;
