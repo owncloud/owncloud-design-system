@@ -1,10 +1,10 @@
 import Vue from "vue"
-import Color from "./Color.vue"
+import ColorTokens from "./ColorTokens.vue"
 
-const Constructor = Vue.extend(Color)
+const Constructor = Vue.extend(ColorTokens)
 const vm = new Constructor().$mount()
 
-describe("Color.vue", () => {
+describe("ColorTokens.vue", () => {
   it("should render correct contents", () => {
     expect(vm.$el.querySelector(".color")).toBeDefined()
   })

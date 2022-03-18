@@ -23,7 +23,7 @@ import designTokens from "@/assets/tokens/ods.json"
  * [/src/tokens/spacing.yml](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens/spacing.yml).
  */
 export default {
-  name: "Spacing",
+  name: "SpacingTokens",
   computed: {
     tokens() {
       return Object.values(designTokens).filter(token => token.name.startsWith("oc-space"))
@@ -69,6 +69,6 @@ export default {
 
 <docs>
   ```jsx
-  <spacing/>
+  <spacing-tokens />
   ```
 </docs>

@@ -43,7 +43,7 @@ import designTokens from "@/assets/tokens/ods.json"
  * [/src/tokens/](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens).
  */
 export default {
-  name: "All",
+  name: "AllTokens",
   data() {
     return {
       tokens: Object.values(designTokens),
@@ -134,6 +134,6 @@ export default {
 
 <docs>
   ```jsx
-  <all/>
+  <all-tokens />
   ```
 </docs>

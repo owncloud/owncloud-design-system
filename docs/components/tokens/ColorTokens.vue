@@ -30,7 +30,7 @@ import designTokens from "@/assets/tokens/ods.json"
  * [/src/tokens/color.yml](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens/color.yml).
  */
 export default {
-  name: "Color",
+  name: "ColorTokens",
 
   computed: {
     tokens() {
@@ -154,6 +154,6 @@ h3 {
 
 <docs>
 ```jsx
-<color />
+<color-tokens />
 ```
 </docs>

@@ -5,7 +5,7 @@ You’re looking at ownCloud Design System’s demo <code>design tokens</code>. 
 ## Color Palette
 
 ```
-<color />
+<color-tokens />
 ```
 
 ## Font Sizes
@@ -17,11 +17,11 @@ You’re looking at ownCloud Design System’s demo <code>design tokens</code>. 
 ## Spacing
 
 ```
-<spacing />
+<spacing-tokens />
 ```
 
 ## All Tokens
 
 ```
-<all />
+<all-tokens />
 ```
