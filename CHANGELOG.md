@@ -13,6 +13,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Icons for drawio, ifc and odg resource types: [#6416](https://github.com/owncloud/web/issues/6416)
 * Enhancement - Polish OcSwitch: [#6492](https://github.com/owncloud/web/issues/6492)
 * Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
+* Enhancement - Underline OcResourceName: [#6492](https://github.com/owncloud/web/issues/6492)
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
 
 ## Details
@@ -77,6 +78,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/5976
    https://github.com/owncloud/web/pull/6552
    https://github.com/owncloud/owncloud-design-system/pull/2014
+
+
+* Enhancement - Underline OcResourceName: [#6492](https://github.com/owncloud/web/issues/6492)
+
+   We've added an underline on hover effect to OcResourceName
+
+   https://github.com/owncloud/web/issues/6492
+   https://github.com/owncloud/owncloud-design-system/pull/2019
 
 
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
