@@ -69,7 +69,7 @@
 import orderBy from "../../utils/orderBy"
 
 export default {
-  name: "Components",
+  name: "ComponentsList",
   data() {
     return {
       components: this.orderData(this.getComponents()),
@@ -193,6 +193,6 @@ export default {
 
 <docs>
   ```jsx
-  <components />
+  <components-list />
   ```
 </docs>

@@ -28,7 +28,7 @@ const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
  * </p>
  */
 export default {
-  name: "Icon",
+  name: "IconList",
   components: { OcIcon },
   data() {
     return {
@@ -42,6 +42,6 @@ export default {
 
 <docs>
   ```
-  <Icon/>
+  <icon-list />
   ```
 </docs>

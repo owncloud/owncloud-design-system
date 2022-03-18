@@ -87,11 +87,11 @@ module.exports = {
       exampleMode: "hide",
       usageMode: "hide",
       components: () => [
-        "../docs/components/tokens/Icon.vue",
-        "../docs/components/tokens/Color.vue",
+        "../docs/components/tokens/IconList.vue",
+        "../docs/components/tokens/ColorTokens.vue",
         "../docs/components/tokens/FontSize.vue",
-        "../docs/components/tokens/Spacing.vue",
-        "../docs/components/tokens/All.vue",
+        "../docs/components/tokens/SpacingTokens.vue",
+        "../docs/components/tokens/AllTokens.vue",
       ],
     },
     {

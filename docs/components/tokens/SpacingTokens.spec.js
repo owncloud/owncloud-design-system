@@ -1,10 +1,10 @@
 import Vue from "vue"
-import Spacing from "./Spacing.vue"
+import SpacingTokens from "./SpacingTokens.vue"
 
-const Constructor = Vue.extend(Spacing)
+const Constructor = Vue.extend(SpacingTokens)
 const vm = new Constructor().$mount()
 
-describe("Spacing.vue", () => {
+describe("SpacingTokens.vue", () => {
   it("should render correct contents", () => {
     expect(vm.$el.querySelector(".space")).toBeDefined()
   })
