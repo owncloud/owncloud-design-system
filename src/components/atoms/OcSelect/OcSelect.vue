@@ -6,6 +6,7 @@
       :disabled="disabled"
       :filter="filter"
       class="oc-select"
+      style="background: transparent"
       v-bind="additionalAttributes"
       v-on="$listeners"
     >
