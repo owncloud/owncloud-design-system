@@ -20,7 +20,7 @@ const folderResource = {
   type: "folder",
   isFolder: true,
 }
-const fileResourceWithParentFoldername = {
+const fileResourceWithoutParentFoldername = {
   name: "example.pdf",
   path: "example.pdf",
   type: "file",
@@ -94,10 +94,10 @@ describe("OcResource", () => {
     expect(wrapper.find(".parent-folder").attributes("style")).toEqual("cursor: default;")
   })
 
-  it("displays parent folder name default if given", () => {
+  it("displays parent folder name default if calculated name is empty", () => {
     const wrapper = mount(Resource, {
       propsData: {
-        resource: fileResourceWithParentFoldername,
+        resource: fileResourceWithoutParentFoldername,
         isPathDisplayed: true,
         parentFolderNameDefault: "Example parent folder name",
       },

@@ -108,7 +108,7 @@ export default {
       required: true,
     },
     /**
-     * The
+     * The resource parent folder name to be displayed
      */
     parentFolderNameDefault: {
       type: String,
