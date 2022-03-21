@@ -130,26 +130,15 @@ export default {
   },
   computed: {
     $_ocButton_buttonClass() {
-      const classes = [
+      return [
         "oc-button",
         "oc-rounded",
         `oc-button-${getSizeClass(this.size)}`,
         `oc-button-justify-content-${this.justifyContent}`,
         `oc-button-gap-${getSizeClass(this.gapSize)}`,
+        `oc-button-${this.variation}`,
+        `oc-button-${this.variation}-${this.appearance}`,
       ]
-
-      classes.push(`oc-button-${this.variation}`)
-
-      switch (this.appearance) {
-        case "raw":
-          classes.push(`oc-button-${this.variation}-raw`)
-          break
-        case "outline":
-          classes.push(`oc-button-${this.variation}-outline`)
-          break
-      }
-
-      return classes
     },
 
     additionalAttributes() {
@@ -358,6 +347,9 @@ export default {
       var(--oc-color-swatch-primary-hover),
       var(--oc-color-swatch-primary-muted)
     );
+    &-filled {
+      @extend .oc-background-primary-gradient;
+    }
   }
 
   &-success {
