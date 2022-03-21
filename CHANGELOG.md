@@ -8,10 +8,12 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
 * Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
+* Bugfix - OcSelect transparent background: [#2030](https://github.com/owncloud/owncloud-design-system/issues/2030)
 * Change - Default type of OcButton: [#2009](https://github.com/owncloud/owncloud-design-system/pull/2009)
 * Change - Remove OcStatusIndicators from OcResource: [#5976](https://github.com/owncloud/web/issues/5976)
 * Enhancement - Icons for drawio, ifc and odg resource types: [#6416](https://github.com/owncloud/web/issues/6416)
 * Enhancement - Polish OcSwitch: [#6492](https://github.com/owncloud/web/issues/6492)
+* Enhancement - Make filled primary OcButton use gradient background: [#1952](https://github.com/owncloud/owncloud-design-system/issues/1952)
 * Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
 * Enhancement - Underline OcResourceName: [#6492](https://github.com/owncloud/web/issues/6492)
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
@@ -33,6 +35,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    when linking resources.
 
    https://github.com/owncloud/owncloud-design-system/pull/2007
+
+
+* Bugfix - OcSelect transparent background: [#2030](https://github.com/owncloud/owncloud-design-system/issues/2030)
+
+   We fixed a non-transparent background in the OcSelect button, leading to visual glitches.
+
+   https://github.com/owncloud/owncloud-design-system/issues/2030
+   https://github.com/owncloud/owncloud-design-system/pull/2036
 
 
 * Change - Default type of OcButton: [#2009](https://github.com/owncloud/owncloud-design-system/pull/2009)
@@ -68,6 +78,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6492
    https://github.com/owncloud/owncloud-design-system/pull/2018
+
+
+* Enhancement - Make filled primary OcButton use gradient background: [#1952](https://github.com/owncloud/owncloud-design-system/issues/1952)
+
+   We've updated the OcButton to use the gradient background color when used in its `filled`
+   appearance.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1952
+   https://github.com/owncloud/owncloud-design-system/pull/2036
 
 
 * Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
