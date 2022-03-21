@@ -10,7 +10,6 @@ const fileResource = {
   name: "forest.jpg",
   path: "nature/forest.jpg",
   thumbnail: "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_960_720.jpg",
-  indicators: [],
   type: "file",
   isFolder: false,
   extension: "jpg",
@@ -18,9 +17,15 @@ const fileResource = {
 const folderResource = {
   name: "Documents",
   path: "",
-  indicators: [],
   type: "folder",
   isFolder: true,
+}
+const fileResourceWithoutParentFoldername = {
+  name: "example.pdf",
+  path: "example.pdf",
+  type: "file",
+  isFolder: false,
+  extension: "pdf",
 }
 
 describe("OcResource", () => {
@@ -87,5 +92,18 @@ describe("OcResource", () => {
 
     expect(wrapper.find(".parent-folder").find("a").exists()).toBeFalsy()
     expect(wrapper.find(".parent-folder").attributes("style")).toEqual("cursor: default;")
+  })
+
+  it("displays parent folder name default if calculated name is empty", () => {
+    const wrapper = mount(Resource, {
+      propsData: {
+        resource: fileResourceWithoutParentFoldername,
+        isPathDisplayed: true,
+        parentFolderNameDefault: "Example parent folder name",
+      },
+      stubs,
+    })
+
+    expect(wrapper).toMatchSnapshot()
   })
 })

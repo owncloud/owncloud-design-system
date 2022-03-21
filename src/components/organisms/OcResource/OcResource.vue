@@ -108,6 +108,14 @@ export default {
       required: true,
     },
     /**
+     * The resource parent folder name to be displayed
+     */
+    parentFolderNameDefault: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
      * Asserts whether the resource path should be displayed
      */
     isPathDisplayed: {
@@ -139,7 +147,7 @@ export default {
 
     parentFolder() {
       const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
-      return folder !== "" ? folder : this.$gettext("All files and folders")
+      return folder !== "" ? folder : this.parentFolderNameDefault
     },
 
     parentFolderStyle() {
@@ -236,10 +244,11 @@ export default {
   ```js
     <template>
       <div>
-        <oc-resource :resource="documents" :parent-folder-link="parentFolderLink" class="oc-mb" />
-        <oc-resource :resource="notes" :isPathDisplayed="true" class="oc-mb" />
-        <oc-resource :resource="notes" :isResourceClickable="false" class="oc-mb" />
-        <oc-resource :resource="forest" :isPathDisplayed="true" />
+        <oc-resource :resource="documents" parent-folder-link="parentFolderLink" class="oc-mb" />
+        <oc-resource :resource="notes" is-path-displayed="true" class="oc-mb" />
+        <oc-resource :resource="notes" is-resource-clickable="false" class="oc-mb" />
+        <oc-resource :resource="forest" is-path-displayed="true" />
+        <oc-resource :resource="something" is-path-displayed="true" parent-folder-name-default="Example parent folder"  />
       </div>
     </template>
     <script>
@@ -269,6 +278,18 @@ export default {
             name: "forest-image-with-filename-with-a-lot-of-characters.jpg",
             extension: "jpg",
             path: "images/nature/forest-image-with-filename-with-a-lot-of-characters.jpg",
+            thumbnail: "https://picsum.photos/200/300",
+            indicators: [],
+            type: "file",
+            isFolder: false,
+            opensInNewWindow: true,
+          }
+        },
+        something() {
+          return {
+            name: "another-image.jpg",
+            extension: "jpg",
+            path: "another-image.jpg",
             thumbnail: "https://picsum.photos/200/300",
             indicators: [],
             type: "file",
