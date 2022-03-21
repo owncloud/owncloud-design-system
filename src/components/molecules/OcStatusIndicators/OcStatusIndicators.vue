@@ -120,7 +120,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   &-indicator {
-    border-radius: 99px;
+    border-radius: 50% !important;
   }
 }
 </style>
