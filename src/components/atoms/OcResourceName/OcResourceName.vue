@@ -1,15 +1,25 @@
 <template>
-  <span
-    v-oc-tooltip="tooltip"
-    class="oc-resource-name"
-    :data-test-resource-path="fullPath"
-    :data-test-resource-name="fullName"
-    :data-test-resource-type="type"
-  >
-    <span class="oc-text-truncate">
-      <span class="oc-resource-basename" v-text="displayName" />
+  <span class="oc-resource-name-wrapper">
+    <span
+      v-oc-tooltip="tooltip"
+      class="oc-resource-name"
+      :data-test-resource-path="fullPath"
+      :data-test-resource-name="fullName"
+      :data-test-resource-type="type"
+    >
+      <span class="oc-text-truncate">
+        <span class="oc-resource-basename" v-text="displayName" />
+      </span>
+      <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />  
     </span>
-    <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
+    <oc-button
+      class="oc-resource-rename"
+      appearance="raw"
+      @click="onRename([resource])"
+      @click.native.stop.prevent
+    >
+      <oc-icon name="edit-2" fill-type="line" size="small" />
+    </oc-button>
   </span>
 </template>
 
@@ -55,6 +65,20 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Function to be called when clicking edit
+     */
+    onRename: {
+      type: Function,
+      required: false
+    },
+    /**
+     * The resource to be displayed
+     */
+    resource: {
+      type: Object,
+      required: false,
     },
   },
 
@@ -107,12 +131,19 @@ export default {
 
 <style lang="scss">
 .oc-resource {
+  &-rename {
+    vertical-align: middle;
+    display: none;
+  }
   &-name {
-    display: flex;
+    display: inline-flex;
     min-width: 0;
     &:hover {
       text-decoration: underline;
       text-decoration-color: var(--oc-color-text-default);
+    }
+    &-wrapper:hover > .oc-resource-rename{
+      display: inline-flex !important;
     }
   }
 

@@ -38,6 +38,8 @@
           :type="resource.type"
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
+          :on-rename="onRename"
+          :resource="resource"
         />
       </oc-resource-link>
       <div class="oc-resource-indicators">
@@ -139,6 +141,13 @@ export default {
       required: false,
       default: true,
     },
+    /**
+     * Function to be called when clicking edit
+     */
+    onRename: {
+      type: Function,
+      required: false
+    }
   },
   computed: {
     parentFolderComponentType() {
