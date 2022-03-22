@@ -349,6 +349,18 @@ export default {
     );
     &-filled {
       @extend .oc-background-primary-gradient;
+      color: var(--oc-color-swatch-inverse-default) !important;
+
+      border: 1px solid
+        linear-gradient(
+          90deg,
+          var(--oc-color-swatch-primary-muted) 0%,
+          var(--oc-color-swatch-primary-gradient) 100%
+        ) !important;
+
+      span > svg {
+        fill: var(--oc-color-swatch-inverse-default) !important;
+      }
     }
   }
 
