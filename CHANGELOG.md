@@ -97,6 +97,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/1952
    https://github.com/owncloud/owncloud-design-system/pull/2036
+   https://github.com/owncloud/owncloud-design-system/pull/2038
 
 
 * Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
