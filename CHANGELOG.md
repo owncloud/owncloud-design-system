@@ -1,3 +1,21 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v13.0.0...master
+
+## Summary
+
+* Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
+
+## Details
+
+* Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
+
+   We've changed OcResource's display CSS attribute to inline-flex to prevent a line break
+
+   https://github.com/owncloud/owncloud-design-system/pull/2041
+
 # Changelog for [13.0.0] (2022-03-23)
 
 The following sections list the changes in ownCloud Design System 13.0.0.
