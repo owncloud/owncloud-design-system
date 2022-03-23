@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OcResourceName doesn't add extension to hidden folder 1`] = `
-<span data-test-resource-path=".hidden" data-test-resource-name=".hidden" data-test-resource-type="folder" class="oc-resource-name"><span class="oc-text-truncate"><span class="oc-resource-basename">.hidden</span></span>
-<!----></span>
+<span class="oc-resource-name-wrapper"><span data-test-resource-path=".hidden" data-test-resource-name=".hidden" data-test-resource-type="folder" class="oc-resource-name"><span class="oc-text-truncate"><span class="oc-resource-basename">.hidden</span></span>
+<!----></span> <button type="button" class="oc-resource-rename oc-button oc-rounded oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw">
+  <oc-icon-stub name="edit-2" fill-type="line" size="small"></oc-icon-stub>
+</button></span>
 `;
 
 exports[`OcResourceName renders folder names with dots completely in the basename 1`] = `
-<span data-test-resource-path="folder.with.dots" data-test-resource-name="folder.with.dots" data-test-resource-type="folder" class="oc-resource-name"><span class="oc-text-truncate"><span class="oc-resource-basename">folder.with.dots</span></span>
-<!----></span>
+<span class="oc-resource-name-wrapper"><span data-test-resource-path="folder.with.dots" data-test-resource-name="folder.with.dots" data-test-resource-type="folder" class="oc-resource-name"><span class="oc-text-truncate"><span class="oc-resource-basename">folder.with.dots</span></span>
+<!----></span> <button type="button" class="oc-resource-rename oc-button oc-rounded oc-button-m oc-button-justify-content-center oc-button-gap-m oc-button-passive oc-button-passive-raw">
+  <oc-icon-stub name="edit-2" fill-type="line" size="small"></oc-icon-stub>
+</button></span>
 `;
