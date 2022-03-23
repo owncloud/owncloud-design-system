@@ -183,7 +183,7 @@ export default {
 <style lang="scss">
 .oc-resource {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   justify-content: flex-start;
 
   &-thumbnail {

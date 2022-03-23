@@ -1,0 +1,4 @@
+Enhancement: Make OcResource inline-flex
+
+We've change OcResource to inline-flex to prevent
+a line break
