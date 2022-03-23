@@ -38,8 +38,7 @@
           :type="resource.type"
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
-          :on-rename="onRename"
-          :resource="resource"
+          @rename="emitRename"
         />
       </oc-resource-link>
       <div class="oc-resource-indicators">
@@ -140,13 +139,6 @@ export default {
       type: Boolean,
       required: false,
       default: true,
-    },
-    /**
-     * Function to be called when clicking edit
-     */
-    onRename: {
-      type: Function,
-      required: false
     }
   },
   computed: {
@@ -179,6 +171,9 @@ export default {
   },
 
   methods: {
+    emitRename() {
+      this.$emit("rename")
+    },
     emitClick() {
       /**
        * Triggered when the resource is a file and the name is clicked

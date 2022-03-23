@@ -15,7 +15,7 @@
     <oc-button
       class="oc-resource-rename"
       appearance="raw"
-      @click="onRename([resource])"
+      @click="emitRename"
       @click.native.stop.prevent
     >
       <oc-icon name="edit-2" fill-type="line" size="small" />
@@ -65,21 +65,7 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    },
-    /**
-     * Function to be called when clicking edit
-     */
-    onRename: {
-      type: Function,
-      required: false
-    },
-    /**
-     * The resource to be displayed
-     */
-    resource: {
-      type: Object,
-      required: false,
-    },
+    }
   },
 
   computed: {
@@ -126,6 +112,11 @@ export default {
       return this.fullPath
     },
   },
+  methods: {
+    emitRename() {
+      this.$emit("rename")
+    },
+  }
 }
 </script>
 
