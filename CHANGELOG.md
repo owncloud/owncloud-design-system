@@ -1,22 +1,22 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [13.0.0] (2022-03-23)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 13.0.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v12.2.2...master
+[13.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v12.2.2...v13.0.0
 
 ## Summary
 
 * Bugfix - Disabled OcSelect background: [#2008](https://github.com/owncloud/owncloud-design-system/pull/2008)
 * Bugfix - Icons/Thumbnails were only visible for clickable resources: [#2007](https://github.com/owncloud/owncloud-design-system/pull/2007)
-* Bugfix - OcSelect transparent background: [#2030](https://github.com/owncloud/owncloud-design-system/issues/2030)
+* Bugfix - OcSelect transparent background: [#2036](https://github.com/owncloud/owncloud-design-system/pull/2036)
 * Change - Default type of OcButton: [#2009](https://github.com/owncloud/owncloud-design-system/pull/2009)
-* Change - Remove OcStatusIndicators from OcResource: [#5976](https://github.com/owncloud/web/issues/5976)
+* Change - Remove OcStatusIndicators from OcResource: [#2014](https://github.com/owncloud/owncloud-design-system/pull/2014)
 * Enhancement - Configurable OcResource parentfolder name: [#2029](https://github.com/owncloud/owncloud-design-system/pull/2029)
-* Enhancement - Icons for drawio, ifc and odg resource types: [#6416](https://github.com/owncloud/web/issues/6416)
-* Enhancement - Polish OcSwitch: [#6492](https://github.com/owncloud/web/issues/6492)
-* Enhancement - Make filled primary OcButton use gradient background: [#1952](https://github.com/owncloud/owncloud-design-system/issues/1952)
-* Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
-* Enhancement - Underline OcResourceName: [#6492](https://github.com/owncloud/web/issues/6492)
+* Enhancement - Icons for drawio, ifc and odg resource types: [#2005](https://github.com/owncloud/owncloud-design-system/pull/2005)
+* Enhancement - Polish OcSwitch: [#2018](https://github.com/owncloud/owncloud-design-system/pull/2018)
+* Enhancement - Make filled primary OcButton use gradient background: [#2036](https://github.com/owncloud/owncloud-design-system/pull/2036)
+* Enhancement - Redesign OcStatusIndicators: [#2014](https://github.com/owncloud/owncloud-design-system/pull/2014)
+* Enhancement - Underline OcResourceName: [#2019](https://github.com/owncloud/owncloud-design-system/pull/2019)
 * Enhancement - Apply size property to oc-tag: [#2011](https://github.com/owncloud/owncloud-design-system/pull/2011)
 
 ## Details
@@ -38,7 +38,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2007
 
 
-* Bugfix - OcSelect transparent background: [#2030](https://github.com/owncloud/owncloud-design-system/issues/2030)
+* Bugfix - OcSelect transparent background: [#2036](https://github.com/owncloud/owncloud-design-system/pull/2036)
 
    We fixed a non-transparent background in the OcSelect button, leading to visual glitches.
 
@@ -55,13 +55,13 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2009
 
 
-* Change - Remove OcStatusIndicators from OcResource: [#5976](https://github.com/owncloud/web/issues/5976)
+* Change - Remove OcStatusIndicators from OcResource: [#2014](https://github.com/owncloud/owncloud-design-system/pull/2014)
 
    We've removed OcStatusIndicators from OcResource since it will be moved in a separate column
 
    https://github.com/owncloud/web/issues/5976
-   https://github.com/owncloud/web/pull/6552
    https://github.com/owncloud/owncloud-design-system/pull/2014
+   https://github.com/owncloud/web/pull/6552
 
 
 * Enhancement - Configurable OcResource parentfolder name: [#2029](https://github.com/owncloud/owncloud-design-system/pull/2029)
@@ -73,7 +73,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2029
 
 
-* Enhancement - Icons for drawio, ifc and odg resource types: [#6416](https://github.com/owncloud/web/issues/6416)
+* Enhancement - Icons for drawio, ifc and odg resource types: [#2005](https://github.com/owncloud/owncloud-design-system/pull/2005)
 
    We've added resource type extension mapping and icons for the drawio, ifc, ipynb and odg file
    extensions.
@@ -82,7 +82,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2005
 
 
-* Enhancement - Polish OcSwitch: [#6492](https://github.com/owncloud/web/issues/6492)
+* Enhancement - Polish OcSwitch: [#2018](https://github.com/owncloud/owncloud-design-system/pull/2018)
 
    We've adjusted the OcSwitch to fit the redesign
 
@@ -90,7 +90,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2018
 
 
-* Enhancement - Make filled primary OcButton use gradient background: [#1952](https://github.com/owncloud/owncloud-design-system/issues/1952)
+* Enhancement - Make filled primary OcButton use gradient background: [#2036](https://github.com/owncloud/owncloud-design-system/pull/2036)
 
    We've updated the OcButton to use the gradient background color when used in its `filled`
    appearance.
@@ -100,18 +100,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2038
 
 
-* Enhancement - Redesign OcStatusIndicators: [#5976](https://github.com/owncloud/web/issues/5976)
+* Enhancement - Redesign OcStatusIndicators: [#2014](https://github.com/owncloud/owncloud-design-system/pull/2014)
 
-   We've redesigned the share/status indicators to fit in a separate column in the ResourceTable
-   in web
+   We've redesigned the share/status indicators to fit the new design in web.
 
    https://github.com/owncloud/web/issues/5976
-   https://github.com/owncloud/web/pull/6552
    https://github.com/owncloud/owncloud-design-system/pull/2014
-   https://github.com/owncloud/owncloud-design-system/pull/2035
+   https://github.com/owncloud/web/pull/6552
 
 
-* Enhancement - Underline OcResourceName: [#6492](https://github.com/owncloud/web/issues/6492)
+* Enhancement - Underline OcResourceName: [#2019](https://github.com/owncloud/owncloud-design-system/pull/2019)
 
    We've added an underline on hover effect to OcResourceName
 
@@ -271,7 +269,7 @@ The following sections list the changes in ownCloud Design System 12.1.0.
 
 The following sections list the changes in ownCloud Design System 12.0.0.
 
-[12.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.0...v12.0.0
+[12.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v12.0.0
 
 ## Summary
 
@@ -569,11 +567,30 @@ The following sections list the changes in ownCloud Design System 12.0.0.
    https://github.com/owncloud/web/issues/6100/
    https://github.com/owncloud/owncloud-design-system/pull/1876
 
+# Changelog for [11.3.1] (2021-12-03)
+
+The following sections list the changes in ownCloud Design System 11.3.1.
+
+[11.3.1]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.0...v11.3.1
+
+## Summary
+
+* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
+
+## Details
+
+* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
+
+   We've removed the padding from the context menu in the breadcrumbs to align its visual
+   appearance with the context menu in the files table.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1813
+
 # Changelog for [11.3.0] (2021-12-03)
 
 The following sections list the changes in ownCloud Design System 11.3.0.
 
-[11.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v11.3.0
+[11.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...v11.3.0
 
 ## Summary
 
@@ -629,25 +646,6 @@ The following sections list the changes in ownCloud Design System 11.3.0.
 
    https://github.com/owncloud/owncloud-design-system/issues/1758
    https://github.com/owncloud/owncloud-design-system/pull/1782
-
-# Changelog for [11.3.1] (2021-12-03)
-
-The following sections list the changes in ownCloud Design System 11.3.1.
-
-[11.3.1]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...v11.3.1
-
-## Summary
-
-* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
-
-## Details
-
-* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
-
-   We've removed the padding from the context menu in the breadcrumbs to align its visual
-   appearance with the context menu in the files table.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1813
 
 # Changelog for [11.2.2] (2021-11-11)
 
@@ -1932,7 +1930,7 @@ The following sections list the changes in ownCloud Design System 6.4.0.
 
 The following sections list the changes in ownCloud Design System 6.3.0.
 
-[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.3.0
+[6.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...v6.3.0
 
 ## Summary
 
@@ -2023,39 +2021,11 @@ The following sections list the changes in ownCloud Design System 6.3.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1240
 
-# Changelog for [6.2.0] (2021-04-22)
-
-The following sections list the changes in ownCloud Design System 6.2.0.
-
-[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.1.0...v6.2.0
-
-## Summary
-
-* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-## Details
-
-* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-   - property productName shouldn't be required anymore in OcSidebar after logoAlt has been
-   introduced - role="progressbar" is obsolete on `<progress>` HTML elements
-
-   https://github.com/owncloud/owncloud-design-system/pull/1233
-
-
-* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
-
-   By adding a negative tabindex the table rows are now focusable which is an important aspect of
-   accessibility/keyboard navigation.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1233
-
 # Changelog for [6.1.0] (2021-04-22)
 
 The following sections list the changes in ownCloud Design System 6.1.0.
 
-[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.1.0
+[6.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.2.0...v6.1.0
 
 ## Summary
 
@@ -2110,31 +2080,39 @@ The following sections list the changes in ownCloud Design System 6.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1231
 
-# Changelog for [6.0.1] (2021-04-19)
+# Changelog for [6.2.0] (2021-04-22)
 
-The following sections list the changes in ownCloud Design System 6.0.1.
+The following sections list the changes in ownCloud Design System 6.2.0.
 
-[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.0.1
+[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.2.0
 
 ## Summary
 
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
 
 ## Details
 
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+* Bugfix - Remove required prop from sidebar & obsolete role: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
 
-   In the `v6.0.0` release, the color values for `background-muted` and
-   `background-hightlighted` got swapped by accident. This produced unwanted results in the
-   results and gets reverted to the original and working version with this change.
+   - property productName shouldn't be required anymore in OcSidebar after logoAlt has been
+   introduced - role="progressbar" is obsolete on `<progress>` HTML elements
 
-   https://github.com/owncloud/owncloud-design-system/pull/1227
+   https://github.com/owncloud/owncloud-design-system/pull/1233
+
+
+* Enhancement - Add tabindex to table rows: [#1233](https://github.com/owncloud/owncloud-design-system/pull/1233)
+
+   By adding a negative tabindex the table rows are now focusable which is an important aspect of
+   accessibility/keyboard navigation.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1233
 
 # Changelog for [6.0.0] (2021-04-19)
 
 The following sections list the changes in ownCloud Design System 6.0.0.
 
-[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.0
+[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.0.0
 
 ## Summary
 
@@ -2172,11 +2150,31 @@ The following sections list the changes in ownCloud Design System 6.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1219
 
+# Changelog for [6.0.1] (2021-04-19)
+
+The following sections list the changes in ownCloud Design System 6.0.1.
+
+[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.1
+
+## Summary
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+## Details
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+   In the `v6.0.0` release, the color values for `background-muted` and
+   `background-hightlighted` got swapped by accident. This produced unwanted results in the
+   results and gets reverted to the original and working version with this change.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1227
+
 # Changelog for [5.1.0] (2021-04-15)
 
 The following sections list the changes in ownCloud Design System 5.1.0.
 
-[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.1.0
+[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.1.0
 
 ## Summary
 
@@ -2229,30 +2227,11 @@ The following sections list the changes in ownCloud Design System 5.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1213
 
-# Changelog for [5.0.1] (2021-04-08)
-
-The following sections list the changes in ownCloud Design System 5.0.1.
-
-[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.0.1
-
-## Summary
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-## Details
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
-   peerDependencies.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1205
-
 # Changelog for [5.0.0] (2021-04-08)
 
 The following sections list the changes in ownCloud Design System 5.0.0.
 
-[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.0
+[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.0.0
 
 ## Summary
 
@@ -2280,6 +2259,25 @@ The following sections list the changes in ownCloud Design System 5.0.0.
    copied into the `dist` folder and can be imported and used alongside the styles and components.
 
    https://github.com/owncloud/owncloud-design-system/pull/1201
+
+# Changelog for [5.0.1] (2021-04-08)
+
+The following sections list the changes in ownCloud Design System 5.0.1.
+
+[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.1
+
+## Summary
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+## Details
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
+   peerDependencies.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1205
 
 # Changelog for [4.3.0] (2021-04-07)
 
@@ -2954,7 +2952,7 @@ The following sections list the changes in ownCloud Design System 3.0.0.
 
 The following sections list the changes in ownCloud Design System 3.1.0.
 
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.1.0
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.1.0
 
 ## Summary
 
@@ -2969,29 +2967,11 @@ The following sections list the changes in ownCloud Design System 3.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1119
 
-# Changelog for [2.1.1] (2021-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.1.
-
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
-
-## Summary
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-## Details
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-   The uniqueId helper function returned a callback instead of a string.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1060
-
 # Changelog for [2.1.2] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.2.
 
-[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v2.1.2
 
 ## Summary
 
@@ -3007,6 +2987,24 @@ The following sections list the changes in ownCloud Design System 2.1.2.
    anymore.
 
    https://github.com/owncloud/owncloud-design-system/pull/1064
+
+# Changelog for [2.1.1] (2021-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.1.
+
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
+
+## Summary
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+## Details
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+   The uniqueId helper function returned a callback instead of a string.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.0] (2021-01-19)
 
