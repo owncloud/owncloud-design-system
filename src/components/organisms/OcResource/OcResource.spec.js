@@ -5,7 +5,7 @@ import OcButton from "../../atoms/OcButton/OcButton.vue"
 
 const stubs = {
   "oc-button": OcButton,
-  "oc-icon": true
+  "oc-icon": true,
 }
 const fileResource = {
   name: "forest.jpg",
@@ -38,7 +38,7 @@ describe("OcResource", () => {
           name: "tests-route",
         },
       },
-      stubs
+      stubs,
     })
 
     wrapper.find(".oc-resource-name").trigger("click")
@@ -51,7 +51,7 @@ describe("OcResource", () => {
         resource: fileResource,
         isResourceClickable: false,
       },
-      stubs
+      stubs,
     })
 
     wrapper.find(".oc-resource-name").trigger("click")

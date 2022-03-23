@@ -10,7 +10,7 @@ const type = "file"
 
 const stubs = {
   "oc-button": OcButton,
-  "oc-icon": true
+  "oc-icon": true,
 }
 
 describe("OcResourceName", () => {
@@ -22,7 +22,7 @@ describe("OcResourceName", () => {
         extension: "",
         type: "folder",
       },
-      stubs
+      stubs,
     })
 
     expect(wrapper.find(".oc-resource-basename").text()).toMatch(".hidden")
@@ -38,7 +38,7 @@ describe("OcResourceName", () => {
         extension: "",
         type: "folder",
       },
-      stubs
+      stubs,
     })
 
     expect(wrapper.find(".oc-resource-basename").text()).toMatch("folder.with.dots")
@@ -54,7 +54,7 @@ describe("OcResourceName", () => {
         extension,
         type,
       },
-      stubs
+      stubs,
     })
 
     const node = wrapper.find(".oc-resource-name")
@@ -70,10 +70,10 @@ describe("OcResourceName", () => {
         extension,
         type,
       },
-      stubs
+      stubs,
     })
 
-    wrapper.find(".oc-resource-rename").trigger('click')
+    wrapper.find(".oc-resource-rename").trigger("click")
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted().rename).toBeTruthy()
   })
