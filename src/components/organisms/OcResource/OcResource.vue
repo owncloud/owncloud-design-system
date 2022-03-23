@@ -139,7 +139,7 @@ export default {
       type: Boolean,
       required: false,
       default: true,
-    }
+    },
   },
   computed: {
     parentFolderComponentType() {

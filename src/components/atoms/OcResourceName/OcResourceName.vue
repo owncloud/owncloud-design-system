@@ -10,7 +10,7 @@
       <span class="oc-text-truncate">
         <span class="oc-resource-basename" v-text="displayName" />
       </span>
-      <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />  
+      <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
     </span>
     <oc-button
       class="oc-resource-rename"
@@ -65,7 +65,7 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    }
+    },
   },
 
   computed: {
@@ -116,7 +116,7 @@ export default {
     emitRename() {
       this.$emit("rename")
     },
-  }
+  },
 }
 </script>
 
@@ -133,7 +133,7 @@ export default {
       text-decoration: underline;
       text-decoration-color: var(--oc-color-text-default);
     }
-    &-wrapper:hover > .oc-resource-rename{
+    &-wrapper:hover > .oc-resource-rename {
       display: inline-flex !important;
     }
   }
