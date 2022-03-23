@@ -38,7 +38,6 @@
           :type="resource.type"
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
-          @rename="emitRename"
         />
       </oc-resource-link>
       <div class="oc-resource-indicators">
@@ -171,9 +170,6 @@ export default {
   },
 
   methods: {
-    emitRename() {
-      this.$emit("rename")
-    },
     emitClick() {
       /**
        * Triggered when the resource is a file and the name is clicked

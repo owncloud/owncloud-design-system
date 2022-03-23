@@ -1,25 +1,15 @@
 <template>
-  <span class="oc-resource-name-wrapper">
-    <span
-      v-oc-tooltip="tooltip"
-      class="oc-resource-name"
-      :data-test-resource-path="fullPath"
-      :data-test-resource-name="fullName"
-      :data-test-resource-type="type"
-    >
-      <span class="oc-text-truncate">
-        <span class="oc-resource-basename" v-text="displayName" />
-      </span>
-      <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
+  <span
+    v-oc-tooltip="tooltip"
+    class="oc-resource-name"
+    :data-test-resource-path="fullPath"
+    :data-test-resource-name="fullName"
+    :data-test-resource-type="type"
+  >
+    <span class="oc-text-truncate">
+      <span class="oc-resource-basename" v-text="displayName" />
     </span>
-    <oc-button
-      class="oc-resource-rename"
-      appearance="raw"
-      @click="emitRename"
-      @click.native.stop.prevent
-    >
-      <oc-icon name="edit-2" fill-type="line" size="small" />
-    </oc-button>
+    <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
   </span>
 </template>
 
@@ -122,19 +112,12 @@ export default {
 
 <style lang="scss">
 .oc-resource {
-  &-rename {
-    vertical-align: middle;
-    display: none;
-  }
   &-name {
     display: inline-flex;
     min-width: 0;
     &:hover {
       text-decoration: underline;
       text-decoration-color: var(--oc-color-text-default);
-    }
-    &-wrapper:hover > .oc-resource-rename {
-      display: inline-flex !important;
     }
   }
 
