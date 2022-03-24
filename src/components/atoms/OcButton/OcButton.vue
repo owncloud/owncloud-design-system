@@ -165,6 +165,7 @@ export default {
 
 <style lang="scss">
 @import "../../../assets/tokens/ods.scss";
+@import "../../../styles/theme/background.scss";
 @import "../../../styles/theme/variables.scss";
 
 @mixin oc-button-gap($factor) {
