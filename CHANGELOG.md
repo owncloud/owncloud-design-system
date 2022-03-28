@@ -6,9 +6,19 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
 * Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
 
 ## Details
+
+* Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
+
+   Add exports for `composables`, `utils`, `components`, `directives`, `helpers` and
+   `mixins`. Start using them via `import { composables, utils, ... } from
+   'owncloud-design-system'`.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2048
+
 
 * Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
 
