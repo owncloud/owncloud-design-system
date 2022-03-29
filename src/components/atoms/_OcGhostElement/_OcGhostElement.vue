@@ -1,13 +1,20 @@
 <template>
   <div id="ghost-element" class="ghost-element">
-    <div style="position: relative">
-      <div v-for="index in iconStackCount" :key="index">
+    <div class="icon-wrapper">
+      <div v-for="index in iconStackCount" :key="index" :style="{ 'z-index': key }">
+        <oc-icon
+          v-if="!previewItems[index - 1].isFolder"
+          :style="getStyle(index - 1)"
+          class="ghost-element-icon-background"
+          name="resource-type-file"
+          size="large"
+          variation="inverse"
+        />
         <oc-resource-icon
           :class="getIconClass(index - 1)"
-          :style="getStyleClass(index - 1)"
+          :style="getStyle(index - 1)"
           :resource="previewItems[index - 1]"
-        >
-        </oc-resource-icon>
+        />
       </div>
     </div>
     <span class="badge">{{ itemCount }}</span>
@@ -28,26 +35,27 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      maxPreviewStackItemCount: 3,
+    }
+  },
   computed: {
     iconStackCount() {
-      const count = this.previewItems.length
-      return count > 3 ? 3 : count
-    },
-    firstPreviewIcon() {
-      const icon = this.previewItems[0].icon
-      return icon ? icon : "file"
+      return Math.min(this.maxPreviewStackItemCount, this.itemCount)
     },
     itemCount() {
       return this.previewItems.length
     },
   },
   methods: {
-    getStyleClass(index) {
+    getStyle(index) {
       const item = this.previewItems[index]
       if (item.isFolder) return
       return {
-        left: `${index * (this.iconStackCount - 1) + 2}px`,
-        top: `${index * (this.iconStackCount - 1)}px`,
+        left: `${index * 2 + 2}px`,
+        top: `${index * 2}px`,
+        "z-index": 2,
       }
     },
     getIconClass(index) {
@@ -74,14 +82,25 @@ export default {
     left: 2px;
     z-index: 0;
   }
+  &-background {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    svg {
+      height: 70%;
+    }
+  }
 }
-
 .ghost-element {
   background-color: transparent;
   padding-top: var(--oc-space-xsmall);
   padding-left: 5px;
   z-index: var(--oc-z-index-modal);
   position: absolute;
+  .icon-wrapper {
+    position: relative;
+  }
   .badge {
     position: absolute;
     top: -2px;
