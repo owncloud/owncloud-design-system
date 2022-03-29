@@ -1,20 +1,20 @@
 <template>
   <div id="ghost-element" class="ghost-element">
     <div class="icon-wrapper">
-      <div v-for="index in iconStackCount" :key="index" :style="{ 'z-index': key }">
+      <oc-resource-icon
+        v-if="iconFolder"
+        class="ghost-element-icon ghost-element-icon-folder"
+        :resource="iconFolder"
+      />
+      <div v-for="(item, index) in iconStack" :key="index" :style="{ 'z-index': key }">
         <oc-icon
-          v-if="!previewItems[index - 1].isFolder"
-          :style="getStyle(index - 1)"
+          :style="getStyle(index)"
           class="ghost-element-icon-background"
           name="resource-type-file"
           size="large"
           variation="inverse"
         />
-        <oc-resource-icon
-          :class="getIconClass(index - 1)"
-          :style="getStyle(index - 1)"
-          :resource="previewItems[index - 1]"
-        />
+        <oc-resource-icon :class="getIconClass(index)" :style="getStyle(index)" :resource="item" />
       </div>
     </div>
     <span class="badge">{{ itemCount }}</span>
@@ -41,8 +41,17 @@ export default {
     }
   },
   computed: {
+    iconStack() {
+      return this.previewItems.filter(i => !i.isFolder).slice(0, this.iconStackCount)
+    },
+    iconFolder() {
+      return this.previewItems.find(i => i.isFolder)
+    },
     iconStackCount() {
-      return Math.min(this.maxPreviewStackItemCount, this.itemCount)
+      return Math.min(
+        this.maxPreviewStackItemCount,
+        this.hasFolder ? this.itemCount - 1 : this.itemCount
+      )
     },
     itemCount() {
       return this.previewItems.length
@@ -50,22 +59,15 @@ export default {
   },
   methods: {
     getStyle(index) {
-      const item = this.previewItems[index]
-      if (item.isFolder) return
       return {
-        left: `${index * 2 + 2}px`,
-        top: `${index * 2}px`,
+        left: `${(index + 1) * 2}px`,
+        top: `${(index + 1) * 2}px`,
         "z-index": 2,
       }
     },
     getIconClass(index) {
-      const item = this.previewItems[index]
-      return [
-        {
-          "ghost-element-icon-folder": item.isFolder,
-        },
-        "ghost-element-icon",
-      ]
+      const layerIndex = index - this.iconStack.length + 4
+      return ["ghost-element-icon", `ghost-element-icon-${layerIndex}`]
     },
   },
 }
@@ -75,11 +77,21 @@ export default {
 .ghost-element-icon {
   position: absolute;
   z-index: 1;
+  &-1 {
+    filter: brightness(0.5);
+  }
+  &-2 {
+    filter: brightness(0.7);
+  }
+  &-3 {
+    filter: brightness(1);
+  }
   &-folder {
     svg {
       height: 80%;
     }
-    left: 2px;
+    filter: brightness(0.5) !important;
+    left: 4px;
     z-index: 0;
   }
   &-background {
