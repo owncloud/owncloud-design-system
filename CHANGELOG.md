@@ -6,10 +6,21 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - OcTextInput: Fix event handlers in loops: [#2054](https://github.com/owncloud/owncloud-design-system/pull/2054)
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
 * Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
 
 ## Details
+
+* Bugfix - OcTextInput: Fix event handlers in loops: [#2054](https://github.com/owncloud/owncloud-design-system/pull/2054)
+
+   We pass all event handlers specified on `OcTextInput` to the underlying `input` element
+   except for `input`, `change` and `focus` event handlers. We fixed an issue in this exclusion
+   code that made `change`, `input` and `focus` handlers be re-registered on rerenders,
+   particularly in loop rerenders, so they were called multiple times for a single event.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2054
+
 
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
 
