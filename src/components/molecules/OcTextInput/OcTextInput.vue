@@ -178,13 +178,9 @@ export default {
       )
     },
     listeners() {
-      const listeners = this.$listeners
-
-      // Delete listeners for events which are emitted via methods
-      delete listeners["change"]
-      delete listeners["input"]
-      delete listeners["focus"]
-
+      // Exclude listeners for events which are handled via methods in this component
+      // eslint-disable-next-line no-unused-vars
+      const { change, input, focus, ...listeners } = this.$listeners
       return listeners
     },
     messageId() {
