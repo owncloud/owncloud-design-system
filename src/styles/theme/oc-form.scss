@@ -246,7 +246,7 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
   border: 1px solid var(--oc-color-input-border);
   border-radius: 0;
   box-sizing: border-box;
-  color: var(--oc-color-input-text-default) ;
+  color: var(--oc-color-input-text-default);
   display: inline-block;
   height: 2rem;
   line-height: inherit;
@@ -264,7 +264,9 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
 
 /* 2 */
 .oc-input:not(input),
-.oc-select:not(select) { line-height: $form-line-height; }
+.oc-select:not(select) {
+  line-height: $form-line-height;
+}
 
 /*
  * Multi-line
@@ -287,8 +289,7 @@ $internal-form-checkbox-indeterminate-image: "data:image/svg+xml;charset=UTF-8,%
 
 /* Disabled */
 .oc-input:disabled,
-.oc-select:disabled,
-.oc-textarea:disabled {
+.oc-select:disabled {
   background-color: $form-disabled-background;
   color: $form-disabled-color;
 }
