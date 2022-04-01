@@ -205,6 +205,10 @@ export default {
   width: 100%;
   -webkit-appearance: none;
 
+  &:disabled {
+    color: var(--oc-color-input-text-muted);
+  }
+
   &:focus {
     background-color: var(--oc-color-input-bg);
     border-color: var(--oc-color-input-text-default);
