@@ -69,7 +69,7 @@ export default {
 
     displayName() {
       if (this.extension) {
-        return this.name.substr(0, this.name.length - this.extension.length - 1)
+        return this.name.slice(0, -this.extension.length - 1)
       }
       return this.name
     },

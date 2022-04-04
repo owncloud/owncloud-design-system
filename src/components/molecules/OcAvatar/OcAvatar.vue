@@ -33,7 +33,7 @@ const getInitials = userName => {
     initials = initials.replace(/[a-z]+/g, "")
   }
 
-  initials = initials.substr(0, 3).toUpperCase()
+  initials = initials.slice(0, 3).toUpperCase()
 
   return initials
 }

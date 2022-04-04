@@ -370,7 +370,7 @@ It is important to specify the `option-label` prop on the `oc-select` to make fi
         Your search query hasn't returned any results.
       </template>
       <template #selected-option="{ title, desc }">
-        <strong class="oc-mr-s" v-text="title" /> <small v-text="desc.substr(0, 20) + '...'" />
+        <strong class="oc-mr-s" v-text="title" /> <small v-text="desc.slice(0, 20) + '...'" />
       </template>
     </oc-select>
     <p>
