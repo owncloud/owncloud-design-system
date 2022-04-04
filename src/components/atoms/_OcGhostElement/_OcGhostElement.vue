@@ -1,6 +1,10 @@
 <template>
   <div id="ghost-element" class="ghost-element">
-    <oc-icon :name="firstPreviewIcon" size="large" />
+    <div class="ghost-element-layer1 oc-rounded">
+      <oc-resource-icon class="oc-p-xs" :resource="previewItems[0]" />
+      <div v-if="showSecondLayer" class="ghost-element-layer2 oc-rounded" />
+      <div v-if="showThirdLayer" class="ghost-element-layer3 oc-rounded" />
+    </div>
     <span class="badge">{{ itemCount }}</span>
   </div>
 </template>
@@ -20,9 +24,14 @@ export default {
     },
   },
   computed: {
-    firstPreviewIcon() {
-      const icon = this.previewItems[0].icon
-      return icon ? icon : "file"
+    layerCount() {
+      return Math.min(this.previewItems.length, 3)
+    },
+    showSecondLayer() {
+      return this.layerCount > 1
+    },
+    showThirdLayer() {
+      return this.layerCount > 2
     },
     itemCount() {
       return this.previewItems.length
@@ -32,12 +41,39 @@ export default {
 </script>
 
 <style lang="scss">
+.ghost-element-layer1 {
+  .ghost-element-layer2 {
+    position: absolute;
+    background-color: var(--oc-color-background-hover);
+    filter: brightness(0.82);
+    top: 3px;
+    left: 3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
+  }
+  .ghost-element-layer3 {
+    position: absolute;
+    background-color: var(--oc-color-background-hover);
+    filter: brightness(0.72);
+    top: 6px;
+    left: 6px;
+    right: -6px;
+    bottom: -6px;
+    z-index: -2;
+  }
+  position: relative;
+  background-color: var(--oc-color-background-hover);
+}
 .ghost-element {
   background-color: transparent;
   padding-top: var(--oc-space-xsmall);
   padding-left: 5px;
   z-index: var(--oc-z-index-modal);
   position: absolute;
+  .icon-wrapper {
+    position: relative;
+  }
   .badge {
     position: absolute;
     top: -2px;
