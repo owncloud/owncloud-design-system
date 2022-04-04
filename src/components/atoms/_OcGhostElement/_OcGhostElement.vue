@@ -1,21 +1,9 @@
 <template>
   <div id="ghost-element" class="ghost-element">
-    <div class="icon-wrapper">
-      <oc-resource-icon
-        v-if="iconFolder"
-        class="ghost-element-icon ghost-element-icon-folder"
-        :resource="iconFolder"
-      />
-      <div v-for="(item, index) in iconStack" :key="index" :style="{ 'z-index': key }">
-        <oc-icon
-          :style="getStyle(index)"
-          class="ghost-element-icon-background"
-          name="resource-type-file"
-          size="large"
-          variation="inverse"
-        />
-        <oc-resource-icon :class="getIconClass(index)" :style="getStyle(index)" :resource="item" />
-      </div>
+    <div class="ghost-element-layer1 oc-rounded">
+      <oc-resource-icon :resource="previewItems[0]" />
+      <div v-if="showSecondLayer" class="ghost-element-layer2 oc-rounded" />
+      <div v-if="showThirdLayer" class="ghost-element-layer3 oc-rounded" />
     </div>
     <span class="badge">{{ itemCount }}</span>
   </div>
@@ -35,74 +23,47 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      maxPreviewStackItemCount: 3,
-    }
-  },
   computed: {
-    iconStack() {
-      return this.previewItems.filter(i => !i.isFolder).slice(0, this.iconStackCount)
+    layerCount() {
+      return Math.min(this.previewItems.length, 3)
     },
-    iconFolder() {
-      return this.previewItems.find(i => i.isFolder)
+    showSecondLayer() {
+      return this.layerCount > 1
     },
-    iconStackCount() {
-      return Math.min(
-        this.maxPreviewStackItemCount,
-        this.hasFolder ? this.itemCount - 1 : this.itemCount
-      )
+    showThirdLayer() {
+      return this.layerCount > 2
     },
     itemCount() {
       return this.previewItems.length
-    },
-  },
-  methods: {
-    getStyle(index) {
-      return {
-        left: `${(index + 1) * 2}px`,
-        top: `${(index + 1) * 2}px`,
-        "z-index": 2,
-      }
-    },
-    getIconClass(index) {
-      const layerIndex = index - this.iconStack.length + 4
-      return ["ghost-element-icon", `ghost-element-icon-${layerIndex}`]
     },
   },
 }
 </script>
 
 <style lang="scss">
-.ghost-element-icon {
-  position: absolute;
-  z-index: 1;
-  &-1 {
-    filter: brightness(0.5);
-  }
-  &-2 {
-    filter: brightness(0.7);
-  }
-  &-3 {
-    filter: brightness(1);
-  }
-  &-folder {
-    svg {
-      height: 80%;
-    }
-    filter: brightness(0.5) !important;
-    left: 4px;
-    z-index: 0;
-  }
-  &-background {
-    display: inline-flex;
-    align-items: center;
+.ghost-element-layer1 {
+  .ghost-element-layer2 {
     position: absolute;
-    z-index: 1;
-    svg {
-      height: 70%;
-    }
+    background-color: var(--oc-color-background-hover);
+    filter: brightness(0.82);
+    top: 3px;
+    left: 3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
   }
+  .ghost-element-layer3 {
+    position: absolute;
+    background-color: var(--oc-color-background-hover);
+    filter: brightness(0.72);
+    top: 6px;
+    left: 6px;
+    right: -6px;
+    bottom: -6px;
+    z-index: -2;
+  }
+  position: relative;
+  background-color: var(--oc-color-background-hover);
 }
 .ghost-element {
   background-color: transparent;
@@ -116,7 +77,7 @@ export default {
   .badge {
     position: absolute;
     top: -2px;
-    right: -48px;
+    right: -8px;
     padding: var(--oc-space-xsmall);
     line-height: var(--oc-space-small);
     -webkit-border-radius: 30px;
