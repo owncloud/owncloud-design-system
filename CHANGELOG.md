@@ -8,6 +8,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 * Bugfix - Disabled textarea color contrast in darkmode: [#2055](https://github.com/owncloud/owncloud-design-system/pull/2055)
 * Bugfix - OcTextInput: Fix event handlers in loops: [#2054](https://github.com/owncloud/owncloud-design-system/pull/2054)
+* Enhancement - Add selection range for OcModal and OcTextInput: [#6729](https://github.com/owncloud/web/issues/6729)
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
 * Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
 * Enhancement - Redesign OcGhostElement: [#2049](https://github.com/owncloud/owncloud-design-system/pull/2049/)
@@ -32,6 +33,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    particularly in loop rerenders, so they were called multiple times for a single event.
 
    https://github.com/owncloud/owncloud-design-system/pull/2054
+
+
+* Enhancement - Add selection range for OcModal and OcTextInput: [#6729](https://github.com/owncloud/web/issues/6729)
+
+   We've added the possibility to set a selection range for the initial focus selection in OcModal
+   and OcTextinput.
+
+   https://github.com/owncloud/web/issues/6729
+   https://github.com/owncloud/owncloud-design-system/pull/2061
 
 
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
