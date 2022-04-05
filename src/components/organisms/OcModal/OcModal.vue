@@ -28,6 +28,7 @@
             :description-message="inputDescription"
             :disabled="inputDisabled"
             :fix-message-line="true"
+            :selection-range="inputSelectionRange"
             @input="inputOnInput"
             @keydown.enter="confirm"
           />
@@ -195,6 +196,14 @@ export default {
      */
     inputValue: {
       type: String,
+      required: false,
+      default: null,
+    },
+    /**
+     * Selection range for input to accomplish partial selection
+     */
+    inputSelectionRange: {
+      type: Array,
       required: false,
       default: null,
     },

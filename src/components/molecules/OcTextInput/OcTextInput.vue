@@ -98,6 +98,14 @@ export default {
       default: null,
     },
     /**
+     * Selection range to accomplish partial selection
+     */
+    selectionRange: {
+      type: Array,
+      required: false,
+      default: null,
+    },
+    /**
      * Whether or not the input element should have a dedicated button for clearing the input content.
      */
     clearButtonEnabled: {
@@ -255,6 +263,9 @@ export default {
     },
     onFocus(target) {
       target.select()
+      if (this.selectionRange && this.selectionRange.length > 1) {
+        target.setSelectionRange(this.selectionRange[0], this.selectionRange[1])
+      }
       /**
        * Focus event - emitted as soon as the input field is focused
        * @type {event}
