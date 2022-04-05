@@ -207,6 +207,28 @@ export default {
   .tippy-content {
     // note: needed so that the box shadow from `oc-box-shadow-medium` doesn't get suppressed
     padding: 8px;
+
+    li {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      a,
+      button:not([role="switch"]) {
+        padding: 6px;
+        &:focus,
+        &:hover {
+          background-color: var(--oc-color-background-hover);
+
+          text-decoration: none !important;
+          color: var(--oc-color-swatch-brand-hover);
+          .oc-icon > svg {
+            fill: var(--oc-color-swatch-brand-hover) !important;
+          }
+        }
+        span {
+          text-decoration: none !important;
+        }
+      }
+    }
   }
 }
 
