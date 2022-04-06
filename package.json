@@ -131,7 +131,7 @@
     "webpack-merge": "^5.4.0",
     "webpack-merge-and-include-globally": "^2.1.24",
     "webpack-node-externals": "^3.0.0",
-    "yaml": "^1.10.2"
+    "yaml": "^2.0.0"
   },
   "peerDependencies": {
     "@popperjs/core": "^2.4.0",
