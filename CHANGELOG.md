@@ -346,7 +346,7 @@ The following sections list the changes in ownCloud Design System 12.1.0.
 
 The following sections list the changes in ownCloud Design System 12.0.0.
 
-[12.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.0...v12.0.0
+[12.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v12.0.0
 
 ## Summary
 
@@ -644,11 +644,30 @@ The following sections list the changes in ownCloud Design System 12.0.0.
    https://github.com/owncloud/web/issues/6100/
    https://github.com/owncloud/owncloud-design-system/pull/1876
 
+# Changelog for [11.3.1] (2021-12-03)
+
+The following sections list the changes in ownCloud Design System 11.3.1.
+
+[11.3.1]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.0...v11.3.1
+
+## Summary
+
+* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
+
+## Details
+
+* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
+
+   We've removed the padding from the context menu in the breadcrumbs to align its visual
+   appearance with the context menu in the files table.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1813
+
 # Changelog for [11.3.0] (2021-12-03)
 
 The following sections list the changes in ownCloud Design System 11.3.0.
 
-[11.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v11.3.0
+[11.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...v11.3.0
 
 ## Summary
 
@@ -704,25 +723,6 @@ The following sections list the changes in ownCloud Design System 11.3.0.
 
    https://github.com/owncloud/owncloud-design-system/issues/1758
    https://github.com/owncloud/owncloud-design-system/pull/1782
-
-# Changelog for [11.3.1] (2021-12-03)
-
-The following sections list the changes in ownCloud Design System 11.3.1.
-
-[11.3.1]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...v11.3.1
-
-## Summary
-
-* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
-
-## Details
-
-* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
-
-   We've removed the padding from the context menu in the breadcrumbs to align its visual
-   appearance with the context menu in the files table.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1813
 
 # Changelog for [11.2.2] (2021-11-11)
 
@@ -1517,7 +1517,7 @@ The following sections list the changes in ownCloud Design System 7.5.0.
 
 The following sections list the changes in ownCloud Design System 7.4.2.
 
-[7.4.2]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...v7.4.2
+[7.4.2]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...v7.4.2
 
 ## Summary
 
@@ -1556,11 +1556,40 @@ The following sections list the changes in ownCloud Design System 7.4.2.
 
    https://github.com/owncloud/owncloud-design-system/pull/1406
 
+# Changelog for [7.4.1] (2021-06-17)
+
+The following sections list the changes in ownCloud Design System 7.4.1.
+
+[7.4.1]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...v7.4.1
+
+## Summary
+
+* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+## Details
+
+* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
+
+   The pagination list had a small left padding which caused it to be visually off from the desired
+   horizontal center.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1398
+
+
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
+   visually make them better differentiable.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1387
+   https://github.com/owncloud/owncloud-design-system/pull/1390
+
 # Changelog for [7.4.0] (2021-06-17)
 
 The following sections list the changes in ownCloud Design System 7.4.0.
 
-[7.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...v7.4.0
+[7.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...v7.4.0
 
 ## Summary
 
@@ -1585,35 +1614,6 @@ The following sections list the changes in ownCloud Design System 7.4.0.
 
    https://github.com/owncloud/web/pull/5281
    https://github.com/owncloud/owncloud-design-system/pull/1388
-
-# Changelog for [7.4.1] (2021-06-17)
-
-The following sections list the changes in ownCloud Design System 7.4.1.
-
-[7.4.1]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...v7.4.1
-
-## Summary
-
-* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
-* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
-
-## Details
-
-* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
-
-   The pagination list had a small left padding which caused it to be visually off from the desired
-   horizontal center.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1398
-
-
-* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
-
-   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
-   visually make them better differentiable.
-
-   https://github.com/owncloud/owncloud-design-system/issues/1387
-   https://github.com/owncloud/owncloud-design-system/pull/1390
 
 # Changelog for [7.3.0] (2021-06-14)
 
@@ -2161,7 +2161,7 @@ The following sections list the changes in ownCloud Design System 6.1.0.
 
 The following sections list the changes in ownCloud Design System 6.2.0.
 
-[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.2.0
+[6.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.2.0
 
 ## Summary
 
@@ -2185,31 +2185,11 @@ The following sections list the changes in ownCloud Design System 6.2.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1233
 
-# Changelog for [6.0.1] (2021-04-19)
-
-The following sections list the changes in ownCloud Design System 6.0.1.
-
-[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.0...v6.0.1
-
-## Summary
-
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
-
-## Details
-
-* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
-
-   In the `v6.0.0` release, the color values for `background-muted` and
-   `background-hightlighted` got swapped by accident. This produced unwanted results in the
-   results and gets reverted to the original and working version with this change.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1227
-
 # Changelog for [6.0.0] (2021-04-19)
 
 The following sections list the changes in ownCloud Design System 6.0.0.
 
-[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.0
+[6.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v6.0.1...v6.0.0
 
 ## Summary
 
@@ -2247,11 +2227,31 @@ The following sections list the changes in ownCloud Design System 6.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1219
 
+# Changelog for [6.0.1] (2021-04-19)
+
+The following sections list the changes in ownCloud Design System 6.0.1.
+
+[6.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.1.0...v6.0.1
+
+## Summary
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+## Details
+
+* Bugfix - Swap background colors: [#1227](https://github.com/owncloud/owncloud-design-system/pull/1227)
+
+   In the `v6.0.0` release, the color values for `background-muted` and
+   `background-hightlighted` got swapped by accident. This produced unwanted results in the
+   results and gets reverted to the original and working version with this change.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1227
+
 # Changelog for [5.1.0] (2021-04-15)
 
 The following sections list the changes in ownCloud Design System 5.1.0.
 
-[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.1.0
+[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.1.0
 
 ## Summary
 
@@ -2304,30 +2304,11 @@ The following sections list the changes in ownCloud Design System 5.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1213
 
-# Changelog for [5.0.1] (2021-04-08)
-
-The following sections list the changes in ownCloud Design System 5.0.1.
-
-[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.0.1
-
-## Summary
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-## Details
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
-   peerDependencies.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1205
-
 # Changelog for [5.0.0] (2021-04-08)
 
 The following sections list the changes in ownCloud Design System 5.0.0.
 
-[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.0
+[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.0.0
 
 ## Summary
 
@@ -2355,6 +2336,25 @@ The following sections list the changes in ownCloud Design System 5.0.0.
    copied into the `dist` folder and can be imported and used alongside the styles and components.
 
    https://github.com/owncloud/owncloud-design-system/pull/1201
+
+# Changelog for [5.0.1] (2021-04-08)
+
+The following sections list the changes in ownCloud Design System 5.0.1.
+
+[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.1
+
+## Summary
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+## Details
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
+   peerDependencies.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1205
 
 # Changelog for [4.3.0] (2021-04-07)
 
@@ -2788,7 +2788,7 @@ The following sections list the changes in ownCloud Design System 3.2.1.
 
 The following sections list the changes in ownCloud Design System 3.2.0.
 
-[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.2.0
+[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.2.0
 
 ## Summary
 
@@ -2861,30 +2861,11 @@ The following sections list the changes in ownCloud Design System 3.2.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1139
 
-# Changelog for [3.1.0] (2021-02-24)
-
-The following sections list the changes in ownCloud Design System 3.1.0.
-
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
-
-## Summary
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-## Details
-
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
-
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1119
-
 # Changelog for [3.0.0] (2021-02-24)
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
 
 ## Summary
 
@@ -3043,6 +3024,25 @@ The following sections list the changes in ownCloud Design System 3.0.0.
    whether resources in the table can be selected.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
+
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
 
 # Changelog for [2.1.2] (2021-01-21)
 
@@ -3260,7 +3260,7 @@ The following sections list the changes in ownCloud Design System 2.0.0.
 
 The following sections list the changes in ownCloud Design System 1.15.0.
 
-[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.15.0
+[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.15.0
 
 ## Summary
 
@@ -3295,11 +3295,31 @@ The following sections list the changes in ownCloud Design System 1.15.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/924
 
+# Changelog for [1.13.0] (2020-10-28)
+
+The following sections list the changes in ownCloud Design System 1.13.0.
+
+[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.13.0
+
+## Summary
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+## Details
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
+   accessibility aspects are already implement, for example expanding and collapsing
+   accordion items by pressing space or enter already works. More will come later on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/911
+
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
 
-[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.14.0
+[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.14.0
 
 ## Summary
 
@@ -3321,26 +3341,6 @@ The following sections list the changes in ownCloud Design System 1.14.0.
    We added an icon for `file version`
 
    https://github.com/owncloud/owncloud-design-system/pull/917
-
-# Changelog for [1.13.0] (2020-10-28)
-
-The following sections list the changes in ownCloud Design System 1.13.0.
-
-[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.13.0
-
-## Summary
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-## Details
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
-   accessibility aspects are already implement, for example expanding and collapsing
-   accordion items by pressing space or enter already works. More will come later on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/911
 
 # Changelog for [1.12.2] (2020-10-26)
 
