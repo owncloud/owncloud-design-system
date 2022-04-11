@@ -220,9 +220,6 @@ export default {
 
           text-decoration: none !important;
           color: var(--oc-color-swatch-brand-hover);
-          .oc-icon > svg {
-            fill: var(--oc-color-swatch-brand-hover) !important;
-          }
         }
         span {
           text-decoration: none !important;
