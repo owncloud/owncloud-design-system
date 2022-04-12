@@ -213,13 +213,17 @@ export default {
       padding-right: 0 !important;
       a,
       button:not([role="switch"]) {
+        box-sizing: border-box;
         padding: 6px;
         &:focus,
         &:hover {
           background-color: var(--oc-color-background-hover);
 
           text-decoration: none !important;
-          color: var(--oc-color-swatch-brand-hover);
+          border-radius: 5px;
+        }
+        &:hover span {
+          color: var(--oc-color-swatch-brand-hover) !important;
         }
         span {
           text-decoration: none !important;
