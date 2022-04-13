@@ -25,6 +25,7 @@
             class="oc-modal-body-input"
             :error-message="inputError"
             :label="inputLabel"
+            :type="inputType"
             :description-message="inputDescription"
             :disabled="inputDisabled"
             :fix-message-line="true"
@@ -190,6 +191,13 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Type of the input field
+     */
+    inputType: {
+      type: String,
+      default: "text",
     },
     /**
      * Value of the input
