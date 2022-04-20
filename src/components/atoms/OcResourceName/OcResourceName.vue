@@ -9,7 +9,11 @@
     <span class="oc-text-truncate">
       <span class="oc-resource-basename" v-text="displayName" />
     </span>
-    <span v-if="extension && isExtensionDisplayed" class="oc-resource-extension" v-text="displayExtension" />
+    <span
+      v-if="extension && isExtensionDisplayed"
+      class="oc-resource-extension"
+      v-text="displayExtension"
+    />
   </span>
 </template>
 
