@@ -256,6 +256,7 @@ export default {
         <oc-resource :resource="documents" parent-folder-link="parentFolderLink" class="oc-mb" />
         <oc-resource :resource="notes" is-path-displayed="true" class="oc-mb" />
         <oc-resource :resource="notes" is-resource-clickable="false" class="oc-mb" />
+        <oc-resource :resource="notes" :is-extension-displayed="false" class="oc-mb" />
         <oc-resource :resource="forest" is-path-displayed="true" />
         <oc-resource :resource="something" is-path-displayed="true" parent-folder-name-default="Example parent folder"  />
       </div>

@@ -139,6 +139,7 @@ export default {
 
 <docs>
 ```js
+<oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" :is-extension-displayed="false" />
 <oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" />
 <oc-resource-name full-path="documents/notes.txt" name="super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt" extension="txt" type="file" />
 <oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" name="forest.jpg" extension="jpg" type="file" />
