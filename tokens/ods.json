@@ -61,6 +61,7 @@
   "oc-font-size-default": {"value":"1rem","name":"oc-font-size-default","type":"number","category":"font","info":{}},
   "oc-font-size-large": {"value":"1.5rem","name":"oc-font-size-large","type":"number","category":"font","info":{}},
   "oc-font-size-medium": {"value":"1.25rem","name":"oc-font-size-medium","type":"number","category":"font","info":{}},
+  "oc-font-size-small": {"value":"0.88rem","name":"oc-font-size-small","type":"number","category":"font","info":{}},
   "oc-size-form-check-default": {"value":"16px","name":"oc-size-form-check-default","type":"number","category":"size","info":{}},
   "oc-size-height-small": {"value":"50px","name":"oc-size-height-small","type":"number","category":"size","info":{}},
   "oc-size-height-table-row": {"value":"49px","name":"oc-size-height-table-row","type":"number","category":"size","info":{}},
