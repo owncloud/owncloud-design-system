@@ -4,8 +4,8 @@ import GetTextPlugin from "vue-gettext"
 
 const localVue = createLocalVue()
 localVue.use(GetTextPlugin, {
-  translations: 'does-not-matter.json',
-  silent: true
+  translations: "does-not-matter.json",
+  silent: true,
 })
 
 describe("OcContextualHelper", () => {
