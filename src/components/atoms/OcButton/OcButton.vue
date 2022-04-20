@@ -57,6 +57,17 @@ export default {
       default: null,
     },
     /**
+     * When setting the button’s type to a link, use this option to give a give a target.
+     * `_blank, _self, _parent, _top`
+     */
+    target: {
+      type: String,
+      default: null,
+      validator: value => {
+        return value.match(/(_blank|_self|_parent|_top)/)
+      },
+    },
+    /**
      * When setting the button’s type to a router-link, use this option to give a to.
      */
     to: {
@@ -144,6 +155,7 @@ export default {
     additionalAttributes() {
       return {
         ...(this.href && { href: this.href }),
+        ...(this.target && { target: this.target }),
         ...(this.to && { to: this.to }),
         ...(this.type === "button" && { type: this.submit }),
       }
