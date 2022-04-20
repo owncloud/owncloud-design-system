@@ -38,6 +38,7 @@
           :type="resource.type"
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
+          :is-extension-displayed="isExtensionDisplayed"
         />
       </oc-resource-link>
       <div class="oc-resource-indicators">
@@ -122,6 +123,14 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Asserts whether the resource extension should be displayed
+     */
+    isExtensionDisplayed: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
     /**
      * Asserts whether the resource thumbnail should be displayed
@@ -247,6 +256,7 @@ export default {
         <oc-resource :resource="documents" parent-folder-link="parentFolderLink" class="oc-mb" />
         <oc-resource :resource="notes" is-path-displayed="true" class="oc-mb" />
         <oc-resource :resource="notes" is-resource-clickable="false" class="oc-mb" />
+        <oc-resource :resource="notes" :is-extension-displayed="false" class="oc-mb" />
         <oc-resource :resource="forest" is-path-displayed="true" />
         <oc-resource :resource="something" is-path-displayed="true" parent-folder-name-default="Example parent folder"  />
       </div>

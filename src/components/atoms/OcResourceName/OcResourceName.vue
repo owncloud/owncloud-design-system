@@ -9,7 +9,11 @@
     <span class="oc-text-truncate">
       <span class="oc-resource-basename" v-text="displayName" />
     </span>
-    <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
+    <span
+      v-if="extension && isExtensionDisplayed"
+      class="oc-resource-extension"
+      v-text="displayExtension"
+    />
   </span>
 </template>
 
@@ -55,6 +59,14 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Asserts whether the resource extension should be displayed
+     */
+    isExtensionDisplayed: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
 
@@ -131,6 +143,7 @@ export default {
 
 <docs>
 ```js
+<oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" :is-extension-displayed="false" />
 <oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" />
 <oc-resource-name full-path="documents/notes.txt" name="super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt" extension="txt" type="file" />
 <oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" name="forest.jpg" extension="jpg" type="file" />
