@@ -9,7 +9,7 @@
     <span class="oc-text-truncate">
       <span class="oc-resource-basename" v-text="displayName" />
     </span>
-    <span v-if="extension" class="oc-resource-extension" v-text="displayExtension" />
+    <span v-if="extension && isExtensionDisplayed" class="oc-resource-extension" v-text="displayExtension" />
   </span>
 </template>
 
@@ -55,6 +55,14 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Asserts whether the resource extension should be displayed
+     */
+    isExtensionDisplayed: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
 

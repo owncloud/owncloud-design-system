@@ -38,6 +38,7 @@
           :type="resource.type"
           :full-path="resource.path"
           :is-path-displayed="isPathDisplayed"
+          :is-extension-displayed="isExtensionDisplayed"
         />
       </oc-resource-link>
       <div class="oc-resource-indicators">
@@ -122,6 +123,14 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Asserts whether the resource extension should be displayed
+     */
+    isExtensionDisplayed: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
     /**
      * Asserts whether the resource thumbnail should be displayed
