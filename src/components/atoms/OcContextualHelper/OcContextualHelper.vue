@@ -36,7 +36,8 @@ import OcDrop from "../../atoms/OcDrop/OcDrop.vue"
 
 export default {
   name: "OcContextualHelper",
-  status: "unreleased",
+  status: "ready",
+  release: "13.1.0",
   components: { OcButton, OcIcon, OcDrop },
   props: {
     text: {
