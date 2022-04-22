@@ -207,10 +207,7 @@ export default {
   .tippy-content {
     // note: needed so that the box shadow from `oc-box-shadow-medium` doesn't get suppressed
     padding: 8px;
-
     li {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
       a,
       button:not([role="switch"]) {
         box-sizing: border-box;
