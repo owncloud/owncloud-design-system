@@ -5697,11 +5697,11 @@ focus-trap-vue@^1.1.1:
   integrity sha512-N+M4d4uYymCogct417gUL7wWSMIW/oUcCicfg3eRdo+gz7jlQnIGwUwViFxPkKV7iyzpc81g6JeSxRWiYWU3eQ==
 
 focus-trap@^6.4.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.8.0.tgz#6b853176593cc68a511e54a6ca466bcbe9e5601b"
-  integrity sha512-VXObAEbVGSAV1FqeveDY1X4jegkl8qjewUCDU2VYk+smVgZHW9wcpfyEpD4UuTkmzg3y+r4Xx2x0gCSJVowMaw==
+  version "6.8.1"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.8.1.tgz#0c9e4e44db8f7242f3d4b1056a518747d9c97125"
+  integrity sha512-sdz/jAPiP/9cyElo31+X3/estGPi6wgHutg+R/3MFmJtMM5AeeBlFGplejQyy89Ouyds/9xW+qPEH3jFlOAuKg==
   dependencies:
-    tabbable "5.3.0"
+    tabbable "^5.3.1"
 
 follow-redirects@^1.0.0:
   version "1.14.8"
@@ -12330,10 +12330,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-tabbable@5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-5.3.0.tgz#1c745a67e8cbdc0a3e0c19e912f28ef90514a510"
-  integrity sha512-BS+sw22/pUGaIZr8Ro8E+NeJ3bhvYgMHJKEAhr9pGj22MqaD60qyrvGJBSe6AlrOHR8Y41nA0IvMmgf4lVWC9Q==
+tabbable@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-5.3.1.tgz#059f2a19b829efce2a0ec05785a47dd3bcd0a25b"
+  integrity sha512-NtO7I7eoAHR+JwwcNsi/PipamtAEebYDnur/k9wM6n238HHy/+1O4+7Zx7e/JaDAbKJPlIFYsfsV/6tPqTOQvg==
 
 table@^6.8.0:
   version "6.8.0"
