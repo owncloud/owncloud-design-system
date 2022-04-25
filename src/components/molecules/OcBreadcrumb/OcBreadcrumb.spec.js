@@ -18,7 +18,7 @@ describe("OcBreadcrumb", () => {
     })
 
     expect(wrapper.props().variation).toMatch("lead")
-    expect(wrapper.classes()).toContain("oc-breadcrumb-lead")
+    expect(wrapper.html()).toContain("oc-breadcrumb oc-breadcrumb-lead")
     expect(wrapper).toMatchSnapshot()
   })
   it("displays all items", () => {

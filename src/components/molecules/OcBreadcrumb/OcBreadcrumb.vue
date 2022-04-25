@@ -1,88 +1,90 @@
 <template>
-  <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
-    <ol class="oc-breadcrumb-list oc-mb-s">
-      <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
-        <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
-          <span>{{ item.text }}</span>
-        </router-link>
-        <oc-icon
-          v-if="item.to"
-          color="var(--oc-color-text-default)"
-          name="arrow-right-s"
-          fill-type="line"
-        />
-        <oc-button
-          v-else-if="item.onClick"
-          :aria-current="getAriaCurrent(index)"
-          appearance="raw"
-          @click="item.onClick"
-        >
-          <span>{{ item.text }}</span>
-        </oc-button>
-        <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
-        <template v-if="showContextMenu && index === items.length - 1">
+  <div class="oc-breadcrumb-wrapper">
+    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
+      <ol id="test" class="oc-breadcrumb-list oc-mb-s">
+        <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
+          <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
+            <span>{{ item.text }}</span>
+          </router-link>
+          <oc-icon
+            v-if="item.to"
+            color="var(--oc-color-text-default)"
+            name="arrow-right-s"
+            fill-type="line"
+          />
           <oc-button
-            id="oc-breadcrumb-contextmenu-trigger"
-            v-oc-tooltip="contextMenuLabel"
-            :aria-label="contextMenuLabel"
+            v-else-if="item.onClick"
+            :aria-current="getAriaCurrent(index)"
             appearance="raw"
+            @click="item.onClick"
           >
-            <oc-icon name="more-2" color="var(--oc-color-text-default)" />
+            <span>{{ item.text }}</span>
           </oc-button>
-          <oc-drop
-            drop-id="oc-breadcrumb-contextmenu"
-            toggle="#oc-breadcrumb-contextmenu-trigger"
-            mode="click"
-            close-on-click
-            :padding-size="contextMenuPadding"
-            @click.native.stop.prevent
-          >
-            <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
-            <slot name="contextMenu" />
-          </oc-drop>
-        </template>
-      </li>
-    </ol>
-    <div class="oc-breadcrumb-drop">
-      <label
-        ref="mobileDropdown"
-        tabindex="0"
-        class="oc-breadcrumb-drop-label"
-        @keydown.enter="$refs.mobileDropdown.click()"
-      >
-        <span
-          v-if="currentFolder"
-          class="oc-breadcrumb-drop-label-text"
-          aria-current="page"
-          v-text="currentFolder.text"
-        />
-        <oc-icon
-          class="oc-breadcrumb-drop-label-icon"
-          name="arrow-down-s"
-          :accessible-label="$gettext('Expand more')"
-        />
-      </label>
-      <oc-drop v-if="dropdownItems">
-        <ol>
-          <li v-for="(item, index) in dropdownItems" :key="index">
-            <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
-              {{ item.text }}
-            </router-link>
+          <span v-else :aria-current="getAriaCurrent(index)" tabindex="-1" v-text="item.text" />
+          <template v-if="showContextMenu && index === items.length - 1">
             <oc-button
-              v-else-if="item.onClick"
-              justify-content="left"
+              id="oc-breadcrumb-contextmenu-trigger"
+              v-oc-tooltip="contextMenuLabel"
+              :aria-label="contextMenuLabel"
               appearance="raw"
-              :aria-current="getAriaCurrent(index)"
-              @click="item.onClick"
             >
-              {{ item.text }}
+              <oc-icon name="more-2" color="var(--oc-color-text-default)" />
             </oc-button>
-            <span v-else :aria-current="getAriaCurrent(index)" v-text="item.text" />
-          </li>
-        </ol>
-      </oc-drop>
-    </div>
-  </nav>
+            <oc-drop
+              drop-id="oc-breadcrumb-contextmenu"
+              toggle="#oc-breadcrumb-contextmenu-trigger"
+              mode="click"
+              close-on-click
+              :padding-size="contextMenuPadding"
+              @click.native.stop.prevent
+            >
+              <!-- @slot Add context actions that open in a dropdown when clicking on the "three dots" button -->
+              <slot name="contextMenu" />
+            </oc-drop>
+          </template>
+        </li>
+      </ol>
+      <div class="oc-breadcrumb-drop">
+        <label
+          ref="mobileDropdown"
+          tabindex="0"
+          class="oc-breadcrumb-drop-label"
+          @keydown.enter="$refs.mobileDropdown.click()"
+        >
+          <span
+            v-if="currentFolder"
+            class="oc-breadcrumb-drop-label-text"
+            aria-current="page"
+            v-text="currentFolder.text"
+          />
+          <oc-icon
+            class="oc-breadcrumb-drop-label-icon"
+            name="arrow-down-s"
+            :accessible-label="$gettext('Expand more')"
+          />
+        </label>
+        <oc-drop v-if="dropdownItems">
+          <ol>
+            <li v-for="(item, index) in dropdownItems" :key="index">
+              <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
+                {{ item.text }}
+              </router-link>
+              <oc-button
+                v-else-if="item.onClick"
+                justify-content="left"
+                appearance="raw"
+                :aria-current="getAriaCurrent(index)"
+                @click="item.onClick"
+              >
+                {{ item.text }}
+              </oc-button>
+              <span v-else :aria-current="getAriaCurrent(index)" v-text="item.text" />
+            </li>
+          </ol>
+        </oc-drop>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -168,6 +170,18 @@ export default {
 <style lang="scss">
 .oc-breadcrumb {
   overflow: hidden;
+  flex-shrink: 0;
+  width: auto;
+  right: 0;
+  position: absolute;
+  white-space: nowrap;
+
+  &-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
 
   &-list {
     @extend .oc-visible\@s;
