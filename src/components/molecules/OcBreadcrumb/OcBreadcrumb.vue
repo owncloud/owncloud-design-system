@@ -1,9 +1,9 @@
 <template>
   <div class="oc-breadcrumb-wrapper">
-    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
+    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`" :style="collapsedItems.length > 0 ? { 'right': 0 } : { 'left': 0 }">
       <ol id="test" class="oc-breadcrumb-list oc-mb-s">
         <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
-          <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
+          <router-link v-observe-visibility="visibilityChanged" v-if="item.to" :data-key="index" :aria-current="getAriaCurrent(index)" :to="item.to">
             <span>{{ item.text }}</span>
           </router-link>
           <oc-icon
@@ -91,7 +91,6 @@
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import OcDrop from "../../atoms/OcDrop/OcDrop.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
-
 /**
  * Displays a breadcrumb. Each item in the items property has the following elements:
  *
@@ -102,6 +101,11 @@ export default {
   name: "OcBreadcrumb",
   status: "ready",
   release: "1.0.0",
+  data: () => {
+    return {
+      collapsedItems: []
+    }
+  },
 
   components: {
     OcDrop,
@@ -159,10 +163,26 @@ export default {
       return !!this.$slots.contextMenu
     },
   },
+
+  mounted() {
+  },
   methods: {
     getAriaCurrent(index) {
       return this.items.length - 1 === index ? "page" : null
     },
+    visibilityChanged(isVisible, data2) {
+      var key = data2.target.getAttribute("data-key")
+      var item = this.items[key]
+      console.log(item)
+      if(isVisible) {
+        this.collapsedItems.slice(this.collapsedItems.indexOf(item), 1)
+      }else {
+        console.log(item)
+        this.collapsedItems.push(item)
+
+        console.log(this.collapsedItems)
+      }
+    }
   },
 }
 </script>
@@ -172,7 +192,6 @@ export default {
   overflow: hidden;
   flex-shrink: 0;
   width: auto;
-  right: 0;
   position: absolute;
   white-space: nowrap;
 

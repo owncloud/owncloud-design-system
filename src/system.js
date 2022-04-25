@@ -4,7 +4,8 @@
  *
  * You should & can add your own dependencies here if needed.
  */
-
+import Vue from 'vue'
+import { ObserveVisibility } from 'vue-observe-visibility'
 import "./styles/styles.scss"
 import { getSizeClass } from "./utils/sizeClasses.js"
 
@@ -46,6 +47,8 @@ const System = {
 
     Object.keys(components).forEach(name => Vue.component(name, components[name]))
     Object.keys(directives).forEach(name => Vue.directive(name, directives[name]))
+
+    Vue.directive('observe-visibility', ObserveVisibility)
   },
 }
 
