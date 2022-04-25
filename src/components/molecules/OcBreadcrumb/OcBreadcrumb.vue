@@ -1,6 +1,6 @@
 <template>
   <div class="oc-breadcrumb-wrapper">
-    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`" :style="collapsedItems.length > 0 ? { 'right': 0 } : { 'left': 0 }">
+    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`" :style="collapsedItems2.length > 0 ? { 'right': 0 } : { 'left': 0 }">
       <ol id="test" class="oc-breadcrumb-list oc-mb-s">
         <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
           <router-link v-observe-visibility="visibilityChanged" v-if="item.to" :data-key="index" :aria-current="getAriaCurrent(index)" :to="item.to">
@@ -146,6 +146,18 @@ export default {
     },
   },
   computed: {
+    collapsedItems2() {
+      var result = []
+      for(var ci of this.collapsedItems) {
+        for(var i of this.items) {
+          if(i.to === ci.to) {
+            result.push(ci)
+          }
+        }
+      }
+      console.log(result)
+      return result
+    },
     dropdownItems() {
       if (this.items.length <= 1 || !this.items) return false
 
@@ -173,14 +185,14 @@ export default {
     visibilityChanged(isVisible, data2) {
       var key = data2.target.getAttribute("data-key")
       var item = this.items[key]
-      console.log(item)
       if(isVisible) {
-        this.collapsedItems.slice(this.collapsedItems.indexOf(item), 1)
+        var item2 = Object.keys(this.collapsedItems).filter((key) => {
+          return this.collapsedItems[key].to == item.to;
+        })
+        this.collapsedItems.slice(item2, 1)
       }else {
-        console.log(item)
+        //console.log(item)
         this.collapsedItems.push(item)
-
-        console.log(this.collapsedItems)
       }
     }
   },
