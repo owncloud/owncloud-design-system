@@ -1,9 +1,9 @@
 <template>
-  <div class="oc-breadcrumb-wrapper">
-    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`" :style="collapsedItems2.length > 0 ? { 'right': 0 } : { 'left': 0 }">
-      <ol id="test" class="oc-breadcrumb-list oc-mb-s">
-        <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
-          <router-link v-observe-visibility="visibilityChanged" v-if="item.to" :data-key="index" :aria-current="getAriaCurrent(index)" :to="item.to">
+  <div class="oc-breadcrumb-wrapper" ref="wrapper">
+    <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
+      <ol class="oc-breadcrumb-list oc-mb-s" ref="breadcrumb">
+        <li v-for="(item, index) in visibleItems" :key="index" :data-key="index" class="oc-breadcrumb-list-item">
+          <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
             <span>{{ item.text }}</span>
           </router-link>
           <oc-icon
@@ -101,12 +101,13 @@ export default {
   name: "OcBreadcrumb",
   status: "ready",
   release: "1.0.0",
+
   data: () => {
     return {
-      collapsedItems: []
+      visibleItems: [],
+      invisibleItems: []
     }
   },
-
   components: {
     OcDrop,
     OcIcon,
@@ -146,18 +147,6 @@ export default {
     },
   },
   computed: {
-    collapsedItems2() {
-      var result = []
-      for(var ci of this.collapsedItems) {
-        for(var i of this.items) {
-          if(i.to === ci.to) {
-            result.push(ci)
-          }
-        }
-      }
-      console.log(result)
-      return result
-    },
     dropdownItems() {
       if (this.items.length <= 1 || !this.items) return false
 
@@ -176,25 +165,58 @@ export default {
     },
   },
 
+
+  watch: {
+    items: {
+      handler: function (to, from) {
+        this.visibleItems = to
+      }
+    }
+  },
+
   mounted() {
+    this.visibleItems = this.items
+    const resizeObserver = new ResizeObserver(() => {
+      let outerWidth = this.$refs.wrapper.clientWidth
+      const { items, invisibleItems } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
+        const itemKey = item.getAttribute("data-key")
+        const metaItem = this.visibleItems[itemKey]
+        if((acc.total + item.clientWidth) > outerWidth) {
+          acc.invisibleItems.push(metaItem)
+          return acc
+        }
+        acc.items.push(metaItem)
+        acc.total += item.clientWidth
+        return acc
+      }, {total: 0, items: [], invisibleItems: []})
+
+      this.visibleItems = items.reverse()
+      this.invisibleItems = invisibleItems.reverse()
+      
+      /* THIS IS FOR DEBUG */
+      var visibleTexts = []
+      for(var item of this.visibleItems) {
+        visibleTexts.push(item.text)
+      }
+      console.log("Currently visible items:", visibleTexts, total)
+
+      var invisibleTexts = []
+      for(var item of this.invisibleItems) {
+        invisibleTexts.push(item.text)
+      }
+      console.log("Currently invisible items:", invisibleTexts, total)
+    });
+    
+    resizeObserver.observe(this.$refs.breadcrumb)
+    resizeObserver.observe(this.$refs.wrapper)
+    this.$on('beforeDestroy', () => {
+      resizeObserver.disconnect()
+    });
   },
   methods: {
     getAriaCurrent(index) {
       return this.items.length - 1 === index ? "page" : null
     },
-    visibilityChanged(isVisible, data2) {
-      var key = data2.target.getAttribute("data-key")
-      var item = this.items[key]
-      if(isVisible) {
-        var item2 = Object.keys(this.collapsedItems).filter((key) => {
-          return this.collapsedItems[key].to == item.to;
-        })
-        this.collapsedItems.slice(item2, 1)
-      }else {
-        //console.log(item)
-        this.collapsedItems.push(item)
-      }
-    }
   },
 }
 </script>
@@ -265,6 +287,7 @@ export default {
 
   /* stylelint-disable */
   &-list-item {
+    display: inline-block;
     a,
     button,
     span {
