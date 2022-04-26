@@ -178,9 +178,13 @@ export default {
     this.visibleItems = this.items
     const resizeObserver = new ResizeObserver(() => {
       let outerWidth = this.$refs.wrapper.clientWidth
-      const { items, invisibleItems } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
+      let breadcrumbWidth = this.$refs.breadcrumb.clientWidth
+      
+
+      const { items, invisibleItems, total } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
         const itemKey = item.getAttribute("data-key")
         const metaItem = this.visibleItems[itemKey]
+        metaItem.clientWidth = item.clientWidth
         if((acc.total + item.clientWidth) > outerWidth) {
           acc.invisibleItems.push(metaItem)
           return acc
@@ -193,6 +197,16 @@ export default {
       this.visibleItems = items.reverse()
       this.invisibleItems = invisibleItems.reverse()
       
+      const metaItem = this.visibleItems[0]
+      const currentItem = this.items.findIndex(e => e.to === metaItem.to)
+      if(currentItem > 0) {
+        const nextVisible = this.items[currentItem - 1]
+        if(nextVisible) {
+          if((breadcrumbWidth + nextVisible.clientWidth) < outerWidth) {
+            this.visibleItems = [nextVisible, ...this.visibleItems]
+          }
+        }
+      }
       /* THIS IS FOR DEBUG */
       var visibleTexts = []
       for(var item of this.visibleItems) {
@@ -205,6 +219,7 @@ export default {
         invisibleTexts.push(item.text)
       }
       console.log("Currently invisible items:", invisibleTexts, total)
+      console.log("test", this.visibleItems)
     });
     
     resizeObserver.observe(this.$refs.breadcrumb)
