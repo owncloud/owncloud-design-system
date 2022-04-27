@@ -180,23 +180,24 @@ export default {
       let outerWidth = this.$refs.wrapper.clientWidth
       let breadcrumbWidth = this.$refs.breadcrumb.clientWidth
       
-
-      const { items, invisibleItems, total } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
+      // Remove items if less space is available
+      const { items, total } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
         const itemKey = item.getAttribute("data-key")
         const metaItem = this.visibleItems[itemKey]
         metaItem.clientWidth = item.clientWidth
         if((acc.total + item.clientWidth) > outerWidth) {
-          acc.invisibleItems.push(metaItem)
           return acc
         }
         acc.items.push(metaItem)
         acc.total += item.clientWidth
+        //var index = this.items.findIndex(e => e.to === metaItem.to)
+        //acc.invisibleItems = acc.invisibleItems.splice(index, 1)
         return acc
-      }, {total: 0, items: [], invisibleItems: []})
+      }, {total: 0, items: []})
 
       this.visibleItems = items.reverse()
-      this.invisibleItems = invisibleItems.reverse()
       
+      // Add items if more space is available
       const metaItem = this.visibleItems[0]
       const currentItem = this.items.findIndex(e => e.to === metaItem.to)
       if(currentItem > 0) {
@@ -207,20 +208,15 @@ export default {
           }
         }
       }
-      /* THIS IS FOR DEBUG */
-      var visibleTexts = []
-      for(var item of this.visibleItems) {
-        visibleTexts.push(item.text)
-      }
-      console.log("Currently visible items:", visibleTexts, total)
 
+      /* THIS IS FOR DEBUG */
       var invisibleTexts = []
       for(var item of this.invisibleItems) {
         invisibleTexts.push(item.text)
       }
       console.log("Currently invisible items:", invisibleTexts, total)
       console.log("test", this.visibleItems)
-    });
+    })
     
     resizeObserver.observe(this.$refs.breadcrumb)
     resizeObserver.observe(this.$refs.wrapper)
