@@ -2,7 +2,7 @@
   <div class="oc-breadcrumb-wrapper" ref="wrapper">
     <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
       <ol class="oc-breadcrumb-list oc-mb-s" ref="breadcrumb">
-        <li v-for="(item, index) in visibleItems" :key="index" :data-key="index" class="oc-breadcrumb-list-item">
+        <li v-for="(item, index) in visibleItems" :key="index" :data-key="index" :is-visible="addItemSize(index, item.to)" :id="`item-${index}`" class="oc-breadcrumb-list-item">
           <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
             <span>{{ item.text }}</span>
           </router-link>
@@ -105,7 +105,8 @@ export default {
   data: () => {
     return {
       visibleItems: [],
-      invisibleItems: []
+      invisibleItems: [],
+      itemWidth: {}
     }
   },
   components: {
@@ -179,9 +180,10 @@ export default {
     const resizeObserver = new ResizeObserver(() => {
       let outerWidth = this.$refs.wrapper.clientWidth
       let breadcrumbWidth = this.$refs.breadcrumb.clientWidth
-      
+      console.log("===== =====")
+      console.log(`outerWidth: ${outerWidth}, innerWidth: ${breadcrumbWidth}`)
       // Remove items if less space is available
-      const { items, total } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
+      let { items, total } = Array.from(this.$refs.breadcrumb.childNodes).reverse().reduce((acc, item) => {
         const itemKey = item.getAttribute("data-key")
         const metaItem = this.visibleItems[itemKey]
         metaItem.clientWidth = item.clientWidth
@@ -190,32 +192,35 @@ export default {
         }
         acc.items.push(metaItem)
         acc.total += item.clientWidth
+        breadcrumbWidth += item.clientWidth
         //var index = this.items.findIndex(e => e.to === metaItem.to)
         //acc.invisibleItems = acc.invisibleItems.splice(index, 1)
         return acc
       }, {total: 0, items: []})
-
-      this.visibleItems = items.reverse()
       
       // Add items if more space is available
-      const metaItem = this.visibleItems[0]
+      items = items.reverse()
+      const metaItem = items[0]
       const currentItem = this.items.findIndex(e => e.to === metaItem.to)
       if(currentItem > 0) {
         const nextVisible = this.items[currentItem - 1]
-        if(nextVisible) {
-          if((breadcrumbWidth + nextVisible.clientWidth) < outerWidth) {
-            this.visibleItems = [nextVisible, ...this.visibleItems]
+        if(nextVisible && nextVisible.to) {
+          const clientWidth = this.itemWidth[nextVisible.to]
+          if((breadcrumbWidth + clientWidth) < outerWidth) {
+            console.log(`current: ${metaItem.to}, next ${nextVisible.to}`)
+            console.log(`${total} + ${clientWidth} < ${outerWidth}`)
+            items = [nextVisible, ...items]
           }
         }
       }
-
+      this.visibleItems = items
       /* THIS IS FOR DEBUG */
-      var invisibleTexts = []
+      /*var invisibleTexts = []
       for(var item of this.invisibleItems) {
         invisibleTexts.push(item.text)
       }
       console.log("Currently invisible items:", invisibleTexts, total)
-      console.log("test", this.visibleItems)
+      console.log("test", this.visibleItems)*/
     })
     
     resizeObserver.observe(this.$refs.breadcrumb)
@@ -228,6 +233,15 @@ export default {
     getAriaCurrent(index) {
       return this.items.length - 1 === index ? "page" : null
     },
+    isItemVisible(item) {
+      return this.visibleItems.find(e => e.to === item.to)
+    },
+    addItemSize(index, to) {
+      this.$nextTick(() => {
+        this.itemWidth[to] = document.getElementById(`item-${index}`).clientWidth
+      })
+      return true
+    }
   },
 }
 </script>
