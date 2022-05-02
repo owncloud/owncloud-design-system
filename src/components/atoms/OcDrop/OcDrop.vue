@@ -207,24 +207,24 @@ export default {
   .tippy-content {
     // note: needed so that the box shadow from `oc-box-shadow-medium` doesn't get suppressed
     padding: 8px;
-    li {
-      a,
-      button:not([role="switch"]) {
-        box-sizing: border-box;
-        padding: 6px;
-        &:focus,
-        &:hover {
-          background-color: var(--oc-color-background-hover);
+  }
+  li.action-menu-item-hover {
+    a,
+    button:not([role="switch"]) {
+      box-sizing: border-box;
+      padding: var(--oc-space-small);
+      &:focus,
+      &:hover {
+        background-color: var(--oc-color-background-hover);
 
-          text-decoration: none !important;
-          border-radius: 5px;
-        }
-        &:hover span {
-          color: var(--oc-color-swatch-brand-hover) !important;
-        }
-        span {
-          text-decoration: none !important;
-        }
+        text-decoration: none !important;
+        border-radius: 5px;
+      }
+      &:hover span {
+        color: var(--oc-color-swatch-brand-hover) !important;
+      }
+      span {
+        text-decoration: none !important;
       }
     }
   }
