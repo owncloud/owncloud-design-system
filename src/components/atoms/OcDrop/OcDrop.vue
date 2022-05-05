@@ -213,6 +213,7 @@ export default {
     button:not([role="switch"]) {
       box-sizing: border-box;
       padding: var(--oc-space-small);
+      color: var(--oc-color-swatch-passive-default);
       &:focus,
       &:hover {
         background-color: var(--oc-color-background-hover);
