@@ -9,6 +9,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Disabled textarea color contrast in darkmode: [#2055](https://github.com/owncloud/owncloud-design-system/pull/2055)
 * Bugfix - OcTextInput: Fix event handlers in loops: [#2054](https://github.com/owncloud/owncloud-design-system/pull/2054)
 * Bugfix - Text color of buttons and avatars in hovered table rows: [#2139](https://github.com/owncloud/owncloud-design-system/pull/2139)
+* Bugfix - Add word breaking in tooltips: [#2137](https://github.com/owncloud/owncloud-design-system/pull/2137)
 * Enhancement - Add OcContextualHelper: [#6590](https://github.com/owncloud/web/issues/6590)
 * Enhancement - Add selection range for OcModal and OcTextInput: [#6729](https://github.com/owncloud/web/issues/6729)
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
@@ -46,6 +47,13 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/2138
    https://github.com/owncloud/owncloud-design-system/pull/2139
+
+
+* Bugfix - Add word breaking in tooltips: [#2137](https://github.com/owncloud/owncloud-design-system/pull/2137)
+
+   We've added word wrapping to the tippy tooltips so they handle very long paths properly.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2137
 
 
 * Enhancement - Add OcContextualHelper: [#6590](https://github.com/owncloud/web/issues/6590)
