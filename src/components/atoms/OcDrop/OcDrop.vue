@@ -199,11 +199,6 @@ export default {
 </script>
 
 <style lang="scss">
-.tippy-box {
-  .tippy-content {
-    word-wrap: break-word;
-  }
-}
 .tippy-box[data-theme~="none"] {
   background-color: transparent;
   font-size: inherit;
