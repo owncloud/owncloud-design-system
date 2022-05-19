@@ -34,6 +34,9 @@
             @keydown.enter="confirm"
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
+          <div v-if="checkbox" class="oc-modal-body-actions oc-flex oc-flex-left">
+            <oc-checkbox size="medium" :value="checkboxValue" :label="checkboxLabel" :aria-label="checkboxLabel"/>
+          </div>
           <div class="oc-modal-body-actions oc-flex oc-flex-right">
             <oc-button
               class="oc-modal-body-actions-cancel"
@@ -59,6 +62,7 @@
 
 <script>
 import OcButton from "../../atoms/OcButton/OcButton.vue"
+import OcCheckbox from "../../atoms/OcCheckbox/OcCheckbox.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcTextInput from "../../molecules/OcTextInput/OcTextInput.vue"
 import { FocusTrap } from "focus-trap-vue"
@@ -85,6 +89,7 @@ export default {
 
   components: {
     OcButton,
+    OcCheckbox,
     OcIcon,
     OcTextInput,
     FocusTrap,
@@ -126,6 +131,22 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    /**
+     * Show modal checbox
+     */
+    checkbox: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    /**
+     * Modal checkbox label
+     */
+    checkboxLabel: {
+      type: String,
+      required: false,
+      default: "",
     },
     /**
      * Text of the cancel button
@@ -260,6 +281,7 @@ export default {
   data() {
     return {
       userInputValue: null,
+      checkboxValue: false,
     }
   },
   computed: {
@@ -280,6 +302,10 @@ export default {
       handler: "inputAssignPropAsValue",
       immediate: true,
     },
+    checkboxValue: {
+      handler: "checkboxValueChanged",
+      immediate: true,
+    }
   },
   methods: {
     cancelModalAction() {
@@ -310,6 +336,9 @@ export default {
     inputAssignPropAsValue(value) {
       this.userInputValue = value
     },
+    checkboxValueChanged(value) {
+      this.$emit("checkbox-changed", value)
+    }
   },
 }
 </script>
@@ -459,6 +488,16 @@ export default {
       />
     </template>
   </oc-modal>
+  <oc-modal
+    icon="information"
+    title="Accept terms of use"
+    message="Do you accept our terms of use?"
+    button-cancel-text="Decline"
+    button-confirm-text="Accept"
+    checkbox="true"
+    checkbox-label="I accept the terms of use"
+    class="oc-mb-l oc-position-relative"
+  />
 ```
 
 ```js
