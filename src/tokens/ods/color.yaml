@@ -139,3 +139,5 @@ color:
       value: rgb(255, 64, 6)
     pdf:
       value: rgb(225, 5, 14)
+    root:
+      value: rgb(0, 187, 219)

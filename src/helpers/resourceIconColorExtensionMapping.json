@@ -75,6 +75,7 @@
   "psd": "var(--oc-color-icon-image)",
   "py": "var(--oc-color-text-default)",
   "rar": "var(--oc-color-icon-archive)",
+  "root": "var(--oc-color-icon-root)",
   "rss": "var(--oc-color-text-default)",
   "sh": "var(--oc-color-text-default)",
   "sh-lib": "var(--oc-color-text-default)",
