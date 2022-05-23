@@ -67,6 +67,7 @@ td.oc-text-truncate {
 .oc-text-break {
   overflow-wrap: break-word;
   word-wrap: break-word;
+  white-space: unset;
 }
 
 th.oc-text-break,
