@@ -31,7 +31,7 @@
             :fix-message-line="true"
             :selection-range="inputSelectionRange"
             @input="inputOnInput"
-            @keydown.enter="confirm"
+            @keydown.enter.prevent="confirm"
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
           <div class="oc-modal-body-actions oc-flex oc-flex-right">
