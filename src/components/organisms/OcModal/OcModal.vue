@@ -35,7 +35,7 @@
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
           <div v-if="checkbox" class="oc-modal-body-actions oc-flex oc-flex-left">
-            <oc-checkbox size="medium" :value="checkboxValue" :label="checkboxLabel" :aria-label="checkboxLabel"/>
+            <oc-checkbox size="medium" v-model="checkboxValue" :label="checkboxLabel" :aria-label="checkboxLabel"/>
           </div>
           <div class="oc-modal-body-actions oc-flex oc-flex-right">
             <oc-button
@@ -45,6 +45,13 @@
               @click="cancelModalAction"
               v-text="buttonCancelText"
             />
+            <oc-button
+              v-if="buttonSecondary"
+              class="oc-modal-body-actions-secondary oc-ml-s"
+              :variation="buttonSecondaryVariation"
+              :appearance="buttonSecondaryAppearance"
+              @click="cancelModalAction"
+              v-text="buttonSecondaryText" />
             <oc-button
               class="oc-modal-body-actions-confirm oc-ml-s"
               variation="primary"
@@ -171,6 +178,44 @@ export default {
      * Appearance of the cancel button
      */
     buttonCancelAppearance: {
+      type: String,
+      required: false,
+      default: "outline",
+      validator: value => {
+        return value.match(/(outline|filled|raw)/)
+      },
+    },
+    /**
+     * Text of the secondary button
+     */
+    buttonSecondary: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * Text of the secondary button
+     */
+    buttonSecondaryText: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * Variation type of the secondary button
+     */
+    buttonSecondaryVariation: {
+      type: String,
+      required: false,
+      default: "passive",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning)/)
+      },
+    },
+    /**
+     * Appearance of the secondary button
+     */
+    buttonSecondaryAppearance: {
       type: String,
       required: false,
       default: "outline",
@@ -314,6 +359,9 @@ export default {
        */
       this.$emit("cancel")
     },
+    secondaryModalAction() {
+      this.$emit("confirm-secondary")
+    },
     confirm() {
       if (this.buttonConfirmDisabled || this.inputError) {
         return
@@ -420,6 +468,10 @@ export default {
     color: var(--oc-color-text-default);
     padding: var(--oc-space-medium);
 
+    span {
+      color: var(--oc-color-text-default);
+    }
+
     &-message {
       margin-bottom: var(--oc-space-medium);
       margin-top: var(--oc-space-small);
@@ -496,6 +548,16 @@ export default {
     button-confirm-text="Accept"
     checkbox="true"
     checkbox-label="I accept the terms of use"
+    class="oc-mb-l oc-position-relative"
+  />
+  <oc-modal
+    icon="information"
+    title="Accept terms of use"
+    message="Do you accept our terms of use?"
+    button-cancel-text="Decline"
+    button-confirm-text="Accept"
+    button-secondary="true"
+    button-secondary-text="test"
     class="oc-mb-l oc-position-relative"
   />
 ```
