@@ -53,4 +53,33 @@ describe("OcResourceName", () => {
     expect(node.attributes("data-test-resource-name")).toMatch(name)
     expect(node.attributes("data-test-resource-path")).toMatch("/" + name)
   })
+
+  it("truncates very long name per default", () => {
+    const wrapper = shallowMount(Name, {
+      propsData: {
+        fullPath:
+          "super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt",
+        name: ".super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt",
+        extension: "txt",
+        type: "file",
+      },
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it("does not truncate a very long name when disabled", () => {
+    const wrapper = shallowMount(Name, {
+      propsData: {
+        fullPath:
+          "super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt",
+        name: ".super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt",
+        extension: "txt",
+        type: "file",
+        truncateName: false,
+      },
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
 })
