@@ -82,4 +82,32 @@ describe("OcResourceName", () => {
 
     expect(wrapper).toMatchSnapshot()
   })
+
+  it("shows the name as HTML title if the path is not displayed", () => {
+    const wrapper = shallowMount(Name, {
+      propsData: {
+        fullPath: "folder",
+        name: "folder",
+        extension: "",
+        type: "folder",
+        isPathDisplayed: false,
+      },
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it("does not show the name as HTML title if the path is being displayed", () => {
+    const wrapper = shallowMount(Name, {
+      propsData: {
+        fullPath: "folder",
+        name: "folder",
+        extension: "",
+        type: "folder",
+        isPathDisplayed: true,
+      },
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
 })
