@@ -35,7 +35,12 @@
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
           <div v-if="checkbox" class="oc-modal-body-actions oc-flex oc-flex-left">
-            <oc-checkbox size="medium" v-model="checkboxValue" :label="checkboxLabel" :aria-label="checkboxLabel"/>
+            <oc-checkbox
+              v-model="checkboxValue"
+              size="medium"
+              :label="checkboxLabel"
+              :aria-label="checkboxLabel"
+            />
           </div>
           <div class="oc-modal-body-actions oc-flex oc-flex-right">
             <oc-button
@@ -51,7 +56,8 @@
               :variation="buttonSecondaryVariation"
               :appearance="buttonSecondaryAppearance"
               @click="secondaryModalAction"
-              v-text="buttonSecondaryText" />
+              v-text="buttonSecondaryText"
+            />
             <oc-button
               class="oc-modal-body-actions-confirm oc-ml-s"
               variation="primary"
@@ -145,7 +151,7 @@ export default {
     checkbox: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     /**
      * Modal checkbox label
@@ -350,7 +356,7 @@ export default {
     checkboxValue: {
       handler: "checkboxValueChanged",
       immediate: true,
-    }
+    },
   },
   methods: {
     cancelModalAction() {
@@ -386,7 +392,7 @@ export default {
     },
     checkboxValueChanged(value) {
       this.$emit("checkbox-changed", value)
-    }
+    },
   },
 }
 </script>

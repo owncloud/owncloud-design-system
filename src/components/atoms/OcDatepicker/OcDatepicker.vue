@@ -2,7 +2,7 @@
   <date-picker class="oc-datepicker" v-bind="$attrs" v-on="$listeners">
     <template #default="{ inputValue, togglePopover, hidePopover }">
       <!-- @slot Default slot to use as the popover anchor for datepicker -->
-      <slot :inputValue="inputValue" :togglePopover="togglePopover" :hidePopover="hidePopover" />
+      <slot :input-value="inputValue" :toggle-popover="togglePopover" :hide-popover="hidePopover" />
     </template>
   </date-picker>
 </template>
