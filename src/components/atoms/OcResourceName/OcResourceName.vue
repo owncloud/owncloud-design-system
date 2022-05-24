@@ -2,14 +2,15 @@
   <span
     v-oc-tooltip="tooltip"
     class="oc-resource-name"
+    :class="[{ 'oc-display-inline-block': !truncateName }]"
     :data-test-resource-path="fullPath"
     :data-test-resource-name="fullName"
     :data-test-resource-type="type"
   >
-    <span class="oc-text-truncate">
+    <span v-if="truncateName" class="oc-text-truncate">
       <span class="oc-resource-basename" v-text="displayName" />
     </span>
-    <span
+    <span v-else class="oc-resource-basename oc-text-break" v-text="displayName" /><span
       v-if="extension && isExtensionDisplayed"
       class="oc-resource-extension"
       v-text="displayExtension"
@@ -64,6 +65,14 @@ export default {
      * Asserts whether the resource extension should be displayed
      */
     isExtensionDisplayed: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    /**
+     * Asserts whether the resource name should be truncated if it's too long
+     */
+    truncateName: {
       type: Boolean,
       required: false,
       default: true,
@@ -146,6 +155,7 @@ export default {
 <oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" :is-extension-displayed="false" />
 <oc-resource-name full-path="documents/notes.txt" name="notes.txt" extension="txt" type="file" />
 <oc-resource-name full-path="documents/notes.txt" name="super-long-file-name-which-will-be-truncated-when-exceeding-the-screen-space-while-still-preserving-the-file-extension-at-the-end.txt" extension="txt" type="file" />
+<oc-resource-name full-path="documents/notes.txt" name="super-long-file-name-which-will-not-be-truncated-when-you-disable-it-manually-via-the-truncate-property.txt" extension="txt" type="file" :truncate-name="false" />
 <oc-resource-name full-path="images/nature/forest.jpg" :is-path-displayed="true" name="forest.jpg" extension="jpg" type="file" />
 <oc-resource-name full-path="super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root-super-long-path-to-a-subfolder-which-is-a-lot-of-levels-away-from–the-root/asdf.txt" :is-path-displayed="true" name="asdf.txt" extension="txt" type="file" />
 <oc-resource-name full-path="some-folder" name="regular-folder" extension="" type="folder" />
