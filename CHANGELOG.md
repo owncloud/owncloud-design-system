@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Disabled textarea color contrast in darkmode: [#2055](https://github.com/owncloud/owncloud-design-system/pull/2055)
+* Bugfix - Fix event handler for submit-via-enter in OcModal input: [#2159](https://github.com/owncloud/owncloud-design-system/pull/2159)
 * Bugfix - OcTextInput: Fix event handlers in loops: [#2054](https://github.com/owncloud/owncloud-design-system/pull/2054)
 * Bugfix - Text color of buttons and avatars in hovered table rows: [#2139](https://github.com/owncloud/owncloud-design-system/pull/2139)
 * Bugfix - Add word breaking in tooltips: [#2137](https://github.com/owncloud/owncloud-design-system/pull/2137)
@@ -28,6 +29,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/2053
    https://github.com/owncloud/owncloud-design-system/pull/2055
+
+
+* Bugfix - Fix event handler for submit-via-enter in OcModal input: [#2159](https://github.com/owncloud/owncloud-design-system/pull/2159)
+
+   We fixed a small difference between clicking the confirm button and hitting the enter key when
+   using an OcModal with an input field, which lead to unexpected behaviour.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2159
+   https://github.com/owncloud/web/pull/6961#pullrequestreview-979854434
 
 
 * Bugfix - OcTextInput: Fix event handlers in loops: [#2054](https://github.com/owncloud/owncloud-design-system/pull/2054)
@@ -1563,7 +1573,7 @@ The following sections list the changes in ownCloud Design System 7.5.0.
 
 The following sections list the changes in ownCloud Design System 7.4.2.
 
-[7.4.2]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...v7.4.2
+[7.4.2]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...v7.4.2
 
 ## Summary
 
@@ -1602,40 +1612,11 @@ The following sections list the changes in ownCloud Design System 7.4.2.
 
    https://github.com/owncloud/owncloud-design-system/pull/1406
 
-# Changelog for [7.4.1] (2021-06-17)
-
-The following sections list the changes in ownCloud Design System 7.4.1.
-
-[7.4.1]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.0...v7.4.1
-
-## Summary
-
-* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
-* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
-
-## Details
-
-* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
-
-   The pagination list had a small left padding which caused it to be visually off from the desired
-   horizontal center.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1398
-
-
-* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
-
-   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
-   visually make them better differentiable.
-
-   https://github.com/owncloud/owncloud-design-system/issues/1387
-   https://github.com/owncloud/owncloud-design-system/pull/1390
-
 # Changelog for [7.4.0] (2021-06-17)
 
 The following sections list the changes in ownCloud Design System 7.4.0.
 
-[7.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...v7.4.0
+[7.4.0]: https://github.com/owncloud/owncloud-design-system/compare/v7.4.1...v7.4.0
 
 ## Summary
 
@@ -1660,6 +1641,35 @@ The following sections list the changes in ownCloud Design System 7.4.0.
 
    https://github.com/owncloud/web/pull/5281
    https://github.com/owncloud/owncloud-design-system/pull/1388
+
+# Changelog for [7.4.1] (2021-06-17)
+
+The following sections list the changes in ownCloud Design System 7.4.1.
+
+[7.4.1]: https://github.com/owncloud/owncloud-design-system/compare/v7.3.0...v7.4.1
+
+## Summary
+
+* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+## Details
+
+* Bugfix - Remove pagination list padding: [#1398](https://github.com/owncloud/owncloud-design-system/pull/1398)
+
+   The pagination list had a small left padding which caused it to be visually off from the desired
+   horizontal center.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1398
+
+
+* Bugfix - Visible separator between OcSidebarNav items: [#1387](https://github.com/owncloud/owncloud-design-system/issues/1387)
+
+   We have added a small line between OcSidebarNav items in the `active` and `hover` state to
+   visually make them better differentiable.
+
+   https://github.com/owncloud/owncloud-design-system/issues/1387
+   https://github.com/owncloud/owncloud-design-system/pull/1390
 
 # Changelog for [7.3.0] (2021-06-14)
 
@@ -2297,7 +2307,7 @@ The following sections list the changes in ownCloud Design System 6.0.1.
 
 The following sections list the changes in ownCloud Design System 5.1.0.
 
-[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.1.0
+[5.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.1.0
 
 ## Summary
 
@@ -2350,30 +2360,11 @@ The following sections list the changes in ownCloud Design System 5.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1213
 
-# Changelog for [5.0.1] (2021-04-08)
-
-The following sections list the changes in ownCloud Design System 5.0.1.
-
-[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.0...v5.0.1
-
-## Summary
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-## Details
-
-* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
-
-   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
-   peerDependencies.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1205
-
 # Changelog for [5.0.0] (2021-04-08)
 
 The following sections list the changes in ownCloud Design System 5.0.0.
 
-[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.0
+[5.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v5.0.1...v5.0.0
 
 ## Summary
 
@@ -2401,6 +2392,25 @@ The following sections list the changes in ownCloud Design System 5.0.0.
    copied into the `dist` folder and can be imported and used alongside the styles and components.
 
    https://github.com/owncloud/owncloud-design-system/pull/1201
+
+# Changelog for [5.0.1] (2021-04-08)
+
+The following sections list the changes in ownCloud Design System 5.0.1.
+
+[5.0.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.3.0...v5.0.1
+
+## Summary
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+## Details
+
+* Bugfix - Add missing peerDependency: [#1205](https://github.com/owncloud/owncloud-design-system/pull/1205)
+
+   In the 5.0.0 release, we missed to add the dependency for `vue-inline-svg` to the
+   peerDependencies.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1205
 
 # Changelog for [4.3.0] (2021-04-07)
 
@@ -2436,7 +2446,7 @@ The following sections list the changes in ownCloud Design System 4.3.0.
 
 The following sections list the changes in ownCloud Design System 4.2.1.
 
-[4.2.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.2...v4.2.1
+[4.2.1]: https://github.com/owncloud/owncloud-design-system/compare/v4.2.0...v4.2.1
 
 ## Summary
 
@@ -2461,11 +2471,59 @@ The following sections list the changes in ownCloud Design System 4.2.1.
 
    https://github.com/owncloud/owncloud-design-system/pull/1192
 
+# Changelog for [4.2.0] (2021-03-31)
+
+The following sections list the changes in ownCloud Design System 4.2.0.
+
+[4.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.2...v4.2.0
+
+## Summary
+
+* Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
+* Enhancement - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+* Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+* Enhancement - Unify input colors: [#1190](https://github.com/owncloud/owncloud-design-system/pull/1190)
+
+## Details
+
+* Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
+
+   The custom CSS prop for `input-border` had a duplicate and wrong dash and was therefore not
+   rendered correctly.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1187
+
+
+* Enhancement - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+
+   We've changed the colour of breadcrumbs to use the `oc-color` instead of the brand color.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1189
+
+
+* Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
+
+   We've added a utility class called `oc-text-lead` which is increasing the font size of the
+   text.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1189
+
+
+* Enhancement - Unify input colors: [#1190](https://github.com/owncloud/owncloud-design-system/pull/1190)
+
+   `OcAutocomplete`, `OcTextInput`, `OcTextarea` and `OcSearchBar` had all slightly
+   different ways of using variables to defined border- and text-colors. This change introduces
+   two dedicated color varaibles for text inside input fields (for theme-ability) and unifies
+   their usage. It also moves the styles for these components from a stylesheet each into a
+   `<style>` tag in each Vue component.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1190
+
 # Changelog for [4.1.2] (2021-03-31)
 
 The following sections list the changes in ownCloud Design System 4.1.2.
 
-[4.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v4.2.0...v4.1.2
+[4.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.1...v4.1.2
 
 ## Summary
 
@@ -2514,54 +2572,6 @@ The following sections list the changes in ownCloud Design System 4.1.2.
    properly from `<a>`s and `<router-link>`s.
 
    https://github.com/owncloud/owncloud-design-system/pull/1185
-
-# Changelog for [4.2.0] (2021-03-31)
-
-The following sections list the changes in ownCloud Design System 4.2.0.
-
-[4.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v4.1.1...v4.2.0
-
-## Summary
-
-* Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
-* Enhancement - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
-* Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
-* Enhancement - Unify input colors: [#1190](https://github.com/owncloud/owncloud-design-system/pull/1190)
-
-## Details
-
-* Bugfix - Input border variable: [#1187](https://github.com/owncloud/owncloud-design-system/pull/1187)
-
-   The custom CSS prop for `input-border` had a duplicate and wrong dash and was therefore not
-   rendered correctly.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1187
-
-
-* Enhancement - Use oc-color for breadcrumbs: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
-
-   We've changed the colour of breadcrumbs to use the `oc-color` instead of the brand color.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1189
-
-
-* Enhancement - Add `oc-text-lead` class: [#1189](https://github.com/owncloud/owncloud-design-system/pull/1189)
-
-   We've added a utility class called `oc-text-lead` which is increasing the font size of the
-   text.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1189
-
-
-* Enhancement - Unify input colors: [#1190](https://github.com/owncloud/owncloud-design-system/pull/1190)
-
-   `OcAutocomplete`, `OcTextInput`, `OcTextarea` and `OcSearchBar` had all slightly
-   different ways of using variables to defined border- and text-colors. This change introduces
-   two dedicated color varaibles for text inside input fields (for theme-ability) and unifies
-   their usage. It also moves the styles for these components from a stylesheet each into a
-   `<style>` tag in each Vue component.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1190
 
 # Changelog for [4.1.1] (2021-03-30)
 
@@ -2834,7 +2844,7 @@ The following sections list the changes in ownCloud Design System 3.2.1.
 
 The following sections list the changes in ownCloud Design System 3.2.0.
 
-[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.2.0
+[3.2.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.2.0
 
 ## Summary
 
@@ -2907,11 +2917,30 @@ The following sections list the changes in ownCloud Design System 3.2.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1139
 
+# Changelog for [3.1.0] (2021-02-24)
+
+The following sections list the changes in ownCloud Design System 3.1.0.
+
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.0.0...v3.1.0
+
+## Summary
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+## Details
+
+* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+
+   We've added a `resource-name` data attribute in the `oc-resource-name` component which
+   equals the concatenated resource path, name and extension.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1119
+
 # Changelog for [3.0.0] (2021-02-24)
 
 The following sections list the changes in ownCloud Design System 3.0.0.
 
-[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v3.1.0...v3.0.0
+[3.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.0.0
 
 ## Summary
 
@@ -3071,30 +3100,29 @@ The following sections list the changes in ownCloud Design System 3.0.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1093
 
-# Changelog for [3.1.0] (2021-02-24)
+# Changelog for [2.1.1] (2021-01-21)
 
-The following sections list the changes in ownCloud Design System 3.1.0.
+The following sections list the changes in ownCloud Design System 2.1.1.
 
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.1.0
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
 
 ## Summary
 
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
 
 ## Details
 
-* Enhancement - Add name attribute in the resource name component: [#1119](https://github.com/owncloud/owncloud-design-system/pull/1119)
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
 
-   We've added a `resource-name` data attribute in the `oc-resource-name` component which
-   equals the concatenated resource path, name and extension.
+   The uniqueId helper function returned a callback instead of a string.
 
-   https://github.com/owncloud/owncloud-design-system/pull/1119
+   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.2] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.2.
 
-[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v2.1.2
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
 
 ## Summary
 
@@ -3110,24 +3138,6 @@ The following sections list the changes in ownCloud Design System 2.1.2.
    anymore.
 
    https://github.com/owncloud/owncloud-design-system/pull/1064
-
-# Changelog for [2.1.1] (2021-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.1.
-
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
-
-## Summary
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-## Details
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-   The uniqueId helper function returned a callback instead of a string.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.0] (2021-01-19)
 
@@ -3306,7 +3316,7 @@ The following sections list the changes in ownCloud Design System 2.0.0.
 
 The following sections list the changes in ownCloud Design System 1.15.0.
 
-[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.15.0
+[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.15.0
 
 ## Summary
 
@@ -3341,31 +3351,11 @@ The following sections list the changes in ownCloud Design System 1.15.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/924
 
-# Changelog for [1.13.0] (2020-10-28)
-
-The following sections list the changes in ownCloud Design System 1.13.0.
-
-[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.13.0
-
-## Summary
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-## Details
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
-   accessibility aspects are already implement, for example expanding and collapsing
-   accordion items by pressing space or enter already works. More will come later on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/911
-
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
 
-[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.14.0
+[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.14.0
 
 ## Summary
 
@@ -3387,6 +3377,26 @@ The following sections list the changes in ownCloud Design System 1.14.0.
    We added an icon for `file version`
 
    https://github.com/owncloud/owncloud-design-system/pull/917
+
+# Changelog for [1.13.0] (2020-10-28)
+
+The following sections list the changes in ownCloud Design System 1.13.0.
+
+[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.13.0
+
+## Summary
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+## Details
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
+   accessibility aspects are already implement, for example expanding and collapsing
+   accordion items by pressing space or enter already works. More will come later on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/911
 
 # Changelog for [1.12.2] (2020-10-26)
 
