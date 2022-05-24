@@ -50,7 +50,7 @@
               class="oc-modal-body-actions-secondary oc-ml-s"
               :variation="buttonSecondaryVariation"
               :appearance="buttonSecondaryAppearance"
-              @click="cancelModalAction"
+              @click="secondaryModalAction"
               v-text="buttonSecondaryText" />
             <oc-button
               class="oc-modal-body-actions-confirm oc-ml-s"
