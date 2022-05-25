@@ -6,6 +6,7 @@
     :data-test-resource-path="fullPath"
     :data-test-resource-name="fullName"
     :data-test-resource-type="type"
+    :title="htmlTitle"
   >
     <span v-if="truncateName" class="oc-text-truncate">
       <span class="oc-resource-basename" v-text="displayName" />
@@ -121,6 +122,18 @@ export default {
         return null
       }
       return this.fullPath
+    },
+
+    htmlTitle() {
+      if (this.tooltip) {
+        return
+      }
+
+      if (this.isExtensionDisplayed) {
+        return `${this.displayName}${this.displayExtension}`
+      }
+
+      return this.displayName
     },
   },
 }
