@@ -34,7 +34,7 @@
             @keydown.enter="confirm"
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
-          <div v-if="checkbox" class="oc-modal-body-actions oc-flex oc-flex-left">
+          <div v-if="checkboxLabel" class="oc-modal-body-actions oc-flex oc-flex-left">
             <oc-checkbox
               v-model="checkboxValue"
               size="medium"
@@ -51,7 +51,7 @@
               v-text="buttonCancelText"
             />
             <oc-button
-              v-if="buttonSecondary"
+              v-if="buttonSecondaryText"
               class="oc-modal-body-actions-secondary oc-ml-s"
               :variation="buttonSecondaryVariation"
               :appearance="buttonSecondaryAppearance"
@@ -146,14 +146,6 @@ export default {
       default: null,
     },
     /**
-     * Show modal checbox
-     */
-    checkbox: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    /**
      * Modal checkbox label
      */
     checkboxLabel: {
@@ -190,14 +182,6 @@ export default {
       validator: value => {
         return value.match(/(outline|filled|raw)/)
       },
-    },
-    /**
-     * Text of the secondary button
-     */
-    buttonSecondary: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
     /**
      * Text of the secondary button
@@ -552,7 +536,6 @@ export default {
     message="Do you accept our terms of use?"
     button-cancel-text="Decline"
     button-confirm-text="Accept"
-    checkbox="true"
     checkbox-label="I accept the terms of use"
     class="oc-mb-l oc-position-relative"
   />
@@ -562,8 +545,7 @@ export default {
     message="Do you accept our terms of use?"
     button-cancel-text="Decline"
     button-confirm-text="Accept"
-    button-secondary="true"
-    button-secondary-text="test"
+    button-secondary-text="Accept some"
     class="oc-mb-l oc-position-relative"
   />
 ```
