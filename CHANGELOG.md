@@ -14,6 +14,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add OcContextualHelper: [#6590](https://github.com/owncloud/web/issues/6590)
 * Enhancement - Add selection range for OcModal and OcTextInput: [#6729](https://github.com/owncloud/web/issues/6729)
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
+* Enhancement - OcModal add checkbox and secondary button: [#6994](https://github.com/owncloud/web/pull/6994)
 * Enhancement - OcModal input type: [#2077](https://github.com/owncloud/owncloud-design-system/pull/2077)
 * Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
 * Enhancement - Add `isFileExtensionDisplayed` property: [#2087](https://github.com/owncloud/owncloud-design-system/pull/2087)
@@ -92,6 +93,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    'owncloud-design-system'`.
 
    https://github.com/owncloud/owncloud-design-system/pull/2048
+
+
+* Enhancement - OcModal add checkbox and secondary button: [#6994](https://github.com/owncloud/web/pull/6994)
+
+   We've added an optional checkbox and secondary button to the OcModal
+
+   https://github.com/owncloud/web/issues/6996
+   https://github.com/owncloud/web/pull/6994
 
 
 * Enhancement - OcModal input type: [#2077](https://github.com/owncloud/owncloud-design-system/pull/2077)
