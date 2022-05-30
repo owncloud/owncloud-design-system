@@ -34,6 +34,14 @@
             @keydown.enter.prevent="confirm"
           />
           <p v-else key="modal-message" class="oc-modal-body-message" v-text="message" />
+          <div v-if="checkboxLabel" class="oc-modal-body-actions oc-flex oc-flex-left">
+            <oc-checkbox
+              v-model="checkboxValue"
+              size="medium"
+              :label="checkboxLabel"
+              :aria-label="checkboxLabel"
+            />
+          </div>
           <div class="oc-modal-body-actions oc-flex oc-flex-right">
             <oc-button
               class="oc-modal-body-actions-cancel"
@@ -41,6 +49,14 @@
               :appearance="buttonCancelAppearance"
               @click="cancelModalAction"
               v-text="buttonCancelText"
+            />
+            <oc-button
+              v-if="buttonSecondaryText"
+              class="oc-modal-body-actions-secondary oc-ml-s"
+              :variation="buttonSecondaryVariation"
+              :appearance="buttonSecondaryAppearance"
+              @click="secondaryModalAction"
+              v-text="buttonSecondaryText"
             />
             <oc-button
               class="oc-modal-body-actions-confirm oc-ml-s"
@@ -59,6 +75,7 @@
 
 <script>
 import OcButton from "../../atoms/OcButton/OcButton.vue"
+import OcCheckbox from "../../atoms/OcCheckbox/OcCheckbox.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcTextInput from "../../molecules/OcTextInput/OcTextInput.vue"
 import { FocusTrap } from "focus-trap-vue"
@@ -85,6 +102,7 @@ export default {
 
   components: {
     OcButton,
+    OcCheckbox,
     OcIcon,
     OcTextInput,
     FocusTrap,
@@ -128,6 +146,14 @@ export default {
       default: null,
     },
     /**
+     * Modal checkbox label
+     */
+    checkboxLabel: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
      * Text of the cancel button
      */
     buttonCancelText: {
@@ -150,6 +176,36 @@ export default {
      * Appearance of the cancel button
      */
     buttonCancelAppearance: {
+      type: String,
+      required: false,
+      default: "outline",
+      validator: value => {
+        return value.match(/(outline|filled|raw)/)
+      },
+    },
+    /**
+     * Text of the secondary button
+     */
+    buttonSecondaryText: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * Variation type of the secondary button
+     */
+    buttonSecondaryVariation: {
+      type: String,
+      required: false,
+      default: "passive",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning)/)
+      },
+    },
+    /**
+     * Appearance of the secondary button
+     */
+    buttonSecondaryAppearance: {
       type: String,
       required: false,
       default: "outline",
@@ -260,6 +316,7 @@ export default {
   data() {
     return {
       userInputValue: null,
+      checkboxValue: false,
     }
   },
   computed: {
@@ -280,6 +337,10 @@ export default {
       handler: "inputAssignPropAsValue",
       immediate: true,
     },
+    checkboxValue: {
+      handler: "checkboxValueChanged",
+      immediate: true,
+    },
   },
   methods: {
     cancelModalAction() {
@@ -287,6 +348,9 @@ export default {
        * The user clicked on the cancel button or hit the escape key
        */
       this.$emit("cancel")
+    },
+    secondaryModalAction() {
+      this.$emit("confirm-secondary")
     },
     confirm() {
       if (this.buttonConfirmDisabled || this.inputError) {
@@ -309,6 +373,9 @@ export default {
     },
     inputAssignPropAsValue(value) {
       this.userInputValue = value
+    },
+    checkboxValueChanged(value) {
+      this.$emit("checkbox-changed", value)
     },
   },
 }
@@ -391,6 +458,10 @@ export default {
     color: var(--oc-color-text-default);
     padding: var(--oc-space-medium);
 
+    span {
+      color: var(--oc-color-text-default);
+    }
+
     &-message {
       margin-bottom: var(--oc-space-medium);
       margin-top: var(--oc-space-small);
@@ -459,6 +530,24 @@ export default {
       />
     </template>
   </oc-modal>
+  <oc-modal
+    icon="information"
+    title="Accept terms of use"
+    message="Do you accept our terms of use?"
+    button-cancel-text="Decline"
+    button-confirm-text="Accept"
+    checkbox-label="I accept the terms of use"
+    class="oc-mb-l oc-position-relative"
+  />
+  <oc-modal
+    icon="information"
+    title="Accept terms of use"
+    message="Do you accept our terms of use?"
+    button-cancel-text="Decline"
+    button-confirm-text="Accept"
+    button-secondary-text="Accept some"
+    class="oc-mb-l oc-position-relative"
+  />
 ```
 
 ```js

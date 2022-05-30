@@ -8,7 +8,7 @@
     @click.stop="emitClick"
     @click.native.stop
   >
-    <slot :opensInNewWindowDescriptionId="opensInNewWindowDescriptionId" />
+    <slot :opens-in-new-window-description-id="opensInNewWindowDescriptionId" />
   </component>
   <span v-else>
     <slot />

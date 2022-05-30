@@ -10,8 +10,10 @@ exports[`OcModal displays input 1`] = `
       </div>
       <div class="oc-modal-body">
         <oc-text-input-stub id="oc-textinput-1" type="text" value="New folder" clearbuttonaccessiblelabel="" label="Folder name" fixmessageline="true" class="oc-modal-body-input"></oc-text-input-stub>
+        <!---->
         <div class="oc-modal-body-actions oc-flex oc-flex-right">
           <oc-button-stub type="button" size="medium" submit="button" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+          <!---->
           <oc-button-stub type="button" size="medium" submit="button" variation="primary" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
         </div>
       </div>
@@ -30,8 +32,10 @@ exports[`OcModal hides icon if not specified 1`] = `
       </div>
       <div class="oc-modal-body">
         <p class="oc-modal-body-message">Example message</p>
+        <!---->
         <div class="oc-modal-body-actions oc-flex oc-flex-right">
           <oc-button-stub type="button" size="medium" submit="button" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+          <!---->
           <oc-button-stub type="button" size="medium" submit="button" variation="primary" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
         </div>
       </div>
@@ -50,8 +54,10 @@ exports[`OcModal matches snapshot 1`] = `
       </div>
       <div class="oc-modal-body">
         <p class="oc-modal-body-message">Example message</p>
+        <!---->
         <div class="oc-modal-body-actions oc-flex oc-flex-right">
           <oc-button-stub type="button" size="medium" submit="button" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+          <!---->
           <oc-button-stub type="button" size="medium" submit="button" variation="primary" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
         </div>
       </div>
@@ -72,8 +78,10 @@ exports[`OcModal overrides props message with slot 1`] = `
         <div class="oc-modal-body-message">
           <p>Slot message</p>
         </div>
+        <!---->
         <div class="oc-modal-body-actions oc-flex oc-flex-right">
           <oc-button-stub type="button" size="medium" submit="button" variation="passive" appearance="outline" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-cancel">Cancel</oc-button-stub>
+          <!---->
           <oc-button-stub type="button" size="medium" submit="button" variation="primary" appearance="filled" justifycontent="center" gapsize="medium" class="oc-modal-body-actions-confirm oc-ml-s">Confirm</oc-button-stub>
         </div>
       </div>
