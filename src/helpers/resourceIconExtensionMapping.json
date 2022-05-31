@@ -79,6 +79,7 @@
 	"psd": "image",
 	"py": "code",
 	"rar": "archive",
+	"root": "root",
 	"rss": "file",
 	"scss": "code",
 	"sh": "code",
