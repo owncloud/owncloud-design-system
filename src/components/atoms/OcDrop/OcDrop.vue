@@ -208,7 +208,7 @@ export default {
     // note: needed so that the box shadow from `oc-box-shadow-medium` doesn't get suppressed
     padding: 8px;
   }
-  li.action-menu-item-hover {
+  li.oc-menu-item-hover {
     a,
     button:not([role="switch"]) {
       box-sizing: border-box;
