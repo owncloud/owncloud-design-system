@@ -15,6 +15,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add ROOT file icon: [#2158](https://github.com/owncloud/owncloud-design-system/pull/2158)
 * Enhancement - Add selection range for OcModal and OcTextInput: [#6729](https://github.com/owncloud/web/issues/6729)
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
+* Enhancement - Hover in ocDrop menues: [#2069](https://github.com/owncloud/owncloud-design-system/pull/2069)
 * Enhancement - OcModal add checkbox and secondary button: [#6994](https://github.com/owncloud/web/pull/6994)
 * Enhancement - OcModal input type: [#2077](https://github.com/owncloud/owncloud-design-system/pull/2077)
 * Enhancement - Make OcResource inline-flex: [#2041](https://github.com/owncloud/owncloud-design-system/pull/2041)
@@ -102,6 +103,14 @@ The following sections list the changes in ownCloud Design System unreleased.
    'owncloud-design-system'`.
 
    https://github.com/owncloud/owncloud-design-system/pull/2048
+
+
+* Enhancement - Hover in ocDrop menues: [#2069](https://github.com/owncloud/owncloud-design-system/pull/2069)
+
+   We've added the "oc-menu-item-hover" class for <li> elements inside ocDrop, to add the hover
+   effect on buttons and links.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2069
 
 
 * Enhancement - OcModal add checkbox and secondary button: [#6994](https://github.com/owncloud/web/pull/6994)
