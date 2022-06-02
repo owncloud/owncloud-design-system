@@ -183,10 +183,6 @@ export default {
     #oc-breadcrumb-contextmenu-trigger > span {
       vertical-align: middle;
       border: 3px solid transparent;
-      &:hover {
-        background-color: var(--oc-color-background-hover);
-        border-radius: 5px;
-      }
     }
 
     #oc-breadcrumb-contextmenu li button {

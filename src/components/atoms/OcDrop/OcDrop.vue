@@ -208,6 +208,27 @@ export default {
     // note: needed so that the box shadow from `oc-box-shadow-medium` doesn't get suppressed
     padding: 8px;
   }
+  li.oc-menu-item-hover {
+    a,
+    button:not([role="switch"]) {
+      box-sizing: border-box;
+      padding: var(--oc-space-small);
+      color: var(--oc-color-swatch-passive-default);
+      &:focus,
+      &:hover {
+        background-color: var(--oc-color-background-hover);
+
+        text-decoration: none !important;
+        border-radius: 5px;
+      }
+      &:hover span {
+        color: var(--oc-color-swatch-brand-hover) !important;
+      }
+      span {
+        text-decoration: none !important;
+      }
+    }
+  }
 }
 
 .oc-drop {
