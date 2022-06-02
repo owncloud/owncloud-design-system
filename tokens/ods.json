@@ -27,6 +27,7 @@
   "oc-color-icon-jupyter": {"value":"rgb(243, 119, 38)","name":"oc-color-icon-jupyter","type":"color","category":"color","info":{"hex":"#f37726","rgb":"rgb(243, 119, 38)","hsl":"hsl(24, 90%, 55%)","hsv":"hsv(24, 84%, 95%)"}},
   "oc-color-icon-pdf": {"value":"rgb(225, 5, 14)","name":"oc-color-icon-pdf","type":"color","category":"color","info":{"hex":"#e1050e","rgb":"rgb(225, 5, 14)","hsl":"hsl(358, 96%, 45%)","hsv":"hsv(358, 98%, 88%)"}},
   "oc-color-icon-presentation": {"value":"rgb(255, 64, 6)","name":"oc-color-icon-presentation","type":"color","category":"color","info":{"hex":"#ff4006","rgb":"rgb(255, 64, 6)","hsl":"hsl(14, 100%, 51%)","hsv":"hsv(14, 98%, 100%)"}},
+  "oc-color-icon-root": {"value":"rgb(0, 187, 219)","name":"oc-color-icon-root","type":"color","category":"color","info":{"hex":"#00bbdb","rgb":"rgb(0, 187, 219)","hsl":"hsl(189, 100%, 43%)","hsv":"hsv(189, 100%, 86%)"}},
   "oc-color-icon-spreadsheet": {"value":"rgb(0, 182, 87)","name":"oc-color-icon-spreadsheet","type":"color","category":"color","info":{"hex":"#00b657","rgb":"rgb(0, 182, 87)","hsl":"hsl(149, 100%, 36%)","hsv":"hsv(149, 100%, 71%)"}},
   "oc-color-icon-text": {"value":"rgb(4, 30, 66)","name":"oc-color-icon-text","type":"color","category":"color","info":{"hex":"#041e42","rgb":"rgb(4, 30, 66)","hsl":"hsl(215, 89%, 14%)","hsv":"hsv(215, 94%, 26%)"}},
   "oc-color-icon-video": {"value":"rgb(0, 187, 219)","name":"oc-color-icon-video","type":"color","category":"color","info":{"hex":"#00bbdb","rgb":"rgb(0, 187, 219)","hsl":"hsl(189, 100%, 43%)","hsv":"hsv(189, 100%, 86%)"}},
