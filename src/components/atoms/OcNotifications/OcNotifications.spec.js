@@ -14,7 +14,7 @@ describe("OcNotifications", () => {
       }).toThrow('[Vue warn]: Invalid prop: custom validator check failed for prop "position".')
     })
     it.each(["top-left", "top-center", "top-right"])(
-      "it should set provided position as class for wrapper",
+      "should set provided position as class for wrapper",
       position => {
         const wrapper = getWrapper({
           propsData: { position: position },

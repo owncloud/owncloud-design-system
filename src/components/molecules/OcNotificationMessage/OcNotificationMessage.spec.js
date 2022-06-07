@@ -37,7 +37,7 @@ describe("OcNotificationMessage", () => {
     })
 
     it.each(["passive", "primary", "success", "warning", "danger"])(
-      "it should set provided status as class for wrapper",
+      "should set provided status as class for wrapper",
       status => {
         const wrapper = getWrapper({ status: status })
 
