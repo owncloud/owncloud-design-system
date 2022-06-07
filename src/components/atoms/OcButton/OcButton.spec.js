@@ -139,7 +139,7 @@ describe("OcButton", () => {
         ${"success"} | ${"outline"} | ${"oc-button-success oc-button-success-outline"}
         ${"primary"} | ${"raw"}     | ${"oc-button-primary oc-button-primary-raw"}
         ${"primary"} | ${"outline"} | ${"oc-button-primary-outline"}
-      `("it should have extra appearance class", ({ variation, appearance, expectedClass }) => {
+      `("should have extra appearance class", ({ variation, appearance, expectedClass }) => {
         const wrapper = getWrapperWithProps({
           appearance: appearance,
           variation: variation,
