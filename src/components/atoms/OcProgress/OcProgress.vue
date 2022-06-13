@@ -5,6 +5,7 @@
     :aria-valuenow="value"
     aria-busy="true"
     aria-valuemin="0"
+    role="progressbar"
   >
     <div v-if="!indeterminate" class="oc-progress-current" :style="{ width: progressValue }"></div>
     <div v-else class="oc-progress-indeterminate">
