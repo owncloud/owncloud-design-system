@@ -1,14 +1,17 @@
 <template>
-  <progress
-    :value="value"
-    :max="max"
+  <div
+    :class="classes"
     :aria-valuemax="max"
     :aria-valuenow="value"
     aria-busy="true"
     aria-valuemin="0"
-    :class="$_ocProgress_classes"
-    tabindex="-1"
-  />
+  >
+    <div v-if="!indeterminate" class="oc-progress-current" :style="{ width: progressValue }"></div>
+    <div v-else class="oc-progress-indeterminate">
+      <div class="oc-progress-indeterminate-first"></div>
+      <div class="oc-progress-indeterminate-second"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -57,11 +60,23 @@ export default {
         return value.match(/(primary|passive|success|warning|danger)/)
       },
     },
+    /**
+     * Determines if the progress bar should be displayed in an indeterminate state.
+     */
+    indeterminate: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 
   computed: {
-    $_ocProgress_classes() {
+    classes() {
       return `oc-progress oc-progress-${this.size} oc-progress-${this.variation}`
+    },
+    progressValue() {
+      const num = (this.value / this.max) * 100
+      return `${num}%`
     },
   },
 }
@@ -72,110 +87,75 @@ $progress-height: 15px !default;
 $progress-height-small: 5px !default;
 
 .oc-progress {
-  // Remove default style
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  // Set background color for progress container in Firefox, IE11 and Edge
   background-color: var(--oc-color-input-border);
-  // Remove default style
-  border: 0;
   display: block;
   height: $progress-height;
   // Add the correct vertical alignment in Chrome, Firefox, and Opera.
   width: 100%;
-
-  &:focus {
-    outline: none;
-  }
-
-  // Remove animated circles for indeterminate state in IE11 and Edge
-  &:indeterminate {
-    color: transparent;
-  }
-
-  &::-webkit-progress-bar {
-    background-color: var(--oc-color-input-border);
-  }
-
-  &::-moz-progress-bar {
-    background-color: var(--oc-color-input-border);
-  }
-
-  // Remove progress bar for indeterminate state in Firefox
-  &:indeterminate::-moz-progress-bar {
-    width: 0;
-  }
-
-  &::-webkit-progress-value {
-    background-color: var(--oc-color-swatch-passive-default);
-    transition: width $transition-duration-short ease;
-  }
-
-  &::-ms-fill {
-    background-color: var(--oc-color-swatch-passive-default);
-    // Remove right border in IE11 and Edge
-    border: 0;
-    transition: width $transition-duration-short ease;
-  }
+  position: relative;
+  overflow-x: hidden;
 
   &-small {
     height: $progress-height-small;
   }
+  &-current {
+    height: 100%;
+    position: absolute;
+    transition: width 0.5s;
+  }
+  &-indeterminate div {
+    height: 100%;
+    position: absolute;
+  }
+  &-indeterminate-first {
+    animation-duration: 2s;
+    animation-name: indeterminate-first;
+    animation-iteration-count: infinite;
+  }
+  &-indeterminate-second {
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-name: indeterminate-second;
+    animation-iteration-count: infinite;
+  }
 
-  &-primary {
-    &::-webkit-progress-value {
-      background-color: var(--oc-color-swatch-primary-default);
+  @keyframes indeterminate-first {
+    from {
+      left: -10%;
+      width: 10%;
     }
-
-    &::-moz-progress-bar {
-      background-color: var(--oc-color-swatch-primary-default);
-    }
-
-    &::-ms-fill {
-      background-color: var(--oc-color-swatch-primary-default);
+    to {
+      left: 120%;
+      width: 100%;
     }
   }
 
-  &-success {
-    &::-webkit-progress-value {
-      background-color: var(--oc-color-swatch-success-default);
+  @keyframes indeterminate-second {
+    from {
+      left: -100%;
+      width: 80%;
     }
-
-    &::-moz-progress-bar {
-      background-color: var(--oc-color-swatch-success-default);
-    }
-
-    &::-ms-fill {
-      background-color: var(--oc-color-swatch-success-default);
+    to {
+      left: 110%;
+      width: 10%;
     }
   }
 
-  &-warning {
-    &::-webkit-progress-value {
-      background-color: var(--oc-color-swatch-warning-default);
-    }
-
-    &::-moz-progress-bar {
-      background-color: var(--oc-color-swatch-warning-default);
-    }
-
-    &::-ms-fill {
-      background-color: var(--oc-color-swatch-warning-default);
-    }
+  &-primary &-current,
+  &-primary &-indeterminate div {
+    background-color: var(--oc-color-swatch-primary-default);
   }
-
-  &-danger {
-    &::-webkit-progress-value {
-      background-color: var(--oc-color-swatch-danger-default);
-    }
-
-    &::-moz-progress-bar {
-      background-color: var(--oc-color-swatch-danger-default);
-    }
-
-    &::-ms-fill {
-      background-color: var(--oc-color-swatch-danger-default);
-    }
+  &-success &-current,
+  &-success &-indeterminate div {
+    background-color: var(--oc-color-swatch-success-default);
+  }
+  &-warning &-current,
+  &-warning &-indeterminate div {
+    background-color: var(--oc-color-swatch-warning-default);
+  }
+  &-danger &-current,
+  &-danger &-indeterminate div {
+    background-color: var(--oc-color-swatch-danger-default);
   }
 }
 </style>
@@ -186,7 +166,9 @@ Show progress to the users.
 ```js
 <div>
   <oc-progress :value="4" :max="10" class="oc-mb-s" />
-  <oc-progress :value="8" :max="10" size="small" variation="warning" />
+  <oc-progress :value="8" :max="10" size="small" variation="warning" class="oc-mb-s"  />
+  <oc-progress :max="10" :indeterminate="true" size="small" />
+
 </div>
 ```
 </docs>
