@@ -34,7 +34,11 @@ export default {
      */
     max: {
       type: Number,
-      required: true,
+      required: false,
+      default: undefined,
+      validator: value => {
+        return value >= 0
+      },
     },
     /**
      * The size of the progress bar.
@@ -76,6 +80,9 @@ export default {
       return `oc-progress oc-progress-${this.size} oc-progress-${this.variation}`
     },
     progressValue() {
+      if (!this.max) {
+        return "-"
+      }
       const num = (this.value / this.max) * 100
       return `${num}%`
     },
