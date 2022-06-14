@@ -1,3 +1,22 @@
+# Changelog for [unreleased] (UNRELEASED)
+
+The following sections list the changes in ownCloud Design System unreleased.
+
+[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v13.1.0...master
+
+## Summary
+
+* Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
+
+## Details
+
+* Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
+
+   We've added an indeterminate state to the progress bar.
+
+   https://github.com/owncloud/web/issues/7105
+   https://github.com/owncloud/owncloud-design-system/pull/2200
+
 # Changelog for [13.1.0] (2022-06-07)
 
 The following sections list the changes in ownCloud Design System 13.1.0.
