@@ -1,15 +1,19 @@
 <template>
-  <div class="oc-alert oc-notification-message" :class="classes">
-    <oc-icon :variation="iconVariation" size="large" name="information" class="oc-mr-s" />
-    <div
-      class="oc-flex oc-flex-wrap oc-flex-middle oc-flex-1 oc-mr"
-      :role="role"
-      :aria-live="ariaLive"
-    >
-      <div class="oc-notification-message-title">
-        {{ title }}
+  <div
+    class="oc-flex oc-flex-wrap oc-notification-message oc-box-shadow-medium oc-rounded oc-p-m"
+    :class="classes"
+  >
+    <div class="oc-flex oc-flex-wrap oc-flex-middle oc-flex-1" :role="role" :aria-live="ariaLive">
+      <div class="oc-flex oc-flex-middle">
+        <oc-icon :variation="iconVariation" name="information" fill-type="line" class="oc-mr-s" />
+        <div class="oc-notification-message-title">
+          {{ title }}
+        </div>
       </div>
-      <div v-if="message" class="oc-text-muted oc-width-1-1 oc-notification-message-content">
+      <div
+        v-if="message"
+        class="oc-text-muted oc-width-1-1 oc-notification-message-content oc-mt-s oc-pl-s oc-ml-l"
+      >
         {{ message }}
       </div>
     </div>
@@ -70,7 +74,7 @@ export default {
   },
   computed: {
     classes() {
-      return `oc-flex oc-flex-wrap oc-notification-message oc-notification-message-${this.status}`
+      return `oc-notification-message-${this.status}`
     },
     iconVariation() {
       return this.status
@@ -107,39 +111,14 @@ export default {
 
 <style lang="scss">
 .oc-notification-message {
-  word-break: break-word;
-}
-
-// TODO: Refactor after removal of uikit
-.oc-notification-message {
   background-color: var(--oc-color-background-default) !important;
-  border: 1px solid transparent;
   cursor: pointer;
-  font-size: 1.25rem;
-  line-height: 1.4;
   margin-top: var(--oc-space-small);
-  padding: 15px;
   position: relative;
+  word-break: break-word;
 
-  &-passive {
-    color: var(--oc-color-swatch-passive-default) !important;
-    border-color: var(--oc-color-swatch-passive-default);
-  }
-  &-primary {
-    color: var(--oc-color-swatch-primary-default) !important;
-    border-color: var(--oc-color-swatch-primary-default);
-  }
-  &-success {
-    color: var(--oc-color-swatch-success-default) !important;
-    border-color: var(--oc-color-swatch-success-default);
-  }
-  &-warning {
-    color: var(--oc-color-swatch-warning-default) !important;
-    border-color: var(--oc-color-swatch-warning-default);
-  }
-  &-danger {
-    color: var(--oc-color-swatch-danger-default) !important;
-    border-color: var(--oc-color-swatch-danger-default);
+  &-title {
+    font-size: 1.15rem;
   }
 }
 </style>
