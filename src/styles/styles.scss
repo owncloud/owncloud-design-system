@@ -4,11 +4,11 @@
 // 2. Import Vendor.
 @import "../../node_modules/tippy.js/dist/tippy";
 
-// 4. Your custom mixin overwrites.
-@import "theme/animations";
+// 3. Your custom mixin overwrites.
 @import "theme/background";
 @import "theme/helper";
 @import "theme/login";
+@import "theme/oc-animations";
 @import "theme/oc-card";
 @import "theme/oc-flex";
 @import "theme/oc-form";
@@ -16,7 +16,6 @@
 @import "theme/oc-position";
 @import "theme/oc-spacing";
 @import "theme/oc-text";
-@import "theme/oc-transitions";
 @import "theme/oc-visibility";
 @import "theme/oc-width";
 @import "theme/tooltip";
