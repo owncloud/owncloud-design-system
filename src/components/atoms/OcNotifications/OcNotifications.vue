@@ -44,6 +44,7 @@ export default {
 <style lang="scss">
 .oc-notification {
   box-sizing: border-box;
+  max-width: 100%;
   width: 400px;
   z-index: 1040;
 

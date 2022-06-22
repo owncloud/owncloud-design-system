@@ -4,4 +4,5 @@ We have redesigned the notifications component to fit the overal new look of the
 It can now also be rendered "unpositioned" instead of having it always stick to the top of the screen.
 
 https://github.com/owncloud/owncloud-design-system/pull/2210
+https://github.com/owncloud/owncloud-design-system/pull/2216
 https://github.com/owncloud/web/issues/7082

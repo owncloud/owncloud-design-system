@@ -61,7 +61,6 @@
 <script>
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import OcImg from "../../atoms/OcImage/OcImage.vue"
-import OcStatusIndicators from "../../molecules/OcStatusIndicators/OcStatusIndicators.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcResourceName from "../../atoms/OcResourceName/OcResourceName.vue"
 import OcResourceIcon from "../../atoms/OcResourceIcon/OcResourceIcon.vue"
@@ -78,7 +77,6 @@ export default {
   components: {
     OcButton,
     OcImg,
-    OcStatusIndicators,
     OcIcon,
     OcResourceName,
     OcResourceIcon,

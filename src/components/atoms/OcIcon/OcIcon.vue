@@ -7,7 +7,6 @@
       sizeClass(size),
       variationClass(variation),
     ]"
-    @click="onClick"
   >
     <inline-svg
       :src="nameWithFillType"
@@ -168,9 +167,6 @@ export default {
     },
     prefix(string) {
       if (string !== null) return `oc-icon-${string}`
-    },
-    onClick() {
-      this.$emit("click")
     },
     transformSvgElement(svg) {
       if (this.accessibleLabel !== "") {
