@@ -1,6 +1,0 @@
-Change: Remove click event on OcIcon
-
-We have removed the default click handler on the OcIcon component, expecting it to increase performance of the UI.
-Adding a custom click-event handling on an instance of the component is of course still possible - albeit then wrapping it in an OcButton is probably the right choice from an accessibility standpoint.
-
-https://github.com/owncloud/owncloud-design-system/pull/2216
