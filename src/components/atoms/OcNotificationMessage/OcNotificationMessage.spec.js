@@ -83,7 +83,7 @@ describe("OcNotificationMessage", () => {
   const selectors = {
     messageTitle: ".oc-notification-message-title",
     messageContent: ".oc-notification-message-content",
-    messageWrapper: ".oc-alert div",
+    messageWrapper: ".oc-notification-message div",
   }
 
   function getWrapper(props = {}) {

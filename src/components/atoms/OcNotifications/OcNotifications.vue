@@ -1,5 +1,5 @@
 <template>
-  <div class="oc-alerts" :class="classes">
+  <div class="oc-notification oc-mb-s" :class="classes">
     <slot />
   </div>
 </template>
@@ -29,13 +29,13 @@ export default {
       required: false,
       default: "top-center",
       validator: value => {
-        return value.match(/(top-left|top-center|top-right)/)
+        return value.match(/(default|top-left|top-center|top-right)/)
       },
     },
   },
   computed: {
     classes() {
-      return `oc-notification oc-notification-${this.position}`
+      return `oc-notification-${this.position}`
     },
   },
 }
@@ -44,21 +44,25 @@ export default {
 <style lang="scss">
 .oc-notification {
   box-sizing: border-box;
-  position: fixed;
-  top: var(--oc-space-small);
-  width: 350px;
+  width: 400px;
   z-index: 1040;
 
   &-top-left {
+    position: fixed;
+    top: var(--oc-space-small);
     left: var(--oc-space-small);
   }
   &-top-center {
+    position: fixed;
+    top: var(--oc-space-small);
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
   }
   &-top-right {
+    position: fixed;
+    top: var(--oc-space-small);
     right: var(--oc-space-small);
   }
 }
@@ -77,31 +81,27 @@ export default {
       <oc-button @click="show('right')">Show right notifications</oc-button>
 
       <oc-notifications position="top-left">
-        <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
-          <oc-notification-message
-              v-for="item in messages.left"
-              :key="item.title"
-              :status="item.status"
-              :title="item.title"
-              :message="item.message"
-              :timeout="item.timeout"
-              @close="removeNotification('left', item)"
-          />
-        </transition-group>
+        <oc-notification-message
+            v-for="item in messages.left"
+            :key="item.title"
+            :status="item.status"
+            :title="item.title"
+            :message="item.message"
+            :timeout="item.timeout"
+            @close="removeNotification('left', item)"
+        />
       </oc-notifications>
 
       <oc-notifications position="top-center">
-        <transition-group name="oc-alerts-transition" tag="div" class="oc-alerts-transition">
-          <oc-notification-message
-              v-for="item in messages.center"
-              :key="item.title"
-              :status="item.status"
-              :title="item.title"
-              :message="item.message"
-              :timeout="item.timeout"
-              @close="removeNotification('center', item)"
-          />
-        </transition-group>
+        <oc-notification-message
+            v-for="item in messages.center"
+            :key="item.title"
+            :status="item.status"
+            :title="item.title"
+            :message="item.message"
+            :timeout="item.timeout"
+            @close="removeNotification('center', item)"
+        />
       </oc-notifications>
 
       <oc-notifications position="top-right">
