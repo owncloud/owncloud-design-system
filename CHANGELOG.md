@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
@@ -13,6 +14,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
 ## Details
+
+* Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
+
+   We have removed an unnecessary default click handler on the OcIcon component, expecting it to
+   increase performance of the UI.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2216
+
 
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
@@ -48,6 +57,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7082
    https://github.com/owncloud/owncloud-design-system/pull/2210
+   https://github.com/owncloud/owncloud-design-system/pull/2216
 
 # Changelog for [13.1.0] (2022-06-07)
 
