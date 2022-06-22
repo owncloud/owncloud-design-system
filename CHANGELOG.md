@@ -6,9 +6,31 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+* Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+* Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
+* Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
 ## Details
+
+* Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+
+   https://github.com/owncloud/owncloud-design-system/pull/2210
+
+
+* Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+
+   https://github.com/owncloud/owncloud-design-system/pull/2210
+
+
+* Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+
+   We have removed the old animation classes and will subsequently add new ones, respecting the
+   `prefers-reduced-motion` browser setting.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2210
+
 
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
 
@@ -16,6 +38,16 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7105
    https://github.com/owncloud/owncloud-design-system/pull/2200
+
+
+* Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+
+   We have redesigned the notifications component to fit the overal new look of the web frontend,
+   e.g. adding shadow and rounded corners. It can now also be rendered "unpositioned" instead of
+   having it always stick to the top of the screen.
+
+   https://github.com/owncloud/web/issues/7082
+   https://github.com/owncloud/owncloud-design-system/pull/2210
 
 # Changelog for [13.1.0] (2022-06-07)
 
