@@ -480,6 +480,7 @@ export default {
   }
 
   tr {
+    outline: none;
     height: var(--oc-size-height-table-row);
   }
 
