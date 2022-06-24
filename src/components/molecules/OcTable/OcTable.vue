@@ -49,7 +49,7 @@
         v-bind="extractTbodyTrProps(item, trIndex)"
         :data-item-id="item[idKey]"
         :draggable="dragDrop"
-        @click.native="$emit(constants.EVENT_TROW_CLICKED, item)"
+        @click.native="$emit(constants.EVENT_TROW_CLICKED, [item, $event])"
         @contextmenu.native="
           $emit(constants.EVENT_TROW_CONTEXTMENU, $refs[`row-${trIndex}`][0], $event, item)
         "
@@ -477,6 +477,7 @@ export default {
   }
 
   tr {
+    outline: none;
     height: var(--oc-size-height-table-row);
   }
 

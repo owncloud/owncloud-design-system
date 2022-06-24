@@ -63,4 +63,11 @@ describe("OcCheckbox", () => {
       expect(checkbox.element.checked).toBeTruthy()
     })
   })
+  describe("set outline", () => {
+    it("should show outline", async () => {
+      const wrapper = await getWrapperWithProps({ outline: true })
+      const checkbox = wrapper.find(checkboxSelector)
+      expect(checkbox.element._prevClass).toContain("oc-checkbox-outline")
+    })
+  })
 })

@@ -89,6 +89,14 @@ export default {
       default: "medium",
       validator: size => /(small|medium|large)/.test(size),
     },
+    /**
+     * Show outline of checkbox
+     **/
+    outline: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     model: {
@@ -101,7 +109,12 @@ export default {
       },
     },
     classes() {
-      return ["oc-checkbox", "oc-rounded", "oc-checkbox-" + getSizeClass(this.size)]
+      return [
+        "oc-checkbox",
+        "oc-rounded",
+        "oc-checkbox-" + getSizeClass(this.size),
+        { "oc-checkbox-outline": this.outline },
+      ]
     },
     labelClasses() {
       return {
@@ -143,6 +156,11 @@ export default {
   overflow: hidden;
   vertical-align: middle;
   background-color: transparent;
+  outline: none;
+
+  &-outline {
+    outline: solid 2px var(--oc-color-swatch-passive-default);
+  }
 
   &-s {
     @include oc-form-check-size(0.7);
