@@ -95,8 +95,8 @@ export default {
     outline: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     model: {
@@ -109,7 +109,12 @@ export default {
       },
     },
     classes() {
-      return ["oc-checkbox", "oc-rounded", "oc-checkbox-" + getSizeClass(this.size), { 'oc-checkbox-outline': this.outline }]
+      return [
+        "oc-checkbox",
+        "oc-rounded",
+        "oc-checkbox-" + getSizeClass(this.size),
+        { "oc-checkbox-outline": this.outline },
+      ]
     },
     labelClasses() {
       return {
