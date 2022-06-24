@@ -10,6 +10,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+* Change - OcTable emit event data on row click: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
+* Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
@@ -39,6 +41,22 @@ The following sections list the changes in ownCloud Design System unreleased.
    `prefers-reduced-motion` browser setting.
 
    https://github.com/owncloud/owncloud-design-system/pull/2210
+
+
+* Change - OcTable emit event data on row click: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
+
+   We've extended the emit data on row click to now also include the event data
+
+   https://github.com/owncloud/web/issues/6029
+   https://github.com/owncloud/owncloud-design-system/pull/2218
+
+
+* Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
+
+   We've added an optional outline to be able to highlight the checkbox
+
+   https://github.com/owncloud/web/issues/6029
+   https://github.com/owncloud/owncloud-design-system/pull/2218
 
 
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
