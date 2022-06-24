@@ -274,9 +274,6 @@ export default {
     },
   },
   methods: {
-    test() {
-      alert('hi')
-    },
     dragOver(event) {
       event.preventDefault()
     },
