@@ -159,7 +159,7 @@ export default {
   outline: none;
 
   &-outline {
-    outline: solid 2px red;
+    outline: solid 2px var(--oc-color-swatch-passive-default);
   }
 
   &-s {
