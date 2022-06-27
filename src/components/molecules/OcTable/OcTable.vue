@@ -1,6 +1,6 @@
 <template>
   <table v-bind="extractTableProps()">
-    <oc-thead v-if="hasHeader">
+    <thead v-if="hasHeader" class="oc-thead">
       <oc-tr class="oc-table-header-row">
         <oc-th
           v-for="(field, index) in fields"
@@ -40,8 +40,8 @@
           </oc-button>
         </oc-th>
       </oc-tr>
-    </oc-thead>
-    <oc-tbody>
+    </thead>
+    <tbody>
       <oc-tr
         v-for="(item, trIndex) in data"
         :key="`oc-tbody-tr-${itemDomSelector(item) || trIndex}`"
@@ -61,7 +61,7 @@
         @mouseleave="dropRowStyling(itemDomSelector(item), true, $event)"
         @dragover.native="dragOver($event)"
       >
-        <oc-td
+        <td
           v-for="(field, tdIndex) in fields"
           :key="'oc-tbody-td-' + cellKey(field, tdIndex, item)"
           v-bind="extractTdProps(field, tdIndex, item)"
@@ -73,9 +73,9 @@
           <template v-else>
             {{ item[field.name] }}
           </template>
-        </oc-td>
+        </td>
       </oc-tr>
-    </oc-tbody>
+    </tbody>
     <tfoot v-if="$slots.footer" class="oc-table-footer">
       <tr class="oc-table-footer-row">
         <td :colspan="footerColspan" class="oc-table-footer-cell">
@@ -88,11 +88,8 @@
 </template>
 <script>
 import Vue from "vue"
-import OcThead from "../../atoms/_OcTableHeader/_OcTableHeader.vue"
-import OcTbody from "../../atoms/_OcTableBody/_OcTableBody.vue"
 import OcTr from "../../atoms/_OcTableRow/_OcTableRow.vue"
 import OcTh from "../../atoms/_OcTableCellHead/_OcTableCellHead.vue"
-import OcTd from "../../atoms/_OcTableCellData/_OcTableCellData.vue"
 import OcGhostElement from "../../atoms/_OcGhostElement/_OcGhostElement.vue"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import SortMixin from "../../../mixins/sort"
@@ -115,11 +112,8 @@ export default {
   status: "ready",
   release: "2.1.0",
   components: {
-    OcThead,
-    OcTbody,
     OcTr,
     OcTh,
-    OcTd,
     OcButton,
   },
   mixins: [SortMixin],
@@ -515,6 +509,10 @@ export default {
 
   .highlightedDropTarget {
     background-color: var(--oc-color-input-border);
+  }
+
+  .oc-thead {
+    border-bottom: 1px solid var(--oc-color-border);
   }
 
   &-thead-content {

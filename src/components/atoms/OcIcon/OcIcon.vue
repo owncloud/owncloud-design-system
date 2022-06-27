@@ -300,23 +300,23 @@ export default {
       Default Icon color variations
     </h3>
     <oc-table-simple :hover="true">
-      <oc-thead>
-        <oc-tr>
-          <oc-th>Variation</oc-th>
-          <oc-th>Icons</oc-th>
-        </oc-tr>
-      </oc-thead>
-      <oc-tbody>
-        <oc-tr v-for="variation in variations" :key="'variation-' + variation.id">
-          <oc-td>{{ variation.name }}</oc-td>
-          <oc-td v-bind:class="{'oc-background-brand': variation.name == 'inverse'}">
+      <thead>
+        <tr>
+          <th>Variation</th>
+          <th>Icons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="variation in variations" :key="'variation-' + variation.id">
+          <td>{{ variation.name }}</td>
+          <td v-bind:class="{'oc-background-brand': variation.name == 'inverse'}">
             <oc-icon :variation="variation.name" name="close"/>
             <oc-icon :variation="variation.name" name="delete-bin-5"/>
             <oc-icon :variation="variation.name" name="information"/>
             <oc-icon :variation="variation.name" name="account-circle"/>
-          </oc-td>
-        </oc-tr>
-      </oc-tbody>
+          </td>
+        </tr>
+      </tbody>
     </oc-table-simple>
 
     <h3 class="oc-heading-divider">
@@ -328,23 +328,23 @@ export default {
       Icon sizes
     </h3>
     <oc-table-simple :hover="true">
-      <oc-thead>
-        <oc-tr>
-          <oc-th>Size</oc-th>
-          <oc-th>Icons</oc-th>
-        </oc-tr>
-      </oc-thead>
-      <oc-tbody>
-        <oc-tr v-for="size in sizes" :key="size.name">
-          <oc-td>{{ size.name }}</oc-td>
-          <oc-td>
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Icons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="size in sizes" :key="size.name">
+          <td>{{ size.name }}</td>
+          <td>
             <oc-icon :size="size.name" name="close"/>
             <oc-icon :size="size.name" name="delete-bin-5"/>
             <oc-icon :size="size.name" name="information"/>
             <oc-icon :size="size.name" name="account-circle"/>
-          </oc-td>
-        </oc-tr>
-      </oc-tbody>
+          </td>
+        </tr>
+      </tbody>
     </oc-table-simple>
 
   </section>

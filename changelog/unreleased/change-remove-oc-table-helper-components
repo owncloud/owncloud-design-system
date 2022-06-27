@@ -1,0 +1,10 @@
+Change: Remove OcTable helper components
+
+We have removed the following Vue components in favor of native HTML elements to increase rendering performance:
+
+- _OcTableBody.vue
+- _OcTableHeader.vue
+- _OcTableFooter.vue
+- _OcTableCellData.vue
+
+https://github.com/owncloud/owncloud-design-system/pull/2165

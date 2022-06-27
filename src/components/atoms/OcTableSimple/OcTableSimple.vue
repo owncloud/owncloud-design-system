@@ -58,17 +58,17 @@ export default {
       A simple table
     </h3>
     <oc-table-simple :hover="true">
-      <oc-thead>
-        <oc-tr>
-          <oc-th>Resource</oc-th>
-          <oc-th>Last modified</oc-th>
-        </oc-tr>
-      </oc-thead>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Last modified</th>
+        </tr>
+      </thead>
       <oc-tbody>
-        <oc-tr v-for="item in items" :key="'item-' + item.id">
-          <oc-td>{{ item.resource }}</oc-td>
-          <oc-td>{{ item.last_modified }}</oc-td>
-        </oc-tr>
+        <tr v-for="item in items" :key="'item-' + item.id">
+          <td>{{ item.resource }}</td>
+          <td>{{ item.last_modified }}</td>
+        </tr>
       </oc-tbody>
     </oc-table-simple>
   </section>

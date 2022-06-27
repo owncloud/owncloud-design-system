@@ -554,20 +554,20 @@ Every button has to have an accessible name. It cannot be provided by a text bet
     All available button combinations
   </h3>
   <oc-table-simple>
-    <oc-thead>
-      <oc-tr>
-        <oc-th>Variation &amp; usage</oc-th>
-        <oc-th>Outline (default)</oc-th>
-        <oc-th>Filled</oc-th>
-        <oc-th>Raw</oc-th>
-      </oc-tr>
-    </oc-thead>
-    <oc-tbody>
-      <oc-tr v-for="variation in variations">
-      <oc-td>
-        {{ variation.description }}
-      </oc-td>
-        <oc-td v-for="appearance in appearances" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-p-m">
+    <thead>
+      <tr>
+        <th>Variation &amp; usage</th>
+        <th>Outline (default)</th>
+        <th>Filled</th>
+        <th>Raw</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="variation in variations">
+        <td>
+          {{ variation.description }}
+        </td>
+        <td v-for="appearance in appearances" :class="{ 'oc-background-brand': variation.title === 'inverse' }" class="oc-p-m">
           <oc-button :variation="variation.title" :appearance="appearance" class="oc-mb-s">
             {{ variation.title }}
             <oc-icon name="home-2" />
@@ -576,9 +576,9 @@ Every button has to have an accessible name. It cannot be provided by a text bet
             {{ variation.title }}
             <oc-icon name="home-2" />
           </oc-button>
-        </oc-td>
-      </oc-tr>
-    </oc-tbody>
+        </td>
+      </tr>
+    </tbody>
   </oc-table-simple>
   </div>
 </template>
