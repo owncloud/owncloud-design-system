@@ -162,7 +162,7 @@ export default {
       aria: {
         content: "describedby",
       },
-      ...(!isNested && {
+      ...(!this.isNested && {
         onShow(instance) {
           hideAll({ exclude: instance })
         },
