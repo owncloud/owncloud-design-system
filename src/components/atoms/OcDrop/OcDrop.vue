@@ -150,7 +150,6 @@ export default {
     if (!to || !content) {
       return
     }
-    let isNested = this.isNested
     const config = {
       trigger: this.triggerMapping,
       placement: this.position,
