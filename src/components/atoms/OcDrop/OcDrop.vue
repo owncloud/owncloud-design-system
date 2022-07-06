@@ -83,6 +83,13 @@ export default {
       required: false,
     },
     /**
+     * Defines if the drop should be nested drop in another drop.
+     */
+    isNested: {
+      type: Boolean,
+      required: false,
+    },
+    /**
      * Element selector used as a target of the drop
      */
     target: {
@@ -143,7 +150,7 @@ export default {
     if (!to || !content) {
       return
     }
-
+    let isNested = this.isNested
     const config = {
       trigger: this.triggerMapping,
       placement: this.position,
@@ -155,9 +162,11 @@ export default {
       aria: {
         content: "describedby",
       },
-      onShow(instance) {
-        hideAll({ exclude: instance })
-      },
+      ...(!isNested && {
+        onShow(instance) {
+          hideAll({ exclude: instance })
+        },
+      }),
       popperOptions: this.popperOptions,
       content,
     }
@@ -273,7 +282,7 @@ export default {
       </ul>
     </oc-drop>
 
-    <oc-button id="my_advanced">Advanced</oc-button>
+    <oc-button id="my_advanced" class="oc-mr-s">Advanced</oc-button>
     <oc-drop dropId="oc-drop" toggle="#my_advanced" mode="click" closeOnClick>
       <div slot="special" class="oc-card">
         <div class="oc-card-header">
@@ -287,6 +296,52 @@ export default {
           </p>
         </div>
       </div>
+    </oc-drop>
+
+    <oc-button id="my_submenu_parent"> With submenu</oc-button>
+    <oc-drop
+      id="drop"
+      ref="submenu_parent"
+      drop-id="oc-drop"
+      toggle="#my_submenu_parent"
+      mode="click"
+      style="max-width: 200px"
+    >
+      <oc-list class="user-menu-list">
+        <li>
+          <oc-button appearance="raw"> Menu item 1</oc-button>
+        </li>
+        <li>
+          <oc-button id="menu_with_submenu" appearance="raw">
+            Menu item 2<oc-icon
+              name="arrow-drop-right"
+              fill-type="line"
+              class="oc-p-xs"
+            />
+          </oc-button>
+          <oc-drop
+            id="submenu"
+            toggle="#menu_with_submenu"
+            mode="hover"
+            position="right-start"
+            isNested
+            closeOnClick
+            style="max-width: 200px"
+          >
+            <oc-list class="user-menu-list">
+              <li>
+                <oc-button appearance="raw"> Submenu item 1 </oc-button>
+              </li>
+              <li>
+                <oc-button appearance="raw"> Submenu item 2 </oc-button>
+              </li>
+            </oc-list>
+          </oc-drop>
+        </li>
+        <li>
+          <oc-button appearance="raw"> Menu item 3</oc-button>
+        </li>
+      </oc-list>
     </oc-drop>
   </div>
 </template>
