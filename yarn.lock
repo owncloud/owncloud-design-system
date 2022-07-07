@@ -7957,15 +7957,15 @@ kind-of@^6.0.0, kind-of@^6.0.2, kind-of@^6.0.3:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kleur@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/kleur/-/kleur-2.0.2.tgz#b704f4944d95e255d038f0cb05fb8a602c55a300"
-  integrity sha512-77XF9iTllATmG9lSlIv0qdQ2BQ/h9t0bJllHlbvsQ0zUWfU7Yi0S8L5JXzPZgkefIiajLmBJJ4BsMJmqcf7oxQ==
-
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+
+kleur@^4.1.5:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
+  integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
 
 klona@^2.0.4:
   version "2.0.5"
@@ -10786,15 +10786,6 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
-  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    scheduler "^0.20.2"
-
 react-dom@^18.0.0:
   version "18.1.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.1.0.tgz#7f6dd84b706408adde05e1df575b3a024d7e8a2f"
@@ -10925,14 +10916,6 @@ react-styleguidist@^11.1.6:
     unist-util-visit "^2.0.0"
     webpack-dev-server "^3.11.0"
     webpack-merge "^4.2.2"
-
-react@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
-  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 react@^18.0.0:
   version "18.2.0"
@@ -11463,14 +11446,6 @@ saxes@^5.0.1:
   integrity sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   dependencies:
     xmlchars "^2.2.0"
-
-scheduler@^0.20.2:
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
-  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.22.0:
   version "0.22.0"
@@ -13190,18 +13165,18 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-inbrowser-compiler-demi@^4.44.23:
-  version "4.44.23"
-  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler-demi/-/vue-inbrowser-compiler-demi-4.44.23.tgz#7410e160db0e0639aa0ba5c3af6a0c02606d4242"
-  integrity sha512-/gZxAana4VTJWACNTi4RL5Zs5bVDIUDJ9XlaibzmY3Nf32WK43tvmjrUe+f5uGYLysCHE9SFjFvRKaAhXnzXgA==
+vue-inbrowser-compiler-demi@^4.45.0:
+  version "4.45.0"
+  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler-demi/-/vue-inbrowser-compiler-demi-4.45.0.tgz#d5b75479490dc7c7c9bd4ec34a4e0d3c7e4c6c98"
+  integrity sha512-nZnPwiW0y2d7vEyAGI/0lZS/iVFHmHMDhdLiakcW5Wn5HJ+wiKWYUU4ZkKqErBKFSpmbnpFFS0mUToUZq0NhZA==
 
-vue-inbrowser-compiler-utils@^4.44.23:
-  version "4.44.23"
-  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler-utils/-/vue-inbrowser-compiler-utils-4.44.23.tgz#fcbe942ce87a846d1b9250561844085a6ead3e09"
-  integrity sha512-M2U6TPTU1QCiKFYUxgHy47xdZcKLPSbeTpeamHBtfIut1sjKOMtYmAOQ3IrX3W/v8A7j7jGadY4ieA1j3zQICw==
+vue-inbrowser-compiler-utils@^4.44.23, vue-inbrowser-compiler-utils@^4.45.0:
+  version "4.45.0"
+  resolved "https://registry.yarnpkg.com/vue-inbrowser-compiler-utils/-/vue-inbrowser-compiler-utils-4.45.0.tgz#089dd29904e817d29f076112a2b3fba5127b1ce7"
+  integrity sha512-7hd5PXato1RkdRl65tCXDcDWev4jTQ8/3FkwOAwyaPfzqw3mKhB+yYiWLPiJxugetNk9WZNKD+pPsjPt4RH0qQ==
   dependencies:
     camelcase "^5.3.1"
-    vue-inbrowser-compiler-demi "^4.44.23"
+    vue-inbrowser-compiler-demi "^4.45.0"
 
 vue-inbrowser-compiler@^4.44.23:
   version "4.44.23"
@@ -13263,9 +13238,9 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     loader-utils "^1.0.2"
 
 vue-styleguidist@^4.44.2:
-  version "4.45.2"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-4.45.2.tgz#b0cc9350a598f00c3da40c8062ca844fa356279f"
-  integrity sha512-NX3Ch96TUmSzWu3mnbYlzRbzFGRhbgwe4bmNi6eDEKCE3fZjWnWTLidooHmgi9zDVUDGRCXzmPkGtcUIAsZ6gw==
+  version "4.46.0"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-4.46.0.tgz#a247d3a8f44faf0dbf26f480651012241abe9e80"
+  integrity sha512-DUYDmLtBggQkftLyJnfovi9KDzAG6HllNhi/FOCuDiOTfZJKSspNUooXqeLbLVfbjTbJyNfDDtZ+ppSPPbvWQw==
   dependencies:
     "@vxna/mini-html-webpack-template" "^1.0.0"
     ast-types "0.14.2"
@@ -13291,7 +13266,7 @@ vue-styleguidist@^4.44.2:
     is-directory "^0.3.1"
     javascript-stringify "^1.6.0"
     jss "^10.6.0"
-    kleur "^2.0.2"
+    kleur "^4.1.5"
     leven "^2.1.0"
     loader-utils "^1.4.0"
     lodash "^4.17.21"
@@ -13303,10 +13278,10 @@ vue-styleguidist@^4.44.2:
     prop-types "^15.7.2"
     q-i "2.0.1"
     qss "^2.0.3"
-    react "^17.0.2"
+    react "^18.0.0"
     react-codemirror2 "^7.2.1"
     react-dev-utils "^12.0.0-next.47"
-    react-dom "^17.0.2"
+    react-dom "^18.0.0"
     react-group "^3.0.2"
     react-icons "^3.11.0"
     react-lifecycles-compat "^3.0.4"
@@ -13319,7 +13294,7 @@ vue-styleguidist@^4.44.2:
     to-ast "^1.0.0"
     vue-docgen-api "^4.45.0"
     vue-inbrowser-compiler "^4.44.23"
-    vue-inbrowser-compiler-utils "^4.44.23"
+    vue-inbrowser-compiler-utils "^4.45.0"
     webpack-dev-server "^3.11.2"
     webpack-merge "^4.2.2"
 
