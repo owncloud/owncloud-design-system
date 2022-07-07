@@ -1,5 +1,11 @@
 <template>
-  <div :aria-hidden="true">
+  <div
+    :data-test-item-name="name"
+    :aria-label="accessibleLabel === '' ? null : accessibleLabel"
+    :aria-hidden="accessibleLabel === '' ? 'true' : null"
+    :focusable="accessibleLabel === '' ? 'false' : null"
+    :role="accessibleLabel === '' ? null : 'img'"
+  >
     <span
       class="oc-avatar-item"
       :style="{
@@ -7,11 +13,6 @@
         '--icon-color': iconColor,
         '--width': avatarWidth,
       }"
-      :aria-label="accessibleLabel === '' ? null : accessibleLabel"
-      :aria-hidden="accessibleLabel === '' ? 'true' : null"
-      :focusable="accessibleLabel === '' ? 'false' : null"
-      :role="accessibleLabel === '' ? null : 'img'"
-      :data-test-item-name="name"
     >
       <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" :fill-type="iconFillType" />
     </span>
