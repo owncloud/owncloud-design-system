@@ -91,6 +91,7 @@ The following sections list the changes in ownCloud Design System 13.1.0.
 * Bugfix - Text color of buttons and avatars in hovered table rows: [#2139](https://github.com/owncloud/owncloud-design-system/pull/2139)
 * Bugfix - Add word breaking in tooltips: [#2137](https://github.com/owncloud/owncloud-design-system/pull/2137)
 * Enhancement - Add OcContextualHelper: [#6590](https://github.com/owncloud/web/issues/6590)
+* Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
 * Enhancement - Add ROOT file icon: [#2158](https://github.com/owncloud/owncloud-design-system/pull/2158)
 * Enhancement - Add selection range for OcModal and OcTextInput: [#6729](https://github.com/owncloud/web/issues/6729)
 * Enhancement - Export package members: [#2048](https://github.com/owncloud/owncloud-design-system/pull/2048)
@@ -156,6 +157,15 @@ The following sections list the changes in ownCloud Design System 13.1.0.
 
    https://github.com/owncloud/web/issues/6590
    https://github.com/owncloud/owncloud-design-system/pull/2064
+
+
+* Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
+
+   We've added the property "isNested" to ocDrop that prevents the parent drop from hiding by not
+   firing hideAll() in the child drop
+
+   https://github.com/owncloud/owncloud-design-system/issues/2238
+   https://github.com/owncloud/owncloud-design-system/pull/2239
 
 
 * Enhancement - Add ROOT file icon: [#2158](https://github.com/owncloud/owncloud-design-system/pull/2158)
