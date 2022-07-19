@@ -99,23 +99,6 @@ describe("useIsVisible", () => {
     expect(observerMock.unobserve).toBeCalledTimes(0)
   })
 
-  it("gets delayed by a given value if many calls happen fast", async () => {
-    const { callback: observerCallback } = enableIntersectionObserver()
-    const wrapper = createWrapper({ delay: 5000, mode: "showHide" })
-
-    const checkIsVisibleAfter = async (expects, fastForward, isIntersecting) => {
-      observerCallback([{ isIntersecting }], fastForward)
-      await nextTick()
-      expect(wrapper.vm.$refs.target.innerHTML).toBe(String(expects))
-    }
-
-    await checkIsVisibleAfter(false, 4000, true)
-    await checkIsVisibleAfter(false, 2000, false)
-    await checkIsVisibleAfter(true, 5000, true)
-    await checkIsVisibleAfter(true, 4800, false)
-    await checkIsVisibleAfter(false, 10000, false)
-  })
-
   it("disconnects the observer before component gets unmounted", () => {
     const { mock: observerMock } = enableIntersectionObserver()
     const wrapper = createWrapper()

@@ -572,9 +572,7 @@ export default {
           name: "resource",
           title: "Resource",
           alignH: "left",
-          lazy: {
-            delay: 1500
-          }
+          lazy: true
         }, {
           name: "last_modified",
           title: "Last modified",

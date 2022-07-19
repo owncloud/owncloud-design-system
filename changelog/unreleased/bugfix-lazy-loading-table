@@ -1,0 +1,5 @@
+Bugfix: Lazy loading render performance
+
+The render performance of the lazy loading option in tables (OcTable, OcTableSimple) has been improved by removing the debounce option.
+
+https://github.com/owncloud/owncloud-design-system/pull/2260

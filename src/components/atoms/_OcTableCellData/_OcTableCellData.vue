@@ -44,8 +44,8 @@ export default {
       validator: wrap => (wrap ? /(break|nowrap|truncate)/.test(wrap) : true),
     },
     lazy: {
-      type: Object,
-      default: null,
+      type: [Boolean, Object],
+      default: false,
     },
   },
   setup(props) {
@@ -65,7 +65,7 @@ export default {
 
     const { isVisible } = props.lazy
       ? useIsVisible({
-          ...props.lazy,
+          ...(typeof props.lazy === "object" && props.lazy),
           target: observerTarget,
         })
       : { isVisible: ref(true) }
