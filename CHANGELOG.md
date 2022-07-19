@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
@@ -17,6 +18,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
 ## Details
+
+* Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
+
+   The render performance of the lazy loading option in tables (OcTable, OcTableSimple) has been
+   improved by removing the debounce option.
+
+   https://github.com/owncloud/owncloud-design-system/pull/2260
+
 
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
 
