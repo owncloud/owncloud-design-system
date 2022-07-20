@@ -14,6 +14,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - OcTable emit event data on row click: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
+* Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
@@ -76,6 +77,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6029
    https://github.com/owncloud/owncloud-design-system/pull/2218
+
+
+* Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
+
+   We've improved the visual appearance of the OcSelect component in dark mode, now the selected
+   items have an adjusted color and are easier to read.
+
+   https://github.com/owncloud/web/issues/7269
+   https://github.com/owncloud/owncloud-design-system/pull/2262
 
 
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
