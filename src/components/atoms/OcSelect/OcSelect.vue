@@ -154,6 +154,9 @@ export default {
     &__selected {
       color: var(--oc-color-input-text-default);
     }
+    &__selected {
+      background-color: var(--oc-color-background-default);
+    }
     &__search::placeholder,
     &__dropdown-toggle,
     &__dropdown-menu {
@@ -163,7 +166,8 @@ export default {
     }
 
     &__clear,
-    &__open-indicator {
+    &__open-indicator,
+    &__deselect {
       fill: var(--oc-color-input-text-default);
     }
 
