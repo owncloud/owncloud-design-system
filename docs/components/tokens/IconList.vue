@@ -10,7 +10,7 @@
     <div class="oc-mb oc-px">
       <strong>Displaying {{ filteredIcons.length }} out of {{ icons.length }} icons</strong>
     </div>
-    <oc-table :fields="fields" :data="filteredIcons" :lazy="{ colspan: fields.length }">
+    <oc-table :fields="fields" :data="filteredIcons" :lazy="true">
       <template #passive="{ item }">
         <oc-icon
           :name="item.filename"

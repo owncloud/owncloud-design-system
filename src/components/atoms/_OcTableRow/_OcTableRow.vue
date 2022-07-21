@@ -1,13 +1,13 @@
 <template>
   <tr ref="observerTarget" tabindex="-1">
-    <slot v-if="isVisible" />
-    <oc-td v-else :colspan="lazy.colspan">
+    <slot v-if="!isHidden" />
+    <oc-td v-else :colspan="lazyColspan">
       <span class="shimmer" />
     </oc-td>
   </tr>
 </template>
 <script>
-import { customRef, ref } from "@vue/composition-api"
+import { customRef, computed, ref } from "@vue/composition-api"
 import { useIsVisible } from "../../../composables"
 import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
 
@@ -38,6 +38,11 @@ export default {
       }
     })
 
+    const lazyColspan = ref(null)
+    if (props.lazy) {
+      lazyColspan.value = props.lazy.colspan
+    }
+
     const { isVisible } = props.lazy
       ? useIsVisible({
           ...props.lazy,
@@ -45,9 +50,12 @@ export default {
         })
       : { isVisible: ref(true) }
 
+    const isHidden = computed(() => !isVisible.value)
+
     return {
       observerTarget,
-      isVisible,
+      isHidden,
+      lazyColspan,
     }
   },
 }

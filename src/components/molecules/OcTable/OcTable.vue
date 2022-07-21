@@ -246,9 +246,8 @@ export default {
      * Determines if the table content should be loaded lazily.
      */
     lazy: {
-      type: Object,
-      required: false,
-      default: null,
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -374,7 +373,7 @@ export default {
     },
     extractTbodyTrProps(item, index) {
       return {
-        lazy: this.lazy,
+        ...(this.lazy && { lazy: { colspan: this.fields.length } }),
         class: [
           "oc-tbody-tr",
           `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
