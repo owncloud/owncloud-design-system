@@ -1,9 +1,9 @@
 <template>
   <tr ref="observerTarget" tabindex="-1">
-    <slot v-if="!isHidden" />
-    <oc-td v-else :colspan="lazyColspan">
+    <oc-td v-if="isHidden" :colspan="lazyColspan">
       <span class="shimmer" />
     </oc-td>
+    <slot v-else />
   </tr>
 </template>
 <script>
