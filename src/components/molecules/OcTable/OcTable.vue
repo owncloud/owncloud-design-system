@@ -78,7 +78,7 @@
     </oc-tbody>
     <tfoot v-if="$slots.footer" class="oc-table-footer">
       <tr class="oc-table-footer-row">
-        <td :colspan="footerColspan" class="oc-table-footer-cell">
+        <td :colspan="fullColspan" class="oc-table-footer-cell">
           <!-- @slot Footer of the table -->
           <slot name="footer" />
         </td>
@@ -242,6 +242,13 @@ export default {
       required: false,
       default: () => [],
     },
+    /**
+     * Determines if the table content should be loaded lazily.
+     */
+    lazy: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -269,7 +276,7 @@ export default {
       return result
     },
 
-    footerColspan() {
+    fullColspan() {
       return this.fields.length
     },
   },
@@ -366,6 +373,7 @@ export default {
     },
     extractTbodyTrProps(item, index) {
       return {
+        ...(this.lazy && { lazy: { colspan: this.fullColspan } }),
         class: [
           "oc-tbody-tr",
           `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
@@ -394,10 +402,6 @@ export default {
 
       if (Object.prototype.hasOwnProperty.call(field, "accessibleLabelCallback")) {
         props["aria-label"] = field.accessibleLabelCallback(item)
-      }
-
-      if (Object.prototype.hasOwnProperty.call(field, "lazy")) {
-        props.lazy = field.lazy
       }
 
       return props
@@ -572,7 +576,6 @@ export default {
           name: "resource",
           title: "Resource",
           alignH: "left",
-          lazy: true
         }, {
           name: "last_modified",
           title: "Last modified",
