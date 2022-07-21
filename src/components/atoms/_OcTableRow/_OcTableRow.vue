@@ -7,7 +7,7 @@
   </tr>
 </template>
 <script>
-import { customRef, computed, ref } from "@vue/composition-api"
+import { customRef, computed, ref, unref } from "@vue/composition-api"
 import { useIsVisible } from "../../../composables"
 import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
 
@@ -50,7 +50,7 @@ export default {
         })
       : { isVisible: ref(true) }
 
-    const isHidden = computed(() => !isVisible.value)
+    const isHidden = computed(() => !unref(isVisible))
 
     return {
       observerTarget,
