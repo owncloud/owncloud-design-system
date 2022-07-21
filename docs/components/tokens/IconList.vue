@@ -10,7 +10,7 @@
     <div class="oc-mb oc-px">
       <strong>Displaying {{ filteredIcons.length }} out of {{ icons.length }} icons</strong>
     </div>
-    <oc-table :fields="fields" :data="filteredIcons">
+    <oc-table :fields="fields" :data="filteredIcons" :lazy="{ colspan: fields.length }">
       <template #passive="{ item }">
         <oc-icon
           :name="item.filename"
@@ -139,7 +139,7 @@ export default {
           width: "expand",
           type: "slot",
         },
-      ].map(field => ({ ...field, lazy: true }))
+      ]
     },
   },
   mounted() {

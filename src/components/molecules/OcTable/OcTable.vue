@@ -242,6 +242,14 @@ export default {
       required: false,
       default: () => [],
     },
+    /**
+     * Determines if the table content should be loaded lazily.
+     */
+    lazy: {
+      type: Object,
+      required: false,
+      default: null,
+    },
   },
   data() {
     return {
@@ -366,6 +374,7 @@ export default {
     },
     extractTbodyTrProps(item, index) {
       return {
+        lazy: this.lazy,
         class: [
           "oc-tbody-tr",
           `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
@@ -394,10 +403,6 @@ export default {
 
       if (Object.prototype.hasOwnProperty.call(field, "accessibleLabelCallback")) {
         props["aria-label"] = field.accessibleLabelCallback(item)
-      }
-
-      if (Object.prototype.hasOwnProperty.call(field, "lazy")) {
-        props.lazy = field.lazy
       }
 
       return props
@@ -572,7 +577,6 @@ export default {
           name: "resource",
           title: "Resource",
           alignH: "left",
-          lazy: true
         }, {
           name: "last_modified",
           title: "Last modified",
