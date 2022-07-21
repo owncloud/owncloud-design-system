@@ -78,7 +78,7 @@
     </oc-tbody>
     <tfoot v-if="$slots.footer" class="oc-table-footer">
       <tr class="oc-table-footer-row">
-        <td :colspan="footerColspan" class="oc-table-footer-cell">
+        <td :colspan="fullColspan" class="oc-table-footer-cell">
           <!-- @slot Footer of the table -->
           <slot name="footer" />
         </td>
@@ -276,7 +276,7 @@ export default {
       return result
     },
 
-    footerColspan() {
+    fullColspan() {
       return this.fields.length
     },
   },
@@ -373,7 +373,7 @@ export default {
     },
     extractTbodyTrProps(item, index) {
       return {
-        ...(this.lazy && { lazy: { colspan: this.fields.length } }),
+        ...(this.lazy && { lazy: { colspan: this.fullColspan } }),
         class: [
           "oc-tbody-tr",
           `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
