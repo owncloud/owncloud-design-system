@@ -23,9 +23,12 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
 
    The render performance of the lazy loading option in tables (OcTable, OcTableSimple) has been
-   improved by removing the debounce option.
+   improved by removing the debounce option and by moving the lazy loading visualization from the
+   OcTd to the OcTr component. For lazy loading, the colspan property has to be provided now.
 
+   https://github.com/owncloud/web/issues/7038
    https://github.com/owncloud/owncloud-design-system/pull/2260
+   https://github.com/owncloud/owncloud-design-system/pull/2266
 
 
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
