@@ -1,15 +1,22 @@
 <template>
-  <span
-    class="oc-avatar-item"
-    :style="{ backgroundColor: backgroundColor, '--icon-color': iconColor, '--width': avatarWidth }"
+  <div
+    :data-test-item-name="name"
     :aria-label="accessibleLabel === '' ? null : accessibleLabel"
     :aria-hidden="accessibleLabel === '' ? 'true' : null"
     :focusable="accessibleLabel === '' ? 'false' : null"
     :role="accessibleLabel === '' ? null : 'img'"
-    :data-test-item-name="name"
   >
-    <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" :fill-type="iconFillType" />
-  </span>
+    <span
+      class="oc-avatar-item"
+      :style="{
+        backgroundColor: backgroundColor,
+        '--icon-color': iconColor,
+        '--width': avatarWidth,
+      }"
+    >
+      <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" :fill-type="iconFillType" />
+    </span>
+  </div>
 </template>
 
 <script>
