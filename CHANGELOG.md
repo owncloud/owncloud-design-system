@@ -7,6 +7,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 ## Summary
 
 * Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
+* Bugfix - Remove width shrinking of the ocAvatarItem: [#2241](https://github.com/owncloud/owncloud-design-system/issues/2241)
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
@@ -29,6 +30,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/7038
    https://github.com/owncloud/owncloud-design-system/pull/2260
    https://github.com/owncloud/owncloud-design-system/pull/2266
+
+
+* Bugfix - Remove width shrinking of the ocAvatarItem: [#2241](https://github.com/owncloud/owncloud-design-system/issues/2241)
+
+   We fixed an issue that the width of ocAvatarItem is shrinking in the sidebar of web by longer
+   group names
+
+   https://github.com/owncloud/owncloud-design-system/issues/2241
+   https://github.com/owncloud/owncloud-design-system/pull/2242
 
 
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
