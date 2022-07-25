@@ -1,5 +1,50 @@
 import { mount } from "@vue/test-utils"
-import OcAvatar from "./OcAvatar.vue"
+import OcAvatar, { extractInitials } from "./OcAvatar.vue"
+
+describe("extractInitials", () => {
+  describe("should allow alphanumeric characters", () => {
+    it.each([
+      ["test", "T"],
+      ["Test", "T"],
+      ["1Test", "1"],
+      ["test user", "TU"],
+      ["test User", "TU"],
+      ["Test User", "TU"],
+      ["1234 5678", "15"],
+      ["test-user", "TU"],
+      ["test -user", "TU"],
+      ["test - user", "TU"],
+      ["test user one", "TUO"],
+      ["test-user-one", "TUO"],
+      ["test user one primary", "TUO"],
+      ["testUser One Primary", "TOP"],
+    ])("user name '%s'", (input, expected) => {
+      expect(extractInitials(input)).toBe(expected)
+    })
+  })
+
+  describe("should omit special chars from user names", () => {
+    it.each([
+      [".", ""],
+      ["._-()[]{}", ""],
+      ["test User (with@email.com)", "TUW"],
+    ])("user name '%s'", (input, expected) => {
+      expect(extractInitials(input)).toBe(expected)
+    })
+  })
+
+  describe("should allow letters from non-latin alphabets", () => {
+    it.each([
+      ["१२३ ४५६", "१४"],
+      ["अंशु वर्मा", "अव"],
+      ["किरण पराजुली", "कप"],
+      ["Kiran पराजुली", "Kप"],
+      ["किरण Parajuli", "कP"],
+    ])("user name '%s'", (input, expected) => {
+      expect(extractInitials(input)).toBe(expected)
+    })
+  })
+})
 
 describe("OcAvatar", () => {
   const selectors = {
@@ -33,36 +78,13 @@ describe("OcAvatar", () => {
       })
     })
     describe("when username is set", () => {
-      it.each`
-        username                   | expected_initial
-        ${"."}                     | ${"."}
-        ${"१२३ ४५६"}               | ${"१४"}
-        ${"अंशु वर्मा"}            | ${"अव"}
-        ${"किरण पराजुली"}          | ${"कप"}
-        ${"Kiran पराजुली"}         | ${"Kप"}
-        ${"किरण Parajuli"}         | ${"कP"}
-        ${"test"}                  | ${"T"}
-        ${"Test"}                  | ${"T"}
-        ${"1Test"}                 | ${"1"}
-        ${"test user"}             | ${"TU"}
-        ${"test User"}             | ${"TU"}
-        ${"Test User"}             | ${"TU"}
-        ${"1234 5678"}             | ${"15"}
-        ${"test-user"}             | ${"TU"}
-        ${"test -user"}            | ${"TU"}
-        ${"test - user"}           | ${"TU"}
-        ${"test user one"}         | ${"TUO"}
-        ${"test-user-one"}         | ${"TUO"}
-        ${"test user one primary"} | ${"TUO"}
-        ${"test User One Primary"} | ${"UOP"}
-        ${"testUser One Primary"}  | ${"TOP"}
-      `("should render user initials for username $username", ({ username, expected_initial }) => {
+      it("should render user initials for username 'test user'", () => {
         const wrapper = getWrapperWithProps({
-          userName: username,
+          userName: "test user",
         })
         const userInitialElement = wrapper.find(selectors.initials)
         expect(userInitialElement.exists()).toBeTruthy()
-        expect(userInitialElement.text()).toBe(expected_initial)
+        expect(userInitialElement.text()).toBe("TU")
       })
     })
     describe("when width is set", () => {

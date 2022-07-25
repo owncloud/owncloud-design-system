@@ -17,27 +17,20 @@
 <script>
 import OcImg from "../../atoms/OcImage/OcImage.vue"
 
+export const extractInitials = userName => {
+  return userName
+    .split(/[ -]/)
+    .map(part => part.replace(/[^\p{L}\p{Nd}]/giu, ""))
+    .filter(Boolean)
+    .map(part => part.charAt(0))
+    .slice(0, 3)
+    .join("")
+    .toUpperCase()
+}
+
 /**
  * Avatar is a thumbnail representing user or group
  */
-
-const getInitials = userName => {
-  let parts = userName.split(/[ -]/)
-  let initials = ""
-
-  for (var i = 0; i < parts.length; i++) {
-    initials += parts[i].charAt(0)
-  }
-
-  if (initials.length > 3 && initials.search(/[A-Z]/) !== -1) {
-    initials = initials.replace(/[a-z]+/g, "")
-  }
-
-  initials = initials.slice(0, 3).toUpperCase()
-
-  return initials
-}
-
 export default {
   name: "OcAvatar",
   status: "ready",
@@ -131,8 +124,7 @@ export default {
 
     userInitial() {
       if (!this.isImage) {
-        const initials = getInitials(this.userName)
-        return initials
+        return extractInitials(this.userName)
       }
       return ""
     },
