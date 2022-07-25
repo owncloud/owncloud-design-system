@@ -6,6 +6,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
 ## Summary
 
+* Bugfix - Omit special characters in user avatar initials: [#2070](https://github.com/owncloud/owncloud-design-system/issues/2070)
 * Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
 * Bugfix - Remove width shrinking of the ocAvatarItem: [#2241](https://github.com/owncloud/owncloud-design-system/issues/2241)
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
@@ -20,6 +21,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 
 ## Details
+
+* Bugfix - Omit special characters in user avatar initials: [#2070](https://github.com/owncloud/owncloud-design-system/issues/2070)
+
+   We now make sure that user avatars without a picture (i.e. rendering user initials) only show
+   unicode letters and numbers.
+
+   https://github.com/owncloud/owncloud-design-system/issues/2070
+   https://github.com/owncloud/owncloud-design-system/pull/2267
+
 
 * Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
 
