@@ -2,7 +2,7 @@
   <oc-avatar-item
     :width="width"
     :icon-size="iconSize"
-    icon="links"
+    icon="link"
     :name="name"
     :accessible-label="accessibleLabel"
   />
