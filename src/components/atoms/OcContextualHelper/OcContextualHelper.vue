@@ -17,7 +17,7 @@
             {{ item.text }}
           </component>
         </dl>
-        <p class="info-text-end" v-text="endText" />
+        <p v-if="endText" class="info-text-end" v-text="endText" />
         <oc-button
           v-if="readMoreLink"
           v-translate
