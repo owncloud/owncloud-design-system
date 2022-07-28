@@ -1,7 +1,7 @@
 <template>
   <div class="oc-contextual-helper">
     <oc-button :id="buttonId" appearance="raw">
-      <oc-icon name="question" fill-type="line" size="close" />
+      <oc-icon name="close" fill-type="line" size="medium" />
     </oc-button>
     <oc-drop class="oc-width-1-1" :drop-id="dropId" :toggle="toggleId" mode="click" close-on-click>
       <div class="info-drop-content">

@@ -19,16 +19,24 @@ describe("OcContextualHelper", () => {
     })
   }
   describe("should use props correctly", () => {
+    it("should set title prop", () => {
+      const wrapper = getWrapperWithProps({ title: "test-my-title" })
+      expect(wrapper.find(".info-title").text()).toBe("test-my-title")
+    })
     it("should set text prop", () => {
       const wrapper = getWrapperWithProps({ text: "test-my-text" })
       expect(wrapper.find(".info-text").text()).toBe("test-my-text")
     })
     it("should set list prop", async () => {
-      const listValues = ["a-list-value", "b-list-value", "c-list-value"]
+      const listValues = [
+        { text: "a-list-value" },
+        { text: "b-list-value" },
+        { text: "c-list-value" },
+      ]
       const wrapper = getWrapperWithProps({ list: listValues })
       const result = wrapper.find(".info-list").text()
       listValues.forEach(value => {
-        expect(result).toContain(value)
+        expect(result).toContain(value.text)
       })
     })
     it("should set a readMore link", async () => {
