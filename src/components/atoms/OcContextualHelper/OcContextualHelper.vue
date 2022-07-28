@@ -144,7 +144,7 @@ export default {
 </script>
 ```
 
-An example using Text, List, End-Text and Read-More-Link properties.
+An example using Title, Text, List, End-Text and Read-More-Link properties.
 ```js
 <template>
   <div>
