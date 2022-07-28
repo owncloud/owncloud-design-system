@@ -11,6 +11,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Bugfix - Lazy loading render performance: [#2260](https://github.com/owncloud/owncloud-design-system/pull/2260)
 * Bugfix - Remove width shrinking of the ocAvatarItem: [#2241](https://github.com/owncloud/owncloud-design-system/issues/2241)
 * Bugfix - Remove click event on OcIcon: [#2216](https://github.com/owncloud/owncloud-design-system/pull/2216)
+* Change - Redesign contextual helper: [#2271](https://github.com/owncloud/owncloud-design-system/pull/2271)
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
@@ -66,6 +67,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    increase performance of the UI.
 
    https://github.com/owncloud/owncloud-design-system/pull/2216
+
+
+* Change - Redesign contextual helper: [#2271](https://github.com/owncloud/owncloud-design-system/pull/2271)
+
+   We've redesigned the contextual helper, which accepts now a title property and is able to
+   display a description list.
+
+   https://github.com/owncloud/web/issues/7331
+   https://github.com/owncloud/owncloud-design-system/pull/2271
 
 
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
