@@ -5,8 +5,8 @@
     </oc-button>
     <oc-drop class="oc-width-1-1" :drop-id="dropId" :toggle="toggleId" mode="click" close-on-click>
       <div class="info-drop-content">
-        <div v-if="title" class="oc-flex oc-flex-between info-title oc-border-b oc-pb-s">
-          <h1 class="oc-m-rm" v-text="title" />
+        <div v-if="title" class="oc-flex oc-flex-between info-header oc-border-b oc-pb-s">
+          <span class="oc-m-rm info-title" v-text="title" />
           <oc-button appearance="raw">
             <oc-icon name="close" fill-type="line" size="medium" />
           </oc-button>
@@ -98,13 +98,11 @@ export default {
   .info-more-link {
     font-size: var(--oc-font-size-small) !important;
   }
-  .info-title {
+  .info-header {
     align-items: center;
-
-    h1 {
-      font-size: 1.125rem;
-      font-weight: normal;
-    }
+  }
+  .info-title {
+    font-size: 1.125rem;
   }
   .info-list {
     dt {
