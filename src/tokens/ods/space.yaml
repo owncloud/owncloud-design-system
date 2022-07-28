@@ -3,7 +3,7 @@ space:
   xsmall:
     value: 4px
   small:
-    value: 8px
+    value: 7px
   medium:
     value: 16px
   large:

@@ -203,7 +203,7 @@ export default {
     background-color: transparent;
     border-style: none;
     color: $color;
-    font-size: 1rem;
+    font-size: 0.88rem;
     font-weight: normal;
     min-height: 0;
     padding: 0;
@@ -264,7 +264,7 @@ export default {
   color: var(--oc-color-text-inverse);
   display: inline-flex;
   font-weight: 400;
-  padding: 0.5rem 0.75rem;
+  padding: .4rem .7rem;
   text-align: center;
   text-decoration: none;
 
@@ -330,7 +330,7 @@ export default {
   &-m {
     @include oc-button-line-height(1);
 
-    font-size: 1.125rem;
+    font-size: 1rem;
     min-height: $global-control-height;
   }
 

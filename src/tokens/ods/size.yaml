@@ -5,12 +5,12 @@ size:
       value: 150px
   max-height:
     logo:
-      value: 65px
+      value: 60px
   height:
     small:
       value: 50px
     table-row:
-      value: 49px
+      value: 46px
   width:
     xsmall:
       value: 100px
@@ -19,6 +19,6 @@ size:
     medium:
       value: 300px
   icon-default:
-    value: 24px
+    value: 22px
   form-check-default:
     value: 16px

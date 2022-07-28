@@ -219,7 +219,7 @@ export default {
     a,
     button,
     span {
-      font-size: 1rem;
+      font-size: 0.88rem;
     }
   }
 

@@ -2,7 +2,7 @@
 font:
   size:
     default:
-      value: 1rem
+      value: 0.88rem
     small:
       value: 0.88rem
     medium:
