@@ -13,13 +13,7 @@
         </div>
         <p class="info-text" v-text="text" />
         <dl v-if="list.length" class="info-list">
-          <component
-            :is="item.headline ? 'dt' : 'dd'"
-            v-for="(item, index) in list"
-            :key="index"
-            class="oc-ml-rm"
-            :class="{ headline: item.headline }"
-          >
+          <component :is="item.headline ? 'dt' : 'dd'" v-for="(item, index) in list" :key="index">
             {{ item.text }}
           </component>
         </dl>
@@ -113,13 +107,16 @@ export default {
     }
   }
   .info-list {
-    .headline {
+    dt {
       &:first-child {
         margin-top: 0;
       }
       font-weight: bold;
       margin-bottom: var(--oc-space-xsmall);
       margin-top: var(--oc-space-small);
+    }
+    dd {
+      margin-left: 0;
     }
   }
 }
