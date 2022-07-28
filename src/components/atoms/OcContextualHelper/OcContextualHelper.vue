@@ -103,6 +103,7 @@ export default {
   }
   .info-title {
     font-size: 1.125rem;
+    font-weight: normal;
   }
   .info-list {
     dt {
@@ -115,6 +116,7 @@ export default {
     }
     dd {
       margin-left: 0;
+      font-weight: normal;
     }
   }
 }
