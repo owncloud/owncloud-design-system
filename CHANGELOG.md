@@ -76,6 +76,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7331
    https://github.com/owncloud/owncloud-design-system/pull/2271
+   https://github.com/owncloud/owncloud-design-system/pull/2273
 
 
 * Change - Remove OcAlert component: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
