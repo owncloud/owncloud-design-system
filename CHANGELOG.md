@@ -19,6 +19,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
 * Enhancement - Adjust avatar font weight from bold to normal: [#2275](https://github.com/owncloud/owncloud-design-system/pull/2275)
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
+* Enhancement - Add offset property to the drop component: [#7335](https://github.com/owncloud/web/issues/7335)
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
@@ -126,6 +127,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6029
    https://github.com/owncloud/owncloud-design-system/pull/2218
+
+
+* Enhancement - Add offset property to the drop component: [#7335](https://github.com/owncloud/web/issues/7335)
+
+   We've added an offset property to the drop component to define a custom offset. Also, the max
+   width of drop menus was increased to 400px.
+
+   https://github.com/owncloud/web/issues/7335
+   https://github.com/owncloud/owncloud-design-system/pull/2276
 
 
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
