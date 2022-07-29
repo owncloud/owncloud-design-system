@@ -17,6 +17,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - OcTable emit event data on row click: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
+* Enhancement - Adjust avatar font weight from bold to normal: [#2275](https://github.com/owncloud/owncloud-design-system/pull/2275)
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
@@ -112,6 +113,11 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/owncloud-design-system/issues/2238
    https://github.com/owncloud/owncloud-design-system/pull/2239
+
+
+* Enhancement - Adjust avatar font weight from bold to normal: [#2275](https://github.com/owncloud/owncloud-design-system/pull/2275)
+
+   https://github.com/owncloud/owncloud-design-system/pull/2275
 
 
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
