@@ -148,7 +148,7 @@ export default {
 
 <style lang="scss">
 .oc-avatar {
-  font-weight: bold;
+  font-weight: normal;
   align-items: center;
   justify-content: center;
   text-align: center;
