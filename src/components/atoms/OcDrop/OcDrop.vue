@@ -110,6 +110,14 @@ export default {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
       },
     },
+    /**
+     * Determines the offset of the drop element. The value can work on both axes by using a string in the form "x, y", such as "50, 20".
+     */
+    offset: {
+      type: String,
+      required: false,
+      default: undefined,
+    },
   },
   data() {
     return { tippy: null }
@@ -158,6 +166,8 @@ export default {
       interactive: true,
       plugins: [hideOnEsc],
       theme: "none",
+      maxWidth: 400,
+      offset: this.offset,
       aria: {
         content: "describedby",
       },
