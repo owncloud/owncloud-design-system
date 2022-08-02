@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OcFileTag uses correct component when type is specified 1`] = `<button class="oc-file-tag oc-file-tag-m oc-tag-button"></button>`;
