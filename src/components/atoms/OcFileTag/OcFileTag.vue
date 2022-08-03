@@ -10,8 +10,7 @@ import { getSizeClass } from "../../../utils/sizeClasses"
 
 export default {
   name: "OcFileTag",
-  status: "ready",
-  release: "2.0.0",
+  status: "unreleased",
 
   props: {
     /**
@@ -86,6 +85,8 @@ export default {
   &-s {
     font-size: 0.75rem;
     padding: var(--oc-space-xsmall);
+    padding-left: var(--oc-space-small);
+    padding-right: var(--oc-space-small);
   }
 
   &-m {

@@ -1,0 +1,5 @@
+Enhancement: Add OcFileTag component
+
+We've added a new tag component to support display of file tags
+
+https://github.com/owncloud/owncloud-design-system/pull/2283
