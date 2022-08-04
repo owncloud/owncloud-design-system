@@ -46,6 +46,9 @@ export default {
       },
     },
 
+    /**
+     * Enables fully rounded borders
+     */
     rounded: {
       type: Boolean,
       default: false,
