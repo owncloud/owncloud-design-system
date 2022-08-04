@@ -45,6 +45,15 @@ export default {
         return value.match(/(small|medium|large)/)
       },
     },
+
+    /**
+     * Enables fully rounded borders
+     */
+    rounded: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
   },
 
   computed: {
@@ -54,6 +63,10 @@ export default {
       this.type === "router-link" || this.type === "a"
         ? classes.push("oc-tag-link")
         : classes.push(`oc-tag-${this.type}`)
+
+      if (this.rounded) {
+        classes.push("oc-tag-rounded")
+      }
 
       return classes
     },
@@ -98,6 +111,12 @@ export default {
     font-size: 1.5rem;
     min-height: 2.75rem;
     padding: var(--oc-space-small) var(--oc-space-medium);
+  }
+
+  &-rounded {
+    border-radius: 99px;
+    padding-left: var(--oc-space-small);
+    padding-right: var(--oc-space-small);
   }
 
   .oc-icon > svg {
