@@ -49,8 +49,8 @@ export default {
     rounded: {
       type: Boolean,
       default: false,
-      required: false
-    }
+      required: false,
+    },
   },
 
   computed: {
@@ -60,9 +60,9 @@ export default {
       this.type === "router-link" || this.type === "a"
         ? classes.push("oc-tag-link")
         : classes.push(`oc-tag-${this.type}`)
-      
-      if(this.rounded) {
-        classes.push("oc-tag-rounded") 
+
+      if (this.rounded) {
+        classes.push("oc-tag-rounded")
       }
 
       return classes
