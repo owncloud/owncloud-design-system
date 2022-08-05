@@ -1,5 +1,6 @@
 <template>
   <oc-drop
+    ref="drop"
     class="oc-width-1-1 oc-info-drop"
     :drop-id="dropId"
     :toggle="toggle"
