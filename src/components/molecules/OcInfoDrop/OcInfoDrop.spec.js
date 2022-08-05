@@ -1,4 +1,4 @@
-import OcContextualHelper from "./OcContextualHelper.vue"
+import OcInfoDrop from "./OcInfoDrop.vue"
 import { createLocalVue, shallowMount } from "@vue/test-utils"
 import GetTextPlugin from "vue-gettext"
 
@@ -8,9 +8,9 @@ localVue.use(GetTextPlugin, {
   silent: true,
 })
 
-describe("OcContextualHelper", () => {
+describe("OcInfoDrop", () => {
   function getWrapperWithProps(props) {
-    return shallowMount(OcContextualHelper, {
+    return shallowMount(OcInfoDrop, {
       localVue: localVue,
       propsData: props,
       stubs: {
