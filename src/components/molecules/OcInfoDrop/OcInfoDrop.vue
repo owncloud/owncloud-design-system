@@ -47,46 +47,78 @@ export default {
   status: "unreleased",
   components: { OcButton, OcIcon, OcDrop },
   props: {
+    /**
+     * Id of the element
+     */
     dropId: {
       type: String,
       required: false,
       default: uniqueId("oc-info-drop-"),
     },
+    /**
+     * CSS selector for the element to be used as toggle. By default, the preceding element is used
+     **/
     toggle: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * Events that cause the drop to show. Multiple event names are separated by spaces
+     *
+     * @values click, hover, manual
+     **/
     mode: {
       type: String,
       required: false,
       default: "click",
+      validator: value => {
+        return value.match(/(click|hover|manual)/)
+      },
     },
+    /**
+     * Element selector used as a target of the element
+     */
     target: {
       type: String,
       required: false,
       default: null,
     },
+    /**
+     * Title
+     */
     title: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * Text at the beginning
+     */
     text: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * List element
+     */
     list: {
       type: Array,
       required: false,
       default: () => [],
     },
+    /**
+     * Text at the end
+     */
     endText: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * Read more link at the end
+     */
     readMoreLink: {
       type: String,
       required: false,

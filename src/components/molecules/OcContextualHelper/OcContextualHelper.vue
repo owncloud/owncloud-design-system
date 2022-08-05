@@ -18,26 +18,41 @@ export default {
   status: "unreleased",
   components: { OcButton, OcIcon, OcInfoDrop },
   props: {
+    /**
+     * Title
+     */
     title: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * Text at the beginning
+     */
     text: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * List element
+     */
     list: {
       type: Array,
       required: false,
       default: () => [],
     },
+    /**
+     * Text at the end
+     */
     endText: {
       type: String,
       required: false,
       default: "",
     },
+    /**
+     * Read more link at the end
+     */
     readMoreLink: {
       type: String,
       required: false,
