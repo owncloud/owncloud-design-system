@@ -1,39 +1,45 @@
 <template>
-    <oc-drop class="oc-width-1-1 oc-info-drop" :drop-id="dropId" :toggle="toggle" :mode="mode" close-on-click>
-      <div class="info-drop-content">
-        <div v-if="title" class="oc-flex oc-flex-between info-header oc-border-b oc-pb-s">
-          <span class="oc-m-rm info-title" v-text="title" />
-          <oc-button appearance="raw">
-            <oc-icon name="close" fill-type="line" size="medium" />
-          </oc-button>
-        </div>
-        <p class="info-text" v-text="text" />
-        <dl v-if="list.length" class="info-list">
-          <component :is="item.headline ? 'dt' : 'dd'" v-for="(item, index) in list" :key="index">
-            {{ item.text }}
-          </component>
-        </dl>
-        <p v-if="endText" class="info-text-end" v-text="endText" />
-        <oc-button
-          v-if="readMoreLink"
-          v-translate
-          type="a"
-          appearance="raw"
-          size="small"
-          class="info-more-link"
-          :href="readMoreLink"
-          target="_blank"
-          >Read more</oc-button
-        >
+  <oc-drop
+    class="oc-width-1-1 oc-info-drop"
+    :drop-id="dropId"
+    :toggle="toggle"
+    :mode="mode"
+    close-on-click
+  >
+    <div class="info-drop-content">
+      <div v-if="title" class="oc-flex oc-flex-between info-header oc-border-b oc-pb-s">
+        <span class="oc-m-rm info-title" v-text="title" />
+        <oc-button appearance="raw">
+          <oc-icon name="close" fill-type="line" size="medium" />
+        </oc-button>
       </div>
-    </oc-drop>
+      <p class="info-text" v-text="text" />
+      <dl v-if="list.length" class="info-list">
+        <component :is="item.headline ? 'dt' : 'dd'" v-for="(item, index) in list" :key="index">
+          {{ item.text }}
+        </component>
+      </dl>
+      <p v-if="endText" class="info-text-end" v-text="endText" />
+      <oc-button
+        v-if="readMoreLink"
+        v-translate
+        type="a"
+        appearance="raw"
+        size="small"
+        class="info-more-link"
+        :href="readMoreLink"
+        target="_blank"
+        >Read more</oc-button
+      >
+    </div>
+  </oc-drop>
 </template>
 
 <script>
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcDrop from "../../atoms/OcDrop/OcDrop.vue"
-import uniqueId from "../../../utils/uniqueId";
+import uniqueId from "../../../utils/uniqueId"
 
 export default {
   name: "OcInfoDrop",
@@ -58,7 +64,7 @@ export default {
     target: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     title: {
       type: String,
