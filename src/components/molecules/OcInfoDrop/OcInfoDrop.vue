@@ -1,9 +1,5 @@
 <template>
-  <div class="oc-contextual-helper">
-    <oc-button :id="buttonId" appearance="raw">
-      <oc-icon name="question" fill-type="line" size="small" />
-    </oc-button>
-    <oc-drop class="oc-width-1-1" :drop-id="dropId" :toggle="toggleId" mode="click" close-on-click>
+    <oc-drop class="oc-width-1-1 oc-info-drop" :drop-id="dropId" :toggle="toggle" :mode="mode" close-on-click>
       <div class="info-drop-content">
         <div v-if="title" class="oc-flex oc-flex-between info-header oc-border-b oc-pb-s">
           <span class="oc-m-rm info-title" v-text="title" />
@@ -31,20 +27,39 @@
         >
       </div>
     </oc-drop>
-  </div>
 </template>
 
 <script>
-import uniqueId from "../../../utils/uniqueId"
 import OcButton from "../../atoms/OcButton/OcButton.vue"
 import OcIcon from "../../atoms/OcIcon/OcIcon.vue"
 import OcDrop from "../../atoms/OcDrop/OcDrop.vue"
+import uniqueId from "../../../utils/uniqueId";
 
 export default {
-  name: "OcContextualHelper",
+  name: "OcInfoDrop",
   status: "unreleased",
   components: { OcButton, OcIcon, OcDrop },
   props: {
+    dropId: {
+      type: String,
+      required: false,
+      default: uniqueId("oc-info-drop-"),
+    },
+    toggle: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    mode: {
+      type: String,
+      required: false,
+      default: "click",
+    },
+    target: {
+      type: String,
+      required: false,
+      default: null
+    },
     title: {
       type: String,
       required: false,
@@ -71,26 +86,12 @@ export default {
       default: "",
     },
   },
-  computed: {
-    dropId() {
-      return uniqueId("oc-contextual-helper-")
-    },
-    buttonId() {
-      return `${this.dropId}-button`
-    },
-    toggleId() {
-      return `#${this.buttonId}`
-    },
-  },
 }
 </script>
 
 <style lang="scss">
-.oc-contextual-helper {
+.oc-info-drop {
   display: inline-block;
-  .oc-button {
-    vertical-align: middle;
-  }
   .info-drop-content {
     font-size: var(--oc-font-size-small);
     color: var(--oc-color-text-default);
@@ -128,7 +129,7 @@ A simple example, using only text.
 ```js
 <template>
   <div>
-    <oc-contextual-helper v-bind="helperContent"/>
+    <oc-info-drop v-bind="helperContent"/>
   </div>
 </template>
 <script>
@@ -148,7 +149,7 @@ An example using Title, Text, List, End-Text and Read-More-Link properties.
 ```js
 <template>
   <div>
-    <oc-contextual-helper v-bind="helperContent"/>
+    <oc-info-drop v-bind="helperContent"/>
   </div>
 </template>
 <script>
