@@ -3,7 +3,7 @@
     <oc-button :id="buttonId" appearance="raw">
       <oc-icon name="question" fill-type="line" size="small" />
     </oc-button>
-    <oc-info-drop :drop-id="dropId" :toggle="toggleId"/>
+    <oc-info-drop :drop-id="dropId" :toggle="toggleId" v-bind="$attrs"/>
   </div>
 </template>
 
@@ -64,34 +64,6 @@ export default {
   .oc-button {
     vertical-align: middle;
   }
-  .info-drop-content {
-    font-size: var(--oc-font-size-small);
-    color: var(--oc-color-text-default);
-  }
-  .info-more-link {
-    font-size: var(--oc-font-size-small) !important;
-  }
-  .info-header {
-    align-items: center;
-  }
-  .info-title {
-    font-size: 1.125rem;
-    font-weight: normal;
-  }
-  .info-list {
-    dt {
-      &:first-child {
-        margin-top: 0;
-      }
-      font-weight: bold;
-      margin-bottom: var(--oc-space-xsmall);
-      margin-top: var(--oc-space-small);
-    }
-    dd {
-      margin-left: 0;
-      font-weight: normal;
-    }
-  }
 }
 </style>
 
@@ -109,7 +81,7 @@ export default {
   computed: {
     helperContent() {
       return {
-        text: this.$gettext("Invite persons or groups to access this file or folder."),
+        text: "Invite persons or groups to access this file or folder.",
       }
     }
   },
@@ -129,15 +101,15 @@ export default {
   computed: {
     helperContent() {
       return {
-        title: this.$gettext('Choose how access is granted '),
-        text: this.$gettext("Share a file or folder by link"),
+        title: 'Choose how access is granted ',
+        text: "Share a file or folder by link",
         list: [
-          {text: this.$gettext("Only invited people can access"), headline: true},
-          {text: this.$gettext("Only people from the list \"Invited people\" can access. If there is no list, no people are invited yet.")},
-          {text: this.$gettext("Everyone with the link"), headline: true },
-          {text: this.$gettext("Everyone with the link can access. Note: If you share this link with people from the list \"Invited people\", they need to login-in so that their individual assigned permissions can take effect. If they are not logged-in, the permissions of the link take effect.") }
+          {text: "Only invited people can access", headline: true},
+          {text: "Only people from the list \"Invited people\" can access. If there is no list, no people are invited yet."},
+          {text: "Everyone with the link", headline: true },
+          {text: "Everyone with the link can access. Note: If you share this link with people from the list \"Invited people\", they need to login-in so that their individual assigned permissions can take effect. If they are not logged-in, the permissions of the link take effect." }
         ],
-        endText: this.$gettext("Invited persons can not see who else has access"),
+        endText: "Invited persons can not see who else has access",
         readMoreLink: "https://owncloud.design"
       }
     }
