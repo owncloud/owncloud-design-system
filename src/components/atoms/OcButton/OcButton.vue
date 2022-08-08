@@ -203,7 +203,7 @@ export default {
     background-color: transparent;
     border-style: none;
     color: $color;
-    font-size: 0.88rem;
+    font-size: var(--oc-font-size-small);
     font-weight: normal;
     min-height: 0;
     padding: 0;
@@ -323,7 +323,7 @@ export default {
   &-s {
     @include oc-button-line-height(0.7);
 
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     min-height: 1.2rem;
   }
 
@@ -337,7 +337,7 @@ export default {
   &-l {
     @include oc-button-line-height(1.5);
 
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     min-height: 2rem;
   }
 

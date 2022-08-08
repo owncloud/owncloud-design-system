@@ -219,7 +219,7 @@ export default {
     a,
     button,
     span {
-      font-size: 0.88rem;
+      font-size: var(--oc-font-size-small);
     }
   }
 
