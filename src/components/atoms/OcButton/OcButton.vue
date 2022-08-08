@@ -264,7 +264,7 @@ export default {
   color: var(--oc-color-text-inverse);
   display: inline-flex;
   font-weight: 400;
-  padding: .4rem .7rem;
+  padding: 0.4rem 0.7rem;
   text-align: center;
   text-decoration: none;
 
