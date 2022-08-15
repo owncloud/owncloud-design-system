@@ -258,7 +258,7 @@ export default {
   @include oc-button-line-height(1);
 
   align-items: center;
-  border: 1px solid;
+  border: 1px solid transparent;
   border-color: transparent;
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
@@ -362,8 +362,8 @@ export default {
     &-filled {
       @extend .oc-background-primary-gradient;
       color: var(--oc-color-swatch-inverse-default) !important;
-      padding: calc(0.4rem + 1px) 0.7rem;
-      border: 0px;
+      /*padding: calc(0.4rem + 1px) 0.7rem;
+      border: 0px;*/
 
       span > svg {
         fill: var(--oc-color-swatch-inverse-default) !important;
