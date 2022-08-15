@@ -212,15 +212,15 @@
     "font_heading": {
       "type": "...",
       "category": "font",
-      "value": "'Roboto', sans-serif",
-      "originalValue": "'Roboto', sans-serif",
+      "value": "'Nunito', sans-serif",
+      "originalValue": "'Nunito', sans-serif",
       "name": "font_heading"
     },
     "font_text": {
       "type": "...",
       "category": "font",
-      "value": "'Roboto', sans-serif",
-      "originalValue": "'Roboto', sans-serif",
+      "value": "'Nunito', sans-serif",
+      "originalValue": "'Nunito', sans-serif",
       "name": "font_text"
     },
     "weight_bold": {

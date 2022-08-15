@@ -1,7 +1,7 @@
 ---
 font:
   text:
-    value: "'Roboto', sans-serif"
+    value: "'Nunito', sans-serif"
   weight:
     bold:
       value: '700'
