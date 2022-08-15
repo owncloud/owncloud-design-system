@@ -363,6 +363,7 @@ export default {
       @extend .oc-background-primary-gradient;
       color: var(--oc-color-swatch-inverse-default) !important;
       padding: calc(0.4rem + 1px) 0.7rem;
+      border: 0px;
 
       span > svg {
         fill: var(--oc-color-swatch-inverse-default) !important;
