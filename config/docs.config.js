@@ -17,7 +17,7 @@ module.exports = {
     maxWidth: "100%",
     sidebarWidth: 240,
     fontFamily: {
-      base: ["'Nunito'", "sans-serif"],
+      base: ["'Nunito Sans'", "sans-serif"],
       monospace: ["Consolas", "'Liberation Mono'", "Menlo", "monospace"],
     },
   },

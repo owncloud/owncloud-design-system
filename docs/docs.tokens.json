@@ -212,15 +212,15 @@
     "font_heading": {
       "type": "...",
       "category": "font",
-      "value": "'Nunito', sans-serif",
-      "originalValue": "'Nunito', sans-serif",
+      "value": "'Nunito Sans', sans-serif",
+      "originalValue": "'Nunito Sans', sans-serif",
       "name": "font_heading"
     },
     "font_text": {
       "type": "...",
       "category": "font",
-      "value": "'Nunito', sans-serif",
-      "originalValue": "'Nunito', sans-serif",
+      "value": "'Nunito Sans', sans-serif",
+      "originalValue": "'Nunito Sans', sans-serif",
       "name": "font_text"
     },
     "weight_bold": {

@@ -7,6 +7,7 @@
 
 import "./styles/styles.scss"
 import { getSizeClass } from "./utils/sizeClasses.js"
+import './utils/webFontLoader.js'
 
 const exportContext = ctx =>
   ctx.keys().reduce((acc, key) => {

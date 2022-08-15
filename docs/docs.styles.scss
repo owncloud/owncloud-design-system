@@ -231,7 +231,7 @@ p[class^="rsg--version"] {
   @include inset-squish-space($space-xs);
   margin: $space-xs 0 0;
   color: $color-bleu-de-france;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: $oc-docs-font-weight-normal;
   display: inline-block;
   line-height: $oc-docs-line-height-xsmall;
@@ -551,7 +551,7 @@ div[class^="rsg--root"] div[class^="rsg--tabs"] {
 
 // Status label is shown in top right corner for each component
 .status {
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: $oc-docs-font-weight-normal;
   order: 1;
   align-self: flex-end;

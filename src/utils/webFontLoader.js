@@ -6,6 +6,6 @@ import WebFont from "webfontloader"
 
 WebFont.load({
   google: {
-    families: ["Nunito:300,400,400i,600,700"],
-  },
+    families: ["Nunito Sans"],
+  }
 })
