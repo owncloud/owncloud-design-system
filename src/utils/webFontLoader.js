@@ -5,7 +5,10 @@
 import WebFont from "webfontloader"
 
 WebFont.load({
-  google: {
+  custom: {
     families: ["Nunito Sans"],
-  },
+    urls: [
+      '/fonts/nunito.css'
+    ]
+  }
 })
