@@ -3,13 +3,13 @@
  * (the odd formatting hence most of the classes are dynamic)
  */
 
-@import '../src/assets/tokens/docs';
 @import '../src/assets/tokens/ods';
-@import './docs.tokens';
-@import './docs.mixins';
-@import './docs.functions';
-@import './docs.spacing';
 @import '../src/styles/styles';
+@import './docs.font';
+@import './docs.functions';
+@import './docs.mixins';
+@import './docs.spacing';
+@import './docs.tokens';
 
 /* LOCAL DESIGN TOKENS
 --------------------------------------------- */
@@ -231,7 +231,7 @@ p[class^="rsg--version"] {
   @include inset-squish-space($space-xs);
   margin: $space-xs 0 0;
   color: $color-bleu-de-france;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: $oc-docs-font-face;
   font-weight: $oc-docs-font-weight-normal;
   display: inline-block;
   line-height: $oc-docs-line-height-xsmall;
@@ -456,7 +456,7 @@ div[class^="rsg--tab"] {
       letter-spacing: 1px;
       font-size: $size-s;
       font-weight: $oc-docs-font-weight-normal;
-      font-family: $oc-docs-font-text;
+      font-family: $oc-docs-font-face;
       line-height: $oc-docs-line-height-small;
       @include inset-squish-space($space-s);
       cursor: pointer;
@@ -551,7 +551,7 @@ div[class^="rsg--root"] div[class^="rsg--tabs"] {
 
 // Status label is shown in top right corner for each component
 .status {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: $oc-docs-font-face;
   font-weight: $oc-docs-font-weight-normal;
   order: 1;
   align-self: flex-end;

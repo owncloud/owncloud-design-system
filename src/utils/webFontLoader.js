@@ -7,8 +7,6 @@ import WebFont from "webfontloader"
 WebFont.load({
   custom: {
     families: ["Nunito Sans"],
-    urls: [
-      '/fonts/nunito.css'
-    ]
-  }
+    urls: ["/fonts/nunito.css"],
+  },
 })
