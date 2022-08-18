@@ -1,7 +1,7 @@
 ---
 font:
   face:
-    value: '"Nunito Sans", sans-serif'
+    value: 'Inter, sans-serif'
   weight:
     bold:
       value: '700'

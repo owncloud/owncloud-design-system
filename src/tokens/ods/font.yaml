@@ -1,7 +1,7 @@
 ---
 font:
   family:
-    value: '"Nunito Sans", sans-serif'
+    value: 'Inter, sans-serif'
   size:
     default:
       value: 0.88rem
