@@ -71,6 +71,7 @@ export default {
 .oc-resource-icon {
   display: inline-flex;
   align-items: center;
+  vertical-align: middle;
   &-file svg {
     height: 70%;
   }

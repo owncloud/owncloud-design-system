@@ -5,7 +5,8 @@
 import WebFont from "webfontloader"
 
 WebFont.load({
-  google: {
-    families: ["Roboto:300,400,400i,600,700"],
+  custom: {
+    families: ["Inter"],
+    urls: ["/fonts/inter.css"],
   },
 })

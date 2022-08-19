@@ -10,7 +10,11 @@ p {
 }
 
 html * {
-  font-family: Roboto, sans-serif;
+  font-family: var(--oc-font-family);
+}
+
+html {
+  font-size: var(--oc-font-size-default);
 }
 
 a {
@@ -22,18 +26,16 @@ a {
   }
 }
 
-.oc-text-bold {
-  font-weight: 600 !important;
-}
-
-.oc-text-muted {
-  color: var(--oc-color-text-muted);
-}
-
 .oc-heading-divider {
   border-bottom: calc(0.2px + 0.05em) solid var(--oc-color-border);
   padding-bottom: calc(5px + 0.1em);
 }
+
+/* -------------------------- */
+
+/* --- wrapping behaviour --- */
+
+/* -------------------------- */
 
 /*
  * Prevent text from wrapping onto multiple lines
@@ -75,48 +77,123 @@ td.oc-text-break {
   word-break: break-all;
 }
 
-.oc-text-meta {
-  color: var(--oc-color-text-muted);
-  font-size: 0.875rem;
-  line-height: 1.4;
+/* ----------------------- */
+
+/* --- different sizes --- */
+
+/* ----------------------- */
+
+/*
+ * x-small text size as defined by the `oc-font-size-xsmall` theme token.
+ * By default 0.72rem.
+ */
+.oc-text-xsmall {
+  font-size: var(--oc-font-size-xsmall);
 }
 
-.oc-text-initial {
-  font-size: 1rem;
-}
-
+/*
+ * x-small text size as defined by the `oc-font-size-small` theme token.
+ * By default 0.86rem.
+ */
 .oc-text-small {
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--oc-font-size-small);
 }
 
+/*
+ * medium text size as defined by the `oc-font-size-medium` theme token.
+ * By default 1rem. This is the base font size as defined on the html document.
+ */
+.oc-text-medium {
+  font-size: var(--oc-font-size-medium);
+}
+
+/*
+ * large text size as defined by the `oc-font-size-large` theme token.
+ * By default 1.14rem.
+ */
+.oc-text-large {
+  font-size: var(--oc-font-size-large);
+}
+
+/*
+ * x-large text size as defined by the `oc-font-size-xlarge` theme token.
+ * By default 1.29rem.
+ */
+.oc-text-xlarge {
+  font-size: var(--oc-font-size-xlarge);
+}
+
+/* ------------------------- */
+
+/* --- different weights --- */
+
+/* ------------------------- */
+
+/*
+ * Normal font weight.
+ */
 .oc-text-normal {
   font-weight: 400;
 }
 
-.oc-text-large {
-  font-size: 1.5rem;
-  line-height: 1.5;
+/*
+ * Bold font weight.
+ */
+.oc-text-bold {
+  font-weight: 600;
 }
 
-.oc-text-lead {
-  color: var(--oc-color-text-default);
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
+/* ----------------- */
 
+/* --- alignment --- */
+
+/* ----------------- */
+
+/*
+ * Align horizontally centered.
+ */
 .oc-text-center {
   text-align: center;
 }
 
+/*
+ * Align horizontally left.
+ */
 .oc-text-left {
   text-align: left;
 }
 
+/*
+ * Align horizontally right.
+ */
 .oc-text-right {
   text-align: right;
 }
 
+/* ------------------------- */
+
+/* --- special modifiers --- */
+
+/* ------------------------- */
+
+/*
+ * Give text a muted color and small size.
+ */
+.oc-text-meta {
+  color: var(--oc-color-text-muted);
+  font-size: var(--oc-font-size-small);
+}
+
+/*
+ * Give text a muted color.
+ */
+.oc-text-muted {
+  color: var(--oc-color-text-muted);
+}
+
+/*
+ * Transform text to all uppercase
+ */
 .oc-text-uppercase {
   text-transform: uppercase !important;
 }

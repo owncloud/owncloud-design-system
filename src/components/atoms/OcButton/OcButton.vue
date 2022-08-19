@@ -203,7 +203,7 @@ export default {
     background-color: transparent;
     border-style: none;
     color: $color;
-    font-size: 1rem;
+    font-size: var(--oc-font-size-medium);
     font-weight: normal;
     min-height: 0;
     padding: 0;
@@ -258,13 +258,12 @@ export default {
   @include oc-button-line-height(1);
 
   align-items: center;
-  border: 1px solid;
-  border-color: transparent;
+  border: 1px solid transparent;
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
   display: inline-flex;
   font-weight: 400;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.7rem;
   text-align: center;
   text-decoration: none;
 
@@ -323,21 +322,21 @@ export default {
   &-s {
     @include oc-button-line-height(0.7);
 
-    font-size: 0.9rem;
+    font-size: var(--oc-font-size-small);
     min-height: 1.2rem;
   }
 
   &-m {
     @include oc-button-line-height(1);
 
-    font-size: 1.125rem;
+    font-size: var(--oc-font-size-medium);
     min-height: $global-control-height;
   }
 
   &-l {
     @include oc-button-line-height(1.5);
 
-    font-size: 1.5rem;
+    font-size: var(--oc-font-size-xlarge);
     min-height: 2rem;
   }
 
@@ -362,13 +361,6 @@ export default {
     &-filled {
       @extend .oc-background-primary-gradient;
       color: var(--oc-color-swatch-inverse-default) !important;
-
-      border: 1px solid
-        linear-gradient(
-          90deg,
-          var(--oc-color-swatch-primary-muted) 0%,
-          var(--oc-color-swatch-primary-gradient) 100%
-        ) !important;
 
       span > svg {
         fill: var(--oc-color-swatch-inverse-default) !important;

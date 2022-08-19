@@ -4,6 +4,8 @@
   Remove this file if you want docs to use your renamed global tokens.
 --------------------------------------------- */
 
+@import '../src/assets/tokens/docs';
+
 $color-ucla-gold: rgb(255, 186, 10) !default;
 $color-ucla-gold-darker: rgb(179, 128, 0) !default;
 $color-vermilion-lighter: rgb(244, 151, 138) !default;
@@ -33,8 +35,8 @@ $size-m: 16px !default;
 $size-s: 13px !default;
 $size-xs: 11px !default;
 
-$font-heading: "Roboto", sans-serif !default;
-$font-text: "Roboto", sans-serif !default;
+$font-heading: $oc-docs-font-face !default;
+$font-text: $oc-docs-font-face !default;
 
 $weight-bold: 700 !default;
 $weight-semi-bold: 600 !default;

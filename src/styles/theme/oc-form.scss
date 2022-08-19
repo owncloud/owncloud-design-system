@@ -48,15 +48,15 @@ $form-disabled-color: var(--oc-color-text-muted) !default;
 
 $form-placeholder-color: var(--oc-color-text-muted) !default;
 
-$form-small-height: var(--oc-font-size-default) !default;
-$form-small-padding-horizontal: 8px !default;
+$form-small-height: var(--oc-font-size-small) !default;
+$form-small-padding-horizontal: var(--oc-space-small) !default;
 $form-small-line-height: $form-small-height !default;
-$form-small-font-size: var(--oc-font-size-default) !default;
+$form-small-font-size: var(--oc-font-size-small) !default;
 
 $form-large-height: var(--oc-font-size-large) !default;
-$form-large-padding-horizontal: 12px !default;
+$form-large-padding-horizontal: var(--oc-space-medium) !default;
 $form-large-line-height: $form-large-height !default;
-$form-large-font-size: var(--oc-font-size-default) !default;
+$form-large-font-size: var(--oc-font-size-large) !default;
 
 $form-danger-color: var(--oc-color-swatch-danger-default) !default;
 $form-success-color: var(--oc-color-swatch-success-default) !default;
