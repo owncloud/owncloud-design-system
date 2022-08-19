@@ -322,21 +322,21 @@ export default {
   &-s {
     @include oc-button-line-height(0.7);
 
-    font-size: 0.875rem;
+    font-size: var(--oc-font-size-small);
     min-height: 1.2rem;
   }
 
   &-m {
     @include oc-button-line-height(1);
 
-    font-size: 1rem;
+    font-size: var(--oc-font-size-medium);
     min-height: $global-control-height;
   }
 
   &-l {
     @include oc-button-line-height(1.5);
 
-    font-size: 1.375rem;
+    font-size: var(--oc-font-size-xlarge);
     min-height: 2rem;
   }
 
