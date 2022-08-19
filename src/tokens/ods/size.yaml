@@ -10,7 +10,7 @@ size:
     small:
       value: 50px
     table-row:
-      value: 46px
+      value: 40px
   width:
     xsmall:
       value: 100px
@@ -21,4 +21,4 @@ size:
   icon-default:
     value: 22px
   form-check-default:
-    value: 16px
+    value: 14px
