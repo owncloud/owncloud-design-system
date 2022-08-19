@@ -12,6 +12,7 @@ p {
 html * {
   font-family: var(--oc-font-family);
 }
+
 html {
   font-size: var(--oc-font-size-default);
 }
@@ -31,7 +32,9 @@ a {
 }
 
 /* -------------------------- */
+
 /* --- wrapping behaviour --- */
+
 /* -------------------------- */
 
 /*
@@ -49,10 +52,12 @@ a {
   max-width: 100%;
   overflow: hidden;
 }
+
 .oc-text-truncate {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 th.oc-text-truncate,
 td.oc-text-truncate {
   max-width: 0;
@@ -66,13 +71,16 @@ td.oc-text-truncate {
   white-space: unset;
   word-wrap: break-word;
 }
+
 th.oc-text-break,
 td.oc-text-break {
   word-break: break-all;
 }
 
 /* ----------------------- */
+
 /* --- different sizes --- */
+
 /* ----------------------- */
 
 /*
@@ -116,7 +124,9 @@ td.oc-text-break {
 }
 
 /* ------------------------- */
+
 /* --- different weights --- */
+
 /* ------------------------- */
 
 /*
@@ -125,6 +135,7 @@ td.oc-text-break {
 .oc-text-normal {
   font-weight: 400;
 }
+
 /*
  * Bold font weight.
  */
@@ -133,7 +144,9 @@ td.oc-text-break {
 }
 
 /* ----------------- */
+
 /* --- alignment --- */
+
 /* ----------------- */
 
 /*
@@ -158,7 +171,9 @@ td.oc-text-break {
 }
 
 /* ------------------------- */
+
 /* --- special modifiers --- */
+
 /* ------------------------- */
 
 /*
@@ -168,6 +183,7 @@ td.oc-text-break {
   color: var(--oc-color-text-muted);
   font-size: var(--oc-font-size-small);
 }
+
 /*
  * Give text a muted color.
  */
