@@ -159,7 +159,7 @@ export default {
     @extend .oc-mb-rm;
 
     display: block;
-    font-size: var(--oc-font-size-medium);
+    font-size: var(--oc-font-size-large);
 
     &-arrow-icon {
       position: absolute;

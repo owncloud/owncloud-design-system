@@ -135,11 +135,11 @@ export default {
     vertical-align: middle;
   }
   .info-drop-content {
-    font-size: var(--oc-font-size-small);
+    font-size: var(--oc-font-size-medium);
     color: var(--oc-color-text-default);
   }
   .info-more-link {
-    font-size: var(--oc-font-size-small) !important;
+    font-size: var(--oc-font-size-medium) !important;
   }
   .info-header {
     align-items: center;

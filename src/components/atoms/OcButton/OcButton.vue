@@ -203,7 +203,7 @@ export default {
     background-color: transparent;
     border-style: none;
     color: $color;
-    font-size: var(--oc-font-size-small);
+    font-size: var(--oc-font-size-medium);
     font-weight: normal;
     min-height: 0;
     padding: 0;
