@@ -68,7 +68,7 @@
   "oc-font-size-xsmall": {"value":"0.72rem","name":"oc-font-size-xsmall","type":"number","category":"font","info":{}},
   "oc-size-form-check-default": {"value":"14px","name":"oc-size-form-check-default","type":"number","category":"size","info":{}},
   "oc-size-height-small": {"value":"50px","name":"oc-size-height-small","type":"number","category":"size","info":{}},
-  "oc-size-height-table-row": {"value":"40px","name":"oc-size-height-table-row","type":"number","category":"size","info":{}},
+  "oc-size-height-table-row": {"value":"42px","name":"oc-size-height-table-row","type":"number","category":"size","info":{}},
   "oc-size-icon-default": {"value":"22px","name":"oc-size-icon-default","type":"number","category":"size","info":{}},
   "oc-size-max-height-logo": {"value":"60px","name":"oc-size-max-height-logo","type":"number","category":"size","info":{}},
   "oc-size-max-width-logo": {"value":"150px","name":"oc-size-max-width-logo","type":"number","category":"size","info":{}},
