@@ -10,7 +10,7 @@ size:
     small:
       value: 50px
     table-row:
-      value: 40px
+      value: 42px
   width:
     xsmall:
       value: 100px
