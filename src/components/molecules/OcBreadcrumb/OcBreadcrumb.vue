@@ -193,9 +193,6 @@ export default {
       display: inline;
     }
 
-    > li a,
-    > li button,
-    > li span,
     > :nth-child(n + 2)::before {
       color: var(--oc-color-text-default);
       display: inline-block;
@@ -216,10 +213,14 @@ export default {
 
   /* stylelint-disable */
   &-list-item {
-    a,
-    button,
-    span {
+    a:first-of-type,
+    button:first-of-type,
+    span:first-of-type {
       font-size: var(--oc-font-size-medium);
+      color: var(--oc-color-text-default);
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
     }
   }
 
