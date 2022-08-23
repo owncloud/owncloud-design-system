@@ -15,6 +15,7 @@ html * {
 
 html {
   font-size: var(--oc-font-size-default);
+  font-feature-settings: "cv11";
 }
 
 a {
