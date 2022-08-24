@@ -3,8 +3,4 @@ Enhancement: Use Inter font
 We've switched the default font from Roboto to Inter.
 
 https://github.com/owncloud/owncloud-design-system/pull/2270
-
-
-Use single-storey-letter "a" so that the letter "a" is aligned with the "rounded" letters and figures
-
 https://github.com/owncloud/owncloud-design-system/pull/2299
