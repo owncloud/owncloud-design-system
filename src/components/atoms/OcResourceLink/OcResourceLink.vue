@@ -5,11 +5,10 @@
     v-if="isResourceClickable"
     :target="linkTargetBlank"
     :aria-describedby="opensInNewWindowDescriptionId"
-    @drop="test"
+    draggable="false"
     @dragstart.native.prevent.stop
     @click.stop="emitClick"
     @click.native.stop
-    draggable=false
   >
     <slot :opens-in-new-window-description-id="opensInNewWindowDescriptionId" />
   </component>
@@ -92,9 +91,6 @@ export default {
     },
   },
   methods: {
-    test() {
-      alert("23424")
-    },
     emitClick() {
       if (this.isFolder) {
         return
