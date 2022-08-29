@@ -5,6 +5,8 @@
     v-if="isResourceClickable"
     :target="linkTargetBlank"
     :aria-describedby="opensInNewWindowDescriptionId"
+    draggable="false"
+    @dragstart.native.prevent.stop
     @click.stop="emitClick"
     @click.native.stop
   >
