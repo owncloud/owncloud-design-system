@@ -1,0 +1,5 @@
+Bugfix: Firefox drag & drop move of folders not possible
+
+We've fixed a bug in firefox which caused drag & drop move to redirect the page.
+
+https://github.com/owncloud/web/issues/7495
