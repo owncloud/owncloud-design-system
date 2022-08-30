@@ -5,11 +5,11 @@
 
 .oc-card {
   background-color: var(--oc-color-background-highlight);
+  border-radius: 15px;
   box-sizing: border-box;
   color: var(--oc-color-text-default);
   position: relative;
   transition: box-shadow 0.1s ease-in-out;
-  border-radius: 15px;
 }
 
 .oc-card-header {
