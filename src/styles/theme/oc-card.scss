@@ -5,6 +5,7 @@
 
 .oc-card {
   background-color: var(--oc-color-background-highlight);
+  border-radius: 15px;
   box-sizing: border-box;
   color: var(--oc-color-text-default);
   position: relative;
@@ -18,18 +19,19 @@
 }
 
 .oc-card-title {
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-size: var(--oc-font-size-large);
+  font-weight: 600;
+  margin: 0 0 var(--oc-space-large) 0;
 }
 
 .oc-card-body {
   display: flow-root;
-  padding: 30px;
+  padding: var(--oc-space-large) var(--oc-space-large);
 }
 
 .oc-card-footer {
   display: flow-root;
-  padding: var(--oc-space-small) var(--oc-space-medium);
+  padding: var(--oc-space-medium) var(--oc-space-large);
 }
 
 .oc-card-body > :last-child,
