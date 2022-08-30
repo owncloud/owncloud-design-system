@@ -19,8 +19,8 @@
 }
 
 .oc-card-title {
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-size: var(--oc-font-size-large);
+  font-weight: 600;
   margin: 0 0 var(--oc-space-large) 0;
 }
 
