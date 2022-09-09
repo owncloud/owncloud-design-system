@@ -190,6 +190,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7537
    https://github.com/owncloud/owncloud-design-system/pull/2306
+   https://github.com/owncloud/owncloud-design-system/pull/2321
 
 
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
