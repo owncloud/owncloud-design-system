@@ -21,6 +21,7 @@
   &-card {
     @extend .oc-card;
     @extend .oc-text-center;
+    border-radius: 15px;
 
     &-title {
       @extend .oc-card-title;
