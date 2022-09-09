@@ -5,6 +5,7 @@
 
 .oc-card {
   @extend .oc-rounded;
+
   background-color: var(--oc-color-background-highlight);
   box-sizing: border-box;
   color: var(--oc-color-text-default);
