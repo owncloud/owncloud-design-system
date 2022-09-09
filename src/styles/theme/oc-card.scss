@@ -4,8 +4,9 @@
 // and shifting towards using our margin/padding helper classes
 
 .oc-card {
+  @extend .oc-rounded;
+
   background-color: var(--oc-color-background-highlight);
-  border-radius: 15px;
   box-sizing: border-box;
   color: var(--oc-color-text-default);
   position: relative;

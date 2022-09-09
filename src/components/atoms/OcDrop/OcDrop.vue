@@ -7,7 +7,7 @@
   >
     <div
       v-if="$slots.default"
-      :class="['oc-card oc-card-body oc-rounded oc-background-secondary', paddingClass]"
+      :class="['oc-card oc-card-body oc-background-secondary', paddingClass]"
     >
       <slot />
     </div>
