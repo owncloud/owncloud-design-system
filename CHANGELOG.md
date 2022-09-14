@@ -22,6 +22,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add rounded prop to OcTag: [#2284](https://github.com/owncloud/owncloud-design-system/pull/2284)
 * Enhancement - Adjust avatar font weight from bold to normal: [#2275](https://github.com/owncloud/owncloud-design-system/pull/2275)
 * Enhancement - Align breadcrumb context menu with regular context menu: [#2296](https://github.com/owncloud/owncloud-design-system/pull/2296)
+* Enhancement - Button text align left: [#7619](https://github.com/owncloud/web/issues/7619)
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - Add offset property to the drop component: [#7335](https://github.com/owncloud/web/issues/7335)
 * Enhancement - Make UI smaller: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
@@ -158,6 +159,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7493
    https://github.com/owncloud/owncloud-design-system/pull/2296
+
+
+* Enhancement - Button text align left: [#7619](https://github.com/owncloud/web/issues/7619)
+
+   We've changed the text alignment of buttons to left.
+
+   https://github.com/owncloud/web/issues/7619
+   https://github.com/owncloud/owncloud-design-system/pull/2323
 
 
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
