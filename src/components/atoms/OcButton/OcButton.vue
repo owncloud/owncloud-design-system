@@ -264,7 +264,7 @@ export default {
   display: inline-flex;
   font-weight: 400;
   padding: 0.4rem 0.7rem;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 
   &-justify-content {
