@@ -42,6 +42,10 @@
               :aria-label="checkboxLabel"
             />
           </div>
+          <div v-if="contextualHelperData" class="oc-modal-body-contextual-helper">
+            <span class="text" v-text="contextualHelperLabel" />
+            <oc-contextual-helper class="oc-pl-xs" v-bind="contextualHelperData" />
+          </div>
           <div class="oc-modal-body-actions oc-flex oc-flex-right">
             <oc-button
               class="oc-modal-body-actions-cancel"
@@ -152,6 +156,22 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    /**
+     * Contextual helper label
+     */
+    contextualHelperLabel: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    /**
+     * Contextual helper data
+     */
+    contextualHelperData: {
+      type: Object,
+      required: false,
+      default: null,
     },
     /**
      * Text of the cancel button
@@ -467,6 +487,10 @@ export default {
       margin-top: var(--oc-space-small);
     }
 
+    &-contextual-helper {
+      margin-bottom: var(--oc-space-medium);
+    }
+
     &-input {
       /* FIXME: this is ugly, but required so that the bottom padding doesn't look off when reserving vertical space for error messages below the input. */
       margin-bottom: -20px;
@@ -546,6 +570,16 @@ export default {
     button-cancel-text="Decline"
     button-confirm-text="Accept"
     button-secondary-text="Accept some"
+    class="oc-mb-l oc-position-relative"
+  />
+  <oc-modal
+    icon="information"
+    title="Accept terms of use"
+    message="Do you accept our terms of use?"
+    button-cancel-text="Decline"
+    button-confirm-text="Accept"
+    contextual-helper-label="I need more information?"
+    :contextual-helper-data="{ title: 'This is more information' }"
     class="oc-mb-l oc-position-relative"
   />
 ```
