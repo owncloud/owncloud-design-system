@@ -25,7 +25,7 @@
         @keydown.enter="onSearch"
       />
       <oc-button
-        v-if="query.length > 0"
+        v-if="query.length"
         :aria-label="$gettext('Clear search query')"
         class="oc-search-clear oc-position-small oc-position-center-right oc-mt-rm"
         appearance="raw"
@@ -46,6 +46,15 @@
         {{ buttonLabel }}
       </oc-button>
     </div>
+    <oc-button
+      v-if="showCancelButton"
+      :variation="cancelButtonVariation"
+      class="oc-ml-m"
+      appearance="raw"
+      @click="onCancel"
+    >
+      <span v-text="$gettext('Cancel')" />
+    </oc-button>
   </oc-grid>
 </template>
 
@@ -175,6 +184,33 @@ export default {
       required: false,
       default: "",
     },
+    /**
+     * Show a "cancel" button next to the search bar.
+     */
+    showCancelButton: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
+     * Variation of the cancel button
+     */
+    cancelButtonVariation: {
+      type: String,
+      required: false,
+      default: "primary",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning|inverse)/)
+      },
+    },
+    /**
+     * Handler function for when the cancel button is clicked.
+     */
+    cancelHandler: {
+      type: Function,
+      required: false,
+      default: () => {},
+    },
   },
   data: () => ({
     query: "",
@@ -236,6 +272,12 @@ export default {
        * @type {event}
        */
       this.$emit("clear")
+    },
+    onCancel() {
+      this.query = ""
+      this.onType("")
+      this.onSearch()
+      this.cancelHandler()
     },
   },
 }
@@ -345,6 +387,12 @@ export default {
       </h3>
       <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon="" />
       <div v-if="filterQuery" class="oc-m">Filter query: {{ filterQuery }}</div>
+    </section>
+    <section>
+      <h3 class="oc-heading-divider">
+        Search with cancel button
+      </h3>
+      <oc-search-bar label="Search files" placeholder="Enter search term" :type-ahead="true" :show-cancel-button="true" />
     </section>
   </div>
 </template>
