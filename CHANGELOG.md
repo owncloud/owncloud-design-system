@@ -30,6 +30,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+* Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
 * Enhancement - Use Inter font: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
 
 ## Details
@@ -228,6 +229,15 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/7082
    https://github.com/owncloud/owncloud-design-system/pull/2210
    https://github.com/owncloud/owncloud-design-system/pull/2216
+
+
+* Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
+
+   We've added to possibility to have a "cancel"-button and -handler in the `OcSearchBar`
+   component.
+
+   https://github.com/owncloud/web/issues/7617
+   https://github.com/owncloud/owncloud-design-system/pull/2328
 
 
 * Enhancement - Use Inter font: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
