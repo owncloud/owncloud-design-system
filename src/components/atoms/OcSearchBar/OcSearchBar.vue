@@ -5,44 +5,33 @@
     class="oc-search"
     :class="{ 'oc-search-small': small }"
   >
-    <div class="oc-width-expand">
-      <div class="oc-width-1-1 oc-position-relative">
-        <span v-if="icon" class="oc-search-icon" @click="focusSearchInput">
-          <oc-icon v-show="!loading" :name="icon" fill-type="line" />
-          <oc-spinner
-            v-show="loading"
-            :size="spinnerSize"
-            :aria-label="loadingAccessibleLabelValue"
-          />
-        </span>
-        <input
-          ref="searchInput"
-          :class="inputClass"
-          :aria-label="label"
-          :value="searchQuery"
-          :disabled="loading"
-          :placeholder="placeholder"
-          @input="onType($event.target.value)"
-          @keydown.enter="onSearch"
+    <div class="oc-width-expand oc-position-relative">
+      <span v-if="icon" class="oc-search-icon" @click="focusSearchInput">
+        <oc-icon v-show="!loading" :name="icon" fill-type="line" />
+        <oc-spinner
+          v-show="loading"
+          :size="spinnerSize"
+          :aria-label="loadingAccessibleLabelValue"
         />
-        <oc-button
-          v-if="query.length > 0"
-          :aria-label="$gettext('Clear search query')"
-          class="oc-search-clear oc-position-small oc-position-center-right oc-mt-rm"
-          appearance="raw"
-          @click="onClear"
-        >
-          <oc-icon name="close" size="small" variation="passive" />
-        </oc-button>
-      </div>
+      </span>
+      <input
+        ref="searchInput"
+        :class="inputClass"
+        :aria-label="label"
+        :value="searchQuery"
+        :disabled="loading"
+        :placeholder="placeholder"
+        @input="onType($event.target.value)"
+        @keydown.enter="onSearch"
+      />
       <oc-button
-        v-if="showCancelButton"
-        variation="inverse"
-        class="oc-ml-m"
+        v-if="query.length"
+        :aria-label="$gettext('Clear search query')"
+        class="oc-search-clear oc-position-small oc-position-center-right oc-mt-rm"
         appearance="raw"
-        @click="onCancel"
+        @click="onClear"
       >
-        <span v-text="$gettext('Cancel')" />
+        <oc-icon name="close" size="small" variation="passive" />
       </oc-button>
     </div>
     <div class="oc-search-button-wrapper" :class="{ 'oc-invisible-sr': buttonHidden }">
@@ -57,6 +46,15 @@
         {{ buttonLabel }}
       </oc-button>
     </div>
+    <oc-button
+      v-if="showCancelButton"
+      :variation="cancelButtonVariation"
+      class="oc-ml-m"
+      appearance="raw"
+      @click="onCancel"
+    >
+      <span v-text="$gettext('Cancel')" />
+    </oc-button>
   </oc-grid>
 </template>
 
@@ -193,6 +191,17 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    /**
+     * Variation of the cancel button
+     */
+    cancelButtonVariation: {
+      type: String,
+      required: false,
+      default: "primary",
+      validator: value => {
+        return value.match(/(passive|primary|danger|success|warning|inverse)/)
+      },
     },
     /**
      * Handler function for when the cancel button is clicked.
@@ -378,6 +387,12 @@ export default {
       </h3>
       <oc-search-bar :isFilter="true" label="Search files" placeholder="Filter Files ..." :type-ahead="true" @search="onFilter" button="Filter" icon="" />
       <div v-if="filterQuery" class="oc-m">Filter query: {{ filterQuery }}</div>
+    </section>
+    <section>
+      <h3 class="oc-heading-divider">
+        Search with cancel button
+      </h3>
+      <oc-search-bar label="Search files" placeholder="Enter search term" :type-ahead="true" :show-cancel-button="true" />
     </section>
   </div>
 </template>
