@@ -280,13 +280,6 @@ export default {
 
   min-width: $form-width-medium;
 
-  @media (max-width: 639px) {
-    .oc-width-expand {
-      display: flex;
-      width: 100%;
-    }
-  }
-
   &-button {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
