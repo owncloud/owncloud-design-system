@@ -1,7 +1,11 @@
 <template>
   <nav :class="`oc-breadcrumb oc-breadcrumb-${variation}`">
-    <ol class="oc-breadcrumb-list oc-mb-s">
-      <li v-for="(item, index) in items" :key="index" class="oc-breadcrumb-list-item">
+    <ol class="oc-breadcrumb-list oc-flex">
+      <li
+        v-for="(item, index) in items"
+        :key="index"
+        class="oc-breadcrumb-list-item oc-flex oc-flex-middle"
+      >
         <router-link v-if="item.to" :aria-current="getAriaCurrent(index)" :to="item.to">
           <span>{{ item.text }}</span>
         </router-link>
@@ -9,6 +13,7 @@
           v-if="item.to"
           color="var(--oc-color-text-default)"
           name="arrow-right-s"
+          class="oc-mx-xs"
           fill-type="line"
         />
         <oc-button
@@ -175,10 +180,7 @@ export default {
     @extend .oc-p-rm;
 
     list-style: none;
-
-    > * {
-      display: contents;
-    }
+    align-items: baseline;
 
     #oc-breadcrumb-contextmenu-trigger > span {
       vertical-align: middle;
@@ -196,8 +198,6 @@ export default {
     > :nth-child(n + 2)::before {
       color: var(--oc-color-text-default);
       display: inline-block;
-      vertical-align: middle;
-      line-height: normal;
     }
 
     > :last-child > span {
@@ -219,8 +219,6 @@ export default {
       font-size: var(--oc-font-size-medium);
       color: var(--oc-color-text-default);
       display: inline-block;
-      vertical-align: middle;
-      line-height: normal;
     }
   }
 
