@@ -22,6 +22,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Add rounded prop to OcTag: [#2284](https://github.com/owncloud/owncloud-design-system/pull/2284)
 * Enhancement - Adjust avatar font weight from bold to normal: [#2275](https://github.com/owncloud/owncloud-design-system/pull/2275)
 * Enhancement - Align breadcrumb context menu with regular context menu: [#2296](https://github.com/owncloud/owncloud-design-system/pull/2296)
+* Enhancement - Adjust breadcrumb spacing: [#7676](https://github.com/owncloud/web/issues/7676)
 * Enhancement - Button text align left: [#7619](https://github.com/owncloud/web/issues/7619)
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - Add offset property to the drop component: [#7335](https://github.com/owncloud/web/issues/7335)
@@ -160,6 +161,15 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7493
    https://github.com/owncloud/owncloud-design-system/pull/2296
+
+
+* Enhancement - Adjust breadcrumb spacing: [#7676](https://github.com/owncloud/web/issues/7676)
+
+   We've adjusted some spacing in the breadcrumbs to improve the overall look.
+
+   https://github.com/owncloud/web/issues/7676
+   https://github.com/owncloud/web/issues/7525
+   https://github.com/owncloud/owncloud-design-system/pull/2329
 
 
 * Enhancement - Button text align left: [#7619](https://github.com/owncloud/web/issues/7619)
