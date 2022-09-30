@@ -17,6 +17,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Change - Remove transition animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - Revamp animations: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Change - OcTable emit event data on row click: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
+* Enhancement - Give OcModal the option to use OcContextualHelper: [#2325](https://github.com/owncloud/owncloud-design-system/pull/2325)
 * Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
 * Enhancement - Add OcInfoDrop: [#2286](https://github.com/owncloud/owncloud-design-system/pull/2286)
 * Enhancement - Add rounded prop to OcTag: [#2284](https://github.com/owncloud/owncloud-design-system/pull/2284)
@@ -123,6 +124,14 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/6029
    https://github.com/owncloud/owncloud-design-system/pull/2218
+
+
+* Enhancement - Give OcModal the option to use OcContextualHelper: [#2325](https://github.com/owncloud/owncloud-design-system/pull/2325)
+
+   We've added the option for OcModal to use OcContextualHelper
+
+   https://github.com/owncloud/web/issues/6892
+   https://github.com/owncloud/owncloud-design-system/pull/2325
 
 
 * Enhancement - Add nestedd drop functionality: [#2238](https://github.com/owncloud/owncloud-design-system/issues/2238)
