@@ -9,18 +9,21 @@
   >
     <div class="info-drop-content">
       <div v-if="title" class="oc-flex oc-flex-between info-header oc-border-b oc-pb-s">
-        <span class="oc-m-rm info-title" v-text="title" />
+        <span class="oc-m-rm info-title" v-text="$gettext(title)" />
         <oc-button appearance="raw">
           <oc-icon name="close" fill-type="line" size="medium" />
         </oc-button>
       </div>
-      <p class="info-text" v-text="text" />
+      <p class="info-text" v-text="$gettext(text)" />
       <dl v-if="list.length" class="info-list">
-        <component :is="item.headline ? 'dt' : 'dd'" v-for="(item, index) in list" :key="index">
-          {{ item.text }}
-        </component>
+        <component
+          :is="item.headline ? 'dt' : 'dd'"
+          v-for="(item, index) in list"
+          :key="index"
+          v-text="$gettext(item.text)"
+        />
       </dl>
-      <p v-if="endText" class="info-text-end" v-text="endText" />
+      <p v-if="endText" class="info-text-end" v-text="$gettext(endText)" />
       <oc-button
         v-if="readMoreLink"
         v-translate
