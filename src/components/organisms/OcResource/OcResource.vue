@@ -48,6 +48,7 @@
           :to="parentFolderLink"
           :style="parentFolderStyle"
           class="parent-folder"
+          @click="$emit('parentFolderClicked')"
           @click.stop
           @click.native.stop
         >
