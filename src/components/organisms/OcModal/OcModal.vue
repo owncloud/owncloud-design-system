@@ -495,6 +495,10 @@ export default {
       /* FIXME: this is ugly, but required so that the bottom padding doesn't look off when reserving vertical space for error messages below the input. */
       margin-bottom: -20px;
       padding-bottom: var(--oc-space-medium);
+
+      .oc-text-input-message {
+        margin-bottom: var(--oc-space-xsmall);
+      }
     }
 
     &-actions {
@@ -510,6 +514,7 @@ export default {
 
 <docs>
 ```js
+<div>
   <oc-modal
     icon="information"
     title="Accept terms of use"
@@ -518,6 +523,10 @@ export default {
     button-confirm-text="Accept"
     class="oc-mb-l oc-position-relative"
   />
+</div>
+```
+```js
+<div>
   <oc-modal
     variation="danger"
     icon="alarm-warning"
@@ -529,6 +538,10 @@ export default {
     button-confirm-variation="danger"
     class="oc-mb-l oc-position-relative"
   />
+</div>
+```
+```js
+<div>
   <oc-modal
     title="Create new folder"
     button-cancel-text="Cancel"
@@ -537,9 +550,14 @@ export default {
     input-value="New folder"
     input-label="Folder name"
     input-description="Enter a folder name"
-    input-error="This name is already taken"
+    input-error="This name is already taken, please choose another one"
     class="oc-mb-l oc-position-relative"
   />
+</div>
+```
+
+```js
+<div>
   <oc-modal
     title="Rename file lorem.txt"
     button-cancel-text="Cancel"
@@ -554,6 +572,11 @@ export default {
       />
     </template>
   </oc-modal>
+</div>
+```
+
+```js
+<div>
   <oc-modal
     icon="information"
     title="Accept terms of use"
@@ -563,6 +586,11 @@ export default {
     checkbox-label="I accept the terms of use"
     class="oc-mb-l oc-position-relative"
   />
+</div>
+```
+
+```js
+<div>
   <oc-modal
     icon="information"
     title="Accept terms of use"
@@ -572,6 +600,11 @@ export default {
     button-secondary-text="Accept some"
     class="oc-mb-l oc-position-relative"
   />
+</div>
+```
+
+```js
+<div>
   <oc-modal
     icon="information"
     title="Accept terms of use"
@@ -582,6 +615,7 @@ export default {
     :contextual-helper-data="{ title: 'This is more information' }"
     class="oc-mb-l oc-position-relative"
   />
+</div>
 ```
 
 ```js
