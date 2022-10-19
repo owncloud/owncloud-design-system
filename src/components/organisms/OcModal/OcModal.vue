@@ -496,7 +496,7 @@ export default {
       margin-bottom: -20px;
       padding-bottom: var(--oc-space-medium);
 
-      .oc-text-input-message{
+      .oc-text-input-message {
         margin-bottom: var(--oc-space-xsmall);
       }
     }
