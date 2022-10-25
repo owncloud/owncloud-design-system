@@ -34,7 +34,9 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
 * Enhancement - Progress bar indeterminate state: [#2200](https://github.com/owncloud/owncloud-design-system/pull/2200)
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
+* Enhancement - Remove border on buttons: [#7353](https://github.com/owncloud/web/issues/7353)
 * Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
+* Enhancement - Select hover state: [#7353](https://github.com/owncloud/web/issues/7353)
 * Enhancement - Use Inter font: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
 
 ## Details
@@ -269,6 +271,16 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2216
 
 
+* Enhancement - Remove border on buttons: [#7353](https://github.com/owncloud/web/issues/7353)
+
+   The outer border for buttons has been removed. Outline buttons now have an inner outline
+   instead.
+
+   https://github.com/owncloud/web/issues/7353
+   https://github.com/owncloud/web/issues/7373
+   https://github.com/owncloud/owncloud-design-system/pull/7861
+
+
 * Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
 
    We've added to possibility to have a "cancel"-button and -handler in the `OcSearchBar`
@@ -276,6 +288,16 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7617
    https://github.com/owncloud/owncloud-design-system/pull/2328
+
+
+* Enhancement - Select hover state: [#7353](https://github.com/owncloud/web/issues/7353)
+
+   The hover state of the `OcSelect` component has been adjusted to better match with the overall
+   design.
+
+   https://github.com/owncloud/web/issues/7353
+   https://github.com/owncloud/web/issues/7373
+   https://github.com/owncloud/owncloud-design-system/pull/7861
 
 
 * Enhancement - Use Inter font: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
