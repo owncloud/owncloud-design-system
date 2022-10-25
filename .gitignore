@@ -8,6 +8,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .stylelintcache
+.pnpm-store/
 
 # Editor directories and files
 .idea

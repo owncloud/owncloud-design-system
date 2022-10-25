@@ -1,5 +1,5 @@
-node_modules: package.json yarn.lock
-	yarn install --frozen-lockfile && touch node_modules
+node_modules: package.json pnpm-lock.yaml
+	pnpm install && touch node_modules
 
 #
 # Translation
