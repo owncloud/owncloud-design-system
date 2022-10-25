@@ -186,17 +186,14 @@ export default {
 
 @mixin oc-button-variation($color, $hover-color, $muted-color) {
   background-color: $color;
-  border-color: $color;
 
   &:disabled {
     background-color: $muted-color;
-    border-color: $muted-color;
   }
 
   &:focus:not([disabled]),
   &:hover:not([disabled]) {
     background-color: $hover-color;
-    border-color: $hover-color;
   }
 
   &-raw {
@@ -229,6 +226,8 @@ export default {
   }
 
   &-outline {
+    outline: 1px solid $color;
+    outline-offset: -1px;
     background-color: transparent;
     color: $color;
 
@@ -258,7 +257,7 @@ export default {
   @include oc-button-line-height(1);
 
   align-items: center;
-  border: 1px solid transparent;
+  border: 0;
   box-sizing: border-box;
   color: var(--oc-color-text-inverse);
   display: inline-flex;
