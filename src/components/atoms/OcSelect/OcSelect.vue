@@ -144,6 +144,10 @@ export default {
   }
 }
 
+.vs--single.vs--open .vs__selected {
+  opacity: 0.8 !important;
+}
+
 .oc-select {
   background-image: none !important;
   line-height: 24px !important;
@@ -160,7 +164,7 @@ export default {
     &__search::placeholder,
     &__dropdown-toggle,
     &__dropdown-menu {
-      background-color: var(--oc-color-input-bg);
+      background-color: var(--oc-color-background-secondary);
       border: 1px solid var(--oc-color-input-border);
       color: var(--oc-color-input-text-default);
     }
@@ -176,8 +180,8 @@ export default {
       white-space: normal;
 
       &--highlight {
-        background-color: var(--oc-color-input-text-default);
-        color: var(--oc-color-text-inverse);
+        background-color: var(--oc-color-background-hover);
+        color: var(--oc-color-swatch-brand-hover);
       }
     }
 

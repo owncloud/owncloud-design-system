@@ -1,0 +1,7 @@
+Enhancement: Select hover state
+
+The hover state of the `OcSelect` component has been adjusted to better match with the overall design.
+
+https://github.com/owncloud/web/issues/7353
+https://github.com/owncloud/web/issues/7373
+https://github.com/owncloud/owncloud-design-system/pull/7861
