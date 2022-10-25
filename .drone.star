@@ -37,7 +37,7 @@ def build_stages(ctx):
             "name": "dependencies",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn install --immutable",
+                "pnpm install",
             ],
             "depends_on": ["clone"],
         },
@@ -45,7 +45,7 @@ def build_stages(ctx):
             "name": "eslint",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn lint:eslint",
+                "pnpm lint:eslint",
             ],
             "depends_on": ["dependencies"],
         },
@@ -53,7 +53,7 @@ def build_stages(ctx):
             "name": "stylelint",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn lint:stylelint",
+                "pnpm lint:stylelint",
             ],
             "depends_on": ["dependencies"],
         },
@@ -61,8 +61,8 @@ def build_stages(ctx):
             "name": "unit tests",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn run tokens",
-                "yarn test",
+                "pnpm run tokens",
+                "pnpm test",
             ],
             "depends_on": ["eslint", "stylelint"],
         },
@@ -76,7 +76,7 @@ def build_stages(ctx):
             "name": "build docs",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn build:docs",
+                "pnpm build:docs",
             ],
             "depends_on": ["unit tests"],
         },
@@ -84,7 +84,7 @@ def build_stages(ctx):
             "name": "build system",
             "image": OWNCLOUDCI_NODEJS,
             "commands": [
-                "yarn build:system",
+                "pnpm build:system",
             ],
             "depends_on": ["unit tests"],
         },
