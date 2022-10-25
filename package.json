@@ -56,7 +56,7 @@
     "@babel/preset-env": "^7.14.8",
     "@babel/runtime": "^7.19.4",
     "@popperjs/core": "^2.4.0",
-    "@vue/composition-api": "1.6.3",
+    "@vue/composition-api": "1.7.1",
     "@vue/test-utils": "^1.2.0",
     "autoprefixer": "^9.7.4",
     "babel-core": "^7.0.0-bridge.0",
@@ -139,7 +139,7 @@
   },
   "peerDependencies": {
     "@popperjs/core": "^2.4.0",
-    "@vue/composition-api": "1.6.3",
+    "@vue/composition-api": "1.7.1",
     "filesize": "^9.0.9",
     "focus-trap": "^6.4.0",
     "focus-trap-vue": "^1.1.1",
