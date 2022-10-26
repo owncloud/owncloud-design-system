@@ -1,6 +1,6 @@
-Enhancement: Remove border on buttons
+Enhancement: Input background color
 
-The outer border for buttons has been removed. Outline buttons now have an inner outline instead.
+The background color for input fields has been adjusted to better match with the overall design.
 
 https://github.com/owncloud/web/issues/7353
 https://github.com/owncloud/web/issues/7373

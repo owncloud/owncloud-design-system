@@ -262,7 +262,7 @@ export default {
   color: var(--oc-color-text-inverse);
   display: inline-flex;
   font-weight: 400;
-  padding: 0.4rem 0.7rem;
+  padding: 0.5rem 0.8rem;
   text-align: left;
   text-decoration: none;
 
