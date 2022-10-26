@@ -29,6 +29,7 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Button text align left: [#7619](https://github.com/owncloud/web/issues/7619)
 * Enhancement - OcCheckbox add outline: [#2218](https://github.com/owncloud/owncloud-design-system/pull/2218)
 * Enhancement - Add offset property to the drop component: [#7335](https://github.com/owncloud/web/issues/7335)
+* Enhancement - Input background color: [#7353](https://github.com/owncloud/web/issues/7353)
 * Enhancement - Make UI smaller: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
 * Enhancement - Oc-card style: [#2306](https://github.com/owncloud/owncloud-design-system/pull/2306)
 * Enhancement - OcSelect dark mode improvements: [#2262](https://github.com/owncloud/owncloud-design-system/pull/2262)
@@ -36,7 +37,6 @@ The following sections list the changes in ownCloud Design System unreleased.
 * Enhancement - Redesign notifications: [#2210](https://github.com/owncloud/owncloud-design-system/pull/2210)
 * Enhancement - Remove border on buttons: [#7353](https://github.com/owncloud/web/issues/7353)
 * Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
-* Enhancement - Select hover state: [#7353](https://github.com/owncloud/web/issues/7353)
 * Enhancement - Use Inter font: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
 
 ## Details
@@ -227,6 +227,17 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/owncloud-design-system/pull/2276
 
 
+* Enhancement - Input background color: [#7353](https://github.com/owncloud/web/issues/7353)
+
+   The background color for input fields has been adjusted to better match with the overall
+   design.
+
+   https://github.com/owncloud/web/issues/7353
+   https://github.com/owncloud/web/issues/7373
+   https://github.com/owncloud/owncloud-design-system/pull/2345
+   https://github.com/owncloud/owncloud-design-system/pull/2352
+
+
 * Enhancement - Make UI smaller: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
 
    We've adjusted several values to make the UI appear less big.
@@ -278,7 +289,8 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7353
    https://github.com/owncloud/web/issues/7373
-   https://github.com/owncloud/owncloud-design-system/pull/7861
+   https://github.com/owncloud/owncloud-design-system/pull/2345
+   https://github.com/owncloud/owncloud-design-system/pull/2352
 
 
 * Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
@@ -288,16 +300,6 @@ The following sections list the changes in ownCloud Design System unreleased.
 
    https://github.com/owncloud/web/issues/7617
    https://github.com/owncloud/owncloud-design-system/pull/2328
-
-
-* Enhancement - Select hover state: [#7353](https://github.com/owncloud/web/issues/7353)
-
-   The hover state of the `OcSelect` component has been adjusted to better match with the overall
-   design.
-
-   https://github.com/owncloud/web/issues/7353
-   https://github.com/owncloud/web/issues/7373
-   https://github.com/owncloud/owncloud-design-system/pull/7861
 
 
 * Enhancement - Use Inter font: [#2270](https://github.com/owncloud/owncloud-design-system/pull/2270)
