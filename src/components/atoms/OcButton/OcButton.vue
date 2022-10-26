@@ -262,7 +262,7 @@ export default {
   color: var(--oc-color-text-inverse);
   display: inline-flex;
   font-weight: 400;
-  padding: 0.4rem 0.7rem;
+  padding: 0.5rem 0.8rem;
   text-align: left;
   text-decoration: none;
 
@@ -428,11 +428,15 @@ export default {
   }
 
   &-group {
-    display: flex;
+    display: inline-flex;
     flex-flow: row wrap;
+    outline: 1px solid var(--oc-color-swatch-primary-default);
+    outline-offset: -1px;
+    border-radius: 5px;
 
     .oc-button {
       border-radius: 0;
+      outline: 0;
 
       &:first-of-type {
         border-radius: 5px 0 0 5px;

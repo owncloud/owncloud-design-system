@@ -164,7 +164,7 @@ export default {
     &__search::placeholder,
     &__dropdown-toggle,
     &__dropdown-menu {
-      background-color: var(--oc-color-background-secondary);
+      background-color: var(--oc-color-input-bg);
       border: 1px solid var(--oc-color-input-border);
       color: var(--oc-color-input-text-default);
     }
