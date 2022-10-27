@@ -430,7 +430,7 @@ export default {
   &-group {
     display: inline-flex;
     flex-flow: row wrap;
-    outline: 1px solid var(--oc-color-swatch-primary-default);
+    outline: 1px solid var(--oc-color-swatch-passive-default);
     outline-offset: -1px;
     border-radius: 5px;
 
