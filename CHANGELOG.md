@@ -291,6 +291,7 @@ The following sections list the changes in ownCloud Design System unreleased.
    https://github.com/owncloud/web/issues/7373
    https://github.com/owncloud/owncloud-design-system/pull/2345
    https://github.com/owncloud/owncloud-design-system/pull/2352
+   https://github.com/owncloud/owncloud-design-system/pull/2354
 
 
 * Enhancement - "Chancel"-button and -handler in OcSearchBar: [#7617](https://github.com/owncloud/web/issues/7617)
