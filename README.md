@@ -30,20 +30,20 @@ and its `peerDependencies`, depending on whether they're already available in yo
 
 
 ```
-npm install @popperjs/core @vue/composition-api filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
+npm install @popperjs/core filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
 ```
 
 or
 
 
 ```
-yarn add @popperjs/core @vue/composition-api filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
+yarn add @popperjs/core filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
 ```
 
 or
 
 ```
-pnpm add @popperjs/core @vue/composition-api filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
+pnpm add @popperjs/core filesize focus-trap focus-trap-vue fuse.js luxon postcss-import postcss-url tippy.js v-calendar vue vue-inline-svg vue-select webfontloader
 ```
 
 ## How to build locally

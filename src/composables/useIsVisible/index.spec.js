@@ -1,9 +1,8 @@
 import { createLocalVue, mount } from "@vue/test-utils"
-import VueCompositionAPI, { ref, nextTick } from "@vue/composition-api"
+import { ref, nextTick } from "vue"
 import { useIsVisible } from "./index"
 
 const localVue = createLocalVue()
-localVue.use(VueCompositionAPI)
 
 const mockIntersectionObserver = () => {
   jest.useFakeTimers()

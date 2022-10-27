@@ -1,10 +1,8 @@
 import { shallowMount, mount, createLocalVue } from "@vue/test-utils"
-import VueCompositionAPI from "@vue/composition-api"
 import { axe, toHaveNoViolations } from "jest-axe"
 import Table from "./OcTable.vue"
 
 const localVue = createLocalVue()
-localVue.use(VueCompositionAPI)
 
 expect.extend(toHaveNoViolations)
 
