@@ -1,0 +1,21 @@
+$oc-docs-border-radius-default: 4px;
+$oc-docs-font-face: Inter, sans-serif;
+$oc-docs-font-weight-bold: 700;
+$oc-docs-font-weight-light: 300;
+$oc-docs-font-weight-normal: 400;
+$oc-docs-font-weight-semi-bold: 600;
+$oc-docs-line-height-medium: 1.6;
+$oc-docs-line-height-small: 1.3;
+$oc-docs-line-height-xsmall: 1;
+
+:host, :root {
+  --oc-docs-border-radius-default: #{$oc-docs-border-radius-default};
+  --oc-docs-font-face: #{$oc-docs-font-face};
+  --oc-docs-font-weight-bold: #{$oc-docs-font-weight-bold};
+  --oc-docs-font-weight-light: #{$oc-docs-font-weight-light};
+  --oc-docs-font-weight-normal: #{$oc-docs-font-weight-normal};
+  --oc-docs-font-weight-semi-bold: #{$oc-docs-font-weight-semi-bold};
+  --oc-docs-line-height-medium: #{$oc-docs-line-height-medium};
+  --oc-docs-line-height-small: #{$oc-docs-line-height-small};
+  --oc-docs-line-height-xsmall: #{$oc-docs-line-height-xsmall};
+}
