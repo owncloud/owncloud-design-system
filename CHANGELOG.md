@@ -1,8 +1,8 @@
-# Changelog for [unreleased] (UNRELEASED)
+# Changelog for [14.0.0] (2022-11-03)
 
-The following sections list the changes in ownCloud Design System unreleased.
+The following sections list the changes in ownCloud Design System 14.0.0.
 
-[unreleased]: https://github.com/owncloud/owncloud-design-system/compare/v13.1.0...master
+[14.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v13.1.0...v14.0.0
 
 ## Summary
 
@@ -759,7 +759,7 @@ The following sections list the changes in ownCloud Design System 12.1.0.
 
 The following sections list the changes in ownCloud Design System 12.0.0.
 
-[12.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.0...v12.0.0
+[12.0.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v12.0.0
 
 ## Summary
 
@@ -1057,11 +1057,30 @@ The following sections list the changes in ownCloud Design System 12.0.0.
    https://github.com/owncloud/web/issues/6100/
    https://github.com/owncloud/owncloud-design-system/pull/1876
 
+# Changelog for [11.3.1] (2021-12-03)
+
+The following sections list the changes in ownCloud Design System 11.3.1.
+
+[11.3.1]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.0...v11.3.1
+
+## Summary
+
+* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
+
+## Details
+
+* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
+
+   We've removed the padding from the context menu in the breadcrumbs to align its visual
+   appearance with the context menu in the files table.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1813
+
 # Changelog for [11.3.0] (2021-12-03)
 
 The following sections list the changes in ownCloud Design System 11.3.0.
 
-[11.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.3.1...v11.3.0
+[11.3.0]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...v11.3.0
 
 ## Summary
 
@@ -1117,25 +1136,6 @@ The following sections list the changes in ownCloud Design System 11.3.0.
 
    https://github.com/owncloud/owncloud-design-system/issues/1758
    https://github.com/owncloud/owncloud-design-system/pull/1782
-
-# Changelog for [11.3.1] (2021-12-03)
-
-The following sections list the changes in ownCloud Design System 11.3.1.
-
-[11.3.1]: https://github.com/owncloud/owncloud-design-system/compare/v11.2.2...v11.3.1
-
-## Summary
-
-* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
-
-## Details
-
-* Bugfix - Padding in breadcrumb context menu: [#1813](https://github.com/owncloud/owncloud-design-system/pull/1813)
-
-   We've removed the padding from the context menu in the breadcrumbs to align its visual
-   appearance with the context menu in the files table.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1813
 
 # Changelog for [11.2.2] (2021-11-11)
 
@@ -3442,7 +3442,7 @@ The following sections list the changes in ownCloud Design System 3.0.0.
 
 The following sections list the changes in ownCloud Design System 3.1.0.
 
-[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v3.1.0
+[3.1.0]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v3.1.0
 
 ## Summary
 
@@ -3457,11 +3457,29 @@ The following sections list the changes in ownCloud Design System 3.1.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/1119
 
+# Changelog for [2.1.1] (2021-01-21)
+
+The following sections list the changes in ownCloud Design System 2.1.1.
+
+[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.2...v2.1.1
+
+## Summary
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+## Details
+
+* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
+
+   The uniqueId helper function returned a callback instead of a string.
+
+   https://github.com/owncloud/owncloud-design-system/pull/1060
+
 # Changelog for [2.1.2] (2021-01-21)
 
 The following sections list the changes in ownCloud Design System 2.1.2.
 
-[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.1...v2.1.2
+[2.1.2]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.2
 
 ## Summary
 
@@ -3477,24 +3495,6 @@ The following sections list the changes in ownCloud Design System 2.1.2.
    anymore.
 
    https://github.com/owncloud/owncloud-design-system/pull/1064
-
-# Changelog for [2.1.1] (2021-01-21)
-
-The following sections list the changes in ownCloud Design System 2.1.1.
-
-[2.1.1]: https://github.com/owncloud/owncloud-design-system/compare/v2.1.0...v2.1.1
-
-## Summary
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-## Details
-
-* Bugfix - Fix uniqueId: [#1060](https://github.com/owncloud/owncloud-design-system/pull/1060)
-
-   The uniqueId helper function returned a callback instead of a string.
-
-   https://github.com/owncloud/owncloud-design-system/pull/1060
 
 # Changelog for [2.1.0] (2021-01-19)
 
@@ -3673,7 +3673,7 @@ The following sections list the changes in ownCloud Design System 2.0.0.
 
 The following sections list the changes in ownCloud Design System 1.15.0.
 
-[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.15.0
+[1.15.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.15.0
 
 ## Summary
 
@@ -3708,11 +3708,31 @@ The following sections list the changes in ownCloud Design System 1.15.0.
 
    https://github.com/owncloud/owncloud-design-system/pull/924
 
+# Changelog for [1.13.0] (2020-10-28)
+
+The following sections list the changes in ownCloud Design System 1.13.0.
+
+[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.14.0...v1.13.0
+
+## Summary
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+## Details
+
+* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
+
+   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
+   accessibility aspects are already implement, for example expanding and collapsing
+   accordion items by pressing space or enter already works. More will come later on.
+
+   https://github.com/owncloud/owncloud-design-system/pull/911
+
 # Changelog for [1.14.0] (2020-10-28)
 
 The following sections list the changes in ownCloud Design System 1.14.0.
 
-[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.13.0...v1.14.0
+[1.14.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.14.0
 
 ## Summary
 
@@ -3734,26 +3754,6 @@ The following sections list the changes in ownCloud Design System 1.14.0.
    We added an icon for `file version`
 
    https://github.com/owncloud/owncloud-design-system/pull/917
-
-# Changelog for [1.13.0] (2020-10-28)
-
-The following sections list the changes in ownCloud Design System 1.13.0.
-
-[1.13.0]: https://github.com/owncloud/owncloud-design-system/compare/v1.12.2...v1.13.0
-
-## Summary
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-## Details
-
-* Change - New accordion component implementation: [#911](https://github.com/owncloud/owncloud-design-system/pull/911)
-
-   We rewrote the accordion component to remove UIKit styles and align with our own styling. Some
-   accessibility aspects are already implement, for example expanding and collapsing
-   accordion items by pressing space or enter already works. More will come later on.
-
-   https://github.com/owncloud/owncloud-design-system/pull/911
 
 # Changelog for [1.12.2] (2020-10-26)
 
