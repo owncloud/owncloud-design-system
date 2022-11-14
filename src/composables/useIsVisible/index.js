@@ -1,4 +1,4 @@
-import { onBeforeUnmount, ref, watch } from "@vue/composition-api"
+import { onBeforeUnmount, ref, watch } from "vue"
 
 /**
  *

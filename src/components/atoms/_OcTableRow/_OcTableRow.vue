@@ -7,7 +7,7 @@
   </tr>
 </template>
 <script>
-import { customRef, computed, ref, unref } from "@vue/composition-api"
+import { customRef, computed, ref, unref } from "vue"
 import { useIsVisible } from "../../../composables"
 import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
 
