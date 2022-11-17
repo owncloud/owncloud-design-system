@@ -67,9 +67,9 @@
 </template>
 
 <script>
-import OcIcon from "../../../src/components/atoms/OcIcon/OcIcon.vue"
-import OcTable from "../../../src/components/molecules/OcTable/OcTable.vue"
-import OcSearchBar from "../../../src/components/atoms/OcSearchBar/OcSearchBar"
+import OcIcon from "../../../src/components/OcIcon/OcIcon.vue"
+import OcTable from "../../../src/components/OcTable/OcTable.vue"
+import OcSearchBar from "../../../src/components/OcSearchBar/OcSearchBar"
 import HighlightedText from "./_HighlightedText"
 const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
 
