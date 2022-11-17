@@ -51,6 +51,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../../../styles/styles';
+
 $default-size: 64px;
 
 .oc-progress-pie {

@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/ods.json"
+import designTokens from '../../../src/assets/tokens/ods.json'
 
 /**
  * A framework for creating a predictable and harmonious spacing system. These
  * tokens are used for padding, margins, and position together with
  * [spacing utilities](https://github.com/owncloud/owncloud-design-system/wiki/spacing).
  * To edit spacing, see
- * [/src/tokens/spacing.yml](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens/spacing.yml).
+ * [/src/tokens/spacing.yml](https://github.com/owncloud/web/blob/master/packages/design-system/src/tokens/spacing.yml).
  */
 export default {
   name: "SpacingTokens",

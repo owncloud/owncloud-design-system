@@ -189,6 +189,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../styles/styles';
+
 .oc-resource {
   align-items: center;
   display: inline-flex;

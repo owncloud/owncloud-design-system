@@ -182,6 +182,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../styles/styles';
+
 @mixin oc-icon-size($factor) {
   height: $oc-size-icon-default * $factor;
   max-height: $oc-size-icon-default * $factor;

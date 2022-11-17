@@ -1,5 +1,5 @@
 import Vue from "vue"
-import DesignSystem from "./system"
+import DesignSystem from "./index"
 
 let options = {
   tokens: {

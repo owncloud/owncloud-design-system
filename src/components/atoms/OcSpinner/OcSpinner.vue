@@ -52,6 +52,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../styles/styles';
+
 @mixin oc-spinner-size($factor) {
   height: round($oc-size-icon-default * $factor / 2) * 2;
   width: round($oc-size-icon-default * $factor / 2) * 2;

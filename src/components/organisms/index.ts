@@ -1,0 +1,5 @@
+export { default as OcAccordion } from './OcAccordion/OcAccordion.vue'
+export { default as OcAvatars } from './OcAvatars/OcAvatars.vue'
+export { default as OcModal } from './OcModal/OcModal.vue'
+export { default as OcRecipient } from './OcRecipient/OcRecipient.vue'
+export { default as OcResource } from './OcResource/OcResource.vue'

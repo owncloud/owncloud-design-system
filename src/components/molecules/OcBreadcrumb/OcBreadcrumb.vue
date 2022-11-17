@@ -171,6 +171,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../styles/styles';
+
 .oc-breadcrumb {
   overflow: hidden;
 

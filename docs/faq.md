@@ -24,9 +24,7 @@ Definitely possible, see instructions in [Getting Started guide](https://github.
 
 ## Why Vue and not React, Jekyll, or some other tool?
 
-**Short answer:** A personal preference that I’ve noticed working with my clients.
-
-**Long(er) answer:** The reason for choosing Vue.js over React or some other library is how easy it is to learn. If you know HTML, CSS, and a bit of JavaScript you’re ready to start using this tool and getting involved. This becomes especially important when we want to involve designers more into the process and move further away from static design tools. In addition, static site generators like Jekyll give you a bit too much freedom, which makes it harder for people to follow specific guidelines or a workflow.
+The reason for choosing Vue.js over React or some other library is how easy it is to learn. If you know HTML, CSS, and a bit of JavaScript you’re ready to start using this tool and getting involved. This becomes especially important when we want to involve designers more into the process and move further away from static design tools. In addition, static site generators like Jekyll give you a bit too much freedom, which makes it harder for people to follow specific guidelines or a workflow.
 
 ## Where are molecules and pages from Atomic Design?
 
@@ -65,7 +63,7 @@ ownCloud Design System uses Typekit’s [Web Font Loader](https://github.com/typ
 First, import tokens inside the component you want to use them in:
 
 ```javascript
-import designTokens from "@/assets/tokens/ods.json"
+import designTokens from '../../../src/assets/tokens/ods.json'
 ```
 
 Then, pass the data:
@@ -74,9 +72,9 @@ Then, pass the data:
 export default {
   data() {
     return {
-      tokens: designTokens,
+      tokens: designTokens
     }
-  },
+  }
 }
 ```
 

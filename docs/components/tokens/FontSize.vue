@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/ods.json"
+import designTokens from '../../../src/assets/tokens/ods.json'
 
 /**
  * This typographic scale makes it easier to achieve visual harmony in the
  * interface. It’s purposefully designed to keep the number of separate font
  * sizes to a minimum. To edit font-sizes, see
- * [/src/tokens/font-size.yml](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens/font-size.yml).
+ * [/src/tokens/font-size.yml](https://github.com/owncloud/web/blob/master/packages/design-system/src/tokens/font-size.yml).
  */
 export default {
   name: "FontSize",

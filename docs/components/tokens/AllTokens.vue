@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import designTokens from "@/assets/tokens/ods.json"
+import designTokens from '../../../src/assets/tokens/ods.json'
 
 /**
  * A list of available tokens in ownCloud Design System. Use these tokens in place

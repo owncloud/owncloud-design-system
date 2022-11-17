@@ -64,8 +64,6 @@
 </template>
 
 <script>
-// If you want to use your own tokens here, change the following line to:
-// import designTokens from "@/assets/tokens/tokens.raw.json"
 import orderBy from "../../utils/orderBy"
 
 export default {

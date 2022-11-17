@@ -273,6 +273,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../styles/styles';
+
 .oc-text-input {
   @extend .oc-input;
 
