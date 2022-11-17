@@ -38,10 +38,9 @@ export default {
       }
     })
 
-    const lazyColspan = ref(null)
-    if (props.lazy) {
-      lazyColspan.value = props.lazy.colspan
-    }
+    const lazyColspan = computed(() => {
+      return props.lazy ? props.lazy.colspan : 1
+    })
 
     const { isVisible } = props.lazy
       ? useIsVisible({
