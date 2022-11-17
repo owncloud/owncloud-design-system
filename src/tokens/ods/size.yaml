@@ -1,5 +1,10 @@
 ---
 size:
+  tiles-size:
+    # option 1: rem
+    value: 12rem
+    # option 2: percent
+    # value: 12.5%
   max-width:
     logo:
       value: 150px
