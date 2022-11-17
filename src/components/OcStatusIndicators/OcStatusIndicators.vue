@@ -44,17 +44,17 @@
 </template>
 
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcButton from "../OcButton/OcButton.vue"
-import uniqueId from "../../utils/uniqueId"
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcButton from '../OcButton/OcButton.vue'
+import uniqueId from '../../utils/uniqueId'
 
 /**
  * Status indicators which can be attatched to a resource
  */
 export default {
-  name: "OcStatusIndicators",
-  status: "ready",
-  release: "2.0.1",
+  name: 'OcStatusIndicators',
+  status: 'ready',
+  release: '2.0.1',
 
   components: { OcIcon, OcButton },
 
@@ -64,7 +64,7 @@ export default {
      */
     resource: {
       type: Object,
-      required: true,
+      required: true
     },
     /**
      * An array of indicators to be displayed. Indicator object has following properties:
@@ -80,24 +80,24 @@ export default {
      */
     indicators: {
       type: Array,
-      required: true,
+      required: true
     },
     target: {
       type: String,
       required: false,
-      default: "",
-    },
+      default: ''
+    }
   },
 
   data() {
     return {
-      accessibleDescriptionIds: {},
+      accessibleDescriptionIds: {}
     }
   },
 
   methods: {
     hasHandler(indicator) {
-      return Object.prototype.hasOwnProperty.call(indicator, "handler")
+      return Object.prototype.hasOwnProperty.call(indicator, 'handler')
     },
     getIndicatorDescriptionId(indicator) {
       if (!indicator.accessibleDescription) {
@@ -105,12 +105,12 @@ export default {
       }
 
       if (!this.accessibleDescriptionIds[indicator.id]) {
-        this.accessibleDescriptionIds[indicator.id] = uniqueId("oc-indicator-description-")
+        this.accessibleDescriptionIds[indicator.id] = uniqueId('oc-indicator-description-')
       }
 
       return this.accessibleDescriptionIds[indicator.id]
-    },
-  },
+    }
+  }
 }
 </script>
 

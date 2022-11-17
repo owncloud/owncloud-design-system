@@ -11,16 +11,16 @@
 
 <script>
 export default {
-  name: "OcList",
-  status: "ready",
-  release: "12.0.0",
+  name: 'OcList',
+  status: 'ready',
+  release: '12.0.0',
   props: {
     raw: {
       type: Boolean,
       default: false,
-      required: false,
-    },
-  },
+      required: false
+    }
+  }
 }
 </script>
 

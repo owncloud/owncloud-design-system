@@ -21,16 +21,16 @@
 
 <script>
 export default {
-  name: "OcResourceName",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcResourceName',
+  status: 'ready',
+  release: '2.1.0',
   props: {
     /**
      * The name of the resource
      */
     name: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * The extension of the resource, if there is one
@@ -38,21 +38,21 @@ export default {
     extension: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * The type of the resource
      */
     type: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * A full path of the resource
      */
     fullPath: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * Asserts whether the resource path should be displayed
@@ -60,7 +60,7 @@ export default {
     isPathDisplayed: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Asserts whether the resource extension should be displayed
@@ -68,7 +68,7 @@ export default {
     isExtensionDisplayed: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     /**
      * Asserts whether the resource name should be truncated if it's too long
@@ -76,8 +76,8 @@ export default {
     truncateName: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
 
   computed: {
@@ -86,7 +86,7 @@ export default {
     },
 
     fullName() {
-      return (this.displayPath || "") + this.name
+      return (this.displayPath || '') + this.name
     },
 
     displayName() {
@@ -97,19 +97,19 @@ export default {
     },
 
     displayExtension() {
-      return this.extension ? "." + this.extension : ""
+      return this.extension ? '.' + this.extension : ''
     },
 
     displayPath() {
       if (!this.isPathDisplayed) {
         return null
       }
-      const pathSplit = this.fullPath.replace(/^\//, "").split("/")
+      const pathSplit = this.fullPath.replace(/^\//, '').split('/')
       if (pathSplit.length < 2) {
         return null
       }
       if (pathSplit.length === 2) {
-        return pathSplit[0] + "/"
+        return pathSplit[0] + '/'
       }
       return `…/${pathSplit[pathSplit.length - 2]}/`
     },
@@ -134,8 +134,8 @@ export default {
       }
 
       return this.displayName
-    },
-  },
+    }
+  }
 }
 </script>
 

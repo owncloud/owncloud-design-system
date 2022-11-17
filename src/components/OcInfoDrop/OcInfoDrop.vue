@@ -40,14 +40,14 @@
 </template>
 
 <script>
-import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcDrop from "../OcDrop/OcDrop.vue"
-import uniqueId from "../../utils/uniqueId"
+import OcButton from '../OcButton/OcButton.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcDrop from '../OcDrop/OcDrop.vue'
+import uniqueId from '../../utils/uniqueId'
 
 export default {
-  name: "OcInfoDrop",
-  status: "unreleased",
+  name: 'OcInfoDrop',
+  status: 'unreleased',
   components: { OcButton, OcIcon, OcDrop },
   props: {
     /**
@@ -56,7 +56,7 @@ export default {
     dropId: {
       type: String,
       required: false,
-      default: uniqueId("oc-info-drop-"),
+      default: uniqueId('oc-info-drop-')
     },
     /**
      * CSS selector for the element to be used as toggle. By default, the preceding element is used
@@ -64,7 +64,7 @@ export default {
     toggle: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Events that cause the drop to show. Multiple event names are separated by spaces
@@ -74,10 +74,10 @@ export default {
     mode: {
       type: String,
       required: false,
-      default: "click",
-      validator: value => {
+      default: 'click',
+      validator: (value) => {
         return value.match(/(click|hover|manual)/)
-      },
+      }
     },
     /**
      * Element selector used as a target of the element
@@ -85,7 +85,7 @@ export default {
     target: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Title
@@ -93,7 +93,7 @@ export default {
     title: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Text at the beginning
@@ -101,7 +101,7 @@ export default {
     text: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * List element
@@ -109,7 +109,7 @@ export default {
     list: {
       type: Array,
       required: false,
-      default: () => [],
+      default: () => []
     },
     /**
      * Text at the end
@@ -117,7 +117,7 @@ export default {
     endText: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Read more link at the end
@@ -125,9 +125,9 @@ export default {
     readMoreLink: {
       type: String,
       required: false,
-      default: "",
-    },
-  },
+      default: ''
+    }
+  }
 }
 </script>
 

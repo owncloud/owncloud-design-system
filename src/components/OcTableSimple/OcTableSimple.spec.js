@@ -1,15 +1,15 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount } from '@vue/test-utils'
 
-import Table from "./OcTableSimple.vue"
+import Table from './OcTableSimple.vue'
 
-describe("OcTableSimple", () => {
-  it("adds hover", () => {
+describe('OcTableSimple', () => {
+  it('adds hover', () => {
     const wrapper = shallowMount(Table, {
       propsData: {
-        hover: true,
-      },
+        hover: true
+      }
     })
 
-    expect(wrapper.classes()).toContain("oc-table-simple-hover")
+    expect(wrapper.classes()).toContain('oc-table-simple-hover')
   })
 })

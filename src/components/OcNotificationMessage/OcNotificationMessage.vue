@@ -20,17 +20,17 @@
   </div>
 </template>
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from '../OcIcon/OcIcon.vue'
 
 /**
  * Notifications are used to inform users about errors, warnings and as confirmations for their actions.
  */
 export default {
-  name: "OcNotificationMessage",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcNotificationMessage',
+  status: 'ready',
+  release: '1.0.0',
   components: {
-    OcIcon,
+    OcIcon
   },
   props: {
     /**
@@ -42,17 +42,17 @@ export default {
     status: {
       type: String,
       required: false,
-      default: "passive",
-      validator: value => {
+      default: 'passive',
+      validator: (value) => {
         return value.match(/(passive|primary|success|warning|danger)/)
-      },
+      }
     },
     /**
      * The title that will be displayed in notification
      */
     title: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * The message that will be displayed in notification
@@ -60,7 +60,7 @@ export default {
     message: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Number of seconds the message shows. It will disappear after this time.
@@ -69,8 +69,8 @@ export default {
       type: Number,
       required: false,
       default: 5,
-      validator: value => value > 0,
-    },
+      validator: (value) => value > 0
+    }
   },
   computed: {
     classes() {
@@ -80,14 +80,14 @@ export default {
       return this.status
     },
     isStatusDanger() {
-      return this.status === "danger"
+      return this.status === 'danger'
     },
     role() {
-      return this.isStatusDanger ? "alert" : "status"
+      return this.isStatusDanger ? 'alert' : 'status'
     },
     ariaLive() {
-      return this.isStatusDanger ? "assertive" : "polite"
-    },
+      return this.isStatusDanger ? 'assertive' : 'polite'
+    }
   },
   mounted() {
     /**
@@ -103,9 +103,9 @@ export default {
        * The close event is emitted when the user clicks the close icon.
        * @type {void}
        */
-      this.$emit("close")
-    },
-  },
+      this.$emit('close')
+    }
+  }
 }
 </script>
 

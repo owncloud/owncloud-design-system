@@ -11,16 +11,16 @@
  * Count of avatars which weren't displayed.
  */
 export default {
-  name: "OcAvatarCount",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcAvatarCount',
+  status: 'ready',
+  release: '2.1.0',
   props: {
     /**
      * Count of avatars
      */
     count: {
       type: Number,
-      required: true,
+      required: true
     },
     /**
      * Width and height of the element in pixels
@@ -28,15 +28,15 @@ export default {
     size: {
       type: Number,
       required: false,
-      default: 30,
-    },
+      default: 30
+    }
   },
 
   computed: {
     fontSize() {
-      return Math.floor(this.size / 2.5) + "px"
-    },
-  },
+      return Math.floor(this.size / 2.5) + 'px'
+    }
+  }
 }
 </script>
 

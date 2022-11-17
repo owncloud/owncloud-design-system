@@ -11,7 +11,7 @@
       :style="{
         backgroundColor: backgroundColor,
         '--icon-color': iconColor,
-        '--width': avatarWidth,
+        '--width': avatarWidth
       }"
     >
       <oc-icon v-if="hasIcon" :name="icon" :size="iconSize" :fill-type="iconFillType" />
@@ -20,14 +20,14 @@
 </template>
 
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from '../OcIcon/OcIcon.vue'
 
 export default {
-  name: "OcAvatarItem",
-  status: "ready",
-  release: "10.0.0",
+  name: 'OcAvatarItem',
+  status: 'ready',
+  release: '10.0.0',
   components: {
-    OcIcon,
+    OcIcon
   },
   props: {
     /**
@@ -35,7 +35,7 @@ export default {
      */
     name: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * Icon that should be used for the avatar
@@ -43,7 +43,7 @@ export default {
     icon: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Color that should be used for the icon
@@ -51,7 +51,7 @@ export default {
     iconColor: {
       type: String,
       required: false,
-      default: "var(--oc-color-text-inverse)",
+      default: 'var(--oc-color-text-inverse)'
     },
     /**
      * Fill-type that should be used for the icon
@@ -59,7 +59,7 @@ export default {
     iconFillType: {
       type: String,
       required: false,
-      default: "fill",
+      default: 'fill'
     },
     /**
      * Background color that should be used for the avatar. If empty
@@ -68,7 +68,7 @@ export default {
     background: {
       type: String,
       required: false,
-      default: "var(--oc-color-swatch-passive-default)",
+      default: 'var(--oc-color-swatch-passive-default)'
     },
     /**
      * Accessibility label used as alt. Use only in case the avatar is used alone.
@@ -78,7 +78,7 @@ export default {
     accessibleLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
 
     /**
@@ -87,7 +87,7 @@ export default {
     width: {
       type: Number,
       required: false,
-      default: 30,
+      default: 30
     },
 
     /**
@@ -96,13 +96,13 @@ export default {
     iconSize: {
       type: String,
       required: false,
-      default: "small",
-    },
+      default: 'small'
+    }
   },
 
   computed: {
     avatarWidth() {
-      return this.width + "px"
+      return this.width + 'px'
     },
     hasIcon() {
       return this.icon !== null
@@ -112,24 +112,24 @@ export default {
     },
     pickBackgroundColor() {
       const backgroundColors = [
-        "#b82015",
-        "#c21c53",
-        "#9C27B0",
-        "#673AB7",
-        "#3F51B5",
-        "#106892",
-        "#055c68",
-        "#208377",
-        "#1a761d",
-        "#476e1a",
-        "#636d0b",
-        "#8e5c11",
-        "#795548",
-        "#465a64",
+        '#b82015',
+        '#c21c53',
+        '#9C27B0',
+        '#673AB7',
+        '#3F51B5',
+        '#106892',
+        '#055c68',
+        '#208377',
+        '#1a761d',
+        '#476e1a',
+        '#636d0b',
+        '#8e5c11',
+        '#795548',
+        '#465a64'
       ]
       return backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
-    },
-  },
+    }
+  }
 }
 </script>
 

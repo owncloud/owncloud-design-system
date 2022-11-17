@@ -6,7 +6,7 @@
       class="space"
       :style="{ lineHeight: prop.value, height: prop.value }"
     >
-      ${{ prop.name.replace(/_/g, "-") }}
+      ${{ prop.name.replace(/_/g, '-') }}
       <span>({{ prop.value }})</span>
     </div>
   </div>
@@ -23,17 +23,17 @@ import designTokens from '../../../src/assets/tokens/ods.json'
  * [/src/tokens/spacing.yml](https://github.com/owncloud/web/blob/master/packages/design-system/src/tokens/spacing.yml).
  */
 export default {
-  name: "SpacingTokens",
+  name: 'SpacingTokens',
   computed: {
     tokens() {
-      return Object.values(designTokens).filter(token => token.name.startsWith("oc-space"))
-    },
-  },
+      return Object.values(designTokens).filter((token) => token.name.startsWith('oc-space'))
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens";
+@import '../../docs.tokens';
 
 /* STYLES
 --------------------------------------------- */

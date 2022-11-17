@@ -14,14 +14,14 @@
  * Please head to the ownCloud web ResourceTable component (https://github.com/owncloud/web/blob/master/packages/web-app-files/src/components/FilesList/ResourceTable.vue) for a demo of the Ghost Element.
  */
 export default {
-  name: "OcGhostElement",
-  status: "ready",
-  release: "11.2.0",
+  name: 'OcGhostElement',
+  status: 'ready',
+  release: '11.2.0',
   props: {
     previewItems: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
     layerCount() {
@@ -35,8 +35,8 @@ export default {
     },
     itemCount() {
       return this.previewItems.length
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -30,21 +30,21 @@
 </template>
 
 <script>
-import { shareType } from "../../utils/shareType.js"
-import OcAvatar from "../OcAvatar/OcAvatar.vue"
-import OcAvatarCount from "../OcAvatarCount/OcAvatarCount.vue"
-import OcAvatarLink from "../OcAvatarLink/OcAvatarLink.vue"
-import OcAvatarGroup from "../OcAvatarGroup/OcAvatarGroup.vue"
-import OcAvatarFederated from "../OcAvatarFederated/OcAvatarFederated.vue"
-import OcAvatarGuest from "../OcAvatarGuest/OcAvatarGuest.vue"
+import { shareType } from '../../utils/shareType.js'
+import OcAvatar from '../OcAvatar/OcAvatar.vue'
+import OcAvatarCount from '../OcAvatarCount/OcAvatarCount.vue'
+import OcAvatarLink from '../OcAvatarLink/OcAvatarLink.vue'
+import OcAvatarGroup from '../OcAvatarGroup/OcAvatarGroup.vue'
+import OcAvatarFederated from '../OcAvatarFederated/OcAvatarFederated.vue'
+import OcAvatarGuest from '../OcAvatarGuest/OcAvatarGuest.vue'
 
 /**
  * Display a group of avatars
  */
 export default {
-  name: "OcAvatars",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcAvatars',
+  status: 'ready',
+  release: '2.1.0',
 
   components: {
     OcAvatar,
@@ -52,7 +52,7 @@ export default {
     OcAvatarLink,
     OcAvatarGroup,
     OcAvatarFederated,
-    OcAvatarGuest,
+    OcAvatarGuest
   },
 
   props: {
@@ -61,7 +61,7 @@ export default {
      */
     items: {
       type: Array,
-      required: true,
+      required: true
     },
     /**
      * Asserts whether avatars should be stacked on each other
@@ -69,7 +69,7 @@ export default {
     stacked: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Asserts whether tooltip should be displayed on hover/focus
@@ -77,7 +77,7 @@ export default {
     isTooltipDisplayed: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Limits the number of avatars which will be displayed
@@ -85,7 +85,7 @@ export default {
     maxDisplayed: {
       type: Number,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * A description of the avatar group for screen readers. This is required as the avatar group element
@@ -94,8 +94,8 @@ export default {
     accessibleDescription: {
       type: String,
       required: false,
-      default: null,
-    },
+      default: null
+    }
   },
 
   computed: {
@@ -105,13 +105,13 @@ export default {
 
     tooltip() {
       if (this.isTooltipDisplayed) {
-        const names = this.avatars.map(user => user.displayName)
+        const names = this.avatars.map((user) => user.displayName)
 
         if (this.otherItems.length > 0) {
-          names.push(...this.otherItems.map(item => item.name))
+          names.push(...this.otherItems.map((item) => item.name))
         }
 
-        let tooltip = names.join(", ")
+        let tooltip = names.join(', ')
 
         if (this.isOverlapping) {
           tooltip += ` +${this.items.length - this.maxDisplayed}`
@@ -124,7 +124,7 @@ export default {
     },
 
     avatars() {
-      const a = this.items.filter(u => u.shareType === shareType.user)
+      const a = this.items.filter((u) => u.shareType === shareType.user)
       if (!this.isOverlapping) {
         return a
       }
@@ -132,7 +132,7 @@ export default {
     },
 
     otherItems() {
-      const a = this.items.filter(u => u.shareType !== shareType.user)
+      const a = this.items.filter((u) => u.shareType !== shareType.user)
       if (!this.isOverlapping) {
         return a
       }
@@ -140,7 +140,7 @@ export default {
         return []
       }
       return a.slice(0, this.maxDisplayed - this.avatars.length)
-    },
+    }
   },
   methods: {
     getAvatarComponentForItem(item) {
@@ -154,8 +154,8 @@ export default {
         case shareType.guest:
           return OcAvatarGuest
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

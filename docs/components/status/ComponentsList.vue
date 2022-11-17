@@ -64,37 +64,37 @@
 </template>
 
 <script>
-import orderBy from "../../utils/orderBy"
+import orderBy from '../../utils/orderBy'
 
 export default {
-  name: "ComponentsList",
+  name: 'ComponentsList',
   data() {
     return {
-      components: this.orderData(this.getComponents()),
+      components: this.orderData(this.getComponents())
     }
   },
   methods: {
     getComponents: function () {
       const components = []
-      const contexts = [require.context("@/components/", true, /\.vue$/)]
+      const contexts = [require.context('@/components/', true, /\.vue$/)]
 
-      contexts.forEach(context => {
-        context.keys().forEach(key => components.push(context(key).default))
+      contexts.forEach((context) => {
+        context.keys().forEach((key) => components.push(context(key).default))
       })
 
-      return components.map(c => {
+      return components.map((c) => {
         return c
       })
     },
     orderData: function (data) {
-      return orderBy(data, "name", "asc")
-    },
-  },
+      return orderBy(data, 'name', 'asc')
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens";
+@import '../../docs.tokens';
 
 /* STYLES
 --------------------------------------------- */

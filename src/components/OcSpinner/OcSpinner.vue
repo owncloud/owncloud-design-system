@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { getSizeClass } from "../../utils/sizeClasses"
+import { getSizeClass } from '../../utils/sizeClasses'
 
 /**
  * Remote actions can take an undefined portion of time. The spinner gives feedback to the users about an actions being processed.
@@ -19,9 +19,9 @@ import { getSizeClass } from "../../utils/sizeClasses"
  *
  */
 export default {
-  name: "OcSpinner",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcSpinner',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Descriptive text to be read to screen-readers, strongly recommended unless the component is used inside a DOM node that is already `aria-hidden="true"`.
@@ -29,7 +29,7 @@ export default {
     ariaLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * The size of the spinner. Defaults to medium.
@@ -37,17 +37,17 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge)/)
-      },
-    },
+      }
+    }
   },
   computed: {
     $_ocSpinner_class() {
-      return ["oc-spinner", `oc-spinner-${getSizeClass(this.size)}`]
-    },
-  },
+      return ['oc-spinner', `oc-spinner-${getSizeClass(this.size)}`]
+    }
+  }
 }
 </script>
 
@@ -71,7 +71,7 @@ export default {
     border: 1px solid currentColor;
     border-bottom-color: transparent;
     border-radius: 100%;
-    content: "";
+    content: '';
     display: block;
     height: 100%;
     width: 100%;

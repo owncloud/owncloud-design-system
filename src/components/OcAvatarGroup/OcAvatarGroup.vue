@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import OcAvatarItem from "../OcAvatarItem/OcAvatarItem.vue"
+import OcAvatarItem from '../OcAvatarItem/OcAvatarItem.vue'
 
 export default {
-  name: "OcAvatarGroup",
-  status: "ready",
-  release: "10.0.0",
+  name: 'OcAvatarGroup',
+  status: 'ready',
+  release: '10.0.0',
   components: { OcAvatarItem },
 
   props: {
@@ -23,7 +23,7 @@ export default {
      */
     name: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * Accessibility label used as alt. Use only in case the avatar is used alone.
@@ -33,7 +33,7 @@ export default {
     accessibleLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Describes the width of the avatar
@@ -41,7 +41,7 @@ export default {
     width: {
       type: Number,
       required: false,
-      default: 30,
+      default: 30
     },
 
     /**
@@ -50,9 +50,9 @@ export default {
     iconSize: {
       type: String,
       required: false,
-      default: "small",
-    },
-  },
+      default: 'small'
+    }
+  }
 }
 </script>
 

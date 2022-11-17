@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import { getSizeClass } from "../../utils/sizeClasses"
+import { getSizeClass } from '../../utils/sizeClasses'
 
 export default {
-  name: "OcTag",
-  status: "ready",
-  release: "2.0.0",
+  name: 'OcTag',
+  status: 'ready',
+  release: '2.0.0',
 
   props: {
     /**
@@ -21,8 +21,8 @@ export default {
     type: {
       type: String,
       required: false,
-      default: "span",
-      validator: type => type.match(/(span|button|router-link|a)/),
+      default: 'span',
+      validator: (type) => type.match(/(span|button|router-link|a)/)
     },
 
     /**
@@ -31,7 +31,7 @@ export default {
     to: {
       type: [String, Object],
       required: false,
-      default: null,
+      default: null
     },
 
     /**
@@ -40,10 +40,10 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(small|medium|large)/)
-      },
+      }
     },
 
     /**
@@ -52,24 +52,24 @@ export default {
     rounded: {
       type: Boolean,
       default: false,
-      required: false,
-    },
+      required: false
+    }
   },
 
   computed: {
     $_ocTag_class() {
-      const classes = ["oc-tag", `oc-tag-${getSizeClass(this.size)}`]
+      const classes = ['oc-tag', `oc-tag-${getSizeClass(this.size)}`]
 
-      this.type === "router-link" || this.type === "a"
-        ? classes.push("oc-tag-link")
+      this.type === 'router-link' || this.type === 'a'
+        ? classes.push('oc-tag-link')
         : classes.push(`oc-tag-${this.type}`)
 
       if (this.rounded) {
-        classes.push("oc-tag-rounded")
+        classes.push('oc-tag-rounded')
       }
 
       return classes
-    },
+    }
   },
 
   methods: {
@@ -78,9 +78,9 @@ export default {
        * Emitted as soon as the user clicks on the tag
        * @type {event}
        */
-      this.$emit("click", event)
-    },
-  },
+      this.$emit('click', event)
+    }
+  }
 }
 </script>
 

@@ -30,18 +30,18 @@ import designTokens from '../../../src/assets/tokens/ods.json'
  * [/src/tokens/color.yml](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens/color.yml).
  */
 export default {
-  name: "ColorTokens",
+  name: 'ColorTokens',
 
   computed: {
     tokens() {
-      return Object.values(designTokens).filter(token => token.name.startsWith("oc-color-"))
-    },
-  },
+      return Object.values(designTokens).filter((token) => token.name.startsWith('oc-color-'))
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens";
+@import '../../docs.tokens';
 
 /* STYLES
 --------------------------------------------- */

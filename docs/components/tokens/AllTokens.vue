@@ -11,7 +11,7 @@
       <tbody>
         <tr v-for="(token, index) in tokens" :key="index" class="token">
           <td v-if="token.name">
-            <code class="name">${{ token.name.replace(/_/g, "-") }}</code>
+            <code class="name">${{ token.name.replace(/_/g, '-') }}</code>
           </td>
           <td v-else>N/A</td>
           <td v-if="token.value">
@@ -43,17 +43,17 @@ import designTokens from '../../../src/assets/tokens/ods.json'
  * [/src/tokens/](https://github.com/owncloud/owncloud-design-system/blob/master/src/tokens).
  */
 export default {
-  name: "AllTokens",
+  name: 'AllTokens',
   data() {
     return {
-      tokens: Object.values(designTokens),
+      tokens: Object.values(designTokens)
     }
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens";
+@import '../../docs.tokens';
 
 /* STYLES
 --------------------------------------------- */

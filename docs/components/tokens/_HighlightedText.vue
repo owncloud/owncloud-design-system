@@ -9,7 +9,7 @@
             display:
               fragment.value.startsWith(' ') || fragment.value.endsWith(' ')
                 ? 'inline'
-                : 'inline-block',
+                : 'inline-block'
           }"
           :class="{ 'highlighted-fragment': fragment.highlighted }"
         >
@@ -23,51 +23,51 @@
 
 <script>
 export default {
-  name: "HighlightedText",
+  name: 'HighlightedText',
   props: {
     tag: {
       type: String,
-      default: "span",
+      default: 'span'
     },
     fragmentTag: {
       type: String,
-      default: "span",
+      default: 'span',
       validator: function (value) {
-        return ["span", "i", "em", "b", "strong"].includes(value)
-      },
+        return ['span', 'i', 'em', 'b', 'strong'].includes(value)
+      }
     },
     value: {
       type: String,
-      required: true,
+      required: true
     },
     highlighted: {
       type: String,
-      default: null,
-    },
+      default: null
+    }
   },
   computed: {
     lines() {
-      const regex = new RegExp("\\n")
+      const regex = new RegExp('\\n')
       const lines = this.value.split(regex)
       return lines
         .filter((line, index) => {
           // note: split creates an empty first and last element. this removes those (if they are really empty)
           return !((index === 0 || index === lines.length - 1) && !line.length)
         })
-        .map(line => this.buildFragments(line))
-    },
+        .map((line) => this.buildFragments(line))
+    }
   },
   methods: {
     buildFragments(line) {
       if (this.highlighted) {
-        const regex = new RegExp("(" + this.highlighted + ")", "gi")
+        const regex = new RegExp('(' + this.highlighted + ')', 'gi')
         const textFragments = line.split(regex)
         if (textFragments.length > 1) {
-          return textFragments.map(fragment => {
+          return textFragments.map((fragment) => {
             return {
               tag: this.fragmentTag,
               value: fragment,
-              highlighted: fragment.match(regex),
+              highlighted: fragment.match(regex)
             }
           })
         }
@@ -77,11 +77,11 @@ export default {
         {
           tag: this.fragmentTag,
           value: line,
-          highlighted: false,
-        },
+          highlighted: false
+        }
       ]
-    },
-  },
+    }
+  }
 }
 </script>
 

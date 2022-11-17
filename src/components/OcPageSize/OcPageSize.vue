@@ -20,22 +20,22 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
-import OcSelect from "../OcSelect/OcSelect.vue"
+import uniqueId from '../../utils/uniqueId'
+import OcSelect from '../OcSelect/OcSelect.vue'
 
 /**
  * Select how many items will be displayed per page
  */
 export default {
-  name: "OcPageSize",
-  status: "ready",
-  release: "8.0.0",
+  name: 'OcPageSize',
+  status: 'ready',
+  release: '8.0.0',
 
   components: { OcSelect },
 
   model: {
-    prop: "selected",
-    event: "change",
+    prop: 'selected',
+    event: 'change'
   },
 
   props: {
@@ -44,7 +44,7 @@ export default {
      */
     options: {
       type: Array,
-      required: true,
+      required: true
     },
 
     /**
@@ -52,7 +52,7 @@ export default {
      */
     label: {
       type: String,
-      required: true,
+      required: true
     },
 
     /**
@@ -61,7 +61,7 @@ export default {
      */
     selected: {
       type: [String, Number],
-      required: true,
+      required: true
     },
 
     /**
@@ -71,8 +71,8 @@ export default {
     selectId: {
       type: String,
       required: false,
-      default: uniqueId("oc-page-size-"),
-    },
+      default: uniqueId('oc-page-size-')
+    }
   },
 
   methods: {
@@ -83,9 +83,9 @@ export default {
        * @event change
        * @property {number|string} value selected value
        */
-      this.$emit("change", value)
-    },
-  },
+      this.$emit('change', value)
+    }
+  }
 }
 </script>
 

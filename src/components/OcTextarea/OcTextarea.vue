@@ -7,7 +7,7 @@
       class="oc-textarea oc-rounded"
       :class="{
         'oc-textarea-warning': !!warningMessage,
-        'oc-textarea-danger': !!errorMessage,
+        'oc-textarea-danger': !!errorMessage
       }"
       :value="value"
       :aria-invalid="ariaInvalid"
@@ -21,7 +21,7 @@
         :class="{
           'oc-textarea-description': !!descriptionMessage,
           'oc-textarea-warning': !!warningMessage,
-          'oc-textarea-danger': !!errorMessage,
+          'oc-textarea-danger': !!errorMessage
         }"
         v-text="messageText"
       />
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
+import uniqueId from '../../utils/uniqueId'
 
 /**
  * Textareas are used to allow users to provide text input when the expected
@@ -46,9 +46,9 @@ import uniqueId from "../../utils/uniqueId"
  * or warning is fixed.
  */
 export default {
-  name: "OcTextarea",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcTextarea',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * The ID of the element.
@@ -56,14 +56,14 @@ export default {
     id: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-textarea-"),
+      default: () => uniqueId('oc-textarea-')
     },
     /**
      * Text value of the form textarea.
      */
     value: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * Label of the textarea.
@@ -71,28 +71,28 @@ export default {
     label: {
       type: String,
       required: true,
-      default: null,
+      default: null
     },
     /**
      * A warning message which is shown below the textarea.
      */
     warningMessage: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * An error message which is shown below the textarea.
      */
     errorMessage: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * A description text which is shown below the textarea.
      */
     descriptionMessage: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * Whether or not vertical space below the textarea should be reserved for a one line message,
@@ -100,7 +100,7 @@ export default {
      */
     fixMessageLine: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * Configure if the value should be emitted on 'enter' or if it should do a linebreak
@@ -110,8 +110,8 @@ export default {
     submitOnEnter: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
     showMessageLine() {
@@ -128,7 +128,7 @@ export default {
     additionalAttributes() {
       const additionalAttrs = {}
       if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
-        additionalAttrs["aria-describedby"] = this.messageId
+        additionalAttrs['aria-describedby'] = this.messageId
       }
       return { ...this.$attrs, ...additionalAttrs }
     },
@@ -143,7 +143,7 @@ export default {
         return this.warningMessage
       }
       return this.descriptionMessage
-    },
+    }
   },
   methods: {
     /**
@@ -158,33 +158,33 @@ export default {
        * Input event
        * @type {event}
        **/
-      this.$emit("input", value)
+      this.$emit('input', value)
     },
     onFocus(value) {
       /**
        * Focus event - emitted as soon as the input field is focused
        * @type {event}
        **/
-      this.$emit("focus", value)
+      this.$emit('focus', value)
     },
     onKeyDown(e) {
-      const enterKey = e.key === "Enter"
+      const enterKey = e.key === 'Enter'
       if (this.submitOnEnter && enterKey && !e.ctrlKey && !e.shiftKey) {
         /**
          * Change event - emitted as soon as the user hits enter (without ctrl or shift)
          * Only applies if submitOnEnter is set to true
          * @type {string}
          */
-        this.$emit("change", e.target.value)
+        this.$emit('change', e.target.value)
       }
 
       /**
        * KeyDown event - emitted as soon as the user hits a key
        * @type {event}
        */
-      this.$emit("keydown", e)
-    },
-  },
+      this.$emit('keydown', e)
+    }
+  }
 }
 </script>
 

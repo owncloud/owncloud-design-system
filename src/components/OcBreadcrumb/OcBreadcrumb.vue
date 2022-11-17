@@ -91,9 +91,9 @@
 </template>
 
 <script>
-import OcButton from "../OcButton/OcButton.vue"
-import OcDrop from "../OcDrop/OcDrop.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcButton from '../OcButton/OcButton.vue'
+import OcDrop from '../OcDrop/OcDrop.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
 
 /**
  * Displays a breadcrumb. Each item in the items property has the following elements:
@@ -102,14 +102,14 @@ import OcIcon from "../OcIcon/OcIcon.vue"
  *  - to: optional element, the vue router link
  */
 export default {
-  name: "OcBreadcrumb",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcBreadcrumb',
+  status: 'ready',
+  release: '1.0.0',
 
   components: {
     OcDrop,
     OcIcon,
-    OcButton,
+    OcButton
   },
 
   props: {
@@ -118,7 +118,7 @@ export default {
      */
     items: {
       type: Array,
-      required: true,
+      required: true
     },
     /**
      * Variation of breadcrumbs
@@ -127,8 +127,8 @@ export default {
     variation: {
       type: String,
       required: false,
-      default: "default",
-      validator: value => value === "lead" || value === "default",
+      default: 'default',
+      validator: (value) => value === 'lead' || value === 'default'
     },
     /**
      * Defines the padding size around the drop content. Defaults to `medium`.
@@ -138,11 +138,11 @@ export default {
     contextMenuPadding: {
       type: String,
       required: false,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
-      },
-    },
+      }
+    }
   },
   computed: {
     dropdownItems() {
@@ -156,17 +156,17 @@ export default {
       return [...this.items].reverse()[0]
     },
     contextMenuLabel() {
-      return this.$gettext("Show actions for current folder")
+      return this.$gettext('Show actions for current folder')
     },
     showContextMenu() {
       return !!this.$slots.contextMenu
-    },
+    }
   },
   methods: {
     getAriaCurrent(index) {
-      return this.items.length - 1 === index ? "page" : null
-    },
-  },
+      return this.items.length - 1 === index ? 'page' : null
+    }
+  }
 }
 </script>
 
@@ -207,7 +207,7 @@ export default {
     }
 
     > li a:hover,
-    > li span:not([aria-current="page"]):not(.oc-icon):hover,
+    > li span:not([aria-current='page']):not(.oc-icon):hover,
     > li button:hover {
       text-decoration: underline;
     }

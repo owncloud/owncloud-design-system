@@ -10,7 +10,7 @@
         class="oc-text-input oc-rounded"
         :class="{
           'oc-text-input-warning': !!warningMessage,
-          'oc-text-input-danger': !!errorMessage,
+          'oc-text-input-danger': !!errorMessage
         }"
         :type="type"
         :value="displayValue"
@@ -36,7 +36,7 @@
         :class="{
           'oc-text-input-description': !!descriptionMessage,
           'oc-text-input-warning': !!warningMessage,
-          'oc-text-input-danger': !!errorMessage,
+          'oc-text-input-danger': !!errorMessage
         }"
         v-text="messageText"
       />
@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
-import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
+import uniqueId from '../../utils/uniqueId'
+import OcButton from '../OcButton/OcButton.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
 
 /**
  * Form Inputs are used to allow users to provide text input when the expected
@@ -63,10 +63,10 @@ import OcIcon from "../OcIcon/OcIcon.vue"
  * or warning is fixed.
  */
 export default {
-  name: "OcTextInput",
+  name: 'OcTextInput',
   components: { OcIcon, OcButton },
-  status: "ready",
-  release: "1.0.0",
+  status: 'ready',
+  release: '1.0.0',
   inheritAttrs: false,
   props: {
     /**
@@ -75,7 +75,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-textinput-"),
+      default: () => uniqueId('oc-textinput-')
     },
     /**
      * The type of the form input field.
@@ -83,10 +83,10 @@ export default {
      */
     type: {
       type: String,
-      default: "text",
-      validator: value => {
+      default: 'text',
+      validator: (value) => {
         return value.match(/(text|number|email|password)/)
-      },
+      }
     },
     /**
      * Text value of the form input field.
@@ -95,7 +95,7 @@ export default {
     value: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Selection range to accomplish partial selection
@@ -103,7 +103,7 @@ export default {
     selectionRange: {
       type: Array,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Whether or not the input element should have a dedicated button for clearing the input content.
@@ -111,7 +111,7 @@ export default {
     clearButtonEnabled: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * The aria label for the clear button. Only used if it's enabled at all.
@@ -119,7 +119,7 @@ export default {
     clearButtonAccessibleLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Value to show when no value is provided
@@ -129,14 +129,14 @@ export default {
     defaultValue: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Disables the input field
      */
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * Accessible label of the form input field.
@@ -144,21 +144,21 @@ export default {
     label: {
       type: String,
       required: true,
-      default: null,
+      default: null
     },
     /**
      * A warning message which is shown below the input.
      */
     warningMessage: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * An error message which is shown below the input.
      */
     errorMessage: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * Whether or not vertical space below the input should be reserved for a one line message,
@@ -166,15 +166,15 @@ export default {
      */
     fixMessageLine: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * A description text which is shown below the input field.
      */
     descriptionMessage: {
       type: String,
-      default: null,
-    },
+      default: null
+    }
   },
   computed: {
     showMessageLine() {
@@ -197,11 +197,11 @@ export default {
     additionalAttributes() {
       const additionalAttrs = {}
       if (!!this.warningMessage || !!this.errorMessage || !!this.descriptionMessage) {
-        additionalAttrs["aria-describedby"] = this.messageId
+        additionalAttrs['aria-describedby'] = this.messageId
       }
       // FIXME: placeholder usage is discouraged, we need to find a better UX concept
       if (this.defaultValue) {
-        additionalAttrs["placeholder"] = this.defaultValue
+        additionalAttrs['placeholder'] = this.defaultValue
       }
       return { ...this.$attrs, ...additionalAttrs }
     },
@@ -223,11 +223,11 @@ export default {
       return !this.disabled && this.clearButtonEnabled && this.value !== null
     },
     clearButtonAccessibleLabelValue() {
-      return this.clearButtonAccessibleLabel || this.$gettext("Clear input")
+      return this.clearButtonAccessibleLabel || this.$gettext('Clear input')
     },
     displayValue() {
-      return this.value || ""
-    },
+      return this.value || ''
+    }
   },
   methods: {
     /**
@@ -248,14 +248,14 @@ export default {
        * Change event
        * @type {event}
        **/
-      this.$emit("change", value)
+      this.$emit('change', value)
     },
     onInput(value) {
       /**
        * Input event
        * @type {event}
        **/
-      this.$emit("input", value)
+      this.$emit('input', value)
     },
     onFocus(target) {
       target.select()
@@ -266,9 +266,9 @@ export default {
        * Focus event - emitted as soon as the input field is focused
        * @type {event}
        **/
-      this.$emit("focus", target.value)
-    },
-  },
+      this.$emit('focus', target.value)
+    }
+  }
 }
 </script>
 

@@ -22,18 +22,18 @@ import designTokens from '../../../src/assets/tokens/ods.json'
  * [/src/tokens/font-size.yml](https://github.com/owncloud/web/blob/master/packages/design-system/src/tokens/font-size.yml).
  */
 export default {
-  name: "FontSize",
+  name: 'FontSize',
 
   computed: {
     tokens() {
-      return Object.values(designTokens).filter(token => token.name.startsWith("oc-font-size-"))
-    },
-  },
+      return Object.values(designTokens).filter((token) => token.name.startsWith('oc-font-size-'))
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../docs.tokens";
+@import '../../docs.tokens';
 
 /* STYLES
 --------------------------------------------- */

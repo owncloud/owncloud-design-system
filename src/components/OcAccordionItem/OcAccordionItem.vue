@@ -39,17 +39,17 @@
   </div>
 </template>
 <script>
-import uniqueId from "../../utils/uniqueId"
-import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
+import uniqueId from '../../utils/uniqueId'
+import OcButton from '../OcButton/OcButton.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
 
 export default {
-  name: "OcAccordionItem",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcAccordionItem',
+  status: 'ready',
+  release: '1.0.0',
   components: {
     OcButton,
-    OcIcon,
+    OcIcon
   },
   props: {
     /**
@@ -58,14 +58,14 @@ export default {
     icon: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Title to be displayed.
      */
     title: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * Description of the accordion item to be displayed below the accordion title.
@@ -73,7 +73,7 @@ export default {
     description: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Id of the accordion item. If not specified, a unique id will be generated.
@@ -83,7 +83,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-accordion-id-"),
+      default: () => uniqueId('oc-accordion-id-')
     },
     /**
      * Id of the accordion title. If not specified, a unique id will be generated.
@@ -91,7 +91,7 @@ export default {
     titleId: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-accordion-title-"),
+      default: () => uniqueId('oc-accordion-title-')
     },
     /**
      * Id of the content of the accordion item. If not specified, a unique id will be generated.
@@ -99,7 +99,7 @@ export default {
     contentId: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-accordion-content-"),
+      default: () => uniqueId('oc-accordion-content-')
     },
     /**
      * Heading level of the accordion title. Defaults to 3 (i.e. `h3`).
@@ -107,20 +107,20 @@ export default {
     headingLevel: {
       type: String,
       required: false,
-      default: "3",
-    },
+      default: '3'
+    }
   },
   data: () => ({
-    expanded: false,
+    expanded: false
   }),
   methods: {
     toggleExpanded() {
       if (this.expanded) {
-        this.$parent.$emit("collapse", this.id)
+        this.$parent.$emit('collapse', this.id)
       } else {
-        this.$parent.$emit("expand", this.id)
+        this.$parent.$emit('expand', this.id)
       }
-    },
-  },
+    }
+  }
 }
 </script>

@@ -5,51 +5,51 @@
 </template>
 <script>
 export default {
-  name: "OcTableCell",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcTableCell',
+  status: 'ready',
+  release: '2.1.0',
   props: {
     type: {
       type: String,
-      default: "td",
+      default: 'td',
       required: false,
-      validator: type => /(td|th)/.test(type),
+      validator: (type) => /(td|th)/.test(type)
     },
     alignH: {
       type: String,
-      default: "left",
-      validator: alignment => /(left|center|right)/.test(alignment),
+      default: 'left',
+      validator: (alignment) => /(left|center|right)/.test(alignment)
     },
     alignV: {
       type: String,
-      default: "middle",
-      validator: alignment => /(top|middle|bottom)/.test(alignment),
+      default: 'middle',
+      validator: (alignment) => /(top|middle|bottom)/.test(alignment)
     },
     width: {
       type: String,
-      default: "auto",
-      validator: width => /(auto|shrink|expand)/.test(width),
+      default: 'auto',
+      validator: (width) => /(auto|shrink|expand)/.test(width)
     },
     wrap: {
       type: String,
       default: null,
-      validator: wrap => (wrap ? /(break|nowrap|truncate)/.test(wrap) : true),
-    },
+      validator: (wrap) => (wrap ? /(break|nowrap|truncate)/.test(wrap) : true)
+    }
   },
   computed: {
     cellClasses() {
       const classes = [
-        "oc-table-cell",
+        'oc-table-cell',
         `oc-table-cell-align-${this.alignH}`,
         `oc-table-cell-align-${this.alignV}`,
-        `oc-table-cell-width-${this.width}`,
+        `oc-table-cell-width-${this.width}`
       ]
       if (this.wrap) {
         classes.push(`oc-text-${this.wrap}`)
       }
       return classes
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss">

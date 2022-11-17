@@ -6,9 +6,9 @@
 
 <script>
 export default {
-  name: "OcThead",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcThead',
+  status: 'ready',
+  release: '2.1.0'
 }
 </script>
 

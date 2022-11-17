@@ -1,6 +1,6 @@
-import { createLocalVue, mount } from "@vue/test-utils"
-import { ref, nextTick } from "vue"
-import { useIsVisible } from "./index"
+import { createLocalVue, mount } from '@vue/test-utils'
+import { ref, nextTick } from 'vue'
+import { useIsVisible } from './index'
 
 const localVue = createLocalVue()
 
@@ -11,7 +11,7 @@ const mockIntersectionObserver = () => {
     const mock = {
       observe: jest.fn(),
       disconnect: jest.fn(),
-      unobserve: jest.fn(),
+      unobserve: jest.fn()
     }
 
     window.IntersectionObserver = jest.fn().mockImplementation(() => mock)
@@ -21,7 +21,7 @@ const mockIntersectionObserver = () => {
       callback: (args, fastForward = 0) => {
         window.IntersectionObserver.mock.calls[0][0](args)
         jest.advanceTimersByTime(fastForward)
-      },
+      }
     }
   }
 
@@ -45,65 +45,65 @@ const createWrapper = (options = {}) =>
 
         return {
           isVisible,
-          target,
+          target
         }
-      },
+      }
     },
     {
-      localVue,
+      localVue
     }
   )
 
-describe("useIsVisible", () => {
+describe('useIsVisible', () => {
   const { enable: enableIntersectionObserver, disable: disableIntersectionObserver } =
     mockIntersectionObserver()
 
-  it("is visible by default if browser does not support IntersectionObserver", () => {
+  it('is visible by default if browser does not support IntersectionObserver', () => {
     disableIntersectionObserver()
     const wrapper = createWrapper()
-    expect(wrapper.vm.$refs.target.innerHTML).toBe("true")
+    expect(wrapper.vm.$refs.target.innerHTML).toBe('true')
   })
 
-  it("observes the target", async () => {
+  it('observes the target', async () => {
     const { mock: observerMock } = enableIntersectionObserver()
     createWrapper()
     await nextTick()
 
-    expect(observerMock.observe).toBeCalledTimes(1)
+    expect(observerMock.observe).toHaveBeenCalledTimes(1)
   })
 
-  it("only shows once and then gets unobserved if the the composable is in the default show mode", async () => {
+  it('only shows once and then gets unobserved if the the composable is in the default show mode', async () => {
     const { mock: observerMock, callback: observerCallback } = enableIntersectionObserver()
     const wrapper = createWrapper()
 
     await nextTick()
-    expect(wrapper.vm.$refs.target.innerHTML).toBe("false")
+    expect(wrapper.vm.$refs.target.innerHTML).toBe('false')
 
     observerCallback([{ isIntersecting: true }])
     await nextTick()
-    expect(wrapper.vm.$refs.target.innerHTML).toBe("true")
-    expect(observerMock.unobserve).toBeCalledTimes(1)
+    expect(wrapper.vm.$refs.target.innerHTML).toBe('true')
+    expect(observerMock.unobserve).toHaveBeenCalledTimes(1)
   })
 
-  it("shows and hides multiple times if the the composable is in showHide mode", async () => {
+  it('shows and hides multiple times if the the composable is in showHide mode', async () => {
     const { mock: observerMock, callback: observerCallback } = enableIntersectionObserver()
-    const wrapper = createWrapper({ mode: "showHide" })
+    const wrapper = createWrapper({ mode: 'showHide' })
 
     await nextTick()
-    expect(wrapper.vm.$refs.target.innerHTML).toBe("false")
+    expect(wrapper.vm.$refs.target.innerHTML).toBe('false')
 
     observerCallback([{ isIntersecting: true }])
     await nextTick()
-    expect(wrapper.vm.$refs.target.innerHTML).toBe("true")
-    expect(observerMock.unobserve).toBeCalledTimes(0)
+    expect(wrapper.vm.$refs.target.innerHTML).toBe('true')
+    expect(observerMock.unobserve).toHaveBeenCalledTimes(0)
   })
 
-  it("disconnects the observer before component gets unmounted", () => {
+  it('disconnects the observer before component gets unmounted', () => {
     const { mock: observerMock } = enableIntersectionObserver()
     const wrapper = createWrapper()
 
-    expect(observerMock.disconnect).toBeCalledTimes(0)
+    expect(observerMock.disconnect).toHaveBeenCalledTimes(0)
     wrapper.vm.$destroy()
-    expect(observerMock.disconnect).toBeCalledTimes(1)
+    expect(observerMock.disconnect).toHaveBeenCalledTimes(1)
   })
 })

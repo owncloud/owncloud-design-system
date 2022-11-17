@@ -59,10 +59,10 @@
 </template>
 
 <script>
-import OcButton from "../OcButton/OcButton.vue"
-import OcGrid from "../OcGrid/OcGrid.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcSpinner from "../OcSpinner/OcSpinner.vue"
+import OcButton from '../OcButton/OcButton.vue'
+import OcGrid from '../OcGrid/OcGrid.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcSpinner from '../OcSpinner/OcSpinner.vue'
 
 /**
  * The search bar is an input element used for searching server side resources or to filter local results.
@@ -79,14 +79,14 @@ import OcSpinner from "../OcSpinner/OcSpinner.vue"
  * The `aria-label` of the loading spinner can be set via `customLoadingAccessibleLabel`. If not set, it will default to "Loading results".
  */
 export default {
-  name: "OcSearchBar",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcSearchBar',
+  status: 'ready',
+  release: '1.0.0',
   components: {
     OcButton,
     OcGrid,
     OcIcon,
-    OcSpinner,
+    OcSpinner
   },
   props: {
     /**
@@ -95,7 +95,7 @@ export default {
     value: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * The icon to be displayed
@@ -103,7 +103,7 @@ export default {
     icon: {
       type: [String, Boolean],
       required: false,
-      default: "search",
+      default: 'search'
     },
     /**
      * Informative placeholder about the data to be entered
@@ -111,7 +111,7 @@ export default {
     placeholder: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Informative label about the data to be entered
@@ -119,14 +119,14 @@ export default {
     label: {
       type: String,
       required: true,
-      default: "",
+      default: ''
     },
     /**
      * Indicator if the search bar should be of smaller size
      */
     small: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * Determine the button text
@@ -134,7 +134,7 @@ export default {
     buttonLabel: {
       type: [String],
       required: false,
-      default: "Search",
+      default: 'Search'
     },
     /**
      * Determine the button visibility
@@ -142,7 +142,7 @@ export default {
     buttonHidden: {
       type: [Boolean],
       required: false,
-      default: false,
+      default: false
     },
     /**
      * If set to true the search event is triggered on each entered character
@@ -150,7 +150,7 @@ export default {
     typeAhead: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * automatically trim whitespaces around search term
@@ -158,7 +158,7 @@ export default {
     trimQuery: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     /**
      * If set to true data is loaded and the user cannot enter further data
@@ -166,7 +166,7 @@ export default {
     loading: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * If set to true the search landmark role is removed since it's not the page's main search function anymore
@@ -174,7 +174,7 @@ export default {
     isFilter: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * The aria-label for the loading spinner
@@ -182,7 +182,7 @@ export default {
     loadingAccessibleLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Show a "cancel" button next to the search bar.
@@ -190,7 +190,7 @@ export default {
     showCancelButton: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Variation of the cancel button
@@ -198,10 +198,10 @@ export default {
     cancelButtonVariation: {
       type: String,
       required: false,
-      default: "primary",
-      validator: value => {
+      default: 'primary',
+      validator: (value) => {
         return value.match(/(passive|primary|danger|success|warning|inverse)/)
-      },
+      }
     },
     /**
      * Handler function for when the cancel button is clicked.
@@ -209,11 +209,11 @@ export default {
     cancelHandler: {
       type: Function,
       required: false,
-      default: () => {},
-    },
+      default: () => {}
+    }
   },
   data: () => ({
-    query: "",
+    query: ''
   }),
   computed: {
     searchQuery() {
@@ -222,21 +222,21 @@ export default {
     },
     spinnerSize() {
       if (this.small) {
-        return "xsmall"
+        return 'xsmall'
       }
-      return "medium"
+      return 'medium'
     },
     inputClass() {
-      const classes = ["oc-search-input"]
+      const classes = ['oc-search-input']
 
-      this.icon && classes.push("oc-search-input-icon")
-      !this.buttonHidden && classes.push("oc-search-input-button")
+      this.icon && classes.push('oc-search-input-icon')
+      !this.buttonHidden && classes.push('oc-search-input-button')
 
       return classes
     },
     loadingAccessibleLabelValue() {
-      return this.loadingAccessibleLabel || this.$gettext("Loading results")
-    },
+      return this.loadingAccessibleLabel || this.$gettext('Loading results')
+    }
   },
   methods: {
     focusSearchInput() {
@@ -248,7 +248,7 @@ export default {
        * @event search
        * @type {event}
        */
-      this.$emit("search", this.query)
+      this.$emit('search', this.query)
     },
     onType(query) {
       this.query = !this.noTrim ? query.trim() : query
@@ -257,12 +257,12 @@ export default {
        * @event Input
        * @type {event}
        */
-      this.$emit("input", query)
+      this.$emit('input', query)
       if (this.typeAhead) this.onSearch(query)
     },
     onClear() {
-      this.query = ""
-      this.onType("")
+      this.query = ''
+      this.onType('')
       this.onSearch()
       this.$refs.searchInput.focus()
 
@@ -271,15 +271,15 @@ export default {
        * @event clear
        * @type {event}
        */
-      this.$emit("clear")
+      this.$emit('clear')
     },
     onCancel() {
-      this.query = ""
-      this.onType("")
+      this.query = ''
+      this.onType('')
       this.onSearch()
       this.cancelHandler()
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -11,15 +11,15 @@ export default {
       )
       if (links) {
         ;[].forEach.call(links, function (element) {
-          element.classList.add("vueds-visible")
+          element.classList.add('vueds-visible')
         })
       }
     },
     hideLinks() {
-      const activeLinks = document.querySelectorAll(".vueds-visible")
+      const activeLinks = document.querySelectorAll('.vueds-visible')
       if (activeLinks) {
         ;[].forEach.call(activeLinks, function (element) {
-          element.classList.remove("vueds-visible")
+          element.classList.remove('vueds-visible')
         })
       }
     },
@@ -27,7 +27,7 @@ export default {
       const search = document.querySelector("div[class^='rsg--search'] input")
       let writing = false
       if (search) {
-        search.addEventListener("keydown", () => {
+        search.addEventListener('keydown', () => {
           if (!writing || search.value) {
             writing = true
             if (this.showLinks) {
@@ -44,8 +44,8 @@ export default {
             writing = false
           }
         })
-        search.addEventListener("blur", event => {
-          if (event.target && event.target.value === "") {
+        search.addEventListener('blur', (event) => {
+          if (event.target && event.target.value === '') {
             if (this.hideLinks) {
               this.hideLinks()
             } else {
@@ -54,9 +54,9 @@ export default {
           }
         })
       }
-    },
+    }
   },
   mounted() {
     this.init()
-  },
+  }
 }

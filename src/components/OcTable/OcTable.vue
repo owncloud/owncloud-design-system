@@ -87,16 +87,16 @@
   </table>
 </template>
 <script>
-import Vue from "vue"
-import OcThead from "../_OcTableHeader/_OcTableHeader.vue"
-import OcTbody from "../_OcTableBody/_OcTableBody.vue"
-import OcTr from "../_OcTableRow/_OcTableRow.vue"
-import OcTh from "../_OcTableCellHead/_OcTableCellHead.vue"
-import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
-import OcGhostElement from "../_OcGhostElement/_OcGhostElement.vue"
-import OcButton from "../OcButton/OcButton.vue"
-import SortMixin from "../../mixins/sort"
-import { getSizeClass } from "../../utils/sizeClasses"
+import Vue from 'vue'
+import OcThead from '../_OcTableHeader/_OcTableHeader.vue'
+import OcTbody from '../_OcTableBody/_OcTableBody.vue'
+import OcTr from '../_OcTableRow/_OcTableRow.vue'
+import OcTh from '../_OcTableCellHead/_OcTableCellHead.vue'
+import OcTd from '../_OcTableCellData/_OcTableCellData.vue'
+import OcGhostElement from '../_OcGhostElement/_OcGhostElement.vue'
+import OcButton from '../OcButton/OcButton.vue'
+import SortMixin from '../../mixins/sort'
+import { getSizeClass } from '../../utils/sizeClasses'
 
 import {
   EVENT_THEAD_CLICKED,
@@ -104,23 +104,23 @@ import {
   EVENT_TROW_MOUNTED,
   EVENT_TROW_CONTEXTMENU,
   EVENT_ITEM_DROPPED,
-  EVENT_ITEM_DRAGGED,
-} from "../../helpers/constants"
+  EVENT_ITEM_DRAGGED
+} from '../../helpers/constants'
 
 /**
  * A table component with dynamic layout and data.
  */
 export default {
-  name: "OcTable",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcTable',
+  status: 'ready',
+  release: '2.1.0',
   components: {
     OcThead,
     OcTbody,
     OcTr,
     OcTh,
     OcTd,
-    OcButton,
+    OcButton
   },
   mixins: [SortMixin],
   props: {
@@ -131,7 +131,7 @@ export default {
      */
     data: {
       type: Array,
-      required: true,
+      required: true
     },
     /**
      * Name of the id property of your data items. See `data` for details on how to use it. The [idKey] is a required field
@@ -139,7 +139,7 @@ export default {
      */
     idKey: {
       type: String,
-      default: "id",
+      default: 'id'
     },
     /**
      * Closure function to mutate the item id into a valid DOM selector
@@ -149,7 +149,7 @@ export default {
       required: false,
       default(item) {
         return item[this.idKey]
-      },
+      }
     },
     /**
      * The column layout of the table.
@@ -170,14 +170,14 @@ export default {
      */
     fields: {
       type: Array,
-      required: true,
+      required: true
     },
     /**
      * Asserts whether the table has a header. The header markup is defined in the `fields` array.
      */
     hasHeader: {
       type: Boolean,
-      default: true,
+      default: true
     },
     /**
      * Asserts whether the header of the table is sticky.
@@ -185,28 +185,28 @@ export default {
     sticky: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Asserts whether table rows should be highlighted when hovered.
      */
     hover: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * The ids of highlighted data items. Null or an empty string/array for no highlighting.
      */
     highlighted: {
       type: [String, Array],
-      default: null,
+      default: null
     },
     /**
      * The ids of disabled data items. Null or an empty string/array for no disabled items.
      */
     disabled: {
       type: [String, Array],
-      default: null,
+      default: null
     },
     /**
      * Top position of header used when the header is sticky in pixels
@@ -214,7 +214,7 @@ export default {
     headerPosition: {
       type: Number,
       required: false,
-      default: 0,
+      default: 0
     },
     /**
      * Sets the padding size for x axis
@@ -223,8 +223,8 @@ export default {
     paddingX: {
       type: String,
       required: false,
-      default: "small",
-      validator: size => /(xsmall|small|medium|large|xlarge)/.test(size),
+      default: 'small',
+      validator: (size) => /(xsmall|small|medium|large|xlarge)/.test(size)
     },
     /**
      * Enable Drag & Drop events
@@ -232,7 +232,7 @@ export default {
     dragDrop: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Array of items that should be selected by default.
@@ -240,15 +240,15 @@ export default {
     selection: {
       type: Array,
       required: false,
-      default: () => [],
+      default: () => []
     },
     /**
      * Determines if the table content should be loaded lazily.
      */
     lazy: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {
@@ -256,21 +256,21 @@ export default {
         EVENT_THEAD_CLICKED,
         EVENT_TROW_CLICKED,
         EVENT_TROW_MOUNTED,
-        EVENT_TROW_CONTEXTMENU,
+        EVENT_TROW_CONTEXTMENU
       },
-      ghostElement: null,
+      ghostElement: null
     }
   },
   computed: {
     tableClasses() {
-      const result = ["oc-table"]
+      const result = ['oc-table']
 
       if (this.hover) {
-        result.push("oc-table-hover")
+        result.push('oc-table-hover')
       }
 
       if (this.sticky) {
-        result.push("oc-table-sticky")
+        result.push('oc-table-sticky')
       }
 
       return result
@@ -278,7 +278,7 @@ export default {
 
     fullColspan() {
       return this.fields.length
-    },
+    }
   },
   methods: {
     dragOver(event) {
@@ -287,23 +287,23 @@ export default {
     setGhostElement(item, event) {
       const selection = [...this.selection]
       selection.splice(
-        selection.findIndex(i => i.id === item.id),
+        selection.findIndex((i) => i.id === item.id),
         1
       )
       const GhostElementComponent = Vue.extend(OcGhostElement)
       const ghostInstances = new GhostElementComponent({
         propsData: {
-          previewItems: [item, ...selection],
-        },
+          previewItems: [item, ...selection]
+        }
       })
       ghostInstances.$mount()
       this.ghostElement = document.body.appendChild(ghostInstances.$el)
-      this.ghostElement.ariaHidden = "true"
-      this.ghostElement.style.left = "-99999px"
-      this.ghostElement.style.top = "-99999px"
+      this.ghostElement.ariaHidden = 'true'
+      this.ghostElement.style.left = '-99999px'
+      this.ghostElement.style.top = '-99999px'
       event.dataTransfer.setDragImage(this.ghostElement, 0, 0)
-      event.dataTransfer.dropEffect = "move"
-      event.dataTransfer.effectAllowed = "move"
+      event.dataTransfer.dropEffect = 'move'
+      event.dataTransfer.effectAllowed = 'move'
     },
     dragStart(item, event) {
       if (!this.dragDrop) return
@@ -312,47 +312,47 @@ export default {
     },
     dropRowEvent(selector, event) {
       if (!this.dragDrop) return
-      const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
+      const hasFilePayload = (event.dataTransfer.types || []).some((e) => e === 'Files')
       if (hasFilePayload) return
       this.ghostElement.remove()
       const dropTarget = event.target
-      const dropTargetTr = dropTarget.closest("tr")
+      const dropTargetTr = dropTarget.closest('tr')
       const dropItemId = dropTargetTr.dataset.itemId
       this.dropRowStyling(selector, true, event)
       this.$emit(EVENT_ITEM_DROPPED, dropItemId)
     },
     dropRowStyling(selector, leaving, event) {
-      const hasFilePayload = (event.dataTransfer.types || []).some(e => e === "Files")
+      const hasFilePayload = (event.dataTransfer.types || []).some((e) => e === 'Files')
       if (hasFilePayload) return
       if (event.currentTarget?.contains(event.relatedTarget)) {
         return
       }
 
       const classList = document.getElementsByClassName(`oc-tbody-tr-${selector}`)[0].classList
-      const className = "highlightedDropTarget"
+      const className = 'highlightedDropTarget'
       leaving ? classList.remove(className) : classList.add(className)
     },
     isFieldTypeSlot(field) {
-      return field.type === "slot"
+      return field.type === 'slot'
     },
     isFieldTypeCallback(field) {
-      return ["callback", "function"].indexOf(field.type) >= 0
+      return ['callback', 'function'].indexOf(field.type) >= 0
     },
     extractFieldTitle(field) {
-      if (Object.prototype.hasOwnProperty.call(field, "title")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'title')) {
         return field.title
       }
       return field.name
     },
     extractTableProps() {
       return {
-        class: this.tableClasses,
+        class: this.tableClasses
       }
     },
     extractThProps(field, index) {
       const props = this.extractCellProps(field)
       props.class = `oc-table-header-cell oc-table-header-cell-${field.name}`
-      if (Object.prototype.hasOwnProperty.call(field, "thClass")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'thClass')) {
         props.class += ` ${field.thClass}`
       }
       if (this.sticky) {
@@ -375,20 +375,20 @@ export default {
       return {
         ...(this.lazy && { lazy: { colspan: this.fullColspan } }),
         class: [
-          "oc-tbody-tr",
+          'oc-tbody-tr',
           `oc-tbody-tr-${this.itemDomSelector(item) || index}`,
-          this.isHighlighted(item) ? "oc-table-highlighted" : undefined,
-          this.isDisabled(item) ? "oc-table-disabled" : undefined,
-        ].filter(Boolean),
+          this.isHighlighted(item) ? 'oc-table-highlighted' : undefined,
+          this.isDisabled(item) ? 'oc-table-disabled' : undefined
+        ].filter(Boolean)
       }
     },
     extractTdProps(field, index, item) {
       const props = this.extractCellProps(field, index)
       props.class = `oc-table-data-cell oc-table-data-cell-${field.name}`
-      if (Object.prototype.hasOwnProperty.call(field, "tdClass")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'tdClass')) {
         props.class += ` ${field.tdClass}`
       }
-      if (Object.prototype.hasOwnProperty.call(field, "wrap")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'wrap')) {
         props.wrap = field.wrap
       }
 
@@ -400,21 +400,21 @@ export default {
         props.class += ` oc-pr-${getSizeClass(this.paddingX)}`
       }
 
-      if (Object.prototype.hasOwnProperty.call(field, "accessibleLabelCallback")) {
-        props["aria-label"] = field.accessibleLabelCallback(item)
+      if (Object.prototype.hasOwnProperty.call(field, 'accessibleLabelCallback')) {
+        props['aria-label'] = field.accessibleLabelCallback(item)
       }
 
       return props
     },
     extractCellProps(field) {
       const result = {}
-      if (Object.prototype.hasOwnProperty.call(field, "alignH")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'alignH')) {
         result.alignH = field.alignH
       }
-      if (Object.prototype.hasOwnProperty.call(field, "alignV")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'alignV')) {
         result.alignV = field.alignV
       }
-      if (Object.prototype.hasOwnProperty.call(field, "width")) {
+      if (Object.prototype.hasOwnProperty.call(field, 'width')) {
         result.width = field.width
       }
 
@@ -447,22 +447,22 @@ export default {
       const prefix = [item[this.idKey], index + 1].filter(Boolean)
 
       if (this.isFieldTypeSlot(field)) {
-        return [...prefix, field.name].join("-")
+        return [...prefix, field.name].join('-')
       }
 
       if (this.isFieldTypeCallback(field)) {
-        return [...prefix, field.callback(item[field.name])].join("-")
+        return [...prefix, field.callback(item[field.name])].join('-')
       }
 
-      return [...prefix, item[field.name]].join("-")
+      return [...prefix, item[field.name]].join('-')
     },
 
     getSortLabel(name) {
-      const label = this.$gettext("Sort by %{ name }")
+      const label = this.$gettext('Sort by %{ name }')
 
       return this.$gettextInterpolate(label, { name })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss">

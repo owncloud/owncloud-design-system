@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import filesize from "filesize"
+import filesize from 'filesize'
 
 /**
  * Displays a formatted resource size
  */
 export default {
-  name: "OcResourceSize",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcResourceSize',
+  status: 'ready',
+  release: '2.1.0',
   props: {
     /**
      * Number of bytes to display as a reasonable resource size string.
@@ -19,28 +19,28 @@ export default {
      */
     size: {
       type: [String, Number],
-      required: true,
-    },
+      required: true
+    }
   },
 
   computed: {
     formattedSize() {
       if (isNaN(this.size)) {
-        return "?"
+        return '?'
       }
 
       if (this.size < 0) {
-        return "--"
+        return '--'
       }
 
       const mb = 1048576
 
       return filesize(this.size, {
         round: this.size < mb ? 0 : 1,
-        locale: (this.$language?.current || "").split("_")[0],
+        locale: (this.$language?.current || '').split('_')[0]
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

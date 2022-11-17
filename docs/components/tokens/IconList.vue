@@ -67,11 +67,11 @@
 </template>
 
 <script>
-import OcIcon from "../../../src/components/OcIcon/OcIcon.vue"
-import OcTable from "../../../src/components/OcTable/OcTable.vue"
-import OcSearchBar from "../../../src/components/OcSearchBar/OcSearchBar"
-import HighlightedText from "./_HighlightedText"
-const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
+import OcIcon from '../../../src/components/OcIcon/OcIcon.vue'
+import OcTable from '../../../src/components/OcTable/OcTable.vue'
+import OcSearchBar from '../../../src/components/OcSearchBar/OcSearchBar'
+import HighlightedText from './_HighlightedText'
+const req = require.context('../../../src/assets/icons/', true, /^\.\/.*\.svg$/)
 
 /**
  * All known icons in the ownCloud Design System
@@ -80,73 +80,73 @@ const req = require.context("../../../src/assets/icons/", true, /^\.\/.*\.svg$/)
  * </p>
  */
 export default {
-  name: "IconList",
+  name: 'IconList',
   components: { HighlightedText, OcSearchBar, OcIcon, OcTable },
   data() {
     return {
-      query: "",
-      icons: [],
+      query: '',
+      icons: []
     }
   },
   computed: {
     filteredIcons() {
       return this.icons
-        .filter(icon => icon.includes(this.query))
-        .map(icon => ({
-          filename: icon.replace("-fill", "").replace("-line", ""),
-          fillType: icon.endsWith("-fill") ? "fill" : icon.endsWith("-line") ? "line" : "none",
+        .filter((icon) => icon.includes(this.query))
+        .map((icon) => ({
+          filename: icon.replace('-fill', '').replace('-line', ''),
+          fillType: icon.endsWith('-fill') ? 'fill' : icon.endsWith('-line') ? 'line' : 'none'
         }))
     },
     fields() {
       return [
         {
-          name: "passive",
-          title: "Passive",
-          type: "slot",
+          name: 'passive',
+          title: 'Passive',
+          type: 'slot'
         },
         {
-          name: "primary",
-          title: "Primary",
-          type: "slot",
+          name: 'primary',
+          title: 'Primary',
+          type: 'slot'
         },
         {
-          name: "success",
-          title: "Success",
-          type: "slot",
+          name: 'success',
+          title: 'Success',
+          type: 'slot'
         },
         {
-          name: "warning",
-          title: "Warning",
-          type: "slot",
+          name: 'warning',
+          title: 'Warning',
+          type: 'slot'
         },
         {
-          name: "danger",
-          title: "Danger",
-          type: "slot",
+          name: 'danger',
+          title: 'Danger',
+          type: 'slot'
         },
         {
-          name: "inverse",
-          title: "Inverse",
-          type: "slot",
+          name: 'inverse',
+          title: 'Inverse',
+          type: 'slot'
         },
         {
-          name: "fillType",
-          title: "Fill type",
+          name: 'fillType',
+          title: 'Fill type'
         },
         {
-          name: "filename",
-          title: "Icon name",
-          width: "expand",
-          type: "slot",
-        },
+          name: 'filename',
+          title: 'Icon name',
+          width: 'expand',
+          type: 'slot'
+        }
       ]
-    },
+    }
   },
   mounted() {
-    this.icons = req.keys().map(filename => {
-      return filename.split(".").slice(0, -1).join(".").substring(2)
+    this.icons = req.keys().map((filename) => {
+      return filename.split('.').slice(0, -1).join('.').substring(2)
     })
-  },
+  }
 }
 </script>
 

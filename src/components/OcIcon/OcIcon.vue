@@ -5,7 +5,7 @@
       { 'oc-button-reset': type === 'button' },
       'oc-icon',
       sizeClass(size),
-      variationClass(variation),
+      variationClass(variation)
     ]"
   >
     <inline-svg
@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
-import InlineSvg from "vue-inline-svg"
-import { getSizeClass } from "../../utils/sizeClasses"
+import uniqueId from '../../utils/uniqueId'
+import InlineSvg from 'vue-inline-svg'
+import { getSizeClass } from '../../utils/sizeClasses'
 /**
  * Icons are used to visually communicate core parts of the product and
  * available actions. They can act as wayfinding tools to help users more
@@ -41,7 +41,7 @@ import { getSizeClass } from "../../utils/sizeClasses"
  * InlineSvg by default expects the src to be a url, because we inline the SVG's this won't work.
  * the download patch takes care of this by overwriting the native functionality and makes it compatible
  */
-InlineSvg.name = "inline-svg"
+InlineSvg.name = 'inline-svg'
 /*InlineSvg.methods.download = name => {
   return (promise => {
     if (promise.isPending) return promise
@@ -75,11 +75,11 @@ InlineSvg.name = "inline-svg"
 }*/
 
 export default {
-  name: "OcIcon",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcIcon',
+  status: 'ready',
+  release: '1.0.0',
   components: {
-    InlineSvg,
+    InlineSvg
   },
   props: {
     /**
@@ -87,7 +87,7 @@ export default {
      */
     name: {
       type: String,
-      default: "info",
+      default: 'info'
     },
     /**
      * The fill type of the icon, fill or line
@@ -95,24 +95,24 @@ export default {
     fillType: {
       type: String,
       required: false,
-      default: "fill",
-      validator: value => {
+      default: 'fill',
+      validator: (value) => {
         return value.match(/(fill|line|none)/)
-      },
+      }
     },
     /**
      * Descriptive text to be read to screenreaders.
      */
     accessibleLabel: {
       type: String,
-      default: "",
+      default: ''
     },
     /**
      * The html element name used for the icon.
      */
     type: {
       type: String,
-      default: "span",
+      default: 'span'
     },
     /**
      * The size of the icon. Defaults to small.
@@ -120,10 +120,10 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge)/)
-      },
+      }
     },
     /**
      * Style variation to give additional meaning.
@@ -133,10 +133,10 @@ export default {
      */
     variation: {
       type: String,
-      default: "passive",
-      validator: value => {
+      default: 'passive',
+      validator: (value) => {
         return value.match(/(passive|primary|danger|success|warning|inverse)/)
-      },
+      }
     },
     /**
      * Overwrite the color of the icon.
@@ -144,19 +144,19 @@ export default {
     color: {
       type: String,
       required: false,
-      default: "",
-    },
+      default: ''
+    }
   },
   computed: {
     svgTitleId() {
-      return uniqueId("oc-icon-title-")
+      return uniqueId('oc-icon-title-')
     },
     nameWithFillType() {
-      const path = "icons/"
+      const path = 'icons/'
       const fillType = this.fillType.toLowerCase()
-      if (fillType === "none") return `${path}${this.name}.svg`
+      if (fillType === 'none') return `${path}${this.name}.svg`
       return `${path}${this.name}-${fillType}.svg`
-    },
+    }
   },
   methods: {
     sizeClass(c) {
@@ -169,15 +169,15 @@ export default {
       if (string !== null) return `oc-icon-${string}`
     },
     transformSvgElement(svg) {
-      if (this.accessibleLabel !== "") {
-        const title = document.createElement("title")
-        title.setAttribute("id", this.svgTitleId)
+      if (this.accessibleLabel !== '') {
+        const title = document.createElement('title')
+        title.setAttribute('id', this.svgTitleId)
         title.appendChild(document.createTextNode(this.accessibleLabel))
         svg.insertBefore(title, svg.firstChild)
       }
       return svg
-    },
-  },
+    }
+  }
 }
 </script>
 

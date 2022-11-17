@@ -14,15 +14,15 @@
 </template>
 
 <script>
-import { getSizeClass } from "../../utils/sizeClasses"
-import uniqueId from "../../utils/uniqueId"
+import { getSizeClass } from '../../utils/sizeClasses'
+import uniqueId from '../../utils/uniqueId'
 /**
  * A checkbox input element. The checkbox is either checked or unchecked.
  */
 export default {
-  name: "OcCheckbox",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcCheckbox',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Id for the checkbox. If it's empty, a generated one will be used.
@@ -30,14 +30,14 @@ export default {
     id: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-checkbox-"),
+      default: () => uniqueId('oc-checkbox-')
     },
     /**
      * Disables the checkbox
      */
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * The model of the checkbox. It determines, based on the option this checkbox represents, whether or not this
@@ -48,7 +48,7 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     value: {
       required: false,
-      default: false,
+      default: false
     },
     /**
      * The value/object this checkbox represents.
@@ -59,7 +59,7 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     option: {
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Label of the Checkbox
@@ -69,7 +69,7 @@ export default {
     label: {
       type: String,
       required: true,
-      default: null,
+      default: null
     },
     /**
      * Is the label of the Checkbox visually hidden?
@@ -77,7 +77,7 @@ export default {
     hideLabel: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Size of the Checkbox. Valid values are `small`, `medium` and `large`.
@@ -86,8 +86,8 @@ export default {
     size: {
       type: String,
       required: false,
-      default: "medium",
-      validator: size => /(small|medium|large)/.test(size),
+      default: 'medium',
+      validator: (size) => /(small|medium|large)/.test(size)
     },
     /**
      * Show outline of checkbox
@@ -95,8 +95,8 @@ export default {
     outline: {
       type: Boolean,
       required: false,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     model: {
@@ -104,37 +104,37 @@ export default {
         return this.value
       },
       set: function (value) {
-        this.$emit("input", value)
+        this.$emit('input', value)
         this.setChecked(value)
-      },
+      }
     },
     classes() {
       return [
-        "oc-checkbox",
-        "oc-rounded",
-        "oc-checkbox-" + getSizeClass(this.size),
-        { "oc-checkbox-outline": this.outline },
+        'oc-checkbox',
+        'oc-rounded',
+        'oc-checkbox-' + getSizeClass(this.size),
+        { 'oc-checkbox-outline': this.outline }
       ]
     },
     labelClasses() {
       return {
-        "oc-invisible-sr": this.hideLabel,
-        "oc-cursor-pointer": !this.disabled,
+        'oc-invisible-sr': this.hideLabel,
+        'oc-cursor-pointer': !this.disabled
       }
-    },
+    }
   },
   created() {
     this.setChecked(this.model)
   },
   methods: {
     setChecked: function (value) {
-      if (typeof value === "boolean") {
+      if (typeof value === 'boolean') {
         this.checked = value
       } else {
         this.checked = value.includes(this.option)
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -186,13 +186,13 @@ export default {
   }
 
   &:checked {
-    @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-checked-icon-color);
+    @include svg-fill($internal-form-checkbox-image, '#000', $form-radio-checked-icon-color);
   }
 
   &:indeterminate {
     @include svg-fill(
       $internal-form-checkbox-indeterminate-image,
-      "#000",
+      '#000',
       $form-radio-checked-icon-color
     );
   }
@@ -202,13 +202,13 @@ export default {
   }
 
   &:disabled:checked {
-    @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-disabled-icon-color);
+    @include svg-fill($internal-form-checkbox-image, '#000', $form-radio-disabled-icon-color);
   }
 
   &:disabled:indeterminate {
     @include svg-fill(
       $internal-form-checkbox-indeterminate-image,
-      "#000",
+      '#000',
       $form-radio-disabled-icon-color
     );
   }

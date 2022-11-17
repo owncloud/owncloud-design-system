@@ -23,9 +23,9 @@
  * Debug live regions without starting a screen reader using [NerdeRegion](https://chrome.google.com/webstore/detail/nerderegion/lkcampbojgmgobcfinlkgkodlnlpjieb).
  */
 export default {
-  name: "OcHiddenAnnouncer",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcHiddenAnnouncer',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * `polite` adds the announcement to the screen reader speech queue at the end, `assertive` forces it to output directly, `off` disables the live region
@@ -33,25 +33,25 @@ export default {
     level: {
       type: String,
       required: false,
-      default: "polite",
-      validator: value => {
+      default: 'polite',
+      validator: (value) => {
         return value.match(/(polite|assertive|off)/)
-      },
+      }
     },
     /**
      * The announcement text itself.
      **/
     announcement: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       // Generate id for compatibility reasons
-      id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+      id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
     }
-  },
+  }
 }
 </script>
 

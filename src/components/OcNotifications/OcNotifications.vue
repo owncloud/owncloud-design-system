@@ -16,9 +16,9 @@
  * This component uses so called live regions in order to announce its content to screen readers once the notification appeared (this is not the normal modus operandi for screen readers, since their reading order is usually the DOM order – when the user does not take shortcuts). There are two types of live regions: `aria-live="polite"` (equivalent to `role="status"`) and `aria-live="assertive"` (equivalent to `role="alert"`). The latter directly interrupts the current output of the screen reader, the former waits until the current output is finished and reads the announcement afterwards. Since 'assertive' should be used sparingly, only `<oc-notfication-message>`'s "danger" status prop value uses `aria-live="assertive"` (and `role="alert"`). Using `aria-live` and `role="assertive|status"` simultaneously is for compatibility reasons regarding different browser and assistive technology pairings.
  */
 export default {
-  name: "OcNotifications",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcNotifications',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Position of the notifications.
@@ -27,17 +27,17 @@ export default {
     position: {
       type: String,
       required: false,
-      default: "top-center",
-      validator: value => {
+      default: 'top-center',
+      validator: (value) => {
         return value.match(/(default|top-left|top-center|top-right)/)
-      },
-    },
+      }
+    }
   },
   computed: {
     classes() {
       return `oc-notification-${this.position}`
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -1,12 +1,12 @@
-import tippy from "tippy.js"
-import merge from "deepmerge"
-import __logger from "../utils/logger"
+import tippy from 'tippy.js'
+import merge from 'deepmerge'
+import __logger from '../utils/logger'
 
 export const hideOnEsc = {
-  name: "hideOnEsc",
+  name: 'hideOnEsc',
   defaultValue: true,
   fn({ hide }) {
-    const onKeyDown = e => {
+    const onKeyDown = (e) => {
       if (e.keyCode === 27) {
         hide()
       }
@@ -14,28 +14,28 @@ export const hideOnEsc = {
 
     return {
       onShow: () => {
-        document.addEventListener("keydown", onKeyDown)
+        document.addEventListener('keydown', onKeyDown)
       },
       onHide: () => {
-        document.removeEventListener("keydown", onKeyDown)
-      },
+        document.removeEventListener('keydown', onKeyDown)
+      }
     }
-  },
+  }
 }
 
 export const ariaHidden = {
-  name: "ariaHidden",
+  name: 'ariaHidden',
   defaultValue: true,
   fn(instance) {
     return {
       onCreate() {
-        instance.popper.setAttribute("aria-hidden", true)
-      },
+        instance.popper.setAttribute('aria-hidden', true)
+      }
     }
-  },
+  }
 }
 
-export const destroy = _tippy => {
+export const destroy = (_tippy) => {
   if (!_tippy) {
     return
   }
@@ -48,7 +48,7 @@ export const destroy = _tippy => {
 }
 
 const initOrUpdate = (el, { value = {} }, { elm }) => {
-  if (Object.prototype.toString.call(value) !== "[object Object]") {
+  if (Object.prototype.toString.call(value) !== '[object Object]') {
     value = { content: value }
   }
 
@@ -63,16 +63,16 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
       ignoreAttributes: true,
       aria: {
         content: null,
-        expanded: false,
-      },
+        expanded: false
+      }
     },
-    value,
+    value
   ])
 
   if (!elm.tooltip) {
     elm.tooltip = tippy(el, {
       ...props,
-      plugins: [hideOnEsc, ariaHidden],
+      plugins: [hideOnEsc, ariaHidden]
     })
     return
   }
@@ -81,8 +81,8 @@ const initOrUpdate = (el, { value = {} }, { elm }) => {
 }
 
 export default {
-  name: "OcTooltip",
+  name: 'OcTooltip',
   bind: initOrUpdate,
   componentUpdated: initOrUpdate,
-  unbind: (el, binding, { elm }) => destroy(elm.tooltip),
+  unbind: (el, binding, { elm }) => destroy(elm.tooltip)
 }

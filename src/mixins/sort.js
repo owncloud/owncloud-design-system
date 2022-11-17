@@ -1,7 +1,7 @@
-import { EVENT_THEAD_CLICKED } from "../helpers/constants"
+import { EVENT_THEAD_CLICKED } from '../helpers/constants'
 
-const SORT_DIRECTION_ASC = "asc"
-const SORT_DIRECTION_DESC = "desc"
+const SORT_DIRECTION_ASC = 'asc'
+const SORT_DIRECTION_DESC = 'desc'
 
 export default {
   props: {
@@ -10,7 +10,7 @@ export default {
      */
     sortBy: {
       type: String,
-      required: false,
+      required: false
     },
 
     /**
@@ -20,10 +20,10 @@ export default {
       type: String,
       required: false,
       default: undefined,
-      validator: value => {
+      validator: (value) => {
         return value === undefined || [SORT_DIRECTION_ASC, SORT_DIRECTION_DESC].includes(value)
-      },
-    },
+      }
+    }
   },
   created() {
     if (this.isSortable) {
@@ -32,8 +32,8 @@ export default {
   },
   computed: {
     isSortable() {
-      return this.fields.some(f => f.sortable)
-    },
+      return this.fields.some((f) => f.sortable)
+    }
   },
   methods: {
     extractSortThProps(props, field) {
@@ -41,11 +41,11 @@ export default {
         return
       }
 
-      let sort = "none"
+      let sort = 'none'
       if (this.sortBy === field.name) {
-        sort = this.sortDir === SORT_DIRECTION_ASC ? "ascending" : "descending"
+        sort = this.sortDir === SORT_DIRECTION_ASC ? 'ascending' : 'descending'
       }
-      props["aria-sort"] = sort
+      props['aria-sort'] = sort
     },
     fieldIsSortable({ sortable }) {
       return !!sortable
@@ -71,10 +71,10 @@ export default {
        * @property {string} sortBy requested column to sort by
        * @property {string} sortDir requested order to sort in (either asc or desc)
        */
-      this.$emit("sort", {
+      this.$emit('sort', {
         sortBy: field.name,
-        sortDir,
+        sortDir
       })
-    },
-  },
+    }
+  }
 }

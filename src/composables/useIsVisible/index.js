@@ -1,4 +1,4 @@
-import { onBeforeUnmount, ref, watch } from "vue"
+import { onBeforeUnmount, ref, watch } from 'vue'
 
 /**
  *
@@ -7,11 +7,11 @@ import { onBeforeUnmount, ref, watch } from "vue"
  * @param {string} rootMargin - margin that will be added around the element to detect visibility
  * @returns {{isVisible: Ref<boolean>}}
  */
-export const useIsVisible = ({ target, mode = "show", rootMargin = "100px" }) => {
-  const isSupported = window && "IntersectionObserver" in window
+export const useIsVisible = ({ target, mode = 'show', rootMargin = '100px' }) => {
+  const isSupported = window && 'IntersectionObserver' in window
   if (!isSupported) {
     return {
-      isVisible: ref(true),
+      isVisible: ref(true)
     }
   }
 
@@ -22,7 +22,7 @@ export const useIsVisible = ({ target, mode = "show", rootMargin = "100px" }) =>
       /**
        * if given mode is `showHide` we need to keep the observation alive.
        */
-      if (mode === "showHide") {
+      if (mode === 'showHide') {
         return
       }
       /**
@@ -35,7 +35,7 @@ export const useIsVisible = ({ target, mode = "show", rootMargin = "100px" }) =>
       observer.unobserve(target.value)
     },
     {
-      rootMargin,
+      rootMargin
     }
   )
 
@@ -46,6 +46,6 @@ export const useIsVisible = ({ target, mode = "show", rootMargin = "100px" }) =>
   onBeforeUnmount(() => observer.disconnect())
 
   return {
-    isVisible,
+    isVisible
   }
 }

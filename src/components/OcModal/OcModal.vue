@@ -78,11 +78,11 @@
 </template>
 
 <script>
-import OcButton from "../OcButton/OcButton.vue"
-import OcCheckbox from "../OcCheckbox/OcCheckbox.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcTextInput from "../OcTextInput/OcTextInput.vue"
-import { FocusTrap } from "focus-trap-vue"
+import OcButton from '../OcButton/OcButton.vue'
+import OcCheckbox from '../OcCheckbox/OcCheckbox.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcTextInput from '../OcTextInput/OcTextInput.vue'
+import { FocusTrap } from 'focus-trap-vue'
 
 /**
  * Modals are generally used to force the user to focus on confirming or completing a single action.
@@ -100,16 +100,16 @@ import { FocusTrap } from "focus-trap-vue"
  *
  */
 export default {
-  name: "OcModal",
-  status: "ready",
-  release: "1.3.0",
+  name: 'OcModal',
+  status: 'ready',
+  release: '1.3.0',
 
   components: {
     OcButton,
     OcCheckbox,
     OcIcon,
     OcTextInput,
-    FocusTrap,
+    FocusTrap
   },
 
   props: {
@@ -121,10 +121,10 @@ export default {
     variation: {
       type: String,
       required: false,
-      default: "passive",
-      validator: value => {
+      default: 'passive',
+      validator: (value) => {
         return value.match(/(passive|primary|danger|success|warning)/)
-      },
+      }
     },
     /**
      * Optional icon to be displayed next to the title
@@ -132,14 +132,14 @@ export default {
     icon: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Modal title
      */
     title: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * Modal message. Can be replaced by content slot
@@ -147,7 +147,7 @@ export default {
     message: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Modal checkbox label
@@ -155,7 +155,7 @@ export default {
     checkboxLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Contextual helper label
@@ -163,7 +163,7 @@ export default {
     contextualHelperLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Contextual helper data
@@ -171,7 +171,7 @@ export default {
     contextualHelperData: {
       type: Object,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Text of the cancel button
@@ -179,7 +179,7 @@ export default {
     buttonCancelText: {
       type: String,
       required: false,
-      default: "Cancel",
+      default: 'Cancel'
     },
     /**
      * Variation type of the cancel button
@@ -187,10 +187,10 @@ export default {
     buttonCancelVariation: {
       type: String,
       required: false,
-      default: "passive",
-      validator: value => {
+      default: 'passive',
+      validator: (value) => {
         return value.match(/(passive|primary|danger|success|warning)/)
-      },
+      }
     },
     /**
      * Appearance of the cancel button
@@ -198,10 +198,10 @@ export default {
     buttonCancelAppearance: {
       type: String,
       required: false,
-      default: "outline",
-      validator: value => {
+      default: 'outline',
+      validator: (value) => {
         return value.match(/(outline|filled|raw)/)
-      },
+      }
     },
     /**
      * Text of the secondary button
@@ -209,7 +209,7 @@ export default {
     buttonSecondaryText: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Variation type of the secondary button
@@ -217,10 +217,10 @@ export default {
     buttonSecondaryVariation: {
       type: String,
       required: false,
-      default: "passive",
-      validator: value => {
+      default: 'passive',
+      validator: (value) => {
         return value.match(/(passive|primary|danger|success|warning)/)
-      },
+      }
     },
     /**
      * Appearance of the secondary button
@@ -228,10 +228,10 @@ export default {
     buttonSecondaryAppearance: {
       type: String,
       required: false,
-      default: "outline",
-      validator: value => {
+      default: 'outline',
+      validator: (value) => {
         return value.match(/(outline|filled|raw)/)
-      },
+      }
     },
     /**
      * Text of the confirm button
@@ -239,7 +239,7 @@ export default {
     buttonConfirmText: {
       type: String,
       required: false,
-      default: "Confirm",
+      default: 'Confirm'
     },
     /**
      * Appearance of the confirm button
@@ -247,10 +247,10 @@ export default {
     buttonConfirmAppearance: {
       type: String,
       required: false,
-      default: "filled",
-      validator: value => {
+      default: 'filled',
+      validator: (value) => {
         return value.match(/(outline|filled|raw)/)
-      },
+      }
     },
     /**
      * Asserts whether the confirm action is disabled
@@ -258,7 +258,7 @@ export default {
     buttonConfirmDisabled: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Asserts whether the modal should render a text input
@@ -266,14 +266,14 @@ export default {
     hasInput: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Type of the input field
      */
     inputType: {
       type: String,
-      default: "text",
+      default: 'text'
     },
     /**
      * Value of the input
@@ -281,7 +281,7 @@ export default {
     inputValue: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Selection range for input to accomplish partial selection
@@ -289,7 +289,7 @@ export default {
     inputSelectionRange: {
       type: Array,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Label of the text input field
@@ -297,7 +297,7 @@ export default {
     inputLabel: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Additional description message for the input field
@@ -305,7 +305,7 @@ export default {
     inputDescription: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Error message for the input field
@@ -313,7 +313,7 @@ export default {
     inputError: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Asserts whether the input is disabled
@@ -321,7 +321,7 @@ export default {
     inputDisabled: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Overwrite default focused element
@@ -330,13 +330,13 @@ export default {
     focusTrapInitial: {
       type: String,
       required: false,
-      default: null,
-    },
+      default: null
+    }
   },
   data() {
     return {
       userInputValue: null,
-      checkboxValue: false,
+      checkboxValue: false
     }
   },
   computed: {
@@ -349,28 +349,28 @@ export default {
       }
     },
     classes() {
-      return ["oc-modal", `oc-modal-${this.variation}`]
-    },
+      return ['oc-modal', `oc-modal-${this.variation}`]
+    }
   },
   watch: {
     inputValue: {
-      handler: "inputAssignPropAsValue",
-      immediate: true,
+      handler: 'inputAssignPropAsValue',
+      immediate: true
     },
     checkboxValue: {
-      handler: "checkboxValueChanged",
-      immediate: true,
-    },
+      handler: 'checkboxValueChanged',
+      immediate: true
+    }
   },
   methods: {
     cancelModalAction() {
       /**
        * The user clicked on the cancel button or hit the escape key
        */
-      this.$emit("cancel")
+      this.$emit('cancel')
     },
     secondaryModalAction() {
-      this.$emit("confirm-secondary")
+      this.$emit('confirm-secondary')
     },
     confirm() {
       if (this.buttonConfirmDisabled || this.inputError) {
@@ -381,7 +381,7 @@ export default {
        *
        * @property {String} value Value of the input
        */
-      this.$emit("confirm", this.userInputValue)
+      this.$emit('confirm', this.userInputValue)
     },
     inputOnInput(value) {
       /**
@@ -389,15 +389,15 @@ export default {
        *
        * @property {String} value Value of the input
        */
-      this.$emit("input", value)
+      this.$emit('input', value)
     },
     inputAssignPropAsValue(value) {
       this.userInputValue = value
     },
     checkboxValueChanged(value) {
-      this.$emit("checkbox-changed", value)
-    },
-  },
+      this.$emit('checkbox-changed', value)
+    }
+  }
 }
 </script>
 

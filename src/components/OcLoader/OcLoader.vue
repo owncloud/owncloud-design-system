@@ -7,25 +7,25 @@
  * Remote actions can take an undefined portion of time. The spinner gives feedback to the users about an actions being processed.
  */
 export default {
-  name: "OcLoader",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcLoader',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Descriptive text to be read to screen-readers.
      */
     ariaLabel: {
       type: String,
-      default: "Loading",
+      default: 'Loading'
     },
     /**
      * Removes border radius and shrinks the height. Defaults to false.
      */
     flat: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 }
 </script>
 
@@ -58,7 +58,7 @@ export default {
     @extend .oc-display-block;
 
     background: var(--oc-color-text-muted);
-    content: "";
+    content: '';
     height: 100%;
     width: 0;
 

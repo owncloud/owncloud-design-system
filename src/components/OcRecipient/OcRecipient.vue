@@ -33,14 +33,14 @@
 </template>
 
 <script>
-import OcAvatar from "../OcAvatar/OcAvatar.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcSpinner from "../OcSpinner/OcSpinner.vue"
+import OcAvatar from '../OcAvatar/OcAvatar.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcSpinner from '../OcSpinner/OcSpinner.vue'
 
 export default {
-  name: "OcRecipient",
-  status: "ready",
-  release: "8.2.0",
+  name: 'OcRecipient',
+  status: 'ready',
+  release: '8.2.0',
 
   components: { OcAvatar, OcIcon, OcSpinner },
 
@@ -51,49 +51,49 @@ export default {
     recipient: {
       type: Object,
       required: true,
-      validator: recipient => {
-        if (!Object.prototype.hasOwnProperty.call(recipient, "name")) {
-          throw new Error("Recipient name is not defined")
+      validator: (recipient) => {
+        if (!Object.prototype.hasOwnProperty.call(recipient, 'name')) {
+          throw new Error('Recipient name is not defined')
         }
 
-        if (typeof recipient.name !== "string") {
-          throw new Error("Recipient name is not a string")
+        if (typeof recipient.name !== 'string') {
+          throw new Error('Recipient name is not a string')
         }
 
         if (recipient.name.length < 1) {
-          throw new Error("Recipient name is empty")
+          throw new Error('Recipient name is empty')
         }
 
-        if (Object.prototype.hasOwnProperty.call(recipient, "icon")) {
-          if (!Object.prototype.hasOwnProperty.call(recipient.icon, "name")) {
-            throw new Error("Recipient icon name is not defined")
+        if (Object.prototype.hasOwnProperty.call(recipient, 'icon')) {
+          if (!Object.prototype.hasOwnProperty.call(recipient.icon, 'name')) {
+            throw new Error('Recipient icon name is not defined')
           }
 
-          if (typeof recipient.icon.name !== "string") {
-            throw new Error("Recipient icon name is not a string")
+          if (typeof recipient.icon.name !== 'string') {
+            throw new Error('Recipient icon name is not a string')
           }
 
           if (recipient.icon.name.length < 1) {
-            throw new Error("Recipient icon name is empty")
+            throw new Error('Recipient icon name is empty')
           }
 
-          if (!Object.prototype.hasOwnProperty.call(recipient.icon, "label")) {
-            throw new Error("Recipient icon label is not defined")
+          if (!Object.prototype.hasOwnProperty.call(recipient.icon, 'label')) {
+            throw new Error('Recipient icon label is not defined')
           }
 
-          if (typeof recipient.icon.label !== "string") {
-            throw new Error("Recipient icon label is not a string")
+          if (typeof recipient.icon.label !== 'string') {
+            throw new Error('Recipient icon label is not a string')
           }
 
           if (recipient.icon.label.length < 1) {
-            throw new Error("Recipient icon label is empty")
+            throw new Error('Recipient icon label is empty')
           }
         }
 
         return true
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

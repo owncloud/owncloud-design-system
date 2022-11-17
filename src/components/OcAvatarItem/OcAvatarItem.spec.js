@@ -1,39 +1,39 @@
-import OcAvatarItem from "./OcAvatarItem.vue"
-import { mount } from "@vue/test-utils"
+import OcAvatarItem from './OcAvatarItem.vue'
+import { mount } from '@vue/test-utils'
 
-describe("OcAvatarItem", () => {
+describe('OcAvatarItem', () => {
   function getWrapperWithProps(props = {}) {
     return mount(OcAvatarItem, {
       propsData: {
         ...props,
-        name: "test link",
-      },
+        name: 'test link'
+      }
     })
   }
   describe("when prop 'name' is provided", () => {
-    it("should set data test user attribute on wrapper", () => {
+    it('should set data test user attribute on wrapper', () => {
       const wrapper = getWrapperWithProps()
-      expect(wrapper.attributes("data-test-item-name")).toBe("test link")
+      expect(wrapper.attributes('data-test-item-name')).toBe('test link')
     })
   })
-  describe("accessibleLabel", () => {
-    it("should not be set when value is empty string", () => {
+  describe('accessibleLabel', () => {
+    it('should not be set when value is empty string', () => {
       const wrapper = getWrapperWithProps({
-        accessibleLabel: "",
+        accessibleLabel: ''
       })
-      expect(wrapper.attributes("aria-label")).toBeFalsy()
-      expect(wrapper.attributes("role")).toBeFalsy()
-      expect(wrapper.attributes("aria-hidden")).toBe("true")
-      expect(wrapper.attributes("focusable")).toBe("false")
+      expect(wrapper.attributes('aria-label')).toBeFalsy()
+      expect(wrapper.attributes('role')).toBeFalsy()
+      expect(wrapper.attributes('aria-hidden')).toBe('true')
+      expect(wrapper.attributes('focusable')).toBe('false')
     })
-    it("should be set when value is not empty string", () => {
+    it('should be set when value is not empty string', () => {
       const wrapper = getWrapperWithProps({
-        accessibleLabel: "test label",
+        accessibleLabel: 'test label'
       })
-      expect(wrapper.attributes("aria-label")).toBe("test label")
-      expect(wrapper.attributes("role")).toBe("img")
-      expect(wrapper.attributes("aria-hidden")).toBeFalsy()
-      expect(wrapper.attributes("focusable")).toBeFalsy()
+      expect(wrapper.attributes('aria-label')).toBe('test label')
+      expect(wrapper.attributes('role')).toBe('img')
+      expect(wrapper.attributes('aria-hidden')).toBeFalsy()
+      expect(wrapper.attributes('focusable')).toBeFalsy()
     })
   })
 })

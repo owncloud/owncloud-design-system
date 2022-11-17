@@ -9,42 +9,42 @@
  * The Grid system allows you to arrange block elements in columns.
  */
 export default {
-  name: "OcGrid",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcGrid',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * The Grid component comes with a default gutter that is decreased automatically from a certain breakpoint usually on a smaller desktop viewport width. To apply a different gutter, add one of the following: small, medium, large
      */
     gutter: {
       type: String,
-      default: "collapse",
-      validator: value => {
+      default: 'collapse',
+      validator: (value) => {
         return value.match(/(small|medium|large|collapse)/)
-      },
+      }
     },
     /**
      * Center elements along the cross axis.
      */
     flex: {
       type: [Boolean],
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     classes() {
       let c = []
 
-      c.push("oc-grid-" + this.gutter)
+      c.push('oc-grid-' + this.gutter)
 
       if (this.flex) {
-        c.push("oc-flex")
-        c.push("oc-flex-middle")
+        c.push('oc-flex')
+        c.push('oc-flex-middle')
       }
 
       return c
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -297,7 +297,7 @@ $grid-divider-border: #e5e5e5 !default;
 }
 
 .oc-grid-divider > :not(.oc-first-column)::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -306,7 +306,7 @@ $grid-divider-border: #e5e5e5 !default;
 
 /* Vertical */
 .oc-grid-divider.oc-grid-stack > .oc-grid-margin::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -528,8 +528,8 @@ $grid-divider-border: #e5e5e5 !default;
   flex-wrap: wrap;
 }
 
-.oc-grid-match > * > :not([class*="oc-width"]),
-.oc-grid-item-match > :not([class*="oc-width"]) {
+.oc-grid-match > * > :not([class*='oc-width']),
+.oc-grid-item-match > :not([class*='oc-width']) {
   /* 2 */
   box-sizing: border-box;
   width: 100%;

@@ -9,9 +9,9 @@
  * Show progress to the users in a pie shape.
  */
 export default {
-  name: "OcProgressPie",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcProgressPie',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Current value of the progress
@@ -20,34 +20,34 @@ export default {
       type: Number,
       default: 0,
       required: true,
-      validator: value => {
+      validator: (value) => {
         return value >= 0 && value <= 100
-      },
+      }
     },
     /**
      * Maximum value.
      */
     max: {
       type: Number,
-      default: 100,
+      default: 100
     },
     /**
      * Defines if the label shall be shown.
      */
     showLabel: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     _fill() {
       return Math.round((100 / this.max) * this.progress)
     },
     _label() {
-      if (this.max === 100) return this.progress + "%"
+      if (this.max === 100) return this.progress + '%'
       else return `${this.progress}/${this.max}`
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -73,7 +73,7 @@ $default-size: 64px;
     border: $default-size / 10 solid var(--oc-color-swatch-passive-hover);
     border-radius: 50%;
     box-sizing: border-box;
-    content: "";
+    content: '';
     display: block;
     height: 100%;
     width: 100%;
@@ -93,7 +93,7 @@ $default-size: 64px;
       border-color: var(--oc-color-swatch-brand-default);
       border-radius: 50%;
       clip: rect(0, $default-size / 2, $default-size, 0);
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       left: 0;
@@ -115,7 +115,7 @@ $default-size: 64px;
 }
 
 @for $i from 0 through 100 {
-  .oc-progress-pie[data-fill="#{$i}"] {
+  .oc-progress-pie[data-fill='#{$i}'] {
     .oc-progress-pie-container::before {
       transform: rotate($i * 3.6deg);
     }

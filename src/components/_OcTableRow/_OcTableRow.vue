@@ -7,21 +7,21 @@
   </tr>
 </template>
 <script>
-import { customRef, computed, ref, unref } from "vue"
-import { useIsVisible } from "../../composables"
-import OcTd from "../_OcTableCellData/_OcTableCellData.vue"
+import { customRef, computed, ref, unref } from 'vue'
+import { useIsVisible } from '../../composables'
+import OcTd from '../_OcTableCellData/_OcTableCellData.vue'
 
 export default {
-  name: "OcTr",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcTr',
+  status: 'ready',
+  release: '1.0.0',
   components: { OcTd },
   props: {
     lazy: {
       type: Object,
       required: false,
-      default: null,
-    },
+      default: null
+    }
   },
   setup(props) {
     const observerTarget = customRef((track, trigger) => {
@@ -34,7 +34,7 @@ export default {
         set(value) {
           $el = value
           trigger()
-        },
+        }
       }
     })
 
@@ -45,7 +45,7 @@ export default {
     const { isVisible } = props.lazy
       ? useIsVisible({
           ...props.lazy,
-          target: observerTarget,
+          target: observerTarget
         })
       : { isVisible: ref(true) }
 
@@ -54,9 +54,9 @@ export default {
     return {
       observerTarget,
       isHidden,
-      lazyColspan,
+      lazyColspan
     }
-  },
+  }
 }
 </script>
 <style lang="scss">
@@ -81,7 +81,7 @@ export default {
       rgba(#fff, 0)
     );
     bottom: 0;
-    content: "";
+    content: '';
     left: 0;
     position: absolute;
     right: 0;

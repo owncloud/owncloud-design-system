@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import OcImg from "../OcImage/OcImage.vue"
+import OcImg from '../OcImage/OcImage.vue'
 
 export default {
-  name: "OcLogo",
-  status: "ready",
-  release: "7.3.0",
+  name: 'OcLogo',
+  status: 'ready',
+  release: '7.3.0',
   components: { OcImg },
 
   props: {
@@ -23,16 +23,16 @@ export default {
      */
     src: {
       type: String,
-      required: true,
+      required: true
     },
     /**
      * Alternative text of the logo image
      */
     alt: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 }
 </script>
 

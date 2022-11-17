@@ -7,9 +7,9 @@
  *
  */
 export default {
-  name: "OcImg",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcImg',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Image source, path to image
@@ -18,7 +18,7 @@ export default {
     src: {
       required: true,
       type: String,
-      default: null,
+      default: null
     },
     /**
      * The alt-attribute of the image.
@@ -26,7 +26,7 @@ export default {
     alt: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * The title of the image. Displayed when hover.
@@ -34,7 +34,7 @@ export default {
     title: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Defines whether the image gets loaded immediately or once it comes near the user's viewport
@@ -42,17 +42,17 @@ export default {
     loadingType: {
       type: String,
       required: false,
-      default: "eager",
-      validator: value => {
+      default: 'eager',
+      validator: (value) => {
         return value.match(/(eager|lazy)/)
-      },
-    },
+      }
+    }
   },
   computed: {
     ariaHidden() {
       return this.alt.length === 0
-    },
-  },
+    }
+  }
 }
 </script>
 

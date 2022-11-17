@@ -16,18 +16,18 @@
 </template>
 
 <script>
-import tippy, { hideAll } from "tippy.js"
-import { destroy, hideOnEsc } from "../../directives/OcTooltip"
-import uniqueId from "../../utils/uniqueId"
-import { getSizeClass } from "../../utils/sizeClasses"
+import tippy, { hideAll } from 'tippy.js'
+import { destroy, hideOnEsc } from '../../directives/OcTooltip'
+import uniqueId from '../../utils/uniqueId'
+import { getSizeClass } from '../../utils/sizeClasses'
 
 /**
  * Position any element in relation to another element.
  */
 export default {
-  name: "OcDrop",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcDrop',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Id of the drop.
@@ -35,33 +35,33 @@ export default {
     dropId: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-drop-"),
+      default: () => uniqueId('oc-drop-')
     },
     /**
      * Specifies custom Popper options
      */
     popperOptions: {
       type: Object,
-      required: false,
+      required: false
     },
     /**
      * CSS selector for the element to be used as toggle. By default, the preceding element is used.
      **/
     toggle: {
       type: String,
-      default: "",
+      default: ''
     },
     /**
      * The position of the drop: `(top|right|bottom|left|auto)|(top|right|bottom|left|auto)-(start|end)`.
      **/
     position: {
       type: String,
-      default: "bottom-start",
-      validator: value => {
+      default: 'bottom-start',
+      validator: (value) => {
         return value.match(
           /((top|right|bottom|left|auto)|(top|right|bottom|left|auto)-(start|end))/
         )
-      },
+      }
     },
     /**
      * Events that cause the drop to show. Multiple event names are separated by spaces
@@ -70,24 +70,24 @@ export default {
      **/
     mode: {
       type: String,
-      default: "click",
-      validator: value => {
+      default: 'click',
+      validator: (value) => {
         return value.match(/(click|hover|manual)/)
-      },
+      }
     },
     /**
      * Defines if the drop should be closed after clicking on it. Needs to have defined dropId to work.
      */
     closeOnClick: {
       type: Boolean,
-      required: false,
+      required: false
     },
     /**
      * Defines if the drop should be nested drop in another drop.
      */
     isNested: {
       type: Boolean,
-      required: false,
+      required: false
     },
     /**
      * Element selector used as a target of the drop
@@ -95,7 +95,7 @@ export default {
     target: {
       type: String,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Defines the padding size around the drop content. Defaults to `medium`.
@@ -105,10 +105,10 @@ export default {
     paddingSize: {
       type: String,
       required: false,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge|remove)/)
-      },
+      }
     },
     /**
      * Determines the offset of the drop element. The value can work on both axes by using a string in the form "x, y", such as "50, 20".
@@ -116,8 +116,8 @@ export default {
     offset: {
       type: String,
       required: false,
-      default: undefined,
-    },
+      default: undefined
+    }
   },
   data() {
     return { tippy: null }
@@ -126,13 +126,13 @@ export default {
     triggerMapping() {
       return (
         {
-          hover: "mouseenter focus",
+          hover: 'mouseenter focus'
         }[this.mode] || this.mode
       )
     },
     paddingClass() {
       return `oc-p-${getSizeClass(this.paddingSize)}`
-    },
+    }
   },
   watch: {
     position() {
@@ -141,7 +141,7 @@ export default {
 
     mode() {
       this.tippy.setProps({ trigger: this.triggerMapping })
-    },
+    }
   },
   beforeDestroy() {
     destroy(this.tippy)
@@ -165,19 +165,19 @@ export default {
       hideOnClick: true,
       interactive: true,
       plugins: [hideOnEsc],
-      theme: "none",
+      theme: 'none',
       maxWidth: 400,
       offset: this.offset,
       aria: {
-        content: "describedby",
+        content: 'describedby'
       },
       ...(!this.isNested && {
         onShow(instance) {
           hideAll({ exclude: instance })
-        },
+        }
       }),
       popperOptions: this.popperOptions,
-      content,
+      content
     }
 
     if (this.target) {
@@ -211,13 +211,13 @@ export default {
      */
     hide(duration) {
       this.tippy.hide(duration)
-    },
-  },
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-.tippy-box[data-theme~="none"] {
+.tippy-box[data-theme~='none'] {
   background-color: transparent;
   font-size: inherit;
   line-height: inherit;
@@ -228,7 +228,7 @@ export default {
   }
   li.oc-menu-item-hover {
     a,
-    button:not([role="switch"]) {
+    button:not([role='switch']) {
       box-sizing: border-box;
       padding: var(--oc-space-small);
       color: var(--oc-color-swatch-passive-default);

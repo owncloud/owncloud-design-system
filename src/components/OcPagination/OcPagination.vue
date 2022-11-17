@@ -32,15 +32,15 @@
 </template>
 
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
+import OcIcon from '../OcIcon/OcIcon.vue'
 
 /**
  * A list of links used for switching to different pages
  */
 export default {
-  name: "OcPagination",
-  status: "ready",
-  release: "7.2.0",
+  name: 'OcPagination',
+  status: 'ready',
+  release: '7.2.0',
 
   components: { OcIcon },
 
@@ -50,14 +50,14 @@ export default {
      */
     pages: {
       type: Number,
-      required: true,
+      required: true
     },
     /**
      * Currently active page
      */
     currentPage: {
       type: Number,
-      required: true,
+      required: true
     },
     /**
      * Number of pages to be displayed. It is required to use an odd number.
@@ -67,24 +67,24 @@ export default {
       type: Number,
       required: false,
       default: null,
-      validator: value => {
+      validator: (value) => {
         if (value % 2 === 0) {
           // Since Vue doens't support custom validator error message, log the error manually
-          console.error("maxDisplayed needs to be an odd number")
+          console.error('maxDisplayed needs to be an odd number')
 
           return false
         }
 
         return true
-      },
+      }
     },
     /**
      * Current route which is used to render pages
      */
     currentRoute: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
 
   computed: {
@@ -105,12 +105,12 @@ export default {
         )
 
         if (this.$_currentPage > 2) {
-          pages[0] > 2 ? pages.unshift(1, "...") : pages.unshift(1)
+          pages[0] > 2 ? pages.unshift(1, '...') : pages.unshift(1)
         }
 
         if (this.$_currentPage < this.pages - 1) {
           pages[pages.length - 1] < this.pages - 1
-            ? pages.push("...", this.pages)
+            ? pages.push('...', this.pages)
             : pages.push(this.pages)
         }
 
@@ -138,12 +138,12 @@ export default {
 
     $_currentPage() {
       return Math.max(1, Math.min(this.currentPage, this.pages))
-    },
+    }
   },
 
   methods: {
     pageLabel(page) {
-      const translated = this.$gettext("Go to page %{ page }")
+      const translated = this.$gettext('Go to page %{ page }')
 
       return this.$gettextInterpolate(translated, { page })
     },
@@ -153,37 +153,37 @@ export default {
     },
 
     pageComponent(page) {
-      return page === "..." || this.isCurrentPage(page) ? "span" : "router-link"
+      return page === '...' || this.isCurrentPage(page) ? 'span' : 'router-link'
     },
 
     bindPageProps(page) {
-      if (page === "...") {
+      if (page === '...') {
         return
       }
 
       if (this.isCurrentPage(page)) {
         return {
-          "aria-current": "page",
+          'aria-current': 'page'
         }
       }
 
       const link = this.bindPageLink(page)
 
       return {
-        "aria-label": this.pageLabel(page),
-        to: link,
+        'aria-label': this.pageLabel(page),
+        to: link
       }
     },
 
     pageClass(page) {
-      const classes = ["oc-pagination-list-item-page"]
+      const classes = ['oc-pagination-list-item-page']
 
       if (this.isCurrentPage(page)) {
-        classes.push("oc-pagination-list-item-current")
-      } else if (page === "...") {
-        classes.push("oc-pagination-list-item-ellipsis")
+        classes.push('oc-pagination-list-item-current')
+      } else if (page === '...') {
+        classes.push('oc-pagination-list-item-ellipsis')
       } else {
-        classes.push("oc-pagination-list-item-link")
+        classes.push('oc-pagination-list-item-link')
       }
 
       return classes
@@ -193,10 +193,10 @@ export default {
       return {
         name: this.currentRoute.name,
         query: { ...this.currentRoute.query, page },
-        params: this.currentRoute.params,
+        params: this.currentRoute.params
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

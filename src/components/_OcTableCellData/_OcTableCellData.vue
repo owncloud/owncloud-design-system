@@ -11,34 +11,34 @@
   </oc-table-cell>
 </template>
 <script>
-import OcTableCell from "../_OcTableCell/_OcTableCell.vue"
+import OcTableCell from '../_OcTableCell/_OcTableCell.vue'
 
 export default {
-  name: "OcTd",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcTd',
+  status: 'ready',
+  release: '2.1.0',
   components: { OcTableCell },
   props: {
     alignH: {
       type: String,
-      default: "left",
-      validator: alignment => /(left|center|right)/.test(alignment),
+      default: 'left',
+      validator: (alignment) => /(left|center|right)/.test(alignment)
     },
     alignV: {
       type: String,
-      default: "middle",
-      validator: alignment => /(top|middle|bottom)/.test(alignment),
+      default: 'middle',
+      validator: (alignment) => /(top|middle|bottom)/.test(alignment)
     },
     width: {
       type: String,
-      default: "auto",
-      validator: width => /(auto|shrink|expand)/.test(width),
+      default: 'auto',
+      validator: (width) => /(auto|shrink|expand)/.test(width)
     },
     wrap: {
       type: String,
       default: null,
-      validator: wrap => (wrap ? /(break|nowrap|truncate)/.test(wrap) : true),
-    },
-  },
+      validator: (wrap) => (wrap ? /(break|nowrap|truncate)/.test(wrap) : true)
+    }
+  }
 }
 </script>

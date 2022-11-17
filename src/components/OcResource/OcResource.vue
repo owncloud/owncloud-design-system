@@ -60,28 +60,28 @@
   </div>
 </template>
 <script>
-import OcButton from "../OcButton/OcButton.vue"
-import OcImg from "../OcImage/OcImage.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcResourceName from "../OcResourceName/OcResourceName.vue"
-import OcResourceIcon from "../OcResourceIcon/OcResourceIcon.vue"
-import OcResourceLink from "../OcResourceLink/OcResourceLink.vue"
-import * as path from "path"
+import OcButton from '../OcButton/OcButton.vue'
+import OcImg from '../OcImage/OcImage.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcResourceName from '../OcResourceName/OcResourceName.vue'
+import OcResourceIcon from '../OcResourceIcon/OcResourceIcon.vue'
+import OcResourceLink from '../OcResourceLink/OcResourceLink.vue'
+import * as path from 'path'
 
 /**
  * Displays a resource together with the resource type icon or thumbnail
  */
 export default {
-  name: "OcResource",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcResource',
+  status: 'ready',
+  release: '2.1.0',
   components: {
     OcButton,
     OcImg,
     OcIcon,
     OcResourceName,
     OcResourceIcon,
-    OcResourceLink,
+    OcResourceLink
   },
   props: {
     /**
@@ -90,7 +90,7 @@ export default {
     folderLink: {
       type: Object,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * The resource parent folder link path
@@ -98,14 +98,14 @@ export default {
     parentFolderLink: {
       type: Object,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * The resource to be displayed
      */
     resource: {
       type: Object,
-      required: true,
+      required: true
     },
     /**
      * The resource parent folder name to be displayed
@@ -113,7 +113,7 @@ export default {
     parentFolderNameDefault: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Asserts whether the resource path should be displayed
@@ -121,7 +121,7 @@ export default {
     isPathDisplayed: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Asserts whether the resource extension should be displayed
@@ -129,7 +129,7 @@ export default {
     isExtensionDisplayed: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     /**
      * Asserts whether the resource thumbnail should be displayed
@@ -137,7 +137,7 @@ export default {
     isThumbnailDisplayed: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     /**
      * Asserts whether clicking on the resource name triggers any action
@@ -145,36 +145,36 @@ export default {
     isResourceClickable: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
     parentFolderComponentType() {
-      return this.parentFolderLink !== null ? "router-link" : "span"
+      return this.parentFolderLink !== null ? 'router-link' : 'span'
     },
 
     parentFolder() {
-      const folder = path.basename(path.dirname(this.resource.path)).replace(".", "")
-      return folder !== "" ? folder : this.parentFolderNameDefault
+      const folder = path.basename(path.dirname(this.resource.path)).replace('.', '')
+      return folder !== '' ? folder : this.parentFolderNameDefault
     },
 
     parentFolderStyle() {
       const hasLinkTarget = this.parentFolderLink !== null
       return {
-        cursor: hasLinkTarget ? "pointer" : "default",
+        cursor: hasLinkTarget ? 'pointer' : 'default'
       }
     },
 
     hasThumbnail() {
       return (
         this.isThumbnailDisplayed &&
-        Object.prototype.hasOwnProperty.call(this.resource, "thumbnail")
+        Object.prototype.hasOwnProperty.call(this.resource, 'thumbnail')
       )
     },
 
     thumbnail() {
       return this.resource.thumbnail
-    },
+    }
   },
 
   methods: {
@@ -182,9 +182,9 @@ export default {
       /**
        * Triggered when the resource is a file and the name is clicked
        */
-      this.$emit("click")
-    },
-  },
+      this.$emit('click')
+    }
+  }
 }
 </script>
 

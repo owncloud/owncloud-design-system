@@ -18,15 +18,15 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
+import uniqueId from '../../utils/uniqueId'
 
 /**
  * Wraps content in a resource link
  */
 export default {
-  name: "OcResourceLink",
-  status: "prototype",
-  release: "unreleased",
+  name: 'OcResourceLink',
+  status: 'prototype',
+  release: 'unreleased',
   props: {
     /**
      * The resource folder link
@@ -34,14 +34,14 @@ export default {
     folderLink: {
       type: Object,
       required: false,
-      default: null,
+      default: null
     },
     /**
      * The resource to be displayed
      */
     resource: {
       type: Object,
-      required: true,
+      required: true
     },
     /**
      * Asserts whether clicking on the resource name triggers any action
@@ -49,32 +49,32 @@ export default {
     isResourceClickable: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
     isFolder() {
       return this.resource.isFolder
     },
     componentType() {
-      return this.isFolder ? "router-link" : "oc-button"
+      return this.isFolder ? 'router-link' : 'oc-button'
     },
     componentProps() {
       if (!this.isRouterLink) {
         return {
-          appearance: "raw",
-          gapSize: "none",
-          justifyContent: "left",
+          appearance: 'raw',
+          gapSize: 'none',
+          justifyContent: 'left'
         }
       }
 
       return {
-        to: this.folderLink,
+        to: this.folderLink
       }
     },
     opensInNewWindowDescriptionId() {
       if (this.resource.opensInNewWindow) {
-        return uniqueId("oc-link-description-")
+        return uniqueId('oc-link-description-')
       }
 
       return null
@@ -84,11 +84,11 @@ export default {
     },
     linkTargetBlank() {
       if (this.isRouterLink && this.resource.opensInNewWindow) {
-        return "_blank"
+        return '_blank'
       }
 
       return null
-    },
+    }
   },
   methods: {
     emitClick() {
@@ -99,8 +99,8 @@ export default {
       /**
        * Triggered when the resource is a file and the name is clicked
        */
-      this.$emit("click")
-    },
-  },
+      this.$emit('click')
+    }
+  }
 }
 </script>

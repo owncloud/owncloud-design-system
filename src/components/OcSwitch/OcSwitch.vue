@@ -13,18 +13,18 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
+import uniqueId from '../../utils/uniqueId'
 
 /**
  * The switch has two states between users can choose.
  */
 export default {
-  name: "OcSwitch",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcSwitch',
+  status: 'ready',
+  release: '1.0.0',
   model: {
-    prop: "checked",
-    event: "change",
+    prop: 'checked',
+    event: 'change'
   },
   props: {
     /**
@@ -35,7 +35,7 @@ export default {
     checked: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Accessible name of the switch
@@ -43,7 +43,7 @@ export default {
     label: {
       type: String,
       required: true,
-      default: null,
+      default: null
     },
     /**
      * ID of the label element
@@ -52,8 +52,8 @@ export default {
     labelId: {
       type: String,
       required: false,
-      default: uniqueId("oc-switch-label-"),
-    },
+      default: uniqueId('oc-switch-label-')
+    }
   },
 
   methods: {
@@ -63,9 +63,9 @@ export default {
        * @event change
        * @type {boolean}
        */
-      this.$emit("change", !this.checked)
-    },
-  },
+      this.$emit('change', !this.checked)
+    }
+  }
 }
 </script>
 
@@ -91,7 +91,7 @@ export default {
       background-color: var(--oc-color-swatch-inverse-hover);
       box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px 1px;
       border-radius: 50%;
-      content: "";
+      content: '';
       height: 12px;
       left: 1px;
       position: absolute;
@@ -100,7 +100,7 @@ export default {
       width: 12px;
     }
 
-    &[aria-checked="false"] {
+    &[aria-checked='false'] {
       background-color: var(--oc-color-swatch-inverse-muted);
 
       &::before {
@@ -109,7 +109,7 @@ export default {
       }
     }
 
-    &[aria-checked="true"] {
+    &[aria-checked='true'] {
       background-color: var(--oc-color-swatch-primary-default);
 
       &::before {

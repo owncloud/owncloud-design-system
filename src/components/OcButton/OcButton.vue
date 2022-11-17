@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import { getSizeClass } from "../../utils/sizeClasses"
+import { getSizeClass } from '../../utils/sizeClasses'
 
 export default {
-  name: "OcButton",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcButton',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * The html element used for the button.
@@ -26,17 +26,17 @@ export default {
      */
     type: {
       type: String,
-      default: "button",
-      validator: value => {
+      default: 'button',
+      validator: (value) => {
         return value.match(/(button|a|router-link)/)
-      },
+      }
     },
     /**
      * Disable the button
      */
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * The size of the button. Defaults to medium.
@@ -44,17 +44,17 @@ export default {
      */
     size: {
       type: String,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(small|medium|large)/)
-      },
+      }
     },
     /**
      * When setting the button’s type to a link, use this option to give a href.
      */
     href: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * When setting the button’s type to a link, use this option to give a give a target.
@@ -63,16 +63,16 @@ export default {
     target: {
       type: String,
       default: null,
-      validator: value => {
+      validator: (value) => {
         return value.match(/(_blank|_self|_parent|_top)/)
-      },
+      }
     },
     /**
      * When setting the button’s type to a router-link, use this option to give a to.
      */
     to: {
       type: [String, Object],
-      default: null,
+      default: null
     },
     /**
      * The aria-label of the button. Only use this property if you want to overwrite the accessible content of the
@@ -80,17 +80,17 @@ export default {
      */
     ariaLabel: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * Set the button’s type ("submit", "button" or "reset").
      */
     submit: {
       type: String,
-      default: "button",
-      validator: value => {
+      default: 'button',
+      validator: (value) => {
         return value.match(/(null|button|submit|reset)/)
-      },
+      }
     },
     /**
      * Style variation to give additional meaning.
@@ -99,10 +99,10 @@ export default {
      */
     variation: {
       type: String,
-      default: "passive",
-      validator: value => {
+      default: 'passive',
+      validator: (value) => {
         return value.match(/(passive|primary|success|danger|warning|inverse)/)
-      },
+      }
     },
     /**
      * Style variation to give additional meaning.
@@ -111,10 +111,10 @@ export default {
      */
     appearance: {
       type: String,
-      default: "outline",
-      validator: value => {
+      default: 'outline',
+      validator: (value) => {
         return value.match(/(filled|outline|raw)/)
-      },
+      }
     },
     /**
      * How to justify content within the button. Defaults to center.
@@ -122,10 +122,10 @@ export default {
      */
     justifyContent: {
       type: String,
-      default: "center",
-      validator: value => {
+      default: 'center',
+      validator: (value) => {
         return value.match(/(left|center|right|space-around|space-between|space-evenly)/)
-      },
+      }
     },
     /**
      * Distance between children of the button. Defaults to medium. Might be overruled by justify-content value.
@@ -133,22 +133,22 @@ export default {
      */
     gapSize: {
       type: String,
-      default: "medium",
-      validator: value => {
+      default: 'medium',
+      validator: (value) => {
         return value.match(/(none|xsmall|small|medium|large|xlarge)/)
-      },
-    },
+      }
+    }
   },
   computed: {
     $_ocButton_buttonClass() {
       return [
-        "oc-button",
-        "oc-rounded",
+        'oc-button',
+        'oc-rounded',
         `oc-button-${getSizeClass(this.size)}`,
         `oc-button-justify-content-${this.justifyContent}`,
         `oc-button-gap-${getSizeClass(this.gapSize)}`,
         `oc-button-${this.variation}`,
-        `oc-button-${this.variation}-${this.appearance}`,
+        `oc-button-${this.variation}-${this.appearance}`
       ]
     },
 
@@ -157,21 +157,21 @@ export default {
         ...(this.href && { href: this.href }),
         ...(this.target && { target: this.target }),
         ...(this.to && { to: this.to }),
-        ...(this.type === "button" && { type: this.submit }),
+        ...(this.type === 'button' && { type: this.submit })
       }
     },
 
     handlers() {
       return {
-        ...(this.type === "button" && { click: this.$_ocButton_onClick }),
+        ...(this.type === 'button' && { click: this.$_ocButton_onClick })
       }
-    },
+    }
   },
   methods: {
     $_ocButton_onClick(event) {
-      this.$emit("click", event)
-    },
-  },
+      this.$emit('click', event)
+    }
+  }
 }
 </script>
 

@@ -8,27 +8,27 @@
  * A table component with manually built layout.
  */
 export default {
-  name: "OcTableSimple",
-  status: "ready",
-  release: "2.1.0",
+  name: 'OcTableSimple',
+  status: 'ready',
+  release: '2.1.0',
   props: {
     /**
      * Whether or not table rows should be highlighted when hovered.
      */
     hover: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     tableClasses() {
-      const result = ["oc-table-simple"]
+      const result = ['oc-table-simple']
       if (this.hover) {
-        result.push("oc-table-simple-hover")
+        result.push('oc-table-simple-hover')
       }
       return result
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss">

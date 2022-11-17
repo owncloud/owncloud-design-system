@@ -6,5 +6,5 @@ export const shareType = {
   group: 1,
   link: 3,
   guest: 4,
-  remote: 6,
+  remote: 6
 }

@@ -1,22 +1,22 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount } from '@vue/test-utils'
 
-import Switch from "./OcSwitch.vue"
+import Switch from './OcSwitch.vue'
 
 const defaultProps = {
-  label: "Test label",
+  label: 'Test label'
 }
 
-describe("OcSwitch", () => {
-  it("can be toggled", async () => {
+describe('OcSwitch', () => {
+  it('can be toggled', async () => {
     const wrapper = shallowMount(Switch, {
-      propsData: defaultProps,
+      propsData: defaultProps
     })
 
-    await wrapper.find('[data-testid="oc-switch-btn"]').trigger("click")
+    await wrapper.find('[data-testid="oc-switch-btn"]').trigger('click')
 
     expect(wrapper.emitted().change[0][0]).toEqual(true)
 
-    await wrapper.find('[data-testid="oc-switch-btn"]').trigger("click")
+    await wrapper.find('[data-testid="oc-switch-btn"]').trigger('click')
 
     expect(wrapper.emitted().change[0][0]).toEqual(true)
   })

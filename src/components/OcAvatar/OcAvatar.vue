@@ -15,16 +15,16 @@
 </template>
 
 <script>
-import OcImg from "../OcImage/OcImage.vue"
+import OcImg from '../OcImage/OcImage.vue'
 
-export const extractInitials = userName => {
+export const extractInitials = (userName) => {
   return userName
     .split(/[ -]/)
-    .map(part => part.replace(/[^\p{L}\p{Nd}]/giu, ""))
+    .map((part) => part.replace(/[^\p{L}\p{Nd}]/giu, ''))
     .filter(Boolean)
-    .map(part => part.charAt(0))
+    .map((part) => part.charAt(0))
     .slice(0, 3)
-    .join("")
+    .join('')
     .toUpperCase()
 }
 
@@ -32,9 +32,9 @@ export const extractInitials = userName => {
  * Avatar is a thumbnail representing user or group
  */
 export default {
-  name: "OcAvatar",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcAvatar',
+  status: 'ready',
+  release: '1.0.0',
   components: { OcImg },
   props: {
     /**
@@ -42,14 +42,14 @@ export default {
      */
     src: {
       type: String,
-      default: "",
+      default: ''
     },
     /**
      * User name to display initials if src is not set
      */
     userName: {
       type: String,
-      default: "",
+      default: ''
     },
     /**
      * Accessibility label used as alt. Use only in case the avatar is used alone.
@@ -59,7 +59,7 @@ export default {
     accessibleLabel: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * The size of the avatar in pixels
@@ -67,28 +67,28 @@ export default {
     width: {
       type: Number,
       required: false,
-      default: 50,
-    },
+      default: 50
+    }
   },
   data() {
     return {
       backgroundColors: [
-        "#b82015",
-        "#c21c53",
-        "#9C27B0",
-        "#673AB7",
-        "#3F51B5",
-        "#106892",
-        "#055c68",
-        "#208377",
-        "#1a761d",
-        "#476e1a",
-        "#636d0b",
-        "#8e5c11",
-        "#795548",
-        "#465a64",
+        '#b82015',
+        '#c21c53',
+        '#9C27B0',
+        '#673AB7',
+        '#3F51B5',
+        '#106892',
+        '#055c68',
+        '#208377',
+        '#1a761d',
+        '#476e1a',
+        '#636d0b',
+        '#8e5c11',
+        '#795548',
+        '#465a64'
       ],
-      imgError: false,
+      imgError: false
     }
   },
   computed: {
@@ -96,7 +96,7 @@ export default {
       if (!this.isImage) {
         return this.randomBackgroundColor(this.userName.length, this.backgroundColors)
       }
-      return ""
+      return ''
     },
 
     isImage() {
@@ -107,14 +107,14 @@ export default {
       const style = {
         width: `${this.width}px`,
         height: `${this.width}px`,
-        lineHeight: `${this.width}px`,
+        lineHeight: `${this.width}px`
       }
 
       const initialBackgroundAndFontStyle = {
         backgroundColor: this.background,
         fontSize: `${Math.floor(this.width / 2.5)}px`,
-        fontFamily: "Helvetica, Arial, sans-serif",
-        color: "white",
+        fontFamily: 'Helvetica, Arial, sans-serif',
+        color: 'white'
       }
 
       Object.assign(style, initialBackgroundAndFontStyle)
@@ -126,12 +126,12 @@ export default {
       if (!this.isImage) {
         return extractInitials(this.userName)
       }
-      return ""
-    },
+      return ''
+    }
   },
   mounted() {
     if (!this.isImage) {
-      this.$emit("avatar-initials", this.userName, this.userInitial)
+      this.$emit('avatar-initials', this.userName, this.userInitial)
     }
   },
   methods: {
@@ -141,8 +141,8 @@ export default {
 
     randomBackgroundColor(seed, colors) {
       return colors[seed % colors.length]
-    },
-  },
+    }
+  }
 }
 </script>
 

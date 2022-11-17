@@ -15,15 +15,15 @@
 </template>
 
 <script>
-import { getSizeClass } from "../../utils/sizeClasses"
-import uniqueId from "../../utils/uniqueId"
+import { getSizeClass } from '../../utils/sizeClasses'
+import uniqueId from '../../utils/uniqueId'
 /**
  * The radio element. Can be grouped to give the user to choose between different options.
  */
 export default {
-  name: "OcRadio",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcRadio',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * Id for the radio. If it's empty, a generated one will be used.
@@ -31,14 +31,14 @@ export default {
     id: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-radio-"),
+      default: () => uniqueId('oc-radio-')
     },
     /**
      * Disables the radio button
      */
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     /**
      * The model of the radio button or radio button group. It determines, based on the option this radio button
@@ -51,7 +51,7 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     value: {
       required: false,
-      default: false,
+      default: false
     },
     /**
      * The value of this radio button. Can be omitted if the radio button is not used in a group.
@@ -61,7 +61,7 @@ export default {
     // eslint-disable-next-line vue/require-prop-types
     option: {
       required: false,
-      default: null,
+      default: null
     },
     /**
      * Label of the Radio.
@@ -71,7 +71,7 @@ export default {
     label: {
       type: String,
       required: true,
-      default: null,
+      default: null
     },
     /**
      * Is the label of the Radio visually hidden?
@@ -79,7 +79,7 @@ export default {
     hideLabel: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Size of the Radio. Valid values are `small`, `medium` and `large`.
@@ -88,9 +88,9 @@ export default {
     size: {
       type: String,
       required: false,
-      default: "medium",
-      validator: size => /(small|medium|large)/.test(size),
-    },
+      default: 'medium',
+      validator: (size) => /(small|medium|large)/.test(size)
+    }
   },
   computed: {
     model: {
@@ -98,19 +98,19 @@ export default {
         return this.value
       },
       set(value) {
-        this.$emit("input", value)
-      },
+        this.$emit('input', value)
+      }
     },
     classes() {
-      return ["oc-radio", "oc-radio-" + getSizeClass(this.size)]
+      return ['oc-radio', 'oc-radio-' + getSizeClass(this.size)]
     },
     labelClasses() {
       return {
-        "oc-invisible-sr": this.hideLabel,
-        "oc-cursor-pointer": !this.disabled,
+        'oc-invisible-sr': this.hideLabel,
+        'oc-cursor-pointer': !this.disabled
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

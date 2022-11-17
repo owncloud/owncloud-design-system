@@ -25,18 +25,18 @@
 </template>
 
 <script>
-import Fuse from "fuse.js"
-import uniqueId from "../../utils/uniqueId"
-import VueSelect from "vue-select"
-import "vue-select/dist/vue-select.css"
+import Fuse from 'fuse.js'
+import uniqueId from '../../utils/uniqueId'
+import VueSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css'
 
 /**
  * Select component with a trigger and dropdown based on [Vue Select](https://vue-select.org/)
  */
 export default {
-  name: "OcSelect",
-  status: "ready",
-  release: "4.3.0",
+  name: 'OcSelect',
+  status: 'ready',
+  release: '4.3.0',
 
   components: { VueSelect },
 
@@ -49,7 +49,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: () => uniqueId("oc-select-"),
+      default: () => uniqueId('oc-select-')
     },
     /**
      * Function to filter items when searching
@@ -69,11 +69,11 @@ export default {
           location: 0,
           distance: 100,
           maxPatternLength: 32,
-          minMatchCharLength: 1,
+          minMatchCharLength: 1
         })
 
         return search.length ? fuse.search(search).map(({ item }) => item) : fuse.list
-      },
+      }
     },
     /**
      * Disable the select component
@@ -81,7 +81,7 @@ export default {
     disabled: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     /**
      * Label of the select component
@@ -89,7 +89,7 @@ export default {
      */
     label: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * Key to use as label when option is an object
@@ -97,19 +97,19 @@ export default {
      */
     optionLabel: {
       type: String,
-      default: null,
-    },
+      default: null
+    }
   },
 
   computed: {
     additionalAttributes() {
       const additionalAttrs = {}
-      additionalAttrs["input-id"] = this.id
+      additionalAttrs['input-id'] = this.id
       if (this.optionLabel) {
-        additionalAttrs["label"] = this.optionLabel
+        additionalAttrs['label'] = this.optionLabel
       }
       return { ...this.$attrs, ...additionalAttrs }
-    },
+    }
   },
 
   mounted() {
@@ -118,8 +118,8 @@ export default {
 
   methods: {
     setComboBoxAriaLabel() {
-      const comboBoxElement = this.$refs.select.$el.querySelector("div:first-child")
-      comboBoxElement.setAttribute("aria-label", this.$gettext("Search for option"))
+      const comboBoxElement = this.$refs.select.$el.querySelector('div:first-child')
+      comboBoxElement.setAttribute('aria-label', this.$gettext('Search for option'))
     },
     userInput(event) {
       /**
@@ -127,9 +127,9 @@ export default {
        *
        * @property {string} query search query
        */
-      this.$emit("search:input", event.target.value)
-    },
-  },
+      this.$emit('search:input', event.target.value)
+    }
+  }
 }
 </script>
 
@@ -211,7 +211,7 @@ export default {
     }
   }
 
-  &[multiple="multiple"] {
+  &[multiple='multiple'] {
     .vs {
       &__selected {
         background-color: var(--oc-color-swatch-inverse-default);

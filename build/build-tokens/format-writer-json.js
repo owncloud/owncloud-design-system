@@ -1,20 +1,20 @@
-const tinyColor = require("tinycolor2")
-const { getPropType, sortProps, getPropCategory } = require("./utils")
-const formatWriter = require("./format")
+const tinyColor = require('tinycolor2')
+const { getPropType, sortProps, getPropCategory } = require('./utils')
+const formatWriter = require('./format')
 
 module.exports = {
-  name: "format/ods/json",
-  formatter: dictionary => {
+  name: 'format/ods/json',
+  formatter: (dictionary) => {
     const attributes = sortProps(dictionary.allProperties).reduce((acc, cur) => {
       const prop = {
         value: cur.value,
         name: cur.name,
         type: getPropType(cur),
         category: getPropCategory(cur),
-        info: {},
+        info: {}
       }
 
-      if (prop.type === "color") {
+      if (prop.type === 'color') {
         const color = tinyColor(cur.value)
         prop.info.hex = color.toHexString()
         prop.info.rgb = color.toRgbString()
@@ -27,13 +27,13 @@ module.exports = {
       return acc
     }, {})
     const data = [
-      "{",
+      '{',
       Object.keys(attributes)
-        .map(k => `  "${k}": ${JSON.stringify(attributes[k])}`)
-        .join(",\n"),
-      "}",
-    ].join("\n")
+        .map((k) => `  "${k}": ${JSON.stringify(attributes[k])}`)
+        .join(',\n'),
+      '}'
+    ].join('\n')
 
     return formatWriter({ data, dictionary })
-  },
+  }
 }

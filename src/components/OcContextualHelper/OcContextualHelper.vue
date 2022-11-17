@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import uniqueId from "../../utils/uniqueId"
-import OcButton from "../OcButton/OcButton.vue"
-import OcIcon from "../OcIcon/OcIcon.vue"
-import OcInfoDrop from "../OcInfoDrop/OcInfoDrop.vue"
+import uniqueId from '../../utils/uniqueId'
+import OcButton from '../OcButton/OcButton.vue'
+import OcIcon from '../OcIcon/OcIcon.vue'
+import OcInfoDrop from '../OcInfoDrop/OcInfoDrop.vue'
 
 export default {
-  name: "OcContextualHelper",
-  status: "unreleased",
+  name: 'OcContextualHelper',
+  status: 'unreleased',
   components: { OcButton, OcIcon, OcInfoDrop },
   props: {
     /**
@@ -24,7 +24,7 @@ export default {
     title: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Text at the beginning
@@ -32,7 +32,7 @@ export default {
     text: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * List element
@@ -40,7 +40,7 @@ export default {
     list: {
       type: Array,
       required: false,
-      default: () => [],
+      default: () => []
     },
     /**
      * Text at the end
@@ -48,7 +48,7 @@ export default {
     endText: {
       type: String,
       required: false,
-      default: "",
+      default: ''
     },
     /**
      * Read more link at the end
@@ -56,20 +56,20 @@ export default {
     readMoreLink: {
       type: String,
       required: false,
-      default: "",
-    },
+      default: ''
+    }
   },
   computed: {
     dropId() {
-      return uniqueId("oc-contextual-helper-")
+      return uniqueId('oc-contextual-helper-')
     },
     buttonId() {
       return `${this.dropId}-button`
     },
     toggleId() {
       return `#${this.buttonId}`
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -1,116 +1,116 @@
-"use strict"
-const path = require("path")
-const utils = require("./utils")
-const config = require("../config")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { VueLoaderPlugin } = require("vue-loader")
+'use strict'
+const path = require('path')
+const utils = require('./utils')
+const config = require('../config')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 function resolve(dir) {
-  return path.join(__dirname, "..", dir)
+  return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
-  mode: process.env.NODE_ENV === "production" ? config.build.mode : config.dev.mode,
-  context: path.resolve(__dirname, "../"),
+  mode: process.env.NODE_ENV === 'production' ? config.build.mode : config.dev.mode,
+  context: path.resolve(__dirname, '../'),
   entry: {
-    app: ["./src/system.js"],
+    app: ['./src/system.js']
   },
   output: {
     path: config.build.assetsRoot,
-    filename: "[name].js",
+    filename: '[name].js',
     publicPath:
-      process.env.NODE_ENV === "production"
+      process.env.NODE_ENV === 'production'
         ? config.build.assetsPublicPath
-        : config.dev.assetsPublicPath,
+        : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: [".js", ".vue", ".json"],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
-      vue$: "vue/dist/vue.esm.js",
-      "@": resolve("src"),
-    },
+      vue$: 'vue/dist/vue.esm.js',
+      '@': resolve('src')
+    }
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
         options: {
           cacheBusting: config.dev.cacheBusting,
           transformAssetUrls: {
-            video: ["src", "poster"],
-            source: "src",
-            img: "src",
-            image: "xlink:href",
-          },
-        },
+            video: ['src', 'poster'],
+            source: 'src',
+            img: 'src',
+            image: 'xlink:href'
+          }
+        }
       },
       {
         test: /\.js$/,
-        loader: "babel-loader",
-        include: [resolve("docs"), resolve("src"), resolve("test")],
+        loader: 'babel-loader',
+        include: [resolve('docs'), resolve('src'), resolve('test')]
       },
       {
         test: /\.jsx?$/,
         include:
           /node_modules\/(?=(acorn-jsx|regexpu-core|unicode-match-property-ecmascript|unicode-match-property-value-ecmascript|react-dev-utils|ansi-styles|ansi-regex|chalk|strip-ansi)\/).*/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
               [
-                "@babel/preset-env",
+                '@babel/preset-env',
                 {
                   targets: {
-                    ie: "11",
-                  },
-                },
-              ],
-            ],
-          },
-        },
+                    ie: '11'
+                  }
+                }
+              ]
+            ]
+          }
+        }
       },
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath("img/[name].[hash:7].[ext]"),
-        },
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
       },
       {
         test: /\.svg$/,
-        loader: "html-loader",
+        loader: 'html-loader'
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath("media/[name].[hash:7].[ext]"),
-        },
+          name: utils.assetsPath('media/[name].[hash:7].[ext]')
+        }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath("fonts/[name].[hash:7].[ext]"),
-        },
-      },
-    ],
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        }
+      }
+    ]
   },
-  plugins: [new VueLoaderPlugin(), new MiniCssExtractPlugin({ filename: "style.css" })],
+  plugins: [new VueLoaderPlugin(), new MiniCssExtractPlugin({ filename: 'style.css' })],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
     setImmediate: false,
     // prevent webpack from injecting mocks to Node native modules
     // that does not make sense for the client
-    dgram: "empty",
-    fs: "empty",
-    net: "empty",
-    tls: "empty",
-    child_process: "empty",
-  },
+    dgram: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    child_process: 'empty'
+  }
 }

@@ -6,25 +6,25 @@
     :size="size"
     :class="[
       'oc-resource-icon',
-      { 'oc-resource-icon-file': !isFolder, 'oc-resource-icon-folder': isFolder },
+      { 'oc-resource-icon-file': !isFolder, 'oc-resource-icon-folder': isFolder }
     ]"
   />
 </template>
 
 <script>
-import OcIcon from "../OcIcon/OcIcon.vue"
-import iconNameMap from "../../helpers/resourceIconExtensionMapping"
-import iconColorMap from "../../helpers/resourceIconColorExtensionMapping"
+import OcIcon from '../OcIcon/OcIcon.vue'
+import iconNameMap from '../../helpers/resourceIconExtensionMapping'
+import iconColorMap from '../../helpers/resourceIconColorExtensionMapping'
 
-const defaultFolderColor = "var(--oc-color-icon-folder)"
-const defaultFolderIcon = "resource-type-folder"
-const defaultFallbackIconColor = "var(--oc-color-text-default)"
-const defaultFallbackIcon = "file"
+const defaultFolderColor = 'var(--oc-color-icon-folder)'
+const defaultFolderIcon = 'resource-type-folder'
+const defaultFallbackIconColor = 'var(--oc-color-text-default)'
+const defaultFallbackIcon = 'file'
 
 export default {
-  name: "OcResourceIcon",
-  status: "ready",
-  release: "12.0.0",
+  name: 'OcResourceIcon',
+  status: 'ready',
+  release: '12.0.0',
   components: { OcIcon },
   props: {
     /**
@@ -32,7 +32,7 @@ export default {
      */
     resource: {
       type: Object,
-      required: true,
+      required: true
     },
     /**
      * The size of the icon. Defaults to small.
@@ -40,11 +40,11 @@ export default {
      */
     size: {
       type: String,
-      default: "large",
-      validator: value => {
+      default: 'large',
+      validator: (value) => {
         return value.match(/(xsmall|small|medium|large|xlarge|xxlarge|xxxlarge)/)
-      },
-    },
+      }
+    }
   },
   computed: {
     iconName() {
@@ -62,8 +62,8 @@ export default {
     },
     extension() {
       return this.resource.extension?.toLowerCase()
-    },
-  },
+    }
+  }
 }
 </script>
 

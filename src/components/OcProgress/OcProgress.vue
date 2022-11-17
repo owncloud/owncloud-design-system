@@ -17,9 +17,9 @@
 
 <script>
 export default {
-  name: "OcProgress",
-  status: "ready",
-  release: "1.0.0",
+  name: 'OcProgress',
+  status: 'ready',
+  release: '1.0.0',
   props: {
     /**
      * The current progress.
@@ -27,7 +27,7 @@ export default {
     value: {
       type: Number,
       required: false,
-      default: 0,
+      default: 0
     },
     /**
      * The maximum value. This represents 100% completion.
@@ -36,9 +36,9 @@ export default {
       type: Number,
       required: false,
       default: undefined,
-      validator: value => {
+      validator: (value) => {
         return value > 0
-      },
+      }
     },
     /**
      * The size of the progress bar.
@@ -47,10 +47,10 @@ export default {
     size: {
       type: String,
       required: false,
-      default: "default",
-      validator: value => {
+      default: 'default',
+      validator: (value) => {
         return value.match(/(default|small)/)
-      },
+      }
     },
     /**
      * The variation of the progress bar.
@@ -60,10 +60,10 @@ export default {
     variation: {
       type: String,
       required: false,
-      default: "primary",
-      validator: value => {
+      default: 'primary',
+      validator: (value) => {
         return value.match(/(primary|passive|success|warning|danger)/)
-      },
+      }
     },
     /**
      * Determines if the progress bar should be displayed in an indeterminate state.
@@ -71,8 +71,8 @@ export default {
     indeterminate: {
       type: Boolean,
       required: false,
-      default: false,
-    },
+      default: false
+    }
   },
 
   computed: {
@@ -81,12 +81,12 @@ export default {
     },
     progressValue() {
       if (!this.max) {
-        return "-"
+        return '-'
       }
       const num = (this.value / this.max) * 100
       return `${num}%`
-    },
-  },
+    }
+  }
 }
 </script>
 
