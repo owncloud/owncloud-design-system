@@ -113,7 +113,7 @@
     "style-loader": "^2.0.0",
     "style-value-types": "^5.0.0",
     "stylelint-config-sass-guidelines": "^9.0.0",
-    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard": "^29.0.0",
     "stylelint": "^14.14.0",
     "tinycolor2": "^1.4.2",
     "tippy.js": "^6.3.7",
