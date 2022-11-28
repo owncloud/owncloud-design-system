@@ -47,7 +47,8 @@ import uniqueId from "../../../utils/uniqueId"
 
 export default {
   name: "OcInfoDrop",
-  status: "unreleased",
+  status: "ready",
+  release: "14.0.0",
   components: { OcButton, OcIcon, OcDrop },
   props: {
     /**
