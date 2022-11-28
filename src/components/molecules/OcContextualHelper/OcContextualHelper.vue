@@ -15,7 +15,8 @@ import OcInfoDrop from "../../molecules/OcInfoDrop/OcInfoDrop.vue"
 
 export default {
   name: "OcContextualHelper",
-  status: "unreleased",
+  status: "ready",
+  release: "13.1.0",
   components: { OcButton, OcIcon, OcInfoDrop },
   props: {
     /**

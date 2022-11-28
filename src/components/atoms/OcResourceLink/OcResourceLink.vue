@@ -25,8 +25,8 @@ import uniqueId from "../../../utils/uniqueId"
  */
 export default {
   name: "OcResourceLink",
-  status: "prototype",
-  release: "unreleased",
+  status: "ready",
+  release: "13.0.0",
   props: {
     /**
      * The resource folder link
