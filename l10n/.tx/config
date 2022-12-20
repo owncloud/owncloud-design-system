@@ -2,7 +2,7 @@
 host = https://www.transifex.com
 lang_map = cs_CZ: cs
 
-[owncloud.owncloud-design-system]
+[o:owncloud-org:p:owncloud:r:owncloud-design-system]
 file_filter = locale/<lang>/owncloud-design-system.po
 minimum_perc = 0
 source_file = template.pot
