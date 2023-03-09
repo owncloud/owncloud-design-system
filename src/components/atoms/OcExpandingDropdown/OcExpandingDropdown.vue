@@ -74,6 +74,8 @@ export default {
 .dropdown.active > .dropdown-button {
   border-bottom-left-radius:0px;
   border-bottom-right-radius:0px;
+	background-color: #4f4f4f;
+	transition-delay: 0s;
 }
 .dropdown-button {
   display: flex;
@@ -86,35 +88,10 @@ export default {
   height: 45px;
   width: 45px;
   border-radius: 5px;
-  transition: all 0.55s;
+	transition: all 0.125s ease-out;
   z-index: 1;
 }
-.dropdown-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 45px;
-  background-color: #4f4f4f;
-  transition: all 0.01s linear;
-  transition-delay: 0s;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  z-index: -1;
-}
 
-.dropdown.active > .dropdown-button::before {
-  height: 45px;
-}
-.dropdown:not(.active) > .dropdown-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #4f4f4f;
-  height: 0px;
-  z-index: -1;
-}
 .dropdown-button i {
   font-size: 22px;
 }
@@ -134,7 +111,6 @@ export default {
 
 .slide-enter-active {
 	transition: all 0.125s;
-	transition-delay: 0.02s;
 	transition-timing-function: ease-out;
 }
 
@@ -149,6 +125,7 @@ export default {
 	border-bottom-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+	opacity: 1;
 }
 
 .slide-enter, .slide-leave-to {
@@ -156,6 +133,7 @@ export default {
 	max-height: 2px;
 	max-width: 45px;
 	border-radius: 0px;
+	opacity: 0;
 }
 </style>
 
