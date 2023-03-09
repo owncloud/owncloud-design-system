@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="dropdown" :class="{ active: dropdownVisible }">
+    <div class="dropdown"
+				:class="{ active: dropdownVisible }"
+				ref="dropdown"
+			>
 			<oc-button
 				appearance="raw"
 				variation="inverse"
@@ -21,21 +24,35 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, unref, onMounted, onUnmounted } from 'vue';
 
 export default {
   name: "OcExpandingDropdown",
   status: "ready",
   release: "0.0.1",
   setup() {
-    const dropdownVisible = ref(false);
-    const buttonText = ref('Toggle Dropdown');
+		const dropdown = ref(null)
+    const dropdownVisible = ref(false)
+    const buttonText = ref('Toggle Dropdown')
 
     const toggleDropdown = () => {
       dropdownVisible.value = !dropdownVisible.value;
-    };
-
+    }
+		onMounted(() => {
+			const el = unref(dropdown)
+			el.clickOutsideEvent = event => {
+				if (!(el == event.target || el.contains(event.target))) {
+					dropdownVisible.value = false;
+				}
+			};
+			document.addEventListener("click", el.clickOutsideEvent);
+		})
+		onUnmounted(() => {
+			const el = unref(dropdown)
+			document.removeEventListener("click", el.clickOutsideEvent);
+		})
     return {
+			dropdown,
       dropdownVisible,
       buttonText,
       toggleDropdown,
