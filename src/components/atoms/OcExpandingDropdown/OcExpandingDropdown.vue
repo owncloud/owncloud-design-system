@@ -144,7 +144,7 @@ export default {
 
 <docs>
 ```js
-<div style="background: #dddddd; height: 200px; background-color: #292929;">
+<div style="background: #dddddd; height: 200px; background-color: #292929; padding: 20px;">
   <oc-expanding-dropdown>
 		<span>Hello World Hello World Hello World</span><br/>
 		<span>Hello World Hello World</span><br/>
