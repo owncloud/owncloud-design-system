@@ -105,8 +105,10 @@ export default {
 
     style() {
       const style = {
-        width: `${this.width}px`,
-        height: `${this.width}px`,
+        'min-width': `${this.width}px`,
+        'max-width': `${this.width}px`,
+        'min-height': `${this.width}px`,
+        'min-height': `${this.width}px`,
         lineHeight: `${this.width}px`,
       }
 

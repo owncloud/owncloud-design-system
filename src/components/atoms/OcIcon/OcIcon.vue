@@ -183,10 +183,10 @@ export default {
 
 <style lang="scss">
 @mixin oc-icon-size($factor) {
-  height: $oc-size-icon-default * $factor;
+  min-height: $oc-size-icon-default * $factor;
   max-height: $oc-size-icon-default * $factor;
   max-width: $oc-size-icon-default * $factor;
-  width: $oc-size-icon-default * $factor;
+  min-width: $oc-size-icon-default * $factor;
 }
 
 .oc-icon {
