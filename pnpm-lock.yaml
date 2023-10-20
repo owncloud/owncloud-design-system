@@ -138,8 +138,8 @@ devDependencies:
     specifier: ^10.0.0
     version: 10.0.1
   npm:
-    specifier: ^8.0.0
-    version: 8.19.1
+    specifier: ^10.2.1
+    version: 10.2.1
   npm-run-all:
     specifier: ^4.1.5
     version: 4.1.5
@@ -9240,26 +9240,26 @@ packages:
       path-key: 3.1.1
     dev: true
 
-  /npm@8.19.1:
-    resolution: {integrity: sha512-FtWzipzng+NmtTQDXSCvA9D7H4d7vkA7ciahmY89fGK/Eo95pbnKn0hatEUfomj1jUDEXvAEi/tKiQ2nrAc7Jg==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
+  /npm@10.2.1:
+    resolution: {integrity: sha512-YVh8UDw5lR2bPS6rrS0aPG9ZXKDWeaeO/zMoZMp7g3Thrho9cqEnSrcvg4Pic2QhDAQptAynx5KgrPgCSRscqg==}
+    engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
     dev: true
     bundledDependencies:
       - '@isaacs/string-locale-compare'
       - '@npmcli/arborist'
-      - '@npmcli/ci-detect'
       - '@npmcli/config'
       - '@npmcli/fs'
       - '@npmcli/map-workspaces'
       - '@npmcli/package-json'
       - '@npmcli/promise-spawn'
       - '@npmcli/run-script'
+      - '@sigstore/tuf'
       - abbrev
       - archy
       - cacache
       - chalk
-      - chownr
+      - ci-info
       - cli-columns
       - cli-table3
       - columnify
@@ -9287,11 +9287,10 @@ packages:
       - minimatch
       - minipass
       - minipass-pipeline
-      - mkdirp
-      - mkdirp-infer-owner
       - ms
       - node-gyp
       - nopt
+      - normalize-package-data
       - npm-audit-report
       - npm-install-checks
       - npm-package-arg
@@ -9300,19 +9299,17 @@ packages:
       - npm-registry-fetch
       - npm-user-validate
       - npmlog
-      - opener
       - p-map
       - pacote
       - parse-conflict-json
       - proc-log
       - qrcode-terminal
       - read
-      - read-package-json
-      - read-package-json-fast
-      - readdir-scoped-modules
-      - rimraf
       - semver
+      - spdx-expression-parse
       - ssri
+      - strip-ansi
+      - supports-color
       - tar
       - text-table
       - tiny-relative-date
