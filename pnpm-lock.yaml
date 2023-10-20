@@ -241,7 +241,7 @@ devDependencies:
     version: 3.0.7(babel-core@7.0.0-bridge.0)(vue-template-compiler@2.6.14)(vue@2.6.14)
   vue-loader:
     specifier: ^15.9.0
-    version: 15.9.8(babel-core@7.0.0-bridge.0)(css-loader@5.2.7)(react-dom@18.2.0)(react@18.2.0)(vue-template-compiler@2.6.14)(webpack@4.46.0)
+    version: 15.11.1(babel-core@7.0.0-bridge.0)(css-loader@5.2.7)(prettier@2.7.1)(react-dom@18.2.0)(react@18.2.0)(vue-template-compiler@2.6.14)(webpack@4.46.0)
   vue-select:
     specifier: ^3.12.0
     version: 3.20.0(vue@2.6.14)
@@ -250,7 +250,7 @@ devDependencies:
     version: 4.1.3
   vue-styleguidist:
     specifier: ^4.44.2
-    version: 4.54.1(acorn@6.4.2)(eslint@8.23.0)(vue-loader@15.9.8)(vue-template-compiler@2.6.14)(vue@2.6.14)(webpack@4.46.0)
+    version: 4.54.1(acorn@6.4.2)(eslint@8.23.0)(vue-loader@15.11.1)(vue-template-compiler@2.6.14)(vue@2.6.14)(webpack@4.46.0)
   vue-template-compiler:
     specifier: ^2.6.12
     version: 2.6.14
@@ -2340,7 +2340,7 @@ packages:
       '@vue/shared': 3.2.23
       estree-walker: 2.0.2
       magic-string: 0.25.7
-      postcss: 8.4.14
+      postcss: 8.4.18
       source-map: 0.6.1
     dev: true
 
@@ -4229,6 +4229,7 @@ packages:
   /consolidate@0.15.1(babel-core@7.0.0-bridge.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-DW46nrsMJgy9kqAbPt5rKaCr7uFtpo4mSUvLHIUbJEjm0vo+aY5QLwBUq3FK4tRnJr/X0Psc0C4jf/h+HtXSMw==}
     engines: {node: '>= 0.10.0'}
+    deprecated: Please upgrade to consolidate v1.0.0+ as it has been modernized with several long-awaited fixes implemented. Maintenance is supported by Forward Email at https://forwardemail.net ; follow/watch https://github.com/ladjs/consolidate for updates and release changelog
     peerDependencies:
       arc-templates: ^0.5.3
       atpl: '>=0.7.6'
@@ -13130,18 +13131,21 @@ packages:
       - supports-color
     dev: true
 
-  /vue-loader@15.9.8(babel-core@7.0.0-bridge.0)(css-loader@5.2.7)(react-dom@18.2.0)(react@18.2.0)(vue-template-compiler@2.6.14)(webpack@4.46.0):
-    resolution: {integrity: sha512-GwSkxPrihfLR69/dSV3+5CdMQ0D+jXg8Ma1S4nQXKJAznYFX14vHdc/NetQc34Dw+rBbIJyP7JOuVb9Fhprvog==}
+  /vue-loader@15.11.1(babel-core@7.0.0-bridge.0)(css-loader@5.2.7)(prettier@2.7.1)(react-dom@18.2.0)(react@18.2.0)(vue-template-compiler@2.6.14)(webpack@4.46.0):
+    resolution: {integrity: sha512-0iw4VchYLePqJfJu9s62ACWUXeSqM30SQqlIftbYWM3C+jpPcEHKSPUZBLjSF9au4HTHQ/naF6OGnO3Q/qGR3Q==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
       cache-loader: '*'
       css-loader: '*'
+      prettier: '*'
       vue-template-compiler: '*'
       webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
     peerDependenciesMeta:
       '@vue/compiler-sfc':
         optional: true
       cache-loader:
+        optional: true
+      prettier:
         optional: true
       vue-template-compiler:
         optional: true
@@ -13150,6 +13154,7 @@ packages:
       css-loader: 5.2.7(webpack@4.46.0)
       hash-sum: 1.0.2
       loader-utils: 1.4.0
+      prettier: 2.7.1
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
       vue-template-compiler: 2.6.14
@@ -13225,7 +13230,7 @@ packages:
       loader-utils: 1.4.0
     dev: true
 
-  /vue-styleguidist@4.54.1(acorn@6.4.2)(eslint@8.23.0)(vue-loader@15.9.8)(vue-template-compiler@2.6.14)(vue@2.6.14)(webpack@4.46.0):
+  /vue-styleguidist@4.54.1(acorn@6.4.2)(eslint@8.23.0)(vue-loader@15.11.1)(vue-template-compiler@2.6.14)(vue@2.6.14)(webpack@4.46.0):
     resolution: {integrity: sha512-ReIIfkXDlPsQotgr2afOKLN3P41Krtt+zpa4Eet5x6Fr8E//lIGUYoyFDK7NLyVNyF51p1v1qoqhlXEGdQFHmA==}
     engines: {node: '>=6', npm: '>=3'}
     hasBin: true
@@ -13300,7 +13305,7 @@ packages:
       vue-docgen-api: 4.52.0(vue@2.6.14)
       vue-inbrowser-compiler: 4.54.1(vue-template-compiler@2.6.14)(vue@2.6.14)
       vue-inbrowser-compiler-utils: 4.54.1(vue-template-compiler@2.6.14)(vue@2.6.14)
-      vue-loader: 15.9.8(babel-core@7.0.0-bridge.0)(css-loader@5.2.7)(react-dom@18.2.0)(react@18.2.0)(vue-template-compiler@2.6.14)(webpack@4.46.0)
+      vue-loader: 15.11.1(babel-core@7.0.0-bridge.0)(css-loader@5.2.7)(prettier@2.7.1)(react-dom@18.2.0)(react@18.2.0)(vue-template-compiler@2.6.14)(webpack@4.46.0)
       vue-template-compiler: 2.6.14
       webpack: 4.46.0
       webpack-dev-server: 3.11.3(webpack@4.46.0)
