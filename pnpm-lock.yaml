@@ -57,8 +57,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   chalk:
-    specifier: ^4.1.0
-    version: 4.1.2
+    specifier: ^5.3.0
+    version: 5.3.0
   codemirror:
     specifier: ^5.52.0
     version: 5.65.6
@@ -3793,6 +3793,11 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+    dev: true
+
+  /chalk@5.3.0:
+    resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: true
 
   /change-case@4.1.2:
